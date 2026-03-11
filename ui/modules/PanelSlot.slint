@@ -1,4 +1,4 @@
-import { Colors } from "../tokens/theme.slint";
+import { Colors, Type } from "../tokens/theme.slint";
 
 // A single panel content area.
 // Positioned absolutely by PanelContainer — fills its assigned rect.
@@ -8,7 +8,7 @@ export component PanelSlot inherits Rectangle {
 
     preferred-width:  100%;
     preferred-height: 100%;
-    background: Colors.bg-panel;
+    background: Colors.bg-elevated;
     border-color: Colors.border;
     border-width: 1px;
     clip: true;
@@ -18,7 +18,7 @@ export component PanelSlot inherits Rectangle {
         x: 8px;
         y: 8px;
         text: root.label;
-        color: Colors.text-muted;
-        font-size: 12px;
+        color: Colors.text-secondary;
+        font-size: Type.caption-size;
     }
 }

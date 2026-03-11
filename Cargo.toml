@@ -25,5 +25,8 @@ slint = "1"
 toml = "0.8"
 serde = { version = "1", features = ["derive"] }
 
+[dev-dependencies]
+i-slint-backend-testing = "1.15"
+
 [build-dependencies]
 slint-build = "1.15"

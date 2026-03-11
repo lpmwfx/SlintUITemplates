@@ -1,3 +1,4 @@
+pub mod adapter;
 pub mod grid;
 pub mod layout;
 

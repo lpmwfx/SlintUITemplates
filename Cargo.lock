@@ -1920,6 +1920,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "i-slint-backend-testing"
+version = "1.15.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "06160d7126504d15969a6f286ac9de32e0de3cd62e4c9e7204c121dd332855b4"
+dependencies = [
+ "i-slint-core",
+ "vtable",
+]
+
+[[package]]
 name = "i-slint-backend-winit"
 version = "1.15.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -4190,6 +4200,7 @@ dependencies = [
 name = "slint-ui-templates"
 version = "0.1.0"
 dependencies = [
+ "i-slint-backend-testing",
  "serde",
  "slint",
  "slint-build",
