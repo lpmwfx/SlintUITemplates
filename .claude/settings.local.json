@@ -10,7 +10,11 @@
       "Bash(cd \"D:/REPO/SLINT/UITemplates\" && mkdir -p ui/tokens ui/mother ui/modules src/layout)",
       "Bash(cd \"D:/REPO/SLINT/UITemplates\" && cargo build 2>&1)",
       "Bash(cd \"D:/REPO/SLINT/UITemplates\" && cargo build 2>&1 | tail -30)",
-      "Bash(cd \"D:/REPO/SLINT/UITemplates\" && cargo build 2>&1 | tail -20)"
+      "Bash(cd \"D:/REPO/SLINT/UITemplates\" && cargo build 2>&1 | tail -20)",
+      "Bash(for f:*)",
+      "Bash(do echo:*)",
+      "Read(//d/REPO/SLINT/RustUI/**)",
+      "Bash(done)"
     ]
   }
 }
