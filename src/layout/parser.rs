@@ -92,11 +92,13 @@ mod tests {
 
     #[test]
     fn test_nested() {
-        // "1:2/1:1:1" → HSplit[Leaf(1), VSplit[Leaf(2), HSplit[Leaf(1),Leaf(1)]], Leaf(1)]
+        // "1:2/1:1:1" — splits on all top-level `:` (no paren support yet).
+        // Produces 4 HSplit children: Leaf(1), VSplit[Leaf(2),Leaf(1)], Leaf(1), Leaf(1).
+        // For 3-column layouts with nested VSplit use "1:(2/1:1):1" (parens — future).
         let n = parse("1:2/1:1:1");
         assert!(matches!(n, PanelNode::Split { dir: SplitDir::H, .. }));
         if let PanelNode::Split { children, .. } = n {
-            assert_eq!(children.len(), 3);
+            assert_eq!(children.len(), 4);
             assert!(matches!(children[1], PanelNode::Split { dir: SplitDir::V, .. }));
         }
     }

@@ -29,20 +29,8 @@ fn main() -> Result<(), slint::PlatformError> {
 
     for row in &zones.rows {
         match row.name.as_str() {
-            "top" => ui.set_row_top_ratio(row.ratio as f32),
-            "main" => {
-                ui.set_row_main_ratio(row.ratio as f32);
-                if let grid::zone::RowKind::Columns(cols) = &row.kind {
-                    for col in cols {
-                        match col.name.as_str() {
-                            "left" => ui.set_col_left_ratio(col.ratio as f32),
-                            "center" => ui.set_col_center_ratio(col.ratio as f32),
-                            "right" => ui.set_col_right_ratio(col.ratio as f32),
-                            _ => {}
-                        }
-                    }
-                }
-            }
+            "top"    => ui.set_row_top_ratio(row.ratio as f32),
+            "main"   => ui.set_row_main_ratio(row.ratio as f32),
             "bottom" => ui.set_row_bottom_ratio(row.ratio as f32),
             _ => {}
         }

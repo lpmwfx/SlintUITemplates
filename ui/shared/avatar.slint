@@ -1,0 +1,29 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+
+export component Avatar inherits Rectangle {
+    in property <string> initials: "";
+    in property <string> size: "md";    // sm | md | lg
+
+    // Size mapping via token expressions
+    property <length> dim:
+        root.size == "sm" ? Spacing.xl :
+        root.size == "lg" ? Spacing.xl + Spacing.xl :
+        Spacing.xl + Spacing.md;
+
+    width: dim;
+    height: dim;
+    border-radius: dim / 2;
+    background: Colors.accent;
+
+    Text {
+        text: root.initials;
+        font-size:
+            root.size == "sm" ? Type.caption-size :
+            root.size == "lg" ? Type.subtitle-size :
+            Type.body-size;
+        font-weight: Type.weight-semibold;
+        color: Colors.accent-text;
+        horizontal-alignment: center;
+        vertical-alignment: center;
+    }
+}

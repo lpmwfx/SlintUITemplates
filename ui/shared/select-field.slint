@@ -1,0 +1,82 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+
+export component SelectField inherits Rectangle {
+    in property <[string]> options: [];
+    in property <string>   selected: "";
+    in property <string>   placeholder: "Select...";
+    callback changed(string);
+
+    private property <bool> open: false;
+
+    height: Spacing.xl;
+    clip: false;
+
+    // Closed: trigger row
+    trigger := Rectangle {
+        height: Spacing.xl;
+        border-radius: Spacing.xs;
+        border-width: 1px;
+        border-color: root.open ? Colors.border-focus : Colors.border;
+        background: Colors.bg-elevated;
+
+        HorizontalLayout {
+            padding-left: Spacing.sm;
+            padding-right: Spacing.sm;
+
+            Text {
+                text: root.selected != "" ? root.selected : root.placeholder;
+                font-size: Type.body-size;
+                color: root.selected != "" ? Colors.text-primary : Colors.text-disabled;
+                vertical-alignment: center;
+                horizontal-stretch: 1;
+            }
+
+            // Chevron indicator
+            Text {
+                text: root.open ? "▲" : "▼";
+                font-size: Type.caption-size;
+                color: Colors.text-secondary;
+                vertical-alignment: center;
+            }
+        }
+
+        TouchArea {
+            clicked => { root.open = !root.open; }
+        }
+    }
+
+    // Open: dropdown overlay
+    if root.open: Rectangle {
+        y: Spacing.xl + Spacing.xs;
+        width: parent.width;
+        height: Spacing.xl * options.length;
+        border-radius: Spacing.xs;
+        border-width: 1px;
+        border-color: Colors.border;
+        background: Colors.bg-elevated;
+        drop-shadow-blur: Spacing.sm;
+        drop-shadow-color: Colors.shadow;
+
+        VerticalLayout {
+            for item in root.options: Rectangle {
+                height: Spacing.xl;
+                background: item == root.selected ? Colors.bg-surface : transparent;
+
+                Text {
+                    x: Spacing.sm;
+                    text: item;
+                    font-size: Type.body-size;
+                    color: Colors.text-primary;
+                    vertical-alignment: center;
+                }
+
+                TouchArea {
+                    clicked => {
+                        root.changed(item);
+                        root.open = false;
+                    }
+                }
+            }
+        }
+    }
+}

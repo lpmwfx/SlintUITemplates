@@ -1,0 +1,38 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+
+export component ProgressBar inherits Rectangle {
+    in property <float> value: 0.0;      // 0.0..1.0
+    in property <bool>  show-label: false;
+
+    height: Spacing.sm;
+
+    // Track
+    Rectangle {
+        width: parent.width;
+        height: parent.height;
+        border-radius: parent.height / 2;
+        background: Colors.bg-surface;
+        border-width: 1px;
+        border-color: Colors.border;
+
+        // Fill
+        Rectangle {
+            x: 0;
+            y: 0;
+            width: parent.width * root.value;
+            height: parent.height;
+            border-radius: parent.height / 2;
+            background: Colors.accent;
+
+            animate width { duration: 200ms; easing: ease-in-out; }
+        }
+    }
+
+    if root.show-label: Text {
+        x: (parent.width - self.width) / 2;
+        y: -(self.height + Spacing.xs);
+        text: Math.round(root.value * 100) + "%";
+        font-size: Type.caption-size;
+        color: Colors.text-secondary;
+    }
+}
