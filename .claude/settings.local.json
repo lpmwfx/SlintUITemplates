@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__rules__get_rule",
+      "mcp__rulestools__init_project"
+    ]
+  }
+}
