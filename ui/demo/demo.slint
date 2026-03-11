@@ -3,6 +3,7 @@ import { NavBar }       from "../desktop/nav-bar.slint";
 import { SideBar }      from "../desktop/side-bar.slint";
 import { StatusBar }    from "../desktop/status-bar.slint";
 import { NavItem }      from "../desktop/types.slint";
+import { DragHandle }   from "../modules/DragHandle.slint";
 import { Button }       from "../shared/button.slint";
 import { Toggle }       from "../shared/toggle.slint";
 import { HomeView }     from "home-view.slint";
@@ -27,6 +28,7 @@ export component DemoWindow inherits Window {
     property <length> mobile-frame-width:      Spacing.xl * 8 + Spacing.md + Spacing.sm;
     property <length> sidebar-expanded-width:  Spacing.xl * 4 + Spacing.md;
     property <length> sidebar-collapsed-width: Spacing.xl + Spacing.sm;
+    in-out property <length> col-left-width:   Spacing.xl * 4 + Spacing.md;
 
     VerticalLayout {
         // Control bar
@@ -59,13 +61,25 @@ export component DemoWindow inherits Window {
             vertical-stretch: 1;
             SideBar {
                 horizontal-stretch: 0;
-                min-width: root.sidebar-collapsed ? root.sidebar-collapsed-width : root.sidebar-expanded-width;
+                min-width: root.col-left-width;
+                max-width: root.col-left-width;
                 items: root.nav-items;
                 active-item: root.active-view;
                 collapsed: root.sidebar-collapsed;
                 navigate(id) => { root.active-view = id; }
-                toggle-collapsed() => { root.sidebar-collapsed = !root.sidebar-collapsed; }
-                animate min-width { duration: 200ms; easing: ease-in-out; }
+                toggle-collapsed() => {
+                    root.sidebar-collapsed = !root.sidebar-collapsed;
+                    root.col-left-width = root.sidebar-collapsed ? root.sidebar-collapsed-width : root.sidebar-expanded-width;
+                }
+            }
+            DragHandle {
+                min-width: Spacing.handle-thickness;
+                max-width: Spacing.handle-thickness;
+                vertical: false;
+                dragged(dx, dy) => {
+                    root.col-left-width = root.col-left-width + dx * 1px;
+                    if (root.col-left-width < root.sidebar-collapsed-width) { root.col-left-width = root.sidebar-collapsed-width; }
+                }
             }
             VerticalLayout {
                 horizontal-stretch: 1;

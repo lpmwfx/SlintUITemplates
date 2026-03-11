@@ -1,26 +1,17 @@
-import { Theme, Spacing } from "../tokens/theme.slint";
+import { Colors, Spacing } from "../tokens/theme.slint";
 
 // Drag handle between panels.
-// Sized entirely by parent (PanelContainer positions it via PanelItem rect).
 // vertical=false → column handle (col-resize cursor, reports dx)
 // vertical=true  → row handle    (row-resize cursor, reports dy)
+// Sizing is fully controlled by the parent — no preferred-width/height defaults.
 export component DragHandle inherits Rectangle {
     in property <bool> vertical: false;
-
     callback dragged(float, float);   // dx, dy in logical px
 
-    preferred-width:  100%;
-    preferred-height: 100%;
-    background: Theme.handle;
-
-    states [
-        hovered when touch.has-hover: {
-            background: Theme.handle-hover;
-        }
-    ]
+    background: touch.has-hover ? Colors.accent : Colors.border;
 
     touch := TouchArea {
-        preferred-width:  100%;
+        preferred-width: 100%;
         preferred-height: 100%;
         mouse-cursor: vertical ? row-resize : col-resize;
 
