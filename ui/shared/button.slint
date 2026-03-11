@@ -1,0 +1,57 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+
+export component Button inherits Rectangle {
+    in property <string> label: "Button";
+    in property <string> variant: "primary";   // primary | secondary | ghost | danger
+    in property <bool> enabled: true;
+    callback clicked();
+
+    height: Spacing.xl;
+    border-radius: Spacing.xs;
+    clip: true;
+
+    // Variant colors
+    property <color> bg-normal:
+        variant == "primary"   ? Colors.accent :
+        variant == "secondary" ? Colors.bg-surface :
+        variant == "danger"    ? Colors.error :
+        transparent;
+
+    property <color> bg-hover:
+        variant == "primary"   ? Colors.accent-hover :
+        variant == "secondary" ? Colors.bg-elevated :
+        variant == "danger"    ? Colors.error :
+        Colors.bg-surface;
+
+    property <color> text-color:
+        !enabled ? Colors.text-disabled :
+        variant == "primary"   ? Colors.accent-text :
+        variant == "danger"    ? Colors.accent-text :
+        Colors.text-primary;
+
+    background: !enabled ? Colors.bg-surface :
+                ta.has-hover ? bg-hover : bg-normal;
+
+    border-width: variant == "secondary" ? 1px : 0;
+    border-color: Colors.border;
+
+    ta := TouchArea {
+        enabled: root.enabled;
+        clicked => { root.clicked(); }
+    }
+
+    HorizontalLayout {
+        alignment: center;
+        padding-left: Spacing.md;
+        padding-right: Spacing.md;
+
+        Text {
+            text: root.label;
+            font-size: Type.body-size;
+            font-weight: Type.weight-semibold;
+            color: root.text-color;
+            vertical-alignment: center;
+            horizontal-alignment: center;
+        }
+    }
+}

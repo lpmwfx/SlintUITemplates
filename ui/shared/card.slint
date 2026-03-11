@@ -1,0 +1,30 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+
+export component Card inherits Rectangle {
+    in property <string> title: "";
+    in property <string> subtitle: "";
+
+    background: Colors.bg-elevated;
+    border-radius: Spacing.sm;
+    drop-shadow-blur: Spacing.sm;
+    drop-shadow-color: Colors.dark-mode ? #00000080 : #00000020;
+    drop-shadow-offset-y: 2px;
+
+    VerticalLayout {
+        padding: Spacing.md;
+        spacing: Spacing.xs;
+
+        if root.title != "": Text {
+            text: root.title;
+            font-size: Type.subtitle-size;
+            font-weight: Type.weight-semibold;
+            color: Colors.text-primary;
+        }
+
+        if root.subtitle != "": Text {
+            text: root.subtitle;
+            font-size: Type.body-size;
+            color: Colors.text-secondary;
+        }
+    }
+}

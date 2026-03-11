@@ -1,0 +1,30 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+
+export component Badge inherits Rectangle {
+    in property <string> text: "";
+    in property <string> variant: "info";   // info | success | warning | error
+
+    height: Type.caption-size + Spacing.sm;
+    border-radius: Spacing.xs;
+
+    background:
+        variant == "success" ? Colors.success :
+        variant == "warning" ? Colors.warning :
+        variant == "error"   ? Colors.error :
+        Colors.accent;
+
+    HorizontalLayout {
+        alignment: center;
+        padding-left: Spacing.sm;
+        padding-right: Spacing.sm;
+
+        Text {
+            text: root.text;
+            font-size: Type.caption-size;
+            font-weight: Type.weight-semibold;
+            color: Colors.accent-text;
+            vertical-alignment: center;
+            horizontal-alignment: center;
+        }
+    }
+}

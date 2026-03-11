@@ -7,6 +7,8 @@ description = "Composable Slint UI building blocks — mother-child pattern, tok
 
 [dependencies]
 slint = "1"
+toml = "0.8"
+serde = { version = "1", features = ["derive"] }
 
 [build-dependencies]
 slint-build = "1"

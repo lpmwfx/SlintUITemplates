@@ -1,0 +1,34 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+
+export component Toast inherits Rectangle {
+    in property <string> message: "";
+    in property <string> variant: "info";   // info | success | warning | error
+    in property <bool> visible: false;
+
+    visibility: root.visible ? visible : hidden;
+
+    // Position at bottom center
+    height: Spacing.xl;
+    border-radius: Spacing.xs;
+    clip: true;
+
+    background:
+        variant == "success" ? Colors.success :
+        variant == "warning" ? Colors.warning :
+        variant == "error"   ? Colors.error :
+        Colors.accent;
+
+    HorizontalLayout {
+        alignment: center;
+        padding-left: Spacing.md;
+        padding-right: Spacing.md;
+
+        Text {
+            text: root.message;
+            font-size: Type.body-size;
+            color: Colors.accent-text;
+            vertical-alignment: center;
+            horizontal-alignment: center;
+        }
+    }
+}

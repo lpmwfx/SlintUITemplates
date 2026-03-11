@@ -1,0 +1,48 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+
+export component Toggle inherits Rectangle {
+    in property <bool> checked: false;
+    in property <string> label: "";
+    callback toggled(bool);
+
+    height: Spacing.xl;
+
+    HorizontalLayout {
+        spacing: Spacing.sm;
+        alignment: start;
+
+        // Toggle track
+        Rectangle {
+            width: 40px;
+            height: 20px;
+            border-radius: 10px;
+            background: root.checked ? Colors.accent : Colors.bg-surface;
+            border-width: root.checked ? 0 : 1px;
+            border-color: Colors.border;
+            vertical-alignment: center;
+
+            // Toggle knob
+            Rectangle {
+                x: root.checked ? parent.width - self.width - 2px : 2px;
+                y: (parent.height - self.height) / 2;
+                width: 16px;
+                height: 16px;
+                border-radius: 8px;
+                background: root.checked ? Colors.accent-text : Colors.text-secondary;
+
+                animate x { duration: 150ms; easing: ease-in-out; }
+            }
+
+            TouchArea {
+                clicked => { root.toggled(!root.checked); }
+            }
+        }
+
+        if root.label != "": Text {
+            text: root.label;
+            font-size: Type.body-size;
+            color: Colors.text-primary;
+            vertical-alignment: center;
+        }
+    }
+}
