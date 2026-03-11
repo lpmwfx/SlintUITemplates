@@ -1,0 +1,27 @@
+export global Colors {
+    in property <bool> dark-mode: false;
+
+    // Backgrounds
+    out property <color> bg-primary:    dark-mode ? #1a1a1a : #ffffff;
+    out property <color> bg-surface:    dark-mode ? #2d2d2d : #f3f3f3;
+    out property <color> bg-elevated:   dark-mode ? #383838 : #ffffff;
+
+    // Text
+    out property <color> text-primary:  dark-mode ? #f0f0f0 : #1a1a1a;
+    out property <color> text-secondary: dark-mode ? #a0a0a0 : #6b6b6b;
+    out property <color> text-disabled: dark-mode ? #5a5a5a : #b0b0b0;
+
+    // Accent
+    out property <color> accent:        #0078d4;
+    out property <color> accent-hover:  dark-mode ? #429ce3 : #006cbd;
+    out property <color> accent-text:   #ffffff;
+
+    // Semantic
+    out property <color> error:         #d13438;
+    out property <color> success:       #0f7b0f;
+    out property <color> warning:       #f7630c;
+
+    // Border
+    out property <color> border:        dark-mode ? #444444 : #e0e0e0;
+    out property <color> border-focus:  accent;
+}
