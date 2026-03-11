@@ -1,0 +1,43 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+
+export component NavBar inherits Rectangle {
+    in property <string> breadcrumb: "";
+    in property <bool> can-go-back: false;
+    callback go-back();
+    callback navigate(string);
+
+    background: Colors.bg-surface;
+
+    HorizontalLayout {
+        padding-left: Spacing.md;
+        padding-right: Spacing.md;
+        spacing: Spacing.sm;
+        alignment: start;
+
+        // Back button
+        if root.can-go-back: Rectangle {
+            width: 32px;
+
+            Text {
+                text: "\u{2190}";
+                font-size: Type.subtitle-size;
+                color: Colors.text-primary;
+                horizontal-alignment: center;
+                vertical-alignment: center;
+            }
+
+            TouchArea {
+                clicked => { root.go-back(); }
+            }
+        }
+
+        // Breadcrumb label
+        Text {
+            text: root.breadcrumb;
+            font-size: Type.body-size;
+            font-weight: Type.weight-semibold;
+            color: Colors.text-primary;
+            vertical-alignment: center;
+        }
+    }
+}
