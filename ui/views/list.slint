@@ -1,0 +1,32 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { ListItem } from "../shared/list-item.slint";
+
+// Designer-editable list view.
+// Preview: slint-viewer ui/desktop/app-window.slint --auto-reload
+export component ListView inherits Rectangle {
+    background: Colors.bg-primary;
+
+    VerticalLayout {
+        alignment: start;
+
+        Rectangle {
+            height: Spacing.xl;
+            background: Colors.bg-surface;
+            HorizontalLayout {
+                padding-left: Spacing.md;
+                Text {
+                    text: "List";
+                    font-size: Type.subtitle-size;
+                    font-weight: Type.weight-semibold;
+                    color: Colors.text-primary;
+                    vertical-alignment: center;
+                }
+            }
+        }
+
+        ListItem { title: "First item";  subtitle: "Subtitle text"; selected: true; }
+        ListItem { title: "Second item"; subtitle: "Another subtitle"; }
+        ListItem { title: "Third item"; }
+        ListItem { title: "Fourth item"; subtitle: "Edit ui/views/list.slint"; }
+    }
+}

@@ -1,5 +1,10 @@
-import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Colors } from "../tokens/theme.slint";
+import { HomeView }     from "../views/home.slint";
+import { ListView }     from "../views/list.slint";
+import { SettingsView } from "../views/settings.slint";
 
+// Routes active-view to the designer-editable views in ui/views/.
+// To add a view: create ui/views/my-view.slint, add an import + if-block below.
 export component ContentArea inherits Rectangle {
     in property <string> active-view: "home";
     callback navigate(string);
@@ -8,42 +13,7 @@ export component ContentArea inherits Rectangle {
     preferred-height: 100%;
     background: Colors.bg-primary;
 
-    if root.active-view == "home": Rectangle {
-        background: Colors.bg-primary;
-        VerticalLayout {
-            alignment: center;
-            Text {
-                text: "Home";
-                font-size: Type.heading-size;
-                color: Colors.text-primary;
-                horizontal-alignment: center;
-            }
-        }
-    }
-
-    if root.active-view == "list": Rectangle {
-        background: Colors.bg-primary;
-        VerticalLayout {
-            alignment: center;
-            Text {
-                text: "List";
-                font-size: Type.heading-size;
-                color: Colors.text-primary;
-                horizontal-alignment: center;
-            }
-        }
-    }
-
-    if root.active-view == "settings": Rectangle {
-        background: Colors.bg-primary;
-        VerticalLayout {
-            alignment: center;
-            Text {
-                text: "Settings";
-                font-size: Type.heading-size;
-                color: Colors.text-primary;
-                horizontal-alignment: center;
-            }
-        }
-    }
+    if root.active-view == "home":     HomeView     {}
+    if root.active-view == "list":     ListView     {}
+    if root.active-view == "settings": SettingsView {}
 }

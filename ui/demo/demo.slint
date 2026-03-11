@@ -6,9 +6,9 @@ import { NavItem }      from "../desktop/types.slint";
 import { DragHandle }   from "../modules/DragHandle.slint";
 import { Button }       from "../shared/button.slint";
 import { Toggle }       from "../shared/toggle.slint";
-import { HomeView }     from "home-view.slint";
-import { ListShowcase } from "list-view.slint";
-import { SettingsView } from "settings-view.slint";
+import { HomeView }     from "../views/home.slint";
+import { ListView }     from "../views/list.slint";
+import { SettingsView } from "../views/settings.slint";
 
 export component DemoWindow inherits Window {
     preferred-width: 1000px;
@@ -84,9 +84,9 @@ export component DemoWindow inherits Window {
             VerticalLayout {
                 horizontal-stretch: 1;
                 NavBar { breadcrumb: root.active-view; can-go-back: root.active-view != "home"; go-back => { root.active-view = "home"; } }
-                if root.active-view == "home":     HomeView     { vertical-stretch: 1; dark-mode: Colors.dark-mode; }
-                if root.active-view == "list":     ListShowcase { vertical-stretch: 1; dark-mode: Colors.dark-mode; }
-                if root.active-view == "settings": SettingsView { vertical-stretch: 1; dark-mode: Colors.dark-mode; }
+                if root.active-view == "home":     HomeView     { vertical-stretch: 1; }
+                if root.active-view == "list":     ListView     { vertical-stretch: 1; }
+                if root.active-view == "settings": SettingsView { vertical-stretch: 1; }
                 StatusBar { status-text: "View: " + root.active-view; }
             }
         }
@@ -103,9 +103,9 @@ export component DemoWindow inherits Window {
                 border-width: 1px;
                 VerticalLayout {
                     NavBar { breadcrumb: root.active-view; can-go-back: root.active-view != "home"; go-back => { root.active-view = "home"; } }
-                    if root.active-view == "home":     HomeView     { vertical-stretch: 1; dark-mode: Colors.dark-mode; }
-                    if root.active-view == "list":     ListShowcase { vertical-stretch: 1; dark-mode: Colors.dark-mode; }
-                    if root.active-view == "settings": SettingsView { vertical-stretch: 1; dark-mode: Colors.dark-mode; }
+                    if root.active-view == "home":     HomeView     { vertical-stretch: 1; }
+                    if root.active-view == "list":     ListView     { vertical-stretch: 1; }
+                    if root.active-view == "settings": SettingsView { vertical-stretch: 1; }
                     Rectangle {
                         height: Spacing.xl + Spacing.sm;
                         background: Colors.bg-surface;

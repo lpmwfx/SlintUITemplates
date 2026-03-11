@@ -2,11 +2,10 @@ import { Colors, Spacing, Type } from "../tokens/theme.slint";
 import { Card }   from "../shared/card.slint";
 import { Badge }  from "../shared/badge.slint";
 import { Button } from "../shared/button.slint";
-import { Toggle } from "../shared/toggle.slint";
 
+// Designer-editable home view.
+// Preview: slint-viewer ui/desktop/app-window.slint --auto-reload
 export component HomeView inherits Rectangle {
-    in property <bool> dark-mode: false;
-
     background: Colors.bg-primary;
 
     VerticalLayout {
@@ -15,36 +14,22 @@ export component HomeView inherits Rectangle {
         alignment: start;
 
         Text {
-            text: "Welcome Home";
+            text: "Home";
             font-size: Type.heading-size;
             font-weight: Type.weight-semibold;
             color: Colors.text-primary;
         }
 
         Card {
-            title: "Phase 2 Demo";
-            subtitle: "Desktop + Mobile layouts with live dark-mode toggle";
+            title: "Getting started";
+            subtitle: "Edit ui/views/home.slint to design this view";
         }
 
         HorizontalLayout {
             spacing: Spacing.sm;
-
-            Button {
-                label: "Primary";
-                variant: "primary";
-                clicked => {}
-            }
-
-            Button {
-                label: "Secondary";
-                variant: "secondary";
-                clicked => {}
-            }
-
-            Badge {
-                text: "New";
-                variant: "info";
-            }
+            Button { label: "Primary action"; variant: "primary"; clicked => {} }
+            Button { label: "Secondary"; variant: "secondary"; clicked => {} }
+            Badge { text: "New"; variant: "info"; }
         }
     }
 }
