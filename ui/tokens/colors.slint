@@ -1,5 +1,7 @@
+import { Palette } from "std-widgets.slint";
+
 export global Colors {
-    in property <bool> dark-mode: false;
+    in-out property <bool> dark-mode: Palette.color-scheme == ColorScheme.dark;
 
     // Backgrounds
     out property <color> bg-primary:    dark-mode ? #1a1a1a : #ffffff;

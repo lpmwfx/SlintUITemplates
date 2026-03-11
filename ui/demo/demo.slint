@@ -18,7 +18,6 @@ export component DemoWindow inherits Window {
     in-out property <string>    layout-mode: "desktop";
     in-out property <string>    active-view: "home";
     in-out property <bool>      sidebar-collapsed: false;
-    in-out property <bool>      dark-mode: false;
     in-out property <[NavItem]> nav-items: [
         { id: "home", label: "Home", icon: "🏠" },
         { id: "list", label: "List", icon: "📋" },
@@ -28,8 +27,6 @@ export component DemoWindow inherits Window {
     property <length> mobile-frame-width:      Spacing.xl * 8 + Spacing.md + Spacing.sm;
     property <length> sidebar-expanded-width:  Spacing.xl * 4 + Spacing.md;
     property <length> sidebar-collapsed-width: Spacing.xl + Spacing.sm;
-
-    Colors.dark-mode: root.dark-mode;
 
     VerticalLayout {
         // Control bar
@@ -53,7 +50,7 @@ export component DemoWindow inherits Window {
                     variant: "secondary";
                     clicked => { root.layout-mode = root.layout-mode == "desktop" ? "mobile" : "desktop"; }
                 }
-                Toggle { label: "Dark"; checked: root.dark-mode; toggled(v) => { root.dark-mode = v; } }
+                Toggle { label: "Dark"; checked: Colors.dark-mode; toggled(v) => { Colors.dark-mode = v; } }
             }
         }
 
@@ -73,9 +70,9 @@ export component DemoWindow inherits Window {
             VerticalLayout {
                 horizontal-stretch: 1;
                 NavBar { breadcrumb: root.active-view; can-go-back: root.active-view != "home"; go-back => { root.active-view = "home"; } }
-                if root.active-view == "home":     HomeView     { vertical-stretch: 1; dark-mode: root.dark-mode; }
-                if root.active-view == "list":     ListShowcase { vertical-stretch: 1; dark-mode: root.dark-mode; }
-                if root.active-view == "settings": SettingsView { vertical-stretch: 1; dark-mode: root.dark-mode; }
+                if root.active-view == "home":     HomeView     { vertical-stretch: 1; dark-mode: Colors.dark-mode; }
+                if root.active-view == "list":     ListShowcase { vertical-stretch: 1; dark-mode: Colors.dark-mode; }
+                if root.active-view == "settings": SettingsView { vertical-stretch: 1; dark-mode: Colors.dark-mode; }
                 StatusBar { status-text: "View: " + root.active-view; }
             }
         }
@@ -92,9 +89,9 @@ export component DemoWindow inherits Window {
                 border-width: 1px;
                 VerticalLayout {
                     NavBar { breadcrumb: root.active-view; can-go-back: root.active-view != "home"; go-back => { root.active-view = "home"; } }
-                    if root.active-view == "home":     HomeView     { vertical-stretch: 1; dark-mode: root.dark-mode; }
-                    if root.active-view == "list":     ListShowcase { vertical-stretch: 1; dark-mode: root.dark-mode; }
-                    if root.active-view == "settings": SettingsView { vertical-stretch: 1; dark-mode: root.dark-mode; }
+                    if root.active-view == "home":     HomeView     { vertical-stretch: 1; dark-mode: Colors.dark-mode; }
+                    if root.active-view == "list":     ListShowcase { vertical-stretch: 1; dark-mode: Colors.dark-mode; }
+                    if root.active-view == "settings": SettingsView { vertical-stretch: 1; dark-mode: Colors.dark-mode; }
                     Rectangle {
                         height: Spacing.xl + Spacing.sm;
                         background: Colors.bg-surface;
