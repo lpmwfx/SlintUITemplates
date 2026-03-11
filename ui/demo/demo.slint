@@ -1,0 +1,119 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { NavBar }       from "../desktop/nav-bar.slint";
+import { SideBar }      from "../desktop/side-bar.slint";
+import { StatusBar }    from "../desktop/status-bar.slint";
+import { NavItem }      from "../desktop/types.slint";
+import { Button }       from "../shared/button.slint";
+import { Toggle }       from "../shared/toggle.slint";
+import { HomeView }     from "home-view.slint";
+import { ListShowcase } from "list-view.slint";
+import { SettingsView } from "settings-view.slint";
+
+export component DemoWindow inherits Window {
+    preferred-width: 1000px;
+    preferred-height: 700px;
+    title: "SlintUITemplates — Phase 2 Demo";
+    background: Colors.bg-primary;
+
+    in-out property <string>    layout-mode: "desktop";
+    in-out property <string>    active-view: "home";
+    in-out property <bool>      sidebar-collapsed: false;
+    in-out property <bool>      dark-mode: false;
+    in-out property <[NavItem]> nav-items: [
+        { id: "home", label: "Home", icon: "🏠" },
+        { id: "list", label: "List", icon: "📋" },
+        { id: "settings", label: "Settings", icon: "⚙" },
+    ];
+
+    property <length> mobile-frame-width:      Spacing.xl * 8 + Spacing.md + Spacing.sm;
+    property <length> sidebar-expanded-width:  Spacing.xl * 4 + Spacing.md;
+    property <length> sidebar-collapsed-width: Spacing.xl + Spacing.sm;
+
+    Colors.dark-mode: root.dark-mode;
+
+    VerticalLayout {
+        // Control bar
+        Rectangle {
+            height: Spacing.xl;
+            background: Colors.bg-surface;
+            HorizontalLayout {
+                padding-left: Spacing.md;
+                padding-right: Spacing.md;
+                spacing: Spacing.sm;
+                Text {
+                    text: "SlintUI — Phase 2 Demo";
+                    font-size: Type.subtitle-size;
+                    font-weight: Type.weight-semibold;
+                    color: Colors.text-primary;
+                    vertical-alignment: center;
+                }
+                Rectangle { horizontal-stretch: 1; }
+                Button {
+                    label: root.layout-mode == "desktop" ? "Switch to Mobile" : "Switch to Desktop";
+                    variant: "secondary";
+                    clicked => { root.layout-mode = root.layout-mode == "desktop" ? "mobile" : "desktop"; }
+                }
+                Toggle { label: "Dark"; checked: root.dark-mode; toggled(v) => { root.dark-mode = v; } }
+            }
+        }
+
+        // Desktop layout
+        if root.layout-mode == "desktop": HorizontalLayout {
+            vertical-stretch: 1;
+            SideBar {
+                horizontal-stretch: 0;
+                min-width: root.sidebar-collapsed ? root.sidebar-collapsed-width : root.sidebar-expanded-width;
+                items: root.nav-items;
+                active-item: root.active-view;
+                collapsed: root.sidebar-collapsed;
+                navigate(id) => { root.active-view = id; }
+                toggle-collapsed() => { root.sidebar-collapsed = !root.sidebar-collapsed; }
+                animate min-width { duration: 200ms; easing: ease-in-out; }
+            }
+            VerticalLayout {
+                horizontal-stretch: 1;
+                NavBar { breadcrumb: root.active-view; can-go-back: root.active-view != "home"; go-back => { root.active-view = "home"; } }
+                if root.active-view == "home":     HomeView     { vertical-stretch: 1; dark-mode: root.dark-mode; }
+                if root.active-view == "list":     ListShowcase { vertical-stretch: 1; dark-mode: root.dark-mode; }
+                if root.active-view == "settings": SettingsView { vertical-stretch: 1; dark-mode: root.dark-mode; }
+                StatusBar { status-text: "View: " + root.active-view; }
+            }
+        }
+
+        // Mobile layout — centered frame
+        if root.layout-mode == "mobile": Rectangle {
+            vertical-stretch: 1;
+            background: Colors.bg-primary;
+            Rectangle {
+                width: root.mobile-frame-width;
+                height: parent.height;
+                x: (parent.width - self.width) / 2;
+                border-color: Colors.border;
+                border-width: 1px;
+                VerticalLayout {
+                    NavBar { breadcrumb: root.active-view; can-go-back: root.active-view != "home"; go-back => { root.active-view = "home"; } }
+                    if root.active-view == "home":     HomeView     { vertical-stretch: 1; dark-mode: root.dark-mode; }
+                    if root.active-view == "list":     ListShowcase { vertical-stretch: 1; dark-mode: root.dark-mode; }
+                    if root.active-view == "settings": SettingsView { vertical-stretch: 1; dark-mode: root.dark-mode; }
+                    Rectangle {
+                        height: Spacing.xl + Spacing.sm;
+                        background: Colors.bg-surface;
+                        HorizontalLayout {
+                            for item in root.nav-items: Rectangle {
+                                horizontal-stretch: 1;
+                                tab-ta := TouchArea { clicked => { root.active-view = item.id; } }
+                                VerticalLayout {
+                                    alignment: center;
+                                    spacing: Spacing.xs;
+                                    Text { text: item.icon; font-size: Type.subtitle-size; color: item.id == root.active-view ? Colors.accent : Colors.text-secondary; horizontal-alignment: center; }
+                                    Text { text: item.label; font-size: Type.caption-size; color: item.id == root.active-view ? Colors.accent : Colors.text-secondary; horizontal-alignment: center; }
+                                }
+                            }
+                        }
+                    }
+                    StatusBar { status-text: "View: " + root.active-view; }
+                }
+            }
+        }
+    }
+}

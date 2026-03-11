@@ -2,11 +2,34 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Slint Preview",
+      "name": "Demo — Desktop + Mobile",
       "type": "node-terminal",
       "request": "launch",
-      "command": "slint-viewer ui/main.slint --auto-reload",
+      "command": "slint-viewer ui/demo/demo.slint --auto-reload",
       "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Preview — Desktop AppWindow",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "slint-viewer ui/desktop/app-window.slint --auto-reload",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Preview — Mobile AppWindow",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "slint-viewer ui/mobile/app-window.slint --auto-reload",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Cargo Run",
+      "type": "lldb",
+      "request": "launch",
+      "program": "${workspaceFolder}/target/debug/rust-ui",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "cargo build"
     }
   ]
 }

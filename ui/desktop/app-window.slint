@@ -1,7 +1,12 @@
 import { Colors, Spacing, Type } from "../tokens/theme.slint";
-import { NavBar } from "nav-bar.slint";
+import { NavBar }      from "nav-bar.slint";
+import { NavItem }     from "types.slint";
+import { SideBar }     from "side-bar.slint";
+import { ContentArea } from "content-area.slint";
+import { StatusBar }   from "status-bar.slint";
 
 export { Colors }
+export { NavItem }
 
 export component AppWindow inherits Window {
     title: "SlintUI Templates";
@@ -9,11 +14,17 @@ export component AppWindow inherits Window {
     preferred-height: 600px;
     background: Colors.bg-primary;
 
-    // --- State (mother owns all) ---
-    in-out property <string> active-view: "home";
-    in-out property <bool> sidebar-open: true;
+    // State (mother owns all)
+    in-out property <string>    active-view: "home";
+    in-out property <bool>      sidebar-open: true;
+    in-out property <bool>      sidebar-collapsed: false;
+    in-out property <[NavItem]> nav-items: [
+        { id: "home",     label: "Home",     icon: "🏠" },
+        { id: "list",     label: "List",     icon: "📋" },
+        { id: "settings", label: "Settings", icon: "⚙" },
+    ];
 
-    // --- Grid ratios (pushed from Rust grid engine) ---
+    // Grid ratios (pushed from Rust grid engine)
     in-out property <float> row-top-ratio: 1;
     in-out property <float> row-main-ratio: 10;
     in-out property <float> row-bottom-ratio: 1;
@@ -21,13 +32,14 @@ export component AppWindow inherits Window {
     in-out property <float> col-center-ratio: 4;
     in-out property <float> col-right-ratio: 3;
 
-    // --- Callbacks ---
+    // Private sizing (token expressions — no literals)
+    property <length> sidebar-expanded-width:  Spacing.xl * 4 + Spacing.md;
+    property <length> sidebar-collapsed-width: Spacing.xl + Spacing.sm;
+
     callback navigate(string);
     navigate(view) => { self.active-view = view; }
 
-    // --- Grid layout ---
     VerticalLayout {
-        // ROW: top (fixed: nav-bar)
         NavBar {
             vertical-stretch: root.row-top-ratio;
             breadcrumb: root.active-view;
@@ -35,51 +47,34 @@ export component AppWindow inherits Window {
             go-back => { root.active-view = "home"; }
         }
 
-        // ROW: main (3 column zones)
         HorizontalLayout {
             vertical-stretch: root.row-main-ratio;
 
-            // ZONE: left
-            Rectangle {
-                horizontal-stretch: root.col-left-ratio;
-                background: Colors.bg-surface;
-                border-width: 1px;
-                border-color: Colors.border;
-
-                VerticalLayout {
-                    alignment: center;
-                    Text {
-                        text: "left";
-                        font-size: Type.caption-size;
-                        color: Colors.text-secondary;
-                        horizontal-alignment: center;
-                    }
-                }
+            SideBar {
+                horizontal-stretch: 0;
+                min-width: root.sidebar-collapsed
+                    ? root.sidebar-collapsed-width
+                    : root.sidebar-expanded-width;
+                items: root.nav-items;
+                active-item: root.active-view;
+                collapsed: root.sidebar-collapsed;
+                navigate(id) => { root.active-view = id; }
+                toggle-collapsed() => { root.sidebar-collapsed = !root.sidebar-collapsed; }
+                animate min-width { duration: 200ms; easing: ease-in-out; }
             }
 
-            // ZONE: center
-            Rectangle {
+            ContentArea {
                 horizontal-stretch: root.col-center-ratio;
-                background: Colors.bg-primary;
-
-                VerticalLayout {
-                    alignment: center;
-                    Text {
-                        text: "center";
-                        font-size: Type.caption-size;
-                        color: Colors.text-secondary;
-                        horizontal-alignment: center;
-                    }
-                }
+                active-view: root.active-view;
+                navigate(view) => { root.active-view = view; }
             }
 
-            // ZONE: right
+            // Right zone — placeholder (phase 4 scope)
             Rectangle {
                 horizontal-stretch: root.col-right-ratio;
                 background: Colors.bg-surface;
                 border-width: 1px;
                 border-color: Colors.border;
-
                 VerticalLayout {
                     alignment: center;
                     Text {
@@ -92,18 +87,9 @@ export component AppWindow inherits Window {
             }
         }
 
-        // ROW: bottom (fixed: status-bar placeholder)
-        Rectangle {
+        StatusBar {
             vertical-stretch: root.row-bottom-ratio;
-            background: Colors.bg-elevated;
-
-            Text {
-                text: "status-bar";
-                font-size: Type.caption-size;
-                color: Colors.text-secondary;
-                horizontal-alignment: center;
-                vertical-alignment: center;
-            }
+            status-text: "View: " + root.active-view;
         }
     }
 }

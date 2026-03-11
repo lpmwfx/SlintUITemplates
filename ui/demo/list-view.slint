@@ -1,0 +1,42 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { ListItem } from "../shared/list-item.slint";
+
+export component ListShowcase inherits Rectangle {
+    in property <bool> dark-mode: false;
+
+    background: Colors.bg-primary;
+
+    VerticalLayout {
+        padding-top: Spacing.md;
+        alignment: start;
+
+        Text {
+            text: "List Items";
+            font-size: Type.subtitle-size;
+            font-weight: Type.weight-semibold;
+            color: Colors.text-primary;
+            padding-left: Spacing.md;
+            padding-bottom: Spacing.sm;
+        }
+
+        ListItem {
+            title: "First item";
+            subtitle: "Subtitle text goes here";
+            selected: true;
+        }
+
+        ListItem {
+            title: "Second item";
+            subtitle: "Another subtitle";
+        }
+
+        ListItem {
+            title: "Third item";
+        }
+
+        ListItem {
+            title: "Fourth item";
+            subtitle: "With longer subtitle description";
+        }
+    }
+}

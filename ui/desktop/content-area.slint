@@ -1,0 +1,49 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+
+export component ContentArea inherits Rectangle {
+    in property <string> active-view: "home";
+    callback navigate(string);
+
+    preferred-width: 100%;
+    preferred-height: 100%;
+    background: Colors.bg-primary;
+
+    if root.active-view == "home": Rectangle {
+        background: Colors.bg-primary;
+        VerticalLayout {
+            alignment: center;
+            Text {
+                text: "Home";
+                font-size: Type.heading-size;
+                color: Colors.text-primary;
+                horizontal-alignment: center;
+            }
+        }
+    }
+
+    if root.active-view == "list": Rectangle {
+        background: Colors.bg-primary;
+        VerticalLayout {
+            alignment: center;
+            Text {
+                text: "List";
+                font-size: Type.heading-size;
+                color: Colors.text-primary;
+                horizontal-alignment: center;
+            }
+        }
+    }
+
+    if root.active-view == "settings": Rectangle {
+        background: Colors.bg-primary;
+        VerticalLayout {
+            alignment: center;
+            Text {
+                text: "Settings";
+                font-size: Type.heading-size;
+                color: Colors.text-primary;
+                horizontal-alignment: center;
+            }
+        }
+    }
+}

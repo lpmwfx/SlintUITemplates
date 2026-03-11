@@ -1,0 +1,81 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { NavBar }      from "../desktop/nav-bar.slint";
+import { ContentArea } from "../desktop/content-area.slint";
+import { StatusBar }   from "../desktop/status-bar.slint";
+import { NavItem }     from "../desktop/types.slint";
+
+export { NavItem }
+
+export component AppWindow inherits Window {
+    preferred-width: 390px;
+    preferred-height: 844px;
+    title: "SlintUITemplates — Mobile";
+    background: Colors.bg-primary;
+
+    in-out property <string>    active-view: "home";
+    in-out property <[NavItem]> nav-items: [
+        { id: "home",     label: "Home",     icon: "🏠" },
+        { id: "list",     label: "List",     icon: "📋" },
+        { id: "settings", label: "Settings", icon: "⚙" },
+    ];
+
+    callback navigate(string);
+    navigate(view) => { self.active-view = view; }
+
+    VerticalLayout {
+        // Top nav bar
+        NavBar {
+            breadcrumb: root.active-view;
+            can-go-back: root.active-view != "home";
+            go-back => { root.active-view = "home"; }
+        }
+
+        // Content area fills remaining space
+        ContentArea {
+            vertical-stretch: 1;
+            active-view: root.active-view;
+            navigate(view) => { root.active-view = view; }
+        }
+
+        // Inline tab bar
+        Rectangle {
+            height: Spacing.xl + Spacing.sm;
+            background: Colors.bg-surface;
+
+            HorizontalLayout {
+                for item in root.nav-items: Rectangle {
+                    horizontal-stretch: 1;
+                    background: transparent;
+
+                    tab-ta := TouchArea {
+                        clicked => { root.active-view = item.id; }
+                    }
+
+                    VerticalLayout {
+                        alignment: center;
+                        spacing: Spacing.xs;
+
+                        Text {
+                            text: item.icon;
+                            font-size: Type.subtitle-size;
+                            color: item.id == root.active-view ? Colors.accent : Colors.text-secondary;
+                            horizontal-alignment: center;
+                        }
+
+                        Text {
+                            text: item.label;
+                            font-size: Type.caption-size;
+                            color: item.id == root.active-view ? Colors.accent : Colors.text-secondary;
+                            horizontal-alignment: center;
+                        }
+                    }
+                }
+            }
+        }
+
+        // Status bar
+        StatusBar {
+            status-text: "View: " + root.active-view;
+        }
+    }
+}

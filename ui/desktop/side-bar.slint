@@ -1,0 +1,80 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { NavItem } from "types.slint";
+
+export component SideBar inherits Rectangle {
+    in property <[NavItem]> items: [];
+    in property <string>    active-item: "";
+    in property <bool>      collapsed: false;
+    callback navigate(string);
+    callback toggle-collapsed();
+
+    background: Colors.bg-surface;
+
+    HorizontalLayout {
+        // Nav item list + collapse button
+        VerticalLayout {
+            horizontal-stretch: 1;
+
+            for item in root.items: Rectangle {
+                height: Spacing.xl;
+                clip: true;
+                background: item.id == root.active-item ? Colors.bg-elevated :
+                            item-ta.has-hover ? Colors.bg-elevated : transparent;
+
+                item-ta := TouchArea {
+                    clicked => { root.navigate(item.id); }
+                }
+
+                HorizontalLayout {
+                    padding-left: Spacing.sm;
+                    padding-right: Spacing.sm;
+                    spacing: Spacing.sm;
+                    alignment: start;
+
+                    Text {
+                        text: item.icon;
+                        font-size: Type.subtitle-size;
+                        color: item.id == root.active-item ? Colors.accent : Colors.text-primary;
+                        vertical-alignment: center;
+                        horizontal-alignment: center;
+                        width: Spacing.lg;
+                    }
+
+                    if !root.collapsed: Text {
+                        text: item.label;
+                        font-size: Type.body-size;
+                        color: item.id == root.active-item ? Colors.accent : Colors.text-primary;
+                        vertical-alignment: center;
+                    }
+                }
+            }
+
+            // Spacer pushes collapse button to bottom
+            Rectangle { vertical-stretch: 1; }
+
+            // Collapse toggle
+            Rectangle {
+                height: Spacing.xl;
+                background: collapse-ta.has-hover ? Colors.bg-elevated : transparent;
+
+                collapse-ta := TouchArea {
+                    clicked => { root.toggle-collapsed(); }
+                }
+
+                Text {
+                    text: root.collapsed ? "\u{00BB}" : "\u{00AB}";
+                    font-size: Type.subtitle-size;
+                    color: Colors.text-secondary;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+            }
+        }
+
+        // Right border (1px = Spacing.xs / 4)
+        Rectangle {
+            width: Spacing.xs / 4;
+            background: Colors.border;
+        }
+    }
+}

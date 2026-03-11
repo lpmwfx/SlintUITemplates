@@ -1,0 +1,50 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Card }   from "../shared/card.slint";
+import { Badge }  from "../shared/badge.slint";
+import { Button } from "../shared/button.slint";
+import { Toggle } from "../shared/toggle.slint";
+
+export component HomeView inherits Rectangle {
+    in property <bool> dark-mode: false;
+
+    background: Colors.bg-primary;
+
+    VerticalLayout {
+        padding: Spacing.lg;
+        spacing: Spacing.md;
+        alignment: start;
+
+        Text {
+            text: "Welcome Home";
+            font-size: Type.heading-size;
+            font-weight: Type.weight-semibold;
+            color: Colors.text-primary;
+        }
+
+        Card {
+            title: "Phase 2 Demo";
+            subtitle: "Desktop + Mobile layouts with live dark-mode toggle";
+        }
+
+        HorizontalLayout {
+            spacing: Spacing.sm;
+
+            Button {
+                label: "Primary";
+                variant: "primary";
+                clicked => {}
+            }
+
+            Button {
+                label: "Secondary";
+                variant: "secondary";
+                clicked => {}
+            }
+
+            Badge {
+                text: "New";
+                variant: "info";
+            }
+        }
+    }
+}

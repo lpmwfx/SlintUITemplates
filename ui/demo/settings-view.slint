@@ -1,0 +1,56 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Toggle } from "../shared/toggle.slint";
+import { Button } from "../shared/button.slint";
+
+export component SettingsView inherits Rectangle {
+    in property <bool> dark-mode: false;
+
+    background: Colors.bg-primary;
+
+    VerticalLayout {
+        padding: Spacing.lg;
+        spacing: Spacing.md;
+        alignment: start;
+
+        Text {
+            text: "Settings";
+            font-size: Type.heading-size;
+            font-weight: Type.weight-semibold;
+            color: Colors.text-primary;
+        }
+
+        Toggle {
+            label: "Enable notifications";
+            checked: true;
+            toggled(val) => {}
+        }
+
+        Toggle {
+            label: "Auto-save";
+            checked: false;
+            toggled(val) => {}
+        }
+
+        Toggle {
+            label: "Show sidebar on start";
+            checked: true;
+            toggled(val) => {}
+        }
+
+        HorizontalLayout {
+            spacing: Spacing.sm;
+
+            Button {
+                label: "Save Changes";
+                variant: "primary";
+                clicked => {}
+            }
+
+            Button {
+                label: "Reset";
+                variant: "secondary";
+                clicked => {}
+            }
+        }
+    }
+}
