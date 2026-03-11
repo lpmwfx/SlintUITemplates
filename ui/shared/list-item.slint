@@ -1,0 +1,39 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+
+export component ListItem inherits Rectangle {
+    in property <string> title: "";
+    in property <string> subtitle: "";
+    in property <bool> selected: false;
+    callback clicked();
+
+    height: subtitle != "" ? Spacing.xl + Type.caption-size + Spacing.xs : Spacing.xl;
+    background: selected ? Colors.accent :
+                ta.has-hover ? Colors.bg-surface : transparent;
+
+    ta := TouchArea {
+        clicked => { root.clicked(); }
+    }
+
+    HorizontalLayout {
+        padding-left: Spacing.md;
+        padding-right: Spacing.md;
+
+        VerticalLayout {
+            alignment: center;
+            spacing: 2px;
+
+            Text {
+                text: root.title;
+                font-size: Type.body-size;
+                font-weight: root.selected ? Type.weight-semibold : Type.weight-regular;
+                color: root.selected ? Colors.accent-text : Colors.text-primary;
+            }
+
+            if root.subtitle != "": Text {
+                text: root.subtitle;
+                font-size: Type.caption-size;
+                color: root.selected ? Colors.accent-text : Colors.text-secondary;
+            }
+        }
+    }
+}

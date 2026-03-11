@@ -11,10 +11,12 @@
       "Bash(cd \"D:/REPO/SLINT/UITemplates\" && cargo build 2>&1)",
       "Bash(cd \"D:/REPO/SLINT/UITemplates\" && cargo build 2>&1 | tail -30)",
       "Bash(cd \"D:/REPO/SLINT/UITemplates\" && cargo build 2>&1 | tail -20)",
-      "Bash(for f:*)",
-      "Bash(do echo:*)",
-      "Read(//d/REPO/SLINT/RustUI/**)",
-      "Bash(done)"
+      "Bash(cargo build:*)",
+      "Bash(gh pr:*)",
+      "Bash(timeout 5 cargo run)",
+      "Bash(reg query:*)",
+      "Bash(cmd.exe /C 'reg query \"\"HKCU\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Themes\\\\Personalize\"\" /v AppsUseLightTheme')",
+      "Bash(timeout 5 \"D:/REPO/SLINT/RustUI/.claude/worktrees/interesting-franklin/target/debug/slint-ui-templates.exe\")"
     ]
   }
 }

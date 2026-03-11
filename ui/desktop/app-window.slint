@@ -1,0 +1,109 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { NavBar } from "nav-bar.slint";
+
+export { Colors }
+
+export component AppWindow inherits Window {
+    title: "SlintUI Templates";
+    preferred-width: 900px;
+    preferred-height: 600px;
+    background: Colors.bg-primary;
+
+    // --- State (mother owns all) ---
+    in-out property <string> active-view: "home";
+    in-out property <bool> sidebar-open: true;
+
+    // --- Grid ratios (pushed from Rust grid engine) ---
+    in-out property <float> row-top-ratio: 1;
+    in-out property <float> row-main-ratio: 10;
+    in-out property <float> row-bottom-ratio: 1;
+    in-out property <float> col-left-ratio: 3;
+    in-out property <float> col-center-ratio: 4;
+    in-out property <float> col-right-ratio: 3;
+
+    // --- Callbacks ---
+    callback navigate(string);
+    navigate(view) => { self.active-view = view; }
+
+    // --- Grid layout ---
+    VerticalLayout {
+        // ROW: top (fixed: nav-bar)
+        NavBar {
+            vertical-stretch: root.row-top-ratio;
+            breadcrumb: root.active-view;
+            can-go-back: root.active-view != "home";
+            go-back => { root.active-view = "home"; }
+        }
+
+        // ROW: main (3 column zones)
+        HorizontalLayout {
+            vertical-stretch: root.row-main-ratio;
+
+            // ZONE: left
+            Rectangle {
+                horizontal-stretch: root.col-left-ratio;
+                background: Colors.bg-surface;
+                border-width: 1px;
+                border-color: Colors.border;
+
+                VerticalLayout {
+                    alignment: center;
+                    Text {
+                        text: "left";
+                        font-size: Type.caption-size;
+                        color: Colors.text-secondary;
+                        horizontal-alignment: center;
+                    }
+                }
+            }
+
+            // ZONE: center
+            Rectangle {
+                horizontal-stretch: root.col-center-ratio;
+                background: Colors.bg-primary;
+
+                VerticalLayout {
+                    alignment: center;
+                    Text {
+                        text: "center";
+                        font-size: Type.caption-size;
+                        color: Colors.text-secondary;
+                        horizontal-alignment: center;
+                    }
+                }
+            }
+
+            // ZONE: right
+            Rectangle {
+                horizontal-stretch: root.col-right-ratio;
+                background: Colors.bg-surface;
+                border-width: 1px;
+                border-color: Colors.border;
+
+                VerticalLayout {
+                    alignment: center;
+                    Text {
+                        text: "right";
+                        font-size: Type.caption-size;
+                        color: Colors.text-secondary;
+                        horizontal-alignment: center;
+                    }
+                }
+            }
+        }
+
+        // ROW: bottom (fixed: status-bar placeholder)
+        Rectangle {
+            vertical-stretch: root.row-bottom-ratio;
+            background: Colors.bg-elevated;
+
+            Text {
+                text: "status-bar";
+                font-size: Type.caption-size;
+                color: Colors.text-secondary;
+                horizontal-alignment: center;
+                vertical-alignment: center;
+            }
+        }
+    }
+}

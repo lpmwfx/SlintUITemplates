@@ -1,41 +1,52 @@
+mod grid;
+
 slint::include_modules!();
 
-mod layout;
-
-use layout::build;
-
-fn main() {
-    let app = AppWindow::new().unwrap();
-
-    // Initial layout — "1:2/1:1:1" = left | center-top/center-bottom(1:1) | right
-    let dsl = "1:2/1:1:1";
-    let win_w = 1280.0_f32;
-    let win_h = 800.0_f32;
-
-    push_layout(&app, dsl, win_w, win_h);
-
-    // Handle drag events — Rust recalculates layout on resize
-    let app_weak = app.as_weak();
-    app.on_panel_dragged(move |id, dx, dy| {
-        let app = app_weak.unwrap();
-        // TODO phase 4: update ratio for `id` by delta (dx/win_w or dy/win_h)
-        // For now: log the event
-        let _ = (id, dx, dy);
-        let _ = app;
-    });
-
-    app.run().unwrap();
+fn is_dark_mode() -> bool {
+    std::process::Command::new("reg")
+        .args([
+            "query",
+            r"HKCU\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize",
+            "/v",
+            "AppsUseLightTheme",
+        ])
+        .output()
+        .ok()
+        .and_then(|o| String::from_utf8(o.stdout).ok())
+        .map(|s| s.contains("0x0"))
+        .unwrap_or(false)
 }
 
-fn push_layout(app: &AppWindow, dsl: &str, win_w: f32, win_h: f32) {
-    let items = build(dsl, win_w, win_h);
+fn main() -> Result<(), slint::PlatformError> {
+    let ui = AppWindow::new()?;
 
-    let model: Vec<PanelItem> = items.iter().map(|i| PanelItem {
-        id:    i.id,
-        kind:  i.kind.as_str().into(),
-        label: i.label.clone().into(),
-        x: i.x, y: i.y, w: i.w, h: i.h,
-    }).collect();
+    // Theme
+    ui.global::<Colors>().set_dark_mode(is_dark_mode());
 
-    app.set_panels(std::rc::Rc::new(slint::VecModel::from(model)).into());
+    // Grid engine: load config → build zones → push ratios to Mother
+    let zones = grid::load_target(std::path::Path::new("config/desktop.toml"))
+        .expect("Failed to load desktop config");
+
+    for row in &zones.rows {
+        match row.name.as_str() {
+            "top" => ui.set_row_top_ratio(row.ratio as f32),
+            "main" => {
+                ui.set_row_main_ratio(row.ratio as f32);
+                if let grid::zone::RowKind::Columns(cols) = &row.kind {
+                    for col in cols {
+                        match col.name.as_str() {
+                            "left" => ui.set_col_left_ratio(col.ratio as f32),
+                            "center" => ui.set_col_center_ratio(col.ratio as f32),
+                            "right" => ui.set_col_right_ratio(col.ratio as f32),
+                            _ => {}
+                        }
+                    }
+                }
+            }
+            "bottom" => ui.set_row_bottom_ratio(row.ratio as f32),
+            _ => {}
+        }
+    }
+
+    ui.run()
 }

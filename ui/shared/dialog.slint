@@ -1,0 +1,86 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+
+export component Dialog inherits Rectangle {
+    in property <string> title: "Dialog";
+    in property <bool> visible: false;
+    callback confirmed();
+    callback cancelled();
+
+    // Full overlay
+    visibility: root.visible ? visible : hidden;
+    background: #00000060;
+
+    // Center card
+    Rectangle {
+        width: 400px;
+        height: 200px;
+        x: (parent.width - self.width) / 2;
+        y: (parent.height - self.height) / 2;
+        background: Colors.bg-elevated;
+        border-radius: Spacing.sm;
+        drop-shadow-blur: Spacing.lg;
+        drop-shadow-color: #00000040;
+
+        VerticalLayout {
+            padding: Spacing.lg;
+            spacing: Spacing.md;
+
+            Text {
+                text: root.title;
+                font-size: Type.heading-size;
+                font-weight: Type.weight-semibold;
+                color: Colors.text-primary;
+            }
+
+            // Spacer
+            Rectangle { vertical-stretch: 1; }
+
+            // Action buttons
+            HorizontalLayout {
+                alignment: end;
+                spacing: Spacing.sm;
+
+                // Cancel
+                Rectangle {
+                    width: 80px;
+                    height: 36px;
+                    border-radius: Spacing.xs;
+                    background: cancel-ta.has-hover ? Colors.bg-surface : transparent;
+
+                    cancel-ta := TouchArea {
+                        clicked => { root.cancelled(); }
+                    }
+
+                    Text {
+                        text: "Cancel";
+                        font-size: Type.body-size;
+                        color: Colors.text-primary;
+                        horizontal-alignment: center;
+                        vertical-alignment: center;
+                    }
+                }
+
+                // Confirm
+                Rectangle {
+                    width: 80px;
+                    height: 36px;
+                    border-radius: Spacing.xs;
+                    background: confirm-ta.has-hover ? Colors.accent-hover : Colors.accent;
+
+                    confirm-ta := TouchArea {
+                        clicked => { root.confirmed(); }
+                    }
+
+                    Text {
+                        text: "OK";
+                        font-size: Type.body-size;
+                        font-weight: Type.weight-semibold;
+                        color: Colors.accent-text;
+                        horizontal-alignment: center;
+                        vertical-alignment: center;
+                    }
+                }
+            }
+        }
+    }
+}
