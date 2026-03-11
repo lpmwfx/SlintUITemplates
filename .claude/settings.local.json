@@ -2,7 +2,15 @@
   "permissions": {
     "allow": [
       "mcp__rules__get_rule",
-      "mcp__rulestools__init_project"
+      "mcp__rulestools__init_project",
+      "Bash(cd \"D:/REPO/SLINT/UITemplates\" && gh repo create SlintUITemplates --public --source . --remote origin --push --description \"Slint UI Templates for Windows\")",
+      "mcp__rules__search_rules",
+      "WebSearch",
+      "Bash(cargo install:*)",
+      "Bash(cd \"D:/REPO/SLINT/UITemplates\" && mkdir -p ui/tokens ui/mother ui/modules src/layout)",
+      "Bash(cd \"D:/REPO/SLINT/UITemplates\" && cargo build 2>&1)",
+      "Bash(cd \"D:/REPO/SLINT/UITemplates\" && cargo build 2>&1 | tail -30)",
+      "Bash(cd \"D:/REPO/SLINT/UITemplates\" && cargo build 2>&1 | tail -20)"
     ]
   }
 }

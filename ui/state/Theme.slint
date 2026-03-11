@@ -1,0 +1,33 @@
+// Theme — the ONLY source of color truth in the entire UI.
+//
+// AXIOM: AppWindow is the only writer. All components read Theme.* — never raw values.
+//
+// dark property is set by AppWindow based on theme-mode:
+//   "system" → follows OS  (via Palette.color-scheme)
+//   "dark"   → always dark
+//   "light"  → always light
+//
+// Rust adapter can also push Theme.dark via generated bindings.
+
+export global Theme {
+    in-out property <bool> dark: true;
+
+    // Backgrounds
+    out property <color> bg-primary:  dark ? #1a1a1a : #f0f0f0;
+    out property <color> bg-surface:  dark ? #2d2d2d : #ffffff;
+    out property <color> bg-panel:    dark ? #242424 : #e8e8e8;
+
+    // Borders + handles
+    out property <color> border:        dark ? #3a3a3a : #cccccc;
+    out property <color> handle:        dark ? #3a3a3a : #cccccc;
+    out property <color> handle-hover:  dark ? #6a6a6a : #999999;
+
+    // Text
+    out property <color> text-primary:  dark ? #f0f0f0 : #1a1a1a;
+    out property <color> text-muted:    dark ? #888888 : #666666;
+
+    // Accent — same in both modes
+    out property <color> accent:        #4a90d9;
+    out property <color> accent-hover:  #5aa0e9;
+    out property <color> danger:        #d94a4a;
+}

@@ -1,0 +1,12 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Slint Preview",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "slint-viewer ui/main.slint --auto-reload",
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}

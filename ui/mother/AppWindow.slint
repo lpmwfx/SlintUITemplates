@@ -1,0 +1,50 @@
+import { Palette }                           from "std-widgets.slint";
+import { Theme }                             from "../state/Theme.slint";
+import { Spacing }                           from "../tokens/theme.slint";
+import { PanelContainer, PanelItem }         from "../modules/PanelContainer.slint";
+
+// AppWindow — the ONLY state owner in the entire UI.
+//
+// AXIOM 1: Only this component has in-out properties.
+// AXIOM 2: Theme.dark is set here and nowhere else.
+//          Children read Theme.* — never write to it.
+//
+// theme-mode: "system" | "dark" | "light"
+//   system → follows OS via Palette.color-scheme (live, reactive)
+//   dark   → always dark
+//   light  → always light
+
+export component AppWindow inherits Window {
+    preferred-width:  1280px;
+    preferred-height: 800px;
+    title: "SlintUITemplates";
+
+    // ── Theme state ────────────────────────────────────────────────────────
+    in-out property <string> theme-mode: "system";
+
+    // Reactive: recomputes whenever theme-mode or OS scheme changes
+    property <bool> effective-dark:
+        theme-mode == "dark"  ? true  :
+        theme-mode == "light" ? false :
+        Palette.color-scheme == ColorScheme.dark;
+
+    // Drive Theme global — AppWindow is the only writer
+    Theme.dark: effective-dark;
+
+    background: Theme.bg-primary;
+
+    // ── Panel layout state ──────────────────────────────────────────────────
+    // Rust pushes [PanelItem] here after parsing DSL + solving geometry.
+    in-out property <[PanelItem]> panels;
+
+    // Drag event — Rust adapter recalculates ratios, re-pushes model
+    callback panel-dragged(int, float, float);   // id, dx, dy in logical px
+
+    // ── Layout ──────────────────────────────────────────────────────────────
+    PanelContainer {
+        width:  100%;
+        height: 100%;
+        panels: root.panels;
+        panel-dragged(id, dx, dy) => { root.panel-dragged(id, dx, dy); }
+    }
+}

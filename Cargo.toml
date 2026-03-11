@@ -1,0 +1,10 @@
+[package]
+name = "slint-ui-templates"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+slint = "1.15"
+
+[build-dependencies]
+slint-build = "1.15"

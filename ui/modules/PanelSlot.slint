@@ -1,0 +1,24 @@
+import { Colors } from "../tokens/theme.slint";
+
+// A single panel content area.
+// Positioned absolutely by PanelContainer — fills its assigned rect.
+export component PanelSlot inherits Rectangle {
+    in property <int>    panel-id;
+    in property <string> label: "";       // debug / placeholder label
+
+    preferred-width:  100%;
+    preferred-height: 100%;
+    background: Colors.bg-panel;
+    border-color: Colors.border;
+    border-width: 1px;
+    clip: true;
+
+    // Placeholder label — replaced by actual content in real use
+    if root.label != "": Text {
+        x: 8px;
+        y: 8px;
+        text: root.label;
+        color: Colors.text-muted;
+        font-size: 12px;
+    }
+}

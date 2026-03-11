@@ -1,0 +1,157 @@
+// Converts a PanelNode tree into a flat Vec<SolvedItem> with normalized
+// x, y, w, h coordinates (0.0..1.0) and drag handle positions.
+//
+// Slint multiplies these by actual pixel dimensions at render time,
+// making the layout fully responsive — no pixel math in .slint files.
+
+use super::parser::{PanelNode, SplitDir};
+
+const HANDLE_THICKNESS: f32 = 5.0;   // logical px — kept in sync with Spacing.handle-thickness
+
+#[derive(Debug, Clone)]
+pub struct SolvedItem {
+    pub id:    i32,
+    pub kind:  ItemKind,
+    pub label: String,
+    pub x: f32, pub y: f32,
+    pub w: f32, pub h: f32,
+}
+
+#[derive(Debug, Clone, PartialEq)]
+pub enum ItemKind { Panel, HandleH, HandleV }
+
+impl ItemKind {
+    pub fn as_str(&self) -> &'static str {
+        match self {
+            ItemKind::Panel   => "panel",
+            ItemKind::HandleH => "handle-h",
+            ItemKind::HandleV => "handle-v",
+        }
+    }
+}
+
+pub struct Solver {
+    next_id: i32,
+    items:   Vec<SolvedItem>,
+    /// Window pixel size — used to convert handle thickness to normalized fraction
+    win_w: f32,
+    win_h: f32,
+}
+
+impl Solver {
+    pub fn new(win_w: f32, win_h: f32) -> Self {
+        Self { next_id: 0, items: Vec::new(), win_w, win_h }
+    }
+
+    pub fn solve(mut self, root: &PanelNode) -> Vec<SolvedItem> {
+        self.visit(root, 0.0, 0.0, 1.0, 1.0);
+        self.items
+    }
+
+    fn alloc_id(&mut self) -> i32 {
+        let id = self.next_id;
+        self.next_id += 1;
+        id
+    }
+
+    fn visit(&mut self, node: &PanelNode, x: f32, y: f32, w: f32, h: f32) {
+        match node {
+            PanelNode::Leaf { .. } => {
+                let id = self.alloc_id();
+                self.items.push(SolvedItem {
+                    id, kind: ItemKind::Panel,
+                    label: format!("Panel {}", id),
+                    x, y, w, h,
+                });
+            }
+
+            PanelNode::Split { dir, children, .. } => {
+                let total_ratio: f32 = children.iter().map(|c| c.ratio()).sum();
+                let handle_frac_w = HANDLE_THICKNESS / self.win_w;
+                let handle_frac_h = HANDLE_THICKNESS / self.win_h;
+                let n_handles = (children.len() - 1) as f32;
+
+                // Space consumed by handles
+                let handle_total = match dir {
+                    SplitDir::H => handle_frac_w * n_handles,
+                    SplitDir::V => handle_frac_h * n_handles,
+                };
+                let content_space = match dir {
+                    SplitDir::H => w - handle_total,
+                    SplitDir::V => h - handle_total,
+                };
+
+                let mut cursor = match dir {
+                    SplitDir::H => x,
+                    SplitDir::V => y,
+                };
+
+                for (i, child) in children.iter().enumerate() {
+                    let frac = child.ratio() / total_ratio;
+                    let child_size = content_space * frac;
+
+                    match dir {
+                        SplitDir::H => {
+                            self.visit(child, cursor, y, child_size, h);
+                            cursor += child_size;
+                            if i < children.len() - 1 {
+                                let id = self.alloc_id();
+                                self.items.push(SolvedItem {
+                                    id, kind: ItemKind::HandleH,
+                                    label: String::new(),
+                                    x: cursor, y, w: handle_frac_w, h,
+                                });
+                                cursor += handle_frac_w;
+                            }
+                        }
+                        SplitDir::V => {
+                            self.visit(child, x, cursor, w, child_size);
+                            cursor += child_size;
+                            if i < children.len() - 1 {
+                                let id = self.alloc_id();
+                                self.items.push(SolvedItem {
+                                    id, kind: ItemKind::HandleV,
+                                    label: String::new(),
+                                    x, y: cursor, w, h: handle_frac_h,
+                                });
+                                cursor += handle_frac_h;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use crate::layout::parser::parse;
+
+    #[test]
+    fn test_single_panel_fills_container() {
+        let tree = parse("1");
+        let items = Solver::new(1280.0, 800.0).solve(&tree);
+        assert_eq!(items.len(), 1);
+        assert_eq!(items[0].kind, ItemKind::Panel);
+        assert!((items[0].w - 1.0).abs() < 0.001);
+        assert!((items[0].h - 1.0).abs() < 0.001);
+    }
+
+    #[test]
+    fn test_three_columns_have_two_handles() {
+        let tree = parse("1:2:1");
+        let items = Solver::new(1280.0, 800.0).solve(&tree);
+        let handles: Vec<_> = items.iter().filter(|i| i.kind == ItemKind::HandleH).collect();
+        assert_eq!(handles.len(), 2);
+    }
+
+    #[test]
+    fn test_widths_sum_to_one() {
+        let tree = parse("1:2:1");
+        let items = Solver::new(1280.0, 800.0).solve(&tree);
+        let total: f32 = items.iter().map(|i| i.w).sum();
+        assert!((total - 1.0).abs() < 0.01);
+    }
+}
