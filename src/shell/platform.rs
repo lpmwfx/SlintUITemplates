@@ -13,4 +13,12 @@ impl Platform {
             Platform::Android => "android",
         }
     }
+
+    pub fn is_mobile(&self) -> bool {
+        matches!(self, Platform::Android)
+    }
+
+    pub fn is_desktop(&self) -> bool {
+        !self.is_mobile()
+    }
 }

@@ -1,0 +1,81 @@
+// Material 3 TopAppBar — CenterAligned variant.
+// Reference: https://m3.material.io/components/top-app-bar
+
+import { MaterialColors, MaterialSpacing, MaterialType } from "../../tokens/material/mod.slint";
+import { FluentIcons } from "../../tokens/theme.slint";
+
+export component TopAppBar inherits Rectangle {
+    in property <string> title;
+    in property <string> nav-icon:    FluentIcons.back;
+    in property <bool>   show-nav:    false;
+    in property <string> action-icon: "";
+    callback nav-clicked();
+    callback action-clicked();
+
+    height: MaterialSpacing.top-app-bar-height;
+    background: MaterialColors.surface;
+
+    HorizontalLayout {
+        padding-left: 4px;
+        padding-right: 4px;
+        spacing: 0px;
+
+        // Navigation icon (optional)
+        if root.show-nav: Rectangle {
+            width: MaterialSpacing.icon-button-size;
+            height: parent.height;
+            border-radius: 24px;
+            background: nav-ta.has-hover ? MaterialColors.surface-variant : transparent;
+
+            nav-ta := TouchArea { clicked => { root.nav-clicked(); } }
+
+            Text {
+                text: root.nav-icon;
+                font-family: "Segoe Fluent Icons";
+                font-size: 20px;
+                color: MaterialColors.on-surface;
+                horizontal-alignment: center;
+                vertical-alignment: center;
+            }
+        }
+
+        // Title (center)
+        Rectangle {
+            horizontal-stretch: 1;
+            Text {
+                text: root.title;
+                font-size: MaterialType.title-large;
+                font-weight: MaterialType.weight-medium;
+                color: MaterialColors.on-surface;
+                horizontal-alignment: center;
+                vertical-alignment: center;
+            }
+        }
+
+        // Action icon (optional)
+        if root.action-icon != "": Rectangle {
+            width: MaterialSpacing.icon-button-size;
+            height: parent.height;
+            border-radius: 24px;
+            background: action-ta.has-hover ? MaterialColors.surface-variant : transparent;
+
+            action-ta := TouchArea { clicked => { root.action-clicked(); } }
+
+            Text {
+                text: root.action-icon;
+                font-family: "Segoe Fluent Icons";
+                font-size: 20px;
+                color: MaterialColors.on-surface-variant;
+                horizontal-alignment: center;
+                vertical-alignment: center;
+            }
+        }
+    }
+
+    // Bottom border / elevation indicator
+    Rectangle {
+        y: parent.height - 1px;
+        height: 1px;
+        background: MaterialColors.outline-variant;
+    }
+}

@@ -1,0 +1,50 @@
+// Material 3 FloatingActionButton — primary action, extended variant.
+// Reference: https://m3.material.io/components/floating-action-button
+
+import { MaterialColors, MaterialSpacing, MaterialType, MaterialRadius } from "../../tokens/material/mod.slint";
+
+export component FAB inherits Rectangle {
+    in property <string> icon;
+    in property <string> label: "";       // non-empty → extended FAB
+    callback clicked();
+
+    private property <bool> extended: root.label != "";
+
+    // Extended FAB is wider; simple FAB is square
+    min-width:  MaterialSpacing.fab-size;
+    height: MaterialSpacing.fab-size;
+    border-radius: MaterialRadius.extra-large;
+    background: fab-ta.has-hover
+        ? MaterialColors.primary-container.darker(0.05)
+        : MaterialColors.primary-container;
+    drop-shadow-color: MaterialColors.primary.with-alpha(0.3);
+    drop-shadow-blur: 6px;
+    drop-shadow-offset-y: 3px;
+
+    fab-ta := TouchArea {
+        clicked => { root.clicked(); }
+    }
+
+    HorizontalLayout {
+        alignment: center;
+        spacing: 8px;
+        padding-left: extended ? 16px : 0px;
+        padding-right: extended ? 20px : 0px;
+
+        Text {
+            text: root.icon;
+            font-family: "Segoe Fluent Icons";
+            font-size: 24px;
+            color: MaterialColors.on-primary-container;
+            vertical-alignment: center;
+        }
+
+        if root.extended: Text {
+            text: root.label;
+            font-size: MaterialType.label-large;
+            font-weight: MaterialType.weight-bold;
+            color: MaterialColors.on-primary-container;
+            vertical-alignment: center;
+        }
+    }
+}

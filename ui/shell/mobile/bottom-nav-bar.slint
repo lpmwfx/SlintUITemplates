@@ -1,0 +1,74 @@
+// Material 3 NavigationBar (bottom nav) — 3-5 destinations.
+// Reference: https://m3.material.io/components/navigation-bar
+
+import { MaterialColors, MaterialSpacing, MaterialType, MaterialRadius } from "../../tokens/material/mod.slint";
+import { NavItem } from "../types.slint";
+
+export component BottomNavBar inherits Rectangle {
+    in property <[NavItem]> items;
+    in property <string>    active: "";
+    callback navigate(string);
+
+    height: MaterialSpacing.bottom-nav-bar-height;
+    background: MaterialColors.surface-container;
+
+    // Top border
+    Rectangle {
+        height: 1px;
+        background: MaterialColors.outline-variant;
+    }
+
+    HorizontalLayout {
+        padding-top: 12px;
+        padding-bottom: 16px;
+
+        for item in root.items: Rectangle {
+            horizontal-stretch: 1;
+
+            nav-ta := TouchArea {
+                clicked => { root.navigate(item.id); }
+            }
+
+            VerticalLayout {
+                alignment: center;
+                spacing: 4px;
+
+                // Active indicator pill
+                Rectangle {
+                    height: 32px;
+                    width: item.id == root.active ? 64px : 32px;
+                    x: (parent.width - self.width) / 2;
+                    border-radius: 16px;
+                    background: item.id == root.active
+                        ? MaterialColors.secondary-container
+                        : nav-ta.has-hover ? MaterialColors.surface-variant : transparent;
+
+                    animate width { duration: 200ms; easing: ease-in-out; }
+
+                    Text {
+                        text: item.icon;
+                        font-family: "Segoe Fluent Icons";
+                        font-size: 20px;
+                        color: item.id == root.active
+                            ? MaterialColors.on-secondary-container
+                            : MaterialColors.on-surface-variant;
+                        horizontal-alignment: center;
+                        vertical-alignment: center;
+                    }
+                }
+
+                Text {
+                    text: item.label;
+                    font-size: MaterialType.label-medium;
+                    font-weight: item.id == root.active
+                        ? MaterialType.weight-bold
+                        : MaterialType.weight-regular;
+                    color: item.id == root.active
+                        ? MaterialColors.on-surface
+                        : MaterialColors.on-surface-variant;
+                    horizontal-alignment: center;
+                }
+            }
+        }
+    }
+}
