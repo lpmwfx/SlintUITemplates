@@ -3,6 +3,7 @@ pub mod bindings;
 pub mod grid;
 pub mod layout;
 pub mod settings;
+pub mod shell;
 
 pub use grid::{ZoneModel, TargetConfig};
 pub use layout::{build, SolvedItem, ItemKind};

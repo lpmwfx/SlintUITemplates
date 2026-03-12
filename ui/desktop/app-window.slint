@@ -1,4 +1,4 @@
-import { Colors, Spacing, Type, Settings } from "../tokens/theme.slint";
+import { Colors, Spacing, Type, Settings, FluentIcons } from "../tokens/theme.slint";
 import { NavBar }      from "nav-bar.slint";
 import { NavItem }     from "types.slint";
 import { SideBar }     from "side-bar.slint";
@@ -22,9 +22,9 @@ export component AppWindow inherits Window {
     in-out property <bool>      sidebar-open: true;
     in-out property <bool>      sidebar-collapsed: false;
     in-out property <[NavItem]> nav-items: [
-        { id: "home",     label: "Home",     icon: "🏠" },
-        { id: "list",     label: "List",     icon: "📋" },
-        { id: "settings", label: "Settings", icon: "⚙" },
+        { id: "home",     label: "Home",     icon: FluentIcons.home },
+        { id: "list",     label: "List",     icon: FluentIcons.list },
+        { id: "settings", label: "Settings", icon: FluentIcons.settings },
     ];
 
     // Status bar text (Rhai / Rust override; empty = default "View: <active-view>")
