@@ -1,0 +1,179 @@
+// page-icons — Fluent icon catalog.
+// Shows all FluentIcons entries with their names in scrollable rows per category.
+
+import { Colors, Spacing, Type, FluentIcons } from "../tokens/theme.slint";
+import { ViewerSection } from "viewer-section.slint";
+
+// Single icon tile — glyph + name label.
+component IconTile inherits Rectangle {
+    in property <string> icon-glyph;
+    in property <string> icon-name;
+
+    min-width: 80px;
+    height: 72px;
+    border-radius: 4px;
+    background: tile-ta.has-hover ? Colors.bg-elevated : transparent;
+    border-width: tile-ta.has-hover ? 1px : 0px;
+    border-color: Colors.border;
+
+    tile-ta := TouchArea {}
+
+    VerticalLayout {
+        alignment: center;
+        spacing: Spacing.xs;
+        padding: Spacing.xs;
+
+        Text {
+            text: root.icon-glyph;
+            font-family: "Segoe Fluent Icons";
+            font-size: 24px;
+            color: Colors.text-primary;
+            horizontal-alignment: center;
+        }
+
+        Text {
+            text: root.icon-name;
+            font-size: 9px;
+            color: Colors.text-secondary;
+            horizontal-alignment: center;
+            overflow: elide;
+        }
+    }
+}
+
+// Scrollable row of icon tiles for one category.
+component IconRow inherits Flickable {
+    in property <[{glyph: string, name: string}]> icons;
+    height: 80px;
+    viewport-width: row-layout.preferred-width;
+    viewport-height: self.height;
+
+    row-layout := HorizontalLayout {
+        spacing: Spacing.xs;
+        for icon in root.icons: IconTile {
+            icon-glyph: icon.glyph;
+            icon-name:  icon.name;
+        }
+    }
+}
+
+export component PageIcons inherits VerticalLayout {
+    spacing: Spacing.sm;
+
+    ViewerSection { title: "Navigation"; }
+    IconRow {
+        icons: [
+            { glyph: FluentIcons.home,         name: "home" },
+            { glyph: FluentIcons.back,         name: "back" },
+            { glyph: FluentIcons.forward,      name: "forward" },
+            { glyph: FluentIcons.menu,         name: "menu" },
+            { glyph: FluentIcons.settings,     name: "settings" },
+            { glyph: FluentIcons.nav-collapse, name: "nav-collapse" },
+            { glyph: FluentIcons.nav-expand,   name: "nav-expand" },
+        ];
+    }
+
+    ViewerSection { title: "Actions"; }
+    IconRow {
+        icons: [
+            { glyph: FluentIcons.add,        name: "add" },
+            { glyph: FluentIcons.remove,     name: "remove" },
+            { glyph: FluentIcons.delete,     name: "delete" },
+            { glyph: FluentIcons.edit,       name: "edit" },
+            { glyph: FluentIcons.save,       name: "save" },
+            { glyph: FluentIcons.copy,       name: "copy" },
+            { glyph: FluentIcons.paste,      name: "paste" },
+            { glyph: FluentIcons.cut,        name: "cut" },
+            { glyph: FluentIcons.undo,       name: "undo" },
+            { glyph: FluentIcons.redo,       name: "redo" },
+            { glyph: FluentIcons.refresh,    name: "refresh" },
+            { glyph: FluentIcons.close,      name: "close" },
+            { glyph: FluentIcons.search,     name: "search" },
+            { glyph: FluentIcons.filter,     name: "filter" },
+            { glyph: FluentIcons.sort,       name: "sort" },
+            { glyph: FluentIcons.share,      name: "share" },
+            { glyph: FluentIcons.download,   name: "download" },
+            { glyph: FluentIcons.upload,     name: "upload" },
+            { glyph: FluentIcons.print,      name: "print" },
+            { glyph: FluentIcons.pin,        name: "pin" },
+            { glyph: FluentIcons.unpin,      name: "unpin" },
+            { glyph: FluentIcons.star,       name: "star" },
+            { glyph: FluentIcons.star-filled, name: "star-filled" },
+        ];
+    }
+
+    ViewerSection { title: "Window Chrome"; }
+    IconRow {
+        icons: [
+            { glyph: FluentIcons.maximize, name: "maximize" },
+            { glyph: FluentIcons.minimize, name: "minimize" },
+            { glyph: FluentIcons.restore,  name: "restore" },
+        ];
+    }
+
+    ViewerSection { title: "Files & Data"; }
+    IconRow {
+        icons: [
+            { glyph: FluentIcons.folder,      name: "folder" },
+            { glyph: FluentIcons.folder-open, name: "folder-open" },
+            { glyph: FluentIcons.file,        name: "file" },
+            { glyph: FluentIcons.file-new,    name: "file-new" },
+            { glyph: FluentIcons.cloud,       name: "cloud" },
+            { glyph: FluentIcons.database,    name: "database" },
+        ];
+    }
+
+    ViewerSection { title: "Media"; }
+    IconRow {
+        icons: [
+            { glyph: FluentIcons.play,   name: "play" },
+            { glyph: FluentIcons.pause,  name: "pause" },
+            { glyph: FluentIcons.stop,   name: "stop" },
+            { glyph: FluentIcons.volume, name: "volume" },
+            { glyph: FluentIcons.mute,   name: "mute" },
+            { glyph: FluentIcons.camera, name: "camera" },
+            { glyph: FluentIcons.image,  name: "image" },
+        ];
+    }
+
+    ViewerSection { title: "UI / Layout"; }
+    IconRow {
+        icons: [
+            { glyph: FluentIcons.list,        name: "list" },
+            { glyph: FluentIcons.grid,        name: "grid" },
+            { glyph: FluentIcons.layout,      name: "layout" },
+            { glyph: FluentIcons.apps,        name: "apps" },
+            { glyph: FluentIcons.panel-left,  name: "panel-left" },
+            { glyph: FluentIcons.panel-right, name: "panel-right" },
+            { glyph: FluentIcons.fullscreen,  name: "fullscreen" },
+        ];
+    }
+
+    ViewerSection { title: "People & Communication"; }
+    IconRow {
+        icons: [
+            { glyph: FluentIcons.person,       name: "person" },
+            { glyph: FluentIcons.people,       name: "people" },
+            { glyph: FluentIcons.chat,         name: "chat" },
+            { glyph: FluentIcons.mail,         name: "mail" },
+            { glyph: FluentIcons.phone,        name: "phone" },
+            { glyph: FluentIcons.notification, name: "notification" },
+            { glyph: FluentIcons.help,         name: "help" },
+            { glyph: FluentIcons.info,         name: "info" },
+            { glyph: FluentIcons.warning,      name: "warning" },
+            { glyph: FluentIcons.error-icon,   name: "error-icon" },
+            { glyph: FluentIcons.checkmark,    name: "checkmark" },
+            { glyph: FluentIcons.dismiss,      name: "dismiss" },
+        ];
+    }
+
+    ViewerSection { title: "Device"; }
+    IconRow {
+        icons: [
+            { glyph: FluentIcons.device,    name: "device" },
+            { glyph: FluentIcons.keyboard,  name: "keyboard" },
+            { glyph: FluentIcons.wifi,      name: "wifi" },
+            { glyph: FluentIcons.bluetooth, name: "bluetooth" },
+        ];
+    }
+}
