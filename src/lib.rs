@@ -5,6 +5,7 @@ pub mod bindings;
 pub mod dsl;
 pub mod grid;
 pub mod layout;
+pub mod platform;
 pub mod settings;
 pub mod shell;
 

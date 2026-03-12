@@ -81,7 +81,7 @@ pub fn register(engine: &mut Engine, adapter: Rc<RefCell<AppAdapter>>) {
         }).collect();
 
         match AppDsl::builder("").nav(nav).build() {
-            Ok(dsl)   => a.borrow().apply_dsl(&dsl),
+            Ok(dsl)   => a.borrow_mut().apply_dsl(&dsl),
             Err(errs) => { for e in &errs { eprintln!("[dsl] {e}"); } }
         }
     });
@@ -104,7 +104,7 @@ pub fn register(engine: &mut Engine, adapter: Rc<RefCell<AppAdapter>>) {
         // Re-use existing nav from a minimal DSL (toolbar-only update path)
         let placeholder = vec![Nav::new("_", "_", "home")];
         match AppDsl::builder("").nav(placeholder).toolbar(toolbar).build() {
-            Ok(dsl)   => a.borrow().apply_dsl(&dsl),
+            Ok(dsl)   => a.borrow_mut().apply_dsl(&dsl),
             Err(errs) => { for e in &errs { eprintln!("[dsl] {e}"); } }
         }
     });

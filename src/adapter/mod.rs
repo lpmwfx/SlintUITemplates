@@ -5,11 +5,12 @@ use std::cell::RefCell;
 use slint::ComponentHandle;
 use crate::{AppWindow, Colors};
 use crate::grid;
-use crate::dsl::AppDsl;
+use crate::dsl::{AppDsl, BgStyle};
 
 pub struct AppAdapter {
     ui:           AppWindow,
     menu_actions: Rc<RefCell<HashMap<String, Box<dyn Fn()>>>>,
+    bg_style:     BgStyle,
 }
 
 impl AppAdapter {
@@ -26,13 +27,14 @@ impl AppAdapter {
             }
         });
 
-        Ok(Self { ui, menu_actions })
+        Ok(Self { ui, menu_actions, bg_style: BgStyle::Solid })
     }
 
     // ── DSL ──────────────────────────────────────────────────────────────────
 
     /// Apply a validated `AppDsl` — composition rules already enforced.
-    pub fn apply_dsl(&self, dsl: &AppDsl) {
+    pub fn apply_dsl(&mut self, dsl: &AppDsl) {
+        self.bg_style = dsl.bg_style;
         crate::dsl::apply::apply(&self.ui, dsl);
     }
 
@@ -98,6 +100,9 @@ impl AppAdapter {
     }
 
     pub fn run(self) -> Result<(), slint::PlatformError> {
+        // Show the window first so the HWND is live before applying DWM backdrop.
+        self.ui.show()?;
+        crate::platform::apply_backdrop(&self.ui.window(), self.bg_style);
         self.ui.run()
     }
 }
@@ -180,7 +185,7 @@ mod tests {
     fn apply_dsl_sets_nav_and_status() {
         use crate::dsl::{AppDsl, Nav};
         init();
-        let adapter = AppAdapter::new().unwrap();
+        let mut adapter = AppAdapter::new().unwrap();
         let dsl = AppDsl::builder("Test App")
             .nav(vec![
                 Nav::new("home", "Home", "home"),

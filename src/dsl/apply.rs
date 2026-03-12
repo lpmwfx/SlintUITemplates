@@ -1,7 +1,7 @@
 use slint::{ComponentHandle, VecModel};
 use std::rc::Rc;
 use crate::{AppWindow, NavItem, ShellToolbarItem};
-use super::AppDsl;
+use super::{AppDsl, BgStyle};
 
 /// Apply a validated `AppDsl` to an `AppWindow`.
 /// All composition rules already satisfied — this is pure wiring, no validation.
@@ -30,4 +30,8 @@ pub fn apply(ui: &AppWindow, dsl: &AppDsl) {
     if let Some((w, h)) = dsl.window_size {
         ui.window().set_size(slint::PhysicalSize::new(w, h));
     }
+
+    // Mica/Acrylic: tell the Slint Window to use a transparent background
+    // so the DWM backdrop shows through. Platform code applies DWM attrs separately.
+    ui.set_mica_mode(dsl.bg_style != BgStyle::Solid);
 }

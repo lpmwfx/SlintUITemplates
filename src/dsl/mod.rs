@@ -27,6 +27,22 @@ pub mod icons;
 use icons::fluent_icon;
 use crate::shell::Platform;
 
+// ── Background style ─────────────────────────────────────────────────────────
+
+/// Windows Composition API backdrop style.
+/// Mica and Acrylic require Windows 11 (22H2+) — silently falls back to Solid
+/// on older OS versions or non-Windows platforms.
+#[derive(Debug, Clone, Copy, PartialEq, Default)]
+pub enum BgStyle {
+    /// Opaque window — Slint draws `Colors.bg-primary` as background.
+    #[default]
+    Solid,
+    /// Mica — frosted desktop wallpaper backdrop (DWMSBT_MAINWINDOW).
+    Mica,
+    /// Acrylic — blurred ambient backdrop (DWMSBT_TRANSIENTWINDOW).
+    Acrylic,
+}
+
 // ── Public input types ────────────────────────────────────────────────────────
 
 /// A navigation destination — icon name resolved to codepoint at build().
@@ -140,6 +156,7 @@ pub struct AppDsl {
     pub(crate) toolbar:      Vec<ResolvedToolbar>,
     pub(crate) show_toolbar: bool,
     pub(crate) window_size:  Option<(u32, u32)>,
+    pub(crate) bg_style:     BgStyle,
     /// Validated view ids — matches nav ids 1:1 when provided.
     pub(crate) views:        Vec<String>,
 }
@@ -153,6 +170,7 @@ pub struct AppDslBuilder {
     status:      String,
     toolbar:     Vec<Toolbar>,
     window_size: Option<(u32, u32)>,
+    bg_style:    BgStyle,
     views:       Vec<String>,
 }
 
@@ -165,6 +183,7 @@ impl AppDsl {
             status:      "Ready".into(),
             toolbar:     Vec::new(),
             window_size: None,
+            bg_style:    BgStyle::Solid,
             views:       Vec::new(),
         }
     }
@@ -193,6 +212,12 @@ impl AppDslBuilder {
 
     pub fn window_size(mut self, width: u32, height: u32) -> Self {
         self.window_size = Some((width, height));
+        self
+    }
+
+    /// Set OS-level window backdrop (Windows 11 only; no-op elsewhere).
+    pub fn bg_style(mut self, style: BgStyle) -> Self {
+        self.bg_style = style;
         self
     }
 
@@ -277,6 +302,7 @@ impl AppDslBuilder {
                 show_toolbar: !resolved_toolbar.is_empty(),
                 toolbar:      resolved_toolbar,
                 window_size:  self.window_size,
+                bg_style:     self.bg_style,
                 views:        self.views,
             })
         } else {
@@ -419,6 +445,30 @@ mod tests {
             .views(vec!["home", "list", "settings", "extra"])
             .build().unwrap_err();
         assert!(errs.iter().any(|e| matches!(e, DslError::ViewWithoutNav(id) if id == "extra")));
+    }
+
+    #[test]
+    fn bg_style_default_is_solid() {
+        let dsl = AppDsl::builder("App").nav(three_nav()).build().unwrap();
+        assert_eq!(dsl.bg_style, BgStyle::Solid);
+    }
+
+    #[test]
+    fn bg_style_mica_stored() {
+        let dsl = AppDsl::builder("App")
+            .nav(three_nav())
+            .bg_style(BgStyle::Mica)
+            .build().unwrap();
+        assert_eq!(dsl.bg_style, BgStyle::Mica);
+    }
+
+    #[test]
+    fn bg_style_acrylic_stored() {
+        let dsl = AppDsl::builder("App")
+            .nav(three_nav())
+            .bg_style(BgStyle::Acrylic)
+            .build().unwrap();
+        assert_eq!(dsl.bg_style, BgStyle::Acrylic);
     }
 
     #[test]

@@ -16,8 +16,12 @@ export component AppWindow inherits Window {
     title: "SlintUI Templates";
     preferred-width: 900px;
     preferred-height: 600px;
-    background: Colors.bg-primary;
     default-font-family: Settings.font-family;
+
+    // Set true when Mica/Acrylic backdrop is active — makes window transparent
+    // so DWM composition shows through. DSL apply.rs sets this automatically.
+    in property <bool> mica-mode: false;
+    background: root.mica-mode ? transparent : Colors.bg-primary;
 
     // State (mother owns all)
     in-out property <string>    active-view: "home";
