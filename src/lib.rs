@@ -8,6 +8,7 @@ pub mod layout;
 pub mod platform;
 pub mod settings;
 pub mod shell;
+pub mod view_config;
 
 pub use grid::{ZoneModel, TargetConfig};
 pub use layout::{build, SolvedItem, ItemKind, build_v2, Panel, drag, normalize};

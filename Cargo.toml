@@ -12,6 +12,10 @@ repository  = "https://github.com/lpmwfx/SlintUITemplates"
 name = "slint-ui-templates"
 path = "src/main.rs"
 
+[[bin]]
+name = "slintui"
+path = "src/bin/slintui.rs"
+
 [lib]
 name = "slint_ui_templates"
 path = "src/lib.rs"

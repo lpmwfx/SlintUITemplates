@@ -86,6 +86,18 @@ pub fn register(engine: &mut Engine, adapter: Rc<RefCell<AppAdapter>>) {
         }
     });
 
+    // Window size
+    let a = Rc::clone(&adapter);
+    engine.register_fn("set_window_size", move |width: i64, height: i64| {
+        a.borrow().set_window_size(width as u32, height as u32);
+    });
+
+    // Backdrop style: "mica" | "acrylic" | "solid"
+    let a = Rc::clone(&adapter);
+    engine.register_fn("set_bg_style", move |style: String| {
+        a.borrow_mut().set_bg_style_str(&style);
+    });
+
     // DSL: toolbar — array of "id:icon:tooltip" strings
     // Example: set_toolbar(["save:save:Save file", "undo:undo:Undo"]);
     let a = Rc::clone(&adapter);

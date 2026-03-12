@@ -11,6 +11,8 @@ pub struct AppAdapter {
     ui:           AppWindow,
     menu_actions: Rc<RefCell<HashMap<String, Box<dyn Fn()>>>>,
     bg_style:     BgStyle,
+    view_configs: Rc<RefCell<HashMap<String, crate::view_config::ViewConfig>>>,
+    navigate_cb:  Rc<RefCell<Option<Box<dyn Fn(slint::SharedString)>>>>,
 }
 
 impl AppAdapter {
@@ -18,6 +20,10 @@ impl AppAdapter {
         let ui = AppWindow::new()?;
         let menu_actions: Rc<RefCell<HashMap<String, Box<dyn Fn()>>>> =
             Rc::new(RefCell::new(HashMap::new()));
+        let view_configs: Rc<RefCell<HashMap<String, crate::view_config::ViewConfig>>> =
+            Rc::new(RefCell::new(HashMap::new()));
+        let navigate_cb: Rc<RefCell<Option<Box<dyn Fn(slint::SharedString)>>>> =
+            Rc::new(RefCell::new(None));
 
         // Wire menu-action dispatch once — all on_menu_action() calls add to this table
         let actions = Rc::clone(&menu_actions);
@@ -27,7 +33,18 @@ impl AppAdapter {
             }
         });
 
-        Ok(Self { ui, menu_actions, bg_style: BgStyle::Solid })
+        // Wire navigate once — auto-applies ViewConfig then calls user callback
+        let vc      = Rc::clone(&view_configs);
+        let nav_cb  = Rc::clone(&navigate_cb);
+        let ui_nav  = ui.clone_strong();
+        ui.on_navigate(move |id| {
+            if let Some(cfg) = vc.borrow().get(id.as_str()) {
+                crate::view_config::apply(&ui_nav, cfg);
+            }
+            if let Some(ref f) = *nav_cb.borrow() { f(id); }
+        });
+
+        Ok(Self { ui, menu_actions, bg_style: BgStyle::Solid, view_configs, navigate_cb })
     }
 
     // ── DSL ──────────────────────────────────────────────────────────────────
@@ -38,11 +55,38 @@ impl AppAdapter {
         crate::dsl::apply::apply(&self.ui, dsl);
     }
 
+    // ── View config ───────────────────────────────────────────────────────────
+
+    /// Load all `*.rhai` files from `dir` and register as per-view configs.
+    /// Auto-applied by the navigate handler on every nav event.
+    pub fn load_view_configs(&self, dir: &Path) -> Result<(), Box<dyn std::error::Error>> {
+        let configs = crate::view_config::load_all(dir)?;
+        *self.view_configs.borrow_mut() = configs;
+        Ok(())
+    }
+
+    // ── Window ────────────────────────────────────────────────────────────────
+
+    /// Resize the window (logical pixels).
+    pub fn set_window_size(&self, width: u32, height: u32) {
+        self.ui.window().set_size(slint::PhysicalSize::new(width, height));
+    }
+
+    /// Set the OS-level backdrop style ("mica" | "acrylic" | anything else → solid).
+    pub fn set_bg_style_str(&mut self, style: &str) {
+        self.bg_style = match style {
+            "mica"    => BgStyle::Mica,
+            "acrylic" => BgStyle::Acrylic,
+            _         => BgStyle::Solid,
+        };
+    }
+
     // ── Callback wiring ───────────────────────────────────────────────────────
 
     /// Register a handler for the navigate callback (nav item clicked).
+    /// Replaces any previously registered handler.
     pub fn on_navigate(&self, f: impl Fn(slint::SharedString) + 'static) {
-        self.ui.on_navigate(f);
+        *self.navigate_cb.borrow_mut() = Some(Box::new(f));
     }
 
     /// Register a handler for toolbar button clicks.
@@ -208,5 +252,17 @@ mod tests {
         adapter.on_menu_action("file.new", move || { *c.lock().unwrap() = true; });
         adapter.ui.invoke_menu_action("file.new".into());
         assert!(*called.lock().unwrap());
+    }
+
+    #[test]
+    fn view_config_auto_applied_on_navigate() {
+        use crate::view_config::ViewConfig;
+        init();
+        let adapter = AppAdapter::new().unwrap();
+        let mut cfg = ViewConfig::default();
+        cfg.status = Some("Test Status".into());
+        adapter.view_configs.borrow_mut().insert("home".into(), cfg);
+        adapter.ui.invoke_navigate("home".into());
+        assert_eq!(adapter.ui.get_status_text(), "Test Status");
     }
 }
