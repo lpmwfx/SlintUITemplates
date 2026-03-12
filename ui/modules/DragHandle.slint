@@ -6,7 +6,8 @@ import { Colors } from "../tokens/theme.slint";
 // Sizing is fully controlled by the parent — no preferred-width/height defaults.
 export component DragHandle inherits Rectangle {
     in property <bool> vertical: false;
-    callback dragged(float, float);   // dx, dy in logical px
+    callback dragged(float, float);    // dx, dy in logical px (while dragging)
+    callback drag-end(float, float);   // dx, dy in logical px (on release)
 
     background: touch.has-hover ? Colors.accent : Colors.border;
 
@@ -20,6 +21,15 @@ export component DragHandle inherits Rectangle {
                 vertical ? 0.0 : (self.mouse-x - self.pressed-x) / 1px,
                 vertical ? (self.mouse-y - self.pressed-y) / 1px : 0.0,
             );
+        }
+
+        pointer-event(e) => {
+            if e.kind == PointerEventKind.up {
+                root.drag-end(
+                    vertical ? 0.0 : (self.mouse-x - self.pressed-x) / 1px,
+                    vertical ? (self.mouse-y - self.pressed-y) / 1px : 0.0,
+                );
+            }
         }
     }
 }
