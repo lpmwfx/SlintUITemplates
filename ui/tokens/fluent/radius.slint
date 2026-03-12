@@ -1,0 +1,11 @@
+// Fluent 2 corner radius — per WinUI3 design system.
+// Reference: https://learn.microsoft.com/en-us/windows/apps/design/style/rounded-corner
+
+export global FluentRadius {
+    out property <length> none:  0px;
+    out property <length> sm:    2px;   // checkboxes, small chips
+    out property <length> md:    4px;   // buttons, inputs, cards
+    out property <length> lg:    8px;   // panels, dialogs, larger cards
+    out property <length> xl:   12px;   // navigation pane, large surfaces
+    out property <length> circle: 9999px; // pills, avatars
+}

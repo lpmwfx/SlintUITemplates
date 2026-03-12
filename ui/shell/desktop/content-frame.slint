@@ -1,0 +1,13 @@
+// ShellContentFrame — content area with named slot routing.
+// Parent places views as @children; frame handles background + padding.
+
+import { Colors, Spacing } from "../../tokens/theme.slint";
+
+export component ShellContentFrame inherits Rectangle {
+    background: Colors.bg-primary;
+
+    VerticalLayout {
+        padding: Spacing.sm;
+        @children
+    }
+}

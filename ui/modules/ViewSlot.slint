@@ -1,0 +1,22 @@
+// ViewSlot — routing slot for AppShell content area.
+//
+// Handles visibility and fill automatically — no if-blocks, no vertical-stretch.
+// Place one ViewSlot per nav destination inside AppShell or MobileShell.
+//
+// Usage:
+//   AppShell {
+//       active-slot: root.active-view;
+//       slot-changed(id) => { root.active-view = id; }
+//
+//       ViewSlot { slot-id: "home";     active: root.active-view; HomeView {} }
+//       ViewSlot { slot-id: "settings"; active: root.active-view; SettingsView {} }
+//   }
+
+export component ViewSlot inherits Rectangle {
+    in property <string> slot-id;
+    in property <string> active;
+
+    visible: root.slot-id == root.active;
+
+    @children
+}

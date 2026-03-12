@@ -1,9 +1,17 @@
 export global Spacing {
+    // ── Existing scale (used by components for container sizing) ──────────
     out property <length> xs:  4px;
     out property <length> sm:  8px;
     out property <length> md:  16px;
     out property <length> lg:  24px;
-    out property <length> xl:  48px;
+    out property <length> xl:  48px;   // component container height (nav rows, toolbar)
+
+    // ── Fluent 2 control heights ──────────────────────────────────────────
+    out property <length> control-sm: 24px;
+    out property <length> control-md: 32px;
+    out property <length> control-lg: 40px;
+
+    // ── Chrome ────────────────────────────────────────────────────────────
     out property <length> handle-thickness: 5px;
     out property <length> handle-hit:       12px;
 }

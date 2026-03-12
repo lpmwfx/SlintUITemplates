@@ -1,0 +1,83 @@
+// DesktopShell — WinUI3 layout: Toolbar + SideNav + Content + StatusBar.
+// MenuBar is NOT here — it must live in the Window (Slint constraint).
+// Parent provides content as @children (placed inside the content frame).
+
+import { Colors, Spacing } from "../../tokens/theme.slint";
+import { NavItem }         from "../types.slint";
+import { ShellToolbarItem } from "../types.slint";
+import { ShellToolbar }    from "tool-bar.slint";
+import { ShellSideNav }    from "side-nav.slint";
+import { ShellContentFrame } from "content-frame.slint";
+import { ShellStatusBar }  from "status-bar.slint";
+import { DragHandle }      from "../../modules/DragHandle.slint";
+
+export component DesktopShell inherits VerticalLayout {
+    // Config inputs
+    in property <[NavItem]>          nav-items;
+    in property <[ShellToolbarItem]> toolbar-items;
+    in property <bool>               show-toolbar: false;
+    in property <string>             active-view: "";
+    in property <string>             status-text: "Ready";
+    in property <float>              progress: -1.0;
+
+    // State
+    private property <length> nav-width: 200px;
+    private property <bool>   nav-collapsed: nav-width <= Spacing.xl + Spacing.sm + Spacing.xs;
+
+    // Callbacks
+    callback navigate(string);
+    callback toolbar-clicked(string);
+
+    spacing: 0px;
+
+    // ── Toolbar (optional) ────────────────────────────────────────────────
+    if root.show-toolbar: ShellToolbar {
+        items: root.toolbar-items;
+        item-clicked(id) => { root.toolbar-clicked(id); }
+    }
+
+    // ── SideNav + Content (main area) ─────────────────────────────────────
+    HorizontalLayout {
+        vertical-stretch: 1;
+        spacing: 0px;
+
+        ShellSideNav {
+            horizontal-stretch: 0;
+            min-width: root.nav-width;
+            max-width: root.nav-width;
+            items: root.nav-items;
+            active-item: root.active-view;
+            collapsed: root.nav-collapsed;
+            navigate(id) => { root.navigate(id); }
+            toggle-collapsed() => {
+                root.nav-width = root.nav-collapsed
+                    ? 200px
+                    : Spacing.xl + Spacing.sm;
+            }
+        }
+
+        DragHandle {
+            min-width: Spacing.handle-thickness;
+            max-width: Spacing.handle-thickness;
+            vertical: false;
+            dragged(dx, dy) => {
+                root.nav-width = clamp(
+                    root.nav-width + dx * 1px,
+                    Spacing.xl + Spacing.sm,
+                    320px,
+                );
+            }
+        }
+
+        ShellContentFrame {
+            horizontal-stretch: 1;
+            @children
+        }
+    }
+
+    // ── StatusBar (bottom) ────────────────────────────────────────────────
+    ShellStatusBar {
+        status-text: root.status-text;
+        progress: root.progress;
+    }
+}

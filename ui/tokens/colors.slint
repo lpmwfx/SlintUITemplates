@@ -3,30 +3,31 @@ import { Palette } from "std-widgets.slint";
 export global Colors {
     in-out property <bool> dark-mode: Palette.color-scheme == ColorScheme.dark;
 
-    // Backgrounds
-    out property <color> bg-primary:    dark-mode ? #1a1a1a : #ffffff;
-    out property <color> bg-surface:    dark-mode ? #2d2d2d : #f3f3f3;
-    out property <color> bg-elevated:   dark-mode ? #383838 : #ffffff;
+    // ── Backgrounds (Fluent 2 exact values) ──────────────────────────────
+    out property <color> bg-primary:   dark-mode ? #202020 : #FFFFFF;
+    out property <color> bg-surface:   dark-mode ? #2C2C2C : #F3F3F3;
+    out property <color> bg-elevated:  dark-mode ? #383838 : #FFFFFF;
 
-    // Text
-    out property <color> text-primary:  dark-mode ? #f0f0f0 : #1a1a1a;
-    out property <color> text-secondary: dark-mode ? #a0a0a0 : #6b6b6b;
-    out property <color> text-disabled: dark-mode ? #5a5a5a : #b0b0b0;
+    // ── Text ──────────────────────────────────────────────────────────────
+    out property <color> text-primary:   dark-mode ? #FFFFFF : #1C1C1C;
+    out property <color> text-secondary: dark-mode ? #9D9D9D : #616161;
+    out property <color> text-disabled:  dark-mode ? #6B6B6B : #A0A0A0;
 
-    // Accent — in-out so Rust can override via apply_settings()
-    in-out property <color> accent:       #0078d4;
-    in-out property <color> accent-hover: dark-mode ? #429ce3 : #006cbd;
-    out property <color> accent-text:     #ffffff;
+    // ── Accent — in-out so Rust can override via apply_settings() ─────────
+    in-out property <color> accent:       dark-mode ? #60CDFF : #0078D4;
+    in-out property <color> accent-hover: dark-mode ? #4CC2F1 : #106EBE;
+    out property <color>    accent-text:  dark-mode ? #000000 : #FFFFFF;
 
-    // Semantic
-    out property <color> error:         #d13438;
-    out property <color> success:       #0f7b0f;
-    out property <color> warning:       #f7630c;
+    // ── Semantic ──────────────────────────────────────────────────────────
+    out property <color> error:   #C42B1C;
+    out property <color> success: #0F7B0F;
+    out property <color> warning: #9D5D00;
 
-    // Border
-    out property <color> border:        dark-mode ? #444444 : #e0e0e0;
+    // ── Border ────────────────────────────────────────────────────────────
+    out property <color> border:        dark-mode ? #3D3D3D : #E0E0E0;
+    out property <color> border-strong: dark-mode ? #575757 : #C0C0C0;
     out property <color> border-focus:  accent;
 
-    // Shadow
-    out property <color> shadow:        dark-mode ? #00000080 : #00000020;
+    // ── Shadow ────────────────────────────────────────────────────────────
+    out property <color> shadow: dark-mode ? #00000080 : #0000001F;
 }

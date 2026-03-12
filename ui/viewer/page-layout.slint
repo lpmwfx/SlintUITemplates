@@ -1,6 +1,7 @@
-// page-layout — showcases DragHandle (live-draggable), PanelContainer, PanelSlot.
+// page-layout — showcases DragHandle (live-draggable), PanelContainer, PanelSlot,
+// and the bi-directional 3-panel layout (Phase 10 layout-engine-v2).
 
-import { Colors, Spacing } from "../tokens/theme.slint";
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
 import { DragHandle }                from "../modules/DragHandle.slint";
 import { PanelContainer, PanelItem } from "../modules/PanelContainer.slint";
 import { PanelSlot }                 from "../modules/PanelSlot.slint";
@@ -50,6 +51,88 @@ component RowHandleDemo inherits Rectangle {
     }
 }
 
+// Bi-directional 3-panel demo — drag either handle, both neighbors update.
+// Ratio math: ratio_a + ratio_b + ratio_c = 1.0 always (zero-sum flex).
+component BiDirDemo inherits Rectangle {
+    // Panel ratios — normalized to sum 1.0.  Min per panel: 0.1
+    private property <float> ratio-a: 0.25;
+    private property <float> ratio-b: 0.50;
+    private property <float> ratio-c: 0.25;
+
+    width: 360px;
+    height: 100px;
+    border-width: 1px;
+    border-color: Colors.border;
+    clip: true;
+
+    HorizontalLayout {
+        // Panel A
+        Rectangle {
+            horizontal-stretch: 0;
+            min-width: root.width * root.ratio-a;
+            max-width: root.width * root.ratio-a;
+            background: Colors.bg-surface;
+            Text {
+                text: "A " + Math.round(root.ratio-a * 100) + "%";
+                font-size: Type.caption-size;
+                color: Colors.text-secondary;
+                horizontal-alignment: center;
+                vertical-alignment: center;
+            }
+        }
+
+        // Handle A–B: drag transfers ratio between A and B, C stays fixed.
+        DragHandle {
+            min-width: Spacing.handle-thickness;
+            max-width: Spacing.handle-thickness;
+            vertical: false;
+            dragged(dx, dy) => {
+                root.ratio-a = clamp(root.ratio-a + dx / (root.width / 1px), 0.1, 1.0 - root.ratio-c - 0.1);
+                root.ratio-b = 1.0 - root.ratio-a - root.ratio-c;
+            }
+        }
+
+        // Panel B
+        Rectangle {
+            horizontal-stretch: 0;
+            min-width: root.width * root.ratio-b;
+            max-width: root.width * root.ratio-b;
+            background: Colors.accent.with-alpha(0.12);
+            Text {
+                text: "B " + Math.round(root.ratio-b * 100) + "%";
+                font-size: Type.caption-size;
+                color: Colors.text-primary;
+                horizontal-alignment: center;
+                vertical-alignment: center;
+            }
+        }
+
+        // Handle B–C: drag transfers ratio between B and C, A stays fixed.
+        DragHandle {
+            min-width: Spacing.handle-thickness;
+            max-width: Spacing.handle-thickness;
+            vertical: false;
+            dragged(dx, dy) => {
+                root.ratio-c = clamp(root.ratio-c - dx / (root.width / 1px), 0.1, 1.0 - root.ratio-a - 0.1);
+                root.ratio-b = 1.0 - root.ratio-a - root.ratio-c;
+            }
+        }
+
+        // Panel C
+        Rectangle {
+            horizontal-stretch: 1;
+            background: Colors.bg-elevated;
+            Text {
+                text: "C " + Math.round(root.ratio-c * 100) + "%";
+                font-size: Type.caption-size;
+                color: Colors.text-secondary;
+                horizontal-alignment: center;
+                vertical-alignment: center;
+            }
+        }
+    }
+}
+
 export component PageLayout inherits VerticalLayout {
     spacing: Spacing.md;
 
@@ -61,6 +144,11 @@ export component PageLayout inherits VerticalLayout {
             ColHandleDemo {}
             RowHandleDemo {}
         }
+    }
+
+    ViewerSection {
+        title: "Bi-directional 3-panel (drag either handle — both neighbors update)";
+        BiDirDemo {}
     }
 
     ViewerSection {

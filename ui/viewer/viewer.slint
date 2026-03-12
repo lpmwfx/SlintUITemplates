@@ -1,7 +1,7 @@
 // FrameworkViewer — browse and verify all SlintUI widgets in one window.
 // Dog-foods our own components; topbar writes to Colors/Settings globals live.
 
-import { Colors, Spacing, Type, Settings } from "../tokens/theme.slint";
+import { Colors, Spacing, Type, Settings, FluentIcons } from "../tokens/theme.slint";
 import { SideBar }    from "../desktop/side-bar.slint";
 import { NavItem }    from "../desktop/types.slint";
 import { Button }     from "../shared/button.slint";
@@ -13,6 +13,7 @@ import { PageDisplay }  from "page-display.slint";
 import { PageFeedback } from "page-feedback.slint";
 import { PageLayout }   from "page-layout.slint";
 import { PageAppShell } from "page-app-shell.slint";
+import { PageIcons }    from "page-icons.slint";
 
 export component FrameworkViewer inherits Window {
     preferred-width:  1100px;
@@ -21,6 +22,24 @@ export component FrameworkViewer inherits Window {
     background: Colors.bg-primary;
 
     in-out property <string> active-view: "buttons";
+
+    // Native OS menu bar (muda-backed via Slint — must live in Window)
+    MenuBar {
+        Menu {
+            title: "View";
+            MenuItem { title: "Buttons";   activated => { root.active-view = "buttons"; } }
+            MenuItem { title: "Inputs";    activated => { root.active-view = "inputs"; } }
+            MenuItem { title: "Display";   activated => { root.active-view = "display"; } }
+            MenuItem { title: "Feedback";  activated => { root.active-view = "feedback"; } }
+            MenuItem { title: "Layout";    activated => { root.active-view = "layout"; } }
+            MenuItem { title: "App Shell"; activated => { root.active-view = "app-shell"; } }
+            MenuItem { title: "Icons";     activated => { root.active-view = "icons"; } }
+        }
+        Menu {
+            title: "Help";
+            MenuItem { title: "About SlintUI Framework Viewer"; activated => { } }
+        }
+    }
 
     VerticalLayout {
         // ── Topbar ────────────────────────────────────────────────────────
@@ -68,18 +87,25 @@ export component FrameworkViewer inherits Window {
                 max-width: Spacing.xl * 4 + Spacing.md;
                 active-item: root.active-view;
                 items: [
-                    { id: "buttons",   label: "Buttons",   icon: "▣" },
-                    { id: "inputs",    label: "Inputs",    icon: "✎" },
-                    { id: "display",   label: "Display",   icon: "◈" },
-                    { id: "feedback",  label: "Feedback",  icon: "◉" },
-                    { id: "layout",    label: "Layout",    icon: "⊞" },
-                    { id: "app-shell", label: "App Shell", icon: "⬜" },
+                    { id: "buttons",   label: "Buttons",   icon: FluentIcons.apps },
+                    { id: "inputs",    label: "Inputs",    icon: FluentIcons.edit },
+                    { id: "display",   label: "Display",   icon: FluentIcons.list },
+                    { id: "feedback",  label: "Feedback",  icon: FluentIcons.notification },
+                    { id: "layout",    label: "Layout",    icon: FluentIcons.layout },
+                    { id: "app-shell", label: "App Shell", icon: FluentIcons.panel-left },
+                    { id: "icons",     label: "Icons",     icon: FluentIcons.star },
                 ];
                 navigate(id) => { root.active-view = id; }
                 toggle-collapsed() => {}
             }
 
-            Flickable {
+            // App Shell page fills vertically — no scrolling wrapper
+            if root.active-view == "app-shell": PageAppShell {
+                horizontal-stretch: 1;
+            }
+
+            // All other pages scroll via Flickable
+            if root.active-view != "app-shell": Flickable {
                 horizontal-stretch: 1;
                 viewport-width:  self.width;
                 viewport-height: pg.preferred-height;
@@ -87,12 +113,12 @@ export component FrameworkViewer inherits Window {
                 pg := VerticalLayout {
                     padding: Spacing.md;
                     spacing: Spacing.md;
-                    if root.active-view == "buttons":   PageButtons   {}
-                    if root.active-view == "inputs":    PageInputs    {}
-                    if root.active-view == "display":   PageDisplay   {}
-                    if root.active-view == "feedback":  PageFeedback  {}
-                    if root.active-view == "layout":    PageLayout    {}
-                    if root.active-view == "app-shell": PageAppShell  {}
+                    if root.active-view == "buttons":  PageButtons  {}
+                    if root.active-view == "inputs":   PageInputs   {}
+                    if root.active-view == "display":  PageDisplay  {}
+                    if root.active-view == "feedback": PageFeedback {}
+                    if root.active-view == "layout":   PageLayout   {}
+                    if root.active-view == "icons":    PageIcons    {}
                 }
             }
         }

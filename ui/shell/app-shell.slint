@@ -1,0 +1,34 @@
+// AppShell — Windows / Fluent 2 desktop shell.
+// MenuBar must be declared in the Window (Slint constraint + mother-child rule).
+// For Android/Material 3, use MobileShell directly (see mobile/shell.slint).
+
+import { NavItem, ShellToolbarItem } from "types.slint";
+import { DesktopShell } from "desktop/shell.slint";
+
+export { MobileShell } from "mobile/shell.slint";
+
+export component AppShell inherits Rectangle {
+    in property <[NavItem]>          nav-items;
+    in property <string>             active-slot;
+    in property <bool>               show-toolbar:  false;
+    in property <[ShellToolbarItem]> toolbar-items;
+    in property <string>             status-text:   "Ready";
+    in property <float>              progress:      -1.0;
+
+    callback slot-changed(string);
+    callback toolbar-clicked(string);
+
+    DesktopShell {
+        nav-items:    root.nav-items;
+        toolbar-items: root.toolbar-items;
+        show-toolbar: root.show-toolbar;
+        active-view:  root.active-slot;
+        status-text:  root.status-text;
+        progress:     root.progress;
+        navigate(id) => {
+            root.slot-changed(id);
+        }
+        toolbar-clicked(id) => { root.toolbar-clicked(id); }
+        @children
+    }
+}

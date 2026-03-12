@@ -1,0 +1,58 @@
+// MobileShell — Material 3 layout: TopAppBar + Content + BottomNavBar + FAB.
+// Parent provides content as @children.
+
+import { MaterialColors, MaterialSpacing } from "../../tokens/material/mod.slint";
+import { NavItem }      from "../types.slint";
+import { TopAppBar }    from "top-app-bar.slint";
+import { BottomNavBar } from "bottom-nav-bar.slint";
+import { FAB }          from "fab.slint";
+import { FluentIcons }  from "../../tokens/theme.slint";
+
+export component MobileShell inherits VerticalLayout {
+    // Config
+    in property <string>    title: "App";
+    in property <[NavItem]> nav-items;
+    in property <string>    active-view: "";
+    in property <string>    fab-icon:    FluentIcons.add;
+    in property <string>    fab-label:   "";
+    in property <bool>      show-fab:    true;
+
+    // Callbacks
+    callback navigate(string);
+    callback fab-clicked();
+
+    spacing: 0px;
+
+    // ── TopAppBar ─────────────────────────────────────────────────────────
+    TopAppBar {
+        title: root.title;
+        action-icon: FluentIcons.search;
+    }
+
+    // ── Content area ──────────────────────────────────────────────────────
+    Rectangle {
+        vertical-stretch: 1;
+        background: MaterialColors.surface;
+
+        VerticalLayout {
+            padding: MaterialSpacing.md;
+            @children
+        }
+
+        // FAB (bottom-right, above bottom nav)
+        if root.show-fab: FAB {
+            icon: root.fab-icon;
+            label: root.fab-label;
+            x: parent.width - self.width - MaterialSpacing.md;
+            y: parent.height - self.height - MaterialSpacing.md;
+            clicked => { root.fab-clicked(); }
+        }
+    }
+
+    // ── BottomNavBar ──────────────────────────────────────────────────────
+    BottomNavBar {
+        items: root.nav-items;
+        active: root.active-view;
+        navigate(id) => { root.navigate(id); }
+    }
+}

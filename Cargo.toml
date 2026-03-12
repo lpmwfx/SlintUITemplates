@@ -28,6 +28,10 @@ path = "examples/rhai/main.rs"
 name = "viewer"
 path = "examples/viewer/main.rs"
 
+[[example]]
+name = "mobile"
+path = "examples/mobile/main.rs"
+
 [dependencies]
 slint = "1"
 toml = "0.8"

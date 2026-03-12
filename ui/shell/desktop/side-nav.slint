@@ -1,28 +1,43 @@
-import { Colors, Spacing, Type } from "../tokens/theme.slint";
-import { NavItem } from "types.slint";
+// ShellSideNav — Fluent 2 NavigationView left panel.
+// Collapsible; shows icon + label per nav item; Segoe Fluent Icons.
 
-export component SideBar inherits Rectangle {
-    in property <[NavItem]> items: [];
+import { Colors, Spacing, Type, FluentIcons } from "../../tokens/theme.slint";
+import { NavItem } from "../types.slint";
+
+export component ShellSideNav inherits Rectangle {
+    in property <[NavItem]> items;
     in property <string>    active-item: "";
     in property <bool>      collapsed: false;
     callback navigate(string);
     callback toggle-collapsed();
 
     background: Colors.bg-surface;
+    // Width is controlled by parent (DesktopShell sets min-width/max-width)
 
     HorizontalLayout {
-        // Nav item list + collapse button
+        // Nav item list
         VerticalLayout {
             horizontal-stretch: 1;
+            padding-top: Spacing.sm;
 
             for item in root.items: Rectangle {
                 height: Spacing.xl;
                 clip: true;
-                background: item.id == root.active-item ? Colors.bg-elevated :
+                border-radius: 4px;
+                background: item.id == root.active-item ? Colors.accent.with-alpha(0.15) :
                             item-ta.has-hover ? Colors.bg-elevated : transparent;
 
                 item-ta := TouchArea {
                     clicked => { root.navigate(item.id); }
+                }
+
+                // Active indicator bar
+                if item.id == root.active-item: Rectangle {
+                    width: 3px;
+                    height: 20px;
+                    y: (parent.height - self.height) / 2;
+                    background: Colors.accent;
+                    border-radius: 2px;
                 }
 
                 HorizontalLayout {
@@ -33,8 +48,8 @@ export component SideBar inherits Rectangle {
 
                     Text {
                         text: item.icon;
-                        font-size: Type.subtitle-size;
                         font-family: "Segoe Fluent Icons";
+                        font-size: Type.subtitle-size;
                         color: item.id == root.active-item ? Colors.accent : Colors.text-primary;
                         vertical-alignment: center;
                         horizontal-alignment: center;
@@ -50,12 +65,12 @@ export component SideBar inherits Rectangle {
                 }
             }
 
-            // Spacer pushes collapse button to bottom
             Rectangle { vertical-stretch: 1; }
 
-            // Collapse toggle
+            // Collapse toggle button
             Rectangle {
                 height: Spacing.xl;
+                border-radius: 4px;
                 background: collapse-ta.has-hover ? Colors.bg-elevated : transparent;
 
                 collapse-ta := TouchArea {
@@ -63,7 +78,8 @@ export component SideBar inherits Rectangle {
                 }
 
                 Text {
-                    text: root.collapsed ? "\u{00BB}" : "\u{00AB}";
+                    text: root.collapsed ? FluentIcons.nav-expand : FluentIcons.nav-collapse;
+                    font-family: "Segoe Fluent Icons";
                     font-size: Type.subtitle-size;
                     color: Colors.text-secondary;
                     horizontal-alignment: center;
@@ -72,9 +88,9 @@ export component SideBar inherits Rectangle {
             }
         }
 
-        // Right border (1px = Spacing.xs / 4)
+        // Right border
         Rectangle {
-            width: Spacing.xs / 4;
+            width: 1px;
             background: Colors.border;
         }
     }

@@ -1,10 +1,12 @@
-import { Colors, Spacing, Type, Settings } from "../tokens/theme.slint";
+import { Colors, Spacing, Type, Settings, FluentIcons } from "../tokens/theme.slint";
 import { NavBar }      from "nav-bar.slint";
 import { NavItem }     from "types.slint";
 import { SideBar }     from "side-bar.slint";
 import { ContentArea } from "content-area.slint";
 import { StatusBar }   from "status-bar.slint";
 import { DragHandle }  from "../modules/DragHandle.slint";
+import { ShellToolbar }     from "../shell/desktop/tool-bar.slint";
+import { ShellToolbarItem } from "../shell/types.slint";
 
 export { Colors }
 export { Settings }
@@ -22,13 +24,21 @@ export component AppWindow inherits Window {
     in-out property <bool>      sidebar-open: true;
     in-out property <bool>      sidebar-collapsed: false;
     in-out property <[NavItem]> nav-items: [
-        { id: "home",     label: "Home",     icon: "🏠" },
-        { id: "list",     label: "List",     icon: "📋" },
-        { id: "settings", label: "Settings", icon: "⚙" },
+        { id: "home",     label: "Home",     icon: FluentIcons.home },
+        { id: "list",     label: "List",     icon: FluentIcons.list },
+        { id: "settings", label: "Settings", icon: FluentIcons.settings },
     ];
+
+    // Toolbar
+    in property <bool>               show-toolbar:  false;
+    in property <[ShellToolbarItem]> toolbar-items: [];
 
     // Status bar text (Rhai / Rust override; empty = default "View: <active-view>")
     in-out property <string> status-text: "";
+
+    // Callbacks wired by DSL / Rust host
+    callback menu-action(string);
+    callback toolbar-clicked(string);
 
     // Grid ratios (pushed from Rust grid engine)
     in-out property <float> row-top-ratio: 1;
@@ -46,7 +56,31 @@ export component AppWindow inherits Window {
     callback navigate(string);
     navigate(view) => { self.active-view = view; }
 
+    // Native OS menu bar (muda-backed via Slint — must live in Window)
+    MenuBar {
+        Menu {
+            title: "File";
+            MenuItem { title: "Exit"; activated => { } }
+        }
+        Menu {
+            title: "View";
+            MenuItem { title: "Home";     activated => { root.active-view = "home"; } }
+            MenuItem { title: "List";     activated => { root.active-view = "list"; } }
+            MenuItem { title: "Settings"; activated => { root.active-view = "settings"; } }
+        }
+        Menu {
+            title: "Help";
+            MenuItem { title: "About"; activated => { } }
+        }
+    }
+
     VerticalLayout {
+        // ROW: toolbar (optional, below native MenuBar)
+        if root.show-toolbar: ShellToolbar {
+            items: root.toolbar-items;
+            item-clicked(id) => { root.toolbar-clicked(id); }
+        }
+
         // ROW: top — NavBar (fixed, not resizable)
         NavBar {
             vertical-stretch: root.row-top-ratio;

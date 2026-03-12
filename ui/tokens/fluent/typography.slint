@@ -1,0 +1,26 @@
+// Fluent 2 type scale — exact sizes and weights from WinUI3.
+// Reference: https://learn.microsoft.com/en-us/windows/apps/design/style/typography
+
+import { Settings } from "../../state/settings.slint";
+
+export global FluentType {
+    // Base sizes scaled by zoom * font-scale (reactive to runtime settings)
+    out property <length> caption:      Settings.zoom * Settings.font-scale * 12px;
+    out property <length> body:         Settings.zoom * Settings.font-scale * 14px;
+    out property <length> body-strong:  Settings.zoom * Settings.font-scale * 14px;
+    out property <length> subtitle:     Settings.zoom * Settings.font-scale * 20px;
+    out property <length> title:        Settings.zoom * Settings.font-scale * 28px;
+    out property <length> title-large:  Settings.zoom * Settings.font-scale * 40px;
+    out property <length> display:      Settings.zoom * Settings.font-scale * 68px;
+
+    // Weights
+    out property <int> weight-regular:  400;
+    out property <int> weight-medium:   500;
+    out property <int> weight-semibold: 600;
+    out property <int> weight-bold:     700;
+
+    // Font families (Windows 11 — always available)
+    out property <string> font-text:   "Segoe UI";
+    out property <string> font-icons:  "Segoe Fluent Icons";
+    out property <string> font-mono:   "Cascadia Code";
+}

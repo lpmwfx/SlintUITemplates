@@ -1,0 +1,46 @@
+// ShellToolbar — optional Fluent 2 icon toolbar below the menu bar.
+
+import { Colors, Spacing, Type, FluentIcons } from "../../tokens/theme.slint";
+import { ShellToolbarItem } from "../types.slint";
+
+export component ShellToolbar inherits Rectangle {
+    in property <[ShellToolbarItem]> items;
+    callback item-clicked(string);
+
+    height: Spacing.xl;
+    background: Colors.bg-surface;
+
+    HorizontalLayout {
+        padding-left: Spacing.sm;
+        padding-right: Spacing.sm;
+        spacing: Spacing.xs;
+        alignment: start;
+
+        for item in root.items: Rectangle {
+            width: Spacing.xl;
+            height: Spacing.xl;
+            border-radius: 4px;
+            background: btn-ta.has-hover ? Colors.bg-elevated : transparent;
+
+            btn-ta := TouchArea {
+                clicked => { root.item-clicked(item.id); }
+            }
+
+            Text {
+                text: item.icon;
+                font-family: "Segoe Fluent Icons";
+                font-size: Type.subtitle-size;
+                color: Colors.text-primary;
+                horizontal-alignment: center;
+                vertical-alignment: center;
+            }
+        }
+    }
+
+    // Bottom border
+    Rectangle {
+        y: parent.height - 1px;
+        height: 1px;
+        background: Colors.border;
+    }
+}

@@ -1,0 +1,57 @@
+// ShellStatusBar — Fluent 2 status bar (bottom chrome).
+
+import { Colors, Spacing, Type } from "../../tokens/theme.slint";
+
+export component ShellStatusBar inherits Rectangle {
+    in property <string>  status-text: "Ready";
+    in property <float>   progress: -1.0;   // -1 = hidden, 0.0..1.0 = shown
+    in property <string>  right-text: "";
+
+    height: 24px;
+    background: Colors.bg-surface;
+
+    // Top border
+    Rectangle {
+        height: 1px;
+        background: Colors.border;
+    }
+
+    HorizontalLayout {
+        padding-left: Spacing.sm;
+        padding-right: Spacing.sm;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        spacing: Spacing.sm;
+
+        Text {
+            text: root.status-text;
+            font-size: Type.caption-size;
+            color: Colors.text-secondary;
+            vertical-alignment: center;
+        }
+
+        if root.progress >= 0.0: Rectangle {
+            width: 80px;
+            height: 4px;
+            y: (parent.height - self.height) / 2;
+            border-radius: 2px;
+            background: Colors.border;
+
+            Rectangle {
+                width: parent.width * root.progress;
+                height: parent.height;
+                border-radius: 2px;
+                background: Colors.accent;
+            }
+        }
+
+        Rectangle { horizontal-stretch: 1; }
+
+        if root.right-text != "": Text {
+            text: root.right-text;
+            font-size: Type.caption-size;
+            color: Colors.text-secondary;
+            vertical-alignment: center;
+        }
+    }
+}
