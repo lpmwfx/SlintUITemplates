@@ -82,6 +82,10 @@ pub enum DslError {
     ToolbarItemMissingId(usize),
     /// Icon name is not in the FluentIcons registry.
     UnknownIcon { context: &'static str, index: usize, name: String },
+    /// Nav item id has no matching ViewSlot registered.
+    NavWithoutView(String),
+    /// ViewSlot id has no matching nav item.
+    ViewWithoutNav(String),
 }
 
 impl std::fmt::Display for DslError {
@@ -99,6 +103,10 @@ impl std::fmt::Display for DslError {
                 write!(f, "toolbar[{i}]: id must not be empty"),
             DslError::UnknownIcon { context, index, name } =>
                 write!(f, "{context}[{index}]: unknown icon \"{name}\" — see dsl::icons"),
+            DslError::NavWithoutView(id) =>
+                write!(f, "nav \"{id}\" has no registered ViewSlot — add .views([\"{id}\", ...])"),
+            DslError::ViewWithoutNav(id) =>
+                write!(f, "ViewSlot \"{id}\" has no nav item — remove from .views() or add to .nav()"),
         }
     }
 }
@@ -132,6 +140,8 @@ pub struct AppDsl {
     pub(crate) toolbar:      Vec<ResolvedToolbar>,
     pub(crate) show_toolbar: bool,
     pub(crate) window_size:  Option<(u32, u32)>,
+    /// Validated view ids — matches nav ids 1:1 when provided.
+    pub(crate) views:        Vec<String>,
 }
 
 // ── Builder ───────────────────────────────────────────────────────────────────
@@ -143,6 +153,7 @@ pub struct AppDslBuilder {
     status:      String,
     toolbar:     Vec<Toolbar>,
     window_size: Option<(u32, u32)>,
+    views:       Vec<String>,
 }
 
 impl AppDsl {
@@ -154,6 +165,7 @@ impl AppDsl {
             status:      "Ready".into(),
             toolbar:     Vec::new(),
             window_size: None,
+            views:       Vec::new(),
         }
     }
 }
@@ -181,6 +193,13 @@ impl AppDslBuilder {
 
     pub fn window_size(mut self, width: u32, height: u32) -> Self {
         self.window_size = Some((width, height));
+        self
+    }
+
+    /// Register ViewSlot ids — validated to match nav ids 1:1.
+    /// Optional: if omitted, nav↔view consistency is not checked.
+    pub fn views(mut self, ids: Vec<&str>) -> Self {
+        self.views = ids.into_iter().map(String::from).collect();
         self
     }
 
@@ -234,6 +253,21 @@ impl AppDslBuilder {
             }
         }
 
+        // Rule: nav ids ↔ view ids must match 1:1 (only when views() is provided)
+        if !self.views.is_empty() {
+            let nav_ids: std::collections::HashSet<&str> =
+                self.nav.iter().map(|n| n.id.as_str()).collect();
+            let view_ids: std::collections::HashSet<&str> =
+                self.views.iter().map(|s| s.as_str()).collect();
+
+            for id in nav_ids.difference(&view_ids) {
+                errors.push(DslError::NavWithoutView(id.to_string()));
+            }
+            for id in view_ids.difference(&nav_ids) {
+                errors.push(DslError::ViewWithoutNav(id.to_string()));
+            }
+        }
+
         if errors.is_empty() {
             Ok(AppDsl {
                 title:        self.title,
@@ -243,6 +277,7 @@ impl AppDslBuilder {
                 show_toolbar: !resolved_toolbar.is_empty(),
                 toolbar:      resolved_toolbar,
                 window_size:  self.window_size,
+                views:        self.views,
             })
         } else {
             Err(errors)
@@ -357,6 +392,40 @@ mod tests {
     fn platform_default_is_windows() {
         let dsl = AppDsl::builder("App").nav(three_nav()).build().unwrap();
         assert_eq!(dsl.platform, Platform::Windows);
+    }
+
+    #[test]
+    fn views_matching_nav_is_ok() {
+        let dsl = AppDsl::builder("App")
+            .nav(three_nav())
+            .views(vec!["home", "list", "settings"])
+            .build();
+        assert!(dsl.is_ok());
+    }
+
+    #[test]
+    fn nav_without_view_is_error() {
+        let errs = AppDsl::builder("App")
+            .nav(three_nav())
+            .views(vec!["home", "list"])  // missing "settings"
+            .build().unwrap_err();
+        assert!(errs.iter().any(|e| matches!(e, DslError::NavWithoutView(id) if id == "settings")));
+    }
+
+    #[test]
+    fn view_without_nav_is_error() {
+        let errs = AppDsl::builder("App")
+            .nav(three_nav())
+            .views(vec!["home", "list", "settings", "extra"])
+            .build().unwrap_err();
+        assert!(errs.iter().any(|e| matches!(e, DslError::ViewWithoutNav(id) if id == "extra")));
+    }
+
+    #[test]
+    fn views_optional_no_check_when_omitted() {
+        // No .views() call — nav↔view check skipped
+        let dsl = AppDsl::builder("App").nav(three_nav()).build();
+        assert!(dsl.is_ok());
     }
 
     #[test]
