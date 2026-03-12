@@ -1,0 +1,25 @@
+// Fluent 2 spacing scale — 4px base grid.
+// WinUI3 spacing reference: https://learn.microsoft.com/en-us/windows/apps/design/layout/spacing
+
+export global FluentSpacing {
+    out property <length> xs:    4px;
+    out property <length> sm:    8px;
+    out property <length> md:   12px;
+    out property <length> lg:   16px;
+    out property <length> xl:   20px;
+    out property <length> xxl:  24px;
+    out property <length> xxxl: 32px;
+
+    // ── Control heights (Fluent 2 interactive control sizes) ───────────────
+    out property <length> control-sm: 24px;   // compact controls
+    out property <length> control-md: 32px;   // standard controls (buttons, inputs)
+    out property <length> control-lg: 40px;   // large / nav items
+
+    // ── Panel / chrome sizes ───────────────────────────────────────────────
+    out property <length> nav-width-collapsed: 48px;
+    out property <length> nav-width-expanded:  280px;
+    out property <length> status-bar-height:   24px;
+    out property <length> toolbar-height:      40px;
+    out property <length> titlebar-height:     32px;
+    out property <length> menubar-height:      30px;
+}

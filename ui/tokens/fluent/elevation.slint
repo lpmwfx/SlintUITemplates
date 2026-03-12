@@ -1,0 +1,21 @@
+// Fluent 2 elevation — shadow levels.
+// Box-shadow values correspond to WinUI3 elevation tokens.
+// Usage: apply via drop-shadow filter or as border hint where shadows unsupported.
+
+import { FluentColors } from "colors.slint";
+
+export global FluentElevation {
+    // Shadow as color tokens (usable in Slint drop-shadow)
+    out property <color> level-2:  FluentColors.shadow-2;
+    out property <color> level-4:  FluentColors.shadow-4;
+    out property <color> level-8:  FluentColors.shadow-8;
+    out property <color> level-16: FluentColors.shadow-16;
+    out property <color> level-28: FluentColors.shadow-28;
+
+    // Blur radius per level
+    out property <length> blur-2:  2px;
+    out property <length> blur-4:  4px;
+    out property <length> blur-8:  8px;
+    out property <length> blur-16: 16px;
+    out property <length> blur-28: 28px;
+}
