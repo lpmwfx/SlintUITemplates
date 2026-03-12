@@ -99,7 +99,13 @@ export component FrameworkViewer inherits Window {
                 toggle-collapsed() => {}
             }
 
-            Flickable {
+            // App Shell page fills vertically — no scrolling wrapper
+            if root.active-view == "app-shell": PageAppShell {
+                horizontal-stretch: 1;
+            }
+
+            // All other pages scroll via Flickable
+            if root.active-view != "app-shell": Flickable {
                 horizontal-stretch: 1;
                 viewport-width:  self.width;
                 viewport-height: pg.preferred-height;
@@ -107,13 +113,12 @@ export component FrameworkViewer inherits Window {
                 pg := VerticalLayout {
                     padding: Spacing.md;
                     spacing: Spacing.md;
-                    if root.active-view == "buttons":   PageButtons   {}
-                    if root.active-view == "inputs":    PageInputs    {}
-                    if root.active-view == "display":   PageDisplay   {}
-                    if root.active-view == "feedback":  PageFeedback  {}
-                    if root.active-view == "layout":    PageLayout    {}
-                    if root.active-view == "app-shell": PageAppShell  {}
-                    if root.active-view == "icons":     PageIcons     {}
+                    if root.active-view == "buttons":  PageButtons  {}
+                    if root.active-view == "inputs":   PageInputs   {}
+                    if root.active-view == "display":  PageDisplay  {}
+                    if root.active-view == "feedback": PageFeedback {}
+                    if root.active-view == "layout":   PageLayout   {}
+                    if root.active-view == "icons":    PageIcons    {}
                 }
             }
         }
