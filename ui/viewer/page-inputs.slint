@@ -1,0 +1,30 @@
+// page-inputs — showcases TextInput (plain/label/error) and SelectField.
+
+import { Spacing } from "../tokens/theme.slint";
+import { TextInput }   from "../shared/text-input.slint";
+import { SelectField } from "../shared/select-field.slint";
+import { ViewerSection } from "viewer-section.slint";
+
+export component PageInputs inherits VerticalLayout {
+    spacing: Spacing.md;
+
+    ViewerSection {
+        title: "TextInput";
+        VerticalLayout {
+            spacing: Spacing.sm;
+            width: 320px;
+            TextInput { placeholder: "Plain input..."; }
+            TextInput { label: "With label"; placeholder: "Enter text..."; value: "Hello"; }
+            TextInput { label: "With error"; value: "bad-value"; error: "This field is required"; }
+        }
+    }
+
+    ViewerSection {
+        title: "SelectField";
+        SelectField {
+            width: 220px;
+            options: ["Option A", "Option B", "Option C", "Option D"];
+            placeholder: "Choose one...";
+        }
+    }
+}

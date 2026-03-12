@@ -1,0 +1,37 @@
+// page-buttons — showcases Button (all variants) and Toggle.
+
+import { Spacing } from "../tokens/theme.slint";
+import { Button }  from "../shared/button.slint";
+import { Toggle }  from "../shared/toggle.slint";
+import { ViewerSection } from "viewer-section.slint";
+
+export component PageButtons inherits VerticalLayout {
+    spacing: Spacing.md;
+
+    private property <bool> t1: true;
+    private property <bool> t2: false;
+    private property <bool> t3: true;
+
+    ViewerSection {
+        title: "Button";
+        HorizontalLayout {
+            spacing: Spacing.sm;
+            Button { label: "Primary";   variant: "primary"; }
+            Button { label: "Secondary"; variant: "secondary"; }
+            Button { label: "Ghost";     variant: "ghost"; }
+            Button { label: "Danger";    variant: "danger"; }
+            Button { label: "Disabled";  variant: "primary"; enabled: false; }
+        }
+    }
+
+    ViewerSection {
+        title: "Toggle";
+        HorizontalLayout {
+            spacing: Spacing.lg;
+            alignment: start;
+            Toggle { checked: root.t1; label: "Animations"; toggled(v) => { root.t1 = v; } }
+            Toggle { checked: root.t2; label: "Auto-save";  toggled(v) => { root.t2 = v; } }
+            Toggle { checked: root.t3;                      toggled(v) => { root.t3 = v; } }
+        }
+    }
+}

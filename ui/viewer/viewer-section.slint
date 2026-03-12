@@ -1,0 +1,24 @@
+// ViewerSection — titled section divider for Framework Viewer pages.
+// Used by all page-*.slint files: pass title + children.
+
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+
+export component ViewerSection inherits VerticalLayout {
+    in property <string> title;
+    spacing: Spacing.sm;
+    padding: Spacing.md;
+
+    Text {
+        text: root.title;
+        font-size: Type.subtitle-size;
+        font-weight: Type.weight-semibold;
+        color: Colors.text-primary;
+    }
+
+    Rectangle {
+        height: 1px;
+        background: Colors.border;
+    }
+
+    @children
+}

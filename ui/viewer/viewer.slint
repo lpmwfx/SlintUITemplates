@@ -1,0 +1,100 @@
+// FrameworkViewer — browse and verify all SlintUI widgets in one window.
+// Dog-foods our own components; topbar writes to Colors/Settings globals live.
+
+import { Colors, Spacing, Type, Settings } from "../tokens/theme.slint";
+import { SideBar }    from "../desktop/side-bar.slint";
+import { NavItem }    from "../desktop/types.slint";
+import { Button }     from "../shared/button.slint";
+import { Toggle }     from "../shared/toggle.slint";
+import { SelectField } from "../shared/select-field.slint";
+import { PageButtons }  from "page-buttons.slint";
+import { PageInputs }   from "page-inputs.slint";
+import { PageDisplay }  from "page-display.slint";
+import { PageFeedback } from "page-feedback.slint";
+import { PageLayout }   from "page-layout.slint";
+import { PageAppShell } from "page-app-shell.slint";
+
+export component FrameworkViewer inherits Window {
+    preferred-width:  1100px;
+    preferred-height: 720px;
+    title: "SlintUI Framework Viewer";
+    background: Colors.bg-primary;
+
+    in-out property <string> active-view: "buttons";
+
+    VerticalLayout {
+        // ── Topbar ────────────────────────────────────────────────────────
+        Rectangle {
+            height: Spacing.xl;
+            background: Colors.bg-surface;
+            HorizontalLayout {
+                padding-left: Spacing.md;
+                padding-right: Spacing.md;
+                spacing: Spacing.sm;
+                Text {
+                    text: "SlintUI Framework Viewer";
+                    font-size: Type.subtitle-size;
+                    font-weight: Type.weight-semibold;
+                    color: Colors.text-primary;
+                    vertical-alignment: center;
+                }
+                Rectangle { horizontal-stretch: 1; }
+                Toggle { label: "Dark"; checked: Colors.dark-mode; toggled(v) => { Colors.dark-mode = v; } }
+                Button { label: "0.75×"; variant: "ghost"; clicked => { Settings.zoom = 0.75; } }
+                Button { label: "1×";    variant: "ghost"; clicked => { Settings.zoom = 1.0; } }
+                Button { label: "1.25×"; variant: "ghost"; clicked => { Settings.zoom = 1.25; } }
+                Button { label: "1.5×";  variant: "ghost"; clicked => { Settings.zoom = 1.5; } }
+                Toggle {
+                    label: "Outlined";
+                    checked: Settings.icon-style == "outlined";
+                    toggled(v) => { Settings.icon-style = v ? "outlined" : "filled"; }
+                }
+                SelectField {
+                    width: 140px;
+                    options: ["Default", "Segoe UI", "Arial", "Consolas", "Verdana"];
+                    placeholder: "Font...";
+                    changed(f) => { Settings.font-family = f == "Default" ? "" : f; }
+                }
+            }
+        }
+
+        // ── Sidebar + Content ─────────────────────────────────────────────
+        HorizontalLayout {
+            vertical-stretch: 1;
+
+            SideBar {
+                horizontal-stretch: 0;
+                min-width: Spacing.xl * 4 + Spacing.md;
+                max-width: Spacing.xl * 4 + Spacing.md;
+                active-item: root.active-view;
+                items: [
+                    { id: "buttons",   label: "Buttons",   icon: "▣" },
+                    { id: "inputs",    label: "Inputs",    icon: "✎" },
+                    { id: "display",   label: "Display",   icon: "◈" },
+                    { id: "feedback",  label: "Feedback",  icon: "◉" },
+                    { id: "layout",    label: "Layout",    icon: "⊞" },
+                    { id: "app-shell", label: "App Shell", icon: "⬜" },
+                ];
+                navigate(id) => { root.active-view = id; }
+                toggle-collapsed() => {}
+            }
+
+            Flickable {
+                horizontal-stretch: 1;
+                viewport-width:  self.width;
+                viewport-height: pg.preferred-height;
+
+                pg := VerticalLayout {
+                    padding: Spacing.md;
+                    spacing: Spacing.md;
+                    if root.active-view == "buttons":   PageButtons   {}
+                    if root.active-view == "inputs":    PageInputs    {}
+                    if root.active-view == "display":   PageDisplay   {}
+                    if root.active-view == "feedback":  PageFeedback  {}
+                    if root.active-view == "layout":    PageLayout    {}
+                    if root.active-view == "app-shell": PageAppShell  {}
+                }
+            }
+        }
+    }
+}

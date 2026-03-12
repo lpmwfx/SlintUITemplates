@@ -1,0 +1,42 @@
+// page-feedback — showcases Toast (all variants) and Dialog (contained).
+
+import { Colors, Spacing } from "../tokens/theme.slint";
+import { Toast }  from "../shared/toast.slint";
+import { Dialog } from "../shared/dialog.slint";
+import { ViewerSection } from "viewer-section.slint";
+
+export component PageFeedback inherits VerticalLayout {
+    spacing: Spacing.md;
+
+    ViewerSection {
+        title: "Toast";
+        VerticalLayout {
+            spacing: Spacing.sm;
+            width: 360px;
+            Toast { message: "Information message";         variant: "info";    visible: true; }
+            Toast { message: "Success! Operation complete"; variant: "success"; visible: true; }
+            Toast { message: "Warning: please check input"; variant: "warning"; visible: true; }
+            Toast { message: "Error: action failed";        variant: "error";   visible: true; }
+        }
+    }
+
+    ViewerSection {
+        title: "Dialog";
+        // Dialog contained inside a fixed Rectangle — simulates an in-page preview
+        Rectangle {
+            width: 480px;
+            height: 220px;
+            border-width: 1px;
+            border-color: Colors.border;
+            background: Colors.bg-primary;
+            clip: true;
+
+            Dialog {
+                title: "Confirm Action";
+                visible: true;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}

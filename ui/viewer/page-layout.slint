@@ -1,0 +1,90 @@
+// page-layout — showcases DragHandle (live-draggable), PanelContainer, PanelSlot.
+
+import { Colors, Spacing } from "../tokens/theme.slint";
+import { DragHandle }                from "../modules/DragHandle.slint";
+import { PanelContainer, PanelItem } from "../modules/PanelContainer.slint";
+import { PanelSlot }                 from "../modules/PanelSlot.slint";
+import { ViewerSection } from "viewer-section.slint";
+
+// Demo box with a live column drag handle.
+component ColHandleDemo inherits Rectangle {
+    private property <length> split: 100px;
+
+    width: 220px;
+    height: 80px;
+    border-width: 1px;
+    border-color: Colors.border;
+    clip: true;
+
+    HorizontalLayout {
+        Rectangle { width: root.split; background: Colors.bg-surface; }
+        DragHandle {
+            min-width: Spacing.handle-thickness;
+            max-width: Spacing.handle-thickness;
+            vertical: false;
+            dragged(dx, dy) => { root.split = clamp(root.split + dx * 1px, 20px, 180px); }
+        }
+        Rectangle { horizontal-stretch: 1; background: Colors.bg-elevated; }
+    }
+}
+
+// Demo box with a live row drag handle.
+component RowHandleDemo inherits Rectangle {
+    private property <length> split: 40px;
+
+    width: 220px;
+    height: 80px;
+    border-width: 1px;
+    border-color: Colors.border;
+    clip: true;
+
+    VerticalLayout {
+        Rectangle { height: root.split; background: Colors.bg-surface; }
+        DragHandle {
+            min-height: Spacing.handle-thickness;
+            max-height: Spacing.handle-thickness;
+            vertical: true;
+            dragged(dx, dy) => { root.split = clamp(root.split + dy * 1px, 10px, 60px); }
+        }
+        Rectangle { vertical-stretch: 1; background: Colors.bg-elevated; }
+    }
+}
+
+export component PageLayout inherits VerticalLayout {
+    spacing: Spacing.md;
+
+    ViewerSection {
+        title: "DragHandle";
+        HorizontalLayout {
+            spacing: Spacing.lg;
+            alignment: start;
+            ColHandleDemo {}
+            RowHandleDemo {}
+        }
+    }
+
+    ViewerSection {
+        title: "PanelContainer (3 panels)";
+        PanelContainer {
+            width: 400px;
+            height: 180px;
+            panels: [
+                { id: 0, kind: "panel",    label: "Panel A", x: 0.0,  y: 0.0,  w: 0.45, h: 1.0  },
+                { id: 1, kind: "handle-h", label: "",        x: 0.45, y: 0.0,  w: 0.05, h: 1.0  },
+                { id: 2, kind: "panel",    label: "Panel B", x: 0.5,  y: 0.0,  w: 0.5,  h: 0.5  },
+                { id: 3, kind: "handle-v", label: "",        x: 0.5,  y: 0.5,  w: 0.5,  h: 0.05 },
+                { id: 4, kind: "panel",    label: "Panel C", x: 0.5,  y: 0.55, w: 0.5,  h: 0.45 },
+            ];
+        }
+    }
+
+    ViewerSection {
+        title: "PanelSlot (standalone)";
+        PanelSlot {
+            width: 200px;
+            height: 80px;
+            panel-id: 99;
+            label: "Standalone slot";
+        }
+    }
+}

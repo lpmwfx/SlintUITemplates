@@ -23,6 +23,13 @@
       "cwd": "${workspaceFolder}"
     },
     {
+      "name": "Framework Viewer",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "cargo run --example viewer",
+      "cwd": "${workspaceFolder}"
+    },
+    {
       "name": "Cargo Run",
       "type": "lldb",
       "request": "launch",

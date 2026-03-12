@@ -1,0 +1,144 @@
+// page-app-shell — live demo of desktop + mobile AppShell layout.
+
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { NavBar }    from "../desktop/nav-bar.slint";
+import { SideBar }   from "../desktop/side-bar.slint";
+import { StatusBar } from "../desktop/status-bar.slint";
+import { NavItem }   from "../desktop/types.slint";
+import { DragHandle } from "../modules/DragHandle.slint";
+import { Button }    from "../shared/button.slint";
+import { HomeView }     from "../views/home.slint";
+import { ListView }     from "../views/list.slint";
+import { SettingsView } from "../views/settings.slint";
+
+// Extracted mobile tab bar — reduces nesting in PageAppShell.
+component MobileTabBar inherits Rectangle {
+    in property <[NavItem]> items;
+    in property <string>    active: "";
+    callback navigate(string);
+
+    height: Spacing.xl + Spacing.sm;
+    background: Colors.bg-surface;
+
+    HorizontalLayout {
+        for item in root.items: Rectangle {
+            horizontal-stretch: 1;
+            TouchArea { clicked => { root.navigate(item.id); } }
+            VerticalLayout {
+                alignment: center;
+                spacing: Spacing.xs;
+                Text { text: item.icon;  font-size: Type.subtitle-size; color: item.id == root.active ? Colors.accent : Colors.text-secondary; horizontal-alignment: center; }
+                Text { text: item.label; font-size: Type.caption-size;  color: item.id == root.active ? Colors.accent : Colors.text-secondary; horizontal-alignment: center; }
+            }
+        }
+    }
+}
+
+export component PageAppShell inherits VerticalLayout {
+    private property <string>    layout-mode: "desktop";
+    private property <string>    active-view: "home";
+    // col-left-width is the single source of truth; sidebar-collapsed is derived from it.
+    private property <length>    sidebar-collapsed-width: Spacing.xl + Spacing.sm;
+    private property <length>    sidebar-expanded-width:  Spacing.xl * 4 + Spacing.md;
+    private property <length>    col-left-width: sidebar-expanded-width;
+    private property <bool>      sidebar-collapsed: col-left-width <= sidebar-collapsed-width + Spacing.sm;
+    private property <[NavItem]> nav-items: [
+        { id: "home",     label: "Home",     icon: "🏠" },
+        { id: "list",     label: "List",     icon: "📋" },
+        { id: "settings", label: "Settings", icon: "⚙" },
+    ];
+
+    // Control bar
+    Rectangle {
+        height: Spacing.xl;
+        background: Colors.bg-surface;
+        HorizontalLayout {
+            padding-left: Spacing.md;
+            padding-right: Spacing.md;
+            spacing: Spacing.sm;
+            Text {
+                text: "App Shell Demo";
+                font-size: Type.subtitle-size;
+                font-weight: Type.weight-semibold;
+                color: Colors.text-primary;
+                vertical-alignment: center;
+            }
+            Rectangle { horizontal-stretch: 1; }
+            Button {
+                label: root.layout-mode == "desktop" ? "→ Mobile" : "→ Desktop";
+                variant: "secondary";
+                clicked => { root.layout-mode = root.layout-mode == "desktop" ? "mobile" : "desktop"; }
+            }
+        }
+    }
+
+    // Desktop layout
+    if root.layout-mode == "desktop": HorizontalLayout {
+        vertical-stretch: 1;
+        SideBar {
+            horizontal-stretch: 0;
+            min-width: root.col-left-width;
+            max-width: root.col-left-width;
+            items: root.nav-items;
+            active-item: root.active-view;
+            collapsed: root.sidebar-collapsed;
+            navigate(id) => { root.active-view = id; }
+            toggle-collapsed() => {
+                root.col-left-width = root.sidebar-collapsed
+                    ? root.sidebar-expanded-width
+                    : root.sidebar-collapsed-width;
+            }
+        }
+        DragHandle {
+            min-width: Spacing.handle-thickness;
+            max-width: Spacing.handle-thickness;
+            vertical: false;
+            dragged(dx, dy) => {
+                root.col-left-width = clamp(root.col-left-width + dx * 1px, root.sidebar-collapsed-width, 400px);
+            }
+        }
+        VerticalLayout {
+            horizontal-stretch: 1;
+            NavBar {
+                height: Spacing.xl;
+                breadcrumb: root.active-view;
+                can-go-back: root.active-view != "home";
+                go-back => { root.active-view = "home"; }
+            }
+            if root.active-view == "home":     HomeView     { vertical-stretch: 1; }
+            if root.active-view == "list":     ListView     { vertical-stretch: 1; }
+            if root.active-view == "settings": SettingsView { vertical-stretch: 1; }
+            StatusBar { status-text: "view: " + root.active-view; }
+        }
+    }
+
+    // Mobile layout — centered frame
+    if root.layout-mode == "mobile": Rectangle {
+        vertical-stretch: 1;
+        background: Colors.bg-primary;
+        Rectangle {
+            width: Spacing.xl * 8 + Spacing.md;
+            height: parent.height;
+            x: (parent.width - self.width) / 2;
+            border-color: Colors.border;
+            border-width: 1px;
+            VerticalLayout {
+                NavBar {
+                    height: Spacing.xl;
+                    breadcrumb: root.active-view;
+                    can-go-back: root.active-view != "home";
+                    go-back => { root.active-view = "home"; }
+                }
+                if root.active-view == "home":     HomeView     { vertical-stretch: 1; }
+                if root.active-view == "list":     ListView     { vertical-stretch: 1; }
+                if root.active-view == "settings": SettingsView { vertical-stretch: 1; }
+                MobileTabBar {
+                    items: root.nav-items;
+                    active: root.active-view;
+                    navigate(id) => { root.active-view = id; }
+                }
+                StatusBar { status-text: "view: " + root.active-view; }
+            }
+        }
+    }
+}

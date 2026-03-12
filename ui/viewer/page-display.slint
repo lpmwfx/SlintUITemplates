@@ -1,0 +1,68 @@
+// page-display — showcases Badge, Avatar, Card, ListItem, ProgressBar.
+
+import { Spacing } from "../tokens/theme.slint";
+import { Badge }       from "../shared/badge.slint";
+import { Avatar }      from "../shared/avatar.slint";
+import { Card }        from "../shared/card.slint";
+import { ListItem }    from "../shared/list-item.slint";
+import { ProgressBar } from "../shared/progress-bar.slint";
+import { ViewerSection } from "viewer-section.slint";
+
+export component PageDisplay inherits VerticalLayout {
+    spacing: Spacing.md;
+
+    ViewerSection {
+        title: "Badge";
+        HorizontalLayout {
+            spacing: Spacing.sm;
+            alignment: start;
+            Badge { text: "Info";    variant: "info"; }
+            Badge { text: "Success"; variant: "success"; }
+            Badge { text: "Warning"; variant: "warning"; }
+            Badge { text: "Error";   variant: "error"; }
+        }
+    }
+
+    ViewerSection {
+        title: "Avatar";
+        HorizontalLayout {
+            spacing: Spacing.sm;
+            alignment: start;
+            Avatar { initials: "SM"; size: "sm"; }
+            Avatar { initials: "MD"; size: "md"; }
+            Avatar { initials: "LG"; size: "lg"; }
+        }
+    }
+
+    ViewerSection {
+        title: "Card";
+        HorizontalLayout {
+            spacing: Spacing.md;
+            alignment: start;
+            Card { title: "Title only"; width: 180px; }
+            Card { title: "Card Title"; subtitle: "Supporting subtitle text"; width: 200px; }
+        }
+    }
+
+    ViewerSection {
+        title: "ListItem";
+        VerticalLayout {
+            width: 300px;
+            ListItem { title: "Normal item"; }
+            ListItem { title: "Selected item"; selected: true; }
+            ListItem { title: "With subtitle"; subtitle: "Subtitle text here"; }
+        }
+    }
+
+    ViewerSection {
+        title: "ProgressBar";
+        VerticalLayout {
+            spacing: Spacing.sm;
+            width: 300px;
+            ProgressBar { value: 0.0; }
+            ProgressBar { value: 0.33; }
+            ProgressBar { value: 0.66; }
+            ProgressBar { value: 1.0; }
+        }
+    }
+}
