@@ -30,6 +30,26 @@ impl AppAdapter {
         Ok(())
     }
 
+    pub fn set_active_view(&self, name: &str) {
+        self.ui.set_active_view(name.into());
+    }
+
+    pub fn get_active_view(&self) -> String {
+        self.ui.get_active_view().to_string()
+    }
+
+    pub fn set_dark_mode(&self, on: bool) {
+        self.ui.global::<Colors>().set_dark_mode(on);
+    }
+
+    pub fn get_dark_mode(&self) -> bool {
+        self.ui.global::<Colors>().get_dark_mode()
+    }
+
+    pub fn set_status(&self, text: &str) {
+        self.ui.set_status_text(text.into());
+    }
+
     pub fn run(self) -> Result<(), slint::PlatformError> {
         self.ui.run()
     }

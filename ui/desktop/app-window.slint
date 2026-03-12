@@ -25,6 +25,9 @@ export component AppWindow inherits Window {
         { id: "settings", label: "Settings", icon: "⚙" },
     ];
 
+    // Status bar text (Rhai / Rust override; empty = default "View: <active-view>")
+    in-out property <string> status-text: "";
+
     // Grid ratios (pushed from Rust grid engine)
     in-out property <float> row-top-ratio: 1;
     in-out property <float> row-main-ratio: 10;
@@ -125,7 +128,7 @@ export component AppWindow inherits Window {
         // ROW: bottom — StatusBar (fixed, not resizable)
         StatusBar {
             vertical-stretch: root.row-bottom-ratio;
-            status-text: "View: " + root.active-view;
+            status-text: root.status-text != "" ? root.status-text : "View: " + root.active-view;
         }
     }
 }

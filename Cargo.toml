@@ -20,10 +20,15 @@ path = "src/lib.rs"
 name = "desktop"
 path = "examples/desktop/main.rs"
 
+[[example]]
+name = "rhai-demo"
+path = "examples/rhai/main.rs"
+
 [dependencies]
 slint = "1"
 toml = "0.8"
 serde = { version = "1", features = ["derive"] }
+rhai = { version = "1" }
 
 [dev-dependencies]
 i-slint-backend-testing = "1.15"

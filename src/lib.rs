@@ -1,4 +1,5 @@
 pub mod adapter;
+pub mod bindings;
 pub mod grid;
 pub mod layout;
 
