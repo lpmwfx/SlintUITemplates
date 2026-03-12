@@ -4261,11 +4261,14 @@ name = "slint-ui-templates"
 version = "0.1.0"
 dependencies = [
  "i-slint-backend-testing",
+ "i-slint-backend-winit",
+ "raw-window-handle",
  "rhai",
  "serde",
  "slint",
  "slint-build",
  "toml 0.8.23",
+ "windows-sys 0.52.0",
 ]
 
 [[package]]
