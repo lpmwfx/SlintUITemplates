@@ -1,0 +1,9 @@
+// Library compilation entry — exports all components and globals for Rust bindings.
+// Build.rs compiles this file; include_modules!() makes all types available.
+
+export { AppWindow }       from "desktop/app-window.slint";
+export { FrameworkViewer } from "viewer/viewer.slint";
+
+// Re-export globals so Rust can access Colors, Settings, etc.
+export { Colors }   from "tokens/colors.slint";
+export { Settings } from "state/settings.slint";

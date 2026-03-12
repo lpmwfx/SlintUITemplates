@@ -24,6 +24,10 @@ path = "examples/desktop/main.rs"
 name = "rhai-demo"
 path = "examples/rhai/main.rs"
 
+[[example]]
+name = "viewer"
+path = "examples/viewer/main.rs"
+
 [dependencies]
 slint = "1"
 toml = "0.8"
