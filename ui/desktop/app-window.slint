@@ -1,4 +1,4 @@
-import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Colors, Spacing, Type, Settings } from "../tokens/theme.slint";
 import { NavBar }      from "nav-bar.slint";
 import { NavItem }     from "types.slint";
 import { SideBar }     from "side-bar.slint";
@@ -7,6 +7,7 @@ import { StatusBar }   from "status-bar.slint";
 import { DragHandle }  from "../modules/DragHandle.slint";
 
 export { Colors }
+export { Settings }
 export { NavItem }
 
 export component AppWindow inherits Window {
@@ -14,6 +15,7 @@ export component AppWindow inherits Window {
     preferred-width: 900px;
     preferred-height: 600px;
     background: Colors.bg-primary;
+    default-font-family: Settings.font-family;
 
     // State (mother owns all)
     in-out property <string>    active-view: "home";

@@ -13,10 +13,10 @@ export global Colors {
     out property <color> text-secondary: dark-mode ? #a0a0a0 : #6b6b6b;
     out property <color> text-disabled: dark-mode ? #5a5a5a : #b0b0b0;
 
-    // Accent
-    out property <color> accent:        #0078d4;
-    out property <color> accent-hover:  dark-mode ? #429ce3 : #006cbd;
-    out property <color> accent-text:   #ffffff;
+    // Accent — in-out so Rust can override via apply_settings()
+    in-out property <color> accent:       #0078d4;
+    in-out property <color> accent-hover: dark-mode ? #429ce3 : #006cbd;
+    out property <color> accent-text:     #ffffff;
 
     // Semantic
     out property <color> error:         #d13438;

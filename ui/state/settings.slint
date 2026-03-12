@@ -1,0 +1,13 @@
+// Settings — runtime configuration pushed from Rust AppSettings.
+//
+// AppAdapter::apply_settings() is the ONLY writer.
+// Components read Settings.* for zoom, icon-style, icon-color, font-family, font-scale.
+// AppWindow binds default-font-family to Settings.font-family.
+
+export global Settings {
+    in-out property <float>  zoom:         1.0;
+    in-out property <string> icon-style:   "filled";   // "filled" | "outlined"
+    in-out property <string> icon-color:   "theme";    // "theme" | "accent" | "#rrggbb"
+    in-out property <string> font-family:  "";         // "" = platform default
+    in-out property <float>  font-scale:   1.0;        // font-only multiplier on top of zoom
+}

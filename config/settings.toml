@@ -1,0 +1,14 @@
+[zoom]
+scale = 1.0
+
+[theme]
+mode = "system"
+# accent = "#0078d4"   # uncomment to override the default accent color
+
+[icons]
+style = "filled"       # "filled" | "outlined"
+color = "theme"        # "theme" | "accent" | "#rrggbb"
+
+[font]
+# family = "Segoe UI"  # uncomment to set a system font; omit for platform default
+font_scale = 1.0

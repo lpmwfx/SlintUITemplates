@@ -1,9 +1,17 @@
+// Typography — font sizes derived from Settings.zoom * Settings.font-scale.
+//
+// All components import Type via theme.slint. Changing Settings.zoom or
+// Settings.font-scale at runtime automatically reflows all text — no component changes needed.
+
+import { Settings } from "../state/settings.slint";
+
 export global Type {
-    out property <length> caption-size:  12px;
-    out property <length> body-size:     14px;
-    out property <length> subtitle-size: 16px;
-    out property <length> heading-size:  20px;
-    out property <length> title-size:    28px;
+    // Base px * zoom * font-scale — reactive to runtime settings
+    out property <length> caption-size:  Settings.zoom * Settings.font-scale * 12px;
+    out property <length> body-size:     Settings.zoom * Settings.font-scale * 14px;
+    out property <length> subtitle-size: Settings.zoom * Settings.font-scale * 16px;
+    out property <length> heading-size:  Settings.zoom * Settings.font-scale * 20px;
+    out property <length> title-size:    Settings.zoom * Settings.font-scale * 28px;
 
     out property <int> weight-regular:   400;
     out property <int> weight-semibold:  600;

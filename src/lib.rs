@@ -2,6 +2,7 @@ pub mod adapter;
 pub mod bindings;
 pub mod grid;
 pub mod layout;
+pub mod settings;
 
 pub use grid::{ZoneModel, TargetConfig};
 pub use layout::{build, SolvedItem, ItemKind};

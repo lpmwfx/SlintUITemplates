@@ -1,0 +1,13 @@
+// Scale — icon sizes derived from Settings.zoom.
+//
+// Components that render icons import Scale instead of hardcoding px values.
+// Font sizes are handled in typography.slint (Type global).
+
+import { Settings } from "../state/settings.slint";
+
+export global Scale {
+    out property <length> icon-sm: Settings.zoom * 16px;
+    out property <length> icon-md: Settings.zoom * 24px;
+    out property <length> icon-lg: Settings.zoom * 32px;
+    out property <length> icon-xl: Settings.zoom * 48px;
+}

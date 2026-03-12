@@ -1,9 +1,11 @@
-// Single import point for all UI tokens + theme state.
-// Components import ONLY this file — never individual token files or Theme directly.
+// Single import point for all UI tokens + state globals.
+// Components import ONLY this file — never individual token files or state directly.
 
 import { Colors } from "colors.slint";
 import { Spacing } from "spacing.slint";
 import { Type } from "typography.slint";
+import { Scale } from "scale.slint";
 
-export { Colors, Spacing, Type }
+export { Colors, Spacing, Type, Scale }
 export { Theme } from "../state/Theme.slint";
+export { Settings } from "../state/settings.slint";

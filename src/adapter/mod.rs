@@ -13,6 +13,10 @@ impl AppAdapter {
         Ok(Self { ui })
     }
 
+    pub fn apply_settings(&self, settings: &crate::settings::AppSettings) {
+        crate::settings::apply::apply(&self.ui, settings);
+    }
+
     pub fn apply_theme(&self) {
         self.ui.global::<Colors>().set_dark_mode(is_dark_mode());
     }
@@ -55,7 +59,7 @@ impl AppAdapter {
     }
 }
 
-fn is_dark_mode() -> bool {
+pub(crate) fn is_dark_mode() -> bool {
     std::process::Command::new("reg")
         .args([
             "query",
@@ -92,6 +96,33 @@ mod tests {
         let adapter = AppAdapter::new().unwrap();
         adapter.ui.set_row_top_ratio(2.0);
         assert_eq!(adapter.ui.get_row_top_ratio(), 2.0);
+    }
+
+    #[test]
+    fn apply_settings_pushes_zoom() {
+        use slint::ComponentHandle;
+        init();
+        let adapter = AppAdapter::new().unwrap();
+        let mut s = crate::settings::AppSettings::default();
+        s.zoom.scale = 1.5;
+        adapter.apply_settings(&s);
+        let zoom = adapter.ui.global::<crate::Settings>().get_zoom();
+        assert!((zoom - 1.5).abs() < 0.001);
+    }
+
+    #[test]
+    fn apply_settings_accent_override() {
+        use slint::ComponentHandle;
+        init();
+        let adapter = AppAdapter::new().unwrap();
+        let mut s = crate::settings::AppSettings::default();
+        s.theme.accent = Some("#ff6b35".into());
+        s.theme.mode = crate::settings::ThemeMode::Dark;
+        adapter.apply_settings(&s);
+        let color = adapter.ui.global::<crate::Colors>().get_accent();
+        assert_eq!(color.red(), 255);
+        assert_eq!(color.green(), 107);
+        assert_eq!(color.blue(), 53);
     }
 
     #[test]
