@@ -1,0 +1,50 @@
+// AppShell — platform dispatcher.
+// Renders the correct shell for the target platform.
+// Content is provided by the parent as @children (placed in the content frame).
+// Phase 11 adds Android/Material branch.
+
+import { NavItem, ShellMenu, ShellToolbarItem } from "types.slint";
+import { DesktopShell } from "desktop/shell.slint";
+
+export component AppShell inherits Rectangle {
+    // Platform: "windows" | "android"  (android activates in Phase 11)
+    in property <string>             platform:      "windows";
+
+    // Navigation
+    in property <[NavItem]>          nav-items;
+    in-out property <string>         active-slot;
+
+    // Menu bar
+    in property <[ShellMenu]>        menus;
+
+    // Toolbar
+    in property <bool>               show-toolbar:  false;
+    in property <[ShellToolbarItem]> toolbar-items;
+
+    // Status
+    in property <string>             status-text:   "Ready";
+    in property <float>              progress:      -1.0;
+
+    // Callbacks
+    callback slot-changed(string);     // nav item selected
+    callback menu-opened(string);
+    callback toolbar-clicked(string);
+
+    // ── Windows / Fluent 2 desktop shell ──────────────────────────────────
+    DesktopShell {
+        nav-items:    root.nav-items;
+        menus:        root.menus;
+        toolbar-items: root.toolbar-items;
+        show-toolbar: root.show-toolbar;
+        active-view:  root.active-slot;
+        status-text:  root.status-text;
+        progress:     root.progress;
+        navigate(id) => {
+            root.active-slot = id;
+            root.slot-changed(id);
+        }
+        menu-opened(id)     => { root.menu-opened(id); }
+        toolbar-clicked(id) => { root.toolbar-clicked(id); }
+        @children
+    }
+}

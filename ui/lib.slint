@@ -7,3 +7,7 @@ export { FrameworkViewer } from "viewer/viewer.slint";
 // Re-export globals so Rust can access Colors, Settings, etc.
 export { Colors }   from "tokens/colors.slint";
 export { Settings } from "state/settings.slint";
+
+// Shell types for Rust bindings (structs — accessible via include_modules!())
+export { NavItem }                     from "desktop/types.slint";
+export { ShellMenu, ShellToolbarItem } from "shell/types.slint";

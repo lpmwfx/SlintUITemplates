@@ -1,0 +1,46 @@
+// ShellMenuBar — Fluent 2 styled application menu bar.
+// Shows top-level menu titles; emits menu-opened(id) so Rust can populate submenus.
+
+import { Colors, Spacing, Type, FluentIcons } from "../../tokens/theme.slint";
+import { ShellMenu } from "../types.slint";
+
+export component ShellMenuBar inherits Rectangle {
+    in property <[ShellMenu]> menus;
+    in property <string>      active-menu: "";
+    callback menu-opened(string);
+
+    height: 30px;
+    background: Colors.bg-surface;
+
+    HorizontalLayout {
+        padding-left: Spacing.sm;
+        spacing: 0px;
+        alignment: start;
+
+        for menu in root.menus: Rectangle {
+            width: label-text.preferred-width + Spacing.md * 2;
+            height: parent.height;
+            background: menu.id == root.active-menu ? Colors.bg-elevated :
+                        menu-ta.has-hover ? Colors.bg-elevated : transparent;
+
+            menu-ta := TouchArea {
+                clicked => { root.menu-opened(menu.id); }
+            }
+
+            label-text := Text {
+                text: menu.label;
+                font-size: Type.body-size;
+                color: Colors.text-primary;
+                horizontal-alignment: center;
+                vertical-alignment: center;
+            }
+        }
+    }
+
+    // Bottom border
+    Rectangle {
+        y: parent.height - 1px;
+        height: 1px;
+        background: Colors.border;
+    }
+}
