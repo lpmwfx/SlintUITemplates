@@ -3,7 +3,6 @@
 
 import { Colors, Spacing, Type, FluentIcons } from "../tokens/theme.slint";
 import { AppShell, MobileShell } from "../shell/app-shell.slint";
-import { ShellMenu }    from "../shell/types.slint";
 import { NavItem }      from "../desktop/types.slint";
 import { Button }       from "../shared/button.slint";
 import { HomeView }     from "../views/home.slint";
@@ -18,13 +17,6 @@ export component PageAppShell inherits VerticalLayout {
         { id: "home",     label: "Home",     icon: FluentIcons.home },
         { id: "list",     label: "List",     icon: FluentIcons.list },
         { id: "settings", label: "Settings", icon: FluentIcons.settings },
-    ];
-
-    private property <[ShellMenu]> menus: [
-        { id: "file", label: "File" },
-        { id: "edit", label: "Edit" },
-        { id: "view", label: "View" },
-        { id: "help", label: "Help" },
     ];
 
     // Control bar
@@ -58,9 +50,8 @@ export component PageAppShell inherits VerticalLayout {
     if root.layout-mode == "windows": AppShell {
         vertical-stretch: 1;
         nav-items: root.nav-items;
-        menus: root.menus;
         status-text: "Active: " + root.active-view;
-        active-slot <=> root.active-view;
+        active-slot: root.active-view;
         slot-changed(id) => { root.active-view = id; }
 
         if root.active-view == "home":     HomeView     { vertical-stretch: 1; }

@@ -46,6 +46,24 @@ export component AppWindow inherits Window {
     callback navigate(string);
     navigate(view) => { self.active-view = view; }
 
+    // Native OS menu bar (muda-backed via Slint — must live in Window)
+    MenuBar {
+        Menu {
+            title: "File";
+            MenuItem { title: "Exit"; activated => { } }
+        }
+        Menu {
+            title: "View";
+            MenuItem { title: "Home";     activated => { root.active-view = "home"; } }
+            MenuItem { title: "List";     activated => { root.active-view = "list"; } }
+            MenuItem { title: "Settings"; activated => { root.active-view = "settings"; } }
+        }
+        Menu {
+            title: "Help";
+            MenuItem { title: "About"; activated => { } }
+        }
+    }
+
     VerticalLayout {
         // ROW: top — NavBar (fixed, not resizable)
         NavBar {

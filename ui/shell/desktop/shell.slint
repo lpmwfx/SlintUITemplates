@@ -1,10 +1,10 @@
-// DesktopShell — WinUI3 layout: MenuBar + Toolbar + SideNav + Content + StatusBar.
+// DesktopShell — WinUI3 layout: Toolbar + SideNav + Content + StatusBar.
+// MenuBar is NOT here — it must live in the Window (Slint constraint).
 // Parent provides content as @children (placed inside the content frame).
 
 import { Colors, Spacing } from "../../tokens/theme.slint";
 import { NavItem }         from "../types.slint";
-import { ShellMenu, ShellToolbarItem } from "../types.slint";
-import { ShellMenuBar }    from "menu-bar.slint";
+import { ShellToolbarItem } from "../types.slint";
 import { ShellToolbar }    from "tool-bar.slint";
 import { ShellSideNav }    from "side-nav.slint";
 import { ShellContentFrame } from "content-frame.slint";
@@ -14,7 +14,6 @@ import { DragHandle }      from "../../modules/DragHandle.slint";
 export component DesktopShell inherits VerticalLayout {
     // Config inputs
     in property <[NavItem]>          nav-items;
-    in property <[ShellMenu]>        menus;
     in property <[ShellToolbarItem]> toolbar-items;
     in property <bool>               show-toolbar: false;
     in property <string>             active-view: "";
@@ -27,18 +26,11 @@ export component DesktopShell inherits VerticalLayout {
 
     // Callbacks
     callback navigate(string);
-    callback menu-opened(string);
     callback toolbar-clicked(string);
 
     spacing: 0px;
 
-    // ── MenuBar (top) ──────────────────────────────────────────────────────
-    ShellMenuBar {
-        menus: root.menus;
-        menu-opened(id) => { root.menu-opened(id); }
-    }
-
-    // ── Toolbar (optional, below menubar) ─────────────────────────────────
+    // ── Toolbar (optional) ────────────────────────────────────────────────
     if root.show-toolbar: ShellToolbar {
         items: root.toolbar-items;
         item-clicked(id) => { root.toolbar-clicked(id); }

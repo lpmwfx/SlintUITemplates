@@ -23,6 +23,24 @@ export component FrameworkViewer inherits Window {
 
     in-out property <string> active-view: "buttons";
 
+    // Native OS menu bar (muda-backed via Slint — must live in Window)
+    MenuBar {
+        Menu {
+            title: "View";
+            MenuItem { title: "Buttons";   activated => { root.active-view = "buttons"; } }
+            MenuItem { title: "Inputs";    activated => { root.active-view = "inputs"; } }
+            MenuItem { title: "Display";   activated => { root.active-view = "display"; } }
+            MenuItem { title: "Feedback";  activated => { root.active-view = "feedback"; } }
+            MenuItem { title: "Layout";    activated => { root.active-view = "layout"; } }
+            MenuItem { title: "App Shell"; activated => { root.active-view = "app-shell"; } }
+            MenuItem { title: "Icons";     activated => { root.active-view = "icons"; } }
+        }
+        Menu {
+            title: "Help";
+            MenuItem { title: "About SlintUI Framework Viewer"; activated => { } }
+        }
+    }
+
     VerticalLayout {
         // ── Topbar ────────────────────────────────────────────────────────
         Rectangle {

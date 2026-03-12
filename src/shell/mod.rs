@@ -1,7 +1,7 @@
 pub mod platform;
 pub use platform::Platform;
 
-use crate::{NavItem, ShellMenu, ShellToolbarItem};
+use crate::{NavItem, ShellToolbarItem};
 use slint::VecModel;
 use std::rc::Rc;
 
@@ -13,13 +13,6 @@ pub struct NavItemConfig {
     pub icon:  String,
 }
 
-/// Top-level menu entry (label only; items populated by Rust via callbacks).
-#[derive(Debug, Clone)]
-pub struct MenuConfig {
-    pub id:    String,
-    pub label: String,
-}
-
 /// Toolbar icon button.
 #[derive(Debug, Clone)]
 pub struct ToolbarItemConfig {
@@ -29,12 +22,12 @@ pub struct ToolbarItemConfig {
 }
 
 /// Full shell configuration — passed to AppAdapter::register_shell().
+/// MenuBar is declared statically in the Window (.slint), not via ShellConfig.
 #[derive(Debug, Default)]
 pub struct ShellConfig {
     pub platform:     Platform,
     pub title:        String,
     pub nav:          Vec<NavItemConfig>,
-    pub menus:        Vec<MenuConfig>,
     pub toolbar:      Vec<ToolbarItemConfig>,
     pub show_toolbar: bool,
 }
@@ -53,11 +46,6 @@ impl ShellConfig {
         self
     }
 
-    pub fn with_menus(mut self, menus: Vec<MenuConfig>) -> Self {
-        self.menus = menus;
-        self
-    }
-
     pub fn with_toolbar(mut self, items: Vec<ToolbarItemConfig>) -> Self {
         self.show_toolbar = !items.is_empty();
         self.toolbar = items;
@@ -70,15 +58,6 @@ impl ShellConfig {
             id:    n.id.clone().into(),
             label: n.label.clone().into(),
             icon:  n.icon.clone().into(),
-        }).collect();
-        Rc::new(VecModel::from(items))
-    }
-
-    /// Convert menus to Slint VecModel.
-    pub fn menu_model(&self) -> Rc<VecModel<ShellMenu>> {
-        let items: Vec<ShellMenu> = self.menus.iter().map(|m| ShellMenu {
-            id:    m.id.clone().into(),
-            label: m.label.clone().into(),
         }).collect();
         Rc::new(VecModel::from(items))
     }
