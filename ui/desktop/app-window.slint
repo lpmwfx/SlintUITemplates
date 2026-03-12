@@ -5,6 +5,8 @@ import { SideBar }     from "side-bar.slint";
 import { ContentArea } from "content-area.slint";
 import { StatusBar }   from "status-bar.slint";
 import { DragHandle }  from "../modules/DragHandle.slint";
+import { ShellToolbar }     from "../shell/desktop/tool-bar.slint";
+import { ShellToolbarItem } from "../shell/types.slint";
 
 export { Colors }
 export { Settings }
@@ -27,8 +29,16 @@ export component AppWindow inherits Window {
         { id: "settings", label: "Settings", icon: FluentIcons.settings },
     ];
 
+    // Toolbar
+    in property <bool>               show-toolbar:  false;
+    in property <[ShellToolbarItem]> toolbar-items: [];
+
     // Status bar text (Rhai / Rust override; empty = default "View: <active-view>")
     in-out property <string> status-text: "";
+
+    // Callbacks wired by DSL / Rust host
+    callback menu-action(string);
+    callback toolbar-clicked(string);
 
     // Grid ratios (pushed from Rust grid engine)
     in-out property <float> row-top-ratio: 1;
@@ -65,6 +75,12 @@ export component AppWindow inherits Window {
     }
 
     VerticalLayout {
+        // ROW: toolbar (optional, below native MenuBar)
+        if root.show-toolbar: ShellToolbar {
+            items: root.toolbar-items;
+            item-clicked(id) => { root.toolbar-clicked(id); }
+        }
+
         // ROW: top — NavBar (fixed, not resizable)
         NavBar {
             vertical-stretch: root.row-top-ratio;

@@ -66,7 +66,7 @@ pub fn register(engine: &mut Engine, adapter: Rc<RefCell<AppAdapter>>) {
         a.borrow().apply_settings(&s);
     });
 
-    // DSL API — nav items as array of "id:Label:icon" strings
+    // DSL: nav — array of "id:Label:icon" strings
     // Example: set_nav(["home:Home:home", "list:List:list", "settings:Settings:settings"]);
     let a = Rc::clone(&adapter);
     engine.register_fn("set_nav", move |items: rhai::Array| {
@@ -82,9 +82,30 @@ pub fn register(engine: &mut Engine, adapter: Rc<RefCell<AppAdapter>>) {
 
         match AppDsl::builder("").nav(nav).build() {
             Ok(dsl)   => a.borrow().apply_dsl(&dsl),
-            Err(errs) => {
-                for e in &errs { eprintln!("[dsl] {e}"); }
+            Err(errs) => { for e in &errs { eprintln!("[dsl] {e}"); } }
+        }
+    });
+
+    // DSL: toolbar — array of "id:icon:tooltip" strings
+    // Example: set_toolbar(["save:save:Save file", "undo:undo:Undo"]);
+    let a = Rc::clone(&adapter);
+    engine.register_fn("set_toolbar", move |items: rhai::Array| {
+        use crate::dsl::Toolbar;
+        let toolbar: Vec<Toolbar> = items.iter().filter_map(|v| {
+            let s = v.clone().into_string().ok()?;
+            let parts: Vec<&str> = s.splitn(3, ':').collect();
+            match parts.as_slice() {
+                [id, icon, tip] => Some(Toolbar::new(*id, *icon, *tip)),
+                [id, icon]      => Some(Toolbar::new(*id, *icon, "")),
+                _               => None,
             }
+        }).collect();
+
+        // Re-use existing nav from a minimal DSL (toolbar-only update path)
+        let placeholder = vec![Nav::new("_", "_", "home")];
+        match AppDsl::builder("").nav(placeholder).toolbar(toolbar).build() {
+            Ok(dsl)   => a.borrow().apply_dsl(&dsl),
+            Err(errs) => { for e in &errs { eprintln!("[dsl] {e}"); } }
         }
     });
 }

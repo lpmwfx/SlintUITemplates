@@ -1,18 +1,60 @@
+use std::collections::HashMap;
 use std::path::Path;
+use std::rc::Rc;
+use std::cell::RefCell;
 use slint::ComponentHandle;
 use crate::{AppWindow, Colors};
 use crate::grid;
 use crate::dsl::AppDsl;
 
 pub struct AppAdapter {
-    ui: AppWindow,
+    ui:           AppWindow,
+    menu_actions: Rc<RefCell<HashMap<String, Box<dyn Fn()>>>>,
 }
 
 impl AppAdapter {
     pub fn new() -> Result<Self, slint::PlatformError> {
         let ui = AppWindow::new()?;
-        Ok(Self { ui })
+        let menu_actions: Rc<RefCell<HashMap<String, Box<dyn Fn()>>>> =
+            Rc::new(RefCell::new(HashMap::new()));
+
+        // Wire menu-action dispatch once — all on_menu_action() calls add to this table
+        let actions = Rc::clone(&menu_actions);
+        ui.on_menu_action(move |id| {
+            if let Some(f) = actions.borrow().get(id.as_str()) {
+                f();
+            }
+        });
+
+        Ok(Self { ui, menu_actions })
     }
+
+    // ── DSL ──────────────────────────────────────────────────────────────────
+
+    /// Apply a validated `AppDsl` — composition rules already enforced.
+    pub fn apply_dsl(&self, dsl: &AppDsl) {
+        crate::dsl::apply::apply(&self.ui, dsl);
+    }
+
+    // ── Callback wiring ───────────────────────────────────────────────────────
+
+    /// Register a handler for the navigate callback (nav item clicked).
+    pub fn on_navigate(&self, f: impl Fn(slint::SharedString) + 'static) {
+        self.ui.on_navigate(f);
+    }
+
+    /// Register a handler for toolbar button clicks.
+    pub fn on_toolbar_clicked(&self, f: impl Fn(slint::SharedString) + 'static) {
+        self.ui.on_toolbar_clicked(f);
+    }
+
+    /// Register a handler for a specific MenuBar action id.
+    /// Multiple calls accumulate — each id maps to one handler.
+    pub fn on_menu_action(&self, id: impl Into<String>, f: impl Fn() + 'static) {
+        self.menu_actions.borrow_mut().insert(id.into(), Box::new(f));
+    }
+
+    // ── State setters ─────────────────────────────────────────────────────────
 
     pub fn apply_settings(&self, settings: &crate::settings::AppSettings) {
         crate::settings::apply::apply(&self.ui, settings);
@@ -53,11 +95,6 @@ impl AppAdapter {
 
     pub fn set_status(&self, text: &str) {
         self.ui.set_status_text(text.into());
-    }
-
-    /// Apply a validated `AppDsl` — composition rules enforced before this call.
-    pub fn apply_dsl(&self, dsl: &AppDsl) {
-        crate::dsl::apply::apply(&self.ui, dsl);
     }
 
     pub fn run(self) -> Result<(), slint::PlatformError> {
@@ -137,5 +174,34 @@ mod tests {
         let adapter = AppAdapter::new().unwrap();
         adapter.apply_grid(Path::new("config/desktop.toml")).unwrap();
         assert_eq!(adapter.ui.get_row_main_ratio(), 10.0);
+    }
+
+    #[test]
+    fn apply_dsl_sets_nav_and_status() {
+        use crate::dsl::{AppDsl, Nav};
+        init();
+        let adapter = AppAdapter::new().unwrap();
+        let dsl = AppDsl::builder("Test App")
+            .nav(vec![
+                Nav::new("home", "Home", "home"),
+                Nav::new("list", "List", "list"),
+            ])
+            .status("Connected")
+            .build()
+            .unwrap();
+        adapter.apply_dsl(&dsl);
+        assert_eq!(adapter.ui.get_status_text(), "Connected");
+    }
+
+    #[test]
+    fn menu_action_dispatch() {
+        use std::sync::{Arc, Mutex};
+        init();
+        let adapter = AppAdapter::new().unwrap();
+        let called = Arc::new(Mutex::new(false));
+        let c = Arc::clone(&called);
+        adapter.on_menu_action("file.new", move || { *c.lock().unwrap() = true; });
+        adapter.ui.invoke_menu_action("file.new".into());
+        assert!(*called.lock().unwrap());
     }
 }
