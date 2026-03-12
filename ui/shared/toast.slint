@@ -3,9 +3,7 @@ import { Colors, Spacing, Type } from "../tokens/theme.slint";
 export component Toast inherits Rectangle {
     in property <string> message: "";
     in property <string> variant: "info";   // info | success | warning | error
-    in property <bool> visible: false;
-
-    visibility: root.visible ? visible : hidden;
+    // visible is the built-in — caller sets visible: true/false directly
 
     // Position at bottom center
     height: Spacing.xl;

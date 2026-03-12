@@ -2,12 +2,11 @@ import { Colors, Spacing, Type } from "../tokens/theme.slint";
 
 export component Dialog inherits Rectangle {
     in property <string> title: "Dialog";
-    in property <bool> visible: false;
+    // visible is the built-in — caller sets visible: true/false directly
     callback confirmed();
     callback cancelled();
 
     // Full overlay
-    visibility: root.visible ? visible : hidden;
     background: #00000060;
 
     // Center card

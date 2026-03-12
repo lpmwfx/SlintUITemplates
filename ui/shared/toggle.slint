@@ -7,41 +7,45 @@ export component Toggle inherits Rectangle {
 
     height: Spacing.xl;
 
-    HorizontalLayout {
-        spacing: Spacing.sm;
-        alignment: start;
+    VerticalLayout {
+        alignment: center;
 
-        // Toggle track
-        Rectangle {
-            width: 40px;
-            height: 20px;
-            border-radius: 10px;
-            background: root.checked ? Colors.accent : Colors.bg-surface;
-            border-width: root.checked ? 0 : 1px;
-            border-color: Colors.border;
+        HorizontalLayout {
+            spacing: Spacing.sm;
+            alignment: start;
 
-            // Toggle knob
+            // Toggle track
             Rectangle {
-                x: root.checked ? parent.width - self.width - 2px : 2px;
-                y: (parent.height - self.height) / 2;
-                width: 16px;
-                height: 16px;
-                border-radius: 8px;
-                background: root.checked ? Colors.accent-text : Colors.text-secondary;
+                width: 40px;
+                height: 20px;
+                border-radius: 10px;
+                background: root.checked ? Colors.accent : Colors.bg-surface;
+                border-width: root.checked ? 0 : 1px;
+                border-color: Colors.border;
 
-                animate x { duration: 150ms; easing: ease-in-out; }
+                // Toggle knob
+                Rectangle {
+                    x: root.checked ? parent.width - self.width - 2px : 2px;
+                    y: (parent.height - self.height) / 2;
+                    width: 16px;
+                    height: 16px;
+                    border-radius: 8px;
+                    background: root.checked ? Colors.accent-text : Colors.text-secondary;
+
+                    animate x { duration: 150ms; easing: ease-in-out; }
+                }
+
+                TouchArea {
+                    clicked => { root.toggled(!root.checked); }
+                }
             }
 
-            TouchArea {
-                clicked => { root.toggled(!root.checked); }
+            if root.label != "": Text {
+                text: root.label;
+                font-size: Type.body-size;
+                color: Colors.text-primary;
+                vertical-alignment: center;
             }
-        }
-
-        if root.label != "": Text {
-            text: root.label;
-            font-size: Type.body-size;
-            color: Colors.text-primary;
-            vertical-alignment: center;
         }
     }
 }
