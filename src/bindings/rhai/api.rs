@@ -2,6 +2,7 @@ use rhai::Engine;
 use std::rc::Rc;
 use std::cell::RefCell;
 use crate::adapter::AppAdapter;
+use crate::dsl::{AppDsl, Nav};
 
 /// Register all AppAdapter API functions into the Rhai engine.
 pub fn register(engine: &mut Engine, adapter: Rc<RefCell<AppAdapter>>) {
@@ -63,5 +64,27 @@ pub fn register(engine: &mut Engine, adapter: Rc<RefCell<AppAdapter>>) {
         let mut s = crate::settings::AppSettings::default();
         s.font.font_scale = scale as f32;
         a.borrow().apply_settings(&s);
+    });
+
+    // DSL API — nav items as array of "id:Label:icon" strings
+    // Example: set_nav(["home:Home:home", "list:List:list", "settings:Settings:settings"]);
+    let a = Rc::clone(&adapter);
+    engine.register_fn("set_nav", move |items: rhai::Array| {
+        let nav: Vec<Nav> = items.iter().filter_map(|v| {
+            let s = v.clone().into_string().ok()?;
+            let parts: Vec<&str> = s.splitn(3, ':').collect();
+            match parts.as_slice() {
+                [id, label, icon] => Some(Nav::new(*id, *label, *icon)),
+                [id, label]       => Some(Nav::new(*id, *label, "list")),
+                _                 => None,
+            }
+        }).collect();
+
+        match AppDsl::builder("").nav(nav).build() {
+            Ok(dsl)   => a.borrow().apply_dsl(&dsl),
+            Err(errs) => {
+                for e in &errs { eprintln!("[dsl] {e}"); }
+            }
+        }
     });
 }

@@ -2,6 +2,7 @@ use std::path::Path;
 use slint::ComponentHandle;
 use crate::{AppWindow, Colors};
 use crate::grid;
+use crate::dsl::AppDsl;
 
 pub struct AppAdapter {
     ui: AppWindow,
@@ -52,6 +53,11 @@ impl AppAdapter {
 
     pub fn set_status(&self, text: &str) {
         self.ui.set_status_text(text.into());
+    }
+
+    /// Apply a validated `AppDsl` — composition rules enforced before this call.
+    pub fn apply_dsl(&self, dsl: &AppDsl) {
+        crate::dsl::apply::apply(&self.ui, dsl);
     }
 
     pub fn run(self) -> Result<(), slint::PlatformError> {
