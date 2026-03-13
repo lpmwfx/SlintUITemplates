@@ -1,176 +1,89 @@
-// Theme — unified color global. ONE source of truth for all 6 theme combinations.
+// Theme — controller global. Imports palette files from theme/ and exposes the token surface.
 //
 // AXIOM: AppWindow is the only writer of `dark` and `material`.
-//        All components read Theme.* (or Colors.* via barrel alias in tokens/theme.slint).
+//        Components read Theme.* (or Colors.* via barrel alias in tokens/theme.slint).
 //
-// material: "solid" | "mica" | "acrylic"
-// dark:     follows OS (Palette) by default; AppWindow overrides from theme-mode setting.
-//
-// Barrel alias in ui/tokens/theme.slint makes Colors.* == Theme.* — zero changes to
-// component files that import Colors.
+// Palettes live in theme/ — one file per material, pure constants, no logic.
 
-import { Palette } from "std-widgets.slint";
+import { Palette }  from "std-widgets.slint";
+import { Solid }    from "theme/solid.slint";
+import { Mica }     from "theme/mica.slint";
+import { Acrylic }  from "theme/acrylic.slint";
 
 export global Theme {
-    // ── Inputs ────────────────────────────────────────────────────────────────
     in-out property <string> material: "solid";  // "solid" | "mica" | "acrylic"
     in-out property <bool>   dark: Palette.color-scheme == ColorScheme.dark;
-    in-out property <bool>   dark-mode <=> dark;  // backwards-compat alias (viewer, card)
+    in-out property <bool>   dark-mode <=> dark;  // backwards-compat alias
     in-out property <color>  accent-override: transparent;  // alpha=0 → derive from palette
 
-    // ── Solid dark palette (sd-) ──────────────────────────────────────────────
-    property <color> sd-bg-primary:    #202020;
-    property <color> sd-bg-surface:    #2C2C2C;
-    property <color> sd-bg-elevated:   #383838;
-    property <color> sd-text-primary:  #FFFFFF;
-    property <color> sd-text-secondary:#9D9D9D;
-    property <color> sd-text-disabled: #6B6B6B;
-    property <color> sd-accent:        #60CDFF;
-    property <color> sd-accent-hover:  #4CC2F1;
-    property <color> sd-accent-text:   #000000;
-    property <color> sd-border:        #3D3D3D;
-    property <color> sd-border-strong: #575757;
-    property <color> sd-shadow:        #00000080;
-
-    // ── Solid light palette (sl-) ─────────────────────────────────────────────
-    property <color> sl-bg-primary:    #FFFFFF;
-    property <color> sl-bg-surface:    #F3F3F3;
-    property <color> sl-bg-elevated:   #FFFFFF;
-    property <color> sl-text-primary:  #1C1C1C;
-    property <color> sl-text-secondary:#616161;
-    property <color> sl-text-disabled: #A0A0A0;
-    property <color> sl-accent:        #0078D4;
-    property <color> sl-accent-hover:  #106EBE;
-    property <color> sl-accent-text:   #FFFFFF;
-    property <color> sl-border:        #E0E0E0;
-    property <color> sl-border-strong: #C0C0C0;
-    property <color> sl-shadow:        #0000001F;
-
-    // ── Mica dark palette (md-) ───────────────────────────────────────────────
-    property <color> md-bg-primary:    transparent;
-    property <color> md-bg-surface:    #FFFFFF0F;  // LayerFillColorDefault 6%
-    property <color> md-bg-elevated:   #FFFFFF18;  // LayerFillColorSecondary 9%
-    property <color> md-text-primary:  #FFFFFF;
-    property <color> md-text-secondary:#9D9D9D;
-    property <color> md-text-disabled: #6B6B6B;
-    property <color> md-accent:        #60CDFF;
-    property <color> md-accent-hover:  #4CC2F1;
-    property <color> md-accent-text:   #000000;
-    property <color> md-border:        #FFFFFF1A;
-    property <color> md-border-strong: #FFFFFF33;
-    property <color> md-shadow:        #00000040;
-
-    // ── Mica light palette (ml-) ──────────────────────────────────────────────
-    property <color> ml-bg-primary:    transparent;
-    property <color> ml-bg-surface:    #FFFFFFB2;  // LayerFillColorDefault 70%
-    property <color> ml-bg-elevated:   #FFFFFFCC;  // LayerFillColorSecondary 80%
-    property <color> ml-text-primary:  #1C1C1C;
-    property <color> ml-text-secondary:#616161;
-    property <color> ml-text-disabled: #A0A0A0;
-    property <color> ml-accent:        #0078D4;
-    property <color> ml-accent-hover:  #106EBE;
-    property <color> ml-accent-text:   #FFFFFF;
-    property <color> ml-border:        #0000001A;
-    property <color> ml-border-strong: #00000033;
-    property <color> ml-shadow:        #0000000F;
-
-    // ── Acrylic dark palette (ad-) ────────────────────────────────────────────
-    property <color> ad-bg-primary:    transparent;
-    property <color> ad-bg-surface:    #FFFFFF08;  // ~3%
-    property <color> ad-bg-elevated:   #FFFFFF12;  // ~7%
-    property <color> ad-text-primary:  #FFFFFF;
-    property <color> ad-text-secondary:#9D9D9D;
-    property <color> ad-text-disabled: #6B6B6B;
-    property <color> ad-accent:        #60CDFF;
-    property <color> ad-accent-hover:  #4CC2F1;
-    property <color> ad-accent-text:   #000000;
-    property <color> ad-border:        #FFFFFF14;
-    property <color> ad-border-strong: #FFFFFF28;
-    property <color> ad-shadow:        #00000066;
-
-    // ── Acrylic light palette (al-) ───────────────────────────────────────────
-    property <color> al-bg-primary:    transparent;
-    property <color> al-bg-surface:    #FFFFFF60;  // 38%
-    property <color> al-bg-elevated:   #FFFFFF99;  // 60%
-    property <color> al-text-primary:  #1C1C1C;
-    property <color> al-text-secondary:#616161;
-    property <color> al-text-disabled: #A0A0A0;
-    property <color> al-accent:        #0078D4;
-    property <color> al-accent-hover:  #106EBE;
-    property <color> al-accent-text:   #FFFFFF;
-    property <color> al-border:        #00000014;
-    property <color> al-border-strong: #00000028;
-    property <color> al-shadow:        #00000014;
-
-    // ── Outputs — token surface used by all components ─────────────────────────
     out property <color> bg-primary:
-        material == "mica"    ? (dark ? md-bg-primary    : ml-bg-primary)
-      : material == "acrylic" ? (dark ? ad-bg-primary    : al-bg-primary)
-      :                         (dark ? sd-bg-primary    : sl-bg-primary);
+        material == "mica"    ? (dark ? Mica.dark-bg-primary       : Mica.light-bg-primary)
+      : material == "acrylic" ? (dark ? Acrylic.dark-bg-primary    : Acrylic.light-bg-primary)
+      :                         (dark ? Solid.dark-bg-primary      : Solid.light-bg-primary);
 
     out property <color> bg-surface:
-        material == "mica"    ? (dark ? md-bg-surface    : ml-bg-surface)
-      : material == "acrylic" ? (dark ? ad-bg-surface    : al-bg-surface)
-      :                         (dark ? sd-bg-surface    : sl-bg-surface);
+        material == "mica"    ? (dark ? Mica.dark-bg-surface       : Mica.light-bg-surface)
+      : material == "acrylic" ? (dark ? Acrylic.dark-bg-surface    : Acrylic.light-bg-surface)
+      :                         (dark ? Solid.dark-bg-surface      : Solid.light-bg-surface);
 
     out property <color> bg-elevated:
-        material == "mica"    ? (dark ? md-bg-elevated   : ml-bg-elevated)
-      : material == "acrylic" ? (dark ? ad-bg-elevated   : al-bg-elevated)
-      :                         (dark ? sd-bg-elevated   : sl-bg-elevated);
+        material == "mica"    ? (dark ? Mica.dark-bg-elevated      : Mica.light-bg-elevated)
+      : material == "acrylic" ? (dark ? Acrylic.dark-bg-elevated   : Acrylic.light-bg-elevated)
+      :                         (dark ? Solid.dark-bg-elevated     : Solid.light-bg-elevated);
 
     out property <color> text-primary:
-        material == "mica"    ? (dark ? md-text-primary  : ml-text-primary)
-      : material == "acrylic" ? (dark ? ad-text-primary  : al-text-primary)
-      :                         (dark ? sd-text-primary  : sl-text-primary);
+        material == "mica"    ? (dark ? Mica.dark-text-primary     : Mica.light-text-primary)
+      : material == "acrylic" ? (dark ? Acrylic.dark-text-primary  : Acrylic.light-text-primary)
+      :                         (dark ? Solid.dark-text-primary    : Solid.light-text-primary);
 
     out property <color> text-secondary:
-        material == "mica"    ? (dark ? md-text-secondary: ml-text-secondary)
-      : material == "acrylic" ? (dark ? ad-text-secondary: al-text-secondary)
-      :                         (dark ? sd-text-secondary: sl-text-secondary);
+        material == "mica"    ? (dark ? Mica.dark-text-secondary   : Mica.light-text-secondary)
+      : material == "acrylic" ? (dark ? Acrylic.dark-text-secondary: Acrylic.light-text-secondary)
+      :                         (dark ? Solid.dark-text-secondary  : Solid.light-text-secondary);
 
     out property <color> text-disabled:
-        material == "mica"    ? (dark ? md-text-disabled : ml-text-disabled)
-      : material == "acrylic" ? (dark ? ad-text-disabled : al-text-disabled)
-      :                         (dark ? sd-text-disabled : sl-text-disabled);
+        material == "mica"    ? (dark ? Mica.dark-text-disabled    : Mica.light-text-disabled)
+      : material == "acrylic" ? (dark ? Acrylic.dark-text-disabled : Acrylic.light-text-disabled)
+      :                         (dark ? Solid.dark-text-disabled   : Solid.light-text-disabled);
 
     out property <color> accent:
         accent-override.alpha > 0 ? accent-override
-      : material == "mica"    ? (dark ? md-accent        : ml-accent)
-      : material == "acrylic" ? (dark ? ad-accent        : al-accent)
-      :                         (dark ? sd-accent        : sl-accent);
+      : material == "mica"    ? (dark ? Mica.dark-accent           : Mica.light-accent)
+      : material == "acrylic" ? (dark ? Acrylic.dark-accent        : Acrylic.light-accent)
+      :                         (dark ? Solid.dark-accent          : Solid.light-accent);
 
     out property <color> accent-hover:
-        material == "mica"    ? (dark ? md-accent-hover  : ml-accent-hover)
-      : material == "acrylic" ? (dark ? ad-accent-hover  : al-accent-hover)
-      :                         (dark ? sd-accent-hover  : sl-accent-hover);
+        material == "mica"    ? (dark ? Mica.dark-accent-hover     : Mica.light-accent-hover)
+      : material == "acrylic" ? (dark ? Acrylic.dark-accent-hover  : Acrylic.light-accent-hover)
+      :                         (dark ? Solid.dark-accent-hover    : Solid.light-accent-hover);
 
     out property <color> accent-text:
-        material == "mica"    ? (dark ? md-accent-text   : ml-accent-text)
-      : material == "acrylic" ? (dark ? ad-accent-text   : al-accent-text)
-      :                         (dark ? sd-accent-text   : sl-accent-text);
+        material == "mica"    ? (dark ? Mica.dark-accent-text      : Mica.light-accent-text)
+      : material == "acrylic" ? (dark ? Acrylic.dark-accent-text   : Acrylic.light-accent-text)
+      :                         (dark ? Solid.dark-accent-text     : Solid.light-accent-text);
 
     out property <color> error:   #C42B1C;
     out property <color> success: #0F7B0F;
     out property <color> warning: #9D5D00;
 
     out property <color> border:
-        material == "mica"    ? (dark ? md-border        : ml-border)
-      : material == "acrylic" ? (dark ? ad-border        : al-border)
-      :                         (dark ? sd-border        : sl-border);
+        material == "mica"    ? (dark ? Mica.dark-border           : Mica.light-border)
+      : material == "acrylic" ? (dark ? Acrylic.dark-border        : Acrylic.light-border)
+      :                         (dark ? Solid.dark-border          : Solid.light-border);
 
     out property <color> border-strong:
-        material == "mica"    ? (dark ? md-border-strong : ml-border-strong)
-      : material == "acrylic" ? (dark ? ad-border-strong : al-border-strong)
-      :                         (dark ? sd-border-strong : sl-border-strong);
+        material == "mica"    ? (dark ? Mica.dark-border-strong    : Mica.light-border-strong)
+      : material == "acrylic" ? (dark ? Acrylic.dark-border-strong : Acrylic.light-border-strong)
+      :                         (dark ? Solid.dark-border-strong   : Solid.light-border-strong);
 
     out property <color> border-focus: accent;
 
     out property <color> shadow:
-        material == "mica"    ? (dark ? md-shadow        : ml-shadow)
-      : material == "acrylic" ? (dark ? ad-shadow        : al-shadow)
-      :                         (dark ? sd-shadow        : sl-shadow);
+        material == "mica"    ? (dark ? Mica.dark-shadow           : Mica.light-shadow)
+      : material == "acrylic" ? (dark ? Acrylic.dark-shadow        : Acrylic.light-shadow)
+      :                         (dark ? Solid.dark-shadow          : Solid.light-shadow);
 
-    // ── Aliases — mother components + backwards compat ────────────────────────
+    // ── Aliases ───────────────────────────────────────────────────────────────
     out property <color> bg-panel:     bg-surface;
     out property <color> handle:       border;
     out property <color> handle-hover: border-strong;
