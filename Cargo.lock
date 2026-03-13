@@ -3992,7 +3992,7 @@ dependencies = [
 [[package]]
 name = "rustscanners"
 version = "0.1.0"
-source = "git+https://github.com/lpmwfx/RustScanners#383fc9c5c894ec5b3f7703915adca6b6de5f5dbd"
+source = "git+https://github.com/lpmwfx/RustScanners#b5ab5a07d846c82f63302e941f4d9c830c9426f3"
 dependencies = [
  "regex",
  "serde",
@@ -4293,6 +4293,7 @@ dependencies = [
  "slint",
  "slint-build",
  "slintscanners",
+ "tiny-skia",
  "toml 0.8.23",
  "windows-sys 0.52.0",
 ]
@@ -5400,7 +5401,7 @@ version = "0.1.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c2a7b1c03c876122aa43f3020e6c3c3ee5c05081c9a00739faf7503aeba10d22"
 dependencies = [
- "windows-sys 0.48.0",
+ "windows-sys 0.52.0",
 ]
 
 [[package]]

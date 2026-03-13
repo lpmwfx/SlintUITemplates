@@ -1,0 +1,52 @@
+// ViewerTopbar — extracted from viewer.slint to keep that file under the 200-line limit.
+
+import { Colors, Spacing, Type, Settings } from "../tokens/theme.slint";
+import { Button }      from "../shared/button.slint";
+import { Toggle }      from "../shared/toggle.slint";
+import { SelectField } from "../shared/select-field.slint";
+
+export component ViewerTopbar inherits Rectangle {
+    callback request-bg-style(string);
+
+    height: Spacing.xl;
+    background: Colors.bg-surface;
+
+    HorizontalLayout {
+        padding-left: Spacing.md;
+        padding-right: Spacing.md;
+        spacing: Spacing.sm;
+
+        Text {
+            text: "SlintUI Framework Viewer";
+            font-size: Type.subtitle-size;
+            font-weight: Type.weight-semibold;
+            color: Colors.text-primary;
+            vertical-alignment: center;
+        }
+        Rectangle { horizontal-stretch: 1; }
+        Toggle { label: "Dark"; checked: Colors.dark-mode; toggled(v) => { Colors.dark-mode = v; } }
+        Button { label: "0.75×"; variant: "ghost"; clicked => { Settings.zoom = 0.75; } }
+        Button { label: "1×";    variant: "ghost"; clicked => { Settings.zoom = 1.0; } }
+        Button { label: "1.25×"; variant: "ghost"; clicked => { Settings.zoom = 1.25; } }
+        Button { label: "1.5×";  variant: "ghost"; clicked => { Settings.zoom = 1.5; } }
+        Toggle {
+            label: "Outlined";
+            checked: Settings.icon-style == "outlined";
+            toggled(v) => { Settings.icon-style = v ? "outlined" : "filled"; }
+        }
+        Toggle {
+            label: "Accent icons";
+            checked: Settings.icon-color == "accent";
+            toggled(v) => { Settings.icon-color = v ? "accent" : "theme"; }
+        }
+        Button { label: "Solid";   variant: "ghost"; clicked => { root.request-bg-style("solid"); } }
+        Button { label: "Mica";    variant: "ghost"; clicked => { root.request-bg-style("mica"); } }
+        Button { label: "Acrylic"; variant: "ghost"; clicked => { root.request-bg-style("acrylic"); } }
+        SelectField {
+            width: 140px;
+            options: ["Default", "Segoe UI", "Arial", "Consolas", "Verdana"];
+            placeholder: "Font...";
+            changed(f) => { Settings.font-family = f == "Default" ? "" : f; }
+        }
+    }
+}

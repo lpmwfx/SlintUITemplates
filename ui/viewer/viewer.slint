@@ -1,22 +1,21 @@
 // FrameworkViewer — browse and verify all SlintUI widgets in one window.
 // Dog-foods our own components; topbar writes to Colors/Settings globals live.
 
-import { Colors, Spacing, Type, Settings, FluentIcons } from "../tokens/theme.slint";
-import { SideBar }    from "../desktop/side-bar.slint";
-import { NavItem }    from "../desktop/types.slint";
-import { Button }     from "../shared/button.slint";
-import { Toggle }     from "../shared/toggle.slint";
-import { SelectField } from "../shared/select-field.slint";
-import { PageButtons }    from "page-buttons.slint";
-import { PageInputs }     from "page-inputs.slint";
-import { PageDisplay }    from "page-display.slint";
-import { PageFeedback }   from "page-feedback.slint";
-import { PageLayout }     from "page-layout.slint";
-import { PageAppShell }   from "page-app-shell.slint";
-import { PageIcons }      from "page-icons.slint";
-import { PageSelection }  from "page-selection.slint";
-import { PageNavigation } from "page-navigation.slint";
-import { PageData }       from "page-data.slint";
+import { Colors, Spacing, FluentIcons, Settings } from "../tokens/theme.slint";
+import { SideBar }       from "../desktop/side-bar.slint";
+import { NavItem }       from "../desktop/types.slint";
+import { ViewerTopbar }  from "viewer-topbar.slint";
+import { PageButtons }   from "page-buttons.slint";
+import { PageInputs }    from "page-inputs.slint";
+import { PageDisplay }   from "page-display.slint";
+import { PageFeedback }  from "page-feedback.slint";
+import { PageLayout }    from "page-layout.slint";
+import { PageAppShell }  from "page-app-shell.slint";
+import { PageIcons }     from "page-icons.slint";
+import { PageSelection } from "page-selection.slint";
+import { PageNavigation }from "page-navigation.slint";
+import { PageData }      from "page-data.slint";
+import { PageCanvas }    from "page-canvas.slint";
 
 export component FrameworkViewer inherits Window {
     preferred-width:  1100px;
@@ -24,79 +23,85 @@ export component FrameworkViewer inherits Window {
     title: "SlintUI Framework Viewer";
 
     in-out property <string> active-view: "buttons";
+    in property <image> canvas-frame;
 
-    // Window bg follows Colors.mica-mode (set by host via on_request_bg_style)
     background: Colors.bg-primary;
 
-    // Emitted when the user clicks Solid/Mica/Acrylic — host wires to platform::apply_backdrop()
-    callback request-bg-style(/* style */ string);
+    callback request-bg-style(string);
+    callback new-file();
+    callback new-window();
+    callback open-file();
+    callback save();
+    callback save-as();
+    callback quit();
+    callback undo();
+    callback redo();
+    callback cut();
+    callback copy();
+    callback paste();
+    callback find();
+    callback select-all();
+    callback open-docs();
+    callback open-shortcuts();
+    callback about();
 
-    // Native OS menu bar (muda-backed via Slint — must live in Window)
     MenuBar {
         Menu {
+            title: "File";
+            MenuItem { title: "New";          activated => { root.new-file(); } }
+            MenuItem { title: "New Window";   activated => { root.new-window(); } }
+            MenuItem { title: "Open...";      activated => { root.open-file(); } }
+            MenuSeparator {}
+            MenuItem { title: "Save";         activated => { root.save(); } }
+            MenuItem { title: "Save As...";   activated => { root.save-as(); } }
+            MenuSeparator {}
+            MenuItem { title: "Exit";         activated => { root.quit(); } }
+        }
+        Menu {
+            title: "Edit";
+            MenuItem { title: "Undo";         activated => { root.undo(); } }
+            MenuItem { title: "Redo";         activated => { root.redo(); } }
+            MenuSeparator {}
+            MenuItem { title: "Cut";          activated => { root.cut(); } }
+            MenuItem { title: "Copy";         activated => { root.copy(); } }
+            MenuItem { title: "Paste";        activated => { root.paste(); } }
+            MenuSeparator {}
+            MenuItem { title: "Find...";      activated => { root.find(); } }
+            MenuItem { title: "Select All";   activated => { root.select-all(); } }
+        }
+        Menu {
             title: "View";
-            MenuItem { title: "Buttons";   activated => { root.active-view = "buttons"; } }
-            MenuItem { title: "Inputs";    activated => { root.active-view = "inputs"; } }
-            MenuItem { title: "Display";   activated => { root.active-view = "display"; } }
-            MenuItem { title: "Feedback";  activated => { root.active-view = "feedback"; } }
-            MenuItem { title: "Layout";    activated => { root.active-view = "layout"; } }
-            MenuItem { title: "App Shell"; activated => { root.active-view = "app-shell"; } }
-            MenuItem { title: "Icons";     activated => { root.active-view = "icons"; } }
-            MenuItem { title: "Selection"; activated => { root.active-view = "selection"; } }
+            MenuItem { title: "Buttons";    activated => { root.active-view = "buttons"; } }
+            MenuItem { title: "Inputs";     activated => { root.active-view = "inputs"; } }
+            MenuItem { title: "Display";    activated => { root.active-view = "display"; } }
+            MenuItem { title: "Feedback";   activated => { root.active-view = "feedback"; } }
+            MenuItem { title: "Layout";     activated => { root.active-view = "layout"; } }
+            MenuItem { title: "App Shell";  activated => { root.active-view = "app-shell"; } }
+            MenuItem { title: "Icons";      activated => { root.active-view = "icons"; } }
+            MenuItem { title: "Selection";  activated => { root.active-view = "selection"; } }
             MenuItem { title: "Navigation"; activated => { root.active-view = "navigation"; } }
-            MenuItem { title: "Data";      activated => { root.active-view = "data"; } }
+            MenuItem { title: "Data";       activated => { root.active-view = "data"; } }
+            MenuItem { title: "Canvas";     activated => { root.active-view = "canvas"; } }
+            MenuSeparator {}
+            MenuItem { title: "Dark Mode";  activated => { Colors.dark-mode = !Colors.dark-mode; } }
+            MenuSeparator {}
+            MenuItem { title: "Zoom 75%";   activated => { Settings.zoom = 0.75; } }
+            MenuItem { title: "Zoom 100%";  activated => { Settings.zoom = 1.0; } }
+            MenuItem { title: "Zoom 125%";  activated => { Settings.zoom = 1.25; } }
+            MenuItem { title: "Zoom 150%";  activated => { Settings.zoom = 1.5; } }
         }
         Menu {
             title: "Help";
-            MenuItem { title: "About SlintUI Framework Viewer"; activated => { } }
+            MenuItem { title: "Documentation";      activated => { root.open-docs(); } }
+            MenuItem { title: "Keyboard Shortcuts"; activated => { root.open-shortcuts(); } }
+            MenuSeparator {}
+            MenuItem { title: "About";              activated => { root.about(); } }
         }
     }
 
     VerticalLayout {
-        // ── Topbar ────────────────────────────────────────────────────────
-        Rectangle {
-            height: Spacing.xl;
-            background: Colors.bg-surface;
-            HorizontalLayout {
-                padding-left: Spacing.md;
-                padding-right: Spacing.md;
-                spacing: Spacing.sm;
-                Text {
-                    text: "SlintUI Framework Viewer";
-                    font-size: Type.subtitle-size;
-                    font-weight: Type.weight-semibold;
-                    color: Colors.text-primary;
-                    vertical-alignment: center;
-                }
-                Rectangle { horizontal-stretch: 1; }
-                Toggle { label: "Dark"; checked: Colors.dark-mode; toggled(v) => { Colors.dark-mode = v; } }
-                Button { label: "0.75×"; variant: "ghost"; clicked => { Settings.zoom = 0.75; } }
-                Button { label: "1×";    variant: "ghost"; clicked => { Settings.zoom = 1.0; } }
-                Button { label: "1.25×"; variant: "ghost"; clicked => { Settings.zoom = 1.25; } }
-                Button { label: "1.5×";  variant: "ghost"; clicked => { Settings.zoom = 1.5; } }
-                Toggle {
-                    label: "Outlined";
-                    checked: Settings.icon-style == "outlined";
-                    toggled(v) => { Settings.icon-style = v ? "outlined" : "filled"; }
-                }
-                Toggle {
-                    label: "Accent icons";
-                    checked: Settings.icon-color == "accent";
-                    toggled(v) => { Settings.icon-color = v ? "accent" : "theme"; }
-                }
-                Button { label: "Solid";   variant: "ghost"; clicked => { root.request-bg-style("solid"); } }
-                Button { label: "Mica";    variant: "ghost"; clicked => { root.request-bg-style("mica"); } }
-                Button { label: "Acrylic"; variant: "ghost"; clicked => { root.request-bg-style("acrylic"); } }
-                SelectField {
-                    width: 140px;
-                    options: ["Default", "Segoe UI", "Arial", "Consolas", "Verdana"];
-                    placeholder: "Font...";
-                    changed(f) => { Settings.font-family = f == "Default" ? "" : f; }
-                }
-            }
-        }
+        ViewerTopbar { request-bg-style(s) => { root.request-bg-style(s); } }
 
-        // ── Sidebar + Content ─────────────────────────────────────────────
         HorizontalLayout {
             vertical-stretch: 1;
 
@@ -116,18 +121,14 @@ export component FrameworkViewer inherits Window {
                     { id: "selection",  label: "Selection",  icon: FluentIcons.checkmark },
                     { id: "navigation", label: "Navigation", icon: FluentIcons.list },
                     { id: "data",       label: "Data",       icon: FluentIcons.grid },
+                    { id: "canvas",     label: "Canvas",     icon: FluentIcons.image },
                 ];
                 navigate(id) => { root.active-view = id; }
                 toggle-collapsed() => {}
             }
 
-            // App Shell page fills vertically — no scrolling wrapper
-            if root.active-view == "app-shell": PageAppShell {
-                horizontal-stretch: 1;
-            }
+            if root.active-view == "app-shell": PageAppShell { horizontal-stretch: 1; }
 
-            // Content layer — LayerFillColorDefault per WinUI3 Mica spec
-            // Rectangle provides bg-surface so Mica backdrop doesn't show through content
             if root.active-view != "app-shell": Rectangle {
                 horizontal-stretch: 1;
                 background: Colors.bg-surface;
@@ -149,7 +150,8 @@ export component FrameworkViewer inherits Window {
                         if root.active-view == "icons":      PageIcons      {}
                         if root.active-view == "selection":  PageSelection  {}
                         if root.active-view == "navigation": PageNavigation {}
-                        if root.active-view == "data":       PageData       {}
+                        if root.active-view == "data":       PageData       { window-height: root.height; }
+                        if root.active-view == "canvas":     PageCanvas     { canvas-frame: root.canvas-frame; }
                     }
                 }
             }

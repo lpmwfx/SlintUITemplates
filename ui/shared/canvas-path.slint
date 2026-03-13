@@ -1,0 +1,44 @@
+// CanvasPath — pure Slint declarative canvas using built-in Path element.
+// Demonstrates MoveTo / LineTo / ArcTo / CubicTo / Close.
+// No Rust required — all rendering is declarative.
+
+import { Colors, Spacing } from "../tokens/theme.slint";
+
+export component CanvasPath inherits Rectangle {
+    in property <color> stroke-color: Colors.accent;
+    in property <color> fill-color:   Colors.accent.with-alpha(0.15);
+    in property <length> stroke-w:    2px;
+
+    preferred-width:  300px;
+    preferred-height: 200px;
+    background: Colors.bg-surface;
+    border-width: 1px;
+    border-color: Colors.border;
+    border-radius: Spacing.xs;
+
+    // Triangle (filled + stroked)
+    Path {
+        width: parent.width;
+        height: parent.height;
+        fill: root.fill-color;
+        stroke: root.stroke-color;
+        stroke-width: root.stroke-w;
+        MoveTo { x: 50; y: 160; }
+        LineTo { x: 150; y: 30; }
+        LineTo { x: 250; y: 160; }
+        Close {}
+    }
+
+    // Arc / curve overlay (stroke only)
+    Path {
+        width: parent.width;
+        height: parent.height;
+        fill: transparent;
+        stroke: root.stroke-color.with-alpha(0.6);
+        stroke-width: root.stroke-w;
+        MoveTo  { x: 50;  y: 100; }
+        CubicTo { control-1-x: 100; control-1-y: 20;
+                  control-2-x: 200; control-2-y: 180;
+                  x: 250; y: 100; }
+    }
+}
