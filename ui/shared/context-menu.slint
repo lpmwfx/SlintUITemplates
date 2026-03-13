@@ -80,6 +80,24 @@ component ContextMenuEntry inherits Rectangle {
     }
 }
 
+// Scrollable content list — keeps Flickable + for-loop within nesting limits.
+component ContextMenuContent inherits Flickable {
+    in property <[ContextMenuItem]> items;
+    in property <length> content-height;
+    callback activated(string);
+
+    viewport-width: self.width;
+    viewport-height: root.content-height;
+
+    VerticalLayout {
+        padding: Spacing.xs;
+        for item in root.items: ContextMenuEntry {
+            item: item;
+            activated(id) => { root.activated(id); }
+        }
+    }
+}
+
 export component ContextMenu inherits Rectangle {
     in property <[ContextMenuItem]> items: [];
     in property <int>    separator-count;
@@ -94,6 +112,12 @@ export component ContextMenu inherits Rectangle {
         (items.length - root.separator-count) * Spacing.xl
         + root.separator-count * Spacing.xs
         + Spacing.sm * 2;
+    // Visible height: capped so the popup never exceeds the window.
+    // Content scrolls inside via Flickable when est-popup-h > popup-h.
+    private property <length> popup-h:
+        root.window-height > 0px && root.est-popup-h > root.window-height - Spacing.md * 2
+            ? root.window-height - Spacing.md * 2
+            : root.est-popup-h;
 
     width: 0;
     height: 0;
@@ -103,7 +127,7 @@ export component ContextMenu inherits Rectangle {
         x: root.pop-x;
         y: root.pop-y;
         width: root.popup-w;
-        height: root.est-popup-h;
+        height: root.popup-h;
 
         Rectangle {
             background: Colors.bg-elevated;
@@ -114,15 +138,12 @@ export component ContextMenu inherits Rectangle {
             drop-shadow-color: Colors.shadow;
             clip: true;
 
-            VerticalLayout {
-                padding: Spacing.xs;
-                for item in root.items: ContextMenuEntry {
-                    item: item;
-                    activated(id) => {
-                        root.activated(id);
-                        popup.close();
-                    }
-                }
+            ContextMenuContent {
+                width: parent.width;
+                height: parent.height;
+                items: root.items;
+                content-height: root.est-popup-h;
+                activated(id) => { root.activated(id); popup.close(); }
             }
         }
     }
@@ -133,8 +154,8 @@ export component ContextMenu inherits Rectangle {
     public function show-at(xp: length, yp: length) {
         root.pop-x = xp;
         if root.window-height > 0px
-                && root.absolute-position.y + yp + root.est-popup-h > root.window-height {
-            root.pop-y = yp - root.est-popup-h;
+                && root.absolute-position.y + yp + root.popup-h > root.window-height {
+            root.pop-y = yp - root.popup-h;
             if root.absolute-position.y + root.pop-y < 0px {
                 root.pop-y = -root.absolute-position.y;
             }
