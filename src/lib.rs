@@ -2,6 +2,7 @@
 
 pub mod adapter;
 pub mod bindings;
+pub mod docs;
 pub mod dsl;
 pub mod grid;
 pub mod layout;

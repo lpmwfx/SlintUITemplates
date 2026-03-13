@@ -36,11 +36,16 @@ path = "examples/viewer/main.rs"
 name = "mobile"
 path = "examples/mobile/main.rs"
 
+[[example]]
+name = "docs"
+path = "examples/docs/main.rs"
+
 [dependencies]
 slint = "1"
 toml = "0.8"
 serde = { version = "1", features = ["derive"] }
-rhai = { version = "1" }
+rhai            = { version = "1" }
+pulldown-cmark  = { version = "0.12", default-features = false, features = ["getopts"] }
 
 [target.'cfg(windows)'.dependencies]
 windows-sys = { version = "0.52", features = ["Win32_Graphics_Dwm", "Win32_Foundation", "Win32_UI_Controls"] }
