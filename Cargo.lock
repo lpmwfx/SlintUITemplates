@@ -1266,7 +1266,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "39cab71617ae0d63f51a36d69f866391735b51691dbda63cf6f96d042b63efeb"
 dependencies = [
  "libc",
- "windows-sys 0.61.2",
+ "windows-sys 0.52.0",
 ]
 
 [[package]]
@@ -3986,13 +3986,13 @@ dependencies = [
  "errno",
  "libc",
  "linux-raw-sys 0.12.1",
- "windows-sys 0.61.2",
+ "windows-sys 0.52.0",
 ]
 
 [[package]]
 name = "rustscanners"
 version = "0.1.0"
-source = "git+https://github.com/lpmwfx/RustScanners#99999a7c3c20d7282042dae56c3866290328f066"
+source = "git+https://github.com/lpmwfx/RustScanners#383fc9c5c894ec5b3f7703915adca6b6de5f5dbd"
 dependencies = [
  "regex",
  "serde",
@@ -4300,7 +4300,7 @@ dependencies = [
 [[package]]
 name = "slintscanners"
 version = "0.1.0"
-source = "git+https://github.com/lpmwfx/SlintScanners#5931cf04154c767e6cb19caf0efd65dc7c6a4b68"
+source = "git+https://github.com/lpmwfx/SlintScanners#6eade36f871273178c9dff2a9b151c564669f1e5"
 dependencies = [
  "regex",
  "serde",
@@ -4595,7 +4595,7 @@ dependencies = [
  "getrandom 0.4.2",
  "once_cell",
  "rustix 1.1.4",
- "windows-sys 0.61.2",
+ "windows-sys 0.52.0",
 ]
 
 [[package]]
@@ -4929,7 +4929,7 @@ checksum = "51b70b87d15e91f553711b40df3048faf27a7a04e01e0ddc0cf9309f0af7c2ca"
 dependencies = [
  "memoffset",
  "tempfile",
- "windows-sys 0.61.2",
+ "windows-sys 0.59.0",
 ]
 
 [[package]]
@@ -5400,7 +5400,7 @@ version = "0.1.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c2a7b1c03c876122aa43f3020e6c3c3ee5c05081c9a00739faf7503aeba10d22"
 dependencies = [
- "windows-sys 0.61.2",
+ "windows-sys 0.48.0",
 ]
 
 [[package]]
