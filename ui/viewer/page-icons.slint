@@ -1,20 +1,26 @@
 // page-icons — Fluent icon catalog.
 // Shows all FluentIcons entries with their names in scrollable rows per category.
 
-import { Colors, Spacing, Type, FluentIcons } from "../tokens/theme.slint";
+import { Colors, Spacing, Type, Settings, FluentIcons } from "../tokens/theme.slint";
 import { ViewerSection } from "viewer-section.slint";
 
 // Single icon tile — glyph + name label.
+// Reads Settings.icon-style ("filled" | "outlined") and Settings.icon-color ("theme" | "accent").
 component IconTile inherits Rectangle {
     in property <string> icon-glyph;
     in property <string> icon-name;
+
+    private property <bool>  is-outlined: Settings.icon-style == "outlined";
+    private property <color> icon-color:  Settings.icon-color == "accent"
+                                              ? Colors.accent
+                                              : Colors.text-primary;
 
     min-width: 80px;
     height: 72px;
     border-radius: 4px;
     background: tile-ta.has-hover ? Colors.bg-elevated : transparent;
-    border-width: tile-ta.has-hover ? 1px : 0px;
-    border-color: Colors.border;
+    border-width: root.is-outlined ? 1px : (tile-ta.has-hover ? 1px : 0px);
+    border-color: root.is-outlined ? Colors.accent.with-alpha(0.5) : Colors.border;
 
     tile-ta := TouchArea {}
 
@@ -27,7 +33,8 @@ component IconTile inherits Rectangle {
             text: root.icon-glyph;
             font-family: "Segoe Fluent Icons";
             font-size: 24px;
-            color: Colors.text-primary;
+            color: root.icon-color;
+            opacity: root.is-outlined ? 0.7 : 1.0;
             horizontal-alignment: center;
         }
 

@@ -3,6 +3,9 @@
 
 export { AppWindow }       from "desktop/app-window.slint";
 export { FrameworkViewer } from "viewer/viewer.slint";
+export { DocsApp, DocBlock }  from "docs/docs-app.slint";
+// MarkdownView is not exported at the top level — import directly in .slint files:
+//   import { MarkdownView } from "path/to/ui/docs/markdown-view.slint";
 
 // Re-export globals so Rust can access Theme, Settings, etc.
 // Theme is the unified color global (replaces the former Colors global).

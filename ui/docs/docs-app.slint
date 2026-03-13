@@ -1,0 +1,117 @@
+import { Colors, Spacing, Type, Settings, FluentIcons } from "../tokens/theme.slint";
+import { NavBar }           from "../desktop/nav-bar.slint";
+import { NavItem }          from "../desktop/types.slint";
+import { SideBar }          from "../desktop/side-bar.slint";
+import { StatusBar }        from "../desktop/status-bar.slint";
+import { DragHandle }       from "../modules/DragHandle.slint";
+import { ShellToolbar }     from "../shell/desktop/tool-bar.slint";
+import { ShellToolbarItem } from "../shell/types.slint";
+import { MarkdownView }     from "markdown-view.slint";
+import { DocBlock }         from "doc-block.slint";
+
+export { DocBlock }
+
+// ── DocsApp — full-window docs browser ───────────────────────────────────────
+// Uses MarkdownView for the content pane. Rust host calls docs::parse() and
+// sets doc-blocks on navigate.
+export component DocsApp inherits Window {
+    title: "SlintUITemplates — Docs";
+    preferred-width: 1100px;
+    preferred-height: 720px;
+    background: Colors.bg-primary;
+    default-font-family: Settings.font-family;
+
+    // ── State ─────────────────────────────────────────────────────────────────
+    in-out property <string>         active-view: "getting-started";
+    in-out property <[NavItem]>      nav-items: [];
+    in-out property <[DocBlock]>     doc-blocks: [];
+    in-out property <string>         doc-title: "";
+    in-out property <string>         status-text: "Ready";
+    in property <[ShellToolbarItem]> toolbar-items: [];
+    in property <bool>               show-toolbar: false;
+
+    in-out property <bool>   sidebar-collapsed: false;
+    in-out property <length> col-left-width: Spacing.xl * 4 + Spacing.md;
+
+    property <length> sidebar-expanded-width:  Spacing.xl * 4 + Spacing.md;
+    property <length> sidebar-collapsed-width: Spacing.xl + Spacing.sm;
+
+    // ── Callbacks ─────────────────────────────────────────────────────────────
+    callback navigate(string);
+    callback toolbar-clicked(string);
+    callback request-bg-style(string);
+
+    navigate(id) => { root.active-view = id; }
+
+    // ── MenuBar ───────────────────────────────────────────────────────────────
+    MenuBar {
+        Menu {
+            title: "File";
+            MenuItem { title: "Exit"; activated => { } }
+        }
+        Menu {
+            title: "Theme";
+            MenuItem { title: "Solid";   activated => { root.request-bg-style("solid"); } }
+            MenuItem { title: "Mica";    activated => { root.request-bg-style("mica"); } }
+            MenuItem { title: "Acrylic"; activated => { root.request-bg-style("acrylic"); } }
+        }
+    }
+
+    // ── Layout ────────────────────────────────────────────────────────────────
+    VerticalLayout {
+        if root.show-toolbar: ShellToolbar {
+            items: root.toolbar-items;
+            item-clicked(id) => { root.toolbar-clicked(id); }
+        }
+
+        NavBar {
+            height: Spacing.xl;
+            breadcrumb: root.doc-title != "" ? root.doc-title : root.active-view;
+            can-go-back: false;
+        }
+
+        HorizontalLayout {
+            vertical-stretch: 1;
+
+            SideBar {
+                horizontal-stretch: 0;
+                min-width: root.col-left-width;
+                max-width: root.col-left-width;
+                items: root.nav-items;
+                active-item: root.active-view;
+                collapsed: root.sidebar-collapsed;
+                navigate(id) => { root.navigate(id); }
+                toggle-collapsed() => {
+                    root.sidebar-collapsed = !root.sidebar-collapsed;
+                    root.col-left-width = root.sidebar-collapsed
+                        ? root.sidebar-collapsed-width
+                        : root.sidebar-expanded-width;
+                }
+            }
+
+            DragHandle {
+                min-width: Spacing.handle-thickness;
+                max-width: Spacing.handle-thickness;
+                vertical: false;
+                dragged(dx, _dy) => {
+                    root.col-left-width = root.col-left-width + dx * 1px;
+                    if (root.col-left-width < root.sidebar-collapsed-width) {
+                        root.col-left-width = root.sidebar-collapsed-width;
+                    }
+                }
+            }
+
+            // Content pane — the library's MarkdownView widget
+            MarkdownView {
+                horizontal-stretch: 1;
+                background: Colors.bg-surface;
+                blocks: root.doc-blocks;
+            }
+        }
+
+        StatusBar {
+            height: Spacing.xl;
+            status-text: root.status-text;
+        }
+    }
+}

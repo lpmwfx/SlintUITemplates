@@ -1,0 +1,275 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { DocBlock }              from "doc-block.slint";
+
+// MarkdownView — embeddable scrollable markdown renderer.
+//
+// Push a [DocBlock] model (from Rust docs::parse()) and the view
+// renders headings, paragraphs, code blocks, lists, tables, blockquotes.
+//
+// Usage:
+//   import { MarkdownView, DocBlock } from "docs/markdown-view.slint";
+//   MarkdownView { blocks: root.my-blocks; }
+export component MarkdownView inherits Rectangle {
+    in-out property <[DocBlock]> blocks: [];
+    clip: true;
+
+    Flickable {
+        width: parent.width;
+        height: parent.height;
+        viewport-height: blocks-vl.preferred-height + Spacing.xl * 2;
+        interactive: true;
+
+        blocks-vl := VerticalLayout {
+            x: Spacing.xl;
+            y: Spacing.lg;
+            width: parent.width - Spacing.xl * 2;
+            spacing: 0px;
+
+            for block in root.blocks: VerticalLayout {
+                width: parent.width;
+
+                // ── H1 ────────────────────────────────────────────────────────
+                if block.kind == "h1": VerticalLayout {
+                    width: parent.width;
+                    padding-top: Spacing.lg;
+                    padding-bottom: Spacing.xs;
+                    spacing: Spacing.xs;
+
+                    Text {
+                        width: parent.width;
+                        text: block.text;
+                        font-size: Type.title-size;
+                        font-weight: 700;
+                        color: Colors.text-primary;
+                        wrap: word-wrap;
+                    }
+                    Rectangle { height: 1px; background: Colors.border; }
+                }
+
+                // ── H2 ────────────────────────────────────────────────────────
+                if block.kind == "h2": VerticalLayout {
+                    width: parent.width;
+                    padding-top: Spacing.md;
+                    padding-bottom: Spacing.xs;
+
+                    Text {
+                        width: parent.width;
+                        text: block.text;
+                        font-size: Type.heading-size;
+                        font-weight: 700;
+                        color: Colors.text-primary;
+                        wrap: word-wrap;
+                    }
+                }
+
+                // ── H3 ────────────────────────────────────────────────────────
+                if block.kind == "h3": VerticalLayout {
+                    width: parent.width;
+                    padding-top: Spacing.sm;
+                    padding-bottom: 2px;
+
+                    Text {
+                        width: parent.width;
+                        text: block.text;
+                        font-size: Type.subtitle-size;
+                        font-weight: 600;
+                        color: Colors.text-primary;
+                        wrap: word-wrap;
+                    }
+                }
+
+                // ── Paragraph ─────────────────────────────────────────────────
+                if block.kind == "p": VerticalLayout {
+                    width: parent.width;
+                    padding-top: Spacing.xs;
+                    padding-bottom: Spacing.xs;
+
+                    Text {
+                        width: parent.width;
+                        text: block.text;
+                        font-size: Type.body-size;
+                        color: Colors.text-primary;
+                        wrap: word-wrap;
+                    }
+                }
+
+                // ── Code block ────────────────────────────────────────────────
+                if block.kind == "code": VerticalLayout {
+                    width: parent.width;
+                    padding-top: Spacing.xs;
+                    padding-bottom: Spacing.xs;
+
+                    Rectangle {
+                        width: parent.width;
+                        background: Colors.bg-elevated;
+                        border-radius: Spacing.xs;
+                        border-color: Colors.border;
+                        border-width: 1px;
+
+                        VerticalLayout {
+                            padding: Spacing.sm;
+
+                            Text {
+                                width: parent.width - Spacing.sm * 2;
+                                text: block.text;
+                                font-family: "Consolas";
+                                font-size: Type.caption-size;
+                                color: Colors.text-primary;
+                                wrap: word-wrap;
+                            }
+                        }
+                    }
+                }
+
+                // ── List item level 0 ─────────────────────────────────────────
+                if block.kind == "li": VerticalLayout {
+                    width: parent.width;
+                    padding-top: 2px;
+                    padding-bottom: 2px;
+
+                    HorizontalLayout {
+                        width: parent.width;
+                        spacing: Spacing.xs;
+                        padding-left: Spacing.md;
+
+                        Text {
+                            text: "•";
+                            width: Spacing.sm + 4px;
+                            font-size: Type.body-size;
+                            color: Colors.accent;
+                            vertical-alignment: top;
+                        }
+                        Text {
+                            horizontal-stretch: 1;
+                            text: block.text;
+                            font-size: Type.body-size;
+                            color: Colors.text-primary;
+                            wrap: word-wrap;
+                        }
+                    }
+                }
+
+                // ── List item level 1+ ────────────────────────────────────────
+                if block.kind == "li2": VerticalLayout {
+                    width: parent.width;
+                    padding-top: 2px;
+                    padding-bottom: 2px;
+
+                    HorizontalLayout {
+                        width: parent.width;
+                        spacing: Spacing.xs;
+                        padding-left: Spacing.lg + Spacing.md;
+
+                        Text {
+                            text: "◦";
+                            width: Spacing.sm + 4px;
+                            font-size: Type.body-size;
+                            color: Colors.text-secondary;
+                            vertical-alignment: top;
+                        }
+                        Text {
+                            horizontal-stretch: 1;
+                            text: block.text;
+                            font-size: Type.body-size;
+                            color: Colors.text-secondary;
+                            wrap: word-wrap;
+                        }
+                    }
+                }
+
+                // ── Table header row ──────────────────────────────────────────
+                if block.kind == "th": VerticalLayout {
+                    width: parent.width;
+                    padding-top: Spacing.xs;
+
+                    Rectangle {
+                        width: parent.width;
+                        background: Colors.bg-elevated;
+                        border-radius: Spacing.xs;
+                        border-color: Colors.border;
+                        border-width: 1px;
+
+                        HorizontalLayout {
+                            padding-left: Spacing.sm;
+                            padding-right: Spacing.sm;
+                            padding-top: Spacing.xs;
+                            padding-bottom: Spacing.xs;
+
+                            Text {
+                                horizontal-stretch: 1;
+                                text: block.text;
+                                font-family: "Consolas";
+                                font-size: Type.caption-size;
+                                font-weight: 600;
+                                color: Colors.text-primary;
+                                wrap: word-wrap;
+                            }
+                        }
+                    }
+                }
+
+                // ── Table data row ────────────────────────────────────────────
+                if block.kind == "tr": VerticalLayout {
+                    width: parent.width;
+
+                    Rectangle {
+                        width: parent.width;
+                        border-color: Colors.border;
+                        border-width: 1px;
+
+                        HorizontalLayout {
+                            padding-left: Spacing.sm;
+                            padding-right: Spacing.sm;
+                            padding-top: Spacing.xs / 2;
+                            padding-bottom: Spacing.xs / 2;
+
+                            Text {
+                                horizontal-stretch: 1;
+                                text: block.text;
+                                font-family: "Consolas";
+                                font-size: Type.caption-size;
+                                color: Colors.text-primary;
+                                wrap: word-wrap;
+                            }
+                        }
+                    }
+                }
+
+                // ── Horizontal rule ───────────────────────────────────────────
+                if block.kind == "hr": VerticalLayout {
+                    padding-top: Spacing.sm;
+                    padding-bottom: Spacing.sm;
+
+                    Rectangle { height: 1px; background: Colors.border-strong; }
+                }
+
+                // ── Blockquote ────────────────────────────────────────────────
+                if block.kind == "bq": VerticalLayout {
+                    width: parent.width;
+                    padding-top: Spacing.xs;
+                    padding-bottom: Spacing.xs;
+
+                    HorizontalLayout {
+                        width: parent.width;
+                        spacing: Spacing.sm;
+
+                        Rectangle {
+                            width: 3px;
+                            background: Colors.accent;
+                            border-radius: 2px;
+                        }
+                        Text {
+                            horizontal-stretch: 1;
+                            text: block.text;
+                            font-size: Type.body-size;
+                            color: Colors.text-secondary;
+                            wrap: word-wrap;
+                        }
+                    }
+                }
+            }
+
+            Rectangle { height: Spacing.xl; }
+        }
+    }
+}

@@ -5,6 +5,8 @@ import { Colors, Spacing, Type } from "../tokens/theme.slint";
 import { DragHandle }                from "../modules/DragHandle.slint";
 import { PanelContainer, PanelItem } from "../modules/PanelContainer.slint";
 import { PanelSlot }                 from "../modules/PanelSlot.slint";
+import { ViewSlot }                  from "../modules/ViewSlot.slint";
+import { Button }                    from "../shared/button.slint";
 import { ViewerSection } from "viewer-section.slint";
 
 // Demo box with a live column drag handle.
@@ -135,6 +137,7 @@ component BiDirDemo inherits Rectangle {
 
 export component PageLayout inherits VerticalLayout {
     spacing: Spacing.md;
+    private property <string> active-slot: "alpha";
 
     ViewerSection {
         title: "DragHandle";
@@ -173,6 +176,86 @@ export component PageLayout inherits VerticalLayout {
             height: 80px;
             panel-id: 99;
             label: "Standalone slot";
+        }
+    }
+
+    ViewerSection {
+        title: "ViewSlot — slot-id routing (click nav to switch view)";
+
+        VerticalLayout {
+            spacing: Spacing.sm;
+            width: 360px;
+
+            // Nav buttons
+            HorizontalLayout {
+                spacing: Spacing.sm;
+                alignment: start;
+                Button {
+                    label: "Alpha";
+                    variant: root.active-slot == "alpha" ? "primary" : "secondary";
+                    clicked => { root.active-slot = "alpha"; }
+                }
+                Button {
+                    label: "Beta";
+                    variant: root.active-slot == "beta" ? "primary" : "secondary";
+                    clicked => { root.active-slot = "beta"; }
+                }
+                Button {
+                    label: "Gamma";
+                    variant: root.active-slot == "gamma" ? "primary" : "secondary";
+                    clicked => { root.active-slot = "gamma"; }
+                }
+            }
+
+            // Slot content area
+            Rectangle {
+                height: 80px;
+                border-width: 1px;
+                border-color: Colors.border;
+                background: Colors.bg-surface;
+                clip: true;
+
+                ViewSlot {
+                    slot-id: "alpha";
+                    active: root.active-slot;
+                    width: 100%; height: 100%;
+                    Text {
+                        text: "slot-id: \"alpha\" — visible when active == \"alpha\"";
+                        color: Colors.text-primary;
+                        font-size: Type.body-size;
+                        horizontal-alignment: center;
+                        vertical-alignment: center;
+                    }
+                }
+
+                ViewSlot {
+                    slot-id: "beta";
+                    active: root.active-slot;
+                    width: 100%; height: 100%;
+                    background: Colors.accent.with-alpha(0.10);
+                    Text {
+                        text: "slot-id: \"beta\"";
+                        color: Colors.accent;
+                        font-size: Type.body-size;
+                        horizontal-alignment: center;
+                        vertical-alignment: center;
+                    }
+                }
+
+                ViewSlot {
+                    slot-id: "gamma";
+                    active: root.active-slot;
+                    width: 100%; height: 100%;
+                    background: Colors.bg-elevated;
+                    Text {
+                        text: "slot-id: \"gamma\"";
+                        color: Colors.text-secondary;
+                        font-size: Type.body-size;
+                        horizontal-alignment: center;
+                        vertical-alignment: center;
+                    }
+                }
+            }
         }
     }
 }
