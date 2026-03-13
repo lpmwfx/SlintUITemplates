@@ -1,33 +1,34 @@
 // Mica material palette — WinUI3 LayerFillColorDefault / Secondary values.
 // bg-primary is transparent — OS DWM provides the Mica backdrop.
-// Surfaces use semi-opaque white tints on top of the backdrop.
+// Text colors use WinUI3 TextFillColor* opacity tokens (RRGGBBAA in Slint)
+// so they composite correctly against the semi-transparent Mica surfaces.
 
 export global Mica {
     // ── Dark ──────────────────────────────────────────────────────────────────
     out property <color> dark-bg-primary:     transparent;
-    out property <color> dark-bg-surface:     #FFFFFF0F;  // LayerFillColorDefault  6%
-    out property <color> dark-bg-elevated:    #FFFFFF18;  // LayerFillColorSecondary 9%
-    out property <color> dark-text-primary:   #FFFFFF;
-    out property <color> dark-text-secondary: #9D9D9D;
-    out property <color> dark-text-disabled:  #6B6B6B;
+    out property <color> dark-bg-surface:     #FFFFFF0F;   // LayerFillColorDefault  6%
+    out property <color> dark-bg-elevated:    #FFFFFF18;   // LayerFillColorSecondary 9%
+    out property <color> dark-text-primary:   #FFFFFFFF;   // TextFillColorPrimary   dark 100%
+    out property <color> dark-text-secondary: #FFFFFFC8;   // TextFillColorSecondary dark 78%
+    out property <color> dark-text-disabled:  #FFFFFF5C;   // TextFillColorDisabled  dark 36%
     out property <color> dark-accent:         #60CDFF;
     out property <color> dark-accent-hover:   #4CC2F1;
     out property <color> dark-accent-text:    #000000;
-    out property <color> dark-border:         #FFFFFF1A;
+    out property <color> dark-border:         #FFFFFF1A;   // SubtleFillColorSecondary dark
     out property <color> dark-border-strong:  #FFFFFF33;
     out property <color> dark-shadow:         #00000040;
 
     // ── Light ─────────────────────────────────────────────────────────────────
     out property <color> light-bg-primary:     transparent;
-    out property <color> light-bg-surface:     #FFFFFFB2;  // LayerFillColorDefault  70%
-    out property <color> light-bg-elevated:    #FFFFFFCC;  // LayerFillColorSecondary 80%
-    out property <color> light-text-primary:   #1C1C1C;
-    out property <color> light-text-secondary: #616161;
-    out property <color> light-text-disabled:  #A0A0A0;
+    out property <color> light-bg-surface:     #FFFFFFB2;  // LayerFillColorDefault  light 70%
+    out property <color> light-bg-elevated:    #FFFFFFCC;  // LayerFillColorSecondary light 80%
+    out property <color> light-text-primary:   #000000E4;  // TextFillColorPrimary   light 89%
+    out property <color> light-text-secondary: #0000009A;  // TextFillColorSecondary light 60%
+    out property <color> light-text-disabled:  #0000005C;  // TextFillColorDisabled  light 36%
     out property <color> light-accent:         #0078D4;
     out property <color> light-accent-hover:   #106EBE;
     out property <color> light-accent-text:    #FFFFFF;
-    out property <color> light-border:         #0000001A;
+    out property <color> light-border:         #0000001A;  // SubtleFillColorSecondary light
     out property <color> light-border-strong:  #00000033;
     out property <color> light-shadow:         #0000000F;
 }

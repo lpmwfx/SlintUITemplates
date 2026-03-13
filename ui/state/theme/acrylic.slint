@@ -1,14 +1,15 @@
 // Acrylic material palette — blur+tint+exclusion blend provides the backdrop.
 // bg-primary is transparent — surfaces use minimal tints so the blur effect shows through.
+// Text colors use WinUI3 TextFillColor* opacity tokens (RRGGBBAA in Slint).
 
 export global Acrylic {
     // ── Dark ──────────────────────────────────────────────────────────────────
     out property <color> dark-bg-primary:     transparent;
-    out property <color> dark-bg-surface:     #FFFFFF08;  // ~3% — recedes behind blur
-    out property <color> dark-bg-elevated:    #FFFFFF12;  // ~7%
-    out property <color> dark-text-primary:   #FFFFFF;
-    out property <color> dark-text-secondary: #9D9D9D;
-    out property <color> dark-text-disabled:  #6B6B6B;
+    out property <color> dark-bg-surface:     #FFFFFF08;   // ~3% — recedes behind blur
+    out property <color> dark-bg-elevated:    #FFFFFF12;   // ~7%
+    out property <color> dark-text-primary:   #FFFFFFFF;   // TextFillColorPrimary   dark 100%
+    out property <color> dark-text-secondary: #FFFFFFC8;   // TextFillColorSecondary dark 78%
+    out property <color> dark-text-disabled:  #FFFFFF5C;   // TextFillColorDisabled  dark 36%
     out property <color> dark-accent:         #60CDFF;
     out property <color> dark-accent-hover:   #4CC2F1;
     out property <color> dark-accent-text:    #000000;
@@ -20,9 +21,9 @@ export global Acrylic {
     out property <color> light-bg-primary:     transparent;
     out property <color> light-bg-surface:     #FFFFFF60;  // 38%
     out property <color> light-bg-elevated:    #FFFFFF99;  // 60%
-    out property <color> light-text-primary:   #1C1C1C;
-    out property <color> light-text-secondary: #616161;
-    out property <color> light-text-disabled:  #A0A0A0;
+    out property <color> light-text-primary:   #000000E4;  // TextFillColorPrimary   light 89%
+    out property <color> light-text-secondary: #0000009A;  // TextFillColorSecondary light 60%
+    out property <color> light-text-disabled:  #0000005C;  // TextFillColorDisabled  light 36%
     out property <color> light-accent:         #0078D4;
     out property <color> light-accent-hover:   #106EBE;
     out property <color> light-accent-text:    #FFFFFF;
