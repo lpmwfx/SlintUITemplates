@@ -1,0 +1,240 @@
+import { Colors, Spacing, Type, FluentIcons } from "../tokens/theme.slint";
+
+export component DatePicker inherits Rectangle {
+    in-out property <string> value: "";
+    in property <string> label: "";
+    in property <string> placeholder: "Select date";
+    in property <string> error: "";
+    in property <bool>   enabled: true;
+    callback changed(string);
+
+    private property <int> display-year:  2026;
+    private property <int> display-month: 1;
+
+    // Named calendar constants
+    private property <length> cell-size:   Spacing.control-md + Spacing.xs;   // 36px
+    private property <length> popup-w:     cell-size * 7 + Spacing.sm * 2 + Spacing.xs * 6;
+    private property <length> popup-h:     Spacing.xl + Spacing.xl + cell-size * 6 + Spacing.sm * 5 + Spacing.md * 2;
+
+    // Zeller's congruence helpers
+    private property <int> zy: root.display-month <= 2 ? root.display-year - 1 : root.display-year;
+    private property <int> zm: root.display-month <= 2 ? root.display-month + 12 : root.display-month;
+    // h: 0=Sat, 1=Sun, 2=Mon … 6=Fri
+    private property <int> zeller-h: Math.mod(1 + (13 * (root.zm + 1) / 5) + root.zy + root.zy / 4 - root.zy / 100 + root.zy / 400, 7);
+    // Convert to 0=Mon … 6=Sun
+    private property <int> first-weekday: Math.mod(root.zeller-h + 5, 7);
+
+    private property <int> days-in-month:
+        root.display-month == 2 ? (
+            Math.mod(root.display-year, 4) == 0 &&
+            (Math.mod(root.display-year, 100) != 0 || Math.mod(root.display-year, 400) == 0) ? 29 : 28
+        ) :
+        (root.display-month == 4 || root.display-month == 6 ||
+         root.display-month == 9 || root.display-month == 11) ? 30 : 31;
+
+    private property <[string]> month-names: [
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+    ];
+
+    private property <bool> picker-open: false;
+
+    height: root.label != "" ? Spacing.xl + Type.caption-size + Spacing.xs : Spacing.xl;
+    opacity: root.enabled ? 1.0 : 0.5;
+    clip: false;
+
+    VerticalLayout {
+        spacing: Spacing.xs;
+
+        if root.label != "": Text {
+            text: root.label;
+            font-size: Type.caption-size;
+            font-weight: Type.weight-semibold;
+            color: root.error != "" ? Colors.error : Colors.text-secondary;
+        }
+
+        field := Rectangle {
+            height: Spacing.xl;
+            border-radius: Spacing.xs;
+            border-width: 1px;
+            border-color: root.error != "" ? Colors.error :
+                          root.picker-open ? Colors.border-focus : Colors.border;
+            background: Colors.bg-elevated;
+
+            HorizontalLayout {
+                padding-left: Spacing.sm;
+                padding-right: 0;
+
+                Text {
+                    text: root.value != "" ? root.value : root.placeholder;
+                    font-size: Type.body-size;
+                    color: root.value != "" ? Colors.text-primary : Colors.text-disabled;
+                    vertical-alignment: center;
+                    horizontal-stretch: 1;
+                }
+
+                cal-btn := Rectangle {
+                    width: Spacing.xl;
+                    background: cal-ta.has-hover ? Colors.bg-surface : transparent;
+
+                    Text {
+                        text: FluentIcons.edit;
+                        font-family: "Segoe Fluent Icons";
+                        font-size: Type.body-size;
+                        color: Colors.text-secondary;
+                        horizontal-alignment: center;
+                        vertical-alignment: center;
+                    }
+
+                    cal-ta := TouchArea {
+                        enabled: root.enabled;
+                        clicked => { root.picker-open = !root.picker-open; }
+                    }
+                }
+            }
+        }
+
+        if root.error != "": Text {
+            text: root.error;
+            font-size: Type.caption-size;
+            color: Colors.error;
+        }
+    }
+
+    // Calendar popup
+    if root.picker-open: calendar := Rectangle {
+        y: root.height + Spacing.xs;
+        width:  root.popup-w;
+        background: Colors.bg-elevated;
+        border-radius: Spacing.xs;
+        border-width: 1px;
+        border-color: Colors.border;
+        drop-shadow-blur: Spacing.sm;
+        drop-shadow-color: Colors.shadow;
+
+        VerticalLayout {
+            padding: Spacing.sm;
+            spacing: Spacing.sm;
+
+            // Month navigation
+            HorizontalLayout {
+                spacing: Spacing.xs;
+
+                prev-month := Rectangle {
+                    width:  Spacing.control-md;
+                    height: Spacing.control-md;
+                    border-radius: Spacing.xs;
+                    background: pm-ta.has-hover ? Colors.bg-surface : transparent;
+
+                    Text {
+                        text: "‹";
+                        font-size: Type.subtitle-size;
+                        color: Colors.text-primary;
+                        horizontal-alignment: center;
+                        vertical-alignment: center;
+                    }
+
+                    pm-ta := TouchArea {
+                        clicked => {
+                            if root.display-month == 1 {
+                                root.display-month = 12;
+                                root.display-year = root.display-year - 1;
+                            } else {
+                                root.display-month = root.display-month - 1;
+                            }
+                        }
+                    }
+                }
+
+                Text {
+                    text: root.month-names[root.display-month - 1] + " " + root.display-year;
+                    font-size: Type.body-size;
+                    font-weight: Type.weight-semibold;
+                    color: Colors.text-primary;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                    horizontal-stretch: 1;
+                }
+
+                next-month := Rectangle {
+                    width:  Spacing.control-md;
+                    height: Spacing.control-md;
+                    border-radius: Spacing.xs;
+                    background: nm-ta.has-hover ? Colors.bg-surface : transparent;
+
+                    Text {
+                        text: "›";
+                        font-size: Type.subtitle-size;
+                        color: Colors.text-primary;
+                        horizontal-alignment: center;
+                        vertical-alignment: center;
+                    }
+
+                    nm-ta := TouchArea {
+                        clicked => {
+                            if root.display-month == 12 {
+                                root.display-month = 1;
+                                root.display-year = root.display-year + 1;
+                            } else {
+                                root.display-month = root.display-month + 1;
+                            }
+                        }
+                    }
+                }
+            }
+
+            // Day headers
+            HorizontalLayout {
+                spacing: Spacing.xs;
+                for d in ["M", "T", "W", "T", "F", "S", "S"]: Text {
+                    text: d;
+                    width: root.cell-size;
+                    font-size: Type.caption-size;
+                    color: Colors.text-secondary;
+                    horizontal-alignment: center;
+                }
+            }
+
+            // Calendar grid — 6 rows × 7 columns
+            VerticalLayout {
+                spacing: Spacing.xs;
+
+                for row in [0, 1, 2, 3, 4, 5]: HorizontalLayout {
+                    spacing: Spacing.xs;
+
+                    for col in [0, 1, 2, 3, 4, 5, 6]: day-cell := Rectangle {
+                        width:  root.cell-size;
+                        height: root.cell-size;
+                        border-radius: root.cell-size / 2;
+
+                        property <int>  day-num:   row * 7 + col - root.first-weekday + 1;
+                        property <bool> valid-day: day-num >= 1 && day-num <= root.days-in-month;
+
+                        background: valid-day && day-ta.has-hover
+                            ? Colors.bg-surface : transparent;
+
+                        if valid-day: Text {
+                            text: day-cell.day-num;
+                            font-size: Type.body-size;
+                            color: Colors.text-primary;
+                            horizontal-alignment: center;
+                            vertical-alignment: center;
+                        }
+
+                        day-ta := TouchArea {
+                            enabled: day-cell.valid-day;
+                            clicked => {
+                                root.value =
+                                    root.display-year + "-"
+                                    + (root.display-month < 10 ? "0" : "") + root.display-month + "-"
+                                    + (day-cell.day-num < 10 ? "0" : "") + day-cell.day-num;
+                                root.changed(root.value);
+                                root.picker-open = false;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

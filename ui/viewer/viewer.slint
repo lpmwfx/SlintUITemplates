@@ -7,13 +7,16 @@ import { NavItem }    from "../desktop/types.slint";
 import { Button }     from "../shared/button.slint";
 import { Toggle }     from "../shared/toggle.slint";
 import { SelectField } from "../shared/select-field.slint";
-import { PageButtons }  from "page-buttons.slint";
-import { PageInputs }   from "page-inputs.slint";
-import { PageDisplay }  from "page-display.slint";
-import { PageFeedback } from "page-feedback.slint";
-import { PageLayout }   from "page-layout.slint";
-import { PageAppShell } from "page-app-shell.slint";
-import { PageIcons }    from "page-icons.slint";
+import { PageButtons }    from "page-buttons.slint";
+import { PageInputs }     from "page-inputs.slint";
+import { PageDisplay }    from "page-display.slint";
+import { PageFeedback }   from "page-feedback.slint";
+import { PageLayout }     from "page-layout.slint";
+import { PageAppShell }   from "page-app-shell.slint";
+import { PageIcons }      from "page-icons.slint";
+import { PageSelection }  from "page-selection.slint";
+import { PageNavigation } from "page-navigation.slint";
+import { PageData }       from "page-data.slint";
 
 export component FrameworkViewer inherits Window {
     preferred-width:  1100px;
@@ -39,6 +42,9 @@ export component FrameworkViewer inherits Window {
             MenuItem { title: "Layout";    activated => { root.active-view = "layout"; } }
             MenuItem { title: "App Shell"; activated => { root.active-view = "app-shell"; } }
             MenuItem { title: "Icons";     activated => { root.active-view = "icons"; } }
+            MenuItem { title: "Selection"; activated => { root.active-view = "selection"; } }
+            MenuItem { title: "Navigation"; activated => { root.active-view = "navigation"; } }
+            MenuItem { title: "Data";      activated => { root.active-view = "data"; } }
         }
         Menu {
             title: "Help";
@@ -100,13 +106,16 @@ export component FrameworkViewer inherits Window {
                 max-width: Spacing.xl * 4 + Spacing.md;
                 active-item: root.active-view;
                 items: [
-                    { id: "buttons",   label: "Buttons",   icon: FluentIcons.apps },
-                    { id: "inputs",    label: "Inputs",    icon: FluentIcons.edit },
-                    { id: "display",   label: "Display",   icon: FluentIcons.list },
-                    { id: "feedback",  label: "Feedback",  icon: FluentIcons.notification },
-                    { id: "layout",    label: "Layout",    icon: FluentIcons.layout },
-                    { id: "app-shell", label: "App Shell", icon: FluentIcons.panel-left },
-                    { id: "icons",     label: "Icons",     icon: FluentIcons.star },
+                    { id: "buttons",    label: "Buttons",    icon: FluentIcons.apps },
+                    { id: "inputs",     label: "Inputs",     icon: FluentIcons.edit },
+                    { id: "display",    label: "Display",    icon: FluentIcons.list },
+                    { id: "feedback",   label: "Feedback",   icon: FluentIcons.notification },
+                    { id: "layout",     label: "Layout",     icon: FluentIcons.layout },
+                    { id: "app-shell",  label: "App Shell",  icon: FluentIcons.panel-left },
+                    { id: "icons",      label: "Icons",      icon: FluentIcons.star },
+                    { id: "selection",  label: "Selection",  icon: FluentIcons.checkmark },
+                    { id: "navigation", label: "Navigation", icon: FluentIcons.list },
+                    { id: "data",       label: "Data",       icon: FluentIcons.grid },
                 ];
                 navigate(id) => { root.active-view = id; }
                 toggle-collapsed() => {}
@@ -132,12 +141,15 @@ export component FrameworkViewer inherits Window {
                     pg := VerticalLayout {
                         padding: Spacing.md;
                         spacing: Spacing.md;
-                        if root.active-view == "buttons":  PageButtons  {}
-                        if root.active-view == "inputs":   PageInputs   {}
-                        if root.active-view == "display":  PageDisplay  {}
-                        if root.active-view == "feedback": PageFeedback {}
-                        if root.active-view == "layout":   PageLayout   {}
-                        if root.active-view == "icons":    PageIcons    {}
+                        if root.active-view == "buttons":    PageButtons    {}
+                        if root.active-view == "inputs":     PageInputs     {}
+                        if root.active-view == "display":    PageDisplay    {}
+                        if root.active-view == "feedback":   PageFeedback   {}
+                        if root.active-view == "layout":     PageLayout     {}
+                        if root.active-view == "icons":      PageIcons      {}
+                        if root.active-view == "selection":  PageSelection  {}
+                        if root.active-view == "navigation": PageNavigation {}
+                        if root.active-view == "data":       PageData       {}
                     }
                 }
             }

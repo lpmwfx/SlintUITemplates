@@ -1,0 +1,100 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+
+export struct ContextMenuItem {
+    id: string,
+    label: string,
+    icon: string,
+    disabled: bool,
+    separator: bool,
+}
+
+export component ContextMenu inherits Rectangle {
+    in property <[ContextMenuItem]> items: [];
+    callback activated(string);
+
+    private property <length> pop-x: 0;
+    private property <length> pop-y: 0;
+
+    width: 0;
+    height: 0;
+    background: transparent;
+
+    popup := PopupWindow {
+        x: root.pop-x;
+        y: root.pop-y;
+        width: 200px;
+
+        Rectangle {
+            background: Colors.bg-elevated;
+            border-radius: Spacing.xs;
+            border-width: 1px;
+            border-color: Colors.border;
+            drop-shadow-blur: Spacing.sm;
+            drop-shadow-color: Colors.shadow;
+            clip: true;
+
+            VerticalLayout {
+                padding: Spacing.xs;
+
+                for item in root.items: Rectangle {
+                    // Separator
+                    if item.separator: Rectangle {
+                        height: Spacing.xs;
+                        background: transparent;
+                        Rectangle {
+                            y: Spacing.xs / 2;
+                            width: parent.width;
+                            height: 1px;
+                            background: Colors.border;
+                        }
+                    }
+
+                    // Menu item
+                    if !item.separator: item-btn := Rectangle {
+                        height: Spacing.xl;
+                        border-radius: Spacing.xs;
+                        background: !item.disabled && item-ta.has-hover
+                            ? Colors.bg-surface : transparent;
+                        opacity: item.disabled ? 0.5 : 1.0;
+
+                        HorizontalLayout {
+                            padding-left: Spacing.sm;
+                            padding-right: Spacing.sm;
+                            spacing: Spacing.sm;
+
+                            if item.icon != "": Text {
+                                text: item.icon;
+                                font-family: "Segoe Fluent Icons";
+                                font-size: Type.body-size;
+                                color: Colors.text-secondary;
+                                vertical-alignment: center;
+                            }
+
+                            Text {
+                                text: item.label;
+                                font-size: Type.body-size;
+                                color: item.disabled ? Colors.text-disabled : Colors.text-primary;
+                                vertical-alignment: center;
+                                horizontal-stretch: 1;
+                            }
+                        }
+
+                        item-ta := TouchArea {
+                            enabled: !item.disabled;
+                            clicked => {
+                                root.activated(item.id);
+                                popup.close();
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    public function show-at(xp: length, yp: length) {
+        root.pop-x = xp;
+        root.pop-y = yp;
+        popup.show();
+    }
+}

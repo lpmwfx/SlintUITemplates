@@ -1,0 +1,137 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+
+export struct TableColumn {
+    key: string,
+    label: string,
+    width: length,
+}
+
+export struct TableRow {
+    id: string,
+    cells: [string],
+}
+
+export component DataTable inherits Rectangle {
+    in property <[TableColumn]> columns: [];
+    in property <[TableRow]>    rows: [];
+    in-out property <string>    sort-key: "";
+    in-out property <bool>      sort-asc: true;
+    in-out property <string>    selected: "";
+    callback sort-changed(string, bool);
+    callback row-selected(string);
+
+    background: Colors.bg-surface;
+    border-width: 1px;
+    border-color: Colors.border;
+    border-radius: Spacing.xs;
+    clip: true;
+
+    VerticalLayout {
+        // Header row
+        header := Rectangle {
+            height: Spacing.xl;
+            background: Colors.bg-elevated;
+
+            // Bottom border
+            Rectangle {
+                y: parent.height - 1px;
+                height: 1px;
+                width: parent.width;
+                background: Colors.border;
+            }
+
+            HorizontalLayout {
+                for col in root.columns: Rectangle {
+                    width: col.width;
+                    height: parent.height;
+
+                    HorizontalLayout {
+                        padding-left: Spacing.sm;
+                        padding-right: Spacing.sm;
+                        spacing: Spacing.xs;
+
+                        Text {
+                            text: col.label;
+                            font-size: Type.body-size;
+                            font-weight: Type.weight-semibold;
+                            color: Colors.text-primary;
+                            vertical-alignment: center;
+                            horizontal-stretch: 1;
+                        }
+
+                        if root.sort-key == col.key: Text {
+                            text: root.sort-asc ? "▲" : "▼";
+                            font-size: Type.caption-size;
+                            color: Colors.accent;
+                            vertical-alignment: center;
+                        }
+                    }
+
+                    col-ta := TouchArea {
+                        clicked => {
+                            if root.sort-key == col.key {
+                                root.sort-asc = !root.sort-asc;
+                            } else {
+                                root.sort-key = col.key;
+                                root.sort-asc = true;
+                            }
+                            root.sort-changed(root.sort-key, root.sort-asc);
+                        }
+                    }
+                }
+            }
+        }
+
+        // Rows area
+        rows-area := Rectangle {
+            vertical-stretch: 1;
+            clip: true;
+
+            Flickable {
+                width: parent.width;
+                height: parent.height;
+                viewport-height: root.rows.length * Spacing.xl;
+
+                VerticalLayout {
+                    for row[i] in root.rows: row-rect := Rectangle {
+                        height: Spacing.xl;
+                        background: row.id == root.selected ? Colors.accent :
+                                    Math.mod(i, 2) == 0 ? Colors.bg-surface : Colors.bg-elevated;
+
+                        // Bottom border
+                        Rectangle {
+                            y: parent.height - 1px;
+                            height: 1px;
+                            width: parent.width;
+                            background: Colors.border;
+                        }
+
+                        HorizontalLayout {
+                            for cell[j] in row.cells: Rectangle {
+                                width: j < root.columns.length ? root.columns[j].width : 100px;
+                                height: parent.height;
+
+                                Text {
+                                    x: Spacing.sm;
+                                    text: cell;
+                                    font-size: Type.body-size;
+                                    color: row.id == root.selected
+                                        ? Colors.accent-text : Colors.text-primary;
+                                    vertical-alignment: center;
+                                    overflow: elide;
+                                }
+                            }
+                        }
+
+                        row-ta := TouchArea {
+                            clicked => {
+                                root.selected = row.id;
+                                root.row-selected(row.id);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

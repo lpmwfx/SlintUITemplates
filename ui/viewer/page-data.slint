@@ -1,0 +1,144 @@
+// page-data — DataTable, TreeView, DatePicker, MultiSelect, Chip, ContextMenu
+
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { DataTable, TableColumn, TableRow } from "../shared/data-table.slint";
+import { TreeView, TreeNode }               from "../shared/tree-view.slint";
+import { DatePicker }                       from "../shared/date-picker.slint";
+import { MultiSelect, MultiSelectOption }   from "../shared/multi-select.slint";
+import { Chip }                             from "../shared/chip.slint";
+import { ContextMenu, ContextMenuItem }     from "../shared/context-menu.slint";
+import { ViewerSection } from "viewer-section.slint";
+
+export component PageData inherits VerticalLayout {
+    spacing: Spacing.md;
+
+    private property <string> table-selected: "";
+    private property <string> tree-selected: "";
+    private property <string> date-value: "";
+
+    ViewerSection {
+        title: "DataTable";
+        DataTable {
+            width: 500px;
+            height: 200px;
+            columns: [
+                { key: "name",   label: "Name",       width: 160px },
+                { key: "role",   label: "Role",        width: 120px },
+                { key: "status", label: "Status",      width: 100px },
+                { key: "joined", label: "Joined",      width: 120px },
+            ];
+            rows: [
+                { id: "1", cells: ["Alice Johnson", "Designer",   "Active",   "2023-01"] },
+                { id: "2", cells: ["Bob Smith",     "Engineer",   "Active",   "2022-06"] },
+                { id: "3", cells: ["Carol White",   "PM",         "Away",     "2021-11"] },
+                { id: "4", cells: ["David Brown",   "Engineer",   "Inactive", "2023-04"] },
+                { id: "5", cells: ["Eva Green",     "Marketing",  "Active",   "2024-02"] },
+            ];
+            selected: table-selected;
+            row-selected(id) => { table-selected = id; }
+        }
+    }
+
+    ViewerSection {
+        title: "TreeView";
+        TreeView {
+            width: 280px;
+            height: 200px;
+            nodes: [
+                { id: "src",      label: "src",       icon: "", level: 0, expanded: true,  leaf: false },
+                { id: "main",     label: "main.rs",   icon: "", level: 1, expanded: false, leaf: true  },
+                { id: "lib",      label: "lib.rs",    icon: "", level: 1, expanded: false, leaf: true  },
+                { id: "ui",       label: "ui",        icon: "", level: 0, expanded: true,  leaf: false },
+                { id: "shared",   label: "shared",    icon: "", level: 1, expanded: false, leaf: false },
+                { id: "tokens",   label: "tokens",    icon: "", level: 1, expanded: false, leaf: false },
+            ];
+            selected: tree-selected;
+            selected-changed(id) => { tree-selected = id; }
+            toggle-expanded(id) => { }
+        }
+    }
+
+    ViewerSection {
+        title: "DatePicker";
+        VerticalLayout {
+            spacing: Spacing.sm;
+            width: 260px;
+            DatePicker {
+                label: "Select date";
+                value: date-value;
+                changed(v) => { date-value = v; }
+            }
+            DatePicker {
+                label: "With error";
+                error: "Date is required";
+            }
+        }
+    }
+
+    ViewerSection {
+        title: "MultiSelect";
+        MultiSelect {
+            width: 240px;
+            options: [
+                { label: "Rust",       value: "rust" },
+                { label: "TypeScript", value: "ts" },
+                { label: "Python",     value: "py" },
+                { label: "Go",         value: "go" },
+            ];
+            placeholder: "Choose languages...";
+        }
+    }
+
+    ViewerSection {
+        title: "Chip";
+        HorizontalLayout {
+            alignment: start;
+            spacing: Spacing.sm;
+            Chip { label: "Default"; }
+            Chip { label: "Selected"; selected: true; }
+            Chip { label: "No close"; closable: false; }
+            Chip { label: "Disabled"; enabled: false; }
+        }
+    }
+
+    ViewerSection {
+        title: "ContextMenu (right-click area)";
+        VerticalLayout {
+            spacing: Spacing.sm;
+
+            ctx-area := Rectangle {
+                width: 280px;
+                height: 80px;
+                border-width: 1px;
+                border-color: Colors.border;
+                border-radius: Spacing.xs;
+                background: area-ta.has-hover ? Colors.bg-elevated : Colors.bg-surface;
+
+                Text {
+                    text: "Right-click here to open context menu";
+                    font-size: Type.body-size;
+                    color: Colors.text-secondary;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+
+                area-ta := TouchArea {
+                    pointer-event(e) => {
+                        if e.kind == PointerEventKind.up && e.button == PointerEventButton.right {
+                            ctx-menu.show-at(self.mouse-x, self.mouse-y);
+                        }
+                    }
+                }
+
+                ctx-menu := ContextMenu {
+                    items: [
+                        { id: "copy",   label: "Copy",   icon: "",  disabled: false, separator: false },
+                        { id: "paste",  label: "Paste",  icon: "",  disabled: false, separator: false },
+                        { id: "sep1",   label: "",       icon: "",  disabled: false, separator: true  },
+                        { id: "delete", label: "Delete", icon: "",  disabled: true,  separator: false },
+                    ];
+                }
+            }
+        }
+    }
+}
