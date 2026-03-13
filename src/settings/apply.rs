@@ -1,5 +1,5 @@
 use slint::ComponentHandle;
-use crate::{AppWindow, Colors, Settings as UiSettings};
+use crate::{AppWindow, Theme, Settings as UiSettings};
 use crate::adapter::is_dark_mode;
 use super::{AppSettings, ThemeMode};
 
@@ -12,11 +12,11 @@ pub fn apply(ui: &AppWindow, settings: &AppSettings) {
         ThemeMode::Dark   => true,
         ThemeMode::Light  => false,
     };
-    ui.global::<Colors>().set_dark_mode(dark);
+    ui.global::<Theme>().set_dark(dark);
 
     if let Some(hex) = &settings.theme.accent {
         if let Some(color) = hex_to_color(hex) {
-            ui.global::<Colors>().set_accent(color);
+            ui.global::<Theme>().set_accent_override(color);
         }
     }
 

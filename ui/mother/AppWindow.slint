@@ -21,6 +21,7 @@ export component AppWindow inherits Window {
 
     // ── Theme state ────────────────────────────────────────────────────────
     in-out property <string> theme-mode: "system";
+    in-out property <string> material: "solid";  // "solid" | "mica" | "acrylic"
 
     // Reactive: recomputes whenever theme-mode or OS scheme changes
     property <bool> effective-dark:
@@ -29,7 +30,8 @@ export component AppWindow inherits Window {
         Palette.color-scheme == ColorScheme.dark;
 
     // Drive Theme global — AppWindow is the only writer
-    Theme.dark: effective-dark;
+    Theme.dark:     effective-dark;
+    Theme.material: root.material;
 
     background: Theme.bg-primary;
 

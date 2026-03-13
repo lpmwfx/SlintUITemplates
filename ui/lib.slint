@@ -4,8 +4,9 @@
 export { AppWindow }       from "desktop/app-window.slint";
 export { FrameworkViewer } from "viewer/viewer.slint";
 
-// Re-export globals so Rust can access Colors, Settings, etc.
-export { Colors }   from "tokens/colors.slint";
+// Re-export globals so Rust can access Theme, Settings, etc.
+// Theme is the unified color global (replaces the former Colors global).
+export { Theme }    from "state/Theme.slint";
 export { Settings } from "state/settings.slint";
 
 // Shell types for Rust bindings (structs — accessible via include_modules!())

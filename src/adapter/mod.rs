@@ -3,7 +3,7 @@ use std::path::Path;
 use std::rc::Rc;
 use std::cell::RefCell;
 use slint::ComponentHandle;
-use crate::{AppWindow, Colors};
+use crate::{AppWindow, Theme};
 use crate::grid;
 use crate::dsl::{AppDsl, BgStyle};
 
@@ -107,7 +107,7 @@ impl AppAdapter {
     }
 
     pub fn apply_theme(&self) {
-        self.ui.global::<Colors>().set_dark_mode(is_dark_mode());
+        self.ui.global::<Theme>().set_dark(is_dark_mode());
     }
 
     pub fn apply_grid(&self, path: &Path) -> Result<(), Box<dyn std::error::Error>> {
@@ -132,11 +132,11 @@ impl AppAdapter {
     }
 
     pub fn set_dark_mode(&self, on: bool) {
-        self.ui.global::<Colors>().set_dark_mode(on);
+        self.ui.global::<Theme>().set_dark(on);
     }
 
     pub fn get_dark_mode(&self) -> bool {
-        self.ui.global::<Colors>().get_dark_mode()
+        self.ui.global::<Theme>().get_dark()
     }
 
     pub fn set_status(&self, text: &str) {
@@ -211,7 +211,7 @@ mod tests {
         s.theme.accent = Some("#ff6b35".into());
         s.theme.mode = crate::settings::ThemeMode::Dark;
         adapter.apply_settings(&s);
-        let color = adapter.ui.global::<crate::Colors>().get_accent();
+        let color = adapter.ui.global::<crate::Theme>().get_accent_override();
         assert_eq!(color.red(), 255);
         assert_eq!(color.green(), 107);
         assert_eq!(color.blue(), 53);

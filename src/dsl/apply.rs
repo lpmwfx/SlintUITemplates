@@ -31,7 +31,12 @@ pub fn apply(ui: &AppWindow, dsl: &AppDsl) {
         ui.window().set_size(slint::PhysicalSize::new(w, h));
     }
 
-    // Mica/Acrylic: tell the Slint Window to use a transparent background
-    // so the DWM backdrop shows through. Platform code applies DWM attrs separately.
-    ui.set_mica_mode(dsl.bg_style != BgStyle::Solid);
+    // Tell Theme which material is active so bg-* tokens resolve correctly.
+    // Platform code applies the actual DWM attrs separately.
+    let material: &str = match dsl.bg_style {
+        BgStyle::Mica    => "mica",
+        BgStyle::Acrylic => "acrylic",
+        BgStyle::Solid   => "solid",
+    };
+    ui.global::<crate::Theme>().set_material(material.into());
 }
