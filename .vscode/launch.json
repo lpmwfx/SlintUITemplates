@@ -30,6 +30,13 @@
       "cwd": "${workspaceFolder}"
     },
     {
+      "name": "Docs Browser",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "cargo run --example docs",
+      "cwd": "${workspaceFolder}"
+    },
+    {
       "name": "Cargo Run",
       "type": "lldb",
       "request": "launch",
