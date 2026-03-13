@@ -3990,6 +3990,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "rustscanners"
+version = "0.1.0"
+source = "git+https://github.com/lpmwfx/RustScanners#99999a7c3c20d7282042dae56c3866290328f066"
+dependencies = [
+ "regex",
+ "serde",
+ "toml 0.8.23",
+ "walkdir",
+]
+
+[[package]]
 name = "rustversion"
 version = "1.0.22"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -4277,11 +4288,24 @@ dependencies = [
  "pulldown-cmark 0.12.2",
  "raw-window-handle",
  "rhai",
+ "rustscanners",
  "serde",
  "slint",
  "slint-build",
+ "slintscanners",
  "toml 0.8.23",
  "windows-sys 0.52.0",
+]
+
+[[package]]
+name = "slintscanners"
+version = "0.1.0"
+source = "git+https://github.com/lpmwfx/SlintScanners#5931cf04154c767e6cb19caf0efd65dc7c6a4b68"
+dependencies = [
+ "regex",
+ "serde",
+ "toml 0.8.23",
+ "walkdir",
 ]
 
 [[package]]
