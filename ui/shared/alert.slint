@@ -1,0 +1,72 @@
+import { Colors, Spacing, Type, FluentIcons } from "../tokens/theme.slint";
+
+export component Alert inherits Rectangle {
+    in property <string> message: "";
+    in property <string> title: "";
+    in property <string> variant: "info";   // info | success | warning | error
+    in property <bool>   closable: false;
+    in property <bool>   show: true;
+    callback closed();
+
+    visible: root.show;
+    background: Colors.bg-elevated;
+    border-radius: Spacing.xs;
+    border-width: 1px;
+    border-color: Colors.border;
+    clip: true;
+
+    property <color> variant-color:
+        root.variant == "success" ? Colors.success :
+        root.variant == "warning" ? Colors.warning :
+        root.variant == "error"   ? Colors.error :
+        Colors.accent;
+
+    HorizontalLayout {
+        // Left accent bar
+        Rectangle {
+            width: 4px;
+            background: root.variant-color;
+        }
+
+        // Content
+        VerticalLayout {
+            padding: Spacing.sm;
+            spacing: Spacing.xs;
+            horizontal-stretch: 1;
+
+            if root.title != "": Text {
+                text: root.title;
+                font-size: Type.body-size;
+                font-weight: Type.weight-bold;
+                color: root.variant-color;
+                wrap: word-wrap;
+            }
+
+            Text {
+                text: root.message;
+                font-size: Type.body-size;
+                color: Colors.text-primary;
+                wrap: word-wrap;
+            }
+        }
+
+        // Close button
+        if root.closable: Rectangle {
+            width: Spacing.xl;
+            background: close-ta.has-hover ? Colors.bg-surface : transparent;
+
+            Text {
+                text: FluentIcons.dismiss;
+                font-family: "Segoe Fluent Icons";
+                font-size: Type.body-size;
+                color: Colors.text-secondary;
+                horizontal-alignment: center;
+                vertical-alignment: center;
+            }
+
+            close-ta := TouchArea {
+                clicked => { root.closed(); }
+            }
+        }
+    }
+}

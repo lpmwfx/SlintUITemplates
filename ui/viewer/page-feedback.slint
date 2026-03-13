@@ -1,8 +1,12 @@
-// page-feedback — showcases Toast (all variants) and Dialog (contained).
+// page-feedback — Toast, Dialog, Spinner (all sizes), Alert (all variants), Tooltip demo
 
-import { Colors, Spacing } from "../tokens/theme.slint";
-import { Toast }  from "../shared/toast.slint";
-import { Dialog } from "../shared/dialog.slint";
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Toast }    from "../shared/toast.slint";
+import { Dialog }   from "../shared/dialog.slint";
+import { Spinner }  from "../shared/spinner.slint";
+import { Alert }    from "../shared/alert.slint";
+import { Tooltip }  from "../shared/tooltip.slint";
+import { Button }   from "../shared/button.slint";
 import { ViewerSection } from "viewer-section.slint";
 
 export component PageFeedback inherits VerticalLayout {
@@ -22,7 +26,6 @@ export component PageFeedback inherits VerticalLayout {
 
     ViewerSection {
         title: "Dialog";
-        // Dialog contained inside a fixed Rectangle — simulates an in-page preview
         Rectangle {
             width: 480px;
             height: 220px;
@@ -36,6 +39,64 @@ export component PageFeedback inherits VerticalLayout {
                 visible: true;
                 width: 100%;
                 height: 100%;
+            }
+        }
+    }
+
+    ViewerSection {
+        title: "Spinner";
+        HorizontalLayout {
+            alignment: start;
+            spacing: Spacing.lg;
+
+            VerticalLayout {
+                spacing: Spacing.xs;
+                alignment: center;
+                Spinner { size: "sm"; }
+                Text { text: "sm"; font-size: Type.caption-size; color: Colors.text-secondary; horizontal-alignment: center; }
+            }
+            VerticalLayout {
+                spacing: Spacing.xs;
+                alignment: center;
+                Spinner { size: "md"; }
+                Text { text: "md"; font-size: Type.caption-size; color: Colors.text-secondary; horizontal-alignment: center; }
+            }
+            VerticalLayout {
+                spacing: Spacing.xs;
+                alignment: center;
+                Spinner { size: "lg"; }
+                Text { text: "lg"; font-size: Type.caption-size; color: Colors.text-secondary; horizontal-alignment: center; }
+            }
+            Spinner { size: "md"; active: false; }
+        }
+    }
+
+    ViewerSection {
+        title: "Alert";
+        VerticalLayout {
+            spacing: Spacing.sm;
+            width: 400px;
+            Alert { message: "This is an informational alert."; variant: "info"; }
+            Alert { title: "Success!"; message: "Your changes have been saved."; variant: "success"; }
+            Alert { title: "Warning"; message: "Please review before continuing."; variant: "warning"; closable: true; }
+            Alert { title: "Error"; message: "Something went wrong. Please try again."; variant: "error"; closable: true; }
+        }
+    }
+
+    ViewerSection {
+        title: "Tooltip";
+        HorizontalLayout {
+            alignment: start;
+            spacing: Spacing.lg;
+
+            Tooltip { text: "Top tooltip (default)"; width: 120px; height: Spacing.xl;
+                Button { label: "Hover me"; width: 100%; height: 100%; variant: "secondary"; }
+            }
+            Tooltip { text: "Bottom tooltip"; placement: "bottom"; width: 120px; height: Spacing.xl;
+                Button { label: "Bottom"; width: 100%; height: 100%; variant: "secondary"; }
+            }
+            Tooltip { text: "Right tooltip"; placement: "right"; width: 120px; height: Spacing.xl;
+                Button { label: "Right"; width: 100%; height: 100%; variant: "secondary"; }
             }
         }
     }

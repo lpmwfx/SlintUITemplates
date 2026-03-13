@@ -1,8 +1,12 @@
-// page-inputs — showcases TextInput (plain/label/error) and SelectField.
+// page-inputs — TextInput, SelectField, SearchInput, PasswordInput, TextArea, SpinBox
 
 import { Spacing } from "../tokens/theme.slint";
-import { TextInput }   from "../shared/text-input.slint";
-import { SelectField } from "../shared/select-field.slint";
+import { TextInput }      from "../shared/text-input.slint";
+import { SelectField }    from "../shared/select-field.slint";
+import { SearchInput }    from "../shared/search-input.slint";
+import { PasswordInput }  from "../shared/password-input.slint";
+import { TextArea }       from "../shared/text-area.slint";
+import { SpinBox }        from "../shared/spin-box.slint";
 import { ViewerSection } from "viewer-section.slint";
 
 export component PageInputs inherits VerticalLayout {
@@ -25,6 +29,49 @@ export component PageInputs inherits VerticalLayout {
             width: 220px;
             options: ["Option A", "Option B", "Option C", "Option D"];
             placeholder: "Choose one...";
+        }
+    }
+
+    ViewerSection {
+        title: "SearchInput";
+        VerticalLayout {
+            spacing: Spacing.sm;
+            width: 280px;
+            SearchInput { placeholder: "Search..."; }
+            SearchInput { value: "hello world"; placeholder: "With value + clear..."; }
+        }
+    }
+
+    ViewerSection {
+        title: "PasswordInput";
+        VerticalLayout {
+            spacing: Spacing.sm;
+            width: 280px;
+            PasswordInput { placeholder: "Enter password..."; }
+            PasswordInput { label: "With label"; placeholder: "Password"; }
+            PasswordInput { label: "With error"; error: "Password too short"; }
+        }
+    }
+
+    ViewerSection {
+        title: "TextArea";
+        VerticalLayout {
+            spacing: Spacing.sm;
+            width: 320px;
+            TextArea { placeholder: "Enter multi-line text..."; rows: 3; }
+            TextArea { label: "With label"; placeholder: "Notes..."; rows: 4; }
+            TextArea { label: "With error"; error: "This field is required"; rows: 3; }
+        }
+    }
+
+    ViewerSection {
+        title: "SpinBox";
+        VerticalLayout {
+            spacing: Spacing.sm;
+            width: 180px;
+            SpinBox { value: 5; min: 0; max: 20; }
+            SpinBox { label: "With label"; value: 42; min: 0; max: 100; }
+            SpinBox { value: 10; enabled: false; label: "Disabled"; }
         }
     }
 }

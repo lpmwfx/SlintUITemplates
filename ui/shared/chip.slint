@@ -1,0 +1,69 @@
+import { Colors, Spacing, Type, FluentIcons } from "../tokens/theme.slint";
+
+export component Chip inherits Rectangle {
+    in property <string> label: "";
+    in property <bool>   closable: true;
+    in property <string> icon: "";
+    in property <bool>   selected: false;
+    in property <bool>   enabled: true;
+    callback closed();
+    callback clicked();
+
+    height: Spacing.control-md;
+    border-radius: root.height / 2;
+    border-width: 1px;
+    border-color: root.selected ? transparent : Colors.border;
+    background: root.selected    ? Colors.accent :
+                body-ta.has-hover ? Colors.bg-elevated :
+                Colors.bg-surface;
+    opacity: root.enabled ? 1.0 : 0.5;
+    clip: true;
+
+    HorizontalLayout {
+        padding-left: Spacing.sm;
+        padding-right: root.closable ? Spacing.xs : Spacing.sm;
+        spacing: Spacing.xs;
+        alignment: center;
+
+        if root.icon != "": Text {
+            text: root.icon;
+            font-family: "Segoe Fluent Icons";
+            font-size: Type.caption-size;
+            color: root.selected ? Colors.accent-text : Colors.text-primary;
+            vertical-alignment: center;
+        }
+
+        Text {
+            text: root.label;
+            font-size: Type.caption-size;
+            color: root.selected ? Colors.accent-text : Colors.text-primary;
+            vertical-alignment: center;
+        }
+
+        if root.closable: close-btn := Rectangle {
+            width: Spacing.md;
+            height: Spacing.md;
+            border-radius: parent.height / 2;
+            background: close-ta.has-hover ? Colors.bg-surface.with-alpha(0.5) : transparent;
+
+            Text {
+                text: FluentIcons.dismiss;
+                font-family: "Segoe Fluent Icons";
+                font-size: 10px;
+                color: root.selected ? Colors.accent-text : Colors.text-secondary;
+                horizontal-alignment: center;
+                vertical-alignment: center;
+            }
+
+            close-ta := TouchArea {
+                enabled: root.enabled;
+                clicked => { root.closed(); }
+            }
+        }
+    }
+
+    body-ta := TouchArea {
+        enabled: root.enabled;
+        clicked => { root.clicked(); }
+    }
+}

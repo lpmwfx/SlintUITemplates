@@ -1,0 +1,43 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+
+export component Tooltip inherits Rectangle {
+    in property <string> text: "";
+    in property <string> placement: "top";   // top | bottom | left | right
+    in property <bool>   enabled: true;
+    @children
+
+    background: transparent;
+
+    ta := TouchArea {}
+
+    // Tooltip popup
+    if ta.has-hover && root.enabled && root.text != "": tip-rect := Rectangle {
+        property <length> tip-w: tip-text.preferred-width + Spacing.sm * 2;
+        property <length> tip-h: Type.caption-size + Spacing.sm * 2;
+
+        x: root.placement == "left"  ? -(tip-w + Spacing.xs) :
+           root.placement == "right" ? root.width + Spacing.xs :
+           (root.width - tip-w) / 2;
+
+        y: root.placement == "bottom" ? root.height + Spacing.xs :
+           root.placement == "top"    ? -(tip-h + Spacing.xs) :
+           (root.height - tip-h) / 2;
+
+        width: tip-w;
+        height: tip-h;
+        background: Colors.bg-elevated;
+        border-radius: Spacing.xs;
+        border-width: 1px;
+        border-color: Colors.border;
+        drop-shadow-blur: Spacing.xs;
+        drop-shadow-color: Colors.shadow;
+
+        tip-text := Text {
+            x: Spacing.sm;
+            y: Spacing.sm;
+            text: root.text;
+            font-size: Type.caption-size;
+            color: Colors.text-primary;
+        }
+    }
+}

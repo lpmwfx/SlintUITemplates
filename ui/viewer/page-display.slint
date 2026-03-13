@@ -1,4 +1,4 @@
-// page-display — showcases Badge, Avatar, Card, ListItem, ProgressBar.
+// page-display — Badge, Avatar, Card, ListItem, ProgressBar, Chip, Skeleton
 
 import { Spacing } from "../tokens/theme.slint";
 import { Badge }       from "../shared/badge.slint";
@@ -6,6 +6,8 @@ import { Avatar }      from "../shared/avatar.slint";
 import { Card }        from "../shared/card.slint";
 import { ListItem }    from "../shared/list-item.slint";
 import { ProgressBar } from "../shared/progress-bar.slint";
+import { Chip }        from "../shared/chip.slint";
+import { Skeleton }    from "../shared/skeleton.slint";
 import { ViewerSection } from "viewer-section.slint";
 
 export component PageDisplay inherits VerticalLayout {
@@ -63,6 +65,36 @@ export component PageDisplay inherits VerticalLayout {
             ProgressBar { value: 0.33; }
             ProgressBar { value: 0.66; }
             ProgressBar { value: 1.0; }
+        }
+    }
+
+    ViewerSection {
+        title: "Chip";
+        HorizontalLayout {
+            alignment: start;
+            spacing: Spacing.sm;
+            Chip { label: "Default"; }
+            Chip { label: "Selected"; selected: true; }
+            Chip { label: "No close"; closable: false; }
+            Chip { label: "Disabled"; enabled: false; }
+            Chip { label: "v1.0.0"; closable: false; selected: true; }
+        }
+    }
+
+    ViewerSection {
+        title: "Skeleton";
+        VerticalLayout {
+            spacing: Spacing.sm;
+            width: 280px;
+            Skeleton { width: 100%; height: 16px; variant: "text"; }
+            Skeleton { width: 80%; height: 16px; variant: "text"; }
+            Skeleton { width: 60%; height: 16px; variant: "text"; }
+            Skeleton { width: 280px; height: 80px; variant: "rect"; }
+            HorizontalLayout {
+                spacing: Spacing.sm;
+                Skeleton { width: 40px; height: 40px; variant: "circle"; }
+                Skeleton { width: 40px; height: 40px; variant: "circle"; animate: false; }
+            }
         }
     }
 }

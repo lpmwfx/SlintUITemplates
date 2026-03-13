@@ -1,0 +1,55 @@
+import { Colors, Spacing } from "../tokens/theme.slint";
+
+export component Spinner inherits Rectangle {
+    in property <string> size:          "md";
+    in property <color>  spinner-color: Colors.accent;
+    in property <bool>   active:        true;
+
+    private property <length> dim:
+        root.size == "sm" ? Spacing.md :
+        root.size == "lg" ? Spacing.control-lg :
+        Spacing.lg;
+
+    private property <float>  pulse-val: 1.0;
+    private property <bool>   pulse-up:  false;
+
+    width:  root.dim;
+    height: root.dim;
+    background: transparent;
+    visible: root.active;
+
+    timer := Timer {
+        interval: 16ms;
+        running: root.active;
+        triggered => {
+            if root.pulse-up {
+                root.pulse-val = root.pulse-val + 0.025;
+                if root.pulse-val >= 1.0 { root.pulse-up = false; }
+            } else {
+                root.pulse-val = root.pulse-val - 0.025;
+                if root.pulse-val <= 0.2 { root.pulse-up = true; }
+            }
+        }
+    }
+
+    // Track ring
+    Rectangle {
+        width:  root.dim;
+        height: root.dim;
+        border-radius: root.dim / 2;
+        border-width: 2px;
+        border-color: root.spinner-color.with-alpha(0.15);
+        background: transparent;
+    }
+
+    // Pulsing ring
+    Rectangle {
+        width:  root.dim;
+        height: root.dim;
+        border-radius: root.dim / 2;
+        border-width: 2px;
+        border-color: root.spinner-color;
+        background: transparent;
+        opacity: root.pulse-val;
+    }
+}
