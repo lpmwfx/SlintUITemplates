@@ -1,0 +1,110 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+
+export component SpinBox inherits Rectangle {
+    in-out property <int> value: 0;
+    in property <int>    min: 0;
+    in property <int>    max: 100;
+    in property <int>    step: 1;
+    in property <string> label: "";
+    in property <bool>   enabled: true;
+    callback changed(int);
+
+    height: root.label != "" ? Spacing.xl + Type.caption-size + Spacing.xs : Spacing.xl;
+    background: transparent;
+    opacity: root.enabled ? 1.0 : 0.5;
+
+    VerticalLayout {
+        spacing: Spacing.xs;
+
+        if root.label != "": Text {
+            text: root.label;
+            font-size: Type.caption-size;
+            font-weight: Type.weight-semibold;
+            color: Colors.text-secondary;
+        }
+
+        // Spinner field
+        Rectangle {
+            height: Spacing.xl;
+            border-radius: Spacing.xs;
+            border-width: 1px;
+            border-color: Colors.border;
+            background: Colors.bg-elevated;
+            clip: true;
+
+            HorizontalLayout {
+                // Decrement button
+                dec-btn := Rectangle {
+                    width: Spacing.xl;
+                    background: dec-ta.has-hover && root.value - root.step >= root.min
+                        ? Colors.bg-surface : transparent;
+
+                    Text {
+                        text: "−";
+                        font-size: Type.body-size;
+                        color: root.value - root.step >= root.min
+                            ? Colors.text-primary : Colors.text-disabled;
+                        horizontal-alignment: center;
+                        vertical-alignment: center;
+                    }
+
+                    dec-ta := TouchArea {
+                        enabled: root.enabled && root.value - root.step >= root.min;
+                        clicked => {
+                            root.value = root.value - root.step;
+                            root.changed(root.value);
+                        }
+                    }
+                }
+
+                // Left divider
+                Rectangle {
+                    width: 1px;
+                    background: Colors.border;
+                }
+
+                // Value display
+                Rectangle {
+                    horizontal-stretch: 1;
+                    Text {
+                        text: root.value;
+                        font-size: Type.body-size;
+                        color: Colors.text-primary;
+                        horizontal-alignment: center;
+                        vertical-alignment: center;
+                    }
+                }
+
+                // Right divider
+                Rectangle {
+                    width: 1px;
+                    background: Colors.border;
+                }
+
+                // Increment button
+                inc-btn := Rectangle {
+                    width: Spacing.xl;
+                    background: inc-ta.has-hover && root.value + root.step <= root.max
+                        ? Colors.bg-surface : transparent;
+
+                    Text {
+                        text: "+";
+                        font-size: Type.body-size;
+                        color: root.value + root.step <= root.max
+                            ? Colors.text-primary : Colors.text-disabled;
+                        horizontal-alignment: center;
+                        vertical-alignment: center;
+                    }
+
+                    inc-ta := TouchArea {
+                        enabled: root.enabled && root.value + root.step <= root.max;
+                        clicked => {
+                            root.value = root.value + root.step;
+                            root.changed(root.value);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

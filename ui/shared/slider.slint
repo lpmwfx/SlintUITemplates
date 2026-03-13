@@ -1,0 +1,93 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+
+export component Slider inherits Rectangle {
+    in-out property <float> value: 0.0;
+    in property <float>  min: 0.0;
+    in property <float>  max: 1.0;
+    in property <float>  step: 0.0;
+    in property <string> label: "";
+    in property <bool>   show-value: false;
+    in property <bool>   enabled: true;
+    callback changed(float);
+
+    private property <float>  fill-ratio: (root.value - root.min) / (root.max - root.min);
+    private property <length> track-h:    Spacing.xs;           // 4px
+    private property <length> thumb-size: Spacing.md;           // 16px
+
+    height: (root.label != "" || root.show-value)
+        ? Spacing.xl + Type.caption-size + Spacing.xs
+        : Spacing.xl;
+    background: transparent;
+    opacity: root.enabled ? 1.0 : 0.5;
+
+    VerticalLayout {
+        spacing: Spacing.xs;
+
+        if root.label != "" || root.show-value: HorizontalLayout {
+            if root.label != "": Text {
+                text: root.label;
+                font-size: Type.caption-size;
+                font-weight: Type.weight-semibold;
+                color: Colors.text-secondary;
+                vertical-alignment: center;
+                horizontal-stretch: 1;
+            }
+            if root.label == "": Rectangle { horizontal-stretch: 1; }
+
+            if root.show-value: Text {
+                text: Math.round(root.value * 100) / 100;
+                font-size: Type.caption-size;
+                color: Colors.text-secondary;
+                vertical-alignment: center;
+            }
+        }
+
+        VerticalLayout {
+            alignment: center;
+            vertical-stretch: 1;
+
+            track := Rectangle {
+                height: root.track-h;
+                border-radius: root.track-h / 2;
+                background: Colors.bg-elevated;
+                border-width: 1px;
+                border-color: Colors.border;
+
+                fill-rect := Rectangle {
+                    x: 0;
+                    width: root.fill-ratio * parent.width;
+                    height: root.track-h;
+                    border-radius: root.track-h / 2;
+                    background: Colors.accent;
+                }
+
+                Rectangle {
+                    x:  root.fill-ratio * parent.width - root.thumb-size / 2;
+                    y: -(root.thumb-size - root.track-h) / 2;
+                    width:  root.thumb-size;
+                    height: root.thumb-size;
+                    border-radius: root.thumb-size / 2;
+                    background: Colors.accent;
+                    drop-shadow-blur: Spacing.xs;
+                    drop-shadow-color: Colors.shadow;
+                }
+
+                track-ta := TouchArea {
+                    enabled: root.enabled;
+                    moved => {
+                        root.value = clamp(
+                            root.min + (self.mouse-x / track.width) * (root.max - root.min),
+                            root.min, root.max);
+                        root.changed(root.value);
+                    }
+                    clicked => {
+                        root.value = clamp(
+                            root.min + (self.mouse-x / track.width) * (root.max - root.min),
+                            root.min, root.max);
+                        root.changed(root.value);
+                    }
+                }
+            }
+        }
+    }
+}

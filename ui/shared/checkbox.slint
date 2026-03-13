@@ -1,0 +1,65 @@
+import { Colors, Spacing, Type, FluentIcons } from "../tokens/theme.slint";
+
+export component Checkbox inherits Rectangle {
+    in property <bool>   checked: false;
+    in property <bool>   indeterminate: false;
+    in property <string> label: "";
+    in property <bool>   enabled: true;
+    callback toggled(bool);
+
+    // Widget-specific size constants — named, not inline literals
+    private property <length> box-size:  Spacing.md + Spacing.xs;   // 20px
+    private property <length> dash-w:    Spacing.sm + Spacing.xs;   // 10px
+    private property <length> dash-h:    2px;
+
+    height: Spacing.xl;
+    background: transparent;
+    opacity: root.enabled ? 1.0 : 0.5;
+
+    VerticalLayout {
+        alignment: center;
+
+        HorizontalLayout {
+            alignment: start;
+            spacing: Spacing.sm;
+
+            box-rect := Rectangle {
+                width: root.box-size;
+                height: root.box-size;
+                border-radius: Spacing.xs;
+                background: (root.checked || root.indeterminate) ? Colors.accent : Colors.bg-elevated;
+                border-width: (root.checked || root.indeterminate) ? 0 : 1px;
+                border-color: Colors.border;
+
+                if root.checked && !root.indeterminate: Text {
+                    text: FluentIcons.checkmark;
+                    font-family: "Segoe Fluent Icons";
+                    font-size: Type.caption-size;
+                    color: Colors.accent-text;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+
+                if root.indeterminate: Rectangle {
+                    x: (parent.width  - root.dash-w) / 2;
+                    y: (parent.height - root.dash-h) / 2;
+                    width:  root.dash-w;
+                    height: root.dash-h;
+                    background: Colors.accent-text;
+                }
+            }
+
+            if root.label != "": Text {
+                text: root.label;
+                font-size: Type.body-size;
+                color: Colors.text-primary;
+                vertical-alignment: center;
+            }
+        }
+    }
+
+    ta := TouchArea {
+        enabled: root.enabled;
+        clicked => { root.toggled(!root.checked); }
+    }
+}

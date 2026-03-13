@@ -1,0 +1,66 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { TextEdit } from "std-widgets.slint";
+
+export component TextArea inherits Rectangle {
+    in property <string> label: "";
+    in-out property <string> value: "";
+    in property <string> placeholder: "";
+    in property <string> error: "";
+    in property <int>    rows: 4;
+    in property <bool>   enabled: true;
+    callback changed(string);
+
+    private property <length> area-height: root.rows * (Type.body-size + Spacing.xs) + Spacing.sm * 2;
+
+    height: root.label != "" ? root.area-height + Type.caption-size + Spacing.xs : root.area-height;
+    opacity: root.enabled ? 1.0 : 0.5;
+
+    VerticalLayout {
+        spacing: Spacing.xs;
+
+        if root.label != "": Text {
+            text: root.label;
+            font-size: Type.caption-size;
+            font-weight: Type.weight-semibold;
+            color: root.error != "" ? Colors.error : Colors.text-secondary;
+        }
+
+        field := Rectangle {
+            height: root.area-height;
+            border-radius: Spacing.xs;
+            border-width: 1px;
+            border-color: root.error != "" ? Colors.error :
+                          edit.has-focus ? Colors.border-focus : Colors.border;
+            background: Colors.bg-elevated;
+            clip: true;
+
+            edit := TextEdit {
+                x: Spacing.sm;
+                y: Spacing.sm;
+                width: parent.width - Spacing.sm * 2;
+                height: parent.height - Spacing.sm * 2;
+                text <=> root.value;
+                font-size: Type.body-size;
+                wrap: word-wrap;
+                enabled: root.enabled;
+
+                edited => { root.changed(self.text); }
+            }
+
+            // Placeholder
+            if root.value == "": Text {
+                x: Spacing.sm;
+                y: Spacing.sm;
+                text: root.placeholder;
+                font-size: Type.body-size;
+                color: Colors.text-disabled;
+            }
+        }
+
+        if root.error != "": Text {
+            text: root.error;
+            font-size: Type.caption-size;
+            color: Colors.error;
+        }
+    }
+}

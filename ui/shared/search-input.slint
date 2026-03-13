@@ -1,0 +1,80 @@
+import { Colors, Spacing, Type, FluentIcons } from "../tokens/theme.slint";
+
+export component SearchInput inherits Rectangle {
+    in-out property <string> value: "";
+    in property <string> placeholder: "Search...";
+    in property <bool>   enabled: true;
+    callback changed(string);
+    callback submitted(string);
+    callback cleared();
+
+    height: Spacing.xl;
+    opacity: root.enabled ? 1.0 : 0.5;
+
+    field := Rectangle {
+        border-radius: Spacing.xs;
+        border-width: 1px;
+        border-color: input.has-focus ? Colors.border-focus : Colors.border;
+        background: Colors.bg-elevated;
+
+        HorizontalLayout {
+            // Search icon
+            Rectangle {
+                width: Spacing.lg;
+                Text {
+                    text: FluentIcons.search;
+                    font-family: "Segoe Fluent Icons";
+                    font-size: Type.body-size;
+                    color: Colors.text-secondary;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+            }
+
+            input := TextInput {
+                text: root.value;
+                font-size: Type.body-size;
+                color: Colors.text-primary;
+                vertical-alignment: center;
+                enabled: root.enabled;
+                horizontal-stretch: 1;
+
+                edited => { root.value = self.text; root.changed(self.text); }
+                accepted => { root.submitted(self.text); }
+            }
+
+            // Clear button
+            if root.value != "": Rectangle {
+                width: Spacing.lg;
+                background: clear-ta.has-hover ? Colors.bg-surface : transparent;
+                border-radius: Spacing.xs;
+
+                Text {
+                    text: FluentIcons.dismiss;
+                    font-family: "Segoe Fluent Icons";
+                    font-size: Type.caption-size;
+                    color: Colors.text-secondary;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+
+                clear-ta := TouchArea {
+                    clicked => {
+                        root.value = "";
+                        input.text = "";
+                        root.cleared();
+                    }
+                }
+            }
+        }
+
+        // Placeholder
+        if input.text == "" && !input.has-focus: Text {
+            x: Spacing.lg;
+            text: root.placeholder;
+            font-size: Type.body-size;
+            color: Colors.text-disabled;
+            vertical-alignment: center;
+        }
+    }
+}

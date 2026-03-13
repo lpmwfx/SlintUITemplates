@@ -1,0 +1,81 @@
+// page-selection — Checkbox, RadioGroup, Slider, SpinBox, Rating
+
+import { Spacing } from "../tokens/theme.slint";
+import { Checkbox }   from "../shared/checkbox.slint";
+import { RadioGroup } from "../shared/radio.slint";
+import { Slider }     from "../shared/slider.slint";
+import { SpinBox }    from "../shared/spin-box.slint";
+import { Rating }     from "../shared/rating.slint";
+import { ViewerSection } from "viewer-section.slint";
+
+export component PageSelection inherits VerticalLayout {
+    spacing: Spacing.md;
+
+    private property <bool>   cb-checked: false;
+    private property <bool>   cb-indet: true;
+    private property <string> radio-val: "Option B";
+    private property <float>  slider-val: 0.4;
+    private property <int>    spin-val: 42;
+    private property <int>    rating-val: 3;
+
+    ViewerSection {
+        title: "Checkbox";
+        VerticalLayout {
+            spacing: Spacing.sm;
+            Checkbox { label: "Unchecked"; checked: false; }
+            Checkbox { label: "Checked"; checked: true; }
+            Checkbox { label: "Indeterminate"; indeterminate: true; }
+            Checkbox { label: "Disabled"; checked: true; enabled: false; }
+            Checkbox {
+                label: cb-checked ? "Checked (live)" : "Unchecked (live)";
+                checked: cb-checked;
+                toggled(v) => { cb-checked = v; }
+            }
+        }
+    }
+
+    ViewerSection {
+        title: "RadioGroup";
+        RadioGroup {
+            options: ["Option A", "Option B", "Option C"];
+            value: radio-val;
+            changed(v) => { radio-val = v; }
+        }
+    }
+
+    ViewerSection {
+        title: "Slider";
+        VerticalLayout {
+            spacing: Spacing.sm;
+            width: 280px;
+            Slider { value: 0.25; label: "No value display"; }
+            Slider {
+                value: slider-val;
+                label: "Live slider";
+                show-value: true;
+                changed(v) => { slider-val = v; }
+            }
+            Slider { value: 0.75; enabled: false; label: "Disabled"; }
+        }
+    }
+
+    ViewerSection {
+        title: "SpinBox";
+        VerticalLayout {
+            spacing: Spacing.sm;
+            width: 180px;
+            SpinBox { label: "Quantity"; value: spin-val; min: 0; max: 999; changed(v) => { spin-val = v; } }
+            SpinBox { value: 5; min: 1; max: 10; enabled: false; label: "Disabled"; }
+        }
+    }
+
+    ViewerSection {
+        title: "Rating";
+        VerticalLayout {
+            spacing: Spacing.sm;
+            Rating { value: rating-val; changed(v) => { rating-val = v; } }
+            Rating { value: 4; readonly: true; }
+            Rating { value: 2; max: 3; }
+        }
+    }
+}
