@@ -179,3 +179,574 @@ See [settings.md](settings.md).
 
 All exported from `ui/tokens/theme.slint`.
 See [tokens.md](tokens.md).
+<!-- AUTOGEN:shared START -->
+
+## Shared Components
+
+### Alert (`ui/shared/alert.slint`)
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `message` | `string` | `""` |  |
+| `title` | `string` | `""` |  |
+| `variant` | `string` | `"info"` | info \| success \| warning \| error |
+| `closable` | `bool` | `false` |  |
+| `show` | `bool` | `true` |  |
+
+| Callback | Signature | Description |
+|----------|-----------|-------------|
+| `closed()` | |  |
+
+---
+
+### Avatar (`ui/shared/avatar.slint`)
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `initials` | `string` | `""` |  |
+| `size` | `string` | `"md"` | sm \| md \| lg |
+
+---
+
+### Badge (`ui/shared/badge.slint`)
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `text` | `string` | `""` |  |
+| `variant` | `string` | `"info"` | info \| success \| warning \| error |
+
+---
+
+#### `BreadcrumbItem` struct
+
+| Field | Type |
+|-------|------|
+| `id` | `string` |
+| `label` | `string` |
+
+### Breadcrumb (`ui/shared/breadcrumb.slint`)
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `items` | `[BreadcrumbItem]` | `[]` |  |
+| `separator` | `string` | `"›"` |  |
+
+| Callback | Signature | Description |
+|----------|-----------|-------------|
+| `navigate(string)` | |  |
+
+---
+
+### Button (`ui/shared/button.slint`)
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `label` | `string` | `"Button"` |  |
+| `variant` | `string` | `"primary"` | primary \| secondary \| ghost \| danger |
+| `enabled` | `bool` | `true` |  |
+
+| Callback | Signature | Description |
+|----------|-----------|-------------|
+| `clicked()` | |  |
+
+---
+
+### CanvasImage (`ui/shared/canvas-image.slint`)
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `frame` | `image` | `` |  |
+| `show-placeholder` | `bool` | `true` |  |
+
+---
+
+### CanvasPath (`ui/shared/canvas-path.slint`)
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `stroke-color` | `color` | `Colors.accent` |  |
+| `fill-color` | `color` | `Colors.accent.with-alpha(0.15)` |  |
+| `stroke-w` | `length` | `2px` |  |
+
+---
+
+### Card (`ui/shared/card.slint`)
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `title` | `string` | `""` |  |
+| `subtitle` | `string` | `""` |  |
+
+---
+
+### Checkbox (`ui/shared/checkbox.slint`)
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `checked` | `bool` | `false` |  |
+| `indeterminate` | `bool` | `false` |  |
+| `label` | `string` | `""` |  |
+| `enabled` | `bool` | `true` |  |
+
+| Callback | Signature | Description |
+|----------|-----------|-------------|
+| `toggled(bool)` | |  |
+
+---
+
+### Chip (`ui/shared/chip.slint`)
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `label` | `string` | `""` |  |
+| `closable` | `bool` | `true` |  |
+| `icon` | `string` | `""` |  |
+| `selected` | `bool` | `false` |  |
+| `enabled` | `bool` | `true` |  |
+
+| Callback | Signature | Description |
+|----------|-----------|-------------|
+| `closed()` | |  |
+| `clicked()` | |  |
+
+---
+
+#### `ContextMenuItem` struct
+
+| Field | Type |
+|-------|------|
+| `id` | `string` |
+| `label` | `string` |
+| `icon` | `string` |
+| `disabled` | `bool` |
+| `separator` | `bool` |
+| `keybinding` | `string` |
+
+### ContextMenu (`ui/shared/context-menu.slint`)
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `items` | `[ContextMenuItem]` | `[]` |  |
+| `separator-count` | `int` | `` |  |
+| `window-height` | `length` | `` |  |
+
+| Callback | Signature | Description |
+|----------|-----------|-------------|
+| `activated(string)` | |  |
+
+---
+
+#### `TableColumn` struct
+
+| Field | Type |
+|-------|------|
+| `key` | `string` |
+| `label` | `string` |
+| `width` | `length` |
+
+#### `TableRow` struct
+
+| Field | Type |
+|-------|------|
+| `id` | `string` |
+| `cells` | `[string]` |
+
+### DataTable (`ui/shared/data-table.slint`)
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `columns` | `[TableColumn]` | `[]` |  |
+| `rows` | `[TableRow]` | `[]` |  |
+| `sort-key` *(in-out)* | `string` | `""` |  |
+| `sort-asc` *(in-out)* | `bool` | `true` |  |
+| `selected` *(in-out)* | `string` | `""` |  |
+
+| Callback | Signature | Description |
+|----------|-----------|-------------|
+| `sort-changed(string, bool)` | |  |
+| `row-selected(string)` | |  |
+
+---
+
+### DatePicker (`ui/shared/date-picker.slint`)
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `value` *(in-out)* | `string` | `""` |  |
+| `label` | `string` | `""` |  |
+| `placeholder` | `string` | `"Select date"` |  |
+| `error` | `string` | `""` |  |
+| `enabled` | `bool` | `true` |  |
+
+| Callback | Signature | Description |
+|----------|-----------|-------------|
+| `changed(string)` | |  |
+
+---
+
+### Dialog (`ui/shared/dialog.slint`)
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `title` | `string` | `"Dialog"` |  |
+
+| Callback | Signature | Description |
+|----------|-----------|-------------|
+| `confirmed()` | |  |
+| `cancelled()` | |  |
+
+---
+
+### Divider (`ui/shared/divider.slint`)
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `orientation` | `string` | `"horizontal"` | horizontal \| vertical |
+| `label` | `string` | `""` |  |
+| `line-color` | `color` | `Colors.border` |  |
+
+---
+
+### ListItem (`ui/shared/list-item.slint`)
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `title` | `string` | `""` |  |
+| `subtitle` | `string` | `""` |  |
+| `selected` | `bool` | `false` |  |
+
+| Callback | Signature | Description |
+|----------|-----------|-------------|
+| `clicked()` | |  |
+
+---
+
+#### `MultiSelectOption` struct
+
+| Field | Type |
+|-------|------|
+| `label` | `string` |
+| `value` | `string` |
+
+### MultiSelect (`ui/shared/multi-select.slint`)
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `options` | `[MultiSelectOption]` | `[]` |  |
+| `selected` *(in-out)* | `[string]` | `[]` |  |
+| `placeholder` | `string` | `"Select..."` |  |
+| `enabled` | `bool` | `true` |  |
+
+| Callback | Signature | Description |
+|----------|-----------|-------------|
+| `changed([string])` | |  |
+
+---
+
+### Pagination (`ui/shared/pagination.slint`)
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `current` | `int` | `1` |  |
+| `total` | `int` | `1` |  |
+| `pages` | `[int]` | `[]` |  |
+
+| Callback | Signature | Description |
+|----------|-----------|-------------|
+| `changed(int)` | |  |
+
+---
+
+### PasswordInput (`ui/shared/password-input.slint`)
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `label` | `string` | `""` |  |
+| `placeholder` | `string` | `""` |  |
+| `error` | `string` | `""` |  |
+| `enabled` | `bool` | `true` |  |
+
+| Callback | Signature | Description |
+|----------|-----------|-------------|
+| `changed(string)` | |  |
+
+---
+
+### ProgressBar (`ui/shared/progress-bar.slint`)
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `value` | `float` | `0.0` | 0.0..1.0 |
+| `show-label` | `bool` | `false` |  |
+
+---
+
+### RadioButton (`ui/shared/radio.slint`)
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `checked` | `bool` | `false` |  |
+| `label` | `string` | `""` |  |
+| `enabled` | `bool` | `true` |  |
+
+| Callback | Signature | Description |
+|----------|-----------|-------------|
+| `clicked()` | |  |
+
+---
+
+### RadioGroup (`ui/shared/radio.slint`)
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `options` | `[string]` | `[]` |  |
+| `value` *(in-out)* | `string` | `""` |  |
+| `enabled` | `bool` | `true` |  |
+
+| Callback | Signature | Description |
+|----------|-----------|-------------|
+| `changed(string)` | |  |
+
+---
+
+### Rating (`ui/shared/rating.slint`)
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `value` *(in-out)* | `int` | `0` |  |
+| `max` | `int` | `5` |  |
+| `readonly` | `bool` | `false` |  |
+
+| Callback | Signature | Description |
+|----------|-----------|-------------|
+| `changed(int)` | |  |
+
+---
+
+### ScrollView (`ui/shared/scroll-view.slint`)
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `interactive` | `bool` | `true` |  |
+| `show-scrollbar` | `bool` | `true` |  |
+| `viewport-width  <=> fl.viewport-width` *(out)* | `length` | `` |  |
+| `viewport-height <=> fl.viewport-height` *(out)* | `length` | `` |  |
+
+---
+
+### SearchInput (`ui/shared/search-input.slint`)
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `value` *(in-out)* | `string` | `""` |  |
+| `placeholder` | `string` | `"Search..."` |  |
+| `enabled` | `bool` | `true` |  |
+
+| Callback | Signature | Description |
+|----------|-----------|-------------|
+| `changed(string)` | |  |
+| `submitted(string)` | |  |
+| `cleared()` | |  |
+
+---
+
+### SelectField (`ui/shared/select-field.slint`)
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `options` | `[string]` | `[]` |  |
+| `selected` | `string` | `""` |  |
+| `placeholder` | `string` | `"Select..."` |  |
+
+| Callback | Signature | Description |
+|----------|-----------|-------------|
+| `changed(string)` | |  |
+
+---
+
+### Skeleton (`ui/shared/skeleton.slint`)
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `variant` | `string` | `"rect"` | text \| circle \| rect |
+| `animate` | `bool` | `true` |  |
+
+---
+
+### Slider (`ui/shared/slider.slint`)
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `value` *(in-out)* | `float` | `0.0` |  |
+| `min` | `float` | `0.0` |  |
+| `max` | `float` | `1.0` |  |
+| `step` | `float` | `0.0` |  |
+| `label` | `string` | `""` |  |
+| `show-value` | `bool` | `false` |  |
+| `enabled` | `bool` | `true` |  |
+
+| Callback | Signature | Description |
+|----------|-----------|-------------|
+| `changed(float)` | |  |
+
+---
+
+### SpinBox (`ui/shared/spin-box.slint`)
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `value` *(in-out)* | `int` | `0` |  |
+| `min` | `int` | `0` |  |
+| `max` | `int` | `100` |  |
+| `step` | `int` | `1` |  |
+| `label` | `string` | `""` |  |
+| `enabled` | `bool` | `true` |  |
+
+| Callback | Signature | Description |
+|----------|-----------|-------------|
+| `changed(int)` | |  |
+
+---
+
+### Spinner (`ui/shared/spinner.slint`)
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `size` | `string` | `"md"` |  |
+| `spinner-color` | `color` | `Colors.accent` |  |
+| `active` | `bool` | `true` |  |
+
+---
+
+#### `StepItem` struct
+
+| Field | Type |
+|-------|------|
+| `label` | `string` |
+| `completed` | `bool` |
+
+### Stepper (`ui/shared/stepper.slint`)
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `steps` | `[StepItem]` | `[]` |  |
+| `active` *(in-out)* | `int` | `0` |  |
+
+| Callback | Signature | Description |
+|----------|-----------|-------------|
+| `step-changed(int)` | |  |
+
+---
+
+#### `TabItem` struct
+
+| Field | Type |
+|-------|------|
+| `id` | `string` |
+| `label` | `string` |
+| `icon` | `string` |
+
+### TabBar (`ui/shared/tab-bar.slint`)
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `tabs` | `[TabItem]` | `[]` |  |
+| `active` *(in-out)* | `string` | `""` |  |
+
+| Callback | Signature | Description |
+|----------|-----------|-------------|
+| `changed(string)` | |  |
+
+---
+
+### TextArea (`ui/shared/text-area.slint`)
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `label` | `string` | `""` |  |
+| `value` *(in-out)* | `string` | `""` |  |
+| `placeholder` | `string` | `""` |  |
+| `error` | `string` | `""` |  |
+| `rows` | `int` | `4` |  |
+| `enabled` | `bool` | `true` |  |
+
+| Callback | Signature | Description |
+|----------|-----------|-------------|
+| `changed(string)` | |  |
+
+---
+
+### TextInput (`ui/shared/text-input.slint`)
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `label` | `string` | `""` |  |
+| `value` | `string` | `""` |  |
+| `placeholder` | `string` | `""` |  |
+| `error` | `string` | `""` |  |
+
+| Callback | Signature | Description |
+|----------|-----------|-------------|
+| `changed(string)` | |  |
+| `submitted(string)` | |  |
+
+---
+
+### Toast (`ui/shared/toast.slint`)
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `message` | `string` | `""` |  |
+| `variant` | `string` | `"info"` | info \| success \| warning \| error |
+
+---
+
+### Toggle (`ui/shared/toggle.slint`)
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `checked` | `bool` | `false` |  |
+| `label` | `string` | `""` |  |
+
+| Callback | Signature | Description |
+|----------|-----------|-------------|
+| `toggled(bool)` | |  |
+
+---
+
+### Tooltip (`ui/shared/tooltip.slint`)
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `text` | `string` | `""` |  |
+| `placement` | `string` | `"top"` | top \| bottom \| left \| right |
+| `enabled` | `bool` | `true` |  |
+
+---
+
+#### `TreeNode` struct
+
+| Field | Type |
+|-------|------|
+| `id` | `string` |
+| `label` | `string` |
+| `icon` | `string` |
+| `level` | `int` |
+| `expanded` | `bool` |
+| `leaf` | `bool` |
+
+### TreeView (`ui/shared/tree-view.slint`)
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `nodes` | `[TreeNode]` | `[]` |  |
+| `selected` *(in-out)* | `string` | `""` |  |
+
+| Callback | Signature | Description |
+|----------|-----------|-------------|
+| `selected-changed(string)` | |  |
+| `toggle-expanded(string)` | |  |
+
+---
+
+<!-- AUTOGEN:shared END -->

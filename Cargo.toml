@@ -16,6 +16,10 @@ path = "src/main.rs"
 name = "slintui"
 path = "src/bin/slintui.rs"
 
+[[bin]]
+name = "docgen"
+path = "src/bin/docgen.rs"
+
 [lib]
 name = "slint_ui_templates"
 path = "src/lib.rs"
