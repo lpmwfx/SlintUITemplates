@@ -1,5 +1,5 @@
 // page-layout — showcases DragHandle (live-draggable), PanelContainer, PanelSlot,
-// and the bi-directional 3-panel layout (Phase 10 layout-engine-v2).
+// bi-directional 3-panel layout, Divider, and ScrollView.
 
 import { Colors, Spacing, Type } from "../tokens/theme.slint";
 import { DragHandle }                from "../modules/DragHandle.slint";
@@ -7,6 +7,8 @@ import { PanelContainer, PanelItem } from "../modules/PanelContainer.slint";
 import { PanelSlot }                 from "../modules/PanelSlot.slint";
 import { ViewSlot }                  from "../modules/ViewSlot.slint";
 import { Button }                    from "../shared/button.slint";
+import { Divider }                   from "../shared/divider.slint";
+import { ScrollView }                from "../shared/scroll-view.slint";
 import { ViewerSection } from "viewer-section.slint";
 
 // Demo box with a live column drag handle.
@@ -252,6 +254,59 @@ export component PageLayout inherits VerticalLayout {
                         color: Colors.text-secondary;
                         font-size: Type.body-size;
                         horizontal-alignment: center;
+                        vertical-alignment: center;
+                    }
+                }
+            }
+        }
+    }
+
+    ViewerSection {
+        title: "Divider";
+        VerticalLayout {
+            spacing: Spacing.md;
+            width: 320px;
+
+            // Horizontal, no label
+            Divider { width: 100%; height: Spacing.xs; }
+
+            // Horizontal with label
+            Divider { width: 100%; height: Spacing.lg; label: "Section"; }
+
+            // Vertical pair
+            HorizontalLayout {
+                height: Spacing.xl;
+                spacing: Spacing.sm;
+                Text { text: "Left";  font-size: Type.body-size; color: Colors.text-secondary; vertical-alignment: center; }
+                Divider { orientation: "vertical"; width: Spacing.xs; height: Spacing.xl; }
+                Text { text: "Right"; font-size: Type.body-size; color: Colors.text-secondary; vertical-alignment: center; }
+            }
+        }
+    }
+
+    ViewerSection {
+        title: "ScrollView";
+        ScrollView {
+            width: 280px;
+            height: 100px;
+
+            VerticalLayout {
+                padding: Spacing.sm;
+                spacing: Spacing.sm;
+                width: 280px;
+
+                for i in [1, 2, 3, 4, 5, 6, 7, 8]: Rectangle {
+                    height: Spacing.xl;
+                    border-radius: Spacing.xs;
+                    background: Colors.bg-elevated;
+                    border-width: 1px;
+                    border-color: Colors.border;
+
+                    Text {
+                        x: Spacing.sm;
+                        text: "Row " + i;
+                        font-size: Type.body-size;
+                        color: Colors.text-primary;
                         vertical-alignment: center;
                     }
                 }

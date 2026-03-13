@@ -1,0 +1,95 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+
+export component Pagination inherits Rectangle {
+    in property <int>   current: 1;
+    in property <int>   total: 1;
+    in property <[int]> pages: [];
+    callback changed(int);
+
+    height: Spacing.xl;
+    background: transparent;
+
+    HorizontalLayout {
+        alignment: center;
+        spacing: Spacing.xs;
+
+        // Previous button
+        prev-btn := Rectangle {
+            width: Spacing.xl;
+            height: Spacing.xl;
+            border-radius: Spacing.xs;
+            border-width: 1px;
+            border-color: Colors.border;
+            background: prev-ta.has-hover && root.current > 1
+                ? Colors.bg-elevated : Colors.bg-surface;
+            opacity: root.current > 1 ? 1.0 : 0.4;
+
+            Text {
+                text: "‹";
+                font-size: Type.subtitle-size;
+                color: Colors.text-primary;
+                horizontal-alignment: center;
+                vertical-alignment: center;
+            }
+
+            prev-ta := TouchArea {
+                enabled: root.current > 1;
+                clicked => { root.changed(root.current - 1); }
+            }
+        }
+
+        // Page numbers
+        for p in root.pages: page-btn := Rectangle {
+            width: Spacing.xl;
+            height: Spacing.xl;
+            border-radius: Spacing.xs;
+            background: p == root.current ? Colors.accent :
+                        page-ta.has-hover ? Colors.bg-elevated : transparent;
+
+            Text {
+                text: p;
+                font-size: Type.body-size;
+                color: p == root.current ? Colors.accent-text : Colors.text-primary;
+                horizontal-alignment: center;
+                vertical-alignment: center;
+            }
+
+            page-ta := TouchArea {
+                clicked => { root.changed(p); }
+            }
+        }
+
+        // Fallback if no pages array provided
+        if root.pages.length == 0: Text {
+            text: root.current + " / " + root.total;
+            font-size: Type.body-size;
+            color: Colors.text-secondary;
+            vertical-alignment: center;
+        }
+
+        // Next button
+        next-btn := Rectangle {
+            width: Spacing.xl;
+            height: Spacing.xl;
+            border-radius: Spacing.xs;
+            border-width: 1px;
+            border-color: Colors.border;
+            background: next-ta.has-hover && root.current < root.total
+                ? Colors.bg-elevated : Colors.bg-surface;
+            opacity: root.current < root.total ? 1.0 : 0.4;
+
+            Text {
+                text: "›";
+                font-size: Type.subtitle-size;
+                color: Colors.text-primary;
+                horizontal-alignment: center;
+                vertical-alignment: center;
+            }
+
+            next-ta := TouchArea {
+                enabled: root.current < root.total;
+                clicked => { root.changed(root.current + 1); }
+            }
+        }
+    }
+}

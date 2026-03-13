@@ -1,0 +1,80 @@
+// page-navigation — TabBar, Breadcrumb, Pagination, Stepper
+
+import { Spacing } from "../tokens/theme.slint";
+import { TabBar, TabItem }         from "../shared/tab-bar.slint";
+import { Breadcrumb, BreadcrumbItem } from "../shared/breadcrumb.slint";
+import { Pagination }              from "../shared/pagination.slint";
+import { Stepper, StepItem }       from "../shared/stepper.slint";
+import { ViewerSection } from "viewer-section.slint";
+
+export component PageNavigation inherits VerticalLayout {
+    spacing: Spacing.md;
+
+    private property <string> active-tab: "one";
+    private property <int>    page: 3;
+    private property <int>    step-active: 1;
+
+    ViewerSection {
+        title: "TabBar";
+        VerticalLayout {
+            spacing: Spacing.sm;
+            width: 400px;
+            TabBar {
+                tabs: [
+                    { id: "one",   label: "Overview", icon: "" },
+                    { id: "two",   label: "Details",  icon: "" },
+                    { id: "three", label: "History",  icon: "" },
+                ];
+                active: active-tab;
+                changed(id) => { active-tab = id; }
+            }
+        }
+    }
+
+    ViewerSection {
+        title: "Breadcrumb";
+        Breadcrumb {
+            items: [
+                { id: "home",    label: "Home" },
+                { id: "docs",    label: "Documentation" },
+                { id: "widgets", label: "Widgets" },
+            ];
+        }
+    }
+
+    ViewerSection {
+        title: "Pagination";
+        VerticalLayout {
+            spacing: Spacing.sm;
+            Pagination {
+                current: page;
+                total: 10;
+                pages: [1, 2, 3, 4, 5, 6, 7];
+                changed(p) => { page = p; }
+            }
+            Pagination {
+                current: 1;
+                total: 3;
+                pages: [];
+            }
+        }
+    }
+
+    ViewerSection {
+        title: "Stepper";
+        VerticalLayout {
+            spacing: Spacing.sm;
+            width: 500px;
+            Stepper {
+                steps: [
+                    { label: "Account",  completed: true },
+                    { label: "Profile",  completed: true },
+                    { label: "Review",   completed: false },
+                    { label: "Confirm",  completed: false },
+                ];
+                active: step-active;
+                step-changed(i) => { step-active = i; }
+            }
+        }
+    }
+}

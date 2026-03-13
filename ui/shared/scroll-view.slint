@@ -1,0 +1,29 @@
+import { Colors, Spacing } from "../tokens/theme.slint";
+
+export component ScrollView inherits Rectangle {
+    in property <bool>  interactive:    true;
+    in property <bool>  show-scrollbar: true;
+    out property <length> viewport-width  <=> fl.viewport-width;
+    out property <length> viewport-height <=> fl.viewport-height;
+
+    clip: true;
+
+    fl := Flickable {
+        width: parent.width;
+        height: parent.height;
+        interactive: root.interactive;
+        viewport-width: self.width;
+        @children
+    }
+
+    // Vertical scrollbar thumb
+    if root.show-scrollbar && fl.viewport-height > fl.height: Rectangle {
+        x: parent.width - Spacing.xs - 2px;
+        y: (-fl.viewport-y / fl.viewport-height) * fl.height;
+        width: 3px;
+        height: max((fl.height / fl.viewport-height) * fl.height, Spacing.md);
+        border-radius: Spacing.xs;
+        background: Colors.border-strong;
+        opacity: 0.7;
+    }
+}

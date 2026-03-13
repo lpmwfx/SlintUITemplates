@@ -1,0 +1,80 @@
+import { Colors, Spacing, Type, FluentIcons } from "../tokens/theme.slint";
+
+export struct StepItem {
+    label: string,
+    completed: bool,
+}
+
+export component Stepper inherits Rectangle {
+    in property <[StepItem]> steps: [];
+    in-out property <int>    active: 0;
+    callback step-changed(int);
+
+    // Named constants instead of inline literals
+    private property <length> circle-size:    Spacing.control-md - Spacing.xs;   // 28px
+    private property <length> connector-w:    Spacing.xl;
+    private property <length> connector-h:    2px;
+
+    height: root.circle-size + Type.caption-size + Spacing.xs;
+    background: transparent;
+
+    HorizontalLayout {
+        alignment: center;
+        spacing: 0;
+
+        for step[i] in root.steps: HorizontalLayout {
+            spacing: 0;
+            alignment: center;
+
+            VerticalLayout {
+                alignment: center;
+                spacing: Spacing.xs;
+                width: root.circle-size + Spacing.lg;
+
+                circle-btn := Rectangle {
+                    x: (parent.width - root.circle-size) / 2;
+                    width:  root.circle-size;
+                    height: root.circle-size;
+                    border-radius: root.circle-size / 2;
+                    background: step.completed || i == root.active
+                        ? Colors.accent : Colors.bg-elevated;
+                    border-width: (step.completed || i == root.active) ? 0 : 1px;
+                    border-color: Colors.border;
+
+                    Text {
+                        text: step.completed ? FluentIcons.checkmark : (i + 1);
+                        font-family: step.completed ? "Segoe Fluent Icons" : "";
+                        font-size: Type.caption-size;
+                        color: (i <= root.active || step.completed)
+                            ? Colors.accent-text : Colors.text-secondary;
+                        horizontal-alignment: center;
+                        vertical-alignment: center;
+                    }
+
+                    step-ta := TouchArea {
+                        clicked => {
+                            root.active = i;
+                            root.step-changed(i);
+                        }
+                    }
+                }
+
+                Text {
+                    width: parent.width;
+                    text: step.label;
+                    font-size: Type.caption-size;
+                    color: i == root.active ? Colors.text-primary : Colors.text-secondary;
+                    horizontal-alignment: center;
+                    wrap: no-wrap;
+                }
+            }
+
+            if i < root.steps.length - 1: Rectangle {
+                width:  root.connector-w;
+                height: root.connector-h;
+                y: root.circle-size / 2;
+                background: step.completed ? Colors.accent : Colors.border;
+            }
+        }
+    }
+}
