@@ -18,9 +18,7 @@ export component DragHandle inherits Rectangle {
     touch := TouchArea {
         mouse-cursor: vertical ? row-resize : col-resize;
         moved => { root.dragged(vertical ? Sizes.no-fill : (self.mouse-x - self.pressed-x) / Spacing.border, vertical ? (self.mouse-y - self.pressed-y) / Spacing.border : Sizes.no-fill); }
+        // Fires on press and on release — parent uses this to re-anchor drag-base-width.
+        changed pressed => { root.drag-started(); }
     }
-
-    // Fires when touch.pressed flips (on press and on release).
-    // Caller resets drag-base-width to current col-left-width each time.
-    changed touch.pressed => { root.drag-started(); }
 }
