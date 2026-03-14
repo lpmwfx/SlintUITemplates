@@ -27,12 +27,7 @@ export component SideBar inherits Rectangle {
         // Scrollbart TOC-panel — fylder al tilgængelig plads
         toc-flick := Flickable {
             vertical-stretch: Sizes.fill;
-            // preferred-height is decoupled from viewport-height so the Window
-            // layout engine cannot shrink the window when TOC items collapse.
-            preferred-height: Sizes.docs-window-height;
-            min-height:       Sizes.sidebar-toc-min-height;
             interactive:      true;
-            viewport-height:  toc-vl.preferred-height;
 
             toc-vl := VerticalLayout {
                 width: toc-flick.width;
