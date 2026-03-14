@@ -1,0 +1,144 @@
+// PageData — DataTable, TreeView, DatePicker, MultiSelect, Chip, ContextMenu
+
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
+import { DataTable, TableColumn, TableRow } from "../shared/data-table.slint";
+import { TreeView, TreeNode }               from "../shared/tree-view.slint";
+import { DatePicker }                       from "../shared/date-picker.slint";
+import { MultiSelect, MultiSelectOption }   from "../shared/multi-select.slint";
+import { Chip }                             from "../shared/chip.slint";
+import { ViewerSection } from "viewer-section.slint";
+import { ContextMenuDemoArea } from "ContextMenuDemoArea.slint";
+
+export component PageData inherits VerticalLayout {
+    in property <length> window-height;
+
+    spacing: Spacing.md;
+
+    private property <string> table-selected: "";
+    private property <string> tree-selected: "";
+    private property <string> date-value: "";
+
+    // ── demo labels ──────────────────────────────────────────────────────
+    private property <string> section-datatable: "DataTable";
+    private property <string> section-treeview: "TreeView";
+    private property <string> section-datepicker: "DatePicker";
+    private property <string> section-multiselect: "MultiSelect";
+    private property <string> section-chip: "Chip";
+    private property <string> section-contextmenu: "ContextMenu — File Explorer (right-click area)";
+    private property <string> dp-label: "Select date";
+    private property <string> dp-error-label: "With error";
+    private property <string> dp-error-msg: "Date is required";
+    private property <string> ms-placeholder: "Choose languages...";
+    private property <string> chip-default: "Default";
+    private property <string> chip-selected: "Selected";
+    private property <string> chip-noclose: "No close";
+    private property <string> chip-disabled: "Disabled";
+
+    // ── private size tokens ────────────────────────────────────────────
+    private property <length> col-name-w: Sizes.comp-160;
+    private property <length> dp-w: Sizes.comp-260;
+    private property <length> ms-w: Sizes.comp-240;
+
+    // ── demo row data ─────────────────────────────────────────────────
+    private property <string> row-id-a: "1";
+    private property <string> row-id-b: "2";
+    private property <string> row-id-c: "3";
+    private property <string> row-id-d: "4";
+    private property <string> row-id-e: "5";
+    private property <string> date-a: "2023-01";
+    private property <string> date-b: "2022-06";
+    private property <string> date-c: "2021-11";
+    private property <string> date-d: "2023-04";
+    private property <string> date-e: "2024-02";
+
+    ViewerSection {
+        title: root.section-datatable;
+        DataTable {
+            width: Sizes.panel-wide;
+            height: Sizes.panel-sm;
+            columns: [
+                { key: "name",   label: "Name",       width: root.col-name-w },
+                { key: "role",   label: "Role",        width: Sizes.thumb-lg },
+                { key: "status", label: "Status",      width: Sizes.thumb-md },
+                { key: "joined", label: "Joined",      width: Sizes.thumb-lg },
+            ];
+            rows: [
+                { id: root.row-id-a, cells: ["Alice Johnson", "Designer",   "Active",   root.date-a] },
+                { id: root.row-id-b, cells: ["Bob Smith",     "Engineer",   "Active",   root.date-b] },
+                { id: root.row-id-c, cells: ["Carol White",   "PM",         "Away",     root.date-c] },
+                { id: root.row-id-d, cells: ["David Brown",   "Engineer",   "Inactive", root.date-d] },
+                { id: root.row-id-e, cells: ["Eva Green",     "Marketing",  "Active",   root.date-e] },
+            ];
+            selected: table-selected;
+            row-selected(id) => { table-selected = id; }
+        }
+    }
+
+    ViewerSection {
+        title: root.section-treeview;
+        TreeView {
+            width: Sizes.panel-lg;
+            height: Sizes.panel-sm;
+            nodes: [
+                { id: "src",      label: "src",       icon: "", level: Sizes.zero, expanded: true,  leaf: false },
+                { id: "main",     label: "main.rs",   icon: "", level: Sizes.one,  expanded: false, leaf: true  },
+                { id: "lib",      label: "lib.rs",    icon: "", level: Sizes.one,  expanded: false, leaf: true  },
+                { id: "ui",       label: "ui",        icon: "", level: Sizes.zero, expanded: true,  leaf: false },
+                { id: "shared",   label: "shared",    icon: "", level: Sizes.one,  expanded: false, leaf: false },
+                { id: "tokens",   label: "tokens",    icon: "", level: Sizes.one,  expanded: false, leaf: false },
+            ];
+            selected: tree-selected;
+            selected-changed(id) => { tree-selected = id; }
+            toggle-expanded(id) => { }
+        }
+    }
+
+    ViewerSection {
+        title: root.section-datepicker;
+        VerticalLayout {
+            spacing: Spacing.sm;
+            width: root.dp-w;
+            DatePicker {
+                label: root.dp-label;
+                value: date-value;
+                changed(v) => { date-value = v; }
+            }
+            DatePicker {
+                label: root.dp-error-label;
+                error: root.dp-error-msg;
+            }
+        }
+    }
+
+    ViewerSection {
+        title: root.section-multiselect;
+        MultiSelect {
+            width: root.ms-w;
+            options: [
+                { label: "Rust",       value: "rust" },
+                { label: "TypeScript", value: "ts" },
+                { label: "Python",     value: "py" },
+                { label: "Go",         value: "go" },
+            ];
+            placeholder: root.ms-placeholder;
+        }
+    }
+
+    ViewerSection {
+        title: root.section-chip;
+        HorizontalLayout {
+            alignment: start;
+            spacing: Spacing.sm;
+            Chip { label: root.chip-default; }
+            Chip { label: root.chip-selected; selected: true; }
+            Chip { label: root.chip-noclose; closable: false; }
+            Chip { label: root.chip-disabled; enabled: false; }
+        }
+    }
+
+    ViewerSection {
+        title: root.section-contextmenu;
+        ContextMenuDemoArea { window-height: root.window-height; }
+    }
+}

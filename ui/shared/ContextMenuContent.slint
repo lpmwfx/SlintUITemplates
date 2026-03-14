@@ -1,0 +1,21 @@
+import { Spacing } from "../tokens/theme.slint";
+import { ContextMenuEntry } from "./ContextMenuEntry.slint";
+import { ContextMenuItem } from "./ContextMenuEntry.slint";
+
+// Scrollable content list — keeps Flickable + for-loop within nesting limits.
+export component ContextMenuContent inherits Flickable {
+    in property <[ContextMenuItem]> items;
+    in property <length> content-height;
+    callback activated(string);
+
+    viewport-width: self.width;
+    viewport-height: root.content-height;
+
+    VerticalLayout {
+        padding: Spacing.xs;
+        for item in root.items: ContextMenuEntry {
+            item: item;
+            activated(id) => { root.activated(id); }
+        }
+    }
+}

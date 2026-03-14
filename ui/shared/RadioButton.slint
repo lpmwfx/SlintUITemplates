@@ -1,0 +1,56 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
+
+export component RadioButton inherits Rectangle {
+    in property <bool>   checked: false;
+    in property <string> label: "";
+    in property <bool>   enabled: true;
+    callback clicked();
+
+    private property <length> circle-size: Spacing.md + Spacing.xs;   // 20px
+    private property <length> dot-size:    Spacing.sm + Spacing.xs;   // 10px
+    private property <length> ring-border: Sizes.border-w-2;
+
+    height: Spacing.xl;
+    background: transparent;
+    opacity: root.enabled ? Sizes.fill : Sizes.half;
+
+    VerticalLayout {
+        alignment: center;
+
+        HorizontalLayout {
+            alignment: start;
+            spacing: Spacing.sm;
+
+            Rectangle {
+                width:  root.circle-size;
+                height: root.circle-size;
+                border-radius: root.circle-size / Sizes.two;
+                border-width: root.ring-border;
+                border-color: root.checked ? Colors.accent : Colors.border;
+                background: transparent;
+
+                if root.checked: Rectangle {
+                    x: (parent.width  - root.dot-size) / Sizes.two;
+                    y: (parent.height - root.dot-size) / Sizes.two;
+                    width:  root.dot-size;
+                    height: root.dot-size;
+                    border-radius: root.dot-size / Sizes.two;
+                    background: Colors.accent;
+                }
+            }
+
+            if root.label != "": Text {
+                text: root.label;
+                font-size: Type.body-size;
+                color: Colors.text-primary;
+                vertical-alignment: center;
+            }
+        }
+    }
+
+    ta := TouchArea {
+        enabled: root.enabled;
+        clicked => { root.clicked(); }
+    }
+}

@@ -1,0 +1,58 @@
+// IconTile — Single icon tile with glyph + name label.
+// Reads Settings.icon-style ("filled" | "outlined") and Settings.icon-color ("theme" | "accent").
+
+import { Colors, Spacing, Type, Settings } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
+
+export component IconTile inherits Rectangle {
+    in property <string> icon-glyph;
+    in property <string> icon-name;
+
+    // ── private variant strings ─────────────────────────────────────────
+    private property <string> var-outlined: "outlined";
+    private property <string> var-accent: "accent";
+    private property <string> icon-font: "Segoe Fluent Icons";
+
+    // ── private size tokens ─────────────────────────────────────────────
+    private property <float> outlined-opacity: 0.7;
+    private property <float> alpha-half: 0.5;
+    private property <length> name-font-size: 9px;
+    private property <length> tile-h: Sizes.comp-72;
+
+    private property <bool>  is-outlined: Settings.icon-style == root.var-outlined;
+    private property <color> icon-color:  Settings.icon-color == root.var-accent
+                                              ? Colors.accent
+                                              : Colors.text-primary;
+
+    min-width: Sizes.thumb-sm;
+    height: root.tile-h;
+    border-radius: Sizes.track-h;
+    background: tile-ta.has-hover ? Colors.bg-elevated : transparent;
+    border-width: root.is-outlined ? Sizes.border-w : (tile-ta.has-hover ? Sizes.border-w : Sizes.no-size);
+    border-color: root.is-outlined ? Colors.accent.with-alpha(root.alpha-half) : Colors.border;
+
+    tile-ta := TouchArea {}
+
+    VerticalLayout {
+        alignment: center;
+        spacing: Spacing.xs;
+        padding: Spacing.xs;
+
+        Text {
+            text: root.icon-glyph;
+            font-family: root.icon-font;
+            font-size: Sizes.icon-lg;
+            color: root.icon-color;
+            opacity: root.is-outlined ? root.outlined-opacity : Sizes.fill;
+            horizontal-alignment: center;
+        }
+
+        Text {
+            text: root.icon-name;
+            font-size: root.name-font-size;
+            color: Colors.text-secondary;
+            horizontal-alignment: center;
+            overflow: elide;
+        }
+    }
+}

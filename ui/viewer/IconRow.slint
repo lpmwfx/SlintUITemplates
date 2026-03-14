@@ -1,0 +1,20 @@
+// IconRow — Scrollable row of icon tiles for one category.
+
+import { Spacing } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
+import { IconTile } from "IconTile.slint";
+
+export component IconRow inherits Flickable {
+    in property <[{glyph: string, name: string}]> icons;
+    height: Sizes.thumb-sm;
+    viewport-width: row-layout.preferred-width;
+    viewport-height: self.height;
+
+    row-layout := HorizontalLayout {
+        spacing: Spacing.xs;
+        for icon in root.icons: IconTile {
+            icon-glyph: icon.glyph;
+            icon-name:  icon.name;
+        }
+    }
+}
