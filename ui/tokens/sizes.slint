@@ -1,0 +1,14 @@
+// Sizes — layout stretch constants and window dimension tokens.
+//
+// Use instead of hardcoded integers in horizontal-stretch / vertical-stretch
+// and preferred-width / preferred-height on top-level windows.
+
+export global Sizes {
+    // ── Layout stretch ────────────────────────────────────────────────────
+    out property <float> fill:    1.0;   // fill remaining space
+    out property <float> no-fill: 0.0;   // fixed / no stretch
+
+    // ── Window dimensions ─────────────────────────────────────────────────
+    out property <length> docs-window-width:  1100px;
+    out property <length> docs-window-height: 720px;
+}

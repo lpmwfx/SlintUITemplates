@@ -8,23 +8,27 @@ use super::{AppDsl, BgStyle};
 pub fn apply(ui: &AppWindow, dsl: &AppDsl) {
     // Nav items — resolved codepoints
     let nav: Vec<NavItem> = dsl.nav.iter().map(|n| NavItem {
-        id:    n.id.clone().into(),
-        label: n.label.clone().into(),
-        icon:  n.icon_code.clone().into(),
+        id:        n.id.as_str().into(),
+        label:     n.label.as_str().into(),
+        icon:      n.icon_code.as_str().into(),
+        is_header: false,
+        hidden:    false,
     }).collect();
+    // Rc: Slint model requires shared ownership via ModelRc
     ui.set_nav_items(Rc::new(VecModel::from(nav)).into());
 
     // Toolbar
     let toolbar: Vec<ShellToolbarItem> = dsl.toolbar.iter().map(|t| ShellToolbarItem {
-        id:      t.id.clone().into(),
-        icon:    t.icon_code.clone().into(),
-        tooltip: t.tooltip.clone().into(),
+        id:      t.id.as_str().into(),
+        icon:    t.icon_code.as_str().into(),
+        tooltip: t.tooltip.as_str().into(),
     }).collect();
+    // Rc: Slint model requires shared ownership via ModelRc
     ui.set_toolbar_items(Rc::new(VecModel::from(toolbar)).into());
     ui.set_show_toolbar(dsl.show_toolbar);
 
     // Status
-    ui.set_status_text(dsl.status.clone().into());
+    ui.set_status_text(dsl.status.as_str().into());
 
     // Window size (preferred — Window respects these as initial size hints)
     if let Some((w, h)) = dsl.window_size {

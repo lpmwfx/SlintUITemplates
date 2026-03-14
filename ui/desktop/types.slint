@@ -1,5 +1,7 @@
 export struct NavItem {
-    id: string,
-    label: string,
-    icon: string,
+    id:        string,
+    label:     string,
+    icon:      string,
+    is-header: bool,   // true = kollapsibel sektions-header
+    hidden:    bool,   // true = skjult (gruppe er kollapset)
 }

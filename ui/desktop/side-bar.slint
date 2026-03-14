@@ -1,81 +1,70 @@
-import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Colors, Spacing, Sizes } from "../tokens/theme.slint";
 import { NavItem } from "types.slint";
+import { SideBarRow } from "side-bar-row.slint";
 
+// ── SideBar — scrollbart TOC-panel med kollapsible gruppe-headers ─────────────
+// Pure child: receives items + active state, emits navigate / toggle-group.
 export component SideBar inherits Rectangle {
     in property <[NavItem]> items: [];
     in property <string>    active-item: "";
     in property <bool>      collapsed: false;
     callback navigate(string);
     callback toggle-collapsed();
+    callback toggle-group(string);
 
     background: Colors.bg-surface;
 
-    HorizontalLayout {
-        // Nav item list + collapse button
-        VerticalLayout {
-            horizontal-stretch: 1;
+    // Right border — absolutely positioned at right edge
+    Rectangle {
+        x:          parent.width - Spacing.border;
+        y:          Spacing.none;
+        width:      Spacing.border;
+        height:     parent.height;
+        background: Colors.border;
+    }
 
-            for item in root.items: Rectangle {
-                height: Spacing.xl;
-                clip: true;
-                background: item.id == root.active-item ? Colors.bg-elevated :
-                            item-ta.has-hover ? Colors.bg-elevated : transparent;
+    VerticalLayout {
+        // Scrollbart TOC-panel — fylder al tilgængelig plads
+        toc-flick := Flickable {
+            vertical-stretch: Sizes.fill;
+            interactive:      true;
+            viewport-height:  toc-vl.preferred-height;
 
-                item-ta := TouchArea {
-                    clicked => { root.navigate(item.id); }
-                }
+            toc-vl := VerticalLayout {
+                width: toc-flick.width;
 
-                HorizontalLayout {
-                    padding-left: Spacing.sm;
-                    padding-right: Spacing.sm;
-                    spacing: Spacing.sm;
-                    alignment: start;
-
-                    Text {
-                        text: item.icon;
-                        font-size: Type.subtitle-size;
-                        font-family: "Segoe Fluent Icons";
-                        color: item.id == root.active-item ? Colors.accent : Colors.text-primary;
-                        vertical-alignment: center;
-                        horizontal-alignment: center;
-                        width: Spacing.lg;
-                    }
-
-                    if !root.collapsed: Text {
-                        text: item.label;
-                        font-size: Type.body-size;
-                        color: item.id == root.active-item ? Colors.accent : Colors.text-primary;
-                        vertical-alignment: center;
-                    }
-                }
-            }
-
-            // Spacer pushes collapse button to bottom
-            Rectangle { vertical-stretch: 1; }
-
-            // Collapse toggle
-            Rectangle {
-                height: Spacing.xl;
-                background: collapse-ta.has-hover ? Colors.bg-elevated : transparent;
-
-                collapse-ta := TouchArea {
-                    clicked => { root.toggle-collapsed(); }
-                }
-
-                Text {
-                    text: root.collapsed ? "\u{00BB}" : "\u{00AB}";
-                    font-size: Type.subtitle-size;
-                    color: Colors.text-secondary;
-                    horizontal-alignment: center;
-                    vertical-alignment: center;
+                for item in root.items: SideBarRow {
+                    item:              item;
+                    is-active:         item.id == root.active-item;
+                    sidebar-collapsed: root.collapsed;
+                    navigate(id)      => { root.navigate(id); }
+                    toggle-group(id)  => { root.toggle-group(id); }
                 }
             }
         }
 
-        // Right border (1px = Spacing.xs / 4)
+        // Tynd divider over collapse-knap
         Rectangle {
-            width: Spacing.xs / 4;
+            height:     Spacing.border;
             background: Colors.border;
+        }
+
+        // Collapse toggle
+        Rectangle {
+            height:     Spacing.xl;
+            background: collapse-ta.has-hover ? Colors.bg-elevated : transparent;
+
+            collapse-ta := TouchArea {
+                clicked => { root.toggle-collapsed(); }
+            }
+
+            Text {
+                text:                root.collapsed ? "\u{00BB}" : "\u{00AB}";
+                font-size:           Spacing.md;
+                color:               Colors.text-secondary;
+                horizontal-alignment: TextHorizontalAlignment.center;
+                vertical-alignment:  TextVerticalAlignment.center;
+            }
         }
     }
 }

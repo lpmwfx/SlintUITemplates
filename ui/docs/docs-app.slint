@@ -1,4 +1,4 @@
-import { Colors, Spacing, Type, Settings, FluentIcons } from "../tokens/theme.slint";
+import { Colors, Spacing, Type, Sizes, Settings } from "../tokens/theme.slint";
 import { NavBar }           from "../desktop/nav-bar.slint";
 import { NavItem }          from "../desktop/types.slint";
 import { SideBar }          from "../desktop/side-bar.slint";
@@ -12,13 +12,16 @@ import { DocBlock }         from "doc-block.slint";
 export { DocBlock }
 
 // ── DocsApp — full-window docs browser ───────────────────────────────────────
-// Uses MarkdownView for the content pane. Rust host calls docs::parse() and
-// sets doc-blocks on navigate.
+// Mother component: owns sidebar state + layout. Children receive in property.
+// Rust host sets doc-blocks on navigate and handles toggle-group for collapse.
 export component DocsApp inherits Window {
-    title: "SlintUITemplates — Docs";
-    preferred-width: 1100px;
-    preferred-height: 720px;
-    background: Colors.bg-primary;
+    in property <string>             window-title:     "SlintUITemplates — Docs";
+    in property <string>             menu-file-label:  "File";
+    in property <string>             menu-theme-label: "Theme";
+    preferred-width:  Sizes.docs-window-width;
+    preferred-height: Sizes.docs-window-height;
+    title:            root.window-title;
+    background:       Colors.bg-primary;
     default-font-family: Settings.font-family;
 
     // ── State ─────────────────────────────────────────────────────────────────
@@ -36,21 +39,32 @@ export component DocsApp inherits Window {
     property <length> sidebar-expanded-width:  Spacing.xl * 4 + Spacing.md;
     property <length> sidebar-collapsed-width: Spacing.xl + Spacing.sm;
 
+    // Keep col-left-width in sync when sidebar collapses/expands via toggle
+    changed sidebar-collapsed => {
+        root.col-left-width = root.sidebar-collapsed
+            ? root.sidebar-collapsed-width
+            : root.sidebar-expanded-width;
+    }
+
     // ── Callbacks ─────────────────────────────────────────────────────────────
     callback navigate(string);
     callback toolbar-clicked(string);
     callback request-bg-style(string);
+    callback toggle-group(string);   // Rust-siden håndterer hidden-toggle på nav-items
+    callback drag-sidebar(dx: float);
+
+    drag-sidebar(dx) => { root.col-left-width = max(root.col-left-width + dx * Spacing.border, root.sidebar-collapsed-width); }
 
     navigate(id) => { root.active-view = id; }
 
     // ── MenuBar ───────────────────────────────────────────────────────────────
     MenuBar {
         Menu {
-            title: "File";
+            title: root.menu-file-label;
             MenuItem { title: "Exit"; activated => { } }
         }
         Menu {
-            title: "Theme";
+            title: root.menu-theme-label;
             MenuItem { title: "Solid";   activated => { root.request-bg-style("solid"); } }
             MenuItem { title: "Mica";    activated => { root.request-bg-style("mica"); } }
             MenuItem { title: "Acrylic"; activated => { root.request-bg-style("acrylic"); } }
@@ -71,39 +85,30 @@ export component DocsApp inherits Window {
         }
 
         HorizontalLayout {
-            vertical-stretch: 1;
+            vertical-stretch: Sizes.fill;
 
             SideBar {
-                horizontal-stretch: 0;
+                horizontal-stretch: Sizes.no-fill;
                 min-width: root.col-left-width;
                 max-width: root.col-left-width;
                 items: root.nav-items;
                 active-item: root.active-view;
                 collapsed: root.sidebar-collapsed;
-                navigate(id) => { root.navigate(id); }
-                toggle-collapsed() => {
-                    root.sidebar-collapsed = !root.sidebar-collapsed;
-                    root.col-left-width = root.sidebar-collapsed
-                        ? root.sidebar-collapsed-width
-                        : root.sidebar-expanded-width;
-                }
+                navigate(id)     => { root.navigate(id); }
+                toggle-group(id) => { root.toggle-group(id); }
+                toggle-collapsed() => { root.sidebar-collapsed = !root.sidebar-collapsed; }
             }
 
             DragHandle {
                 min-width: Spacing.handle-thickness;
                 max-width: Spacing.handle-thickness;
-                vertical: false;
-                dragged(dx, _dy) => {
-                    root.col-left-width = root.col-left-width + dx * 1px;
-                    if (root.col-left-width < root.sidebar-collapsed-width) {
-                        root.col-left-width = root.sidebar-collapsed-width;
-                    }
-                }
+                vertical:  false;
+                dragged(dx, _dy) => { root.drag-sidebar(dx); }
             }
 
             // Content pane — the library's MarkdownView widget
             MarkdownView {
-                horizontal-stretch: 1;
+                horizontal-stretch: Sizes.fill;
                 background: Colors.bg-surface;
                 blocks: root.doc-blocks;
             }
