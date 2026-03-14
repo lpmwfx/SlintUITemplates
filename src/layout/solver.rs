@@ -4,10 +4,11 @@
 // Slint multiplies these by actual pixel dimensions at render time,
 // making the layout fully responsive — no pixel math in .slint files.
 
-use super::parser::{PanelNode, SplitDir};
+use crate::layout::parser::{PanelNode, SplitDir};
 
 const HANDLE_THICKNESS: f32 = 5.0;   // logical px — kept in sync with Spacing.handle-thickness
 
+/// A positioned layout element with normalized coordinates ready for rendering.
 #[derive(Debug, Clone)]
 pub struct SolvedItem {
     pub id:    i32,
@@ -17,10 +18,12 @@ pub struct SolvedItem {
     pub w: f32, pub h: f32,
 }
 
+/// Discriminates between content panels and drag handles in a solved layout.
 #[derive(Debug, Clone, PartialEq)]
 pub enum ItemKind { Panel, HandleH, HandleV }
 
 impl ItemKind {
+    /// Return a stable string identifier for this item kind.
     pub fn as_str(&self) -> &'static str {
         match self {
             ItemKind::Panel   => "panel",
@@ -30,6 +33,7 @@ impl ItemKind {
     }
 }
 
+/// Walks a `PanelNode` tree and emits flat `SolvedItem` rectangles with normalized coordinates.
 pub struct Solver {
     next_id: i32,
     items:   Vec<SolvedItem>,
@@ -39,10 +43,12 @@ pub struct Solver {
 }
 
 impl Solver {
+    /// Create a solver targeting the given window pixel dimensions.
     pub fn new(win_w: f32, win_h: f32) -> Self {
         Self { next_id: 0, items: Vec::new(), win_w, win_h }
     }
 
+    /// Consume the solver, recursively visit the tree, and return all solved items.
     pub fn solve(mut self, root: &PanelNode) -> Vec<SolvedItem> {
         self.visit(root, 0.0, 0.0, 1.0, 1.0);
         self.items

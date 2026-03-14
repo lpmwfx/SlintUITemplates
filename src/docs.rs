@@ -39,7 +39,7 @@ pub fn parse(input: &str) -> Vec<DocBlock> {
 
     // Table accumulation
     let mut is_table_head = false;
-    let mut in_table_row  = false;
+    let mut is_in_table_row = false;
     let mut row_cells: Vec<String> = Vec::new();
     let mut cell_buf = String::new();
 
@@ -127,12 +127,12 @@ pub fn parse(input: &str) -> Vec<DocBlock> {
                 is_table_head = false;
             }
 
-            Event::Start(Tag::TableRow) => { in_table_row = true; row_cells.clear(); }
+            Event::Start(Tag::TableRow) => { is_in_table_row = true; row_cells.clear(); }
             Event::End(TagEnd::TableRow) => {
                 if !is_table_head {
                     push(&mut blocks, "tr", row_cells.join(" │ "), 0);
                 }
-                in_table_row = false;
+                is_in_table_row = false;
             }
 
             Event::Start(Tag::TableCell) => { cell_buf.clear(); }
@@ -147,13 +147,13 @@ pub fn parse(input: &str) -> Vec<DocBlock> {
 
             // ── Inline text ───────────────────────────────────────────────────
             Event::Text(t) => {
-                if in_table_row || is_table_head { cell_buf.push_str(&t); }
+                if is_in_table_row || is_table_head { cell_buf.push_str(&t); }
                 else if bq_depth > 0             { bq_buf.push_str(&t); }
                 else                             { text.push_str(&t); }
             }
             Event::Code(t) => {
                 let s = format!("`{t}`");
-                if in_table_row || is_table_head { cell_buf.push_str(&s); }
+                if is_in_table_row || is_table_head { cell_buf.push_str(&s); }
                 else if bq_depth > 0             { bq_buf.push_str(&s); }
                 else                             { text.push_str(&s); }
             }

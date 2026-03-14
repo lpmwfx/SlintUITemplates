@@ -1,11 +1,13 @@
-use super::config::{GridConfig, RowConfig};
+use crate::grid::config::{GridConfig, RowConfig};
 
+/// Runtime grid model holding resolved rows and their proportional ratios.
 #[derive(Debug)]
 pub struct ZoneModel {
     pub rows: Vec<RowZone>,
     total_row_ratio: u32,
 }
 
+/// A resolved grid row with its name, ratio weight, and content kind.
 #[derive(Debug)]
 pub struct RowZone {
     pub name: String,
@@ -13,6 +15,7 @@ pub struct RowZone {
     pub kind: RowKind,
 }
 
+/// Describes how a row's content is arranged: fixed element, column split, or empty.
 #[derive(Debug)]
 pub enum RowKind {
     Fixed { element: String },
@@ -20,6 +23,7 @@ pub enum RowKind {
     Empty,
 }
 
+/// A resolved column within a row, with an optional module assignment.
 #[derive(Debug)]
 pub struct ColumnZone {
     pub name: String,
@@ -28,6 +32,7 @@ pub struct ColumnZone {
 }
 
 impl ZoneModel {
+    /// Builds a `ZoneModel` from a parsed `GridConfig`.
     pub fn from_config(config: &GridConfig) -> Self {
         let total_row_ratio = config.rows.iter().map(|r| r.ratio).sum();
         let rows = config.rows.iter().map(RowZone::from_config).collect();
@@ -37,14 +42,17 @@ impl ZoneModel {
         }
     }
 
+    /// Returns the sum of all row ratio weights in the grid.
     pub fn total_row_ratio(&self) -> u32 {
         self.total_row_ratio
     }
 
+    /// Looks up a row by name, returning a reference if found.
     pub fn row(&self, name: &str) -> Option<&RowZone> {
         self.rows.iter().find(|r| r.name == name)
     }
 
+    /// Looks up a column by row and column name, returning a reference if found.
     pub fn column(&self, row_name: &str, col_name: &str) -> Option<&ColumnZone> {
         self.row(row_name).and_then(|r| match &r.kind {
             RowKind::Columns(cols) => cols.iter().find(|c| c.name == col_name),
@@ -52,6 +60,7 @@ impl ZoneModel {
         })
     }
 
+    /// Assigns a module name to a specific column within a row.
     pub fn set_module(&mut self, row_name: &str, col_name: &str, module: &str) {
         if let Some(row) = self.rows.iter_mut().find(|r| r.name == row_name) {
             if let RowKind::Columns(cols) = &mut row.kind {
@@ -92,6 +101,7 @@ impl RowZone {
         }
     }
 
+    /// Returns the sum of all column ratio weights in this row, or 0 if not column-based.
     pub fn total_column_ratio(&self) -> u32 {
         match &self.kind {
             RowKind::Columns(cols) => cols.iter().map(|c| c.ratio).sum(),

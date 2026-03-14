@@ -10,42 +10,21 @@ use std::path::Path;
 const DEFAULT_WIN_WIDTH: u32 = 1200;
 const DEFAULT_WIN_HEIGHT: u32 = 800;
 
-/// Available slintui subcommands.
-enum Command {
-    New,
-}
-
-impl Command {
-    fn from_str(s: &str) -> Option<Self> {
-        if s.eq_ignore_ascii_case("new") {
-            Some(Command::New)
-        } else {
-            None
-        }
-    }
-}
+/// Scaffold template file names.
+const CARGO_TOML: &str = "Cargo.toml";
 
 fn main() {
     let args: Vec<String> = std::env::args().collect();
-    match args.as_slice() {
-        [_, cmd_str, name] => {
-            match Command::from_str(cmd_str) {
-                Some(Command::New) => {
-                    if let Err(e) = scaffold(name) {
-                        eprintln!("Error: {e}");
-                        std::process::exit(1);
-                    }
-                }
-                None => {
-                    eprintln!("Usage: slintui new <project-name>");
-                    std::process::exit(1);
-                }
-            }
-        }
-        _ => {
-            eprintln!("Usage: slintui new <project-name>");
-            std::process::exit(1);
-        }
+    if let Err(e) = run(&args) {
+        eprintln!("Error: {e}");
+        std::process::exit(1);
+    }
+}
+
+fn run(args: &[String]) -> Result<(), Box<dyn std::error::Error>> {
+    match args {
+        [_, cmd, name] if cmd.eq_ignore_ascii_case("new") => scaffold(name),
+        _ => Err("Usage: slintui new <project-name>".into()),
     }
 }
 
@@ -63,9 +42,9 @@ fn scaffold(name: &str) -> Result<(), Box<dyn std::error::Error>> {
     write_view_rhai(root, "settings", "view_status(\"Configure\");")?;
     write_main_rs(root)?;
 
-    println!("Created project '{}'", name);
-    println!();
-    println!("  cd {} && cargo run", name);
+    eprintln!("Created project '{name}'");
+    eprintln!();
+    eprintln!("  cd {name} && cargo run");
     Ok(())
 }
 
@@ -91,7 +70,7 @@ slint-ui-templates = {{ path = ".." }}
 rhai = "1"
 "#
     );
-    fs::write(root.join("Cargo.toml"), content)
+    fs::write(root.join(CARGO_TOML), content)
 }
 
 fn write_app_rhai(root: &Path, name: &str) -> Result<(), std::io::Error> {
@@ -120,6 +99,7 @@ use slint_ui_templates::adapter::AppAdapter;
 use slint_ui_templates::bindings::rhai::build_engine;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
+    // REASON: Rhai engine closures capture Rc clones for callback access
     let adapter = Rc::new(RefCell::new(AppAdapter::new()?));
 
     // Load per-view chrome configs from views/*.rhai

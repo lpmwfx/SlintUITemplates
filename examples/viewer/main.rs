@@ -36,6 +36,9 @@ const LINE_END_X: f32 = 290.0;
 const LINE_END_Y: f32 = 190.0;
 const LINE_STROKE_WIDTH: f32 = 2.0;
 const PIXEL_STRIDE: usize = 4;
+const RGBA_G_OFFSET: usize = 1;
+const RGBA_B_OFFSET: usize = 2;
+const RGBA_A_OFFSET: usize = 3;
 const ALPHA_MAX: u32 = 255;
 const DEMO_FRAME_WIDTH: u32 = 300;
 const DEMO_FRAME_HEIGHT: u32 = 200;
@@ -95,14 +98,14 @@ fn render_demo_frame(width: u32, height: u32) -> Result<slint::Image, Box<dyn st
     for (i, px) in pixels.iter_mut().enumerate() {
         let base = i * PIXEL_STRIDE;
         // tiny-skia premultiplies alpha — demultiply for slint
-        let a = pixel_data[base + 3];
+        let a = pixel_data[base + RGBA_A_OFFSET];
         let (r, g, b) = if a == 0 {
             (0, 0, 0)
         } else {
             (
-                ((pixel_data[base]     as u32 * ALPHA_MAX) / a as u32) as u8,
-                ((pixel_data[base + 1] as u32 * ALPHA_MAX) / a as u32) as u8,
-                ((pixel_data[base + 2] as u32 * ALPHA_MAX) / a as u32) as u8,
+                ((pixel_data[base]                  as u32 * ALPHA_MAX) / a as u32) as u8,
+                ((pixel_data[base + RGBA_G_OFFSET]  as u32 * ALPHA_MAX) / a as u32) as u8,
+                ((pixel_data[base + RGBA_B_OFFSET]  as u32 * ALPHA_MAX) / a as u32) as u8,
             )
         };
         *px = slint::Rgba8Pixel { r, g, b, a };
@@ -114,17 +117,13 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let ui = slint_ui_templates::FrameworkViewer::new()?;
 
     // Wire canvas frame — rendered once at startup
-    ui.set_canvas_frame(render_demo_frame(300, 200)?);
+    ui.set_canvas_frame(render_demo_frame(DEMO_FRAME_WIDTH, DEMO_FRAME_HEIGHT)?);
 
     // Wire Solid/Mica/Acrylic buttons → OS backdrop + Theme.material
     let weak = ui.as_weak();
     ui.on_request_bg_style(move |style_name| {
         if let Some(handle) = weak.upgrade() {
-            let bg = match style_name.as_str() {
-                "mica"    => BgStyle::Mica,
-                "acrylic" => BgStyle::Acrylic,
-                _         => BgStyle::Solid,
-            };
+            let bg = BgStyle::from_str(style_name.as_str());
             platform::apply_backdrop(handle.window(), bg);
             handle.global::<slint_ui_templates::Theme>().set_material(style_name);
         }

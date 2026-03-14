@@ -277,6 +277,7 @@ mod tests {
         use std::sync::{Arc, Mutex};
         init();
         let adapter = AppAdapter::new().unwrap();
+        // REASON: Closure inside on_menu_action needs shared mutable access across thread boundary
         let called = Arc::new(Mutex::new(false));
         let c = Arc::clone(&called);
         adapter.on_menu_action("file.new", move || { *c.lock().unwrap() = true; });

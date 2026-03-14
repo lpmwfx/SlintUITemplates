@@ -12,6 +12,7 @@ const DWMSBT_NONE: i32         = 1; // no backdrop (Solid)
 const DWMSBT_MAINWINDOW: i32   = 2; // Mica
 const DWMSBT_TRANSIENTWINDOW: i32 = 3; // Acrylic
 
+/// Applies a Windows 11 DWM system backdrop (Mica, Acrylic, or Solid) to the given window.
 pub fn apply_backdrop(window: &slint::Window, style: BgStyle) {
     window.with_winit_window(|w| {
         let hwnd: HWND = match w.window_handle().map(|h| h.as_raw()) {
@@ -19,10 +20,11 @@ pub fn apply_backdrop(window: &slint::Window, style: BgStyle) {
             _ => return,
         };
 
+        // SAFETY: hwnd is a valid Win32 window handle extracted from the WinIT
+        // backend above. Both DwmExtendFrameIntoClientArea and DwmSetWindowAttribute
+        // accept any valid HWND and return HRESULT error codes on failure (which we
+        // discard), so no undefined behavior can occur.
         unsafe {
-            // SAFETY: `hwnd` is a valid window handle obtained from the WinIT backend
-            // above. DWM functions accept any valid HWND and return error codes on
-            // failure (which we discard with `let _ =`), so no UB can occur.
             // Extend DWM non-client frame into the entire client area.
             // Required for client-area backdrop to show through.
             let margins = MARGINS {

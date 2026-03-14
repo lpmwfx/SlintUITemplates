@@ -6,7 +6,7 @@
 ///
 /// This is the Rust owner of all layout math. Slint is pure render.
 
-use super::constraints::Constraint;
+use crate::layout::constraints::Constraint;
 
 /// Tolerance for floating-point ratio sum checks.
 const RATIO_EPSILON: f32 = 0.001;
@@ -20,10 +20,12 @@ pub struct Panel {
 }
 
 impl Panel {
+    /// Create a panel with the given id and initial ratio, using default constraints.
     pub fn new(id: impl Into<String>, ratio: f32) -> Self {
         Self { id: id.into(), ratio, constraint: Constraint::default() }
     }
 
+    /// Set custom min/max ratio constraints on this panel (builder pattern).
     pub fn with_constraint(mut self, min: f32, max: f32) -> Self {
         self.constraint = Constraint::new(min, max);
         self

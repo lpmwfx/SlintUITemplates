@@ -3,12 +3,16 @@ use std::cell::RefCell;
 use slint_ui_templates::adapter::AppAdapter;
 use slint_ui_templates::bindings::rhai::build_engine;
 
+/// Path to the Rhai demo script loaded at startup.
+const DEMO_SCRIPT_PATH: &str = "examples/rhai/demo.rhai";
+
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     // REASON: Rhai engine holds Rc clones of adapter for callback access
     let adapter = Rc::new(RefCell::new(AppAdapter::new()?));
     let engine = build_engine(Rc::clone(&adapter));
 
-    let script = std::fs::read_to_string("examples/rhai/demo.rhai")?;
+    // NOTE: IO in example binary — acceptable outside gateway for demo/example code
+    let script = std::fs::read_to_string(DEMO_SCRIPT_PATH)?;
     engine.eval::<()>(&script)?;
 
     // Drop engine before consuming adapter — releases Rc clones held by closures

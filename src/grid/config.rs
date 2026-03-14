@@ -1,12 +1,14 @@
 use serde::Deserialize;
 use std::path::Path;
 
+/// Top-level configuration for a deployment target (e.g. desktop, tablet).
 #[derive(Debug, Deserialize)]
 pub struct TargetConfig {
     pub target: TargetInfo,
     pub grid: GridConfig,
 }
 
+/// Metadata describing a target's name, screen class, and interaction model.
 #[derive(Debug, Deserialize)]
 pub struct TargetInfo {
     pub name: String,
@@ -14,11 +16,13 @@ pub struct TargetInfo {
     pub interaction: String,
 }
 
+/// Grid layout definition containing the ordered list of row configurations.
 #[derive(Debug, Deserialize)]
 pub struct GridConfig {
     pub rows: Vec<RowConfig>,
 }
 
+/// Configuration for a single grid row, optionally fixed or subdivided into columns.
 #[derive(Debug, Deserialize)]
 pub struct RowConfig {
     pub name: String,
@@ -28,6 +32,7 @@ pub struct RowConfig {
     pub columns: Vec<ColumnConfig>,
 }
 
+/// Configuration for a single column within a grid row.
 #[derive(Debug, Deserialize)]
 pub struct ColumnConfig {
     pub name: String,
@@ -35,6 +40,7 @@ pub struct ColumnConfig {
 }
 
 impl TargetConfig {
+    /// Reads and deserializes a target configuration from a TOML file.
     pub fn load(path: &Path) -> Result<Self, Box<dyn std::error::Error>> {
         let content = std::fs::read_to_string(path)?;
         let config: TargetConfig = toml::from_str(&content)?;

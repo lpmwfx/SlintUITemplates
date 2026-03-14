@@ -10,9 +10,11 @@
 //   "1/1"          → two rows, equal height
 //   "1:2/1:1:1"    → left(1) | center[top(2)/bottom(1:1)] | right(1)
 
+/// Direction of a layout split: horizontal (columns) or vertical (rows).
 #[derive(Debug, Clone)]
 pub enum SplitDir { H, V }
 
+/// A recursive tree node representing either a leaf panel or a split container.
 #[derive(Debug, Clone)]
 pub enum PanelNode {
     Leaf { ratio: f32 },
@@ -20,6 +22,7 @@ pub enum PanelNode {
 }
 
 impl PanelNode {
+    /// Return the ratio weight of this node, whether leaf or split.
     pub fn ratio(&self) -> f32 {
         match self {
             PanelNode::Leaf { ratio } => *ratio,

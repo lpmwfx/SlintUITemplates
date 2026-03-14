@@ -1,7 +1,12 @@
+/// Ratio-space min/max constraints for panel sizing.
 pub mod constraints;
+/// DSL v2 parser with named slot declarations.
 pub mod dsl_v2;
+/// DSL v1 parser that converts layout strings into a `PanelNode` tree.
 pub mod parser;
+/// Bi-directional ratio solver for interactive panel resizing.
 pub mod ratio_solver;
+/// Flattens a `PanelNode` tree into positioned `SolvedItem` rectangles.
 pub mod solver;
 
 pub use parser::parse;

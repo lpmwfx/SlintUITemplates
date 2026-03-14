@@ -21,7 +21,9 @@
 //!     .expect("invalid DSL configuration");
 //! ```
 
+/// Applies a validated `AppDsl` configuration to a live Slint window.
 pub mod apply;
+/// Fluent icon name-to-codepoint registry used for icon resolution.
 pub mod icons;
 
 use icons::fluent_icon;
@@ -65,6 +67,7 @@ pub struct Nav {
 }
 
 impl Nav {
+    /// Create a navigation item with the given id, display label, and icon name.
     pub fn new(
         id:    impl Into<String>,
         label: impl Into<String>,
@@ -83,6 +86,7 @@ pub struct Toolbar {
 }
 
 impl Toolbar {
+    /// Create a toolbar button with the given id, icon name, and tooltip text.
     pub fn new(
         id:      impl Into<String>,
         icon:    impl Into<String>,
@@ -140,6 +144,7 @@ impl std::fmt::Display for DslError {
 
 // ── Resolved internal types ───────────────────────────────────────────────────
 
+/// Nav item after icon-name resolution — holds the resolved codepoint string.
 #[derive(Debug, Clone)]
 pub(crate) struct ResolvedNav {
     pub id:        String,
@@ -147,6 +152,7 @@ pub(crate) struct ResolvedNav {
     pub icon_code: String,
 }
 
+/// Toolbar item after icon-name resolution — holds the resolved codepoint string.
 #[derive(Debug, Clone)]
 pub(crate) struct ResolvedToolbar {
     pub id:        String,
@@ -179,6 +185,7 @@ const NAV_MAX_MOBILE: usize = 5;
 /// Maximum nav items allowed on desktop platforms (Windows/macOS/Linux).
 const NAV_MAX_DESKTOP: usize = 7;
 
+/// Fluent builder for constructing a validated `AppDsl` configuration.
 pub struct AppDslBuilder {
     title:       String,
     platform:    Platform,
@@ -191,6 +198,7 @@ pub struct AppDslBuilder {
 }
 
 impl AppDsl {
+    /// Start building a new DSL configuration with the given window title.
     pub fn builder(title: impl Into<String>) -> AppDslBuilder {
         AppDslBuilder {
             title:       title.into(),
@@ -206,26 +214,31 @@ impl AppDsl {
 }
 
 impl AppDslBuilder {
+    /// Set the target platform (affects nav-item limits and layout rules).
     pub fn platform(mut self, p: Platform) -> Self {
         self.platform = p;
         self
     }
 
+    /// Set the sidebar navigation items (validated at `build()` time).
     pub fn nav(mut self, items: Vec<Nav>) -> Self {
         self.nav = items;
         self
     }
 
+    /// Set the initial status-bar text (defaults to "Ready").
     pub fn status(mut self, text: impl Into<String>) -> Self {
         self.status = text.into();
         self
     }
 
+    /// Set the toolbar icon buttons (validated at `build()` time).
     pub fn toolbar(mut self, items: Vec<Toolbar>) -> Self {
         self.toolbar = items;
         self
     }
 
+    /// Set the initial window dimensions in logical pixels.
     pub fn window_size(mut self, width: u32, height: u32) -> Self {
         self.window_size = Some((width, height));
         self

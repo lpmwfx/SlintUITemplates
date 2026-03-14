@@ -8,6 +8,7 @@ const RATIO_MIN: f32 = 0.05;
 /// Maximum ratio — 95% of container.
 const RATIO_MAX: f32 = 0.95;
 
+/// Ratio-space min/max constraint that bounds a panel's resizable range.
 #[derive(Debug, Clone, PartialEq)]
 pub struct Constraint {
     pub min: f32,
@@ -15,6 +16,7 @@ pub struct Constraint {
 }
 
 impl Constraint {
+    /// Create a constraint with the given min and max ratio bounds.
     pub fn new(min: f32, max: f32) -> Self {
         assert!(min >= 0.0, "min must be >= 0");
         assert!(max <= 1.0, "max must be <= 1");
@@ -22,6 +24,7 @@ impl Constraint {
         Self { min, max }
     }
 
+    /// Clamp a ratio value to the `[min, max]` range.
     pub fn clamp(&self, ratio: f32) -> f32 {
         ratio.clamp(self.min, self.max)
     }

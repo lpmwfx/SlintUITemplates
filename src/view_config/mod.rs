@@ -29,7 +29,8 @@ const TOOLBAR_MAX_FIELDS: usize = 3;
 
 use crate::AppWindow;
 use crate::ShellToolbarItem;
-use crate::dsl::{Toolbar, icons::fluent_icon};
+use crate::dsl::Toolbar;
+use crate::dsl::icons::fluent_icon;
 
 /// Per-view shell chrome configuration.
 /// `None` / empty = "don't override the DSL value".
@@ -45,10 +46,11 @@ pub struct ViewConfig {
 
 /// Evaluate a Rhai script string and return a `ViewConfig`.
 pub fn eval_script(script: &str) -> Result<ViewConfig, Box<dyn Error>> {
+    // REASON: Multiple Rhai closures (view_status + view_toolbar) need shared access to cfg
     let cfg = Rc::new(RefCell::new(ViewConfig::default()));
 
     // Scope the engine so its captured Rc clones are released before try_unwrap.
-    let result = {
+    let result_eval = {
         let mut engine = Engine::new();
 
         let c = Rc::clone(&cfg);
@@ -74,7 +76,7 @@ pub fn eval_script(script: &str) -> Result<ViewConfig, Box<dyn Error>> {
         // engine dropped here → Rc refcounts return to 1
     };
 
-    result?;
+    result_eval?;
     let cfg = Rc::try_unwrap(cfg)
         .map_err(|_| "ViewConfig Rc still has multiple owners")?;
     Ok(cfg.into_inner())
@@ -127,6 +129,7 @@ pub fn apply(ui: &AppWindow, cfg: &ViewConfig) {
                 tooltip: t.tooltip.clone().into(),
             })
         }).collect();
+        // REASON: Slint VecModel requires Rc for shared ownership with the UI runtime
         ui.set_toolbar_items(Rc::new(VecModel::from(items)).into());
         ui.set_show_toolbar(true);
     }

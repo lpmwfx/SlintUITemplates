@@ -1,3 +1,4 @@
+/// Rhai-to-AppAdapter function bindings registered on the scripting engine.
 pub mod api;
 pub use api::register;
 

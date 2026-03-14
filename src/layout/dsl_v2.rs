@@ -11,7 +11,7 @@
 ///
 /// Returns a Vec<NamedPanel> in left-to-right / top-to-bottom order.
 
-use super::ratio_solver::{Panel, normalize};
+use crate::layout::ratio_solver::{Panel, normalize};
 
 /// A parsed named panel with resolved ratio.
 #[derive(Debug, Clone)]
@@ -21,6 +21,7 @@ pub struct NamedPanel {
     pub dir:   SplitDir,
 }
 
+/// Direction of a named-slot split: horizontal (columns) or vertical (rows).
 #[derive(Debug, Clone, PartialEq)]
 pub enum SplitDir { H, V }
 

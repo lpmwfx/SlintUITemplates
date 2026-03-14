@@ -1,8 +1,10 @@
+/// Applies loaded settings to the live Slint UI globals.
 pub mod apply;
 
 use serde::{Deserialize, Serialize};
 use std::path::Path;
 
+/// Top-level application settings loaded from a TOML configuration file.
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct AppSettings {
     #[serde(default)]
@@ -15,11 +17,13 @@ pub struct AppSettings {
     pub font: FontSettings,
 }
 
+/// UI zoom / DPI-scale configuration.
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct ZoomSettings {
     pub scale: f32,
 }
 
+/// Light, dark, or system-detected colour-scheme selection.
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
 #[serde(rename_all = "lowercase")]
 pub enum ThemeMode {
@@ -28,6 +32,7 @@ pub enum ThemeMode {
     Dark,
 }
 
+/// Theme configuration: colour-scheme mode and optional accent override.
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct ThemeSettings {
     pub mode: ThemeMode,
@@ -35,6 +40,7 @@ pub struct ThemeSettings {
     pub accent: Option<String>,
 }
 
+/// Filled or outlined icon variant for the Fluent icon set.
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
 #[serde(rename_all = "lowercase")]
 pub enum IconStyle {
@@ -42,6 +48,7 @@ pub enum IconStyle {
     Outlined,
 }
 
+/// Icon appearance configuration: style variant and colour strategy.
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct IconSettings {
     pub style: IconStyle,
@@ -61,6 +68,7 @@ impl IconStyle {
 }
 
 impl IconSettings {
+    /// Returns the icon style as a lowercase string slice (`"filled"` or `"outlined"`).
     pub fn style_str(&self) -> &'static str {
         match self.style {
             IconStyle::Filled   => "filled",
@@ -69,6 +77,7 @@ impl IconSettings {
     }
 }
 
+/// Font family and scale configuration.
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct FontSettings {
     /// None = platform default; Some = system font family name
@@ -109,6 +118,7 @@ impl Default for FontSettings {
 // --- Load / Save ---
 
 impl AppSettings {
+    /// Deserializes settings from a TOML file at the given path.
     pub fn from_file(path: &Path) -> Result<Self, Box<dyn std::error::Error>> {
         let text = std::fs::read_to_string(path)?;
         Ok(toml::from_str(&text)?)
@@ -119,6 +129,7 @@ impl AppSettings {
         Self::from_file(path).unwrap_or_default()
     }
 
+    /// Serializes settings to a TOML file, creating parent directories if needed.
     pub fn to_file(&self, path: &Path) -> Result<(), Box<dyn std::error::Error>> {
         if let Some(parent) = path.parent() {
             std::fs::create_dir_all(parent)?;
