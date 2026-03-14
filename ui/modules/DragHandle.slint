@@ -1,35 +1,26 @@
-import { Colors } from "../tokens/theme.slint";
+import { Colors, Spacing, Sizes } from "../tokens/theme.slint";
 
 // Drag handle between panels.
 // vertical=false → column handle (col-resize cursor, reports dx)
 // vertical=true  → row handle    (row-resize cursor, reports dy)
 // Sizing is fully controlled by the parent — no preferred-width/height defaults.
+//
+// dragged(dx, dy)  — cumulative offset from press point (logical px).
+// drag-started()   — fires on BOTH mouse-press AND release so callers can
+//                    capture and re-anchor their drag-base value each time.
 export component DragHandle inherits Rectangle {
     in property <bool> vertical: false;
-    callback dragged(float, float);    // dx, dy in logical px (while dragging)
-    callback drag-end(float, float);   // dx, dy in logical px (on release)
+    callback dragged(float, float);  // cumulative dx, dy from press point (logical px)
+    callback drag-started();         // fires on press and on release
 
     background: touch.has-hover ? Colors.accent : Colors.border;
 
     touch := TouchArea {
-        preferred-width: 100%;
-        preferred-height: 100%;
         mouse-cursor: vertical ? row-resize : col-resize;
-
-        moved => {
-            root.dragged(
-                vertical ? 0.0 : (self.mouse-x - self.pressed-x) / 1px,
-                vertical ? (self.mouse-y - self.pressed-y) / 1px : 0.0,
-            );
-        }
-
-        pointer-event(e) => {
-            if e.kind == PointerEventKind.up {
-                root.drag-end(
-                    vertical ? 0.0 : (self.mouse-x - self.pressed-x) / 1px,
-                    vertical ? (self.mouse-y - self.pressed-y) / 1px : 0.0,
-                );
-            }
-        }
+        moved => { root.dragged(vertical ? Sizes.no-fill : (self.mouse-x - self.pressed-x) / Spacing.border, vertical ? (self.mouse-y - self.pressed-y) / Spacing.border : Sizes.no-fill); }
     }
+
+    // Fires when touch.pressed flips (on press and on release).
+    // Caller resets drag-base-width to current col-left-width each time.
+    changed touch.pressed => { root.drag-started(); }
 }

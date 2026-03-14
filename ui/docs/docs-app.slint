@@ -20,6 +20,8 @@ export component DocsApp inherits Window {
     in property <string>             menu-theme-label: "Theme";
     preferred-width:  Sizes.docs-window-width;
     preferred-height: Sizes.docs-window-height;
+    min-width:        Sizes.docs-window-min-width;
+    min-height:       Sizes.docs-window-min-height;
     title:            root.window-title;
     background:       Colors.bg-primary;
     default-font-family: Settings.font-family;
@@ -38,6 +40,8 @@ export component DocsApp inherits Window {
 
     property <length> sidebar-expanded-width:  Spacing.xl * 4 + Spacing.md;
     property <length> sidebar-collapsed-width: Spacing.xl + Spacing.sm;
+    // Captures col-left-width at drag-start so drag-sidebar can use cumulative dx correctly.
+    private property <length> drag-base-width: Spacing.xl * 4 + Spacing.md;
 
     // Keep col-left-width in sync when sidebar collapses/expands via toggle
     changed sidebar-collapsed => {
@@ -52,8 +56,13 @@ export component DocsApp inherits Window {
     callback request-bg-style(string);
     callback toggle-group(string);   // Rust-siden håndterer hidden-toggle på nav-items
     callback drag-sidebar(dx: float);
+    callback drag-anchor();   // called by DragHandle on press+release to re-anchor drag-base-width
 
-    drag-sidebar(dx) => { root.col-left-width = max(root.col-left-width + dx * Spacing.border, root.sidebar-collapsed-width); }
+    // Anchor: capture current col-left-width as the drag baseline.
+    drag-anchor() => { root.drag-base-width = root.col-left-width; }
+
+    // DragHandle reports cumulative dx from press point — compute from anchor, not current width.
+    drag-sidebar(dx) => { root.col-left-width = clamp(root.drag-base-width + dx * Spacing.border, root.sidebar-collapsed-width, root.width - Sizes.docs-content-min-width); }
 
     navigate(id) => { root.active-view = id; }
 
@@ -100,10 +109,11 @@ export component DocsApp inherits Window {
             }
 
             DragHandle {
-                min-width: Spacing.handle-thickness;
-                max-width: Spacing.handle-thickness;
-                vertical:  false;
-                dragged(dx, _dy) => { root.drag-sidebar(dx); }
+                min-width:    Spacing.handle-thickness;
+                max-width:    Spacing.handle-thickness;
+                vertical:     false;
+                dragged(dx, _dy)  => { root.drag-sidebar(dx); }
+                drag-started()    => { root.drag-anchor(); }
             }
 
             // Content pane — the library's MarkdownView widget
