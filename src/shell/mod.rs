@@ -5,7 +5,6 @@ pub use platform::Platform;
 /// Slint VecModel builders for ShellConfig (nav_model, toolbar_model).
 pub mod models;
 
-use crate::{NavItem, ShellToolbarItem};
 
 /// Rust-side navigation item matching the Slint NavItem struct.
 #[derive(Debug, Clone)]
