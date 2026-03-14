@@ -12,19 +12,18 @@ export component SideBarRow inherits Rectangle {
 
     height:     item.hidden ? Spacing.none : Spacing.xl;
     clip:       true;
-    background: is-active           ? Colors.bg-elevated :
-                header-ta.has-hover ? Colors.bg-elevated :
-                item-ta.has-hover   ? Colors.bg-elevated :
-                item.is-header      ? Colors.bg-primary  : transparent;
+    background: is-active    ? Colors.bg-elevated :
+                ta.has-hover ? Colors.bg-elevated :
+                item.is-header ? Colors.bg-primary : transparent;
 
-    // Header touch area (only active when is-header)
-    if item.is-header: header-ta := TouchArea {
-        clicked => { root.toggle-group(item.id); }
+    // Always-present: hover detection + item navigation
+    ta := TouchArea {
+        clicked => { root.navigate(item.id); }
     }
 
-    // Item touch area (only active when not is-header)
-    if !item.is-header: item-ta := TouchArea {
-        clicked => { root.navigate(item.id); }
+    // Header overlay: intercepts clicks for collapsible group headers
+    if item.is-header: TouchArea {
+        clicked => { root.toggle-group(item.id); }
     }
 
     HorizontalLayout {
