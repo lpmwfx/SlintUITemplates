@@ -15,88 +15,12 @@
 //       }
 //   }
 
-import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Colors, Spacing } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
+import { ContextMenuContent } from "./ContextMenuContent.slint";
+import { ContextMenuItem } from "./ContextMenuEntry.slint";
 
-export struct ContextMenuItem {
-    id:         string,
-    label:      string,
-    icon:       string,
-    disabled:   bool,
-    separator:  bool,
-    keybinding: string,
-}
-
-// Private helper — keeps popup VerticalLayout at nesting depth ≤ 5.
-component ContextMenuEntry inherits Rectangle {
-    in property <ContextMenuItem> item;
-    callback activated(string);
-
-    height: item.separator ? Spacing.xs : Spacing.xl;
-
-    // Separator line
-    if item.separator: Rectangle {
-        y: Spacing.xs / 2;
-        width: parent.width;
-        height: 1px;
-        background: Colors.border;
-    }
-
-    // Item row
-    if !item.separator: Rectangle {
-        border-radius: Spacing.xs;
-        background: !item.disabled && row-ta.has-hover ? Colors.bg-surface : transparent;
-        opacity: item.disabled ? 0.5 : 1.0;
-
-        HorizontalLayout {
-            padding-left: Spacing.sm;
-            padding-right: Spacing.sm;
-            spacing: Spacing.sm;
-            if item.icon != "": Text {
-                text: item.icon;
-                font-family: "Segoe Fluent Icons";
-                font-size: Type.body-size;
-                color: Colors.text-secondary;
-                vertical-alignment: center;
-            }
-            Text {
-                text: item.label;
-                font-size: Type.body-size;
-                color: item.disabled ? Colors.text-disabled : Colors.text-primary;
-                vertical-alignment: center;
-                horizontal-stretch: 1;
-            }
-            if item.keybinding != "": Text {
-                text: item.keybinding;
-                font-size: Type.caption-size;
-                color: Colors.text-disabled;
-                vertical-alignment: center;
-            }
-        }
-
-        row-ta := TouchArea {
-            enabled: !item.disabled;
-            clicked => { root.activated(root.item.id); }
-        }
-    }
-}
-
-// Scrollable content list — keeps Flickable + for-loop within nesting limits.
-component ContextMenuContent inherits Flickable {
-    in property <[ContextMenuItem]> items;
-    in property <length> content-height;
-    callback activated(string);
-
-    viewport-width: self.width;
-    viewport-height: root.content-height;
-
-    VerticalLayout {
-        padding: Spacing.xs;
-        for item in root.items: ContextMenuEntry {
-            item: item;
-            activated(id) => { root.activated(id); }
-        }
-    }
-}
+export { ContextMenuItem }
 
 export component ContextMenu inherits Rectangle {
     in property <[ContextMenuItem]> items: [];
@@ -105,22 +29,22 @@ export component ContextMenu inherits Rectangle {
 
     callback activated(string);
 
-    private property <length> pop-x: 0;
-    private property <length> pop-y: 0;
-    private property <length> popup-w: 260px;
+    private property <length> pop-x: Sizes.no-size;
+    private property <length> pop-y: Sizes.no-size;
+    private property <length> popup-w: Sizes.comp-260;
     private property <length> est-popup-h:
         (items.length - root.separator-count) * Spacing.xl
         + root.separator-count * Spacing.xs
-        + Spacing.sm * 2;
+        + Spacing.sm * Sizes.two;
     // Visible height: capped so the popup never exceeds the window.
     // Content scrolls inside via Flickable when est-popup-h > popup-h.
     private property <length> popup-h:
-        root.window-height > 0px && root.est-popup-h > root.window-height - Spacing.md * 2
-            ? root.window-height - Spacing.md * 2
+        root.window-height > Sizes.no-size && root.est-popup-h > root.window-height - Spacing.md * Sizes.two
+            ? root.window-height - Spacing.md * Sizes.two
             : root.est-popup-h;
 
-    width: 0;
-    height: 0;
+    width: Sizes.no-size;
+    height: Sizes.no-size;
     background: transparent;
 
     popup := PopupWindow {
@@ -132,7 +56,7 @@ export component ContextMenu inherits Rectangle {
         Rectangle {
             background: Colors.bg-elevated;
             border-radius: Spacing.xs;
-            border-width: 1px;
+            border-width: Sizes.border-w;
             border-color: Colors.border;
             drop-shadow-blur: Spacing.sm;
             drop-shadow-color: Colors.shadow;
@@ -153,10 +77,10 @@ export component ContextMenu inherits Rectangle {
     // absolute-position.y converts element-y to window-y for overflow detection.
     public function show-at(xp: length, yp: length) {
         root.pop-x = xp;
-        if root.window-height > 0px
+        if root.window-height > Sizes.no-size
                 && root.absolute-position.y + yp + root.popup-h > root.window-height {
             root.pop-y = yp - root.popup-h;
-            if root.absolute-position.y + root.pop-y < 0px {
+            if root.absolute-position.y + root.pop-y < Sizes.no-size {
                 root.pop-y = -root.absolute-position.y;
             }
         } else {

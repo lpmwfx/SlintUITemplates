@@ -1,6 +1,7 @@
 // page-selection — Checkbox, RadioGroup, Slider, SpinBox, Rating
 
 import { Spacing } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
 import { Checkbox }   from "../shared/checkbox.slint";
 import { RadioGroup } from "../shared/radio.slint";
 import { Slider }     from "../shared/slider.slint";
@@ -14,20 +15,41 @@ export component PageSelection inherits VerticalLayout {
     private property <bool>   cb-checked: false;
     private property <bool>   cb-indet: true;
     private property <string> radio-val: "Option B";
-    private property <float>  slider-val: 0.4;
+    private property <float>  slider-val: Sizes.ratio-md;
     private property <int>    spin-val: 42;
-    private property <int>    rating-val: 3;
+    private property <int>    rating-val: Sizes.three;
+
+    // ── private integer tokens ──────────────────────────────────────────
+    private property <int> spinbox-max: 999;
+
+    // ── demo labels ─────────────────────────────────────────────────────
+    private property <string> section-checkbox: "Checkbox";
+    private property <string> section-radiogroup: "RadioGroup";
+    private property <string> section-slider: "Slider";
+    private property <string> section-spinbox: "SpinBox";
+    private property <string> section-rating: "Rating";
+    private property <string> cb-unchecked-label: "Unchecked";
+    private property <string> cb-checked-label: "Checked";
+    private property <string> cb-indet-label: "Indeterminate";
+    private property <string> cb-disabled-label: "Disabled";
+    private property <string> cb-live-checked: "Checked (live)";
+    private property <string> cb-live-unchecked: "Unchecked (live)";
+    private property <string> slider-no-val: "No value display";
+    private property <string> slider-live: "Live slider";
+    private property <string> slider-disabled: "Disabled";
+    private property <string> spinbox-label: "Quantity";
+    private property <string> spinbox-disabled: "Disabled";
 
     ViewerSection {
-        title: "Checkbox";
+        title: root.section-checkbox;
         VerticalLayout {
             spacing: Spacing.sm;
-            Checkbox { label: "Unchecked"; checked: false; }
-            Checkbox { label: "Checked"; checked: true; }
-            Checkbox { label: "Indeterminate"; indeterminate: true; }
-            Checkbox { label: "Disabled"; checked: true; enabled: false; }
+            Checkbox { label: root.cb-unchecked-label; checked: false; }
+            Checkbox { label: root.cb-checked-label; checked: true; }
+            Checkbox { label: root.cb-indet-label; indeterminate: true; }
+            Checkbox { label: root.cb-disabled-label; checked: true; enabled: false; }
             Checkbox {
-                label: cb-checked ? "Checked (live)" : "Unchecked (live)";
+                label: cb-checked ? root.cb-live-checked : root.cb-live-unchecked;
                 checked: cb-checked;
                 toggled(v) => { cb-checked = v; }
             }
@@ -35,7 +57,7 @@ export component PageSelection inherits VerticalLayout {
     }
 
     ViewerSection {
-        title: "RadioGroup";
+        title: root.section-radiogroup;
         RadioGroup {
             options: ["Option A", "Option B", "Option C"];
             value: radio-val;
@@ -44,38 +66,38 @@ export component PageSelection inherits VerticalLayout {
     }
 
     ViewerSection {
-        title: "Slider";
+        title: root.section-slider;
         VerticalLayout {
             spacing: Spacing.sm;
-            width: 280px;
-            Slider { value: 0.25; label: "No value display"; }
+            width: Sizes.panel-lg;
+            Slider { value: Sizes.quarter; label: root.slider-no-val; }
             Slider {
                 value: slider-val;
-                label: "Live slider";
+                label: root.slider-live;
                 show-value: true;
                 changed(v) => { slider-val = v; }
             }
-            Slider { value: 0.75; enabled: false; label: "Disabled"; }
+            Slider { value: Sizes.three-quarter; enabled: false; label: root.slider-disabled; }
         }
     }
 
     ViewerSection {
-        title: "SpinBox";
+        title: root.section-spinbox;
         VerticalLayout {
             spacing: Spacing.sm;
-            width: 180px;
-            SpinBox { label: "Quantity"; value: spin-val; min: 0; max: 999; changed(v) => { spin-val = v; } }
-            SpinBox { value: 5; min: 1; max: 10; enabled: false; label: "Disabled"; }
+            width: Sizes.panel-xs;
+            SpinBox { label: root.spinbox-label; value: spin-val; min: Sizes.zero; max: root.spinbox-max; changed(v) => { spin-val = v; } }
+            SpinBox { value: Sizes.five; min: Sizes.one; max: Sizes.ten; enabled: false; label: root.spinbox-disabled; }
         }
     }
 
     ViewerSection {
-        title: "Rating";
+        title: root.section-rating;
         VerticalLayout {
             spacing: Spacing.sm;
             Rating { value: rating-val; changed(v) => { rating-val = v; } }
-            Rating { value: 4; readonly: true; }
-            Rating { value: 2; max: 3; }
+            Rating { value: Sizes.four; readonly: true; }
+            Rating { value: Sizes.two; max: Sizes.three; }
         }
     }
 }
