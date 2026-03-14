@@ -1,0 +1,68 @@
+{
+  "source": "ui/shell/app-shell.slint",
+  "items": [
+    {
+      "name": "AppShell",
+      "kind": "component",
+      "signature": "export component AppShell inherits Rectangle",
+      "line": 10,
+      "doc": ""
+    },
+    {
+      "name": "nav-items",
+      "kind": "property",
+      "signature": "in property <[NavItem]>          nav-items;",
+      "line": 11,
+      "doc": ""
+    },
+    {
+      "name": "active-slot",
+      "kind": "property",
+      "signature": "in property <string>             active-slot;",
+      "line": 12,
+      "doc": ""
+    },
+    {
+      "name": "show-toolbar",
+      "kind": "property",
+      "signature": "in property <bool>               show-toolbar:  false;",
+      "line": 13,
+      "doc": ""
+    },
+    {
+      "name": "toolbar-items",
+      "kind": "property",
+      "signature": "in property <[ShellToolbarItem]> toolbar-items;",
+      "line": 14,
+      "doc": ""
+    },
+    {
+      "name": "status-text",
+      "kind": "property",
+      "signature": "in property <string>             status-text:   \"Ready\";",
+      "line": 15,
+      "doc": ""
+    },
+    {
+      "name": "progress",
+      "kind": "property",
+      "signature": "in property <float>              progress:      -1.0;",
+      "line": 16,
+      "doc": ""
+    },
+    {
+      "name": "slot-changed",
+      "kind": "callback",
+      "signature": "callback slot-changed(string);",
+      "line": 18,
+      "doc": ""
+    },
+    {
+      "name": "toolbar-clicked",
+      "kind": "callback",
+      "signature": "callback toolbar-clicked(string);",
+      "line": 19,
+      "doc": ""
+    }
+  ]
+}

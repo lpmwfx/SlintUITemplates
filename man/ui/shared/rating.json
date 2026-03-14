@@ -1,0 +1,47 @@
+{
+  "source": "ui/shared/rating.slint",
+  "items": [
+    {
+      "name": "Rating",
+      "kind": "component",
+      "signature": "export component Rating inherits Rectangle",
+      "line": 3,
+      "doc": ""
+    },
+    {
+      "name": "value",
+      "kind": "property",
+      "signature": "in-out property <int> value: 0;",
+      "line": 4,
+      "doc": ""
+    },
+    {
+      "name": "max",
+      "kind": "property",
+      "signature": "in property <int>  max: 5;",
+      "line": 5,
+      "doc": ""
+    },
+    {
+      "name": "readonly",
+      "kind": "property",
+      "signature": "in property <bool> readonly: false;",
+      "line": 6,
+      "doc": ""
+    },
+    {
+      "name": "changed",
+      "kind": "callback",
+      "signature": "callback changed(int);",
+      "line": 7,
+      "doc": ""
+    },
+    {
+      "name": "hover-val",
+      "kind": "property",
+      "signature": "private property <int> hover-val: 0;",
+      "line": 9,
+      "doc": ""
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "source": "src/layout/constraints.rs",
+  "items": [
+    {
+      "name": "Constraint",
+      "kind": "struct",
+      "signature": "pub struct Constraint",
+      "line": 7,
+      "doc": ""
+    },
+    {
+      "name": "new",
+      "kind": "fn",
+      "signature": "pub fn new(min: f32, max: f32) -> Self",
+      "line": 13,
+      "doc": ""
+    },
+    {
+      "name": "clamp",
+      "kind": "fn",
+      "signature": "pub fn clamp(&self, ratio: f32) -> f32",
+      "line": 20,
+      "doc": ""
+    }
+  ]
+}

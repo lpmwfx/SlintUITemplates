@@ -9,6 +9,10 @@
 use pulldown_cmark::{Event, HeadingLevel, Options, Parser, Tag, TagEnd};
 use crate::DocBlock;
 
+/// Well-known doc block kinds used as discriminators.
+const DOC_KIND_HR: &str = "hr";
+const DOC_KIND_CODE: &str = "code";
+
 /// Parse a CommonMark string into a flat list of [`DocBlock`] items.
 ///
 /// Supported block types:
@@ -34,14 +38,14 @@ pub fn parse(input: &str) -> Vec<DocBlock> {
     let mut bq_buf  = String::new();
 
     // Table accumulation
-    let mut in_table_head = false;
+    let mut is_table_head = false;
     let mut in_table_row  = false;
     let mut row_cells: Vec<String> = Vec::new();
     let mut cell_buf = String::new();
 
     fn push(blocks: &mut Vec<DocBlock>, kind: &str, text: String, indent: i32) {
         let t = text.trim().to_string();
-        if !t.is_empty() || kind == "hr" {
+        if !t.is_empty() || kind == DOC_KIND_HR {
             blocks.push(DocBlock { kind: kind.into(), text: t.into(), indent });
         }
     }
@@ -117,15 +121,15 @@ pub fn parse(input: &str) -> Vec<DocBlock> {
             // ── Tables ────────────────────────────────────────────────────────
             Event::Start(Tag::Table(_)) | Event::End(TagEnd::Table) => {}
 
-            Event::Start(Tag::TableHead) => { in_table_head = true; row_cells.clear(); }
+            Event::Start(Tag::TableHead) => { is_table_head = true; row_cells.clear(); }
             Event::End(TagEnd::TableHead) => {
                 push(&mut blocks, "th", row_cells.join(" │ "), 0);
-                in_table_head = false;
+                is_table_head = false;
             }
 
             Event::Start(Tag::TableRow) => { in_table_row = true; row_cells.clear(); }
             Event::End(TagEnd::TableRow) => {
-                if !in_table_head {
+                if !is_table_head {
                     push(&mut blocks, "tr", row_cells.join(" │ "), 0);
                 }
                 in_table_row = false;
@@ -143,18 +147,18 @@ pub fn parse(input: &str) -> Vec<DocBlock> {
 
             // ── Inline text ───────────────────────────────────────────────────
             Event::Text(t) => {
-                if in_table_row || in_table_head { cell_buf.push_str(&t); }
+                if in_table_row || is_table_head { cell_buf.push_str(&t); }
                 else if bq_depth > 0             { bq_buf.push_str(&t); }
                 else                             { text.push_str(&t); }
             }
             Event::Code(t) => {
                 let s = format!("`{t}`");
-                if in_table_row || in_table_head { cell_buf.push_str(&s); }
+                if in_table_row || is_table_head { cell_buf.push_str(&s); }
                 else if bq_depth > 0             { bq_buf.push_str(&s); }
                 else                             { text.push_str(&s); }
             }
             Event::SoftBreak => {
-                if kind == "code" { text.push('\n'); } else { text.push(' '); }
+                if kind == DOC_KIND_CODE { text.push('\n'); } else { text.push(' '); }
             }
             Event::HardBreak => { text.push('\n'); }
 

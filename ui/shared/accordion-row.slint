@@ -1,0 +1,80 @@
+import { Colors, Spacing, Type, FluentIcons } from "../tokens/theme.slint";
+
+export struct AccordionItem {
+    id:      string,
+    title:   string,
+    content: string,
+}
+
+export component AccordionRow inherits Rectangle {
+    in property <AccordionItem> item;
+    in property <bool>          expanded: false;
+    callback toggled(string);
+
+    private property <length>   border-px:    1px;
+    private property <length>   content-h:    Spacing.xl * 2;
+    private property <int>      stretch-full: 1;
+    private property <duration> anim-dur:     180ms;
+
+    border-width: border-px;
+    border-color: Colors.border;
+    border-radius: Spacing.xs;
+    background: Colors.bg-surface;
+    clip: true;
+    height: root.expanded
+        ? Spacing.xl + root.content-h
+        : Spacing.xl;
+
+    animate height { duration: root.anim-dur; easing: ease-in-out; }
+
+    VerticalLayout {
+        spacing: 0;
+
+        header := Rectangle {
+            height: Spacing.xl;
+            background: hdr-ta.has-hover ? Colors.bg-elevated : transparent;
+
+            HorizontalLayout {
+                padding-left: Spacing.sm;
+                padding-right: Spacing.sm;
+                spacing: Spacing.sm;
+
+                Text {
+                    text: root.expanded ? "\u{E70D}" : "\u{E76C}";
+                    font-family: FluentIcons.icon-font;
+                    font-size: Type.body-size;
+                    color: Colors.text-secondary;
+                    vertical-alignment: center;
+                }
+
+                Text {
+                    text: item.title;
+                    font-size: Type.body-size;
+                    font-weight: Type.weight-semibold;
+                    color: Colors.text-primary;
+                    vertical-alignment: center;
+                    horizontal-stretch: root.stretch-full;
+                }
+            }
+
+            hdr-ta := TouchArea {
+                clicked => { root.toggled(root.item.id); }
+            }
+        }
+
+        if root.expanded: Rectangle {
+            height: root.content-h;
+            background: Colors.bg-primary;
+
+            Text {
+                x: Spacing.md;
+                y: Spacing.sm;
+                width: parent.width - Spacing.md * 2;
+                text: item.content;
+                font-size: Type.body-size;
+                color: Colors.text-secondary;
+                wrap: word-wrap;
+            }
+        }
+    }
+}

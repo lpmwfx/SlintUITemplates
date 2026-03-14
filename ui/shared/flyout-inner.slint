@@ -1,0 +1,60 @@
+import { Colors, Spacing, Type, FluentIcons } from "../tokens/theme.slint";
+
+export component FlyoutInner inherits Rectangle {
+    in property <string> title: "";
+    in property <string> body: "";
+    callback closed();
+
+    private property <length> border-px: 1px;
+    private property <int>    h-stretch: 1;
+
+    background: Colors.bg-elevated;
+    border-radius: Spacing.sm;
+    border-width: root.border-px;
+    border-color: Colors.border;
+    drop-shadow-blur: Spacing.sm;
+    drop-shadow-color: Colors.shadow;
+
+    VerticalLayout {
+        padding: Spacing.md;
+        spacing: Spacing.sm;
+
+        HorizontalLayout {
+            if root.title != "": Text {
+                text: root.title;
+                font-size: Type.body-size;
+                font-weight: Type.weight-semibold;
+                color: Colors.text-primary;
+                horizontal-stretch: root.h-stretch;
+                vertical-alignment: center;
+            }
+
+            Rectangle {
+                width: Spacing.control-md;
+                height: Spacing.control-md;
+                border-radius: Spacing.xs;
+                background: close-ta.has-hover ? Colors.bg-surface : transparent;
+
+                Text { text: "\u{E711}";
+                    font-family: FluentIcons.icon-font;
+                    font-size: Type.caption-size;
+                    color: Colors.text-secondary;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+
+                close-ta := TouchArea {
+                    clicked => { root.closed(); }
+                }
+            }
+        }
+
+        if root.body != "": Text {
+            text: root.body;
+            font-size: Type.body-size;
+            color: Colors.text-secondary;
+            wrap: word-wrap;
+            horizontal-stretch: root.h-stretch;
+        }
+    }
+}

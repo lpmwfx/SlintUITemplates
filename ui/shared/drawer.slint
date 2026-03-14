@@ -1,0 +1,58 @@
+import { Colors, Spacing, FluentMotion } from "../tokens/theme.slint";
+import { DrawerHeader } from "drawer-header.slint";
+
+export component Drawer inherits Rectangle {
+    in property <bool>   open: false;
+    in property <string> placement: "left";    // left | right
+    in property <length> drawer-width: 280px;
+    in property <string> title: "";
+    callback close-requested();
+
+    private property <string> place-right: "right";
+    private property <length> border-px:   1px;
+    private property <length> zero-len:    0px;
+    private property <length> no-gap:      0px;
+    private property <duration> anim-dur:  200ms;
+    private property <length> panel-x:
+        placement == root.place-right
+            ? (open ? root.width - root.drawer-width : root.width)
+            : (open ? root.zero-len : -root.drawer-width);
+
+    animate panel-x { duration: root.anim-dur; easing: ease-out; }
+
+    clip: true;
+    background: transparent;
+
+    if root.open: Rectangle {
+        width: parent.width;
+        height: parent.height;
+        background: Colors.overlay;
+
+        TouchArea {
+            clicked => { root.close-requested(); }
+        }
+    }
+
+    panel := Rectangle {
+        x: root.panel-x;
+        width: root.drawer-width;
+        height: parent.height;
+        background: Colors.bg-elevated;
+        border-width: root.border-px;
+        border-color: Colors.border;
+        drop-shadow-blur: Spacing.md;
+        drop-shadow-color: Colors.shadow;
+        clip: true;
+
+        VerticalLayout {
+            spacing: root.no-gap;
+
+            DrawerHeader {
+                title: root.title;
+                close-requested => { root.close-requested(); }
+            }
+
+            @children
+        }
+    }
+}

@@ -1,0 +1,117 @@
+{
+  "source": "ui/shared/message-bar.slint",
+  "items": [
+    {
+      "name": "MessageBar",
+      "kind": "component",
+      "signature": "export component MessageBar inherits Rectangle",
+      "line": 3,
+      "doc": ""
+    },
+    {
+      "name": "message",
+      "kind": "property",
+      "signature": "in property <string> message: \"\";",
+      "line": 4,
+      "doc": ""
+    },
+    {
+      "name": "variant",
+      "kind": "property",
+      "signature": "in property <string> variant: \"info\";   // info | warning | error | success",
+      "line": 5,
+      "doc": ""
+    },
+    {
+      "name": "action-label",
+      "kind": "property",
+      "signature": "in property <string> action-label: \"\";",
+      "line": 6,
+      "doc": ""
+    },
+    {
+      "name": "closable",
+      "kind": "property",
+      "signature": "in property <bool>   closable: true;",
+      "line": 7,
+      "doc": ""
+    },
+    {
+      "name": "action",
+      "kind": "callback",
+      "signature": "callback action();",
+      "line": 8,
+      "doc": ""
+    },
+    {
+      "name": "closed",
+      "kind": "callback",
+      "signature": "callback closed();",
+      "line": 9,
+      "doc": ""
+    },
+    {
+      "name": "v-error",
+      "kind": "property",
+      "signature": "private property <string> v-error:   \"error\";",
+      "line": 11,
+      "doc": ""
+    },
+    {
+      "name": "v-warning",
+      "kind": "property",
+      "signature": "private property <string> v-warning: \"warning\";",
+      "line": 12,
+      "doc": ""
+    },
+    {
+      "name": "v-success",
+      "kind": "property",
+      "signature": "private property <string> v-success: \"success\";",
+      "line": 13,
+      "doc": ""
+    },
+    {
+      "name": "border-px",
+      "kind": "property",
+      "signature": "private property <length> border-px: 1px;",
+      "line": 14,
+      "doc": ""
+    },
+    {
+      "name": "bar-w",
+      "kind": "property",
+      "signature": "private property <length> bar-w:     3px;",
+      "line": 15,
+      "doc": ""
+    },
+    {
+      "name": "btn-shrink",
+      "kind": "property",
+      "signature": "private property <int>    btn-shrink: 0;",
+      "line": 16,
+      "doc": ""
+    },
+    {
+      "name": "text-grow",
+      "kind": "property",
+      "signature": "private property <int>    text-grow:  1;",
+      "line": 17,
+      "doc": ""
+    },
+    {
+      "name": "accent-color",
+      "kind": "property",
+      "signature": "private property <color> accent-color:",
+      "line": 18,
+      "doc": ""
+    },
+    {
+      "name": "icon-glyph",
+      "kind": "property",
+      "signature": "private property <string> icon-glyph:",
+      "line": 23,
+      "doc": ""
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "source": "ui/shared/drawer-header.slint",
+  "items": [
+    {
+      "name": "DrawerHeader",
+      "kind": "component",
+      "signature": "export component DrawerHeader inherits Rectangle",
+      "line": 3,
+      "doc": ""
+    },
+    {
+      "name": "title",
+      "kind": "property",
+      "signature": "in property <string> title: \"\";",
+      "line": 4,
+      "doc": ""
+    },
+    {
+      "name": "close-requested",
+      "kind": "callback",
+      "signature": "callback close-requested();",
+      "line": 5,
+      "doc": ""
+    },
+    {
+      "name": "border-px",
+      "kind": "property",
+      "signature": "private property <length> border-px:  1px;",
+      "line": 7,
+      "doc": ""
+    },
+    {
+      "name": "h-stretch",
+      "kind": "property",
+      "signature": "private property <int>    h-stretch:  1;",
+      "line": 8,
+      "doc": ""
+    }
+  ]
+}

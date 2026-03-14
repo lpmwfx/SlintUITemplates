@@ -1,0 +1,41 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Flyout } from "../shared/flyout.slint";
+
+export component PopupFlyoutDemo inherits Rectangle {
+    in property <length> window-height;
+
+    private property <length> demo-w:   160px;
+    private property <length> fly-w:    240px;
+    private property <length> fly-h:    130px;
+    private property <length> border-px: 1px;
+
+    height: Spacing.control-lg;
+    width: root.demo-w;
+
+    flyout := Flyout { window-height: root.window-height; popup-width: root.fly-w; popup-height: root.fly-h;
+        title:
+            "Flyout title";
+        body:
+            "This is a flyout. It can contain any descriptive content you need.";
+    }
+
+    btn := Rectangle {
+        width: parent.width;
+        height: parent.height;
+        border-radius: Spacing.xs;
+        border-width: root.border-px;
+        border-color: Colors.border;
+        background: btn-ta.has-hover ? Colors.bg-elevated : Colors.bg-surface;
+
+        Text { text: "Open Flyout";
+            font-size: Type.body-size;
+            color: Colors.text-primary;
+            horizontal-alignment: center;
+            vertical-alignment: center;
+        }
+
+        btn-ta := TouchArea {
+            clicked => { flyout.show-at(self.mouse-x, self.mouse-y); }
+        }
+    }
+}

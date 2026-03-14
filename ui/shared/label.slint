@@ -1,0 +1,26 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+
+export component Label inherits HorizontalLayout {
+    in property <string> text: "";
+    in property <bool>   required: false;
+    in property <bool>   disabled: false;
+
+    private property <length> half-xs:  Spacing.xs / 2;
+    private property <string> req-mark: " *";
+
+    spacing: root.half-xs;
+
+    Text {
+        text: root.text;
+        font-size: Type.caption-size;
+        color: root.disabled ? Colors.text-disabled : Colors.text-secondary;
+        vertical-alignment: center;
+    }
+
+    if root.required: Text {
+        text: root.req-mark;
+        font-size: Type.caption-size;
+        color: Colors.error;
+        vertical-alignment: center;
+    }
+}

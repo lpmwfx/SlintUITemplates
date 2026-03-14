@@ -1,4 +1,4 @@
-// Sizes — layout stretch constants and window dimension tokens.
+// Sizes — layout stretch constants, dimension tokens, and reusable size values.
 //
 // Use instead of hardcoded integers in horizontal-stretch / vertical-stretch
 // and preferred-width / preferred-height on top-level windows.
@@ -8,11 +8,90 @@ export global Sizes {
     out property <float> fill:    1.0;   // fill remaining space
     out property <float> no-fill: 0.0;   // fixed / no stretch
 
-    // ── Window dimensions ─────────────────────────────────────────────────
+    // ── Percentage fills ────────────────────────────────────────────────
+    out property <float> full: 1.0;      // 100%
+    out property <float> half: 0.5;      // 50%
+    out property <float> third: 0.33;    // 33%
+    out property <float> quarter: 0.25;  // 25%
+    out property <float> three-quarter: 0.75;
+
+    // ── Common ratios ───────────────────────────────────────────────────
+    out property <float> ratio-xs:  0.05;
+    out property <float> ratio-sm:  0.1;
+    out property <float> ratio-md:  0.4;
+    out property <float> ratio-lg:  0.45;
+
+    // ── Integer counts / indices ────────────────────────────────────────
+    out property <int> zero: 0;
+    out property <int> one:  1;
+    out property <int> two:  2;
+    out property <int> three: 3;
+    out property <int> four:  4;
+    out property <int> five:  5;
+    out property <int> six:   6;
+    out property <int> ten:  10;
+    out property <int> eleven: 11;
+    out property <int> hundred: 100;
+
+    // ── Border / line widths ────────────────────────────────────────────
+    out property <length> border-w:    1px;
+    out property <length> border-w-2:  2px;
+    out property <length> border-w-3:  3px;
+    out property <length> no-size:     0px;
+
+    // ── Window dimensions ─────────────────────────────────────────────
     out property <length> docs-window-width:      1100px;
     out property <length> docs-window-height:     720px;
     out property <length> docs-window-min-width:  400px;
     out property <length> docs-window-min-height: 300px;
-    out property <length> docs-content-min-width: 144px;  // min content pane width
-    out property <length> sidebar-toc-min-height: 144px;  // min TOC flickable height
+    out property <length> docs-content-min-width: 144px;
+    out property <length> sidebar-toc-min-height: 144px;
+
+    // ── Desktop window presets ──────────────────────────────────────────
+    out property <length> win-width-lg:    1100px;
+    out property <length> win-height-lg:   720px;
+    out property <length> win-width-md:    1000px;
+    out property <length> win-height-md:   700px;
+    out property <length> win-width-sm:    900px;
+    out property <length> win-height-sm:   600px;
+
+    // ── Mobile window presets ───────────────────────────────────────────
+    out property <length> mobile-width:    390px;
+    out property <length> mobile-height:   844px;
+
+    // ── Component sizes ─────────────────────────────────────────────────
+    out property <length> icon-sm:     16px;
+    out property <length> icon-md:     20px;
+    out property <length> icon-lg:     24px;
+    out property <length> icon-xl:     32px;
+    out property <length> icon-xxl:    36px;
+
+    out property <length> thumb-sm:    80px;
+    out property <length> thumb-md:    100px;
+    out property <length> thumb-lg:    120px;
+
+    out property <length> panel-xs:    180px;
+    out property <length> panel-sm:    200px;
+    out property <length> panel-md:    220px;
+    out property <length> panel-lg:    280px;
+    out property <length> panel-xl:    300px;
+    out property <length> panel-xxl:   320px;
+    out property <length> panel-xxxl:  360px;
+    out property <length> panel-max:   400px;
+    out property <length> panel-wide:  500px;
+
+    // ── Content max widths ──────────────────────────────────────────────
+    out property <length> content-md:   600px;
+    out property <length> content-lg:   700px;
+    out property <length> content-xl:   800px;
+
+    // ── Font sizes (icon glyphs) ────────────────────────────────────────
+    out property <length> glyph-sm:    10px;
+    out property <length> glyph-md:    14px;
+    out property <length> glyph-lg:    16px;
+    out property <length> glyph-xl:    20px;
+
+    // ── Miscellaneous ───────────────────────────────────────────────────
+    out property <length> handle-w:    9px;
+    out property <length> track-h:     4px;
 }

@@ -1,0 +1,12 @@
+{
+  "source": "src/bindings/mod.rs",
+  "items": [
+    {
+      "name": "rhai",
+      "kind": "mod",
+      "signature": "pub mod rhai;",
+      "line": 1,
+      "doc": ""
+    }
+  ]
+}

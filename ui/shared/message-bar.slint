@@ -1,0 +1,106 @@
+import { Colors, Spacing, Type, FluentIcons } from "../tokens/theme.slint";
+
+export component MessageBar inherits Rectangle {
+    in property <string> message: "";
+    in property <string> variant: "info";   // info | warning | error | success
+    in property <string> action-label: "";
+    in property <bool>   closable: true;
+    callback action();
+    callback closed();
+
+    private property <string> v-error:   "error";
+    private property <string> v-warning: "warning";
+    private property <string> v-success: "success";
+    private property <length> border-px: 1px;
+    private property <length> bar-w:     3px;
+    private property <int>    btn-shrink: 0;
+    private property <int>    text-grow:  1;
+    private property <color> accent-color:
+        variant == root.v-error   ? Colors.error   :
+        variant == root.v-warning ? Colors.warning :
+        variant == root.v-success ? Colors.success :
+        Colors.accent;
+    private property <string> icon-glyph:
+        variant == root.v-error   ? "\u{E783}" :
+        variant == root.v-warning ? "\u{E7BA}" :
+        variant == root.v-success ? "\u{E73E}" :
+        "\u{E946}";
+
+    height: Spacing.xl + Spacing.sm;
+    background: Colors.bg-surface;
+    border-width: root.border-px;
+    border-color: Colors.border;
+    border-radius: Spacing.xs;
+    clip: true;
+
+    // Left accent bar
+    Rectangle {
+        width: root.bar-w;
+        height: parent.height;
+        background: root.accent-color;
+    }
+
+    HorizontalLayout {
+        padding-left: Spacing.md;
+        padding-right: Spacing.sm;
+        spacing: Spacing.sm;
+
+        Text {
+            text: root.icon-glyph;
+            font-family: FluentIcons.icon-font;
+            font-size: Type.body-size;
+            color: root.accent-color;
+            vertical-alignment: center;
+        }
+
+        Text {
+            text: root.message;
+            font-size: Type.body-size;
+            color: Colors.text-primary;
+            vertical-alignment: center;
+            horizontal-stretch: root.text-grow;
+            overflow: elide;
+        }
+
+        if root.action-label != "": Rectangle {
+            width: action-text.preferred-width + Spacing.sm * 2;
+            height: Spacing.control-md;
+            border-radius: Spacing.xs;
+            border-width: root.border-px;
+            border-color: Colors.border;
+            background: act-ta.has-hover ? Colors.bg-elevated : transparent;
+            vertical-stretch: root.btn-shrink;
+
+            action-text := Text {
+                text: root.action-label;
+                font-size: Type.body-size;
+                color: Colors.accent;
+                horizontal-alignment: center;
+                vertical-alignment: center;
+            }
+
+            act-ta := TouchArea {
+                clicked => { root.action(); }
+            }
+        }
+
+        if root.closable: Rectangle {
+            width: Spacing.xl;
+            height: Spacing.xl;
+            border-radius: Spacing.xs;
+            background: close-ta.has-hover ? Colors.bg-elevated : transparent;
+
+            Text { text: "\u{E711}";
+                font-family: FluentIcons.icon-font;
+                font-size: Type.body-size;
+                color: Colors.text-secondary;
+                horizontal-alignment: center;
+                vertical-alignment: center;
+            }
+
+            close-ta := TouchArea {
+                clicked => { root.closed(); }
+            }
+        }
+    }
+}

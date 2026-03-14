@@ -1,0 +1,52 @@
+// Variants — named constants for component variant/style discriminators.
+// Prevents stringly-typed state comparisons.
+
+export global Variants {
+    // ── Button / component variants ─────────────────────────────────────
+    out property <string> primary:   "primary";
+    out property <string> secondary: "secondary";
+    out property <string> accent:    "accent";
+    out property <string> danger:    "danger";
+    out property <string> outlined:  "outlined";
+    out property <string> text:      "text";
+
+    // ── Severity / status ───────────────────────────────────────────────
+    out property <string> success: "success";
+    out property <string> warning: "warning";
+    out property <string> error:   "error";
+
+    // ── Platform ────────────────────────────────────────────────────────
+    out property <string> desktop:  "desktop";
+    out property <string> mobile:   "mobile";
+    out property <string> windows:  "windows";
+    out property <string> android:  "android";
+
+    // ── Theme ───────────────────────────────────────────────────────────
+    out property <string> dark:  "dark";
+    out property <string> light: "light";
+
+    // ── Orientation / position ──────────────────────────────────────────
+    out property <string> horizontal: "horizontal";
+    out property <string> vertical:   "vertical";
+    out property <string> left:   "left";
+    out property <string> right:  "right";
+    out property <string> top:    "top";
+    out property <string> bottom: "bottom";
+
+    // ── Shape ───────────────────────────────────────────────────────────
+    out property <string> circle: "circle";
+    out property <string> panel:  "panel";
+
+    // ── Handle types ────────────────────────────────────────────────────
+    out property <string> handle-h: "handle-h";
+    out property <string> handle-v: "handle-v";
+
+    // ── Doc block kinds ─────────────────────────────────────────────────
+    out property <string> code: "code";
+    out property <string> li2:  "li2";
+
+    // ── Test IDs ────────────────────────────────────────────────────────
+    out property <string> alpha: "alpha";
+    out property <string> beta:  "beta";
+    out property <string> gamma: "gamma";
+}

@@ -1,0 +1,33 @@
+{
+  "source": "ui/shared/dialog.slint",
+  "items": [
+    {
+      "name": "Dialog",
+      "kind": "component",
+      "signature": "export component Dialog inherits Rectangle",
+      "line": 3,
+      "doc": ""
+    },
+    {
+      "name": "title",
+      "kind": "property",
+      "signature": "in property <string> title: \"Dialog\";",
+      "line": 4,
+      "doc": ""
+    },
+    {
+      "name": "confirmed",
+      "kind": "callback",
+      "signature": "callback confirmed();",
+      "line": 6,
+      "doc": ""
+    },
+    {
+      "name": "cancelled",
+      "kind": "callback",
+      "signature": "callback cancelled();",
+      "line": 7,
+      "doc": ""
+    }
+  ]
+}

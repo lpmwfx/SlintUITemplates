@@ -1,0 +1,43 @@
+import { Spacing } from "../tokens/theme.slint";
+import { ViewId } from "../globals/ViewId.slint";
+import { PageButtons }   from "page-buttons.slint";
+import { PageInputs }    from "page-inputs.slint";
+import { PageDisplay }   from "page-display.slint";
+import { PageFeedback }  from "page-feedback.slint";
+import { PageLayout }    from "page-layout.slint";
+import { PageIcons }     from "page-icons.slint";
+import { PageSelection } from "page-selection.slint";
+import { PageNavigation }from "page-navigation.slint";
+import { PageData }      from "page-data.slint";
+import { PageCanvas }    from "page-canvas.slint";
+import { PageUtilities } from "page-utilities.slint";
+import { PagePopups }    from "page-popups.slint";
+import { PagePanels }    from "page-panels.slint";
+
+export component ViewerContent inherits Flickable {
+    in property <string> active-view: "";
+    in property <image>  canvas-frame;
+    in property <length> window-height;
+
+    viewport-width:  self.width;
+    viewport-height: pg.preferred-height;
+
+    pg := VerticalLayout {
+        padding: Spacing.md;
+        spacing: Spacing.md;
+
+        if active-view == ViewId.buttons:    PageButtons    {}
+        if active-view == ViewId.inputs:     PageInputs     {}
+        if active-view == ViewId.display:    PageDisplay    {}
+        if active-view == ViewId.feedback:   PageFeedback   {}
+        if active-view == ViewId.layout:     PageLayout     {}
+        if active-view == ViewId.icons:      PageIcons      {}
+        if active-view == ViewId.selection:  PageSelection  {}
+        if active-view == ViewId.navigation: PageNavigation {}
+        if active-view == ViewId.data:       PageData       { window-height: root.window-height; }
+        if active-view == ViewId.canvas:     PageCanvas     { canvas-frame: root.canvas-frame; }
+        if active-view == ViewId.utilities:  PageUtilities  {}
+        if active-view == ViewId.popups:     PagePopups     { window-height: root.window-height; }
+        if active-view == ViewId.panels:     PagePanels     {}
+    }
+}

@@ -1,0 +1,40 @@
+{
+  "source": "ui/shared/pagination.slint",
+  "items": [
+    {
+      "name": "Pagination",
+      "kind": "component",
+      "signature": "export component Pagination inherits Rectangle",
+      "line": 3,
+      "doc": ""
+    },
+    {
+      "name": "current",
+      "kind": "property",
+      "signature": "in property <int>   current: 1;",
+      "line": 4,
+      "doc": ""
+    },
+    {
+      "name": "total",
+      "kind": "property",
+      "signature": "in property <int>   total: 1;",
+      "line": 5,
+      "doc": ""
+    },
+    {
+      "name": "pages",
+      "kind": "property",
+      "signature": "in property <[int]> pages: [];",
+      "line": 6,
+      "doc": ""
+    },
+    {
+      "name": "changed",
+      "kind": "callback",
+      "signature": "callback changed(int);",
+      "line": 7,
+      "doc": ""
+    }
+  ]
+}

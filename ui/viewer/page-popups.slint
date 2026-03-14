@@ -1,0 +1,35 @@
+// page-popups — Flyout, Popover, TeachingTip, DropdownMenu, CommandBarFlyout
+
+import { Spacing } from "../tokens/theme.slint";
+import { PopupFlyoutDemo }       from "popup-flyout-demo.slint";
+import { PopupPopoverDemo }      from "popup-popover-demo.slint";
+import { PopupTeachingTipDemo }  from "popup-teaching-tip-demo.slint";
+import { PopupDropdownDemo }     from "popup-dropdown-demo.slint";
+import { PopupCbfDemo }          from "popup-cbf-demo.slint";
+import { ViewerSection } from "viewer-section.slint";
+
+export component PagePopups inherits VerticalLayout {
+    in property <length> window-height;
+
+    spacing: Spacing.md;
+
+    ViewerSection { title: "Flyout — popup with title + body (click button)";
+        PopupFlyoutDemo { window-height: root.window-height; }
+    }
+
+    ViewerSection { title: "Popover — inline overlay below trigger (toggle)";
+        PopupPopoverDemo {}
+    }
+
+    ViewerSection { title: "TeachingTip — onboarding tooltip with arrow (click ?)";
+        PopupTeachingTipDemo { window-height: root.window-height; }
+    }
+
+    ViewerSection { title: "DropdownMenu — trigger-based popup list";
+        PopupDropdownDemo { window-height: root.window-height; }
+    }
+
+    ViewerSection { title: "CommandBarFlyout — icon strip + overflow list";
+        PopupCbfDemo { window-height: root.window-height; }
+    }
+}

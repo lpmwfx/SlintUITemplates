@@ -1,0 +1,54 @@
+{
+  "source": "ui/shared/empty-state.slint",
+  "items": [
+    {
+      "name": "EmptyState",
+      "kind": "component",
+      "signature": "export component EmptyState inherits Rectangle",
+      "line": 4,
+      "doc": ""
+    },
+    {
+      "name": "icon",
+      "kind": "property",
+      "signature": "in property <string> icon: \"\\u{E8FD}\";",
+      "line": 5,
+      "doc": ""
+    },
+    {
+      "name": "title",
+      "kind": "property",
+      "signature": "in property <string> title: \"No items\";",
+      "line": 6,
+      "doc": ""
+    },
+    {
+      "name": "description",
+      "kind": "property",
+      "signature": "in property <string> description: \"\";",
+      "line": 7,
+      "doc": ""
+    },
+    {
+      "name": "action-label",
+      "kind": "property",
+      "signature": "in property <string> action-label: \"\";",
+      "line": 8,
+      "doc": ""
+    },
+    {
+      "name": "action",
+      "kind": "callback",
+      "signature": "callback action();",
+      "line": 9,
+      "doc": ""
+    },
+    {
+      "name": "icon-sz",
+      "kind": "property",
+      "signature": "private property <length> icon-sz: Type.heading-size * 2;",
+      "line": 11,
+      "doc": ""
+    }
+  ]
+}

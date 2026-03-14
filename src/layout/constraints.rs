@@ -3,10 +3,15 @@
 /// All values are in the range [0.0, 1.0] where 1.0 = full container size.
 /// The solver enforces that no panel shrinks below `min` or grows above `max`.
 
+/// Minimum ratio — 5% of container.
+const RATIO_MIN: f32 = 0.05;
+/// Maximum ratio — 95% of container.
+const RATIO_MAX: f32 = 0.95;
+
 #[derive(Debug, Clone, PartialEq)]
 pub struct Constraint {
-    pub min: f32,   // minimum ratio (default: 0.05 = 5% of container)
-    pub max: f32,   // maximum ratio (default: 0.95 = 95% of container)
+    pub min: f32,
+    pub max: f32,
 }
 
 impl Constraint {
@@ -24,7 +29,7 @@ impl Constraint {
 
 impl Default for Constraint {
     fn default() -> Self {
-        Self { min: 0.05, max: 0.95 }
+        Self { min: RATIO_MIN, max: RATIO_MAX }
     }
 }
 

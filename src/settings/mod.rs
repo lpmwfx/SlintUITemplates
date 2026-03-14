@@ -49,6 +49,17 @@ pub struct IconSettings {
     pub color: String,
 }
 
+impl IconStyle {
+    /// Parse from string — unknown values default to `Filled`.
+    pub fn from_str(s: &str) -> Self {
+        if s.eq_ignore_ascii_case("outlined") {
+            IconStyle::Outlined
+        } else {
+            IconStyle::Filled
+        }
+    }
+}
+
 impl IconSettings {
     pub fn style_str(&self) -> &'static str {
         match self.style {

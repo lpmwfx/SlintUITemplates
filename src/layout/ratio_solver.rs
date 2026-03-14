@@ -8,6 +8,9 @@
 
 use super::constraints::Constraint;
 
+/// Tolerance for floating-point ratio sum checks.
+const RATIO_EPSILON: f32 = 0.001;
+
 /// A resizable panel with a normalized ratio and min/max constraints.
 #[derive(Debug, Clone)]
 pub struct Panel {
@@ -70,7 +73,7 @@ pub fn normalize(panels: &mut [Panel]) {
 /// Verify that panel ratios sum to approximately 1.0.
 pub fn check_sum(panels: &[Panel]) -> bool {
     let total: f32 = panels.iter().map(|p| p.ratio).sum();
-    (total - 1.0).abs() < 0.001
+    (total - 1.0).abs() < RATIO_EPSILON
 }
 
 #[cfg(test)]

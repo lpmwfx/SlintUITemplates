@@ -24,6 +24,9 @@ use std::cell::RefCell;
 use rhai::Engine;
 use slint::VecModel;
 
+/// Maximum fields in a colon-separated toolbar DSL string (e.g. "id:icon:tooltip").
+const TOOLBAR_MAX_FIELDS: usize = 3;
+
 use crate::AppWindow;
 use crate::ShellToolbarItem;
 use crate::dsl::{Toolbar, icons::fluent_icon};
@@ -57,7 +60,7 @@ pub fn eval_script(script: &str) -> Result<ViewConfig, Box<dyn Error>> {
         engine.register_fn("view_toolbar", move |items: rhai::Array| {
             let toolbar: Vec<Toolbar> = items.iter().filter_map(|v| {
                 let s = v.clone().into_string().ok()?;
-                let parts: Vec<&str> = s.splitn(3, ':').collect();
+                let parts: Vec<&str> = s.splitn(TOOLBAR_MAX_FIELDS, ':').collect();
                 match parts.as_slice() {
                     [id, icon, tip] => Some(Toolbar::new(*id, *icon, *tip)),
                     [id, icon]      => Some(Toolbar::new(*id, *icon, "")),
@@ -72,7 +75,9 @@ pub fn eval_script(script: &str) -> Result<ViewConfig, Box<dyn Error>> {
     };
 
     result?;
-    Ok(Rc::try_unwrap(cfg).unwrap().into_inner())
+    let cfg = Rc::try_unwrap(cfg)
+        .map_err(|_| "ViewConfig Rc still has multiple owners")?;
+    Ok(cfg.into_inner())
 }
 
 /// Load and evaluate a single `.rhai` file.

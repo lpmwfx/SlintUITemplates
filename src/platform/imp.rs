@@ -20,6 +20,9 @@ pub fn apply_backdrop(window: &slint::Window, style: BgStyle) {
         };
 
         unsafe {
+            // SAFETY: `hwnd` is a valid window handle obtained from the WinIT backend
+            // above. DWM functions accept any valid HWND and return error codes on
+            // failure (which we discard with `let _ =`), so no UB can occur.
             // Extend DWM non-client frame into the entire client area.
             // Required for client-area backdrop to show through.
             let margins = MARGINS {

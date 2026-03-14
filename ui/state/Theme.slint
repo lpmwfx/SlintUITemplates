@@ -83,6 +83,9 @@ export global Theme {
       : material == "acrylic" ? (dark ? Acrylic.dark-shadow        : Acrylic.light-shadow)
       :                         (dark ? Solid.dark-shadow          : Solid.light-shadow);
 
+    // ── Overlay ───────────────────────────────────────────────────────────────
+    out property <color> overlay: #00000040;
+
     // ── Aliases ───────────────────────────────────────────────────────────────
     out property <color> bg-panel:     bg-surface;
     out property <color> handle:       border;

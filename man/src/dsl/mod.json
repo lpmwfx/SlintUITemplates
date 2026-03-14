@@ -1,0 +1,152 @@
+{
+  "source": "src/dsl/mod.rs",
+  "items": [
+    {
+      "name": "apply",
+      "kind": "mod",
+      "signature": "pub mod apply;",
+      "line": 24,
+      "doc": ""
+    },
+    {
+      "name": "icons",
+      "kind": "mod",
+      "signature": "pub mod icons;",
+      "line": 25,
+      "doc": ""
+    },
+    {
+      "name": "BgStyle",
+      "kind": "enum",
+      "signature": "pub enum BgStyle",
+      "line": 36,
+      "doc": "Windows Composition API backdrop style.\nMica and Acrylic require Windows 11 (22H2+) — silently falls back to Solid\non older OS versions or non-Windows platforms."
+    },
+    {
+      "name": "Nav",
+      "kind": "struct",
+      "signature": "pub struct Nav",
+      "line": 50,
+      "doc": "A navigation destination — icon name resolved to codepoint at build()."
+    },
+    {
+      "name": "new",
+      "kind": "fn",
+      "signature": "pub fn new( id:    impl Into<String>, label: impl Into<String>, icon:  impl Into<String>, ) -> Self",
+      "line": 57,
+      "doc": ""
+    },
+    {
+      "name": "Toolbar",
+      "kind": "struct",
+      "signature": "pub struct Toolbar",
+      "line": 68,
+      "doc": "A toolbar icon button — icon name resolved to codepoint at build()."
+    },
+    {
+      "name": "new",
+      "kind": "fn",
+      "signature": "pub fn new( id:      impl Into<String>, icon:    impl Into<String>, tooltip: impl Into<String>, ) -> Self",
+      "line": 75,
+      "doc": ""
+    },
+    {
+      "name": "DslError",
+      "kind": "enum",
+      "signature": "pub enum DslError",
+      "line": 88,
+      "doc": "Rule violations detected at `build()` time — never silent visual failures."
+    },
+    {
+      "name": "ResolvedNav",
+      "kind": "struct",
+      "signature": "pub(crate) struct ResolvedNav",
+      "line": 133,
+      "doc": ""
+    },
+    {
+      "name": "ResolvedToolbar",
+      "kind": "struct",
+      "signature": "pub(crate) struct ResolvedToolbar",
+      "line": 140,
+      "doc": ""
+    },
+    {
+      "name": "AppDsl",
+      "kind": "struct",
+      "signature": "pub struct AppDsl",
+      "line": 151,
+      "doc": "Validated, sealed shell configuration.\nCan only be constructed via `AppDsl::builder().build()`."
+    },
+    {
+      "name": "AppDslBuilder",
+      "kind": "struct",
+      "signature": "pub struct AppDslBuilder",
+      "line": 166,
+      "doc": ""
+    },
+    {
+      "name": "builder",
+      "kind": "fn",
+      "signature": "pub fn builder(title: impl Into<String>) -> AppDslBuilder",
+      "line": 178,
+      "doc": ""
+    },
+    {
+      "name": "platform",
+      "kind": "fn",
+      "signature": "pub fn platform(mut self, p: Platform) -> Self",
+      "line": 193,
+      "doc": ""
+    },
+    {
+      "name": "nav",
+      "kind": "fn",
+      "signature": "pub fn nav(mut self, items: Vec<Nav>) -> Self",
+      "line": 198,
+      "doc": ""
+    },
+    {
+      "name": "status",
+      "kind": "fn",
+      "signature": "pub fn status(mut self, text: impl Into<String>) -> Self",
+      "line": 203,
+      "doc": ""
+    },
+    {
+      "name": "toolbar",
+      "kind": "fn",
+      "signature": "pub fn toolbar(mut self, items: Vec<Toolbar>) -> Self",
+      "line": 208,
+      "doc": ""
+    },
+    {
+      "name": "window_size",
+      "kind": "fn",
+      "signature": "pub fn window_size(mut self, width: u32, height: u32) -> Self",
+      "line": 213,
+      "doc": ""
+    },
+    {
+      "name": "bg_style",
+      "kind": "fn",
+      "signature": "pub fn bg_style(mut self, style: BgStyle) -> Self",
+      "line": 219,
+      "doc": "Set OS-level window backdrop (Windows 11 only; no-op elsewhere)."
+    },
+    {
+      "name": "views",
+      "kind": "fn",
+      "signature": "pub fn views(mut self, ids: Vec<&str>) -> Self",
+      "line": 226,
+      "doc": "Register ViewSlot ids — validated to match nav ids 1:1.\nOptional: if omitted, nav↔view consistency is not checked."
+    },
+    {
+      "name": "build",
+      "kind": "fn",
+      "signature": "pub fn build(self) -> Result<AppDsl, Vec<DslError>>",
+      "line": 232,
+      "doc": "Validate all composition rules. Returns sealed `AppDsl` or list of errors."
+    }
+  ]
+}

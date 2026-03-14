@@ -1,0 +1,159 @@
+{
+  "source": "ui/tokens/fluent/colors.slint",
+  "items": [
+    {
+      "name": "dark",
+      "kind": "property",
+      "signature": "out property <bool> dark: Palette.color-scheme == ColorScheme.dark;",
+      "line": 8,
+      "doc": ""
+    },
+    {
+      "name": "bg-primary",
+      "kind": "property",
+      "signature": "out property <color> bg-primary:   dark ? #202020 : #FFFFFF;",
+      "line": 11,
+      "doc": ""
+    },
+    {
+      "name": "bg-surface",
+      "kind": "property",
+      "signature": "out property <color> bg-surface:   dark ? #2C2C2C : #F3F3F3;",
+      "line": 12,
+      "doc": ""
+    },
+    {
+      "name": "bg-elevated",
+      "kind": "property",
+      "signature": "out property <color> bg-elevated:  dark ? #383838 : #FFFFFF;",
+      "line": 13,
+      "doc": ""
+    },
+    {
+      "name": "text-primary",
+      "kind": "property",
+      "signature": "out property <color> text-primary:   dark ? #FFFFFF : #1C1C1C;",
+      "line": 16,
+      "doc": ""
+    },
+    {
+      "name": "text-secondary",
+      "kind": "property",
+      "signature": "out property <color> text-secondary: dark ? #9D9D9D : #616161;",
+      "line": 17,
+      "doc": ""
+    },
+    {
+      "name": "text-disabled",
+      "kind": "property",
+      "signature": "out property <color> text-disabled:  dark ? #6B6B6B : #A0A0A0;",
+      "line": 18,
+      "doc": ""
+    },
+    {
+      "name": "accent",
+      "kind": "property",
+      "signature": "out property <color> accent:         dark ? #60CDFF : #0078D4;",
+      "line": 21,
+      "doc": ""
+    },
+    {
+      "name": "accent-hover",
+      "kind": "property",
+      "signature": "out property <color> accent-hover:   dark ? #4CC2F1 : #106EBE;",
+      "line": 22,
+      "doc": ""
+    },
+    {
+      "name": "accent-pressed",
+      "kind": "property",
+      "signature": "out property <color> accent-pressed: dark ? #38B5E6 : #005A9E;",
+      "line": 23,
+      "doc": ""
+    },
+    {
+      "name": "accent-text",
+      "kind": "property",
+      "signature": "out property <color> accent-text:    dark ? #000000 : #FFFFFF;",
+      "line": 24,
+      "doc": ""
+    },
+    {
+      "name": "error",
+      "kind": "property",
+      "signature": "out property <color> error:   #C42B1C;",
+      "line": 27,
+      "doc": ""
+    },
+    {
+      "name": "success",
+      "kind": "property",
+      "signature": "out property <color> success: #0F7B0F;",
+      "line": 28,
+      "doc": ""
+    },
+    {
+      "name": "warning",
+      "kind": "property",
+      "signature": "out property <color> warning: #9D5D00;",
+      "line": 29,
+      "doc": ""
+    },
+    {
+      "name": "border",
+      "kind": "property",
+      "signature": "out property <color> border:        dark ? #3D3D3D : #E0E0E0;",
+      "line": 32,
+      "doc": ""
+    },
+    {
+      "name": "border-strong",
+      "kind": "property",
+      "signature": "out property <color> border-strong: dark ? #575757 : #C0C0C0;",
+      "line": 33,
+      "doc": ""
+    },
+    {
+      "name": "border-focus",
+      "kind": "property",
+      "signature": "out property <color> border-focus:  accent;",
+      "line": 34,
+      "doc": ""
+    },
+    {
+      "name": "shadow-2",
+      "kind": "property",
+      "signature": "out property <color> shadow-2:  dark ? #00000066 : #00000014;",
+      "line": 37,
+      "doc": ""
+    },
+    {
+      "name": "shadow-4",
+      "kind": "property",
+      "signature": "out property <color> shadow-4:  dark ? #00000080 : #0000001F;",
+      "line": 38,
+      "doc": ""
+    },
+    {
+      "name": "shadow-8",
+      "kind": "property",
+      "signature": "out property <color> shadow-8:  dark ? #00000099 : #00000029;",
+      "line": 39,
+      "doc": ""
+    },
+    {
+      "name": "shadow-16",
+      "kind": "property",
+      "signature": "out property <color> shadow-16: dark ? #000000B3 : #00000033;",
+      "line": 40,
+      "doc": ""
+    },
+    {
+      "name": "shadow-28",
+      "kind": "property",
+      "signature": "out property <color> shadow-28: dark ? #000000CC : #0000003D;",
+      "line": 41,
+      "doc": ""
+    }
+  ]
+}

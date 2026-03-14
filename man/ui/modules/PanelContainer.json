@@ -1,0 +1,33 @@
+{
+  "source": "ui/modules/PanelContainer.slint",
+  "items": [
+    {
+      "name": "PanelItem",
+      "kind": "struct",
+      "signature": "export struct PanelItem",
+      "line": 7,
+      "doc": ""
+    },
+    {
+      "name": "PanelContainer",
+      "kind": "component",
+      "signature": "export component PanelContainer inherits Rectangle",
+      "line": 18,
+      "doc": ""
+    },
+    {
+      "name": "panels",
+      "kind": "property",
+      "signature": "in property <[PanelItem]> panels;",
+      "line": 19,
+      "doc": ""
+    },
+    {
+      "name": "panel-dragged",
+      "kind": "callback",
+      "signature": "callback panel-dragged(int, float, float);   // id, dx, dy in logical px",
+      "line": 21,
+      "doc": ""
+    }
+  ]
+}

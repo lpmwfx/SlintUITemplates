@@ -1,0 +1,26 @@
+{
+  "source": "ui/shared/card.slint",
+  "items": [
+    {
+      "name": "Card",
+      "kind": "component",
+      "signature": "export component Card inherits Rectangle",
+      "line": 3,
+      "doc": ""
+    },
+    {
+      "name": "title",
+      "kind": "property",
+      "signature": "in property <string> title: \"\";",
+      "line": 4,
+      "doc": ""
+    },
+    {
+      "name": "subtitle",
+      "kind": "property",
+      "signature": "in property <string> subtitle: \"\";",
+      "line": 5,
+      "doc": ""
+    }
+  ]
+}

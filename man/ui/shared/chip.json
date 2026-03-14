@@ -1,0 +1,61 @@
+{
+  "source": "ui/shared/chip.slint",
+  "items": [
+    {
+      "name": "Chip",
+      "kind": "component",
+      "signature": "export component Chip inherits Rectangle",
+      "line": 3,
+      "doc": ""
+    },
+    {
+      "name": "label",
+      "kind": "property",
+      "signature": "in property <string> label: \"\";",
+      "line": 4,
+      "doc": ""
+    },
+    {
+      "name": "closable",
+      "kind": "property",
+      "signature": "in property <bool>   closable: true;",
+      "line": 5,
+      "doc": ""
+    },
+    {
+      "name": "icon",
+      "kind": "property",
+      "signature": "in property <string> icon: \"\";",
+      "line": 6,
+      "doc": ""
+    },
+    {
+      "name": "selected",
+      "kind": "property",
+      "signature": "in property <bool>   selected: false;",
+      "line": 7,
+      "doc": ""
+    },
+    {
+      "name": "enabled",
+      "kind": "property",
+      "signature": "in property <bool>   enabled: true;",
+      "line": 8,
+      "doc": ""
+    },
+    {
+      "name": "closed",
+      "kind": "callback",
+      "signature": "callback closed();",
+      "line": 9,
+      "doc": ""
+    },
+    {
+      "name": "clicked",
+      "kind": "callback",
+      "signature": "callback clicked();",
+      "line": 10,
+      "doc": ""
+    }
+  ]
+}

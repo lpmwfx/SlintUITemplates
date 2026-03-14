@@ -1,0 +1,33 @@
+{
+  "source": "ui/viewer/page-app-shell.slint",
+  "items": [
+    {
+      "name": "PageAppShell",
+      "kind": "component",
+      "signature": "export component PageAppShell inherits VerticalLayout",
+      "line": 13,
+      "doc": ""
+    },
+    {
+      "name": "layout-mode",
+      "kind": "property",
+      "signature": "private property <string>    layout-mode: \"windows\";",
+      "line": 14,
+      "doc": ""
+    },
+    {
+      "name": "active-view",
+      "kind": "property",
+      "signature": "private property <string>    active-view: \"home\";",
+      "line": 15,
+      "doc": ""
+    },
+    {
+      "name": "nav-items",
+      "kind": "property",
+      "signature": "private property <[NavItem]> nav-items: [",
+      "line": 17,
+      "doc": ""
+    }
+  ]
+}

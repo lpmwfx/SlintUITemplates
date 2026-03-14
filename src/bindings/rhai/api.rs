@@ -1,4 +1,7 @@
 use rhai::Engine;
+
+/// Maximum fields in a colon-separated Rhai DSL string (e.g. "id:icon:tooltip").
+const RHAI_MAX_FIELDS: usize = 3;
 use std::rc::Rc;
 use std::cell::RefCell;
 use crate::adapter::AppAdapter;
@@ -37,11 +40,7 @@ pub fn register(engine: &mut Engine, adapter: Rc<RefCell<AppAdapter>>) {
     let a = Rc::clone(&adapter);
     engine.register_fn("set_icon_style", move |style: String| {
         let mut s = crate::settings::AppSettings::default();
-        s.icons.style = if style == "outlined" {
-            crate::settings::IconStyle::Outlined
-        } else {
-            crate::settings::IconStyle::Filled
-        };
+        s.icons.style = crate::settings::IconStyle::from_str(&style);
         a.borrow().apply_settings(&s);
     });
 
@@ -72,7 +71,7 @@ pub fn register(engine: &mut Engine, adapter: Rc<RefCell<AppAdapter>>) {
     engine.register_fn("set_nav", move |items: rhai::Array| {
         let nav: Vec<Nav> = items.iter().filter_map(|v| {
             let s = v.clone().into_string().ok()?;
-            let parts: Vec<&str> = s.splitn(3, ':').collect();
+            let parts: Vec<&str> = s.splitn(RHAI_MAX_FIELDS, ':').collect();
             match parts.as_slice() {
                 [id, label, icon] => Some(Nav::new(*id, *label, *icon)),
                 [id, label]       => Some(Nav::new(*id, *label, "list")),
@@ -105,7 +104,7 @@ pub fn register(engine: &mut Engine, adapter: Rc<RefCell<AppAdapter>>) {
         use crate::dsl::Toolbar;
         let toolbar: Vec<Toolbar> = items.iter().filter_map(|v| {
             let s = v.clone().into_string().ok()?;
-            let parts: Vec<&str> = s.splitn(3, ':').collect();
+            let parts: Vec<&str> = s.splitn(RHAI_MAX_FIELDS, ':').collect();
             match parts.as_slice() {
                 [id, icon, tip] => Some(Toolbar::new(*id, *icon, *tip)),
                 [id, icon]      => Some(Toolbar::new(*id, *icon, "")),

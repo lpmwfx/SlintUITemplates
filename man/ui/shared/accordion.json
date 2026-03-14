@@ -1,0 +1,33 @@
+{
+  "source": "ui/shared/accordion.slint",
+  "items": [
+    {
+      "name": "Accordion",
+      "kind": "component",
+      "signature": "export component Accordion inherits VerticalLayout",
+      "line": 6,
+      "doc": ""
+    },
+    {
+      "name": "items",
+      "kind": "property",
+      "signature": "in property <[AccordionItem]> items: [];",
+      "line": 7,
+      "doc": ""
+    },
+    {
+      "name": "expanded-id",
+      "kind": "property",
+      "signature": "in property <string>          expanded-id: \"\";",
+      "line": 8,
+      "doc": ""
+    },
+    {
+      "name": "toggled",
+      "kind": "callback",
+      "signature": "callback toggled(string);",
+      "line": 9,
+      "doc": ""
+    }
+  ]
+}

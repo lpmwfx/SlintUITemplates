@@ -1,0 +1,75 @@
+{
+  "source": "src/grid/zone.rs",
+  "items": [
+    {
+      "name": "ZoneModel",
+      "kind": "struct",
+      "signature": "pub struct ZoneModel",
+      "line": 4,
+      "doc": ""
+    },
+    {
+      "name": "RowZone",
+      "kind": "struct",
+      "signature": "pub struct RowZone",
+      "line": 10,
+      "doc": ""
+    },
+    {
+      "name": "RowKind",
+      "kind": "enum",
+      "signature": "pub enum RowKind",
+      "line": 17,
+      "doc": ""
+    },
+    {
+      "name": "ColumnZone",
+      "kind": "struct",
+      "signature": "pub struct ColumnZone",
+      "line": 24,
+      "doc": ""
+    },
+    {
+      "name": "from_config",
+      "kind": "fn",
+      "signature": "pub fn from_config(config: &GridConfig) -> Self",
+      "line": 31,
+      "doc": ""
+    },
+    {
+      "name": "total_row_ratio",
+      "kind": "fn",
+      "signature": "pub fn total_row_ratio(&self) -> u32",
+      "line": 40,
+      "doc": ""
+    },
+    {
+      "name": "row",
+      "kind": "fn",
+      "signature": "pub fn row(&self, name: &str) -> Option<&RowZone>",
+      "line": 44,
+      "doc": ""
+    },
+    {
+      "name": "column",
+      "kind": "fn",
+      "signature": "pub fn column(&self, row_name: &str, col_name: &str) -> Option<&ColumnZone>",
+      "line": 48,
+      "doc": ""
+    },
+    {
+      "name": "set_module",
+      "kind": "fn",
+      "signature": "pub fn set_module(&mut self, row_name: &str, col_name: &str, module: &str)",
+      "line": 55,
+      "doc": ""
+    },
+    {
+      "name": "total_column_ratio",
+      "kind": "fn",
+      "signature": "pub fn total_column_ratio(&self) -> u32",
+      "line": 95,
+      "doc": ""
+    }
+  ]
+}

@@ -7,6 +7,7 @@ export global FluentMotion {
     out property <duration> normal: 167ms;   // standard transitions (open, close)
     out property <duration> slow:   250ms;   // larger transitions (page, panel)
     out property <duration> slower: 383ms;   // deliberate / emphasis transitions
+    out property <duration> tick:   16ms;    // animation frame tick (~60fps)
 
     // Easing curves — Slint easing type
     // Fluent uses:  cubic-bezier(0.1, 0.9, 0.2, 1.0) for decelerate (entrances)

@@ -1,0 +1,33 @@
+{
+  "source": "ui/mobile/app-window.slint",
+  "items": [
+    {
+      "name": "AppWindow",
+      "kind": "component",
+      "signature": "export component AppWindow inherits Window",
+      "line": 9,
+      "doc": ""
+    },
+    {
+      "name": "active-view",
+      "kind": "property",
+      "signature": "in-out property <string>    active-view: \"home\";",
+      "line": 15,
+      "doc": ""
+    },
+    {
+      "name": "nav-items",
+      "kind": "property",
+      "signature": "in-out property <[NavItem]> nav-items: [",
+      "line": 16,
+      "doc": ""
+    },
+    {
+      "name": "navigate",
+      "kind": "callback",
+      "signature": "callback navigate(string);",
+      "line": 22,
+      "doc": ""
+    }
+  ]
+}

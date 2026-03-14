@@ -43,6 +43,17 @@ pub enum BgStyle {
     Acrylic,
 }
 
+impl BgStyle {
+    /// Parse from string — unknown values default to `Solid`.
+    pub fn from_str(s: &str) -> Self {
+        match s {
+            s if s.eq_ignore_ascii_case("mica")    => BgStyle::Mica,
+            s if s.eq_ignore_ascii_case("acrylic") => BgStyle::Acrylic,
+            _ => BgStyle::Solid,
+        }
+    }
+}
+
 // ── Public input types ────────────────────────────────────────────────────────
 
 /// A navigation destination — icon name resolved to codepoint at build().
@@ -163,6 +174,11 @@ pub struct AppDsl {
 
 // ── Builder ───────────────────────────────────────────────────────────────────
 
+/// Maximum nav items allowed on mobile platforms (Android/iOS).
+const NAV_MAX_MOBILE: usize = 5;
+/// Maximum nav items allowed on desktop platforms (Windows/macOS/Linux).
+const NAV_MAX_DESKTOP: usize = 7;
+
 pub struct AppDslBuilder {
     title:       String,
     platform:    Platform,
@@ -232,7 +248,7 @@ impl AppDslBuilder {
     pub fn build(self) -> Result<AppDsl, Vec<DslError>> {
         let mut errors: Vec<DslError> = Vec::new();
 
-        let nav_max = if self.platform.is_mobile() { 5 } else { 7 };
+        let nav_max = if self.platform.is_mobile() { NAV_MAX_MOBILE } else { NAV_MAX_DESKTOP };
 
         // Rule: 1–max nav items
         if self.nav.is_empty() {

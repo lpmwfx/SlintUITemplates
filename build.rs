@@ -4,5 +4,6 @@ fn main() {
     slintscanners::scan_project();
 
     // ── Slint compilation ──────────────────────────────────────
-    slint_build::compile("ui/lib.slint").unwrap();
+    slint_build::compile("ui/lib.slint")
+        .expect("Slint compilation failed — check ui/lib.slint syntax");
 }

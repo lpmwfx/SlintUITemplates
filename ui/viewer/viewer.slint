@@ -2,28 +2,31 @@
 // Dog-foods our own components; topbar writes to Colors/Settings globals live.
 
 import { Colors, Spacing, FluentIcons, Settings } from "../tokens/theme.slint";
+import { ViewId }        from "../globals/ViewId.slint";
 import { SideBar }       from "../desktop/side-bar.slint";
 import { NavItem }       from "../desktop/types.slint";
 import { ViewerTopbar }  from "viewer-topbar.slint";
-import { PageButtons }   from "page-buttons.slint";
-import { PageInputs }    from "page-inputs.slint";
-import { PageDisplay }   from "page-display.slint";
-import { PageFeedback }  from "page-feedback.slint";
-import { PageLayout }    from "page-layout.slint";
 import { PageAppShell }  from "page-app-shell.slint";
-import { PageIcons }     from "page-icons.slint";
-import { PageSelection } from "page-selection.slint";
-import { PageNavigation }from "page-navigation.slint";
-import { PageData }      from "page-data.slint";
-import { PageCanvas }    from "page-canvas.slint";
+import { ViewerContent } from "viewer-content.slint";
 
 export component FrameworkViewer inherits Window {
-    preferred-width:  1100px;
-    preferred-height: 720px;
-    title: "SlintUI Framework Viewer";
+    preferred-width:  root.win-w;
+    preferred-height: root.win-h;
+    title:
+        "SlintUI Framework Viewer";
 
-    in-out property <string> active-view: "buttons";
+    in-out property <string> active-view: ViewId.buttons;
     in property <image> canvas-frame;
+
+    private property <length> win-w:     1100px;
+    private property <length> win-h:     720px;
+    private property <float>  zoom-75:   0.75;
+    private property <float>  zoom-100:  1.0;
+    private property <float>  zoom-125:  1.25;
+    private property <float>  zoom-150:  1.5;
+    private property <int>    v-stretch: 1;
+    private property <int>    h-sidebar: 0;
+    private property <int>    h-stretch: 1;
 
     background: Colors.bg-primary;
 
@@ -47,7 +50,8 @@ export component FrameworkViewer inherits Window {
 
     MenuBar {
         Menu {
-            title: "File";
+            title:
+                "File";
             MenuItem { title: "New";          activated => { root.new-file(); } }
             MenuItem { title: "New Window";   activated => { root.new-window(); } }
             MenuItem { title: "Open...";      activated => { root.open-file(); } }
@@ -58,7 +62,8 @@ export component FrameworkViewer inherits Window {
             MenuItem { title: "Exit";         activated => { root.quit(); } }
         }
         Menu {
-            title: "Edit";
+            title:
+                "Edit";
             MenuItem { title: "Undo";         activated => { root.undo(); } }
             MenuItem { title: "Redo";         activated => { root.redo(); } }
             MenuSeparator {}
@@ -70,28 +75,33 @@ export component FrameworkViewer inherits Window {
             MenuItem { title: "Select All";   activated => { root.select-all(); } }
         }
         Menu {
-            title: "View";
-            MenuItem { title: "Buttons";    activated => { root.active-view = "buttons"; } }
-            MenuItem { title: "Inputs";     activated => { root.active-view = "inputs"; } }
-            MenuItem { title: "Display";    activated => { root.active-view = "display"; } }
-            MenuItem { title: "Feedback";   activated => { root.active-view = "feedback"; } }
-            MenuItem { title: "Layout";     activated => { root.active-view = "layout"; } }
-            MenuItem { title: "App Shell";  activated => { root.active-view = "app-shell"; } }
-            MenuItem { title: "Icons";      activated => { root.active-view = "icons"; } }
-            MenuItem { title: "Selection";  activated => { root.active-view = "selection"; } }
-            MenuItem { title: "Navigation"; activated => { root.active-view = "navigation"; } }
-            MenuItem { title: "Data";       activated => { root.active-view = "data"; } }
-            MenuItem { title: "Canvas";     activated => { root.active-view = "canvas"; } }
+            title:
+                "View";
+            MenuItem { title: "Buttons";    activated => { root.active-view = ViewId.buttons; } }
+            MenuItem { title: "Inputs";     activated => { root.active-view = ViewId.inputs; } }
+            MenuItem { title: "Display";    activated => { root.active-view = ViewId.display; } }
+            MenuItem { title: "Feedback";   activated => { root.active-view = ViewId.feedback; } }
+            MenuItem { title: "Layout";     activated => { root.active-view = ViewId.layout; } }
+            MenuItem { title: "App Shell";  activated => { root.active-view = ViewId.app-shell; } }
+            MenuItem { title: "Icons";      activated => { root.active-view = ViewId.icons; } }
+            MenuItem { title: "Selection";  activated => { root.active-view = ViewId.selection; } }
+            MenuItem { title: "Navigation"; activated => { root.active-view = ViewId.navigation; } }
+            MenuItem { title: "Data";       activated => { root.active-view = ViewId.data; } }
+            MenuItem { title: "Canvas";     activated => { root.active-view = ViewId.canvas; } }
+            MenuItem { title: "Utilities";  activated => { root.active-view = ViewId.utilities; } }
+            MenuItem { title: "Popups";     activated => { root.active-view = ViewId.popups; } }
+            MenuItem { title: "Panels";     activated => { root.active-view = ViewId.panels; } }
             MenuSeparator {}
             MenuItem { title: "Dark Mode";  activated => { Colors.dark-mode = !Colors.dark-mode; } }
             MenuSeparator {}
-            MenuItem { title: "Zoom 75%";   activated => { Settings.zoom = 0.75; } }
-            MenuItem { title: "Zoom 100%";  activated => { Settings.zoom = 1.0; } }
-            MenuItem { title: "Zoom 125%";  activated => { Settings.zoom = 1.25; } }
-            MenuItem { title: "Zoom 150%";  activated => { Settings.zoom = 1.5; } }
+            MenuItem { title: "Zoom 75%";   activated => { Settings.zoom = root.zoom-75; } }
+            MenuItem { title: "Zoom 100%";  activated => { Settings.zoom = root.zoom-100; } }
+            MenuItem { title: "Zoom 125%";  activated => { Settings.zoom = root.zoom-125; } }
+            MenuItem { title: "Zoom 150%";  activated => { Settings.zoom = root.zoom-150; } }
         }
         Menu {
-            title: "Help";
+            title:
+                "Help";
             MenuItem { title: "Documentation";      activated => { root.open-docs(); } }
             MenuItem { title: "Keyboard Shortcuts"; activated => { root.open-shortcuts(); } }
             MenuSeparator {}
@@ -103,10 +113,10 @@ export component FrameworkViewer inherits Window {
         ViewerTopbar { request-bg-style(s) => { root.request-bg-style(s); } }
 
         HorizontalLayout {
-            vertical-stretch: 1;
+            vertical-stretch: root.v-stretch;
 
             SideBar {
-                horizontal-stretch: 0;
+                horizontal-stretch: root.h-sidebar;
                 min-width: Spacing.xl * 4 + Spacing.md;
                 max-width: Spacing.xl * 4 + Spacing.md;
                 active-item: root.active-view;
@@ -122,37 +132,26 @@ export component FrameworkViewer inherits Window {
                     { id: "navigation", label: "Navigation", icon: FluentIcons.list },
                     { id: "data",       label: "Data",       icon: FluentIcons.grid },
                     { id: "canvas",     label: "Canvas",     icon: FluentIcons.image },
+                    { id: "utilities",  label: "Utilities",  icon: FluentIcons.settings },
+                    { id: "popups",     label: "Popups",     icon: FluentIcons.panel-left },
+                    { id: "panels",     label: "Panels",     icon: FluentIcons.layout },
                 ];
                 navigate(id) => { root.active-view = id; }
                 toggle-collapsed() => {}
             }
 
-            if root.active-view == "app-shell": PageAppShell { horizontal-stretch: 1; }
+            if root.active-view == ViewId.app-shell: PageAppShell { horizontal-stretch: root.h-stretch; }
 
-            if root.active-view != "app-shell": Rectangle {
-                horizontal-stretch: 1;
+            if root.active-view != ViewId.app-shell: Rectangle {
+                horizontal-stretch: root.h-stretch;
                 background: Colors.bg-surface;
 
-                Flickable {
+                ViewerContent {
                     width: parent.width;
                     height: parent.height;
-                    viewport-width:  self.width;
-                    viewport-height: pg.preferred-height;
-
-                    pg := VerticalLayout {
-                        padding: Spacing.md;
-                        spacing: Spacing.md;
-                        if root.active-view == "buttons":    PageButtons    {}
-                        if root.active-view == "inputs":     PageInputs     {}
-                        if root.active-view == "display":    PageDisplay    {}
-                        if root.active-view == "feedback":   PageFeedback   {}
-                        if root.active-view == "layout":     PageLayout     {}
-                        if root.active-view == "icons":      PageIcons      {}
-                        if root.active-view == "selection":  PageSelection  {}
-                        if root.active-view == "navigation": PageNavigation {}
-                        if root.active-view == "data":       PageData       { window-height: root.height; }
-                        if root.active-view == "canvas":     PageCanvas     { canvas-frame: root.canvas-frame; }
-                    }
+                    active-view:   root.active-view;
+                    canvas-frame:  root.canvas-frame;
+                    window-height: root.height;
                 }
             }
         }

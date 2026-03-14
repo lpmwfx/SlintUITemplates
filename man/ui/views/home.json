@@ -1,0 +1,12 @@
+{
+  "source": "ui/views/home.slint",
+  "items": [
+    {
+      "name": "HomeView",
+      "kind": "component",
+      "signature": "export component HomeView inherits Rectangle",
+      "line": 8,
+      "doc": ""
+    }
+  ]
+}

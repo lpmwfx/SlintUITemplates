@@ -7,6 +7,26 @@ use crate::{AppWindow, Theme};
 use crate::grid;
 use crate::dsl::{AppDsl, BgStyle};
 
+/// Grid row name — typed discriminator for row ratio assignment.
+enum RowName {
+    Top,
+    Main,
+    Bottom,
+}
+
+impl RowName {
+    fn from_str(s: &str) -> Option<Self> {
+        match s {
+            s if s.eq_ignore_ascii_case("top")    => Some(RowName::Top),
+            s if s.eq_ignore_ascii_case("main")   => Some(RowName::Main),
+            s if s.eq_ignore_ascii_case("bottom") => Some(RowName::Bottom),
+            _ => None,
+        }
+    }
+}
+
+/// Adapter layer between host app and Slint UI window.
+/// Owns AppWindow handle, ViewConfig registry, menu actions, and navigation state.
 pub struct AppAdapter {
     ui:           AppWindow,
     menu_actions: Rc<RefCell<HashMap<String, Box<dyn Fn()>>>>,
@@ -16,13 +36,17 @@ pub struct AppAdapter {
 }
 
 impl AppAdapter {
+    /// Create a new adapter, initializing the Slint window and wiring event dispatch.
     pub fn new() -> Result<Self, slint::PlatformError> {
         let ui = AppWindow::new()?;
         let menu_actions: Rc<RefCell<HashMap<String, Box<dyn Fn()>>>> =
+            // REASON: Multiple closures (menu handler + navigate handler) need shared access
             Rc::new(RefCell::new(HashMap::new()));
         let view_configs: Rc<RefCell<HashMap<String, crate::view_config::ViewConfig>>> =
+            // REASON: Navigate handler and on_navigate callback share config registry
             Rc::new(RefCell::new(HashMap::new()));
         let navigate_cb: Rc<RefCell<Option<Box<dyn Fn(slint::SharedString)>>>> =
+            // REASON: Navigate handler can call user callback; on_navigate() replaces it
             Rc::new(RefCell::new(None));
 
         // Wire menu-action dispatch once — all on_menu_action() calls add to this table
@@ -74,11 +98,7 @@ impl AppAdapter {
 
     /// Set the OS-level backdrop style ("mica" | "acrylic" | anything else → solid).
     pub fn set_bg_style_str(&mut self, style: &str) {
-        self.bg_style = match style {
-            "mica"    => BgStyle::Mica,
-            "acrylic" => BgStyle::Acrylic,
-            _         => BgStyle::Solid,
-        };
+        self.bg_style = BgStyle::from_str(style);
     }
 
     // ── Callback wiring ───────────────────────────────────────────────────────
@@ -102,47 +122,56 @@ impl AppAdapter {
 
     // ── State setters ─────────────────────────────────────────────────────────
 
+    /// Apply settings to the Slint UI (zoom, theme, icons, font).
     pub fn apply_settings(&self, settings: &crate::settings::AppSettings) {
         crate::settings::apply::apply(&self.ui, settings);
     }
 
+    /// Sync UI theme with OS dark mode preference.
     pub fn apply_theme(&self) {
         self.ui.global::<Theme>().set_dark(is_dark_mode());
     }
 
+    /// Load grid layout from config file and apply row ratios.
     pub fn apply_grid(&self, path: &Path) -> Result<(), Box<dyn std::error::Error>> {
         let zones = grid::load_target(path)?;
         for row in &zones.rows {
-            match row.name.as_str() {
-                "top"    => self.ui.set_row_top_ratio(row.ratio as f32),
-                "main"   => self.ui.set_row_main_ratio(row.ratio as f32),
-                "bottom" => self.ui.set_row_bottom_ratio(row.ratio as f32),
-                _ => {}
+            match RowName::from_str(&row.name) {
+                Some(RowName::Top)    => self.ui.set_row_top_ratio(row.ratio as f32),
+                Some(RowName::Main)   => self.ui.set_row_main_ratio(row.ratio as f32),
+                Some(RowName::Bottom) => self.ui.set_row_bottom_ratio(row.ratio as f32),
+                None => {}
             }
         }
         Ok(())
     }
 
+    /// Switch the active view by name.
     pub fn set_active_view(&self, name: &str) {
         self.ui.set_active_view(name.into());
     }
 
+    /// Get the currently active view name.
     pub fn get_active_view(&self) -> String {
         self.ui.get_active_view().to_string()
     }
 
+    /// Set dark mode on/off (true = dark, false = light).
     pub fn set_dark_mode(&self, on: bool) {
         self.ui.global::<Theme>().set_dark(on);
     }
 
+    /// Check if dark mode is currently active.
     pub fn get_dark_mode(&self) -> bool {
         self.ui.global::<Theme>().get_dark()
     }
 
+    /// Set the status bar text.
     pub fn set_status(&self, text: &str) {
         self.ui.set_status_text(text.into());
     }
 
+    /// Show window and apply OS-level backdrop effects, then enter event loop.
     pub fn run(self) -> Result<(), slint::PlatformError> {
         // Show the window first so the HWND is live before applying DWM backdrop.
         self.ui.show()?;
@@ -151,6 +180,7 @@ impl AppAdapter {
     }
 }
 
+/// Check if Windows is in dark mode by querying the registry.
 pub(crate) fn is_dark_mode() -> bool {
     std::process::Command::new("reg")
         .args([

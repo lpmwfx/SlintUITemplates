@@ -1,0 +1,82 @@
+{
+  "source": "ui/tokens/material/spacing.slint",
+  "items": [
+    {
+      "name": "xs",
+      "kind": "property",
+      "signature": "out property <length> xs:   4px;",
+      "line": 5,
+      "doc": ""
+    },
+    {
+      "name": "sm",
+      "kind": "property",
+      "signature": "out property <length> sm:   8px;",
+      "line": 6,
+      "doc": ""
+    },
+    {
+      "name": "md",
+      "kind": "property",
+      "signature": "out property <length> md:  16px;",
+      "line": 7,
+      "doc": ""
+    },
+    {
+      "name": "lg",
+      "kind": "property",
+      "signature": "out property <length> lg:  24px;",
+      "line": 8,
+      "doc": ""
+    },
+    {
+      "name": "xl",
+      "kind": "property",
+      "signature": "out property <length> xl:  32px;",
+      "line": 9,
+      "doc": ""
+    },
+    {
+      "name": "top-app-bar-height",
+      "kind": "property",
+      "signature": "out property <length> top-app-bar-height:    64px;",
+      "line": 12,
+      "doc": ""
+    },
+    {
+      "name": "bottom-nav-bar-height",
+      "kind": "property",
+      "signature": "out property <length> bottom-nav-bar-height: 80px;",
+      "line": 13,
+      "doc": ""
+    },
+    {
+      "name": "nav-item-height",
+      "kind": "property",
+      "signature": "out property <length> nav-item-height:       64px;",
+      "line": 14,
+      "doc": ""
+    },
+    {
+      "name": "fab-size",
+      "kind": "property",
+      "signature": "out property <length> fab-size:              56px;",
+      "line": 15,
+      "doc": ""
+    },
+    {
+      "name": "fab-extended-height",
+      "kind": "property",
+      "signature": "out property <length> fab-extended-height:   56px;",
+      "line": 16,
+      "doc": ""
+    },
+    {
+      "name": "icon-button-size",
+      "kind": "property",
+      "signature": "out property <length> icon-button-size:      48px;",
+      "line": 17,
+      "doc": ""
+    }
+  ]
+}

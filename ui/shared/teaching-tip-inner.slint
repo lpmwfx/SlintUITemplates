@@ -1,0 +1,88 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+
+export component TeachingTipInner inherits Rectangle {
+    in property <string> title: "";
+    in property <string> body: "";
+    in property <string> action-label: "";
+    in property <string> dismiss-label: "";
+    callback popup-close();
+    callback action();
+    callback dismissed();
+
+    private property <length> border-px: 1px;
+    private property <int>    h-stretch: 1;
+    private property <int>    v-stretch: 1;
+
+    background: Colors.bg-elevated;
+    border-radius: Spacing.sm;
+    border-width: root.border-px;
+    border-color: Colors.border;
+    drop-shadow-blur: Spacing.sm;
+    drop-shadow-color: Colors.shadow;
+
+    VerticalLayout {
+        padding: Spacing.md;
+        spacing: Spacing.sm;
+
+        if root.title != "": Text {
+            text: root.title;
+            font-size: Type.body-size;
+            font-weight: Type.weight-semibold;
+            color: Colors.text-primary;
+        }
+
+        if root.body != "": Text {
+            text: root.body;
+            font-size: Type.body-size;
+            color: Colors.text-secondary;
+            wrap: word-wrap;
+            horizontal-stretch: root.h-stretch;
+            vertical-stretch: root.v-stretch;
+        }
+
+        HorizontalLayout {
+            alignment: end;
+            spacing: Spacing.sm;
+
+            if root.dismiss-label != "": Rectangle {
+                width: dismiss-t.preferred-width + Spacing.md * 2;
+                height: Spacing.control-md;
+                border-radius: Spacing.xs;
+                border-width: root.border-px;
+                border-color: Colors.border;
+                background: dismiss-ta.has-hover ? Colors.bg-surface : transparent;
+
+                dismiss-t := Text {
+                    text: root.dismiss-label;
+                    font-size: Type.body-size;
+                    color: Colors.text-primary;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+
+                dismiss-ta := TouchArea {
+                    clicked => { root.popup-close(); root.dismissed(); }
+                }
+            }
+
+            if root.action-label != "": Rectangle {
+                width: action-t.preferred-width + Spacing.md * 2;
+                height: Spacing.control-md;
+                border-radius: Spacing.xs;
+                background: act-ta.has-hover ? Colors.accent-hover : Colors.accent;
+
+                action-t := Text {
+                    text: root.action-label;
+                    font-size: Type.body-size;
+                    color: Colors.accent-text;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+
+                act-ta := TouchArea {
+                    clicked => { root.popup-close(); root.action(); }
+                }
+            }
+        }
+    }
+}

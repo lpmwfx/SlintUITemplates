@@ -1,0 +1,19 @@
+{
+  "source": "src/bindings/rhai/mod.rs",
+  "items": [
+    {
+      "name": "api",
+      "kind": "mod",
+      "signature": "pub mod api;",
+      "line": 1,
+      "doc": ""
+    },
+    {
+      "name": "build_engine",
+      "kind": "fn",
+      "signature": "pub fn build_engine(adapter: Rc<RefCell<AppAdapter>>) -> Engine",
+      "line": 10,
+      "doc": "Build a Rhai Engine with all AppAdapter API functions registered."
+    }
+  ]
+}

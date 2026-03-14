@@ -1,0 +1,61 @@
+{
+  "source": "ui/tokens/sizes.slint",
+  "items": [
+    {
+      "name": "fill",
+      "kind": "property",
+      "signature": "out property <float> fill:    1.0;   // fill remaining space",
+      "line": 8,
+      "doc": ""
+    },
+    {
+      "name": "no-fill",
+      "kind": "property",
+      "signature": "out property <float> no-fill: 0.0;   // fixed / no stretch",
+      "line": 9,
+      "doc": ""
+    },
+    {
+      "name": "docs-window-width",
+      "kind": "property",
+      "signature": "out property <length> docs-window-width:      1100px;",
+      "line": 12,
+      "doc": ""
+    },
+    {
+      "name": "docs-window-height",
+      "kind": "property",
+      "signature": "out property <length> docs-window-height:     720px;",
+      "line": 13,
+      "doc": ""
+    },
+    {
+      "name": "docs-window-min-width",
+      "kind": "property",
+      "signature": "out property <length> docs-window-min-width:  400px;",
+      "line": 14,
+      "doc": ""
+    },
+    {
+      "name": "docs-window-min-height",
+      "kind": "property",
+      "signature": "out property <length> docs-window-min-height: 300px;",
+      "line": 15,
+      "doc": ""
+    },
+    {
+      "name": "docs-content-min-width",
+      "kind": "property",
+      "signature": "out property <length> docs-content-min-width: 144px;  // min content pane width",
+      "line": 16,
+      "doc": ""
+    },
+    {
+      "name": "sidebar-toc-min-height",
+      "kind": "property",
+      "signature": "out property <length> sidebar-toc-min-height: 144px;  // min TOC flickable height",
+      "line": 17,
+      "doc": ""
+    }
+  ]
+}

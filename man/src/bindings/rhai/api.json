@@ -1,0 +1,12 @@
+{
+  "source": "src/bindings/rhai/api.rs",
+  "items": [
+    {
+      "name": "register",
+      "kind": "fn",
+      "signature": "pub fn register(engine: &mut Engine, adapter: Rc<RefCell<AppAdapter>>)",
+      "line": 8,
+      "doc": "Register all AppAdapter API functions into the Rhai engine."
+    }
+  ]
+}

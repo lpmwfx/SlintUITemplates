@@ -1,0 +1,18 @@
+import { Spacing } from "../tokens/theme.slint";
+import { AccordionRow, AccordionItem } from "accordion-row.slint";
+
+export { AccordionItem }
+
+export component Accordion inherits VerticalLayout {
+    in property <[AccordionItem]> items: [];
+    in property <string>          expanded-id: "";
+    callback toggled(string);
+
+    spacing: Spacing.xs;
+
+    for item in root.items: AccordionRow {
+        item: item;
+        expanded: item.id == root.expanded-id;
+        toggled(id) => { root.toggled(id); }
+    }
+}

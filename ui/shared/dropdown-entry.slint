@@ -1,0 +1,62 @@
+import { Colors, Spacing, Type, FluentIcons } from "../tokens/theme.slint";
+
+export struct DropdownMenuItem {
+    id:        string,
+    label:     string,
+    icon:      string,
+    disabled:  bool,
+    separator: bool,
+}
+
+export component DropdownEntry inherits Rectangle {
+    in property <DropdownMenuItem> item;
+    callback activated(string);
+
+    private property <length> border-px:    1px;
+    private property <length> half-xs:     Spacing.xs / 2;
+    private property <int>    stretch-full: 1;
+    private property <float>  op-enabled:   1.0;
+    private property <float>  op-disabled:  0.5;
+
+    height: item.separator ? Spacing.xs : Spacing.xl;
+
+    if item.separator: Rectangle {
+        y: root.half-xs;
+        width: parent.width;
+        height: border-px;
+        background: Colors.border;
+    }
+
+    if !item.separator: Rectangle {
+        border-radius: Spacing.xs;
+        background: !item.disabled && row-ta.has-hover ? Colors.bg-surface : transparent;
+        opacity: item.disabled ? root.op-disabled : root.op-enabled;
+
+        HorizontalLayout {
+            padding-left: Spacing.sm;
+            padding-right: Spacing.sm;
+            spacing: Spacing.sm;
+
+            if item.icon != "": Text {
+                text: item.icon;
+                font-family: FluentIcons.icon-font;
+                font-size: Type.body-size;
+                color: Colors.text-secondary;
+                vertical-alignment: center;
+            }
+
+            Text {
+                text: item.label;
+                font-size: Type.body-size;
+                color: item.disabled ? Colors.text-disabled : Colors.text-primary;
+                vertical-alignment: center;
+                horizontal-stretch: root.stretch-full;
+            }
+        }
+
+        row-ta := TouchArea {
+            enabled: !item.disabled;
+            clicked => { root.activated(root.item.id); }
+        }
+    }
+}

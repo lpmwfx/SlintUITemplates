@@ -1,0 +1,134 @@
+// page-panels — Accordion, Drawer
+
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Accordion, AccordionItem } from "../shared/accordion.slint";
+import { Drawer }    from "../shared/drawer.slint";
+import { ViewerSection } from "viewer-section.slint";
+
+export component PagePanels inherits VerticalLayout {
+    spacing: Spacing.md;
+
+    private property <bool>   left-open:   false;
+    private property <bool>   right-open:  false;
+    private property <length> acc-w:       420px;
+    private property <length> btn-w:       130px;
+    private property <length> demo-w:      500px;
+    private property <length> demo-h:      200px;
+    private property <length> drw-w:       200px;
+    private property <length> border-px:   1px;
+    private property <string> acc-init:     "whatis";
+    private property <string> place-left:  "left";
+    private property <string> place-right: "right";
+    private property <string> left-title:  "Left Panel";
+    private property <string> right-title: "Right Panel";
+
+    ViewerSection { title: "Accordion — one section open at a time";
+        Accordion {
+            width: root.acc-w;
+            expanded-id: root.acc-init;
+            items: [
+                { id: "whatis",   title: "What is Slint?",         content: "Slint is a declarative GUI toolkit for Rust, C++, and JavaScript. It compiles .slint files to native code for maximum performance." },
+                { id: "tokens",   title: "Design Tokens",          content: "All visual values (colors, spacing, typography, radius) are defined in ui/tokens/ and never hardcoded in components. This enables runtime theming." },
+                { id: "mother",   title: "Mother-Child Pattern",   content: "AppWindow (the mother) owns all state. Child components receive data via in property and emit events via callback. No child owns state." },
+                { id: "platform", title: "Platform Support",       content: "Windows 11 with Fluent 2 is the primary target. Android with Material Design 3 is planned. macOS and Linux are future targets." },
+            ];
+            toggled(id) => { debug("accordion toggled: " + id); }
+        }
+    }
+
+    ViewerSection { title: "Drawer — slide-in panel from left or right";
+        HorizontalLayout {
+            spacing: Spacing.sm;
+            alignment: start;
+
+            Rectangle {
+                width: root.btn-w;
+                height: Spacing.control-lg;
+                border-radius: Spacing.xs;
+                background: left-ta.has-hover ? Colors.accent-hover : Colors.accent;
+
+                Text { text: "Open Left";
+                    font-size: Type.body-size;
+                    color: Colors.accent-text;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+
+                left-ta := TouchArea {
+                    clicked => { root.left-open = true; }
+                }
+            }
+
+            Rectangle {
+                width: root.btn-w;
+                height: Spacing.control-lg;
+                border-radius: Spacing.xs;
+                border-width: root.border-px;
+                border-color: Colors.border;
+                background: right-ta.has-hover ? Colors.bg-elevated : Colors.bg-surface;
+
+                Text { text: "Open Right";
+                    font-size: Type.body-size;
+                    color: Colors.text-primary;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+
+                right-ta := TouchArea {
+                    clicked => { root.right-open = true; }
+                }
+            }
+        }
+
+        Text { text: "Click overlay or X to close";
+            font-size: Type.caption-size;
+            color: Colors.text-disabled;
+        }
+
+        demo-area := Rectangle {
+            width: root.demo-w;
+            height: root.demo-h;
+            clip: true;
+            border-width: root.border-px;
+            border-color: Colors.border;
+            border-radius: Spacing.sm;
+            background: Colors.bg-primary;
+
+            Text { text: "Drawer demo area";
+                font-size: Type.body-size;
+                color: Colors.text-disabled;
+                horizontal-alignment: center;
+                vertical-alignment: center;
+            }
+
+            Drawer {
+                width: parent.width;
+                height: parent.height;
+                open: root.left-open;
+                placement: root.place-left;
+                drawer-width: root.drw-w;
+                title: root.left-title;
+                close-requested => { root.left-open = false; }
+
+                Text { text: "Navigation"; font-size: Type.body-size; color: Colors.text-primary; }
+                Text { text: "Item one";   font-size: Type.body-size; color: Colors.text-secondary; }
+                Text { text: "Item two";   font-size: Type.body-size; color: Colors.text-secondary; }
+                Text { text: "Item three"; font-size: Type.body-size; color: Colors.text-secondary; }
+            }
+
+            Drawer {
+                width: parent.width;
+                height: parent.height;
+                open: root.right-open;
+                placement: root.place-right;
+                drawer-width: root.drw-w;
+                title: root.right-title;
+                close-requested => { root.right-open = false; }
+
+                Text { text: "Properties"; font-size: Type.body-size; color: Colors.text-primary; }
+                Text { text: "Color: accent"; font-size: Type.body-size; color: Colors.text-secondary; }
+                Text { text: "Border: none"; font-size: Type.body-size; color: Colors.text-secondary; }
+            }
+        }
+    }
+}

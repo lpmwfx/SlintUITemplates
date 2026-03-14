@@ -1,0 +1,33 @@
+import { Colors, Spacing, Type, FluentIcons } from "../tokens/theme.slint";
+
+export struct CbfAction {
+    id:      string,
+    icon:    string,
+    label:   string,
+    enabled: bool,
+}
+
+export component CbfPrimaryBtn inherits Rectangle {
+    in property <CbfAction> item;
+    callback activated(string);
+
+    width: Spacing.xl;
+    height: Spacing.xl;
+    border-radius: Spacing.xs;
+    background: !item.enabled ? transparent :
+                ta.has-hover  ? Colors.bg-surface : transparent;
+
+    Text {
+        text: item.icon;
+        font-family: FluentIcons.icon-font;
+        font-size: Type.subtitle-size;
+        color: item.enabled ? Colors.text-primary : Colors.text-disabled;
+        horizontal-alignment: center;
+        vertical-alignment: center;
+    }
+
+    ta := TouchArea {
+        enabled: item.enabled;
+        clicked => { root.activated(root.item.id); }
+    }
+}

@@ -1,0 +1,103 @@
+{
+  "source": "ui/shared/teaching-tip.slint",
+  "items": [
+    {
+      "name": "TeachingTip",
+      "kind": "component",
+      "signature": "export component TeachingTip inherits Rectangle",
+      "line": 16,
+      "doc": ""
+    },
+    {
+      "name": "window-height",
+      "kind": "property",
+      "signature": "in property <length> window-height;",
+      "line": 17,
+      "doc": ""
+    },
+    {
+      "name": "title",
+      "kind": "property",
+      "signature": "in property <string> title: \"\";",
+      "line": 18,
+      "doc": ""
+    },
+    {
+      "name": "body",
+      "kind": "property",
+      "signature": "in property <string> body: \"\";",
+      "line": 19,
+      "doc": ""
+    },
+    {
+      "name": "action-label",
+      "kind": "property",
+      "signature": "in property <string> action-label: \"Got it\";",
+      "line": 20,
+      "doc": ""
+    },
+    {
+      "name": "dismiss-label",
+      "kind": "property",
+      "signature": "in property <string> dismiss-label: \"\";",
+      "line": 21,
+      "doc": ""
+    },
+    {
+      "name": "action",
+      "kind": "callback",
+      "signature": "callback action();",
+      "line": 22,
+      "doc": ""
+    },
+    {
+      "name": "dismissed",
+      "kind": "callback",
+      "signature": "callback dismissed();",
+      "line": 23,
+      "doc": ""
+    },
+    {
+      "name": "pop-x",
+      "kind": "property",
+      "signature": "private property <length> pop-x:    0px;",
+      "line": 25,
+      "doc": ""
+    },
+    {
+      "name": "pop-y",
+      "kind": "property",
+      "signature": "private property <length> pop-y:    0px;",
+      "line": 26,
+      "doc": ""
+    },
+    {
+      "name": "popup-w",
+      "kind": "property",
+      "signature": "private property <length> popup-w:  260px;",
+      "line": 27,
+      "doc": ""
+    },
+    {
+      "name": "popup-h",
+      "kind": "property",
+      "signature": "private property <length> popup-h:  180px;",
+      "line": 28,
+      "doc": ""
+    },
+    {
+      "name": "arrow-sz",
+      "kind": "property",
+      "signature": "private property <length> arrow-sz: 10px;",
+      "line": 29,
+      "doc": ""
+    },
+    {
+      "name": "flip-up",
+      "kind": "property",
+      "signature": "private property <bool>   flip-up:  false;",
+      "line": 30,
+      "doc": ""
+    }
+  ]
+}

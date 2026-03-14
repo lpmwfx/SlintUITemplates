@@ -1,0 +1,187 @@
+{
+  "source": "ui/state/Theme.slint",
+  "items": [
+    {
+      "name": "material",
+      "kind": "property",
+      "signature": "in-out property <string> material: \"solid\";  // \"solid\" | \"mica\" | \"acrylic\"",
+      "line": 14,
+      "doc": ""
+    },
+    {
+      "name": "dark",
+      "kind": "property",
+      "signature": "in-out property <bool>   dark: Palette.color-scheme == ColorScheme.dark;",
+      "line": 15,
+      "doc": ""
+    },
+    {
+      "name": "dark-mode",
+      "kind": "property",
+      "signature": "in-out property <bool>   dark-mode <=> dark;  // backwards-compat alias",
+      "line": 16,
+      "doc": ""
+    },
+    {
+      "name": "accent-override",
+      "kind": "property",
+      "signature": "in-out property <color>  accent-override: transparent;  // alpha=0 → derive from palette",
+      "line": 17,
+      "doc": ""
+    },
+    {
+      "name": "bg-primary",
+      "kind": "property",
+      "signature": "out property <color> bg-primary:",
+      "line": 19,
+      "doc": ""
+    },
+    {
+      "name": "bg-surface",
+      "kind": "property",
+      "signature": "out property <color> bg-surface:",
+      "line": 24,
+      "doc": ""
+    },
+    {
+      "name": "bg-elevated",
+      "kind": "property",
+      "signature": "out property <color> bg-elevated:",
+      "line": 29,
+      "doc": ""
+    },
+    {
+      "name": "text-primary",
+      "kind": "property",
+      "signature": "out property <color> text-primary:",
+      "line": 34,
+      "doc": ""
+    },
+    {
+      "name": "text-secondary",
+      "kind": "property",
+      "signature": "out property <color> text-secondary:",
+      "line": 39,
+      "doc": ""
+    },
+    {
+      "name": "text-disabled",
+      "kind": "property",
+      "signature": "out property <color> text-disabled:",
+      "line": 44,
+      "doc": ""
+    },
+    {
+      "name": "accent",
+      "kind": "property",
+      "signature": "out property <color> accent:",
+      "line": 49,
+      "doc": ""
+    },
+    {
+      "name": "accent-hover",
+      "kind": "property",
+      "signature": "out property <color> accent-hover:",
+      "line": 55,
+      "doc": ""
+    },
+    {
+      "name": "accent-text",
+      "kind": "property",
+      "signature": "out property <color> accent-text:",
+      "line": 60,
+      "doc": ""
+    },
+    {
+      "name": "error",
+      "kind": "property",
+      "signature": "out property <color> error:   #C42B1C;",
+      "line": 65,
+      "doc": ""
+    },
+    {
+      "name": "success",
+      "kind": "property",
+      "signature": "out property <color> success: #0F7B0F;",
+      "line": 66,
+      "doc": ""
+    },
+    {
+      "name": "warning",
+      "kind": "property",
+      "signature": "out property <color> warning: #9D5D00;",
+      "line": 67,
+      "doc": ""
+    },
+    {
+      "name": "border",
+      "kind": "property",
+      "signature": "out property <color> border:",
+      "line": 69,
+      "doc": ""
+    },
+    {
+      "name": "border-strong",
+      "kind": "property",
+      "signature": "out property <color> border-strong:",
+      "line": 74,
+      "doc": ""
+    },
+    {
+      "name": "border-focus",
+      "kind": "property",
+      "signature": "out property <color> border-focus: accent;",
+      "line": 79,
+      "doc": ""
+    },
+    {
+      "name": "shadow",
+      "kind": "property",
+      "signature": "out property <color> shadow:",
+      "line": 81,
+      "doc": ""
+    },
+    {
+      "name": "overlay",
+      "kind": "property",
+      "signature": "out property <color> overlay: #00000040;",
+      "line": 87,
+      "doc": ""
+    },
+    {
+      "name": "bg-panel",
+      "kind": "property",
+      "signature": "out property <color> bg-panel:     bg-surface;",
+      "line": 90,
+      "doc": ""
+    },
+    {
+      "name": "handle",
+      "kind": "property",
+      "signature": "out property <color> handle:       border;",
+      "line": 91,
+      "doc": ""
+    },
+    {
+      "name": "handle-hover",
+      "kind": "property",
+      "signature": "out property <color> handle-hover: border-strong;",
+      "line": 92,
+      "doc": ""
+    },
+    {
+      "name": "danger",
+      "kind": "property",
+      "signature": "out property <color> danger:       error;",
+      "line": 93,
+      "doc": ""
+    },
+    {
+      "name": "text-muted",
+      "kind": "property",
+      "signature": "out property <color> text-muted:   text-secondary;",
+      "line": 94,
+      "doc": ""
+    }
+  ]
+}

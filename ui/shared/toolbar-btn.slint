@@ -1,0 +1,32 @@
+import { Colors, Spacing, Type, FluentIcons } from "../tokens/theme.slint";
+
+export struct ToolbarItem {
+    id:      string,
+    icon:    string,
+    tooltip: string,
+    enabled: bool,
+}
+
+export component ToolbarBtn inherits Rectangle {
+    in property <ToolbarItem> item;
+    callback clicked(string);
+
+    width: Spacing.xl;
+    height: Spacing.xl;
+    border-radius: Spacing.xs;
+    background: !item.enabled ? transparent :
+                ta.has-hover  ? Colors.bg-elevated : transparent;
+
+    Text { text: item.icon;
+        font-family: FluentIcons.icon-font;
+        font-size: Type.subtitle-size;
+        color: item.enabled ? Colors.text-primary : Colors.text-disabled;
+        horizontal-alignment: center;
+        vertical-alignment: center;
+    }
+
+    ta := TouchArea {
+        enabled: item.enabled;
+        clicked => { root.clicked(root.item.id); }
+    }
+}

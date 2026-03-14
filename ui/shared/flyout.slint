@@ -1,0 +1,59 @@
+// Flyout — base primitive for popup overlays.
+//
+// Declare flyout INSIDE the same element as the trigger TouchArea.
+// PopupWindow always renders at window z-level regardless of nesting depth.
+//
+//   trigger := Rectangle {
+//       flyout := Flyout { window-height: root.window-height; title: "Hello"; body: "World"; }
+//       TouchArea { clicked => { flyout.show-at(self.mouse-x, self.mouse-y); } }
+//   }
+
+import { Spacing } from "../tokens/theme.slint";
+import { FlyoutInner } from "flyout-inner.slint";
+
+export component Flyout inherits Rectangle {
+    in property <length> window-height;
+    in property <length> popup-width:  220px;
+    in property <length> popup-height: 160px;
+    in property <string> title: "";
+    in property <string> body: "";
+    callback closed();
+
+    private property <length> pop-x: 0px;
+    private property <length> pop-y: 0px;
+
+    width: root.pop-x - root.pop-x;
+    height: root.pop-y - root.pop-y;
+    background: transparent;
+
+    popup := PopupWindow {
+        x: root.pop-x;
+        y: root.pop-y;
+        width: root.popup-width;
+        height: root.popup-height;
+
+        FlyoutInner {
+            title: root.title;
+            body:  root.body;
+            closed => { popup.close(); root.closed(); }
+        }
+    }
+
+    public function show-at(xp: length, yp: length) {
+        root.pop-x = xp;
+        if root.window-height > root.pop-x - root.pop-x
+                && root.absolute-position.y + yp + root.popup-height > root.window-height {
+            root.pop-y = yp - root.popup-height;
+            if root.absolute-position.y + root.pop-y < root.pop-x - root.pop-x {
+                root.pop-y = -root.absolute-position.y;
+            }
+        } else {
+            root.pop-y = yp;
+        }
+        popup.show();
+    }
+
+    public function close() {
+        popup.close();
+    }
+}

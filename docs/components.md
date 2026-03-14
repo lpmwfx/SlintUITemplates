@@ -183,6 +183,27 @@ See [tokens.md](tokens.md).
 
 ## Shared Components
 
+#### `AccordionItem` struct
+
+| Field | Type |
+|-------|------|
+| `id` | `string` |
+| `title` | `string` |
+| `content` | `string` |
+
+### Accordion (`ui/shared/accordion.slint`)
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `items` | `[AccordionItem]` | `[]` |  |
+| `expanded-id` *(in-out)* | `string` | `""` |  |
+
+| Callback | Signature | Description |
+|----------|-----------|-------------|
+| `toggled(string)` | |  |
+
+---
+
 ### Alert (`ui/shared/alert.slint`)
 
 | Property | Type | Default | Description |
@@ -311,6 +332,29 @@ See [tokens.md](tokens.md).
 
 ---
 
+#### `CbfAction` struct
+
+| Field | Type |
+|-------|------|
+| `id` | `string` |
+| `icon` | `string` |
+| `label` | `string` |
+| `enabled` | `bool` |
+
+### CommandBarFlyout (`ui/shared/command-bar-flyout.slint`)
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `primary` | `[CbfAction]` | `[]` |  |
+| `secondary` | `[CbfAction]` | `[]` |  |
+| `window-height` | `length` | `` |  |
+
+| Callback | Signature | Description |
+|----------|-----------|-------------|
+| `action(string)` | |  |
+
+---
+
 #### `ContextMenuItem` struct
 
 | Field | Type |
@@ -407,6 +451,96 @@ See [tokens.md](tokens.md).
 
 ---
 
+### Drawer (`ui/shared/drawer.slint`)
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `open` | `bool` | `false` |  |
+| `placement` | `string` | `"left"` | left \| right |
+| `drawer-width` | `length` | `280px` |  |
+| `title` | `string` | `""` |  |
+
+| Callback | Signature | Description |
+|----------|-----------|-------------|
+| `close-requested()` | |  |
+
+---
+
+#### `DropdownMenuItem` struct
+
+| Field | Type |
+|-------|------|
+| `id` | `string` |
+| `label` | `string` |
+| `icon` | `string` |
+| `disabled` | `bool` |
+| `separator` | `bool` |
+
+### DropdownMenu (`ui/shared/dropdown-menu.slint`)
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `items` | `[DropdownMenuItem]` | `[]` |  |
+| `window-height` | `length` | `` |  |
+
+| Callback | Signature | Description |
+|----------|-----------|-------------|
+| `activated(string)` | |  |
+
+---
+
+### EmptyState (`ui/shared/empty-state.slint`)
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `icon` | `string` | `"\u{E8FD}"` |  |
+| `title` | `string` | `"No items"` |  |
+| `description` | `string` | `""` |  |
+| `action-label` | `string` | `""` |  |
+
+| Callback | Signature | Description |
+|----------|-----------|-------------|
+| `action()` | |  |
+
+---
+
+### Flyout (`ui/shared/flyout.slint`)
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `window-height` | `length` | `` |  |
+| `popup-width` | `length` | `220px` |  |
+| `popup-height` | `length` | `160px` |  |
+| `title` | `string` | `""` |  |
+| `body` | `string` | `""` |  |
+
+| Callback | Signature | Description |
+|----------|-----------|-------------|
+| `closed()` | |  |
+
+---
+
+### FormField (`ui/shared/form-field.slint`)
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `label` | `string` | `""` |  |
+| `required` | `bool` | `false` |  |
+| `error` | `string` | `""` |  |
+| `hint` | `string` | `""` |  |
+
+---
+
+### Label (`ui/shared/label.slint`)
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `text` | `string` | `""` |  |
+| `required` | `bool` | `false` |  |
+| `disabled` | `bool` | `false` |  |
+
+---
+
 ### ListItem (`ui/shared/list-item.slint`)
 
 | Property | Type | Default | Description |
@@ -418,6 +552,22 @@ See [tokens.md](tokens.md).
 | Callback | Signature | Description |
 |----------|-----------|-------------|
 | `clicked()` | |  |
+
+---
+
+### MessageBar (`ui/shared/message-bar.slint`)
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `message` | `string` | `""` |  |
+| `variant` | `string` | `"info"` | info \| warning \| error \| success |
+| `action-label` | `string` | `""` |  |
+| `closable` | `bool` | `true` |  |
+
+| Callback | Signature | Description |
+|----------|-----------|-------------|
+| `action()` | |  |
+| `closed()` | |  |
 
 ---
 
@@ -469,6 +619,22 @@ See [tokens.md](tokens.md).
 | Callback | Signature | Description |
 |----------|-----------|-------------|
 | `changed(string)` | |  |
+
+---
+
+### Popover (`ui/shared/popover.slint`)
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `open` | `bool` | `false` |  |
+| `popup-width` | `length` | `220px` |  |
+| `popup-height` | `length` | `140px` |  |
+| `title` | `string` | `""` |  |
+| `body` | `string` | `""` |  |
+
+| Callback | Signature | Description |
+|----------|-----------|-------------|
+| `close-requested()` | |  |
 
 ---
 
@@ -547,6 +713,27 @@ See [tokens.md](tokens.md).
 | `changed(string)` | |  |
 | `submitted(string)` | |  |
 | `cleared()` | |  |
+
+---
+
+#### `SegmentItem` struct
+
+| Field | Type |
+|-------|------|
+| `id` | `string` |
+| `label` | `string` |
+| `icon` | `string` |
+
+### Segmented (`ui/shared/segmented.slint`)
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `items` | `[SegmentItem]` | `[]` |  |
+| `selected` *(in-out)* | `string` | `""` |  |
+
+| Callback | Signature | Description |
+|----------|-----------|-------------|
+| `changed(string)` | |  |
 
 ---
 
@@ -659,6 +846,23 @@ See [tokens.md](tokens.md).
 
 ---
 
+### TeachingTip (`ui/shared/teaching-tip.slint`)
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `window-height` | `length` | `` |  |
+| `title` | `string` | `""` |  |
+| `body` | `string` | `""` |  |
+| `action-label` | `string` | `"Got it"` |  |
+| `dismiss-label` | `string` | `""` |  |
+
+| Callback | Signature | Description |
+|----------|-----------|-------------|
+| `action()` | |  |
+| `dismissed()` | |  |
+
+---
+
 ### TextArea (`ui/shared/text-area.slint`)
 
 | Property | Type | Default | Description |
@@ -711,6 +915,27 @@ See [tokens.md](tokens.md).
 | Callback | Signature | Description |
 |----------|-----------|-------------|
 | `toggled(bool)` | |  |
+
+---
+
+#### `ToolbarItem` struct
+
+| Field | Type |
+|-------|------|
+| `id` | `string` |
+| `icon` | `string` |
+| `tooltip` | `string` |
+| `enabled` | `bool` |
+
+### Toolbar (`ui/shared/toolbar.slint`)
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `items` | `[ToolbarItem]` | `[]` |  |
+
+| Callback | Signature | Description |
+|----------|-----------|-------------|
+| `clicked(string)` | |  |
 
 ---
 

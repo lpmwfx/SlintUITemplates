@@ -1,0 +1,54 @@
+{
+  "source": "ui/viewer/page-selection.slint",
+  "items": [
+    {
+      "name": "PageSelection",
+      "kind": "component",
+      "signature": "export component PageSelection inherits VerticalLayout",
+      "line": 11,
+      "doc": ""
+    },
+    {
+      "name": "cb-checked",
+      "kind": "property",
+      "signature": "private property <bool>   cb-checked: false;",
+      "line": 14,
+      "doc": ""
+    },
+    {
+      "name": "cb-indet",
+      "kind": "property",
+      "signature": "private property <bool>   cb-indet: true;",
+      "line": 15,
+      "doc": ""
+    },
+    {
+      "name": "radio-val",
+      "kind": "property",
+      "signature": "private property <string> radio-val: \"Option B\";",
+      "line": 16,
+      "doc": ""
+    },
+    {
+      "name": "slider-val",
+      "kind": "property",
+      "signature": "private property <float>  slider-val: 0.4;",
+      "line": 17,
+      "doc": ""
+    },
+    {
+      "name": "spin-val",
+      "kind": "property",
+      "signature": "private property <int>    spin-val: 42;",
+      "line": 18,
+      "doc": ""
+    },
+    {
+      "name": "rating-val",
+      "kind": "property",
+      "signature": "private property <int>    rating-val: 3;",
+      "line": 19,
+      "doc": ""
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 /// Slint VecModel builders for ShellConfig — kept separate to limit mother size.
-use super::ShellConfig;
+use crate::shell::ShellConfig;
 use crate::{NavItem, ShellToolbarItem};
 use slint::VecModel;
 use std::rc::Rc;

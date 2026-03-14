@@ -1,0 +1,51 @@
+import { Colors, Spacing, Type, FluentIcons } from "../tokens/theme.slint";
+import { Button } from "button.slint";
+
+export component EmptyState inherits Rectangle {
+    in property <string> icon: "\u{E8FD}";
+    in property <string> title: "No items";
+    in property <string> description: "";
+    in property <string> action-label: "";
+    callback action();
+
+    private property <length> icon-sz: Type.heading-size * 2;
+
+    background: transparent;
+
+    VerticalLayout {
+        alignment: center;
+        spacing: Spacing.sm;
+        padding: Spacing.lg;
+
+        Text { text: root.icon;
+            font-family: FluentIcons.icon-font;
+            font-size: root.icon-sz;
+            color: Colors.text-disabled;
+            horizontal-alignment: center;
+        }
+
+        Text {
+            text: root.title;
+            font-size: Type.subtitle-size;
+            font-weight: Type.weight-semibold;
+            color: Colors.text-primary;
+            horizontal-alignment: center;
+        }
+
+        if root.description != "": Text {
+            text: root.description;
+            font-size: Type.body-size;
+            color: Colors.text-secondary;
+            horizontal-alignment: center;
+        }
+
+        if root.action-label != "": HorizontalLayout {
+            alignment: center;
+            padding-top: Spacing.sm;
+            Button {
+                label: root.action-label;
+                clicked => { root.action(); }
+            }
+        }
+    }
+}

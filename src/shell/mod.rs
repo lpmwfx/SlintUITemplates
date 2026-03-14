@@ -2,6 +2,7 @@
 pub mod platform;
 pub use platform::Platform;
 
+/// Slint VecModel builders for ShellConfig (nav_model, toolbar_model).
 pub mod models;
 
 use crate::{NavItem, ShellToolbarItem};

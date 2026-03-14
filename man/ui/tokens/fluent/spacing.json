@@ -1,0 +1,117 @@
+{
+  "source": "ui/tokens/fluent/spacing.slint",
+  "items": [
+    {
+      "name": "xs",
+      "kind": "property",
+      "signature": "out property <length> xs:    4px;",
+      "line": 5,
+      "doc": ""
+    },
+    {
+      "name": "sm",
+      "kind": "property",
+      "signature": "out property <length> sm:    8px;",
+      "line": 6,
+      "doc": ""
+    },
+    {
+      "name": "md",
+      "kind": "property",
+      "signature": "out property <length> md:   12px;",
+      "line": 7,
+      "doc": ""
+    },
+    {
+      "name": "lg",
+      "kind": "property",
+      "signature": "out property <length> lg:   16px;",
+      "line": 8,
+      "doc": ""
+    },
+    {
+      "name": "xl",
+      "kind": "property",
+      "signature": "out property <length> xl:   20px;",
+      "line": 9,
+      "doc": ""
+    },
+    {
+      "name": "xxl",
+      "kind": "property",
+      "signature": "out property <length> xxl:  24px;",
+      "line": 10,
+      "doc": ""
+    },
+    {
+      "name": "xxxl",
+      "kind": "property",
+      "signature": "out property <length> xxxl: 32px;",
+      "line": 11,
+      "doc": ""
+    },
+    {
+      "name": "control-sm",
+      "kind": "property",
+      "signature": "out property <length> control-sm: 24px;   // compact controls",
+      "line": 14,
+      "doc": ""
+    },
+    {
+      "name": "control-md",
+      "kind": "property",
+      "signature": "out property <length> control-md: 32px;   // standard controls (buttons, inputs)",
+      "line": 15,
+      "doc": ""
+    },
+    {
+      "name": "control-lg",
+      "kind": "property",
+      "signature": "out property <length> control-lg: 40px;   // large / nav items",
+      "line": 16,
+      "doc": ""
+    },
+    {
+      "name": "nav-width-collapsed",
+      "kind": "property",
+      "signature": "out property <length> nav-width-collapsed: 48px;",
+      "line": 19,
+      "doc": ""
+    },
+    {
+      "name": "nav-width-expanded",
+      "kind": "property",
+      "signature": "out property <length> nav-width-expanded:  280px;",
+      "line": 20,
+      "doc": ""
+    },
+    {
+      "name": "status-bar-height",
+      "kind": "property",
+      "signature": "out property <length> status-bar-height:   24px;",
+      "line": 21,
+      "doc": ""
+    },
+    {
+      "name": "toolbar-height",
+      "kind": "property",
+      "signature": "out property <length> toolbar-height:      40px;",
+      "line": 22,
+      "doc": ""
+    },
+    {
+      "name": "titlebar-height",
+      "kind": "property",
+      "signature": "out property <length> titlebar-height:     32px;",
+      "line": 23,
+      "doc": ""
+    },
+    {
+      "name": "menubar-height",
+      "kind": "property",
+      "signature": "out property <length> menubar-height:      30px;",
+      "line": 24,
+      "doc": ""
+    }
+  ]
+}

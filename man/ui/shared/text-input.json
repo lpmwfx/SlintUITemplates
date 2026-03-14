@@ -1,0 +1,54 @@
+{
+  "source": "ui/shared/text-input.slint",
+  "items": [
+    {
+      "name": "TextInput",
+      "kind": "component",
+      "signature": "export component TextInput inherits Rectangle",
+      "line": 3,
+      "doc": ""
+    },
+    {
+      "name": "label",
+      "kind": "property",
+      "signature": "in property <string> label: \"\";",
+      "line": 4,
+      "doc": ""
+    },
+    {
+      "name": "value",
+      "kind": "property",
+      "signature": "in property <string> value: \"\";",
+      "line": 5,
+      "doc": ""
+    },
+    {
+      "name": "placeholder",
+      "kind": "property",
+      "signature": "in property <string> placeholder: \"\";",
+      "line": 6,
+      "doc": ""
+    },
+    {
+      "name": "error",
+      "kind": "property",
+      "signature": "in property <string> error: \"\";",
+      "line": 7,
+      "doc": ""
+    },
+    {
+      "name": "changed",
+      "kind": "callback",
+      "signature": "callback changed(string);",
+      "line": 8,
+      "doc": ""
+    },
+    {
+      "name": "submitted",
+      "kind": "callback",
+      "signature": "callback submitted(string);",
+      "line": 9,
+      "doc": ""
+    }
+  ]
+}

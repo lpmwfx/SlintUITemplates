@@ -1,0 +1,47 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { CommandBarFlyout, CbfAction } from "../shared/command-bar-flyout.slint";
+
+export component PopupCbfDemo inherits Rectangle {
+    in property <length> window-height;
+
+    private property <length> cbf-w:     180px;
+    private property <length> border-px: 1px;
+
+    height: Spacing.control-lg;
+    width: root.cbf-w;
+
+    cbf := CommandBarFlyout { window-height: root.window-height;
+        primary: [
+            { id: "cut",    icon: "\u{E8C6}", label: "Cut",   enabled: true  },
+            { id: "copy",   icon: "\u{E8C8}", label: "Copy",  enabled: true  },
+            { id: "paste",  icon: "\u{E77F}", label: "Paste", enabled: false },
+        ];
+        secondary: [
+            { id: "undo",   icon: "\u{E7A7}", label: "Undo",       enabled: true },
+            { id: "redo",   icon: "\u{E7A6}", label: "Redo",       enabled: true },
+            { id: "selall", icon: "",         label: "Select All", enabled: true },
+            { id: "find",   icon: "\u{E721}", label: "Find...",    enabled: true },
+        ];
+        action(id) => { debug("cbf: " + id); }
+    }
+
+    Rectangle {
+        width: parent.width;
+        height: parent.height;
+        border-radius: Spacing.xs;
+        border-width: root.border-px;
+        border-color: Colors.border;
+        background: btn-ta.has-hover ? Colors.bg-elevated : Colors.bg-surface;
+
+        Text { text: "Right-click actions";
+            font-size: Type.body-size;
+            color: Colors.text-primary;
+            horizontal-alignment: center;
+            vertical-alignment: center;
+        }
+
+        btn-ta := TouchArea {
+            clicked => { cbf.show-at(self.mouse-x, self.mouse-y); }
+        }
+    }
+}
