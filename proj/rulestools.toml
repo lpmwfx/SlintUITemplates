@@ -2,6 +2,8 @@ languages = ["rust"]
 
 [rustscanners]
 enabled = true
+max_nesting = 5
 
 [slintscanners]
 enabled = true
+max_nesting = 8

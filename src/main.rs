@@ -1,4 +1,4 @@
-use slint_ui_templates::adapter::AppAdapter;
+use slint_ui_templates::AppAdapter;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let app = AppAdapter::new()?;

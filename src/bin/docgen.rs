@@ -1,4 +1,4 @@
-//! docgen — generates docs/components.md Shared-Components section from ui/shared/*.slint.
+//! docgen — generates docs/components.md Shared-Components section from ui/widgets/*.slint.
 //! Usage: cargo run --bin docgen
 
 use std::{fs, io::Write, path::Path};
@@ -119,7 +119,7 @@ fn render(all: &[Item]) -> String {
                 out += "\n";
             }
             Item::Comp { name, file, props, cbs } => {
-                out += &format!("### {} (`ui/shared/{}`)\n\n", name, file);
+                out += &format!("### {} (`ui/widgets/{}`)\n\n", name, file);
                 if !props.is_empty() {
                     out += "| Property | Type | Default | Description |\n\
                             |----------|------|---------|-------------|\n";

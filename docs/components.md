@@ -191,7 +191,7 @@ See [tokens.md](tokens.md).
 | `title` | `string` |
 | `content` | `string` |
 
-### Accordion (`ui/shared/accordion.slint`)
+### Accordion (`ui/widgets/accordion.slint`)
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
@@ -204,7 +204,7 @@ See [tokens.md](tokens.md).
 
 ---
 
-### Alert (`ui/shared/alert.slint`)
+### Alert (`ui/widgets/alert.slint`)
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
@@ -220,7 +220,7 @@ See [tokens.md](tokens.md).
 
 ---
 
-### Avatar (`ui/shared/avatar.slint`)
+### Avatar (`ui/widgets/avatar.slint`)
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
@@ -229,7 +229,7 @@ See [tokens.md](tokens.md).
 
 ---
 
-### Badge (`ui/shared/badge.slint`)
+### Badge (`ui/widgets/badge.slint`)
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
@@ -245,7 +245,7 @@ See [tokens.md](tokens.md).
 | `id` | `string` |
 | `label` | `string` |
 
-### Breadcrumb (`ui/shared/breadcrumb.slint`)
+### Breadcrumb (`ui/widgets/breadcrumb.slint`)
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
@@ -258,7 +258,7 @@ See [tokens.md](tokens.md).
 
 ---
 
-### Button (`ui/shared/button.slint`)
+### Button (`ui/widgets/button.slint`)
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
@@ -272,7 +272,7 @@ See [tokens.md](tokens.md).
 
 ---
 
-### CanvasImage (`ui/shared/canvas-image.slint`)
+### CanvasImage (`ui/widgets/canvas-image.slint`)
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
@@ -281,7 +281,7 @@ See [tokens.md](tokens.md).
 
 ---
 
-### CanvasPath (`ui/shared/canvas-path.slint`)
+### CanvasPath (`ui/widgets/canvas-path.slint`)
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
@@ -291,7 +291,7 @@ See [tokens.md](tokens.md).
 
 ---
 
-### Card (`ui/shared/card.slint`)
+### Card (`ui/widgets/card.slint`)
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
@@ -300,7 +300,7 @@ See [tokens.md](tokens.md).
 
 ---
 
-### Checkbox (`ui/shared/checkbox.slint`)
+### Checkbox (`ui/widgets/checkbox.slint`)
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
@@ -315,7 +315,7 @@ See [tokens.md](tokens.md).
 
 ---
 
-### Chip (`ui/shared/chip.slint`)
+### Chip (`ui/widgets/chip.slint`)
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
@@ -341,7 +341,7 @@ See [tokens.md](tokens.md).
 | `label` | `string` |
 | `enabled` | `bool` |
 
-### CommandBarFlyout (`ui/shared/command-bar-flyout.slint`)
+### CommandBarFlyout (`ui/widgets/command-bar-flyout.slint`)
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
@@ -366,7 +366,7 @@ See [tokens.md](tokens.md).
 | `separator` | `bool` |
 | `keybinding` | `string` |
 
-### ContextMenu (`ui/shared/context-menu.slint`)
+### ContextMenu (`ui/widgets/context-menu.slint`)
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
@@ -395,7 +395,7 @@ See [tokens.md](tokens.md).
 | `id` | `string` |
 | `cells` | `[string]` |
 
-### DataTable (`ui/shared/data-table.slint`)
+### DataTable (`ui/widgets/data-table.slint`)
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
@@ -412,7 +412,7 @@ See [tokens.md](tokens.md).
 
 ---
 
-### DatePicker (`ui/shared/date-picker.slint`)
+### DatePicker (`ui/widgets/date-picker.slint`)
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
@@ -428,7 +428,7 @@ See [tokens.md](tokens.md).
 
 ---
 
-### Dialog (`ui/shared/dialog.slint`)
+### Dialog (`ui/widgets/dialog.slint`)
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
@@ -441,7 +441,7 @@ See [tokens.md](tokens.md).
 
 ---
 
-### Divider (`ui/shared/divider.slint`)
+### Divider (`ui/widgets/divider.slint`)
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
@@ -451,7 +451,7 @@ See [tokens.md](tokens.md).
 
 ---
 
-### Drawer (`ui/shared/drawer.slint`)
+### Drawer (`ui/widgets/drawer.slint`)
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
@@ -476,7 +476,7 @@ See [tokens.md](tokens.md).
 | `disabled` | `bool` |
 | `separator` | `bool` |
 
-### DropdownMenu (`ui/shared/dropdown-menu.slint`)
+### DropdownMenu (`ui/widgets/dropdown-menu.slint`)
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
@@ -489,7 +489,7 @@ See [tokens.md](tokens.md).
 
 ---
 
-### EmptyState (`ui/shared/empty-state.slint`)
+### EmptyState (`ui/widgets/empty-state.slint`)
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
@@ -504,7 +504,7 @@ See [tokens.md](tokens.md).
 
 ---
 
-### Flyout (`ui/shared/flyout.slint`)
+### Flyout (`ui/widgets/flyout.slint`)
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
@@ -520,7 +520,7 @@ See [tokens.md](tokens.md).
 
 ---
 
-### FormField (`ui/shared/form-field.slint`)
+### FormField (`ui/widgets/form-field.slint`)
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
@@ -531,7 +531,7 @@ See [tokens.md](tokens.md).
 
 ---
 
-### Label (`ui/shared/label.slint`)
+### Label (`ui/widgets/label.slint`)
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
@@ -541,7 +541,7 @@ See [tokens.md](tokens.md).
 
 ---
 
-### ListItem (`ui/shared/list-item.slint`)
+### ListItem (`ui/widgets/list-item.slint`)
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
@@ -555,7 +555,7 @@ See [tokens.md](tokens.md).
 
 ---
 
-### MessageBar (`ui/shared/message-bar.slint`)
+### MessageBar (`ui/widgets/message-bar.slint`)
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
@@ -578,7 +578,7 @@ See [tokens.md](tokens.md).
 | `label` | `string` |
 | `value` | `string` |
 
-### MultiSelect (`ui/shared/multi-select.slint`)
+### MultiSelect (`ui/widgets/multi-select.slint`)
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
@@ -593,7 +593,7 @@ See [tokens.md](tokens.md).
 
 ---
 
-### Pagination (`ui/shared/pagination.slint`)
+### Pagination (`ui/widgets/pagination.slint`)
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
@@ -607,7 +607,7 @@ See [tokens.md](tokens.md).
 
 ---
 
-### PasswordInput (`ui/shared/password-input.slint`)
+### PasswordInput (`ui/widgets/password-input.slint`)
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
@@ -622,7 +622,7 @@ See [tokens.md](tokens.md).
 
 ---
 
-### Popover (`ui/shared/popover.slint`)
+### Popover (`ui/widgets/popover.slint`)
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
@@ -638,7 +638,7 @@ See [tokens.md](tokens.md).
 
 ---
 
-### ProgressBar (`ui/shared/progress-bar.slint`)
+### ProgressBar (`ui/widgets/progress-bar.slint`)
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
@@ -647,7 +647,7 @@ See [tokens.md](tokens.md).
 
 ---
 
-### RadioButton (`ui/shared/radio.slint`)
+### RadioButton (`ui/widgets/radio.slint`)
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
@@ -661,7 +661,7 @@ See [tokens.md](tokens.md).
 
 ---
 
-### RadioGroup (`ui/shared/radio.slint`)
+### RadioGroup (`ui/widgets/radio.slint`)
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
@@ -675,7 +675,7 @@ See [tokens.md](tokens.md).
 
 ---
 
-### Rating (`ui/shared/rating.slint`)
+### Rating (`ui/widgets/rating.slint`)
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
@@ -689,7 +689,7 @@ See [tokens.md](tokens.md).
 
 ---
 
-### ScrollView (`ui/shared/scroll-view.slint`)
+### ScrollView (`ui/widgets/scroll-view.slint`)
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
@@ -700,7 +700,7 @@ See [tokens.md](tokens.md).
 
 ---
 
-### SearchInput (`ui/shared/search-input.slint`)
+### SearchInput (`ui/widgets/search-input.slint`)
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
@@ -724,7 +724,7 @@ See [tokens.md](tokens.md).
 | `label` | `string` |
 | `icon` | `string` |
 
-### Segmented (`ui/shared/segmented.slint`)
+### Segmented (`ui/widgets/segmented.slint`)
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
@@ -737,7 +737,7 @@ See [tokens.md](tokens.md).
 
 ---
 
-### SelectField (`ui/shared/select-field.slint`)
+### SelectField (`ui/widgets/select-field.slint`)
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
@@ -751,7 +751,7 @@ See [tokens.md](tokens.md).
 
 ---
 
-### Skeleton (`ui/shared/skeleton.slint`)
+### Skeleton (`ui/widgets/skeleton.slint`)
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
@@ -760,7 +760,7 @@ See [tokens.md](tokens.md).
 
 ---
 
-### Slider (`ui/shared/slider.slint`)
+### Slider (`ui/widgets/slider.slint`)
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
@@ -778,7 +778,7 @@ See [tokens.md](tokens.md).
 
 ---
 
-### SpinBox (`ui/shared/spin-box.slint`)
+### SpinBox (`ui/widgets/spin-box.slint`)
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
@@ -795,7 +795,7 @@ See [tokens.md](tokens.md).
 
 ---
 
-### Spinner (`ui/shared/spinner.slint`)
+### Spinner (`ui/widgets/spinner.slint`)
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
@@ -812,7 +812,7 @@ See [tokens.md](tokens.md).
 | `label` | `string` |
 | `completed` | `bool` |
 
-### Stepper (`ui/shared/stepper.slint`)
+### Stepper (`ui/widgets/stepper.slint`)
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
@@ -833,7 +833,7 @@ See [tokens.md](tokens.md).
 | `label` | `string` |
 | `icon` | `string` |
 
-### TabBar (`ui/shared/tab-bar.slint`)
+### TabBar (`ui/widgets/tab-bar.slint`)
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
@@ -846,7 +846,7 @@ See [tokens.md](tokens.md).
 
 ---
 
-### TeachingTip (`ui/shared/teaching-tip.slint`)
+### TeachingTip (`ui/widgets/teaching-tip.slint`)
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
@@ -863,7 +863,7 @@ See [tokens.md](tokens.md).
 
 ---
 
-### TextArea (`ui/shared/text-area.slint`)
+### TextArea (`ui/widgets/text-area.slint`)
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
@@ -880,7 +880,7 @@ See [tokens.md](tokens.md).
 
 ---
 
-### TextInput (`ui/shared/text-input.slint`)
+### TextInput (`ui/widgets/text-input.slint`)
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
@@ -896,7 +896,7 @@ See [tokens.md](tokens.md).
 
 ---
 
-### Toast (`ui/shared/toast.slint`)
+### Toast (`ui/widgets/toast.slint`)
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
@@ -905,7 +905,7 @@ See [tokens.md](tokens.md).
 
 ---
 
-### Toggle (`ui/shared/toggle.slint`)
+### Toggle (`ui/widgets/toggle.slint`)
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
@@ -927,7 +927,7 @@ See [tokens.md](tokens.md).
 | `tooltip` | `string` |
 | `enabled` | `bool` |
 
-### Toolbar (`ui/shared/toolbar.slint`)
+### Toolbar (`ui/widgets/toolbar.slint`)
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
@@ -939,7 +939,7 @@ See [tokens.md](tokens.md).
 
 ---
 
-### Tooltip (`ui/shared/tooltip.slint`)
+### Tooltip (`ui/widgets/tooltip.slint`)
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
@@ -960,7 +960,7 @@ See [tokens.md](tokens.md).
 | `expanded` | `bool` |
 | `leaf` | `bool` |
 
-### TreeView (`ui/shared/tree-view.slint`)
+### TreeView (`ui/widgets/tree-view.slint`)
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
