@@ -1,8 +1,14 @@
 # Documentation Index
 
-Generated: 2026-03-15T21:41:57.005331500+01:00  
-Project: `src`  
+Generated: 2026-03-15T21:41:57.005331500+01:00
+Project: `src`
 Coverage: **176/176** items documented (**100%**)
+
+## Guides
+
+| Guide | Topic |
+|---|---|
+| [android-icon-font](guides/android-icon-font.md) | Embedding Segoe Fluent Icons on Android via `SLINT_DEFAULT_FONT` + `include_bytes!` |
 
 ## Files
 
