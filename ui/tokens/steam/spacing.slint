@@ -1,0 +1,30 @@
+// Steam spacing scale — comfortable for gamepad reach, larger than desktop.
+
+export global SteamSpacing {
+    /// Extra small.
+    out property <length> xs:   4px;
+    /// Small.
+    out property <length> sm:   8px;
+    /// Medium.
+    out property <length> md:   16px;
+    /// Large.
+    out property <length> lg:   24px;
+    /// Extra large.
+    out property <length> xl:   40px;
+
+    // ── Control heights (gamepad-safe interactive sizes) ───────────────────
+    /// Small control — compact items.
+    out property <length> control-sm:  32px;
+    /// Medium control — standard inputs.
+    out property <length> control-md:  48px;
+    /// Large control — primary targets, gamepad-safe minimum.
+    out property <length> control-lg:  56px;
+
+    // ── Chrome sizes ───────────────────────────────────────────────────────
+    /// Compact top bar height (no titlebar decoration).
+    out property <length> top-bar-height:       48px;
+    /// Bottom navigation rail height.
+    out property <length> bottom-rail-height:   56px;
+    /// Left icon navigation rail width.
+    out property <length> nav-rail-width:        64px;
+}

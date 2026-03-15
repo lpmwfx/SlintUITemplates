@@ -1,0 +1,25 @@
+// Steam type scale — readable at arm's length (TV / handheld distance).
+// Larger base sizes than Fluent — accounts for couch/handheld viewing distance.
+
+import { Settings } from "../../state/settings.slint";
+
+export global SteamType {
+    /// Small label / caption.
+    out property <length> caption:  Settings.zoom * Settings.font-scale * 12px;
+    /// Body text — larger than Fluent (16px vs 14px).
+    out property <length> body:     Settings.zoom * Settings.font-scale * 16px;
+    /// Subtitle / section heading.
+    out property <length> subtitle: Settings.zoom * Settings.font-scale * 20px;
+    /// Heading.
+    out property <length> heading:  Settings.zoom * Settings.font-scale * 24px;
+    /// Title — large display text.
+    out property <length> title:    Settings.zoom * Settings.font-scale * 32px;
+
+    // Weights
+    /// Regular weight.
+    out property <int> weight-regular:  400;
+    /// Medium weight.
+    out property <int> weight-medium:   500;
+    /// Bold weight.
+    out property <int> weight-bold:     700;
+}
