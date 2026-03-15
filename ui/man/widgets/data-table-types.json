@@ -1,0 +1,19 @@
+{
+  "source": "widgets/data-table-types.slint",
+  "items": [
+    {
+      "name": "TableColumn",
+      "kind": "struct",
+      "signature": "export struct TableColumn",
+      "line": 2,
+      "doc": "T ab le co lu mn struct."
+    },
+    {
+      "name": "TableRow",
+      "kind": "struct",
+      "signature": "export struct TableRow",
+      "line": 9,
+      "doc": "T ab le ro w struct."
+    }
+  ]
+}

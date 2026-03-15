@@ -1,0 +1,26 @@
+{
+  "source": "layout/dsl_v2.rs",
+  "items": [
+    {
+      "name": "NamedPanel",
+      "kind": "struct",
+      "signature": "pub struct NamedPanel",
+      "line": 19,
+      "doc": "A parsed named panel with resolved ratio.\nN am ed pa ne l struct."
+    },
+    {
+      "name": "SplitDir",
+      "kind": "enum",
+      "signature": "pub enum SplitDir { H, V }  /// Convert named panels to ratio_solver Panels (ready for drag()). pub fn to_panels(named: &[NamedPanel]) -> Vec<Panel>",
+      "line": 31,
+      "doc": "Direction of a named-slot split: horizontal (columns) or vertical (rows).\nS pl it di r enum."
+    },
+    {
+      "name": "to_panels",
+      "kind": "fn",
+      "signature": "pub fn to_panels(named: &[NamedPanel]) -> Vec<Panel>",
+      "line": 34,
+      "doc": "Convert named panels to ratio_solver Panels (ready for drag())."
+    }
+  ]
+}

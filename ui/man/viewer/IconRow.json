@@ -1,0 +1,19 @@
+{
+  "source": "viewer/IconRow.slint",
+  "items": [
+    {
+      "name": "IconRow",
+      "kind": "component",
+      "signature": "export component IconRow inherits Flickable",
+      "line": 8,
+      "doc": "I co nr ow component."
+    },
+    {
+      "name": "icons",
+      "kind": "property",
+      "signature": "in property <[{glyph: string, name: string}]> icons;",
+      "line": 10,
+      "doc": "Input property \"icons\"."
+    }
+  ]
+}

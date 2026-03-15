@@ -1,0 +1,89 @@
+{
+  "source": "widgets/skeleton.slint",
+  "items": [
+    {
+      "name": "Skeleton",
+      "kind": "component",
+      "signature": "export component Skeleton inherits Rectangle",
+      "line": 6,
+      "doc": "S ke le to n component."
+    },
+    {
+      "name": "variant",
+      "kind": "property",
+      "signature": "in property <string> variant: root.variant-rect;   // text | circle | rect",
+      "line": 8,
+      "doc": "Input property \"variant\"."
+    },
+    {
+      "name": "animate",
+      "kind": "property",
+      "signature": "in property <bool>   animate: true;",
+      "line": 10,
+      "doc": "Input property \"animate\"."
+    },
+    {
+      "name": "variant-rect",
+      "kind": "property",
+      "signature": "private property <string> variant-rect: \"rect\";",
+      "line": 14,
+      "doc": "Private property \"variant-rect\" used internally."
+    },
+    {
+      "name": "shimmer-step",
+      "kind": "property",
+      "signature": "private property <float>    shimmer-step:    0.01;",
+      "line": 18,
+      "doc": "Private property \"shimmer-step\" used internally."
+    },
+    {
+      "name": "shimmer-max",
+      "kind": "property",
+      "signature": "private property <float>    shimmer-max:     1.33;",
+      "line": 20,
+      "doc": "Private property \"shimmer-max\" used internally."
+    },
+    {
+      "name": "shimmer-reset",
+      "kind": "property",
+      "signature": "private property <float>    shimmer-reset:  -0.33;",
+      "line": 22,
+      "doc": "Private property \"shimmer-reset\" used internally."
+    },
+    {
+      "name": "shimmer-alpha",
+      "kind": "property",
+      "signature": "private property <float>    shimmer-alpha:   0.4;",
+      "line": 24,
+      "doc": "Private property \"shimmer-alpha\" used internally."
+    },
+    {
+      "name": "frame-interval",
+      "kind": "property",
+      "signature": "private property <duration> frame-interval:  16ms;",
+      "line": 26,
+      "doc": "Private property \"frame-interval\" used internally."
+    },
+    {
+      "name": "text-radius",
+      "kind": "property",
+      "signature": "private property <length>   text-radius: Sizes.border-w-2;",
+      "line": 28,
+      "doc": "Private property \"text-radius\" used internally."
+    },
+    {
+      "name": "shimmer-pos",
+      "kind": "property",
+      "signature": "private property <float> shimmer-pos: Sizes.no-fill;",
+      "line": 38,
+      "doc": "Private property \"shimmer-pos\" used internally."
+    },
+    {
+      "name": "shimmer-next",
+      "kind": "property",
+      "signature": "private property <float> shimmer-next:",
+      "line": 40,
+      "doc": "Private property \"shimmer-next\" used internally."
+    }
+  ]
+}

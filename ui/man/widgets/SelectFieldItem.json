@@ -1,0 +1,33 @@
+{
+  "source": "widgets/SelectFieldItem.slint",
+  "items": [
+    {
+      "name": "SelectFieldItem",
+      "kind": "component",
+      "signature": "export component SelectFieldItem inherits Rectangle",
+      "line": 5,
+      "doc": "S el ec tf ie ld it em component."
+    },
+    {
+      "name": "label",
+      "kind": "property",
+      "signature": "in property <string> label;",
+      "line": 7,
+      "doc": "Input property \"label\"."
+    },
+    {
+      "name": "is-selected",
+      "kind": "property",
+      "signature": "in property <bool>   is-selected: false;",
+      "line": 9,
+      "doc": "Input property \"is-selected\"."
+    },
+    {
+      "name": "picked",
+      "kind": "callback",
+      "signature": "callback picked(string);",
+      "line": 11,
+      "doc": "Callback fired for p ic ke d."
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "source": "shell/mobile/BottomNavItem.slint",
+  "items": [
+    {
+      "name": "BottomNavItem",
+      "kind": "component",
+      "signature": "export component BottomNavItem inherits Rectangle",
+      "line": 7,
+      "doc": "B ot to mn av it em component."
+    },
+    {
+      "name": "item-id",
+      "kind": "property",
+      "signature": "in property <string> item-id;",
+      "line": 9,
+      "doc": "Input property \"item-id\"."
+    },
+    {
+      "name": "icon",
+      "kind": "property",
+      "signature": "in property <string> icon;",
+      "line": 11,
+      "doc": "Input property \"icon\"."
+    },
+    {
+      "name": "label",
+      "kind": "property",
+      "signature": "in property <string> label;",
+      "line": 13,
+      "doc": "Input property \"label\"."
+    },
+    {
+      "name": "icon-font",
+      "kind": "property",
+      "signature": "in property <string> icon-font;",
+      "line": 15,
+      "doc": "Input property \"icon-font\"."
+    },
+    {
+      "name": "is-active",
+      "kind": "property",
+      "signature": "in property <bool>   is-active: false;",
+      "line": 17,
+      "doc": "Input property \"is-active\"."
+    },
+    {
+      "name": "pill-w",
+      "kind": "property",
+      "signature": "in property <length> pill-w;",
+      "line": 19,
+      "doc": "Input property \"pill-w\"."
+    },
+    {
+      "name": "clicked",
+      "kind": "callback",
+      "signature": "callback clicked();",
+      "line": 21,
+      "doc": "Callback fired for c li ck ed."
+    }
+  ]
+}

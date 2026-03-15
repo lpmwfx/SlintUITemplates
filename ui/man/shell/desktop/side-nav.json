@@ -1,0 +1,75 @@
+{
+  "source": "shell/desktop/side-nav.slint",
+  "items": [
+    {
+      "name": "ShellSideNav",
+      "kind": "component",
+      "signature": "export component ShellSideNav inherits Rectangle",
+      "line": 10,
+      "doc": "Collapsible desktop side navigation listing shell destinations."
+    },
+    {
+      "name": "items",
+      "kind": "property",
+      "signature": "in property <[NavItem]> items;",
+      "line": 12,
+      "doc": "Navigation items rendered in the side rail."
+    },
+    {
+      "name": "active-item",
+      "kind": "property",
+      "signature": "in property <string>    active-item: \"\";",
+      "line": 14,
+      "doc": "Id of the currently active navigation item."
+    },
+    {
+      "name": "collapsed",
+      "kind": "property",
+      "signature": "in property <bool>      collapsed: false;",
+      "line": 16,
+      "doc": "Renders the compact icon-only mode when `true`."
+    },
+    {
+      "name": "icon-font",
+      "kind": "property",
+      "signature": "in property <string>    icon-font: \"Segoe Fluent Icons\";",
+      "line": 18,
+      "doc": "Font family used to render icon glyph strings."
+    },
+    {
+      "name": "navigate",
+      "kind": "callback",
+      "signature": "callback navigate(string);",
+      "line": 20,
+      "doc": "Fired when the user chooses a navigation item."
+    },
+    {
+      "name": "toggle-collapsed",
+      "kind": "callback",
+      "signature": "callback toggle-collapsed();",
+      "line": 22,
+      "doc": "Fired when the collapse/expand affordance is clicked."
+    },
+    {
+      "name": "active-alpha",
+      "kind": "property",
+      "signature": "private property <float>  active-alpha: Sizes.alpha-15;",
+      "line": 25,
+      "doc": "Private property \"active-alpha\" used internally."
+    },
+    {
+      "name": "indicator-w",
+      "kind": "property",
+      "signature": "private property <length> indicator-w: Sizes.border-w-3;",
+      "line": 27,
+      "doc": "Private property \"indicator-w\" used internally."
+    },
+    {
+      "name": "indicator-radius",
+      "kind": "property",
+      "signature": "private property <length> indicator-radius: Sizes.border-w-2;",
+      "line": 29,
+      "doc": "Private property \"indicator-radius\" used internally."
+    }
+  ]
+}

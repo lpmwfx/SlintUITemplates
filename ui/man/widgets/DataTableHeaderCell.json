@@ -1,0 +1,61 @@
+{
+  "source": "widgets/DataTableHeaderCell.slint",
+  "items": [
+    {
+      "name": "DataTableHeaderCell",
+      "kind": "component",
+      "signature": "export component DataTableHeaderCell inherits Rectangle",
+      "line": 6,
+      "doc": "D at at ab le he ad er ce ll component."
+    },
+    {
+      "name": "label",
+      "kind": "property",
+      "signature": "in property <string> label;",
+      "line": 8,
+      "doc": "Input property \"label\"."
+    },
+    {
+      "name": "col-width",
+      "kind": "property",
+      "signature": "in property <length> col-width;",
+      "line": 10,
+      "doc": "Input property \"col-width\"."
+    },
+    {
+      "name": "is-sorted",
+      "kind": "property",
+      "signature": "in property <bool>   is-sorted: false;",
+      "line": 12,
+      "doc": "Input property \"is-sorted\"."
+    },
+    {
+      "name": "sort-asc",
+      "kind": "property",
+      "signature": "in property <bool>   sort-asc: true;",
+      "line": 14,
+      "doc": "Input property \"sort-asc\"."
+    },
+    {
+      "name": "sort-asc-indicator",
+      "kind": "property",
+      "signature": "in property <string> sort-asc-indicator: \"\\u{25B2}\";",
+      "line": 16,
+      "doc": "Input property \"sort-asc-indicator\"."
+    },
+    {
+      "name": "sort-desc-indicator",
+      "kind": "property",
+      "signature": "in property <string> sort-desc-indicator: \"\\u{25BC}\";",
+      "line": 18,
+      "doc": "Input property \"sort-desc-indicator\"."
+    },
+    {
+      "name": "clicked",
+      "kind": "callback",
+      "signature": "callback clicked();",
+      "line": 20,
+      "doc": "Callback fired for c li ck ed."
+    }
+  ]
+}

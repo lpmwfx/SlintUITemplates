@@ -1,0 +1,40 @@
+{
+  "source": "gateway/mod.rs",
+  "items": [
+    {
+      "name": "settings",
+      "kind": "mod",
+      "signature": "pub mod settings;",
+      "line": 2,
+      "doc": "File I/O gateway for settings persistence."
+    },
+    {
+      "name": "view_config",
+      "kind": "mod",
+      "signature": "pub mod view_config;",
+      "line": 4,
+      "doc": "File I/O gateway for view-config loading."
+    },
+    {
+      "name": "grid",
+      "kind": "mod",
+      "signature": "pub mod grid;",
+      "line": 6,
+      "doc": "File I/O gateway for grid-config loading."
+    },
+    {
+      "name": "scaffold",
+      "kind": "mod",
+      "signature": "pub mod scaffold;",
+      "line": 8,
+      "doc": "File I/O gateway for project scaffolding."
+    },
+    {
+      "name": "scripts",
+      "kind": "mod",
+      "signature": "pub mod scripts;",
+      "line": 10,
+      "doc": "File I/O gateway for loading Rhai scripts."
+    }
+  ]
+}

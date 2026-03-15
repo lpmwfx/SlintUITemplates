@@ -1,0 +1,75 @@
+{
+  "source": "widgets/toggle.slint",
+  "items": [
+    {
+      "name": "Toggle",
+      "kind": "component",
+      "signature": "export component Toggle inherits Rectangle",
+      "line": 5,
+      "doc": "Binary on/off switch with an optional text label."
+    },
+    {
+      "name": "checked",
+      "kind": "property",
+      "signature": "in property <bool> checked: false;",
+      "line": 7,
+      "doc": "Current checked state rendered by the switch."
+    },
+    {
+      "name": "label",
+      "kind": "property",
+      "signature": "in property <string> label: \"\";",
+      "line": 9,
+      "doc": "Optional label shown to the right of the switch."
+    },
+    {
+      "name": "toggled",
+      "kind": "callback",
+      "signature": "callback toggled(bool);",
+      "line": 11,
+      "doc": "Fired with the next checked state when the user toggles the control."
+    },
+    {
+      "name": "track-width",
+      "kind": "property",
+      "signature": "private property <length> track-width:  Spacing.control-lg;  // 40px",
+      "line": 15,
+      "doc": "Private property \"track-width\" used internally."
+    },
+    {
+      "name": "track-height",
+      "kind": "property",
+      "signature": "private property <length> track-height: Sizes.icon-md;       // 20px",
+      "line": 17,
+      "doc": "Private property \"track-height\" used internally."
+    },
+    {
+      "name": "knob-size",
+      "kind": "property",
+      "signature": "private property <length> knob-size:    Sizes.icon-sm;       // 16px",
+      "line": 19,
+      "doc": "Private property \"knob-size\" used internally."
+    },
+    {
+      "name": "knob-radius",
+      "kind": "property",
+      "signature": "private property <length> knob-radius:  Spacing.sm;          // 8px",
+      "line": 21,
+      "doc": "Private property \"knob-radius\" used internally."
+    },
+    {
+      "name": "knob-inset",
+      "kind": "property",
+      "signature": "private property <length> knob-inset:   Sizes.border-w-2;    // 2px",
+      "line": 23,
+      "doc": "Private property \"knob-inset\" used internally."
+    },
+    {
+      "name": "slide-dur",
+      "kind": "property",
+      "signature": "private property <duration> slide-dur:  150ms;",
+      "line": 25,
+      "doc": "Private property \"slide-dur\" used internally."
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "source": "widgets/rating.slint",
+  "items": [
+    {
+      "name": "Rating",
+      "kind": "component",
+      "signature": "export component Rating inherits Rectangle",
+      "line": 6,
+      "doc": "R at in g component."
+    },
+    {
+      "name": "value",
+      "kind": "property",
+      "signature": "in property <int> value: Sizes.zero;",
+      "line": 8,
+      "doc": "Input property \"value\"."
+    },
+    {
+      "name": "max",
+      "kind": "property",
+      "signature": "in property <int>  max: Sizes.five;",
+      "line": 10,
+      "doc": "Input property \"max\"."
+    },
+    {
+      "name": "readonly",
+      "kind": "property",
+      "signature": "in property <bool> readonly: false;",
+      "line": 12,
+      "doc": "Input property \"readonly\"."
+    },
+    {
+      "name": "changed",
+      "kind": "callback",
+      "signature": "callback changed(int);",
+      "line": 14,
+      "doc": "Callback fired for c ha ng ed."
+    },
+    {
+      "name": "hover-val",
+      "kind": "property",
+      "signature": "private property <int> hover-val: Sizes.zero;",
+      "line": 17,
+      "doc": "Private property \"hover-val\" used internally."
+    }
+  ]
+}

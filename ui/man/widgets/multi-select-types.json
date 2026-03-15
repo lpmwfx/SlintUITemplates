@@ -1,0 +1,12 @@
+{
+  "source": "widgets/multi-select-types.slint",
+  "items": [
+    {
+      "name": "MultiSelectOption",
+      "kind": "struct",
+      "signature": "export struct MultiSelectOption",
+      "line": 2,
+      "doc": "M ul ti se le ct op ti on struct."
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "source": "widgets/form-field.slint",
+  "items": [
+    {
+      "name": "FormField",
+      "kind": "component",
+      "signature": "export component FormField inherits VerticalLayout",
+      "line": 5,
+      "doc": "F or mf ie ld component."
+    },
+    {
+      "name": "label",
+      "kind": "property",
+      "signature": "in property <string> label: \"\";",
+      "line": 7,
+      "doc": "Input property \"label\"."
+    },
+    {
+      "name": "required",
+      "kind": "property",
+      "signature": "in property <bool>   required: false;",
+      "line": 9,
+      "doc": "Input property \"required\"."
+    },
+    {
+      "name": "error",
+      "kind": "property",
+      "signature": "in property <string> error: \"\";",
+      "line": 11,
+      "doc": "Input property \"error\"."
+    },
+    {
+      "name": "hint",
+      "kind": "property",
+      "signature": "in property <string> hint: \"\";",
+      "line": 13,
+      "doc": "Input property \"hint\"."
+    }
+  ]
+}

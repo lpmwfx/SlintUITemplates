@@ -1,0 +1,33 @@
+{
+  "source": "widgets/MultiSelectItem.slint",
+  "items": [
+    {
+      "name": "MultiSelectItem",
+      "kind": "component",
+      "signature": "export component MultiSelectItem inherits Rectangle",
+      "line": 5,
+      "doc": "M ul ti se le ct it em component."
+    },
+    {
+      "name": "opt-label",
+      "kind": "property",
+      "signature": "in property <string> opt-label;",
+      "line": 7,
+      "doc": "Input property \"opt-label\"."
+    },
+    {
+      "name": "opt-value",
+      "kind": "property",
+      "signature": "in property <string> opt-value;",
+      "line": 9,
+      "doc": "Input property \"opt-value\"."
+    },
+    {
+      "name": "item-selected",
+      "kind": "callback",
+      "signature": "callback item-selected(string);",
+      "line": 11,
+      "doc": "Callback fired for i te m s el ec te d."
+    }
+  ]
+}

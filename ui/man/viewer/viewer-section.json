@@ -1,0 +1,19 @@
+{
+  "source": "viewer/viewer-section.slint",
+  "items": [
+    {
+      "name": "ViewerSection",
+      "kind": "component",
+      "signature": "export component ViewerSection inherits VerticalLayout",
+      "line": 8,
+      "doc": "V ie we rs ec ti on component."
+    },
+    {
+      "name": "title",
+      "kind": "property",
+      "signature": "in property <string> title;",
+      "line": 10,
+      "doc": "Input property \"title\"."
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "source": "widgets/date-picker.slint",
+  "items": [
+    {
+      "name": "DatePicker",
+      "kind": "component",
+      "signature": "export component DatePicker inherits Rectangle",
+      "line": 7,
+      "doc": "D at ep ic ke r component."
+    },
+    {
+      "name": "value",
+      "kind": "property",
+      "signature": "in property <string> value: \"\";",
+      "line": 9,
+      "doc": "Input property \"value\"."
+    },
+    {
+      "name": "label",
+      "kind": "property",
+      "signature": "in property <string> label: \"\";",
+      "line": 11,
+      "doc": "Input property \"label\"."
+    },
+    {
+      "name": "placeholder",
+      "kind": "property",
+      "signature": "in property <string> placeholder: \"Select date\";",
+      "line": 13,
+      "doc": "Input property \"placeholder\"."
+    },
+    {
+      "name": "error",
+      "kind": "property",
+      "signature": "in property <string> error: \"\";",
+      "line": 15,
+      "doc": "Input property \"error\"."
+    },
+    {
+      "name": "enabled",
+      "kind": "property",
+      "signature": "in property <bool>   enabled: true;",
+      "line": 17,
+      "doc": "Input property \"enabled\"."
+    },
+    {
+      "name": "icon-font",
+      "kind": "property",
+      "signature": "in property <string> icon-font: \"Segoe Fluent Icons\";",
+      "line": 19,
+      "doc": "Input property \"icon-font\"."
+    },
+    {
+      "name": "changed",
+      "kind": "callback",
+      "signature": "callback changed(string);",
+      "line": 21,
+      "doc": "Callback fired for c ha ng ed."
+    },
+    {
+      "name": "initial-year",
+      "kind": "property",
+      "signature": "private property <int>    initial-year:    2026;",
+      "line": 25,
+      "doc": "Private property \"initial-year\" used internally."
+    },
+    {
+      "name": "month-offset",
+      "kind": "property",
+      "signature": "private property <int>    month-offset:    Sizes.zero;",
+      "line": 27,
+      "doc": "Private property \"month-offset\" used internally."
+    },
+    {
+      "name": "months-per-year",
+      "kind": "property",
+      "signature": "private property <int>    months-per-year: Sizes.twelve;",
+      "line": 29,
+      "doc": "Private property \"months-per-year\" used internally."
+    },
+    {
+      "name": "date-sep",
+      "kind": "property",
+      "signature": "private property <string> date-sep:  \"-\";",
+      "line": 33,
+      "doc": "Private property \"date-sep\" used internally."
+    },
+    {
+      "name": "zero-pad",
+      "kind": "property",
+      "signature": "private property <string> zero-pad:  \"0\";",
+      "line": 35,
+      "doc": "Private property \"zero-pad\" used internally."
+    },
+    {
+      "name": "display-month",
+      "kind": "property",
+      "signature": "private property <int>    display-month: Math.mod(root.month-offset, root.months-per-year) + Sizes.one;",
+      "line": 37,
+      "doc": "Private property \"display-month\" used internally."
+    },
+    {
+      "name": "display-year",
+      "kind": "property",
+      "signature": "private property <int>    display-year:  root.initial-year + Math.floor(root.month-offset / root.months-per-year);",
+      "line": 39,
+      "doc": "Private property \"display-year\" used internally."
+    },
+    {
+      "name": "ym-prefix",
+      "kind": "property",
+      "signature": "private property <string> ym-prefix:",
+      "line": 44,
+      "doc": "Private property \"ym-prefix\" used internally."
+    },
+    {
+      "name": "cell-size",
+      "kind": "property",
+      "signature": "private property <length> cell-size:  Spacing.control-md + Spacing.xs;",
+      "line": 49,
+      "doc": "Private property \"cell-size\" used internally."
+    },
+    {
+      "name": "popup-w",
+      "kind": "property",
+      "signature": "private property <length> popup-w:    cell-size * Sizes.seven + Spacing.sm * Sizes.two + Spacing.xs * Sizes.six;",
+      "line": 51,
+      "doc": "Private property \"popup-w\" used internally."
+    },
+    {
+      "name": "popup-h",
+      "kind": "property",
+      "signature": "private property <length> popup-h:    Spacing.xl + Spacing.xl + cell-size * Sizes.six + Spacing.sm * Sizes.five + Spacing.md * Sizes.two;",
+      "line": 53,
+      "doc": "Private property \"popup-h\" used internally."
+    }
+  ]
+}

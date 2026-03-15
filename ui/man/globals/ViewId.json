@@ -1,0 +1,103 @@
+{
+  "source": "globals/ViewId.slint",
+  "items": [
+    {
+      "name": "buttons",
+      "kind": "property",
+      "signature": "out property <string> buttons:    \"buttons\";",
+      "line": 7,
+      "doc": "Output property \"buttons\"."
+    },
+    {
+      "name": "inputs",
+      "kind": "property",
+      "signature": "out property <string> inputs:     \"inputs\";",
+      "line": 9,
+      "doc": "Output property \"inputs\"."
+    },
+    {
+      "name": "display",
+      "kind": "property",
+      "signature": "out property <string> display:    \"display\";",
+      "line": 11,
+      "doc": "Output property \"display\"."
+    },
+    {
+      "name": "feedback",
+      "kind": "property",
+      "signature": "out property <string> feedback:   \"feedback\";",
+      "line": 13,
+      "doc": "Output property \"feedback\"."
+    },
+    {
+      "name": "layout",
+      "kind": "property",
+      "signature": "out property <string> layout:     \"layout\";",
+      "line": 15,
+      "doc": "Output property \"layout\"."
+    },
+    {
+      "name": "app-shell",
+      "kind": "property",
+      "signature": "out property <string> app-shell:  \"app-shell\";",
+      "line": 17,
+      "doc": "Output property \"app-shell\"."
+    },
+    {
+      "name": "icons",
+      "kind": "property",
+      "signature": "out property <string> icons:      \"icons\";",
+      "line": 19,
+      "doc": "Output property \"icons\"."
+    },
+    {
+      "name": "selection",
+      "kind": "property",
+      "signature": "out property <string> selection:  \"selection\";",
+      "line": 21,
+      "doc": "Output property \"selection\"."
+    },
+    {
+      "name": "navigation",
+      "kind": "property",
+      "signature": "out property <string> navigation: \"navigation\";",
+      "line": 23,
+      "doc": "Output property \"navigation\"."
+    },
+    {
+      "name": "data",
+      "kind": "property",
+      "signature": "out property <string> data:       \"data\";",
+      "line": 25,
+      "doc": "Output property \"data\"."
+    },
+    {
+      "name": "canvas",
+      "kind": "property",
+      "signature": "out property <string> canvas:     \"canvas\";",
+      "line": 27,
+      "doc": "Output property \"canvas\"."
+    },
+    {
+      "name": "utilities",
+      "kind": "property",
+      "signature": "out property <string> utilities:  \"utilities\";",
+      "line": 29,
+      "doc": "Output property \"utilities\"."
+    },
+    {
+      "name": "popups",
+      "kind": "property",
+      "signature": "out property <string> popups:     \"popups\";",
+      "line": 31,
+      "doc": "Output property \"popups\"."
+    },
+    {
+      "name": "panels",
+      "kind": "property",
+      "signature": "out property <string> panels:     \"panels\";",
+      "line": 33,
+      "doc": "Output property \"panels\"."
+    }
+  ]
+}

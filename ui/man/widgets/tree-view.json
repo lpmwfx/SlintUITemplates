@@ -1,0 +1,61 @@
+{
+  "source": "widgets/tree-view.slint",
+  "items": [
+    {
+      "name": "TreeNode",
+      "kind": "struct",
+      "signature": "export struct TreeNode",
+      "line": 6,
+      "doc": "T re en od e struct."
+    },
+    {
+      "name": "TreeView",
+      "kind": "component",
+      "signature": "export component TreeView inherits Rectangle",
+      "line": 16,
+      "doc": "T re ev ie w component."
+    },
+    {
+      "name": "nodes",
+      "kind": "property",
+      "signature": "in property <[TreeNode]> nodes: [];",
+      "line": 18,
+      "doc": "Input property \"nodes\"."
+    },
+    {
+      "name": "selected",
+      "kind": "property",
+      "signature": "in property <string> selected: \"\";",
+      "line": 20,
+      "doc": "Input property \"selected\"."
+    },
+    {
+      "name": "selected-changed",
+      "kind": "callback",
+      "signature": "callback selected-changed(string);",
+      "line": 22,
+      "doc": "Callback fired for s el ec te d c ha ng ed."
+    },
+    {
+      "name": "toggle-expanded",
+      "kind": "callback",
+      "signature": "callback toggle-expanded(string);",
+      "line": 24,
+      "doc": "Callback fired for t og gl e e xp an de d."
+    },
+    {
+      "name": "bar-radius",
+      "kind": "property",
+      "signature": "private property <length> bar-radius: Sizes.border-w-2;",
+      "line": 27,
+      "doc": "Private property \"bar-radius\" used internally."
+    },
+    {
+      "name": "bar-opacity",
+      "kind": "property",
+      "signature": "private property <float>  bar-opacity: Sizes.percent-60;",
+      "line": 29,
+      "doc": "Private property \"bar-opacity\" used internally."
+    }
+  ]
+}

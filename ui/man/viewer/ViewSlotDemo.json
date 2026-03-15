@@ -1,0 +1,68 @@
+{
+  "source": "viewer/ViewSlotDemo.slint",
+  "items": [
+    {
+      "name": "ViewSlotDemo",
+      "kind": "component",
+      "signature": "export component ViewSlotDemo inherits VerticalLayout",
+      "line": 9,
+      "doc": "V ie ws lo td em o component."
+    },
+    {
+      "name": "active-slot",
+      "kind": "property",
+      "signature": "private property <string> active-slot: Variants.alpha;",
+      "line": 11,
+      "doc": "Private property \"active-slot\" used internally."
+    },
+    {
+      "name": "alpha-subtle",
+      "kind": "property",
+      "signature": "private property <float>  alpha-subtle: Sizes.alpha-10;",
+      "line": 13,
+      "doc": "Private property \"alpha-subtle\" used internally."
+    },
+    {
+      "name": "lbl-alpha",
+      "kind": "property",
+      "signature": "private property <string> lbl-alpha: \"Alpha\";",
+      "line": 16,
+      "doc": "Private property \"lbl-alpha\" used internally."
+    },
+    {
+      "name": "lbl-beta",
+      "kind": "property",
+      "signature": "private property <string> lbl-beta: \"Beta\";",
+      "line": 18,
+      "doc": "Private property \"lbl-beta\" used internally."
+    },
+    {
+      "name": "lbl-gamma",
+      "kind": "property",
+      "signature": "private property <string> lbl-gamma: \"Gamma\";",
+      "line": 20,
+      "doc": "Private property \"lbl-gamma\" used internally."
+    },
+    {
+      "name": "slot-alpha-text",
+      "kind": "property",
+      "signature": "private property <string> slot-alpha-text: \"slot-id: \\\"alpha\\\" \\u{2014} visible when active == \\\"alpha\\\"\";",
+      "line": 22,
+      "doc": "Private property \"slot-alpha-text\" used internally."
+    },
+    {
+      "name": "slot-beta-text",
+      "kind": "property",
+      "signature": "private property <string> slot-beta-text: \"slot-id: \\\"beta\\\"\";",
+      "line": 24,
+      "doc": "Private property \"slot-beta-text\" used internally."
+    },
+    {
+      "name": "slot-gamma-text",
+      "kind": "property",
+      "signature": "private property <string> slot-gamma-text: \"slot-id: \\\"gamma\\\"\";",
+      "line": 26,
+      "doc": "Private property \"slot-gamma-text\" used internally."
+    }
+  ]
+}

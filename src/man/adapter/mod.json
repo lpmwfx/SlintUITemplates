@@ -1,0 +1,33 @@
+{
+  "source": "adapter/mod.rs",
+  "items": [
+    {
+      "name": "AppAdapter_adp",
+      "kind": "struct",
+      "signature": "pub struct AppAdapter_adp",
+      "line": 17,
+      "doc": "Adapter layer between host app and Slint UI window.\nOwns AppWindow handle, ViewConfig registry, menu actions, and all cached state.\nA pp ad ap te r adp struct."
+    },
+    {
+      "name": "new",
+      "kind": "fn",
+      "signature": "pub fn new() -> Result<Self, slint::PlatformError>",
+      "line": 41,
+      "doc": "Create a new adapter, initializing the Slint window and wiring event dispatch."
+    },
+    {
+      "name": "apply_dsl",
+      "kind": "fn",
+      "signature": "pub fn apply_dsl(&mut self, dsl: &AppDsl)",
+      "line": 100,
+      "doc": "Apply a validated `AppDsl` — composition rules already enforced."
+    },
+    {
+      "name": "run",
+      "kind": "fn",
+      "signature": "pub fn run(self) -> Result<(), slint::PlatformError>",
+      "line": 107,
+      "doc": "Show window and apply OS-level backdrop effects, then enter event loop."
+    }
+  ]
+}

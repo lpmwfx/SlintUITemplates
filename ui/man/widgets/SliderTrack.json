@@ -1,0 +1,47 @@
+{
+  "source": "widgets/SliderTrack.slint",
+  "items": [
+    {
+      "name": "SliderTrack",
+      "kind": "component",
+      "signature": "export component SliderTrack inherits Rectangle",
+      "line": 6,
+      "doc": "S li de rt ra ck component."
+    },
+    {
+      "name": "fill-ratio",
+      "kind": "property",
+      "signature": "in property <float>  fill-ratio;",
+      "line": 8,
+      "doc": "Input property \"fill-ratio\"."
+    },
+    {
+      "name": "track-h",
+      "kind": "property",
+      "signature": "in property <length> track-h;",
+      "line": 10,
+      "doc": "Input property \"track-h\"."
+    },
+    {
+      "name": "thumb-size",
+      "kind": "property",
+      "signature": "in property <length> thumb-size;",
+      "line": 12,
+      "doc": "Input property \"thumb-size\"."
+    },
+    {
+      "name": "enabled",
+      "kind": "property",
+      "signature": "in property <bool>   enabled: true;",
+      "line": 14,
+      "doc": "Input property \"enabled\"."
+    },
+    {
+      "name": "value-changed",
+      "kind": "callback",
+      "signature": "callback value-changed(float);",
+      "line": 16,
+      "doc": "Callback fired for v al ue c ha ng ed."
+    }
+  ]
+}

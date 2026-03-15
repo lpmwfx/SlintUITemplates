@@ -1,0 +1,61 @@
+{
+  "source": "shell/mod.rs",
+  "items": [
+    {
+      "name": "platform",
+      "kind": "mod",
+      "signature": "pub mod platform;",
+      "line": 2,
+      "doc": "Platform-native window chrome and shell lifecycle utilities."
+    },
+    {
+      "name": "models",
+      "kind": "mod",
+      "signature": "pub mod models;",
+      "line": 6,
+      "doc": "Slint VecModel builders for ShellConfig (nav_model, toolbar_model)."
+    },
+    {
+      "name": "NavItemConfig",
+      "kind": "struct",
+      "signature": "pub struct NavItemConfig",
+      "line": 12,
+      "doc": "Rust-side navigation item matching the Slint NavItem struct.\nN av it em co nf ig struct."
+    },
+    {
+      "name": "ToolbarItemConfig",
+      "kind": "struct",
+      "signature": "pub struct ToolbarItemConfig",
+      "line": 24,
+      "doc": "Toolbar icon button.\nT oo lb ar it em co nf ig struct."
+    },
+    {
+      "name": "ShellConfig",
+      "kind": "struct",
+      "signature": "pub struct ShellConfig",
+      "line": 37,
+      "doc": "Full shell configuration — passed to AppAdapter::register_shell().\nMenuBar is declared statically in the Window (.slint), not via ShellConfig.\nS he ll co nf ig struct."
+    },
+    {
+      "name": "new",
+      "kind": "fn",
+      "signature": "pub fn new(platform: Platform, title: impl Into<String>) -> Self",
+      "line": 52,
+      "doc": "Create a new ShellConfig with the given platform and window title."
+    },
+    {
+      "name": "with_nav",
+      "kind": "fn",
+      "signature": "pub fn with_nav(mut self, items: Vec<NavItemConfig>) -> Self",
+      "line": 61,
+      "doc": "Set nav items. Replaces any previously set items."
+    },
+    {
+      "name": "with_toolbar",
+      "kind": "fn",
+      "signature": "pub fn with_toolbar(mut self, items: Vec<ToolbarItemConfig>) -> Self",
+      "line": 67,
+      "doc": "Set toolbar items. Also sets show_toolbar if items is non-empty."
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "source": "dsl/mod.rs",
+  "items": [
+    {
+      "name": "apply",
+      "kind": "mod",
+      "signature": "pub mod apply;",
+      "line": 25,
+      "doc": "Applies a validated `AppDsl` configuration to a live Slint window."
+    },
+    {
+      "name": "builder",
+      "kind": "mod",
+      "signature": "pub(crate) mod builder;",
+      "line": 27,
+      "doc": "Builder implementation for `AppDslBuilder`."
+    },
+    {
+      "name": "icons",
+      "kind": "mod",
+      "signature": "pub mod icons;",
+      "line": 29,
+      "doc": "Fluent icon name-to-codepoint registry used for icon resolution."
+    },
+    {
+      "name": "types",
+      "kind": "mod",
+      "signature": "pub mod types;",
+      "line": 31,
+      "doc": "Public input types: `BgStyle`, `Nav`, `Toolbar`."
+    },
+    {
+      "name": "error",
+      "kind": "mod",
+      "signature": "pub mod error;",
+      "line": 33,
+      "doc": "Validation error type returned by `AppDslBuilder::build()`."
+    },
+    {
+      "name": "ResolvedNav",
+      "kind": "struct",
+      "signature": "pub(crate) struct ResolvedNav",
+      "line": 47,
+      "doc": "Nav item after icon-name resolution — holds the resolved codepoint string."
+    },
+    {
+      "name": "ResolvedToolbar",
+      "kind": "struct",
+      "signature": "pub(crate) struct ResolvedToolbar",
+      "line": 58,
+      "doc": "Toolbar item after icon-name resolution — holds the resolved codepoint string."
+    },
+    {
+      "name": "AppDsl",
+      "kind": "struct",
+      "signature": "pub struct AppDsl",
+      "line": 73,
+      "doc": "Validated, sealed shell configuration.\nCan only be constructed via `AppDsl::builder().build()`.\nA pp ds l struct."
+    },
+    {
+      "name": "builder",
+      "kind": "fn",
+      "signature": "pub fn builder(title: impl Into<String>) -> AppDslBuilder",
+      "line": 85,
+      "doc": "Start building a new DSL configuration with the given window title."
+    }
+  ]
+}

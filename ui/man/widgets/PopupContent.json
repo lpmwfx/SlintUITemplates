@@ -1,0 +1,40 @@
+{
+  "source": "widgets/PopupContent.slint",
+  "items": [
+    {
+      "name": "PopupContent",
+      "kind": "component",
+      "signature": "export component PopupContent inherits Rectangle",
+      "line": 8,
+      "doc": "P op up co nt en t component."
+    },
+    {
+      "name": "items",
+      "kind": "property",
+      "signature": "in property <[DropdownMenuItem]> items;",
+      "line": 10,
+      "doc": "Input property \"items\"."
+    },
+    {
+      "name": "est-popup-h",
+      "kind": "property",
+      "signature": "in property <length>             est-popup-h;",
+      "line": 12,
+      "doc": "Input property \"est-popup-h\"."
+    },
+    {
+      "name": "border-px",
+      "kind": "property",
+      "signature": "in property <length>             border-px;",
+      "line": 14,
+      "doc": "Input property \"border-px\"."
+    },
+    {
+      "name": "item-activated",
+      "kind": "callback",
+      "signature": "callback item-activated(string);",
+      "line": 16,
+      "doc": "Callback fired for i te m a ct iv at ed."
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "source": "widgets/message-bar.slint",
+  "items": [
+    {
+      "name": "MessageBar",
+      "kind": "component",
+      "signature": "export component MessageBar inherits Rectangle",
+      "line": 5,
+      "doc": "M es sa ge ba r component."
+    },
+    {
+      "name": "message",
+      "kind": "property",
+      "signature": "in property <string> message: \"\";",
+      "line": 7,
+      "doc": "Input property \"message\"."
+    },
+    {
+      "name": "variant",
+      "kind": "property",
+      "signature": "in property <string> variant: \"info\";   // info | warning | error | success",
+      "line": 9,
+      "doc": "Input property \"variant\"."
+    },
+    {
+      "name": "action-label",
+      "kind": "property",
+      "signature": "in property <string> action-label: \"\";",
+      "line": 11,
+      "doc": "Input property \"action-label\"."
+    },
+    {
+      "name": "closable",
+      "kind": "property",
+      "signature": "in property <bool>   closable: true;",
+      "line": 13,
+      "doc": "Input property \"closable\"."
+    },
+    {
+      "name": "action",
+      "kind": "callback",
+      "signature": "callback action();",
+      "line": 15,
+      "doc": "Callback fired for a ct io n."
+    },
+    {
+      "name": "closed",
+      "kind": "callback",
+      "signature": "callback closed();",
+      "line": 17,
+      "doc": "Callback fired for c lo se d."
+    },
+    {
+      "name": "v-error",
+      "kind": "property",
+      "signature": "private property <string> v-error:   \"error\";",
+      "line": 20,
+      "doc": "Private property \"v-error\" used internally."
+    },
+    {
+      "name": "v-warning",
+      "kind": "property",
+      "signature": "private property <string> v-warning: \"warning\";",
+      "line": 22,
+      "doc": "Private property \"v-warning\" used internally."
+    },
+    {
+      "name": "v-success",
+      "kind": "property",
+      "signature": "private property <string> v-success: \"success\";",
+      "line": 24,
+      "doc": "Private property \"v-success\" used internally."
+    },
+    {
+      "name": "border-px",
+      "kind": "property",
+      "signature": "private property <length> border-px: 1px;",
+      "line": 26,
+      "doc": "Private property \"border-px\" used internally."
+    },
+    {
+      "name": "bar-w",
+      "kind": "property",
+      "signature": "private property <length> bar-w:     3px;",
+      "line": 28,
+      "doc": "Private property \"bar-w\" used internally."
+    },
+    {
+      "name": "btn-shrink",
+      "kind": "property",
+      "signature": "private property <int>    btn-shrink: 0;",
+      "line": 30,
+      "doc": "Private property \"btn-shrink\" used internally."
+    },
+    {
+      "name": "text-grow",
+      "kind": "property",
+      "signature": "private property <int>    text-grow:  1;",
+      "line": 32,
+      "doc": "Private property \"text-grow\" used internally."
+    },
+    {
+      "name": "accent-color",
+      "kind": "property",
+      "signature": "private property <color> accent-color:",
+      "line": 34,
+      "doc": "Private property \"accent-color\" used internally."
+    },
+    {
+      "name": "icon-glyph",
+      "kind": "property",
+      "signature": "private property <string> icon-glyph:",
+      "line": 40,
+      "doc": "Private property \"icon-glyph\" used internally."
+    }
+  ]
+}

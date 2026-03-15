@@ -1,0 +1,47 @@
+{
+  "source": "tokens/material/elevation.slint",
+  "items": [
+    {
+      "name": "level-0",
+      "kind": "property",
+      "signature": "out property <float> level-0: 0.00;   // no tint",
+      "line": 11,
+      "doc": "Output property \"level-0\"."
+    },
+    {
+      "name": "level-1",
+      "kind": "property",
+      "signature": "out property <float> level-1: 0.05;   // +5% primary  (Cards, Nav drawer)",
+      "line": 13,
+      "doc": "Output property \"level-1\"."
+    },
+    {
+      "name": "level-2",
+      "kind": "property",
+      "signature": "out property <float> level-2: 0.08;   // +8% primary  (FAB resting, SearchBar)",
+      "line": 15,
+      "doc": "Output property \"level-2\"."
+    },
+    {
+      "name": "level-3",
+      "kind": "property",
+      "signature": "out property <float> level-3: 0.11;   // +11% primary (FAB pressed)",
+      "line": 17,
+      "doc": "Output property \"level-3\"."
+    },
+    {
+      "name": "level-4",
+      "kind": "property",
+      "signature": "out property <float> level-4: 0.12;   // +12% primary (BottomNavBar)",
+      "line": 19,
+      "doc": "Output property \"level-4\"."
+    },
+    {
+      "name": "level-5",
+      "kind": "property",
+      "signature": "out property <float> level-5: 0.14;   // +14% primary (BottomSheet)",
+      "line": 21,
+      "doc": "Output property \"level-5\"."
+    }
+  ]
+}

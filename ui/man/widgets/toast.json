@@ -1,0 +1,26 @@
+{
+  "source": "widgets/toast.slint",
+  "items": [
+    {
+      "name": "Toast",
+      "kind": "component",
+      "signature": "export component Toast inherits Rectangle",
+      "line": 5,
+      "doc": "T oa st component."
+    },
+    {
+      "name": "message",
+      "kind": "property",
+      "signature": "in property <string> message: \"\";",
+      "line": 7,
+      "doc": "Input property \"message\"."
+    },
+    {
+      "name": "variant",
+      "kind": "property",
+      "signature": "in property <string> variant: \"info\";   // info | success | warning | error",
+      "line": 9,
+      "doc": "Input property \"variant\"."
+    }
+  ]
+}

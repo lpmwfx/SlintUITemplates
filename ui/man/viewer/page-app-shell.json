@@ -1,0 +1,124 @@
+{
+  "source": "viewer/page-app-shell.slint",
+  "items": [
+    {
+      "name": "PageAppShell",
+      "kind": "component",
+      "signature": "export component PageAppShell inherits VerticalLayout",
+      "line": 16,
+      "doc": "Viewer page demonstrating desktop and mobile shell composition with shared content slots."
+    },
+    {
+      "name": "layout-mode",
+      "kind": "property",
+      "signature": "private property <string>    layout-mode: Variants.windows;",
+      "line": 18,
+      "doc": "Private property \"layout-mode\" used internally."
+    },
+    {
+      "name": "view-home",
+      "kind": "property",
+      "signature": "private property <string> view-home: \"home\";",
+      "line": 21,
+      "doc": "Private property \"view-home\" used internally."
+    },
+    {
+      "name": "view-list",
+      "kind": "property",
+      "signature": "private property <string> view-list: \"list\";",
+      "line": 23,
+      "doc": "Private property \"view-list\" used internally."
+    },
+    {
+      "name": "view-settings",
+      "kind": "property",
+      "signature": "private property <string> view-settings: \"settings\";",
+      "line": 25,
+      "doc": "Private property \"view-settings\" used internally."
+    },
+    {
+      "name": "active-windows",
+      "kind": "property",
+      "signature": "private property <string>    active-windows: root.view-home;",
+      "line": 29,
+      "doc": "Private property \"active-windows\" used internally."
+    },
+    {
+      "name": "active-android",
+      "kind": "property",
+      "signature": "private property <string>    active-android: root.view-home;",
+      "line": 31,
+      "doc": "Private property \"active-android\" used internally."
+    },
+    {
+      "name": "active-view",
+      "kind": "property",
+      "signature": "private property <string>    active-view: root.layout-mode == Variants.windows ? root.active-windows : root.active-android;",
+      "line": 33,
+      "doc": "Private property \"active-view\" used internally."
+    },
+    {
+      "name": "shell-label-win",
+      "kind": "property",
+      "signature": "private property <string> shell-label-win: \"App Shell — Windows (Fluent 2)\";",
+      "line": 37,
+      "doc": "Private property \"shell-label-win\" used internally."
+    },
+    {
+      "name": "shell-label-android",
+      "kind": "property",
+      "signature": "private property <string> shell-label-android: \"App Shell — Android (Material 3)\";",
+      "line": 39,
+      "doc": "Private property \"shell-label-android\" used internally."
+    },
+    {
+      "name": "btn-to-android",
+      "kind": "property",
+      "signature": "private property <string> btn-to-android: \"→ Android\";",
+      "line": 41,
+      "doc": "Private property \"btn-to-android\" used internally."
+    },
+    {
+      "name": "btn-to-windows",
+      "kind": "property",
+      "signature": "private property <string> btn-to-windows: \"→ Windows\";",
+      "line": 43,
+      "doc": "Private property \"btn-to-windows\" used internally."
+    },
+    {
+      "name": "status-prefix",
+      "kind": "property",
+      "signature": "private property <string> status-prefix: \"Active: \";",
+      "line": 45,
+      "doc": "Private property \"status-prefix\" used internally."
+    },
+    {
+      "name": "mobile-title",
+      "kind": "property",
+      "signature": "private property <string> mobile-title: \"App\";",
+      "line": 47,
+      "doc": "Private property \"mobile-title\" used internally."
+    },
+    {
+      "name": "phone-w",
+      "kind": "property",
+      "signature": "private property <length> phone-w: Sizes.comp-380;",
+      "line": 49,
+      "doc": "Private property \"phone-w\" used internally."
+    },
+    {
+      "name": "phone-border",
+      "kind": "property",
+      "signature": "private property <length> phone-border: Sizes.border-w-2;",
+      "line": 51,
+      "doc": "Private property \"phone-border\" used internally."
+    },
+    {
+      "name": "nav-items",
+      "kind": "property",
+      "signature": "private property <[NavItem]> nav-items: [",
+      "line": 54,
+      "doc": "Private property \"nav-items\" used internally."
+    }
+  ]
+}

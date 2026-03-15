@@ -1,0 +1,89 @@
+{
+  "source": "widgets/drawer.slint",
+  "items": [
+    {
+      "name": "Drawer",
+      "kind": "component",
+      "signature": "export component Drawer inherits Rectangle",
+      "line": 5,
+      "doc": "D ra we r component."
+    },
+    {
+      "name": "open",
+      "kind": "property",
+      "signature": "in property <bool>   open: false;",
+      "line": 7,
+      "doc": "Input property \"open\"."
+    },
+    {
+      "name": "placement",
+      "kind": "property",
+      "signature": "in property <string> placement: \"left\";    // left | right",
+      "line": 9,
+      "doc": "Input property \"placement\"."
+    },
+    {
+      "name": "drawer-width",
+      "kind": "property",
+      "signature": "in property <length> drawer-width: 280px;",
+      "line": 11,
+      "doc": "Input property \"drawer-width\"."
+    },
+    {
+      "name": "title",
+      "kind": "property",
+      "signature": "in property <string> title: \"\";",
+      "line": 13,
+      "doc": "Input property \"title\"."
+    },
+    {
+      "name": "close-requested",
+      "kind": "callback",
+      "signature": "callback close-requested();",
+      "line": 15,
+      "doc": "Callback fired for c lo se r eq ue st ed."
+    },
+    {
+      "name": "place-right",
+      "kind": "property",
+      "signature": "private property <string> place-right: \"right\";",
+      "line": 18,
+      "doc": "Private property \"place-right\" used internally."
+    },
+    {
+      "name": "border-px",
+      "kind": "property",
+      "signature": "private property <length> border-px:   1px;",
+      "line": 20,
+      "doc": "Private property \"border-px\" used internally."
+    },
+    {
+      "name": "zero-len",
+      "kind": "property",
+      "signature": "private property <length> zero-len:    0px;",
+      "line": 22,
+      "doc": "Private property \"zero-len\" used internally."
+    },
+    {
+      "name": "no-gap",
+      "kind": "property",
+      "signature": "private property <length> no-gap:      0px;",
+      "line": 24,
+      "doc": "Private property \"no-gap\" used internally."
+    },
+    {
+      "name": "anim-dur",
+      "kind": "property",
+      "signature": "private property <duration> anim-dur:  200ms;",
+      "line": 26,
+      "doc": "Private property \"anim-dur\" used internally."
+    },
+    {
+      "name": "panel-x",
+      "kind": "property",
+      "signature": "private property <length> panel-x:",
+      "line": 28,
+      "doc": "Private property \"panel-x\" used internally."
+    }
+  ]
+}

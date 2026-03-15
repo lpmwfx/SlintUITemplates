@@ -1,0 +1,61 @@
+{
+  "source": "widgets/segmented.slint",
+  "items": [
+    {
+      "name": "Segmented",
+      "kind": "component",
+      "signature": "export component Segmented inherits Rectangle",
+      "line": 7,
+      "doc": "S eg me nt ed component."
+    },
+    {
+      "name": "items",
+      "kind": "property",
+      "signature": "in property <[SegmentItem]> items: [];",
+      "line": 9,
+      "doc": "Input property \"items\"."
+    },
+    {
+      "name": "selected",
+      "kind": "property",
+      "signature": "in property <string>        selected: \"\";",
+      "line": 11,
+      "doc": "Input property \"selected\"."
+    },
+    {
+      "name": "changed",
+      "kind": "callback",
+      "signature": "callback changed(string);",
+      "line": 13,
+      "doc": "Callback fired for c ha ng ed."
+    },
+    {
+      "name": "border-px",
+      "kind": "property",
+      "signature": "private property <length> border-px: 1px;",
+      "line": 16,
+      "doc": "Private property \"border-px\" used internally."
+    },
+    {
+      "name": "pad-px",
+      "kind": "property",
+      "signature": "private property <length> pad-px:    2px;",
+      "line": 18,
+      "doc": "Private property \"pad-px\" used internally."
+    },
+    {
+      "name": "v-stretch",
+      "kind": "property",
+      "signature": "private property <int>    v-stretch: 1;",
+      "line": 20,
+      "doc": "Private property \"v-stretch\" used internally."
+    },
+    {
+      "name": "h-stretch",
+      "kind": "property",
+      "signature": "private property <int>    h-stretch: 1;",
+      "line": 22,
+      "doc": "Private property \"h-stretch\" used internally."
+    }
+  ]
+}

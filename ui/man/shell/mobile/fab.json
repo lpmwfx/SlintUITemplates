@@ -1,0 +1,75 @@
+{
+  "source": "shell/mobile/fab.slint",
+  "items": [
+    {
+      "name": "FAB",
+      "kind": "component",
+      "signature": "export component FAB inherits Rectangle",
+      "line": 8,
+      "doc": "F ab component."
+    },
+    {
+      "name": "icon",
+      "kind": "property",
+      "signature": "in property <string> icon;",
+      "line": 10,
+      "doc": "Input property \"icon\"."
+    },
+    {
+      "name": "label",
+      "kind": "property",
+      "signature": "in property <string> label: \"\";       // non-empty → extended FAB",
+      "line": 12,
+      "doc": "Input property \"label\"."
+    },
+    {
+      "name": "icon-font",
+      "kind": "property",
+      "signature": "in property <string> icon-font: \"Segoe Fluent Icons\";",
+      "line": 14,
+      "doc": "Input property \"icon-font\"."
+    },
+    {
+      "name": "clicked",
+      "kind": "callback",
+      "signature": "callback clicked();",
+      "line": 16,
+      "doc": "Callback fired for c li ck ed."
+    },
+    {
+      "name": "extended",
+      "kind": "property",
+      "signature": "private property <bool> extended: root.label != \"\";",
+      "line": 19,
+      "doc": "Private property \"extended\" used internally."
+    },
+    {
+      "name": "darken-amount",
+      "kind": "property",
+      "signature": "private property <float>  darken-amount: Sizes.ratio-xs;",
+      "line": 21,
+      "doc": "Private property \"darken-amount\" used internally."
+    },
+    {
+      "name": "shadow-alpha",
+      "kind": "property",
+      "signature": "private property <float>  shadow-alpha: Sizes.alpha-30;",
+      "line": 23,
+      "doc": "Private property \"shadow-alpha\" used internally."
+    },
+    {
+      "name": "shadow-blur",
+      "kind": "property",
+      "signature": "private property <length> shadow-blur: Sizes.comp-6;",
+      "line": 25,
+      "doc": "Private property \"shadow-blur\" used internally."
+    },
+    {
+      "name": "shadow-y",
+      "kind": "property",
+      "signature": "private property <length> shadow-y: Sizes.border-w-3;",
+      "line": 27,
+      "doc": "Private property \"shadow-y\" used internally."
+    }
+  ]
+}

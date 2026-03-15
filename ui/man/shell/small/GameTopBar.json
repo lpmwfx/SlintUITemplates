@@ -1,0 +1,33 @@
+{
+  "source": "shell/small/GameTopBar.slint",
+  "items": [
+    {
+      "name": "GameTopBar",
+      "kind": "component",
+      "signature": "export component GameTopBar inherits Rectangle",
+      "line": 10,
+      "doc": "GameTopBar — top chrome for Steam Deck / small-tier shell.\nHeight is fixed at `SteamSpacing.top-bar-height` (48px)."
+    },
+    {
+      "name": "title",
+      "kind": "property",
+      "signature": "in property <string> title;",
+      "line": 12,
+      "doc": "Page or app title shown in the centre."
+    },
+    {
+      "name": "show-back",
+      "kind": "property",
+      "signature": "in property <bool> show-back: false;",
+      "line": 14,
+      "doc": "Show the back button on the left."
+    },
+    {
+      "name": "back",
+      "kind": "callback",
+      "signature": "callback back();",
+      "line": 16,
+      "doc": "Fired when the back button is tapped."
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "source": "tokens/steam/spacing.slint",
+  "items": [
+    {
+      "name": "xs",
+      "kind": "property",
+      "signature": "out property <length> xs:   4px;",
+      "line": 5,
+      "doc": "Extra small."
+    },
+    {
+      "name": "sm",
+      "kind": "property",
+      "signature": "out property <length> sm:   8px;",
+      "line": 7,
+      "doc": "Small."
+    },
+    {
+      "name": "md",
+      "kind": "property",
+      "signature": "out property <length> md:   16px;",
+      "line": 9,
+      "doc": "Medium."
+    },
+    {
+      "name": "lg",
+      "kind": "property",
+      "signature": "out property <length> lg:   24px;",
+      "line": 11,
+      "doc": "Large."
+    },
+    {
+      "name": "xl",
+      "kind": "property",
+      "signature": "out property <length> xl:   40px;",
+      "line": 13,
+      "doc": "Extra large."
+    },
+    {
+      "name": "control-sm",
+      "kind": "property",
+      "signature": "out property <length> control-sm:  32px;",
+      "line": 17,
+      "doc": "Small control — compact items."
+    },
+    {
+      "name": "control-md",
+      "kind": "property",
+      "signature": "out property <length> control-md:  48px;",
+      "line": 19,
+      "doc": "Medium control — standard inputs."
+    },
+    {
+      "name": "control-lg",
+      "kind": "property",
+      "signature": "out property <length> control-lg:  56px;",
+      "line": 21,
+      "doc": "Large control — primary targets, gamepad-safe minimum."
+    },
+    {
+      "name": "top-bar-height",
+      "kind": "property",
+      "signature": "out property <length> top-bar-height:       48px;",
+      "line": 25,
+      "doc": "Compact top bar height (no titlebar decoration)."
+    },
+    {
+      "name": "bottom-rail-height",
+      "kind": "property",
+      "signature": "out property <length> bottom-rail-height:   56px;",
+      "line": 27,
+      "doc": "Bottom navigation rail height."
+    },
+    {
+      "name": "nav-rail-width",
+      "kind": "property",
+      "signature": "out property <length> nav-rail-width:        64px;",
+      "line": 29,
+      "doc": "Left icon navigation rail width."
+    }
+  ]
+}

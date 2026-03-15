@@ -75,6 +75,7 @@ raw-window-handle = "0.6"
 i-slint-backend-testing = "1.15"
 
 [build-dependencies]
-slint-build    = "1.15"
-rustscanners    = { git = "https://github.com/lpmwfx/RustScanners" }
-slintscanners   = { git = "https://github.com/lpmwfx/SlintScanners" }
+slint-build      = "1.15"
+rustdocumenter   = { git = "https://github.com/lpmwfx/RustDocumenter" }
+rustscanners     = { git = "https://github.com/lpmwfx/RustScanners" }
+slintscanners    = { git = "https://github.com/lpmwfx/SlintScanners" }

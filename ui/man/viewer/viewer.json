@@ -1,0 +1,236 @@
+{
+  "source": "viewer/viewer.slint",
+  "items": [
+    {
+      "name": "FrameworkViewer",
+      "kind": "component",
+      "signature": "export component FrameworkViewer inherits Window",
+      "line": 14,
+      "doc": "F ra me wo rk vi ew er component."
+    },
+    {
+      "name": "active-view",
+      "kind": "property",
+      "signature": "in-out property <string> active-view: ViewId.buttons;",
+      "line": 21,
+      "doc": "Two-way property \"active-view\"."
+    },
+    {
+      "name": "canvas-frame",
+      "kind": "property",
+      "signature": "in property <image> canvas-frame;",
+      "line": 23,
+      "doc": "Input property \"canvas-frame\"."
+    },
+    {
+      "name": "win-w",
+      "kind": "property",
+      "signature": "private property <length> win-w:     1100px;",
+      "line": 26,
+      "doc": "Private property \"win-w\" used internally."
+    },
+    {
+      "name": "win-h",
+      "kind": "property",
+      "signature": "private property <length> win-h:     720px;",
+      "line": 28,
+      "doc": "Private property \"win-h\" used internally."
+    },
+    {
+      "name": "zoom-small",
+      "kind": "property",
+      "signature": "private property <float>  zoom-small:   Sizes.three-quarter;",
+      "line": 30,
+      "doc": "Private property \"zoom-small\" used internally."
+    },
+    {
+      "name": "zoom-normal",
+      "kind": "property",
+      "signature": "private property <float>  zoom-normal:  Sizes.fill;",
+      "line": 32,
+      "doc": "Private property \"zoom-normal\" used internally."
+    },
+    {
+      "name": "zoom-large",
+      "kind": "property",
+      "signature": "private property <float>  zoom-large:  1.25;",
+      "line": 34,
+      "doc": "Private property \"zoom-large\" used internally."
+    },
+    {
+      "name": "zoom-xlarge",
+      "kind": "property",
+      "signature": "private property <float>  zoom-xlarge:  1.5;",
+      "line": 36,
+      "doc": "Private property \"zoom-xlarge\" used internally."
+    },
+    {
+      "name": "menu-zoom-sm",
+      "kind": "property",
+      "signature": "private property <string> menu-zoom-sm: \"Zoom 75%\";",
+      "line": 38,
+      "doc": "Private property \"menu-zoom-sm\" used internally."
+    },
+    {
+      "name": "menu-zoom-md",
+      "kind": "property",
+      "signature": "private property <string> menu-zoom-md: \"Zoom 100%\";",
+      "line": 40,
+      "doc": "Private property \"menu-zoom-md\" used internally."
+    },
+    {
+      "name": "menu-zoom-lg",
+      "kind": "property",
+      "signature": "private property <string> menu-zoom-lg: \"Zoom 125%\";",
+      "line": 42,
+      "doc": "Private property \"menu-zoom-lg\" used internally."
+    },
+    {
+      "name": "menu-zoom-xl",
+      "kind": "property",
+      "signature": "private property <string> menu-zoom-xl: \"Zoom 150%\";",
+      "line": 44,
+      "doc": "Private property \"menu-zoom-xl\" used internally."
+    },
+    {
+      "name": "v-stretch",
+      "kind": "property",
+      "signature": "private property <int>    v-stretch: Sizes.one;",
+      "line": 46,
+      "doc": "Private property \"v-stretch\" used internally."
+    },
+    {
+      "name": "h-sidebar",
+      "kind": "property",
+      "signature": "private property <int>    h-sidebar: Sizes.zero;",
+      "line": 48,
+      "doc": "Private property \"h-sidebar\" used internally."
+    },
+    {
+      "name": "h-stretch",
+      "kind": "property",
+      "signature": "private property <int>    h-stretch: Sizes.one;",
+      "line": 50,
+      "doc": "Private property \"h-stretch\" used internally."
+    },
+    {
+      "name": "request-bg-style",
+      "kind": "callback",
+      "signature": "callback request-bg-style(string);",
+      "line": 55,
+      "doc": "Callback fired for r eq ue st b g s ty le."
+    },
+    {
+      "name": "new-file",
+      "kind": "callback",
+      "signature": "callback new-file();",
+      "line": 57,
+      "doc": "Callback fired for n ew f il e."
+    },
+    {
+      "name": "new-window",
+      "kind": "callback",
+      "signature": "callback new-window();",
+      "line": 59,
+      "doc": "Callback fired for n ew w in do w."
+    },
+    {
+      "name": "open-file",
+      "kind": "callback",
+      "signature": "callback open-file();",
+      "line": 61,
+      "doc": "Callback fired for o pe n f il e."
+    },
+    {
+      "name": "save",
+      "kind": "callback",
+      "signature": "callback save();",
+      "line": 63,
+      "doc": "Callback fired for s av e."
+    },
+    {
+      "name": "save-as",
+      "kind": "callback",
+      "signature": "callback save-as();",
+      "line": 65,
+      "doc": "Callback fired for s av e a s."
+    },
+    {
+      "name": "quit",
+      "kind": "callback",
+      "signature": "callback quit();",
+      "line": 67,
+      "doc": "Callback fired for q ui t."
+    },
+    {
+      "name": "undo",
+      "kind": "callback",
+      "signature": "callback undo();",
+      "line": 69,
+      "doc": "Callback fired for u nd o."
+    },
+    {
+      "name": "redo",
+      "kind": "callback",
+      "signature": "callback redo();",
+      "line": 71,
+      "doc": "Callback fired for r ed o."
+    },
+    {
+      "name": "cut",
+      "kind": "callback",
+      "signature": "callback cut();",
+      "line": 73,
+      "doc": "Callback fired for c ut."
+    },
+    {
+      "name": "copy",
+      "kind": "callback",
+      "signature": "callback copy();",
+      "line": 75,
+      "doc": "Callback fired for c op y."
+    },
+    {
+      "name": "paste",
+      "kind": "callback",
+      "signature": "callback paste();",
+      "line": 77,
+      "doc": "Callback fired for p as te."
+    },
+    {
+      "name": "find",
+      "kind": "callback",
+      "signature": "callback find();",
+      "line": 79,
+      "doc": "Callback fired for f in d."
+    },
+    {
+      "name": "select-all",
+      "kind": "callback",
+      "signature": "callback select-all();",
+      "line": 81,
+      "doc": "Callback fired for s el ec t a ll."
+    },
+    {
+      "name": "open-docs",
+      "kind": "callback",
+      "signature": "callback open-docs();",
+      "line": 83,
+      "doc": "Callback fired for o pe n d oc s."
+    },
+    {
+      "name": "open-shortcuts",
+      "kind": "callback",
+      "signature": "callback open-shortcuts();",
+      "line": 85,
+      "doc": "Callback fired for o pe n s ho rt cu ts."
+    },
+    {
+      "name": "about",
+      "kind": "callback",
+      "signature": "callback about();",
+      "line": 87,
+      "doc": "Callback fired for a bo ut."
+    }
+  ]
+}

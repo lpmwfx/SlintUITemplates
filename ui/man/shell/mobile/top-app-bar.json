@@ -1,0 +1,61 @@
+{
+  "source": "shell/mobile/top-app-bar.slint",
+  "items": [
+    {
+      "name": "TopAppBar",
+      "kind": "component",
+      "signature": "export component TopAppBar inherits Rectangle",
+      "line": 9,
+      "doc": "T op ap pb ar component."
+    },
+    {
+      "name": "title",
+      "kind": "property",
+      "signature": "in property <string> title;",
+      "line": 11,
+      "doc": "Input property \"title\"."
+    },
+    {
+      "name": "nav-icon",
+      "kind": "property",
+      "signature": "in property <string> nav-icon:    FluentIcons.back;",
+      "line": 13,
+      "doc": "Input property \"nav-icon\"."
+    },
+    {
+      "name": "show-nav",
+      "kind": "property",
+      "signature": "in property <bool>   show-nav:    false;",
+      "line": 15,
+      "doc": "Input property \"show-nav\"."
+    },
+    {
+      "name": "action-icon",
+      "kind": "property",
+      "signature": "in property <string> action-icon: \"\";",
+      "line": 17,
+      "doc": "Input property \"action-icon\"."
+    },
+    {
+      "name": "icon-font",
+      "kind": "property",
+      "signature": "in property <string> icon-font:   \"Segoe Fluent Icons\";",
+      "line": 19,
+      "doc": "Input property \"icon-font\"."
+    },
+    {
+      "name": "nav-clicked",
+      "kind": "callback",
+      "signature": "callback nav-clicked();",
+      "line": 21,
+      "doc": "Callback fired for n av c li ck ed."
+    },
+    {
+      "name": "action-clicked",
+      "kind": "callback",
+      "signature": "callback action-clicked();",
+      "line": 23,
+      "doc": "Callback fired for a ct io n c li ck ed."
+    }
+  ]
+}

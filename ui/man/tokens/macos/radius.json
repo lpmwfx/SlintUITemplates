@@ -1,0 +1,54 @@
+{
+  "source": "tokens/macos/radius.slint",
+  "items": [
+    {
+      "name": "none",
+      "kind": "property",
+      "signature": "out property <length> none:   0px;",
+      "line": 6,
+      "doc": "No rounding — table cells, flat areas."
+    },
+    {
+      "name": "sm",
+      "kind": "property",
+      "signature": "out property <length> sm:     4px;",
+      "line": 8,
+      "doc": "Extra small — checkboxes, small tags."
+    },
+    {
+      "name": "md",
+      "kind": "property",
+      "signature": "out property <length> md:     6px;",
+      "line": 10,
+      "doc": "Standard — buttons, text fields, menu items."
+    },
+    {
+      "name": "lg",
+      "kind": "property",
+      "signature": "out property <length> lg:     8px;",
+      "line": 12,
+      "doc": "Large — cards, panels, popovers."
+    },
+    {
+      "name": "xl",
+      "kind": "property",
+      "signature": "out property <length> xl:    12px;",
+      "line": 14,
+      "doc": "Extra large — dialogs, sheets, large containers."
+    },
+    {
+      "name": "window",
+      "kind": "property",
+      "signature": "out property <length> window: 10px;",
+      "line": 16,
+      "doc": "Window-level rounding (macOS 14+ rounded window corners)."
+    },
+    {
+      "name": "circle",
+      "kind": "property",
+      "signature": "out property <length> circle: 9999px;",
+      "line": 18,
+      "doc": "Full pill — tags, badges, segmented controls."
+    }
+  ]
+}

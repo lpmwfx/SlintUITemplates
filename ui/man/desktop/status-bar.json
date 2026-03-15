@@ -1,0 +1,33 @@
+{
+  "source": "desktop/status-bar.slint",
+  "items": [
+    {
+      "name": "StatusBar",
+      "kind": "component",
+      "signature": "export component StatusBar inherits Rectangle",
+      "line": 5,
+      "doc": "S ta tu sb ar component."
+    },
+    {
+      "name": "status-text",
+      "kind": "property",
+      "signature": "in property <string> status-text: \"Ready\";",
+      "line": 7,
+      "doc": "Input property \"status-text\"."
+    },
+    {
+      "name": "progress",
+      "kind": "property",
+      "signature": "in property <float>  progress: Sizes.no-fill;",
+      "line": 9,
+      "doc": "Input property \"progress\"."
+    },
+    {
+      "name": "show-progress",
+      "kind": "property",
+      "signature": "in property <bool>   show-progress: false;",
+      "line": 11,
+      "doc": "Input property \"show-progress\"."
+    }
+  ]
+}

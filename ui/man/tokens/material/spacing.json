@@ -1,0 +1,110 @@
+{
+  "source": "tokens/material/spacing.slint",
+  "items": [
+    {
+      "name": "xs",
+      "kind": "property",
+      "signature": "out property <length> xs:   4px;",
+      "line": 7,
+      "doc": "Output property \"xs\"."
+    },
+    {
+      "name": "sm",
+      "kind": "property",
+      "signature": "out property <length> sm:   8px;",
+      "line": 9,
+      "doc": "Output property \"sm\"."
+    },
+    {
+      "name": "md",
+      "kind": "property",
+      "signature": "out property <length> md:  16px;",
+      "line": 11,
+      "doc": "Output property \"md\"."
+    },
+    {
+      "name": "lg",
+      "kind": "property",
+      "signature": "out property <length> lg:  24px;",
+      "line": 13,
+      "doc": "Output property \"lg\"."
+    },
+    {
+      "name": "xl",
+      "kind": "property",
+      "signature": "out property <length> xl:  32px;",
+      "line": 15,
+      "doc": "Output property \"xl\"."
+    },
+    {
+      "name": "top-app-bar-height",
+      "kind": "property",
+      "signature": "out property <length> top-app-bar-height:    64px;",
+      "line": 19,
+      "doc": "Output property \"top-app-bar-height\"."
+    },
+    {
+      "name": "bottom-nav-bar-height",
+      "kind": "property",
+      "signature": "out property <length> bottom-nav-bar-height: 80px;",
+      "line": 21,
+      "doc": "Output property \"bottom-nav-bar-height\"."
+    },
+    {
+      "name": "nav-item-height",
+      "kind": "property",
+      "signature": "out property <length> nav-item-height:       64px;",
+      "line": 23,
+      "doc": "Output property \"nav-item-height\"."
+    },
+    {
+      "name": "fab-size",
+      "kind": "property",
+      "signature": "out property <length> fab-size:              56px;",
+      "line": 25,
+      "doc": "Output property \"fab-size\"."
+    },
+    {
+      "name": "fab-extended-height",
+      "kind": "property",
+      "signature": "out property <length> fab-extended-height:   56px;",
+      "line": 27,
+      "doc": "Output property \"fab-extended-height\"."
+    },
+    {
+      "name": "icon-button-size",
+      "kind": "property",
+      "signature": "out property <length> icon-button-size:      48px;",
+      "line": 29,
+      "doc": "Output property \"icon-button-size\"."
+    },
+    {
+      "name": "control-sm",
+      "kind": "property",
+      "signature": "out property <length> control-sm:  40px;   // compact touch target",
+      "line": 33,
+      "doc": "Output property \"control-sm\"."
+    },
+    {
+      "name": "control-md",
+      "kind": "property",
+      "signature": "out property <length> control-md:  48px;   // standard M3 minimum touch target",
+      "line": 35,
+      "doc": "Output property \"control-md\"."
+    },
+    {
+      "name": "control-lg",
+      "kind": "property",
+      "signature": "out property <length> control-lg:  56px;   // large / primary (FAB height)",
+      "line": 37,
+      "doc": "Output property \"control-lg\"."
+    },
+    {
+      "name": "nav-rail-width",
+      "kind": "property",
+      "signature": "out property <length> nav-rail-width: 80px;  // M3 Navigation Rail width",
+      "line": 41,
+      "doc": "Output property \"nav-rail-width\"."
+    }
+  ]
+}

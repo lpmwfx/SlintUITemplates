@@ -1,0 +1,68 @@
+{
+  "source": "widgets/pagination.slint",
+  "items": [
+    {
+      "name": "Pagination",
+      "kind": "component",
+      "signature": "export component Pagination inherits Rectangle",
+      "line": 5,
+      "doc": "Pagination control with previous/next buttons and optional explicit page chips."
+    },
+    {
+      "name": "current",
+      "kind": "property",
+      "signature": "in property <int>   current: Sizes.one;",
+      "line": 7,
+      "doc": "Currently selected page number."
+    },
+    {
+      "name": "total",
+      "kind": "property",
+      "signature": "in property <int>   total: Sizes.one;",
+      "line": 9,
+      "doc": "Highest available page number."
+    },
+    {
+      "name": "pages",
+      "kind": "property",
+      "signature": "in property <[int]> pages: [];",
+      "line": 11,
+      "doc": "Explicit page numbers to render as clickable chips. Empty falls back to `current / total`."
+    },
+    {
+      "name": "changed",
+      "kind": "callback",
+      "signature": "callback changed(int);",
+      "line": 13,
+      "doc": "Fired when the user requests a different page."
+    },
+    {
+      "name": "nav-prev",
+      "kind": "property",
+      "signature": "private property <string> nav-prev: \"‹\";",
+      "line": 17,
+      "doc": "Private property \"nav-prev\" used internally."
+    },
+    {
+      "name": "nav-next",
+      "kind": "property",
+      "signature": "private property <string> nav-next: \"›\";",
+      "line": 19,
+      "doc": "Private property \"nav-next\" used internally."
+    },
+    {
+      "name": "page-sep",
+      "kind": "property",
+      "signature": "private property <string> page-sep: \" / \";",
+      "line": 21,
+      "doc": "Private property \"page-sep\" used internally."
+    },
+    {
+      "name": "disabled-alpha",
+      "kind": "property",
+      "signature": "private property <float> disabled-alpha: 0.4;",
+      "line": 25,
+      "doc": "Private property \"disabled-alpha\" used internally."
+    }
+  ]
+}

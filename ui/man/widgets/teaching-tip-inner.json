@@ -1,0 +1,82 @@
+{
+  "source": "widgets/teaching-tip-inner.slint",
+  "items": [
+    {
+      "name": "TeachingTipInner",
+      "kind": "component",
+      "signature": "export component TeachingTipInner inherits Rectangle",
+      "line": 5,
+      "doc": "T ea ch in gt ip in ne r component."
+    },
+    {
+      "name": "title",
+      "kind": "property",
+      "signature": "in property <string> title: \"\";",
+      "line": 7,
+      "doc": "Input property \"title\"."
+    },
+    {
+      "name": "body",
+      "kind": "property",
+      "signature": "in property <string> body: \"\";",
+      "line": 9,
+      "doc": "Input property \"body\"."
+    },
+    {
+      "name": "action-label",
+      "kind": "property",
+      "signature": "in property <string> action-label: \"\";",
+      "line": 11,
+      "doc": "Input property \"action-label\"."
+    },
+    {
+      "name": "dismiss-label",
+      "kind": "property",
+      "signature": "in property <string> dismiss-label: \"\";",
+      "line": 13,
+      "doc": "Input property \"dismiss-label\"."
+    },
+    {
+      "name": "popup-close",
+      "kind": "callback",
+      "signature": "callback popup-close();",
+      "line": 15,
+      "doc": "Callback fired for p op up c lo se."
+    },
+    {
+      "name": "action",
+      "kind": "callback",
+      "signature": "callback action();",
+      "line": 17,
+      "doc": "Callback fired for a ct io n."
+    },
+    {
+      "name": "dismissed",
+      "kind": "callback",
+      "signature": "callback dismissed();",
+      "line": 19,
+      "doc": "Callback fired for d is mi ss ed."
+    },
+    {
+      "name": "border-px",
+      "kind": "property",
+      "signature": "private property <length> border-px: 1px;",
+      "line": 22,
+      "doc": "Private property \"border-px\" used internally."
+    },
+    {
+      "name": "h-stretch",
+      "kind": "property",
+      "signature": "private property <int>    h-stretch: 1;",
+      "line": 24,
+      "doc": "Private property \"h-stretch\" used internally."
+    },
+    {
+      "name": "v-stretch",
+      "kind": "property",
+      "signature": "private property <int>    v-stretch: 1;",
+      "line": 26,
+      "doc": "Private property \"v-stretch\" used internally."
+    }
+  ]
+}

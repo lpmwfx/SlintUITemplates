@@ -1,0 +1,61 @@
+{
+  "source": "widgets/spin-box.slint",
+  "items": [
+    {
+      "name": "SpinBox",
+      "kind": "component",
+      "signature": "export component SpinBox inherits Rectangle",
+      "line": 7,
+      "doc": "S pi nb ox component."
+    },
+    {
+      "name": "value",
+      "kind": "property",
+      "signature": "in property <int> value: 0;",
+      "line": 9,
+      "doc": "Input property \"value\"."
+    },
+    {
+      "name": "min",
+      "kind": "property",
+      "signature": "in property <int>    min: 0;",
+      "line": 11,
+      "doc": "Input property \"min\"."
+    },
+    {
+      "name": "max",
+      "kind": "property",
+      "signature": "in property <int>    max: 100;",
+      "line": 13,
+      "doc": "Input property \"max\"."
+    },
+    {
+      "name": "step",
+      "kind": "property",
+      "signature": "in property <int>    step: 1;",
+      "line": 15,
+      "doc": "Input property \"step\"."
+    },
+    {
+      "name": "label",
+      "kind": "property",
+      "signature": "in property <string> label: \"\";",
+      "line": 17,
+      "doc": "Input property \"label\"."
+    },
+    {
+      "name": "enabled",
+      "kind": "property",
+      "signature": "in property <bool>   enabled: true;",
+      "line": 19,
+      "doc": "Input property \"enabled\"."
+    },
+    {
+      "name": "changed",
+      "kind": "callback",
+      "signature": "callback changed(int);",
+      "line": 21,
+      "doc": "Callback fired for c ha ng ed."
+    }
+  ]
+}

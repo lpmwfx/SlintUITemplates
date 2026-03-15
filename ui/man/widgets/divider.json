@@ -1,0 +1,33 @@
+{
+  "source": "widgets/divider.slint",
+  "items": [
+    {
+      "name": "Divider",
+      "kind": "component",
+      "signature": "export component Divider inherits Rectangle",
+      "line": 6,
+      "doc": "D iv id er component."
+    },
+    {
+      "name": "orientation",
+      "kind": "property",
+      "signature": "in property <string> orientation: Variants.horizontal;   // horizontal | vertical",
+      "line": 8,
+      "doc": "Input property \"orientation\"."
+    },
+    {
+      "name": "label",
+      "kind": "property",
+      "signature": "in property <string> label: \"\";",
+      "line": 10,
+      "doc": "Input property \"label\"."
+    },
+    {
+      "name": "line-color",
+      "kind": "property",
+      "signature": "in property <color>  line-color: Colors.border;",
+      "line": 12,
+      "doc": "Input property \"line-color\"."
+    }
+  ]
+}

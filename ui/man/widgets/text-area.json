@@ -1,0 +1,68 @@
+{
+  "source": "widgets/text-area.slint",
+  "items": [
+    {
+      "name": "TextArea",
+      "kind": "component",
+      "signature": "export component TextArea inherits Rectangle",
+      "line": 6,
+      "doc": "T ex ta re a component."
+    },
+    {
+      "name": "label",
+      "kind": "property",
+      "signature": "in property <string> label: \"\";",
+      "line": 8,
+      "doc": "Input property \"label\"."
+    },
+    {
+      "name": "value",
+      "kind": "property",
+      "signature": "in property <string> value: \"\";",
+      "line": 10,
+      "doc": "Input property \"value\"."
+    },
+    {
+      "name": "placeholder",
+      "kind": "property",
+      "signature": "in property <string> placeholder: \"\";",
+      "line": 12,
+      "doc": "Input property \"placeholder\"."
+    },
+    {
+      "name": "error",
+      "kind": "property",
+      "signature": "in property <string> error: \"\";",
+      "line": 14,
+      "doc": "Input property \"error\"."
+    },
+    {
+      "name": "rows",
+      "kind": "property",
+      "signature": "in property <int>    rows: Sizes.four;",
+      "line": 16,
+      "doc": "Input property \"rows\"."
+    },
+    {
+      "name": "enabled",
+      "kind": "property",
+      "signature": "in property <bool>   enabled: true;",
+      "line": 18,
+      "doc": "Input property \"enabled\"."
+    },
+    {
+      "name": "changed",
+      "kind": "callback",
+      "signature": "callback changed(string);",
+      "line": 20,
+      "doc": "Callback fired for c ha ng ed."
+    },
+    {
+      "name": "area-height",
+      "kind": "property",
+      "signature": "private property <length> area-height: root.rows * (Type.body-size + Spacing.xs) + Spacing.sm * Sizes.two;",
+      "line": 23,
+      "doc": "Private property \"area-height\" used internally."
+    }
+  ]
+}

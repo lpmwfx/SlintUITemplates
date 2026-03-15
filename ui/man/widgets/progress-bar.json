@@ -1,0 +1,33 @@
+{
+  "source": "widgets/progress-bar.slint",
+  "items": [
+    {
+      "name": "ProgressBar",
+      "kind": "component",
+      "signature": "export component ProgressBar inherits Rectangle",
+      "line": 6,
+      "doc": "P ro gr es sb ar component."
+    },
+    {
+      "name": "value",
+      "kind": "property",
+      "signature": "in property <float> value: Sizes.no-fill;      // 0.0..1.0",
+      "line": 8,
+      "doc": "Input property \"value\"."
+    },
+    {
+      "name": "show-label",
+      "kind": "property",
+      "signature": "in property <bool>  show-label: false;",
+      "line": 10,
+      "doc": "Input property \"show-label\"."
+    },
+    {
+      "name": "label-suffix",
+      "kind": "property",
+      "signature": "in property <string> label-suffix: \"%\";",
+      "line": 12,
+      "doc": "Input property \"label-suffix\"."
+    }
+  ]
+}

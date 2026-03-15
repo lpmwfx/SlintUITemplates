@@ -1,0 +1,54 @@
+{
+  "source": "widgets/DataTableRow.slint",
+  "items": [
+    {
+      "name": "DataTableRow",
+      "kind": "component",
+      "signature": "export component DataTableRow inherits Rectangle",
+      "line": 7,
+      "doc": "D at at ab le ro w component."
+    },
+    {
+      "name": "cells",
+      "kind": "property",
+      "signature": "in property <[string]>       cells;",
+      "line": 9,
+      "doc": "Input property \"cells\"."
+    },
+    {
+      "name": "columns",
+      "kind": "property",
+      "signature": "in property <[TableColumn]>  columns;",
+      "line": 11,
+      "doc": "Input property \"columns\"."
+    },
+    {
+      "name": "is-selected",
+      "kind": "property",
+      "signature": "in property <bool>           is-selected: false;",
+      "line": 13,
+      "doc": "Input property \"is-selected\"."
+    },
+    {
+      "name": "is-alternate",
+      "kind": "property",
+      "signature": "in property <bool>           is-alternate: false;",
+      "line": 15,
+      "doc": "Input property \"is-alternate\"."
+    },
+    {
+      "name": "clicked",
+      "kind": "callback",
+      "signature": "callback clicked();",
+      "line": 17,
+      "doc": "Callback fired for c li ck ed."
+    },
+    {
+      "name": "fallback-col-width",
+      "kind": "property",
+      "signature": "private property <length> fallback-col-width: 100px;",
+      "line": 20,
+      "doc": "Private property \"fallback-col-width\" used internally."
+    }
+  ]
+}

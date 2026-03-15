@@ -1,0 +1,19 @@
+{
+  "source": "widgets/cbf-overflow-btn.slint",
+  "items": [
+    {
+      "name": "CbfOverflowBtn",
+      "kind": "component",
+      "signature": "export component CbfOverflowBtn inherits Rectangle",
+      "line": 4,
+      "doc": "C bf ov er fl ow bt n component."
+    },
+    {
+      "name": "show-secondary",
+      "kind": "callback",
+      "signature": "callback show-secondary();",
+      "line": 6,
+      "doc": "Callback fired for s ho w s ec on da ry."
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "source": "modules/PanelSlot.slint",
+  "items": [
+    {
+      "name": "PanelSlot",
+      "kind": "component",
+      "signature": "export component PanelSlot inherits Rectangle",
+      "line": 7,
+      "doc": "P an el sl ot component."
+    },
+    {
+      "name": "panel-id",
+      "kind": "property",
+      "signature": "in property <int>    panel-id;",
+      "line": 9,
+      "doc": "Input property \"panel-id\"."
+    },
+    {
+      "name": "label",
+      "kind": "property",
+      "signature": "in property <string> label: \"\";       // debug / placeholder label",
+      "line": 11,
+      "doc": "Input property \"label\"."
+    },
+    {
+      "name": "empty-label",
+      "kind": "property",
+      "signature": "private property <string> empty-label: \"\";",
+      "line": 14,
+      "doc": "Private property \"empty-label\" used internally."
+    }
+  ]
+}

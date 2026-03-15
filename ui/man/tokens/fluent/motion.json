@@ -1,0 +1,75 @@
+{
+  "source": "tokens/fluent/motion.slint",
+  "items": [
+    {
+      "name": "fast",
+      "kind": "property",
+      "signature": "out property <duration> fast:   83ms;    // micro interactions (hover, press)",
+      "line": 8,
+      "doc": "Output property \"fast\"."
+    },
+    {
+      "name": "normal",
+      "kind": "property",
+      "signature": "out property <duration> normal: 167ms;   // standard transitions (open, close)",
+      "line": 10,
+      "doc": "Output property \"normal\"."
+    },
+    {
+      "name": "slow",
+      "kind": "property",
+      "signature": "out property <duration> slow:   250ms;   // larger transitions (page, panel)",
+      "line": 12,
+      "doc": "Output property \"slow\"."
+    },
+    {
+      "name": "slower",
+      "kind": "property",
+      "signature": "out property <duration> slower: 383ms;   // deliberate / emphasis transitions",
+      "line": 14,
+      "doc": "Output property \"slower\"."
+    },
+    {
+      "name": "tick",
+      "kind": "property",
+      "signature": "out property <duration> tick:   16ms;    // animation frame tick (~60fps)",
+      "line": 16,
+      "doc": "Output property \"tick\"."
+    },
+    {
+      "name": "medium",
+      "kind": "property",
+      "signature": "out property <duration> medium: 200ms;   // slides, progress bars",
+      "line": 18,
+      "doc": "Output property \"medium\"."
+    },
+    {
+      "name": "quick",
+      "kind": "property",
+      "signature": "out property <duration> quick:  150ms;   // toggles, micro-transitions",
+      "line": 20,
+      "doc": "Output property \"quick\"."
+    },
+    {
+      "name": "entrance",
+      "kind": "property",
+      "signature": "out property <easing> entrance: ease-in-out;",
+      "line": 27,
+      "doc": "Output property \"entrance\"."
+    },
+    {
+      "name": "exit",
+      "kind": "property",
+      "signature": "out property <easing> exit:     ease-in;",
+      "line": 29,
+      "doc": "Output property \"exit\"."
+    },
+    {
+      "name": "standard",
+      "kind": "property",
+      "signature": "out property <easing> standard: ease-in-out;",
+      "line": 31,
+      "doc": "Output property \"standard\"."
+    }
+  ]
+}

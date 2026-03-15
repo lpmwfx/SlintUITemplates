@@ -1,0 +1,47 @@
+{
+  "source": "widgets/popover-inner.slint",
+  "items": [
+    {
+      "name": "PopoverInner",
+      "kind": "component",
+      "signature": "export component PopoverInner inherits Rectangle",
+      "line": 4,
+      "doc": "P op ov er in ne r component."
+    },
+    {
+      "name": "title",
+      "kind": "property",
+      "signature": "in property <string> title: \"\";",
+      "line": 6,
+      "doc": "Input property \"title\"."
+    },
+    {
+      "name": "body",
+      "kind": "property",
+      "signature": "in property <string> body: \"\";",
+      "line": 8,
+      "doc": "Input property \"body\"."
+    },
+    {
+      "name": "close-requested",
+      "kind": "callback",
+      "signature": "callback close-requested();",
+      "line": 10,
+      "doc": "Callback fired for c lo se r eq ue st ed."
+    },
+    {
+      "name": "border-px",
+      "kind": "property",
+      "signature": "private property <length> border-px: 1px;",
+      "line": 13,
+      "doc": "Private property \"border-px\" used internally."
+    },
+    {
+      "name": "h-stretch",
+      "kind": "property",
+      "signature": "private property <int>    h-stretch: 1;",
+      "line": 15,
+      "doc": "Private property \"h-stretch\" used internally."
+    }
+  ]
+}

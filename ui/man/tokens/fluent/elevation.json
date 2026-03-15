@@ -1,0 +1,75 @@
+{
+  "source": "tokens/fluent/elevation.slint",
+  "items": [
+    {
+      "name": "level-2",
+      "kind": "property",
+      "signature": "out property <color> level-2:  FluentColors.shadow-2;",
+      "line": 11,
+      "doc": "Output property \"level-2\"."
+    },
+    {
+      "name": "level-4",
+      "kind": "property",
+      "signature": "out property <color> level-4:  FluentColors.shadow-4;",
+      "line": 13,
+      "doc": "Output property \"level-4\"."
+    },
+    {
+      "name": "level-8",
+      "kind": "property",
+      "signature": "out property <color> level-8:  FluentColors.shadow-8;",
+      "line": 15,
+      "doc": "Output property \"level-8\"."
+    },
+    {
+      "name": "level-16",
+      "kind": "property",
+      "signature": "out property <color> level-16: FluentColors.shadow-16;",
+      "line": 17,
+      "doc": "Output property \"level-16\"."
+    },
+    {
+      "name": "level-28",
+      "kind": "property",
+      "signature": "out property <color> level-28: FluentColors.shadow-28;",
+      "line": 19,
+      "doc": "Output property \"level-28\"."
+    },
+    {
+      "name": "blur-2",
+      "kind": "property",
+      "signature": "out property <length> blur-2:  2px;",
+      "line": 23,
+      "doc": "Output property \"blur-2\"."
+    },
+    {
+      "name": "blur-4",
+      "kind": "property",
+      "signature": "out property <length> blur-4:  4px;",
+      "line": 25,
+      "doc": "Output property \"blur-4\"."
+    },
+    {
+      "name": "blur-8",
+      "kind": "property",
+      "signature": "out property <length> blur-8:  8px;",
+      "line": 27,
+      "doc": "Output property \"blur-8\"."
+    },
+    {
+      "name": "blur-16",
+      "kind": "property",
+      "signature": "out property <length> blur-16: 16px;",
+      "line": 29,
+      "doc": "Output property \"blur-16\"."
+    },
+    {
+      "name": "blur-28",
+      "kind": "property",
+      "signature": "out property <length> blur-28: 28px;",
+      "line": 31,
+      "doc": "Output property \"blur-28\"."
+    }
+  ]
+}

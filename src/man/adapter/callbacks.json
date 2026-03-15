@@ -1,0 +1,26 @@
+{
+  "source": "adapter/callbacks.rs",
+  "items": [
+    {
+      "name": "on_navigate",
+      "kind": "fn",
+      "signature": "pub fn on_navigate(&self, f: impl Fn(slint::SharedString) + 'static)",
+      "line": 4,
+      "doc": "Register a handler for the navigate callback (nav item clicked).\nReplaces any previously registered handler."
+    },
+    {
+      "name": "on_toolbar_clicked",
+      "kind": "fn",
+      "signature": "pub fn on_toolbar_clicked(&self, f: impl Fn(slint::SharedString) + 'static)",
+      "line": 10,
+      "doc": "Register a handler for toolbar button clicks.\nStored in adapter cache; dispatched via the handler wired in new()."
+    },
+    {
+      "name": "on_menu_action",
+      "kind": "fn",
+      "signature": "pub fn on_menu_action(&self, id: impl Into<String>, f: impl Fn() + 'static)",
+      "line": 16,
+      "doc": "Register a handler for a specific MenuBar action id.\nMultiple calls accumulate — each id maps to one handler."
+    }
+  ]
+}

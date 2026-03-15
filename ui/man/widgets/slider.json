@@ -1,0 +1,89 @@
+{
+  "source": "widgets/slider.slint",
+  "items": [
+    {
+      "name": "Slider",
+      "kind": "component",
+      "signature": "export component Slider inherits Rectangle",
+      "line": 6,
+      "doc": "S li de r component."
+    },
+    {
+      "name": "value",
+      "kind": "property",
+      "signature": "in property <float> value: Sizes.no-fill;",
+      "line": 8,
+      "doc": "Input property \"value\"."
+    },
+    {
+      "name": "min",
+      "kind": "property",
+      "signature": "in property <float>  min: Sizes.no-fill;",
+      "line": 10,
+      "doc": "Input property \"min\"."
+    },
+    {
+      "name": "max",
+      "kind": "property",
+      "signature": "in property <float>  max: Sizes.fill;",
+      "line": 12,
+      "doc": "Input property \"max\"."
+    },
+    {
+      "name": "step",
+      "kind": "property",
+      "signature": "in property <float>  step: Sizes.no-fill;",
+      "line": 14,
+      "doc": "Input property \"step\"."
+    },
+    {
+      "name": "label",
+      "kind": "property",
+      "signature": "in property <string> label: \"\";",
+      "line": 16,
+      "doc": "Input property \"label\"."
+    },
+    {
+      "name": "show-value",
+      "kind": "property",
+      "signature": "in property <bool>   show-value: false;",
+      "line": 18,
+      "doc": "Input property \"show-value\"."
+    },
+    {
+      "name": "enabled",
+      "kind": "property",
+      "signature": "in property <bool>   enabled: true;",
+      "line": 20,
+      "doc": "Input property \"enabled\"."
+    },
+    {
+      "name": "changed",
+      "kind": "callback",
+      "signature": "callback changed(float);",
+      "line": 22,
+      "doc": "Callback fired for c ha ng ed."
+    },
+    {
+      "name": "fill-ratio",
+      "kind": "property",
+      "signature": "private property <float>  fill-ratio: (root.value - root.min) / (root.max - root.min);",
+      "line": 25,
+      "doc": "Private property \"fill-ratio\" used internally."
+    },
+    {
+      "name": "track-h",
+      "kind": "property",
+      "signature": "private property <length> track-h:    Spacing.xs;",
+      "line": 27,
+      "doc": "Private property \"track-h\" used internally."
+    },
+    {
+      "name": "thumb-size",
+      "kind": "property",
+      "signature": "private property <length> thumb-size: Spacing.md;",
+      "line": 29,
+      "doc": "Private property \"thumb-size\" used internally."
+    }
+  ]
+}

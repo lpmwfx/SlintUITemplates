@@ -1,0 +1,89 @@
+{
+  "source": "demo/demo.slint",
+  "items": [
+    {
+      "name": "DemoWindow",
+      "kind": "component",
+      "signature": "export component DemoWindow inherits Window",
+      "line": 19,
+      "doc": "D em ow in do w component."
+    },
+    {
+      "name": "window-title",
+      "kind": "property",
+      "signature": "in property <string> window-title: \"SlintUITemplates \\u{2014} Phase 2 Demo\";",
+      "line": 23,
+      "doc": "Input property \"window-title\"."
+    },
+    {
+      "name": "layout-mode",
+      "kind": "property",
+      "signature": "in-out property <string>    layout-mode: Variants.desktop;",
+      "line": 28,
+      "doc": "Two-way property \"layout-mode\"."
+    },
+    {
+      "name": "active-view",
+      "kind": "property",
+      "signature": "in-out property <string>    active-view: NavId.home;",
+      "line": 30,
+      "doc": "Two-way property \"active-view\"."
+    },
+    {
+      "name": "sidebar-collapsed",
+      "kind": "property",
+      "signature": "in-out property <bool>      sidebar-collapsed: false;",
+      "line": 32,
+      "doc": "Two-way property \"sidebar-collapsed\"."
+    },
+    {
+      "name": "nav-items",
+      "kind": "property",
+      "signature": "in-out property <[NavItem]> nav-items: [",
+      "line": 34,
+      "doc": "Two-way property \"nav-items\"."
+    },
+    {
+      "name": "col-left-width",
+      "kind": "property",
+      "signature": "in-out property <length> col-left-width:   Spacing.xl * Sizes.four + Spacing.md;",
+      "line": 44,
+      "doc": "Two-way property \"col-left-width\"."
+    },
+    {
+      "name": "control-bar-label",
+      "kind": "property",
+      "signature": "in property <string> control-bar-label: \"SlintUI \\u{2014} Phase 2 Demo\";",
+      "line": 47,
+      "doc": "Input property \"control-bar-label\"."
+    },
+    {
+      "name": "switch-to-mobile-label",
+      "kind": "property",
+      "signature": "in property <string> switch-to-mobile-label: \"Switch to Mobile\";",
+      "line": 49,
+      "doc": "Input property \"switch-to-mobile-label\"."
+    },
+    {
+      "name": "switch-to-desktop-label",
+      "kind": "property",
+      "signature": "in property <string> switch-to-desktop-label: \"Switch to Desktop\";",
+      "line": 51,
+      "doc": "Input property \"switch-to-desktop-label\"."
+    },
+    {
+      "name": "dark-label",
+      "kind": "property",
+      "signature": "in property <string> dark-label: \"Dark\";",
+      "line": 53,
+      "doc": "Input property \"dark-label\"."
+    },
+    {
+      "name": "status-prefix",
+      "kind": "property",
+      "signature": "in property <string> status-prefix: \"View: \";",
+      "line": 55,
+      "doc": "Input property \"status-prefix\"."
+    }
+  ]
+}

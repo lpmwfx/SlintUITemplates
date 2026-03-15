@@ -3964,6 +3964,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "rustdocumenter"
+version = "0.1.0"
+source = "git+https://github.com/lpmwfx/RustDocumenter#4287df0489665684e96c18a56fc7c465365e4709"
+dependencies = [
+ "chrono",
+ "regex",
+ "serde",
+ "serde_json",
+ "walkdir",
+]
+
+[[package]]
 name = "rustix"
 version = "0.38.44"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -4289,6 +4301,7 @@ dependencies = [
  "pulldown-cmark 0.12.2",
  "raw-window-handle",
  "rhai",
+ "rustdocumenter",
  "rustscanners",
  "serde",
  "slint",

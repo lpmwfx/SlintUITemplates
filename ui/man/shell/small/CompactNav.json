@@ -1,0 +1,47 @@
+{
+  "source": "shell/small/CompactNav.slint",
+  "items": [
+    {
+      "name": "CompactNav",
+      "kind": "component",
+      "signature": "export component CompactNav inherits Rectangle",
+      "line": 12,
+      "doc": "CompactNav — horizontal bottom bar or vertical compact rail."
+    },
+    {
+      "name": "mode",
+      "kind": "property",
+      "signature": "in property <string> mode: Variants.nav-bottom;",
+      "line": 14,
+      "doc": "Nav mode: `Variants.nav-bottom` (horizontal) or `Variants.nav-compact` (rail)."
+    },
+    {
+      "name": "items",
+      "kind": "property",
+      "signature": "in property <[NavItem]> items;",
+      "line": 16,
+      "doc": "Navigation items to render."
+    },
+    {
+      "name": "active",
+      "kind": "property",
+      "signature": "in property <string> active;",
+      "line": 18,
+      "doc": "Id of the currently active item."
+    },
+    {
+      "name": "navigate",
+      "kind": "callback",
+      "signature": "callback navigate(string);",
+      "line": 20,
+      "doc": "Fired when a nav item is tapped."
+    },
+    {
+      "name": "is-rail",
+      "kind": "property",
+      "signature": "private property <bool> is-rail: root.mode == Variants.nav-compact;",
+      "line": 23,
+      "doc": "Private property \"is-rail\" used internally."
+    }
+  ]
+}

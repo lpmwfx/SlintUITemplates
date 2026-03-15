@@ -1,0 +1,12 @@
+{
+  "source": "desktop/types.slint",
+  "items": [
+    {
+      "name": "NavItem",
+      "kind": "struct",
+      "signature": "export struct NavItem",
+      "line": 2,
+      "doc": "N av it em struct."
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "source": "viewer/page-panels.slint",
+  "items": [
+    {
+      "name": "PagePanels",
+      "kind": "component",
+      "signature": "export component PagePanels inherits VerticalLayout",
+      "line": 10,
+      "doc": "Viewer page showcasing panel, drawer, dialog, flyout, and layered surface components."
+    },
+    {
+      "name": "left-open",
+      "kind": "property",
+      "signature": "private property <bool>   left-open:   false;",
+      "line": 14,
+      "doc": "Private property \"left-open\" used internally."
+    },
+    {
+      "name": "right-open",
+      "kind": "property",
+      "signature": "private property <bool>   right-open:  false;",
+      "line": 16,
+      "doc": "Private property \"right-open\" used internally."
+    },
+    {
+      "name": "acc-w",
+      "kind": "property",
+      "signature": "private property <length> acc-w:       Sizes.comp-420;",
+      "line": 18,
+      "doc": "Private property \"acc-w\" used internally."
+    },
+    {
+      "name": "btn-w",
+      "kind": "property",
+      "signature": "private property <length> btn-w:       Sizes.comp-130;",
+      "line": 20,
+      "doc": "Private property \"btn-w\" used internally."
+    },
+    {
+      "name": "demo-w",
+      "kind": "property",
+      "signature": "private property <length> demo-w:      Sizes.panel-wide;",
+      "line": 22,
+      "doc": "Private property \"demo-w\" used internally."
+    },
+    {
+      "name": "demo-h",
+      "kind": "property",
+      "signature": "private property <length> demo-h:      Sizes.panel-sm;",
+      "line": 24,
+      "doc": "Private property \"demo-h\" used internally."
+    },
+    {
+      "name": "drw-w",
+      "kind": "property",
+      "signature": "private property <length> drw-w:       Sizes.panel-sm;",
+      "line": 26,
+      "doc": "Private property \"drw-w\" used internally."
+    },
+    {
+      "name": "border-px",
+      "kind": "property",
+      "signature": "private property <length> border-px:   Sizes.border-w;",
+      "line": 28,
+      "doc": "Private property \"border-px\" used internally."
+    },
+    {
+      "name": "acc-init",
+      "kind": "property",
+      "signature": "private property <string> acc-init:     \"whatis\";",
+      "line": 30,
+      "doc": "Private property \"acc-init\" used internally."
+    },
+    {
+      "name": "place-left",
+      "kind": "property",
+      "signature": "private property <string> place-left:  \"left\";",
+      "line": 32,
+      "doc": "Private property \"place-left\" used internally."
+    },
+    {
+      "name": "place-right",
+      "kind": "property",
+      "signature": "private property <string> place-right: \"right\";",
+      "line": 34,
+      "doc": "Private property \"place-right\" used internally."
+    },
+    {
+      "name": "acc-platform",
+      "kind": "property",
+      "signature": "private property <string> acc-platform: \"Windows 11 with Fluent 2 is the primary target. Android with Material Design 3 is planned. macOS and Linux are future targets.\";",
+      "line": 36,
+      "doc": "Private property \"acc-platform\" used internally."
+    },
+    {
+      "name": "left-title",
+      "kind": "property",
+      "signature": "private property <string> left-title:  \"Left Panel\";",
+      "line": 38,
+      "doc": "Private property \"left-title\" used internally."
+    },
+    {
+      "name": "right-title",
+      "kind": "property",
+      "signature": "private property <string> right-title: \"Right Panel\";",
+      "line": 40,
+      "doc": "Private property \"right-title\" used internally."
+    }
+  ]
+}

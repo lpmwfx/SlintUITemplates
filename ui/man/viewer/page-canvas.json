@@ -1,0 +1,33 @@
+{
+  "source": "viewer/page-canvas.slint",
+  "items": [
+    {
+      "name": "PageCanvas",
+      "kind": "component",
+      "signature": "export component PageCanvas inherits VerticalLayout",
+      "line": 9,
+      "doc": "Viewer page for canvas-based drawing and image primitives."
+    },
+    {
+      "name": "canvas-frame",
+      "kind": "property",
+      "signature": "in property <image> canvas-frame;",
+      "line": 11,
+      "doc": "Demo image frame shown inside the canvas examples."
+    },
+    {
+      "name": "path-title",
+      "kind": "property",
+      "signature": "private property <string> path-title:  \"Path Canvas (pure Slint)\";",
+      "line": 14,
+      "doc": "Private property \"path-title\" used internally."
+    },
+    {
+      "name": "image-title",
+      "kind": "property",
+      "signature": "private property <string> image-title: \"Image Canvas (Rust-rendered frame)\";",
+      "line": 16,
+      "doc": "Private property \"image-title\" used internally."
+    }
+  ]
+}

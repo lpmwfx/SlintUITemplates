@@ -1,0 +1,33 @@
+{
+  "source": "widgets/canvas-image.slint",
+  "items": [
+    {
+      "name": "CanvasImage",
+      "kind": "component",
+      "signature": "export component CanvasImage inherits Rectangle",
+      "line": 8,
+      "doc": "C an va si ma ge component."
+    },
+    {
+      "name": "frame",
+      "kind": "property",
+      "signature": "in property <image>  frame;",
+      "line": 10,
+      "doc": "Input property \"frame\"."
+    },
+    {
+      "name": "show-placeholder",
+      "kind": "property",
+      "signature": "in property <bool>   show-placeholder: true;",
+      "line": 12,
+      "doc": "Input property \"show-placeholder\"."
+    },
+    {
+      "name": "placeholder-text",
+      "kind": "property",
+      "signature": "in property <string> placeholder-text: \"No frame — wire canvas-frame from Rust\";",
+      "line": 14,
+      "doc": "Input property \"placeholder-text\"."
+    }
+  ]
+}

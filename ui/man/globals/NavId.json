@@ -1,0 +1,26 @@
+{
+  "source": "globals/NavId.slint",
+  "items": [
+    {
+      "name": "home",
+      "kind": "property",
+      "signature": "out property <string> home:     \"home\";",
+      "line": 7,
+      "doc": "Output property \"home\"."
+    },
+    {
+      "name": "list",
+      "kind": "property",
+      "signature": "out property <string> list:     \"list\";",
+      "line": 9,
+      "doc": "Output property \"list\"."
+    },
+    {
+      "name": "settings",
+      "kind": "property",
+      "signature": "out property <string> settings: \"settings\";",
+      "line": 11,
+      "doc": "Output property \"settings\"."
+    }
+  ]
+}

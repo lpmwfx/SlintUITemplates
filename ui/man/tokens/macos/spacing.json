@@ -1,0 +1,103 @@
+{
+  "source": "tokens/macos/spacing.slint",
+  "items": [
+    {
+      "name": "xs",
+      "kind": "property",
+      "signature": "out property <length> xs:   4px;",
+      "line": 6,
+      "doc": "Extra small — icon padding, tight items."
+    },
+    {
+      "name": "sm",
+      "kind": "property",
+      "signature": "out property <length> sm:   8px;",
+      "line": 8,
+      "doc": "Small — between sibling controls."
+    },
+    {
+      "name": "md",
+      "kind": "property",
+      "signature": "out property <length> md:  12px;",
+      "line": 10,
+      "doc": "Medium — standard inset, label gaps."
+    },
+    {
+      "name": "lg",
+      "kind": "property",
+      "signature": "out property <length> lg:  16px;",
+      "line": 12,
+      "doc": "Large — section spacing."
+    },
+    {
+      "name": "xl",
+      "kind": "property",
+      "signature": "out property <length> xl:  20px;",
+      "line": 14,
+      "doc": "Extra large — major section gaps."
+    },
+    {
+      "name": "control-sm",
+      "kind": "property",
+      "signature": "out property <length> control-sm:  18px;",
+      "line": 18,
+      "doc": "Small — mini controls (NSMiniControlSize)."
+    },
+    {
+      "name": "control-md",
+      "kind": "property",
+      "signature": "out property <length> control-md:  22px;",
+      "line": 20,
+      "doc": "Standard — regular controls (NSRegularControlSize)."
+    },
+    {
+      "name": "control-lg",
+      "kind": "property",
+      "signature": "out property <length> control-lg:  28px;",
+      "line": 22,
+      "doc": "Large — prominent buttons, search fields."
+    },
+    {
+      "name": "titlebar-height",
+      "kind": "property",
+      "signature": "out property <length> titlebar-height:   28px;",
+      "line": 26,
+      "doc": "Title bar height (standard, with traffic lights)."
+    },
+    {
+      "name": "toolbar-height",
+      "kind": "property",
+      "signature": "out property <length> toolbar-height:    40px;",
+      "line": 28,
+      "doc": "Toolbar height (under title bar)."
+    },
+    {
+      "name": "sidebar-width",
+      "kind": "property",
+      "signature": "out property <length> sidebar-width:    200px;",
+      "line": 30,
+      "doc": "Sidebar width (narrow, icon + label)."
+    },
+    {
+      "name": "tab-bar-height",
+      "kind": "property",
+      "signature": "out property <length> tab-bar-height:    28px;",
+      "line": 32,
+      "doc": "Tab bar height."
+    },
+    {
+      "name": "status-bar-height",
+      "kind": "property",
+      "signature": "out property <length> status-bar-height: 22px;",
+      "line": 34,
+      "doc": "Status bar height."
+    },
+    {
+      "name": "nav-rail-width",
+      "kind": "property",
+      "signature": "out property <length> nav-rail-width:    52px;",
+      "line": 38,
+      "doc": "Navigation rail width (sidebar collapsed to icon-only)."
+    }
+  ]
+}

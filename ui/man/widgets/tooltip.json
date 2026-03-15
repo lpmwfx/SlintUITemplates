@@ -1,0 +1,33 @@
+{
+  "source": "widgets/tooltip.slint",
+  "items": [
+    {
+      "name": "Tooltip",
+      "kind": "component",
+      "signature": "export component Tooltip inherits Rectangle",
+      "line": 6,
+      "doc": "T oo lt ip component."
+    },
+    {
+      "name": "text",
+      "kind": "property",
+      "signature": "in property <string> text: \"\";",
+      "line": 8,
+      "doc": "Input property \"text\"."
+    },
+    {
+      "name": "placement",
+      "kind": "property",
+      "signature": "in property <string> placement: Variants.top;   // top | bottom | left | right",
+      "line": 10,
+      "doc": "Input property \"placement\"."
+    },
+    {
+      "name": "enabled",
+      "kind": "property",
+      "signature": "in property <bool>   enabled: true;",
+      "line": 12,
+      "doc": "Input property \"enabled\"."
+    }
+  ]
+}

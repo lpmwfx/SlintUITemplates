@@ -1,0 +1,54 @@
+{
+  "source": "widgets/popover.slint",
+  "items": [
+    {
+      "name": "Popover",
+      "kind": "component",
+      "signature": "export component Popover inherits Rectangle",
+      "line": 18,
+      "doc": "P op ov er component."
+    },
+    {
+      "name": "open",
+      "kind": "property",
+      "signature": "in property <bool>   open: false;",
+      "line": 20,
+      "doc": "Input property \"open\"."
+    },
+    {
+      "name": "popup-width",
+      "kind": "property",
+      "signature": "in property <length> popup-width:  220px;",
+      "line": 22,
+      "doc": "Input property \"popup-width\"."
+    },
+    {
+      "name": "popup-height",
+      "kind": "property",
+      "signature": "in property <length> popup-height: 140px;",
+      "line": 24,
+      "doc": "Input property \"popup-height\"."
+    },
+    {
+      "name": "title",
+      "kind": "property",
+      "signature": "in property <string> title: \"\";",
+      "line": 26,
+      "doc": "Input property \"title\"."
+    },
+    {
+      "name": "body",
+      "kind": "property",
+      "signature": "in property <string> body: \"\";",
+      "line": 28,
+      "doc": "Input property \"body\"."
+    },
+    {
+      "name": "close-requested",
+      "kind": "callback",
+      "signature": "callback close-requested();",
+      "line": 30,
+      "doc": "Callback fired for c lo se r eq ue st ed."
+    }
+  ]
+}

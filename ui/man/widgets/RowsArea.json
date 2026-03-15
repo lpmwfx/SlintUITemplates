@@ -1,0 +1,40 @@
+{
+  "source": "widgets/RowsArea.slint",
+  "items": [
+    {
+      "name": "RowsArea",
+      "kind": "component",
+      "signature": "export component RowsArea inherits Rectangle",
+      "line": 9,
+      "doc": "R ow sa re a component."
+    },
+    {
+      "name": "rows",
+      "kind": "property",
+      "signature": "in property <[TableRow]>    rows;",
+      "line": 11,
+      "doc": "Input property \"rows\"."
+    },
+    {
+      "name": "columns",
+      "kind": "property",
+      "signature": "in property <[TableColumn]> columns;",
+      "line": 13,
+      "doc": "Input property \"columns\"."
+    },
+    {
+      "name": "selected",
+      "kind": "property",
+      "signature": "in property <string>        selected;",
+      "line": 15,
+      "doc": "Input property \"selected\"."
+    },
+    {
+      "name": "row-selected",
+      "kind": "callback",
+      "signature": "callback row-selected(string);",
+      "line": 17,
+      "doc": "Callback fired for r ow s el ec te d."
+    }
+  ]
+}

@@ -1,0 +1,208 @@
+{
+  "source": "widgets/DatePickerCalendar.slint",
+  "items": [
+    {
+      "name": "DatePickerCalendar",
+      "kind": "component",
+      "signature": "export component DatePickerCalendar inherits Rectangle",
+      "line": 8,
+      "doc": "D at ep ic ke rc al en da r component."
+    },
+    {
+      "name": "month-offset",
+      "kind": "property",
+      "signature": "in property <int> month-offset: Sizes.zero;",
+      "line": 10,
+      "doc": "Input property \"month-offset\"."
+    },
+    {
+      "name": "initial-year",
+      "kind": "property",
+      "signature": "in property <int> initial-year: 2026;",
+      "line": 12,
+      "doc": "Input property \"initial-year\"."
+    },
+    {
+      "name": "prev-month",
+      "kind": "callback",
+      "signature": "callback prev-month();",
+      "line": 14,
+      "doc": "Callback fired for p re v m on th."
+    },
+    {
+      "name": "next-month",
+      "kind": "callback",
+      "signature": "callback next-month();",
+      "line": 16,
+      "doc": "Callback fired for n ex t m on th."
+    },
+    {
+      "name": "day-selected",
+      "kind": "callback",
+      "signature": "callback day-selected(int);",
+      "line": 18,
+      "doc": "Callback fired for d ay s el ec te d."
+    },
+    {
+      "name": "months-per-year",
+      "kind": "property",
+      "signature": "private property <int> months-per-year:  Sizes.twelve;",
+      "line": 22,
+      "doc": "Private property \"months-per-year\" used internally."
+    },
+    {
+      "name": "zeller-shift",
+      "kind": "property",
+      "signature": "private property <int> zeller-shift:     Sizes.five;",
+      "line": 24,
+      "doc": "Private property \"zeller-shift\" used internally."
+    },
+    {
+      "name": "zeller-factor",
+      "kind": "property",
+      "signature": "private property <int> zeller-factor:    13;",
+      "line": 26,
+      "doc": "Private property \"zeller-factor\" used internally."
+    },
+    {
+      "name": "zeller-div",
+      "kind": "property",
+      "signature": "private property <int> zeller-div:       Sizes.five;",
+      "line": 28,
+      "doc": "Private property \"zeller-div\" used internally."
+    },
+    {
+      "name": "days-cols",
+      "kind": "property",
+      "signature": "private property <int> days-cols:        Sizes.seven;",
+      "line": 30,
+      "doc": "Private property \"days-cols\" used internally."
+    },
+    {
+      "name": "leap-cycle",
+      "kind": "property",
+      "signature": "private property <int> leap-cycle:       Sizes.four;",
+      "line": 32,
+      "doc": "Private property \"leap-cycle\" used internally."
+    },
+    {
+      "name": "century-cycle",
+      "kind": "property",
+      "signature": "private property <int> century-cycle:    Sizes.hundred;",
+      "line": 34,
+      "doc": "Private property \"century-cycle\" used internally."
+    },
+    {
+      "name": "grand-cycle",
+      "kind": "property",
+      "signature": "private property <int> grand-cycle:      400;",
+      "line": 36,
+      "doc": "Private property \"grand-cycle\" used internally."
+    },
+    {
+      "name": "feb-normal",
+      "kind": "property",
+      "signature": "private property <int> feb-normal:       28;",
+      "line": 38,
+      "doc": "Private property \"feb-normal\" used internally."
+    },
+    {
+      "name": "feb-leap",
+      "kind": "property",
+      "signature": "private property <int> feb-leap:         29;",
+      "line": 40,
+      "doc": "Private property \"feb-leap\" used internally."
+    },
+    {
+      "name": "short-month-days",
+      "kind": "property",
+      "signature": "private property <int> short-month-days: Sizes.thirty;",
+      "line": 42,
+      "doc": "Private property \"short-month-days\" used internally."
+    },
+    {
+      "name": "long-month-days",
+      "kind": "property",
+      "signature": "private property <int> long-month-days:  31;",
+      "line": 44,
+      "doc": "Private property \"long-month-days\" used internally."
+    },
+    {
+      "name": "cell-size",
+      "kind": "property",
+      "signature": "private property <length> cell-size:     Spacing.control-md + Spacing.xs;",
+      "line": 46,
+      "doc": "Private property \"cell-size\" used internally."
+    },
+    {
+      "name": "nav-prev",
+      "kind": "property",
+      "signature": "private property <string> nav-prev:      \"‹\";",
+      "line": 48,
+      "doc": "Private property \"nav-prev\" used internally."
+    },
+    {
+      "name": "nav-next",
+      "kind": "property",
+      "signature": "private property <string> nav-next:      \"›\";",
+      "line": 50,
+      "doc": "Private property \"nav-next\" used internally."
+    },
+    {
+      "name": "display-month",
+      "kind": "property",
+      "signature": "private property <int> display-month: Math.mod(root.month-offset, root.months-per-year) + Sizes.one;",
+      "line": 54,
+      "doc": "Private property \"display-month\" used internally."
+    },
+    {
+      "name": "display-year",
+      "kind": "property",
+      "signature": "private property <int> display-year:  root.initial-year + Math.floor(root.month-offset / root.months-per-year);",
+      "line": 56,
+      "doc": "Private property \"display-year\" used internally."
+    },
+    {
+      "name": "month-names",
+      "kind": "property",
+      "signature": "private property <[string]> month-names: [",
+      "line": 59,
+      "doc": "Private property \"month-names\" used internally."
+    },
+    {
+      "name": "zy",
+      "kind": "property",
+      "signature": "private property <int> zy: root.display-month <= Sizes.two ? root.display-year - Sizes.one : root.display-year;",
+      "line": 66,
+      "doc": "Private property \"zy\" used internally."
+    },
+    {
+      "name": "zm",
+      "kind": "property",
+      "signature": "private property <int> zm: root.display-month <= Sizes.two ? root.display-month + root.months-per-year : root.display-month;",
+      "line": 68,
+      "doc": "Private property \"zm\" used internally."
+    },
+    {
+      "name": "zeller-h",
+      "kind": "property",
+      "signature": "private property <int> zeller-h: Math.mod(Sizes.one + (root.zeller-factor * (root.zm + Sizes.one) / root.zeller-div) + root.zy + root.zy / root.leap-cycle - root.zy / root.century-cycle + root.zy / root.grand-cycle, root.days-cols);",
+      "line": 70,
+      "doc": "Private property \"zeller-h\" used internally."
+    },
+    {
+      "name": "first-weekday",
+      "kind": "property",
+      "signature": "private property <int> first-weekday: Math.mod(root.zeller-h + root.zeller-shift, root.days-cols);",
+      "line": 72,
+      "doc": "Private property \"first-weekday\" used internally."
+    },
+    {
+      "name": "days-in-month",
+      "kind": "property",
+      "signature": "private property <int> days-in-month:",
+      "line": 75,
+      "doc": "Private property \"days-in-month\" used internally."
+    }
+  ]
+}

@@ -1,0 +1,173 @@
+{
+  "source": "state/theme/solid.slint",
+  "items": [
+    {
+      "name": "dark-bg-primary",
+      "kind": "property",
+      "signature": "out property <color> dark-bg-primary:     #202020;",
+      "line": 8,
+      "doc": "Output property \"dark-bg-primary\"."
+    },
+    {
+      "name": "dark-bg-surface",
+      "kind": "property",
+      "signature": "out property <color> dark-bg-surface:     #2C2C2C;",
+      "line": 10,
+      "doc": "Output property \"dark-bg-surface\"."
+    },
+    {
+      "name": "dark-bg-elevated",
+      "kind": "property",
+      "signature": "out property <color> dark-bg-elevated:    #383838;",
+      "line": 12,
+      "doc": "Output property \"dark-bg-elevated\"."
+    },
+    {
+      "name": "dark-text-primary",
+      "kind": "property",
+      "signature": "out property <color> dark-text-primary:   #FFFFFF;",
+      "line": 14,
+      "doc": "Output property \"dark-text-primary\"."
+    },
+    {
+      "name": "dark-text-secondary",
+      "kind": "property",
+      "signature": "out property <color> dark-text-secondary: #9D9D9D;",
+      "line": 16,
+      "doc": "Output property \"dark-text-secondary\"."
+    },
+    {
+      "name": "dark-text-disabled",
+      "kind": "property",
+      "signature": "out property <color> dark-text-disabled:  #6B6B6B;",
+      "line": 18,
+      "doc": "Output property \"dark-text-disabled\"."
+    },
+    {
+      "name": "dark-accent",
+      "kind": "property",
+      "signature": "out property <color> dark-accent:         #60CDFF;",
+      "line": 20,
+      "doc": "Output property \"dark-accent\"."
+    },
+    {
+      "name": "dark-accent-hover",
+      "kind": "property",
+      "signature": "out property <color> dark-accent-hover:   #4CC2F1;",
+      "line": 22,
+      "doc": "Output property \"dark-accent-hover\"."
+    },
+    {
+      "name": "dark-accent-text",
+      "kind": "property",
+      "signature": "out property <color> dark-accent-text:    #000000;",
+      "line": 24,
+      "doc": "Output property \"dark-accent-text\"."
+    },
+    {
+      "name": "dark-border",
+      "kind": "property",
+      "signature": "out property <color> dark-border:         #3D3D3D;",
+      "line": 26,
+      "doc": "Output property \"dark-border\"."
+    },
+    {
+      "name": "dark-border-strong",
+      "kind": "property",
+      "signature": "out property <color> dark-border-strong:  #575757;",
+      "line": 28,
+      "doc": "Output property \"dark-border-strong\"."
+    },
+    {
+      "name": "dark-shadow",
+      "kind": "property",
+      "signature": "out property <color> dark-shadow:         #00000080;",
+      "line": 30,
+      "doc": "Output property \"dark-shadow\"."
+    },
+    {
+      "name": "light-bg-primary",
+      "kind": "property",
+      "signature": "out property <color> light-bg-primary:     #FFFFFF;",
+      "line": 34,
+      "doc": "Output property \"light-bg-primary\"."
+    },
+    {
+      "name": "light-bg-surface",
+      "kind": "property",
+      "signature": "out property <color> light-bg-surface:     #F3F3F3;",
+      "line": 36,
+      "doc": "Output property \"light-bg-surface\"."
+    },
+    {
+      "name": "light-bg-elevated",
+      "kind": "property",
+      "signature": "out property <color> light-bg-elevated:    #FFFFFF;",
+      "line": 38,
+      "doc": "Output property \"light-bg-elevated\"."
+    },
+    {
+      "name": "light-text-primary",
+      "kind": "property",
+      "signature": "out property <color> light-text-primary:   #1C1C1C;",
+      "line": 40,
+      "doc": "Output property \"light-text-primary\"."
+    },
+    {
+      "name": "light-text-secondary",
+      "kind": "property",
+      "signature": "out property <color> light-text-secondary: #616161;",
+      "line": 42,
+      "doc": "Output property \"light-text-secondary\"."
+    },
+    {
+      "name": "light-text-disabled",
+      "kind": "property",
+      "signature": "out property <color> light-text-disabled:  #A0A0A0;",
+      "line": 44,
+      "doc": "Output property \"light-text-disabled\"."
+    },
+    {
+      "name": "light-accent",
+      "kind": "property",
+      "signature": "out property <color> light-accent:         #0078D4;",
+      "line": 46,
+      "doc": "Output property \"light-accent\"."
+    },
+    {
+      "name": "light-accent-hover",
+      "kind": "property",
+      "signature": "out property <color> light-accent-hover:   #106EBE;",
+      "line": 48,
+      "doc": "Output property \"light-accent-hover\"."
+    },
+    {
+      "name": "light-accent-text",
+      "kind": "property",
+      "signature": "out property <color> light-accent-text:    #FFFFFF;",
+      "line": 50,
+      "doc": "Output property \"light-accent-text\"."
+    },
+    {
+      "name": "light-border",
+      "kind": "property",
+      "signature": "out property <color> light-border:         #E0E0E0;",
+      "line": 52,
+      "doc": "Output property \"light-border\"."
+    },
+    {
+      "name": "light-border-strong",
+      "kind": "property",
+      "signature": "out property <color> light-border-strong:  #C0C0C0;",
+      "line": 54,
+      "doc": "Output property \"light-border-strong\"."
+    },
+    {
+      "name": "light-shadow",
+      "kind": "property",
+      "signature": "out property <color> light-shadow:         #0000001F;",
+      "line": 56,
+      "doc": "Output property \"light-shadow\"."
+    }
+  ]
+}

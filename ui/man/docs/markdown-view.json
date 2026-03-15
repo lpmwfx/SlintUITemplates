@@ -1,0 +1,40 @@
+{
+  "source": "docs/markdown-view.slint",
+  "items": [
+    {
+      "name": "MarkdownView",
+      "kind": "component",
+      "signature": "export component MarkdownView inherits Rectangle",
+      "line": 21,
+      "doc": "M ar kd ow nv ie w component."
+    },
+    {
+      "name": "blocks",
+      "kind": "property",
+      "signature": "in property <[DocBlock]> blocks: [];",
+      "line": 23,
+      "doc": "Input property \"blocks\"."
+    },
+    {
+      "name": "bullet-char",
+      "kind": "property",
+      "signature": "in property <string> bullet-char: \"\\u{2022}\";",
+      "line": 25,
+      "doc": "Input property \"bullet-char\"."
+    },
+    {
+      "name": "bullet-sub-char",
+      "kind": "property",
+      "signature": "in property <string> bullet-sub-char: \"\\u{25E6}\";",
+      "line": 27,
+      "doc": "Input property \"bullet-sub-char\"."
+    },
+    {
+      "name": "mono-font",
+      "kind": "property",
+      "signature": "in property <string> mono-font: \"Consolas\";",
+      "line": 29,
+      "doc": "Input property \"mono-font\"."
+    }
+  ]
+}

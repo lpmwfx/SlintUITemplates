@@ -1,0 +1,19 @@
+{
+  "source": "views/list.slint",
+  "items": [
+    {
+      "name": "ListView",
+      "kind": "component",
+      "signature": "export component ListView inherits Rectangle",
+      "line": 8,
+      "doc": "Starter list page for the `list` navigation slot.\n\nDemonstrates a simple header plus repeated `ListItem` rows."
+    },
+    {
+      "name": "header-title",
+      "kind": "property",
+      "signature": "private property <string> header-title: \"List\";",
+      "line": 12,
+      "doc": "Private property \"header-title\" used internally."
+    }
+  ]
+}

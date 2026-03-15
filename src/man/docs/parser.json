@@ -1,0 +1,12 @@
+{
+  "source": "docs/parser.rs",
+  "items": [
+    {
+      "name": "parse",
+      "kind": "fn",
+      "signature": "pub fn parse(input: &str) -> Vec<DocBlock>",
+      "line": 19,
+      "doc": "Parse a CommonMark string into a flat list of [`DocBlock`] items.\n\nSupported block types:\n- `\"h1\"` / `\"h2\"` / `\"h3\"` — headings\n- `\"p\"` — paragraph\n- `\"code\"` — fenced code block\n- `\"li\"` / `\"li2\"` — list item (level 0 / level 1+)\n- `\"th\"` / `\"tr\"` — table header / data row\n- `\"hr\"` — horizontal rule\n- `\"bq\"` — blockquote\nP ar se."
+    }
+  ]
+}

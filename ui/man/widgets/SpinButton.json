@@ -1,0 +1,33 @@
+{
+  "source": "widgets/SpinButton.slint",
+  "items": [
+    {
+      "name": "SpinButton",
+      "kind": "component",
+      "signature": "export component SpinButton inherits Rectangle",
+      "line": 5,
+      "doc": "S pi nb ut to n component."
+    },
+    {
+      "name": "label",
+      "kind": "property",
+      "signature": "in property <string> label;",
+      "line": 7,
+      "doc": "Input property \"label\"."
+    },
+    {
+      "name": "btn-enabled",
+      "kind": "property",
+      "signature": "in property <bool>   btn-enabled: true;",
+      "line": 9,
+      "doc": "Input property \"btn-enabled\"."
+    },
+    {
+      "name": "clicked",
+      "kind": "callback",
+      "signature": "callback clicked();",
+      "line": 11,
+      "doc": "Callback fired for c li ck ed."
+    }
+  ]
+}

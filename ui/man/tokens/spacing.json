@@ -1,0 +1,89 @@
+{
+  "source": "tokens/spacing.slint",
+  "items": [
+    {
+      "name": "xs",
+      "kind": "property",
+      "signature": "out property <length> xs:  4px;",
+      "line": 5,
+      "doc": "Output property \"xs\"."
+    },
+    {
+      "name": "sm",
+      "kind": "property",
+      "signature": "out property <length> sm:  8px;",
+      "line": 7,
+      "doc": "Output property \"sm\"."
+    },
+    {
+      "name": "md",
+      "kind": "property",
+      "signature": "out property <length> md:  16px;",
+      "line": 9,
+      "doc": "Output property \"md\"."
+    },
+    {
+      "name": "lg",
+      "kind": "property",
+      "signature": "out property <length> lg:  24px;",
+      "line": 11,
+      "doc": "Output property \"lg\"."
+    },
+    {
+      "name": "xl",
+      "kind": "property",
+      "signature": "out property <length> xl:  48px;   // component container height (nav rows, toolbar)",
+      "line": 13,
+      "doc": "Output property \"xl\"."
+    },
+    {
+      "name": "control-sm",
+      "kind": "property",
+      "signature": "out property <length> control-sm: 24px;",
+      "line": 17,
+      "doc": "Output property \"control-sm\"."
+    },
+    {
+      "name": "control-md",
+      "kind": "property",
+      "signature": "out property <length> control-md: 32px;",
+      "line": 19,
+      "doc": "Output property \"control-md\"."
+    },
+    {
+      "name": "control-lg",
+      "kind": "property",
+      "signature": "out property <length> control-lg: 40px;",
+      "line": 21,
+      "doc": "Output property \"control-lg\"."
+    },
+    {
+      "name": "handle-thickness",
+      "kind": "property",
+      "signature": "out property <length> handle-thickness: 5px;",
+      "line": 25,
+      "doc": "Output property \"handle-thickness\"."
+    },
+    {
+      "name": "handle-hit",
+      "kind": "property",
+      "signature": "out property <length> handle-hit:       12px;",
+      "line": 27,
+      "doc": "Output property \"handle-hit\"."
+    },
+    {
+      "name": "border",
+      "kind": "property",
+      "signature": "out property <length> border: 1px;   // standard 1px divider / border",
+      "line": 31,
+      "doc": "Output property \"border\"."
+    },
+    {
+      "name": "none",
+      "kind": "property",
+      "signature": "out property <length> none:   0px;   // zero-length (collapsed state)",
+      "line": 33,
+      "doc": "Output property \"none\"."
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "source": "widgets/stepper.slint",
+  "items": [
+    {
+      "name": "StepItem",
+      "kind": "struct",
+      "signature": "export struct StepItem",
+      "line": 6,
+      "doc": "S te pi te m struct."
+    },
+    {
+      "name": "Stepper",
+      "kind": "component",
+      "signature": "export component Stepper inherits Rectangle",
+      "line": 12,
+      "doc": "S te pp er component."
+    },
+    {
+      "name": "steps",
+      "kind": "property",
+      "signature": "in property <[StepItem]> steps: [];",
+      "line": 14,
+      "doc": "Input property \"steps\"."
+    },
+    {
+      "name": "active",
+      "kind": "property",
+      "signature": "in property <int>    active: Sizes.zero;",
+      "line": 16,
+      "doc": "Input property \"active\"."
+    },
+    {
+      "name": "step-changed",
+      "kind": "callback",
+      "signature": "callback step-changed(int);",
+      "line": 18,
+      "doc": "Callback fired for s te p c ha ng ed."
+    },
+    {
+      "name": "circle-size",
+      "kind": "property",
+      "signature": "private property <length> circle-size:    Spacing.control-md - Spacing.xs;",
+      "line": 22,
+      "doc": "Private property \"circle-size\" used internally."
+    },
+    {
+      "name": "connector-w",
+      "kind": "property",
+      "signature": "private property <length> connector-w:    Spacing.xl;",
+      "line": 24,
+      "doc": "Private property \"connector-w\" used internally."
+    },
+    {
+      "name": "connector-h",
+      "kind": "property",
+      "signature": "private property <length> connector-h:    Sizes.border-w-2;",
+      "line": 26,
+      "doc": "Private property \"connector-h\" used internally."
+    }
+  ]
+}

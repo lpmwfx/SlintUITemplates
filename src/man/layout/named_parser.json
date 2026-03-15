@@ -1,0 +1,12 @@
+{
+  "source": "layout/named_parser.rs",
+  "items": [
+    {
+      "name": "parse_named",
+      "kind": "fn",
+      "signature": "pub fn parse_named(dsl: &str) -> Vec<NamedPanel>",
+      "line": 7,
+      "doc": "Parse DSL v2 string into a flat list of named panels.\nHorizontal split at top level; vertical split when \"/\" separates rows.\nN am ed p ar se r."
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "source": "widgets/text-input.slint",
+  "items": [
+    {
+      "name": "TextInput",
+      "kind": "component",
+      "signature": "export component TextInput inherits Rectangle",
+      "line": 5,
+      "doc": "T ex ti np ut component."
+    },
+    {
+      "name": "label",
+      "kind": "property",
+      "signature": "in property <string> label: \"\";",
+      "line": 7,
+      "doc": "Input property \"label\"."
+    },
+    {
+      "name": "value",
+      "kind": "property",
+      "signature": "in property <string> value: \"\";",
+      "line": 9,
+      "doc": "Input property \"value\"."
+    },
+    {
+      "name": "placeholder",
+      "kind": "property",
+      "signature": "in property <string> placeholder: \"\";",
+      "line": 11,
+      "doc": "Input property \"placeholder\"."
+    },
+    {
+      "name": "error",
+      "kind": "property",
+      "signature": "in property <string> error: \"\";",
+      "line": 13,
+      "doc": "Input property \"error\"."
+    },
+    {
+      "name": "changed",
+      "kind": "callback",
+      "signature": "callback changed(string);",
+      "line": 15,
+      "doc": "Callback fired for c ha ng ed."
+    },
+    {
+      "name": "submitted",
+      "kind": "callback",
+      "signature": "callback submitted(string);",
+      "line": 17,
+      "doc": "Callback fired for s ub mi tt ed."
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "source": "widgets/dialog.slint",
+  "items": [
+    {
+      "name": "Dialog",
+      "kind": "component",
+      "signature": "export component Dialog inherits Rectangle",
+      "line": 6,
+      "doc": "D ia lo g component."
+    },
+    {
+      "name": "title",
+      "kind": "property",
+      "signature": "in property <string> title: \"Dialog\";",
+      "line": 8,
+      "doc": "Input property \"title\"."
+    },
+    {
+      "name": "cancel-label",
+      "kind": "property",
+      "signature": "in property <string> cancel-label: \"Cancel\";",
+      "line": 10,
+      "doc": "Input property \"cancel-label\"."
+    },
+    {
+      "name": "confirm-label",
+      "kind": "property",
+      "signature": "in property <string> confirm-label: \"OK\";",
+      "line": 12,
+      "doc": "Input property \"confirm-label\"."
+    },
+    {
+      "name": "confirmed",
+      "kind": "callback",
+      "signature": "callback confirmed();",
+      "line": 15,
+      "doc": "Callback fired for c on fi rm ed."
+    },
+    {
+      "name": "cancelled",
+      "kind": "callback",
+      "signature": "callback cancelled();",
+      "line": 17,
+      "doc": "Callback fired for c an ce ll ed."
+    },
+    {
+      "name": "overlay-bg",
+      "kind": "property",
+      "signature": "private property <color> overlay-bg:     FluentColors.overlay-medium;",
+      "line": 21,
+      "doc": "Private property \"overlay-bg\" used internally."
+    },
+    {
+      "name": "shadow-color",
+      "kind": "property",
+      "signature": "private property <color> shadow-color:   FluentColors.overlay-light;",
+      "line": 23,
+      "doc": "Private property \"shadow-color\" used internally."
+    }
+  ]
+}

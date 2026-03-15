@@ -1,0 +1,12 @@
+{
+  "source": "shell/types.slint",
+  "items": [
+    {
+      "name": "ShellToolbarItem",
+      "kind": "struct",
+      "signature": "export struct ShellToolbarItem",
+      "line": 7,
+      "doc": "Toolbar action item consumed by `AppShell` and `DesktopShell`."
+    }
+  ]
+}

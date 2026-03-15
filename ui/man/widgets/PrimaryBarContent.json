@@ -1,0 +1,47 @@
+{
+  "source": "widgets/PrimaryBarContent.slint",
+  "items": [
+    {
+      "name": "PrimaryBarContent",
+      "kind": "component",
+      "signature": "export component PrimaryBarContent inherits Rectangle",
+      "line": 8,
+      "doc": "P ri ma ry ba rc on te nt component."
+    },
+    {
+      "name": "primary",
+      "kind": "property",
+      "signature": "in property <[CbfAction]> primary;",
+      "line": 10,
+      "doc": "Input property \"primary\"."
+    },
+    {
+      "name": "has-secondary",
+      "kind": "property",
+      "signature": "in property <bool>        has-secondary;",
+      "line": 12,
+      "doc": "Input property \"has-secondary\"."
+    },
+    {
+      "name": "border-px",
+      "kind": "property",
+      "signature": "in property <length>      border-px;",
+      "line": 14,
+      "doc": "Input property \"border-px\"."
+    },
+    {
+      "name": "item-activated",
+      "kind": "callback",
+      "signature": "callback item-activated(string);",
+      "line": 16,
+      "doc": "Callback fired for i te m a ct iv at ed."
+    },
+    {
+      "name": "show-secondary",
+      "kind": "callback",
+      "signature": "callback show-secondary();",
+      "line": 18,
+      "doc": "Callback fired for s ho w s ec on da ry."
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "source": "widgets/canvas-path.slint",
+  "items": [
+    {
+      "name": "CanvasPath",
+      "kind": "component",
+      "signature": "export component CanvasPath inherits Rectangle",
+      "line": 9,
+      "doc": "C an va sp at h component."
+    },
+    {
+      "name": "stroke-color",
+      "kind": "property",
+      "signature": "in property <color> stroke-color: Colors.accent;",
+      "line": 11,
+      "doc": "Input property \"stroke-color\"."
+    },
+    {
+      "name": "fill-color",
+      "kind": "property",
+      "signature": "in property <color> fill-color:   Colors.accent.with-alpha(root.fill-alpha);",
+      "line": 13,
+      "doc": "Input property \"fill-color\"."
+    },
+    {
+      "name": "stroke-w",
+      "kind": "property",
+      "signature": "in property <length> stroke-w:    Sizes.border-w-2;",
+      "line": 15,
+      "doc": "Input property \"stroke-w\"."
+    },
+    {
+      "name": "fill-alpha",
+      "kind": "property",
+      "signature": "private property <float> fill-alpha:    0.15;",
+      "line": 19,
+      "doc": "Private property \"fill-alpha\" used internally."
+    },
+    {
+      "name": "overlay-alpha",
+      "kind": "property",
+      "signature": "private property <float> overlay-alpha: 0.6;",
+      "line": 21,
+      "doc": "Private property \"overlay-alpha\" used internally."
+    },
+    {
+      "name": "canvas-w",
+      "kind": "property",
+      "signature": "private property <length> canvas-w: Sizes.panel-xl;   // 300px",
+      "line": 23,
+      "doc": "Private property \"canvas-w\" used internally."
+    },
+    {
+      "name": "canvas-h",
+      "kind": "property",
+      "signature": "private property <length> canvas-h: Sizes.panel-sm;   // 200px",
+      "line": 25,
+      "doc": "Private property \"canvas-h\" used internally."
+    },
+    {
+      "name": "tri-x1",
+      "kind": "property",
+      "signature": "private property <float> tri-x1:  50;",
+      "line": 29,
+      "doc": "Private property \"tri-x1\" used internally."
+    },
+    {
+      "name": "tri-y1",
+      "kind": "property",
+      "signature": "private property <float> tri-y1:  160;",
+      "line": 31,
+      "doc": "Private property \"tri-y1\" used internally."
+    },
+    {
+      "name": "tri-x2",
+      "kind": "property",
+      "signature": "private property <float> tri-x2:  150;",
+      "line": 33,
+      "doc": "Private property \"tri-x2\" used internally."
+    },
+    {
+      "name": "tri-y2",
+      "kind": "property",
+      "signature": "private property <float> tri-y2:  30;",
+      "line": 35,
+      "doc": "Private property \"tri-y2\" used internally."
+    },
+    {
+      "name": "tri-x3",
+      "kind": "property",
+      "signature": "private property <float> tri-x3:  250;",
+      "line": 37,
+      "doc": "Private property \"tri-x3\" used internally."
+    },
+    {
+      "name": "tri-y3",
+      "kind": "property",
+      "signature": "private property <float> tri-y3:  160;",
+      "line": 39,
+      "doc": "Private property \"tri-y3\" used internally."
+    },
+    {
+      "name": "curve-start-x",
+      "kind": "property",
+      "signature": "private property <float> curve-start-x: 50;",
+      "line": 43,
+      "doc": "Private property \"curve-start-x\" used internally."
+    },
+    {
+      "name": "curve-start-y",
+      "kind": "property",
+      "signature": "private property <float> curve-start-y: 100;",
+      "line": 45,
+      "doc": "Private property \"curve-start-y\" used internally."
+    },
+    {
+      "name": "curve-ctrl-x",
+      "kind": "property",
+      "signature": "private property <float> curve-ctrl-x:  150;",
+      "line": 47,
+      "doc": "Private property \"curve-ctrl-x\" used internally."
+    },
+    {
+      "name": "curve-ctrl-y",
+      "kind": "property",
+      "signature": "private property <float> curve-ctrl-y:  20;",
+      "line": 49,
+      "doc": "Private property \"curve-ctrl-y\" used internally."
+    },
+    {
+      "name": "curve-end-x",
+      "kind": "property",
+      "signature": "private property <float> curve-end-x:   250;",
+      "line": 51,
+      "doc": "Private property \"curve-end-x\" used internally."
+    },
+    {
+      "name": "curve-end-y",
+      "kind": "property",
+      "signature": "private property <float> curve-end-y:   160;",
+      "line": 53,
+      "doc": "Private property \"curve-end-y\" used internally."
+    }
+  ]
+}

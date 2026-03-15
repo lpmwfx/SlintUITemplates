@@ -1,0 +1,26 @@
+{
+  "source": "widgets/MultiSelectDropdown.slint",
+  "items": [
+    {
+      "name": "MultiSelectDropdown",
+      "kind": "component",
+      "signature": "export component MultiSelectDropdown inherits Rectangle",
+      "line": 8,
+      "doc": "M ul ti se le ct dr op do wn component."
+    },
+    {
+      "name": "options",
+      "kind": "property",
+      "signature": "in property <[MultiSelectOption]> options: [];",
+      "line": 10,
+      "doc": "Input property \"options\"."
+    },
+    {
+      "name": "item-selected",
+      "kind": "callback",
+      "signature": "callback item-selected(string);",
+      "line": 12,
+      "doc": "Callback fired for i te m s el ec te d."
+    }
+  ]
+}

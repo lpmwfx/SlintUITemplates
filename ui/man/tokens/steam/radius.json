@@ -1,0 +1,47 @@
+{
+  "source": "tokens/steam/radius.slint",
+  "items": [
+    {
+      "name": "none",
+      "kind": "property",
+      "signature": "out property <length> none:   0px;",
+      "line": 5,
+      "doc": "No rounding."
+    },
+    {
+      "name": "sm",
+      "kind": "property",
+      "signature": "out property <length> sm:     2px;",
+      "line": 7,
+      "doc": "Extra small — checkboxes, small elements."
+    },
+    {
+      "name": "md",
+      "kind": "property",
+      "signature": "out property <length> md:     4px;",
+      "line": 9,
+      "doc": "Medium — buttons, inputs."
+    },
+    {
+      "name": "lg",
+      "kind": "property",
+      "signature": "out property <length> lg:     8px;",
+      "line": 11,
+      "doc": "Large — cards, panels."
+    },
+    {
+      "name": "xl",
+      "kind": "property",
+      "signature": "out property <length> xl:     12px;",
+      "line": 13,
+      "doc": "Extra large — dialogs, large surfaces."
+    },
+    {
+      "name": "circle",
+      "kind": "property",
+      "signature": "out property <length> circle: 9999px;",
+      "line": 15,
+      "doc": "Full pill."
+    }
+  ]
+}

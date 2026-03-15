@@ -1,0 +1,82 @@
+{
+  "source": "shell/desktop/NavItemRow.slint",
+  "items": [
+    {
+      "name": "NavItemRow",
+      "kind": "component",
+      "signature": "export component NavItemRow inherits Rectangle",
+      "line": 6,
+      "doc": "N av it em ro w component."
+    },
+    {
+      "name": "item-id",
+      "kind": "property",
+      "signature": "in property <string> item-id;",
+      "line": 8,
+      "doc": "Input property \"item-id\"."
+    },
+    {
+      "name": "icon",
+      "kind": "property",
+      "signature": "in property <string> icon;",
+      "line": 10,
+      "doc": "Input property \"icon\"."
+    },
+    {
+      "name": "label",
+      "kind": "property",
+      "signature": "in property <string> label;",
+      "line": 12,
+      "doc": "Input property \"label\"."
+    },
+    {
+      "name": "icon-font",
+      "kind": "property",
+      "signature": "in property <string> icon-font;",
+      "line": 14,
+      "doc": "Input property \"icon-font\"."
+    },
+    {
+      "name": "is-active",
+      "kind": "property",
+      "signature": "in property <bool>   is-active: false;",
+      "line": 16,
+      "doc": "Input property \"is-active\"."
+    },
+    {
+      "name": "collapsed",
+      "kind": "property",
+      "signature": "in property <bool>   collapsed: false;",
+      "line": 18,
+      "doc": "Input property \"collapsed\"."
+    },
+    {
+      "name": "active-alpha",
+      "kind": "property",
+      "signature": "in property <float>  active-alpha;",
+      "line": 20,
+      "doc": "Input property \"active-alpha\"."
+    },
+    {
+      "name": "indicator-w",
+      "kind": "property",
+      "signature": "in property <length> indicator-w;",
+      "line": 22,
+      "doc": "Input property \"indicator-w\"."
+    },
+    {
+      "name": "indicator-radius",
+      "kind": "property",
+      "signature": "in property <length> indicator-radius;",
+      "line": 24,
+      "doc": "Input property \"indicator-radius\"."
+    },
+    {
+      "name": "clicked",
+      "kind": "callback",
+      "signature": "callback clicked();",
+      "line": 26,
+      "doc": "Callback fired for c li ck ed."
+    }
+  ]
+}

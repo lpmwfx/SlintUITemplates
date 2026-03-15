@@ -1,0 +1,54 @@
+{
+  "source": "widgets/empty-state.slint",
+  "items": [
+    {
+      "name": "EmptyState",
+      "kind": "component",
+      "signature": "export component EmptyState inherits Rectangle",
+      "line": 5,
+      "doc": "E mp ty st at e component."
+    },
+    {
+      "name": "icon",
+      "kind": "property",
+      "signature": "in property <string> icon: \"\\u{E8FD}\";",
+      "line": 7,
+      "doc": "Input property \"icon\"."
+    },
+    {
+      "name": "title",
+      "kind": "property",
+      "signature": "in property <string> title: \"No items\";",
+      "line": 9,
+      "doc": "Input property \"title\"."
+    },
+    {
+      "name": "description",
+      "kind": "property",
+      "signature": "in property <string> description: \"\";",
+      "line": 11,
+      "doc": "Input property \"description\"."
+    },
+    {
+      "name": "action-label",
+      "kind": "property",
+      "signature": "in property <string> action-label: \"\";",
+      "line": 13,
+      "doc": "Input property \"action-label\"."
+    },
+    {
+      "name": "action",
+      "kind": "callback",
+      "signature": "callback action();",
+      "line": 15,
+      "doc": "Callback fired for a ct io n."
+    },
+    {
+      "name": "icon-sz",
+      "kind": "property",
+      "signature": "private property <length> icon-sz: Type.heading-size * 2;",
+      "line": 18,
+      "doc": "Private property \"icon-sz\" used internally."
+    }
+  ]
+}

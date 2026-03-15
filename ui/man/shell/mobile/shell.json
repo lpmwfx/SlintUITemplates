@@ -1,0 +1,68 @@
+{
+  "source": "shell/mobile/shell.slint",
+  "items": [
+    {
+      "name": "MobileShell",
+      "kind": "component",
+      "signature": "export component MobileShell inherits VerticalLayout",
+      "line": 13,
+      "doc": "M ob il es he ll component."
+    },
+    {
+      "name": "title",
+      "kind": "property",
+      "signature": "in property <string>    title: \"App\";",
+      "line": 16,
+      "doc": "Input property \"title\"."
+    },
+    {
+      "name": "nav-items",
+      "kind": "property",
+      "signature": "in property <[NavItem]> nav-items;",
+      "line": 18,
+      "doc": "Input property \"nav-items\"."
+    },
+    {
+      "name": "active-view",
+      "kind": "property",
+      "signature": "in property <string>    active-view: \"\";",
+      "line": 20,
+      "doc": "Input property \"active-view\"."
+    },
+    {
+      "name": "fab-icon",
+      "kind": "property",
+      "signature": "in property <string>    fab-icon:    FluentIcons.add;",
+      "line": 22,
+      "doc": "Input property \"fab-icon\"."
+    },
+    {
+      "name": "fab-label",
+      "kind": "property",
+      "signature": "in property <string>    fab-label:   \"\";",
+      "line": 24,
+      "doc": "Input property \"fab-label\"."
+    },
+    {
+      "name": "show-fab",
+      "kind": "property",
+      "signature": "in property <bool>      show-fab:    true;",
+      "line": 26,
+      "doc": "Input property \"show-fab\"."
+    },
+    {
+      "name": "navigate",
+      "kind": "callback",
+      "signature": "callback navigate(string);",
+      "line": 30,
+      "doc": "Callback fired for n av ig at e."
+    },
+    {
+      "name": "fab-clicked",
+      "kind": "callback",
+      "signature": "callback fab-clicked();",
+      "line": 32,
+      "doc": "Callback fired for f ab c li ck ed."
+    }
+  ]
+}

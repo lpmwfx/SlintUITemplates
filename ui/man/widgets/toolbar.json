@@ -1,0 +1,33 @@
+{
+  "source": "widgets/toolbar.slint",
+  "items": [
+    {
+      "name": "Toolbar",
+      "kind": "component",
+      "signature": "export component Toolbar inherits Rectangle",
+      "line": 7,
+      "doc": "T oo lb ar component."
+    },
+    {
+      "name": "items",
+      "kind": "property",
+      "signature": "in property <[ToolbarItem]> items: [];",
+      "line": 9,
+      "doc": "Input property \"items\"."
+    },
+    {
+      "name": "clicked",
+      "kind": "callback",
+      "signature": "callback clicked(string);",
+      "line": 11,
+      "doc": "Callback fired for c li ck ed."
+    },
+    {
+      "name": "border-px",
+      "kind": "property",
+      "signature": "private property <length> border-px: 1px;",
+      "line": 14,
+      "doc": "Private property \"border-px\" used internally."
+    }
+  ]
+}

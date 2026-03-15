@@ -1,0 +1,68 @@
+{
+  "source": "mobile/app-window.slint",
+  "items": [
+    {
+      "name": "AppWindow",
+      "kind": "component",
+      "signature": "export component AppWindow inherits Window",
+      "line": 13,
+      "doc": "A pp wi nd ow component."
+    },
+    {
+      "name": "app-title",
+      "kind": "property",
+      "signature": "private property <string> app-title: \"SlintUITemplates \\u{2014} Mobile\";",
+      "line": 20,
+      "doc": "Private property \"app-title\" used internally."
+    },
+    {
+      "name": "icon-home",
+      "kind": "property",
+      "signature": "private property <string> icon-home: \"\\u{1F3E0}\";",
+      "line": 22,
+      "doc": "Private property \"icon-home\" used internally."
+    },
+    {
+      "name": "icon-list",
+      "kind": "property",
+      "signature": "private property <string> icon-list: \"\\u{1F4CB}\";",
+      "line": 24,
+      "doc": "Private property \"icon-list\" used internally."
+    },
+    {
+      "name": "icon-settings",
+      "kind": "property",
+      "signature": "private property <string> icon-settings: \"\\u{2699}\";",
+      "line": 26,
+      "doc": "Private property \"icon-settings\" used internally."
+    },
+    {
+      "name": "status-prefix",
+      "kind": "property",
+      "signature": "private property <string> status-prefix: \"View: \";",
+      "line": 28,
+      "doc": "Private property \"status-prefix\" used internally."
+    },
+    {
+      "name": "active-view",
+      "kind": "property",
+      "signature": "in-out property <string>    active-view: NavId.home;",
+      "line": 31,
+      "doc": "Two-way property \"active-view\"."
+    },
+    {
+      "name": "nav-items",
+      "kind": "property",
+      "signature": "in-out property <[NavItem]> nav-items: [",
+      "line": 33,
+      "doc": "Two-way property \"nav-items\"."
+    },
+    {
+      "name": "navigate",
+      "kind": "callback",
+      "signature": "callback navigate(string);",
+      "line": 40,
+      "doc": "Callback fired for n av ig at e."
+    }
+  ]
+}

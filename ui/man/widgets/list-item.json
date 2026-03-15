@@ -1,0 +1,47 @@
+{
+  "source": "widgets/list-item.slint",
+  "items": [
+    {
+      "name": "ListItem",
+      "kind": "component",
+      "signature": "export component ListItem inherits Rectangle",
+      "line": 5,
+      "doc": "Compact two-line list row with optional subtitle and selected state."
+    },
+    {
+      "name": "title",
+      "kind": "property",
+      "signature": "in property <string> title: \"\";",
+      "line": 7,
+      "doc": "Primary text shown for the row."
+    },
+    {
+      "name": "subtitle",
+      "kind": "property",
+      "signature": "in property <string> subtitle: \"\";",
+      "line": 9,
+      "doc": "Secondary text shown below the title when non-empty."
+    },
+    {
+      "name": "selected",
+      "kind": "property",
+      "signature": "in property <bool> selected: false;",
+      "line": 11,
+      "doc": "Highlights the row as the currently selected item."
+    },
+    {
+      "name": "clicked",
+      "kind": "callback",
+      "signature": "callback clicked();",
+      "line": 13,
+      "doc": "Fired when the row is clicked."
+    },
+    {
+      "name": "inner-gap",
+      "kind": "property",
+      "signature": "private property <length> inner-gap: Sizes.border-w-2;",
+      "line": 16,
+      "doc": "Private property \"inner-gap\" used internally."
+    }
+  ]
+}

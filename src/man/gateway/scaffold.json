@@ -1,0 +1,12 @@
+{
+  "source": "gateway/scaffold.rs",
+  "items": [
+    {
+      "name": "scaffold",
+      "kind": "fn",
+      "signature": "pub fn scaffold(name: &str) -> Result<(), Box<dyn std::error::Error>>",
+      "line": 11,
+      "doc": "Scaffold a new SlintUI project at `./<name>/`.\n\nCreates `src/`, `views/`, `Cargo.toml`, `app.rhai`, `views/*.rhai`, and `src/main.rs`."
+    }
+  ]
+}

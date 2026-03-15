@@ -1,0 +1,33 @@
+{
+  "source": "viewer/ContextMenuDemoArea.slint",
+  "items": [
+    {
+      "name": "ContextMenuDemoArea",
+      "kind": "component",
+      "signature": "export component ContextMenuDemoArea inherits Rectangle",
+      "line": 8,
+      "doc": "C on te xt me nu de mo ar ea component."
+    },
+    {
+      "name": "window-height",
+      "kind": "property",
+      "signature": "in property <length> window-height;",
+      "line": 10,
+      "doc": "Input property \"window-height\"."
+    },
+    {
+      "name": "ctx-hint",
+      "kind": "property",
+      "signature": "private property <string> ctx-hint: \"Right-click here for VS Code-style file context menu\";",
+      "line": 14,
+      "doc": "Private property \"ctx-hint\" used internally."
+    },
+    {
+      "name": "rc-x",
+      "kind": "property",
+      "signature": "private property <length> rc-x: Sizes.no-size;",
+      "line": 17,
+      "doc": "Private property \"rc-x\" used internally."
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "source": "tokens/macos/typography.slint",
+  "items": [
+    {
+      "name": "caption",
+      "kind": "property",
+      "signature": "out property <length> caption:   Settings.zoom * Settings.font-scale * 11px;",
+      "line": 9,
+      "doc": "Caption 2 / footnote — smallest readable."
+    },
+    {
+      "name": "subhead",
+      "kind": "property",
+      "signature": "out property <length> subhead:   Settings.zoom * Settings.font-scale * 12px;",
+      "line": 11,
+      "doc": "Caption 1 / subheadline."
+    },
+    {
+      "name": "body",
+      "kind": "property",
+      "signature": "out property <length> body:      Settings.zoom * Settings.font-scale * 13px;",
+      "line": 13,
+      "doc": "Body — standard reading size."
+    },
+    {
+      "name": "callout",
+      "kind": "property",
+      "signature": "out property <length> callout:   Settings.zoom * Settings.font-scale * 14px;",
+      "line": 15,
+      "doc": "Callout — slightly larger body."
+    },
+    {
+      "name": "headline",
+      "kind": "property",
+      "signature": "out property <length> headline:  Settings.zoom * Settings.font-scale * 15px;",
+      "line": 17,
+      "doc": "Headline / section title."
+    },
+    {
+      "name": "title3",
+      "kind": "property",
+      "signature": "out property <length> title3:    Settings.zoom * Settings.font-scale * 17px;",
+      "line": 19,
+      "doc": "Title 3 — smaller dialog heading."
+    },
+    {
+      "name": "title2",
+      "kind": "property",
+      "signature": "out property <length> title2:    Settings.zoom * Settings.font-scale * 20px;",
+      "line": 21,
+      "doc": "Title 2."
+    },
+    {
+      "name": "title1",
+      "kind": "property",
+      "signature": "out property <length> title1:    Settings.zoom * Settings.font-scale * 26px;",
+      "line": 23,
+      "doc": "Title 1 — large heading."
+    },
+    {
+      "name": "title",
+      "kind": "property",
+      "signature": "out property <length> title:     Settings.zoom * Settings.font-scale * 34px;",
+      "line": 25,
+      "doc": "Large title — hero / window title."
+    },
+    {
+      "name": "weight-regular",
+      "kind": "property",
+      "signature": "out property <int> weight-regular:  400;",
+      "line": 29,
+      "doc": "Regular weight (SF Pro Text)."
+    },
+    {
+      "name": "weight-medium",
+      "kind": "property",
+      "signature": "out property <int> weight-medium:   500;",
+      "line": 31,
+      "doc": "Medium weight."
+    },
+    {
+      "name": "weight-semibold",
+      "kind": "property",
+      "signature": "out property <int> weight-semibold: 600;",
+      "line": 33,
+      "doc": "Semibold — preferred for macOS headings."
+    },
+    {
+      "name": "weight-bold",
+      "kind": "property",
+      "signature": "out property <int> weight-bold:     700;",
+      "line": 35,
+      "doc": "Bold weight."
+    },
+    {
+      "name": "font-system",
+      "kind": "property",
+      "signature": "out property <string> font-system: \"SF Pro Text\";",
+      "line": 39,
+      "doc": "System font: SF Pro on macOS, system-ui elsewhere."
+    },
+    {
+      "name": "font-mono",
+      "kind": "property",
+      "signature": "out property <string> font-mono:   \"SF Mono\";",
+      "line": 41,
+      "doc": "Monospace: SF Mono on macOS, monospace elsewhere."
+    }
+  ]
+}

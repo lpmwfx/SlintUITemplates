@@ -1,0 +1,19 @@
+{
+  "source": "settings/defaults.rs",
+  "items": [
+    {
+      "name": "from_str",
+      "kind": "fn",
+      "signature": "pub fn from_str(s: &str) -> Self",
+      "line": 5,
+      "doc": "Parse from string — unknown values default to `Filled`."
+    },
+    {
+      "name": "style_str",
+      "kind": "fn",
+      "signature": "pub fn style_str(&self) -> &'static str",
+      "line": 12,
+      "doc": "Returns the icon style as a lowercase string slice (`\"filled\"` or `\"outlined\"`)."
+    }
+  ]
+}

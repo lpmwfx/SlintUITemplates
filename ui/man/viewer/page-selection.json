@@ -1,0 +1,173 @@
+{
+  "source": "viewer/page-selection.slint",
+  "items": [
+    {
+      "name": "PageSelection",
+      "kind": "component",
+      "signature": "export component PageSelection inherits VerticalLayout",
+      "line": 13,
+      "doc": "Viewer page showcasing selection controls such as checkboxes, radio groups, sliders, and ratings."
+    },
+    {
+      "name": "cb-checked",
+      "kind": "property",
+      "signature": "private property <bool>   cb-checked: false;",
+      "line": 17,
+      "doc": "Private property \"cb-checked\" used internally."
+    },
+    {
+      "name": "cb-indet",
+      "kind": "property",
+      "signature": "private property <bool>   cb-indet: true;",
+      "line": 19,
+      "doc": "Private property \"cb-indet\" used internally."
+    },
+    {
+      "name": "radio-val",
+      "kind": "property",
+      "signature": "private property <string> radio-val: \"Option B\";",
+      "line": 21,
+      "doc": "Private property \"radio-val\" used internally."
+    },
+    {
+      "name": "slider-val",
+      "kind": "property",
+      "signature": "private property <float>  slider-val: Sizes.ratio-md;",
+      "line": 23,
+      "doc": "Private property \"slider-val\" used internally."
+    },
+    {
+      "name": "spin-val",
+      "kind": "property",
+      "signature": "private property <int>    spin-val: 42;",
+      "line": 25,
+      "doc": "Private property \"spin-val\" used internally."
+    },
+    {
+      "name": "rating-val",
+      "kind": "property",
+      "signature": "private property <int>    rating-val: Sizes.three;",
+      "line": 27,
+      "doc": "Private property \"rating-val\" used internally."
+    },
+    {
+      "name": "spinbox-max",
+      "kind": "property",
+      "signature": "private property <int> spinbox-max: 999;",
+      "line": 31,
+      "doc": "Private property \"spinbox-max\" used internally."
+    },
+    {
+      "name": "section-checkbox",
+      "kind": "property",
+      "signature": "private property <string> section-checkbox: \"Checkbox\";",
+      "line": 35,
+      "doc": "Private property \"section-checkbox\" used internally."
+    },
+    {
+      "name": "section-radiogroup",
+      "kind": "property",
+      "signature": "private property <string> section-radiogroup: \"RadioGroup\";",
+      "line": 37,
+      "doc": "Private property \"section-radiogroup\" used internally."
+    },
+    {
+      "name": "section-slider",
+      "kind": "property",
+      "signature": "private property <string> section-slider: \"Slider\";",
+      "line": 39,
+      "doc": "Private property \"section-slider\" used internally."
+    },
+    {
+      "name": "section-spinbox",
+      "kind": "property",
+      "signature": "private property <string> section-spinbox: \"SpinBox\";",
+      "line": 41,
+      "doc": "Private property \"section-spinbox\" used internally."
+    },
+    {
+      "name": "section-rating",
+      "kind": "property",
+      "signature": "private property <string> section-rating: \"Rating\";",
+      "line": 43,
+      "doc": "Private property \"section-rating\" used internally."
+    },
+    {
+      "name": "cb-unchecked-label",
+      "kind": "property",
+      "signature": "private property <string> cb-unchecked-label: \"Unchecked\";",
+      "line": 45,
+      "doc": "Private property \"cb-unchecked-label\" used internally."
+    },
+    {
+      "name": "cb-checked-label",
+      "kind": "property",
+      "signature": "private property <string> cb-checked-label: \"Checked\";",
+      "line": 47,
+      "doc": "Private property \"cb-checked-label\" used internally."
+    },
+    {
+      "name": "cb-indet-label",
+      "kind": "property",
+      "signature": "private property <string> cb-indet-label: \"Indeterminate\";",
+      "line": 49,
+      "doc": "Private property \"cb-indet-label\" used internally."
+    },
+    {
+      "name": "cb-disabled-label",
+      "kind": "property",
+      "signature": "private property <string> cb-disabled-label: \"Disabled\";",
+      "line": 51,
+      "doc": "Private property \"cb-disabled-label\" used internally."
+    },
+    {
+      "name": "cb-live-checked",
+      "kind": "property",
+      "signature": "private property <string> cb-live-checked: \"Checked (live)\";",
+      "line": 53,
+      "doc": "Private property \"cb-live-checked\" used internally."
+    },
+    {
+      "name": "cb-live-unchecked",
+      "kind": "property",
+      "signature": "private property <string> cb-live-unchecked: \"Unchecked (live)\";",
+      "line": 55,
+      "doc": "Private property \"cb-live-unchecked\" used internally."
+    },
+    {
+      "name": "slider-no-val",
+      "kind": "property",
+      "signature": "private property <string> slider-no-val: \"No value display\";",
+      "line": 57,
+      "doc": "Private property \"slider-no-val\" used internally."
+    },
+    {
+      "name": "slider-live",
+      "kind": "property",
+      "signature": "private property <string> slider-live: \"Live slider\";",
+      "line": 59,
+      "doc": "Private property \"slider-live\" used internally."
+    },
+    {
+      "name": "slider-disabled",
+      "kind": "property",
+      "signature": "private property <string> slider-disabled: \"Disabled\";",
+      "line": 61,
+      "doc": "Private property \"slider-disabled\" used internally."
+    },
+    {
+      "name": "spinbox-label",
+      "kind": "property",
+      "signature": "private property <string> spinbox-label: \"Quantity\";",
+      "line": 63,
+      "doc": "Private property \"spinbox-label\" used internally."
+    },
+    {
+      "name": "spinbox-disabled",
+      "kind": "property",
+      "signature": "private property <string> spinbox-disabled: \"Disabled\";",
+      "line": 65,
+      "doc": "Private property \"spinbox-disabled\" used internally."
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "source": "shell/mobile/bottom-nav-bar.slint",
+  "items": [
+    {
+      "name": "BottomNavBar",
+      "kind": "component",
+      "signature": "export component BottomNavBar inherits Rectangle",
+      "line": 10,
+      "doc": "B ot to mn av ba r component."
+    },
+    {
+      "name": "items",
+      "kind": "property",
+      "signature": "in property <[NavItem]> items;",
+      "line": 12,
+      "doc": "Input property \"items\"."
+    },
+    {
+      "name": "active",
+      "kind": "property",
+      "signature": "in property <string>    active: \"\";",
+      "line": 14,
+      "doc": "Input property \"active\"."
+    },
+    {
+      "name": "icon-font",
+      "kind": "property",
+      "signature": "in property <string>    icon-font: \"Segoe Fluent Icons\";",
+      "line": 16,
+      "doc": "Input property \"icon-font\"."
+    },
+    {
+      "name": "navigate",
+      "kind": "callback",
+      "signature": "callback navigate(string);",
+      "line": 18,
+      "doc": "Callback fired for n av ig at e."
+    },
+    {
+      "name": "pad-top",
+      "kind": "property",
+      "signature": "private property <length> pad-top: Sizes.comp-12;",
+      "line": 21,
+      "doc": "Private property \"pad-top\" used internally."
+    },
+    {
+      "name": "pill-w",
+      "kind": "property",
+      "signature": "private property <length> pill-w:  Sizes.comp-64;",
+      "line": 23,
+      "doc": "Private property \"pill-w\" used internally."
+    }
+  ]
+}
