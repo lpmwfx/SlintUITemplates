@@ -1,0 +1,39 @@
+// macOS spacing scale — denser than iOS, matches AppKit defaults.
+// Reference: Apple HIG layout and spacing
+
+export global MacosSpacing {
+    /// Extra small — icon padding, tight items.
+    out property <length> xs:   4px;
+    /// Small — between sibling controls.
+    out property <length> sm:   8px;
+    /// Medium — standard inset, label gaps.
+    out property <length> md:  12px;
+    /// Large — section spacing.
+    out property <length> lg:  16px;
+    /// Extra large — major section gaps.
+    out property <length> xl:  20px;
+
+    // ── Control heights ───────────────────────────────────────────────────
+    /// Small — mini controls (NSMiniControlSize).
+    out property <length> control-sm:  18px;
+    /// Standard — regular controls (NSRegularControlSize).
+    out property <length> control-md:  22px;
+    /// Large — prominent buttons, search fields.
+    out property <length> control-lg:  28px;
+
+    // ── Chrome ────────────────────────────────────────────────────────────
+    /// Title bar height (standard, with traffic lights).
+    out property <length> titlebar-height:   28px;
+    /// Toolbar height (under title bar).
+    out property <length> toolbar-height:    40px;
+    /// Sidebar width (narrow, icon + label).
+    out property <length> sidebar-width:    200px;
+    /// Tab bar height.
+    out property <length> tab-bar-height:    28px;
+    /// Status bar height.
+    out property <length> status-bar-height: 22px;
+
+    // ── Nav rail ─────────────────────────────────────────────────────────
+    /// Navigation rail width (sidebar collapsed to icon-only).
+    out property <length> nav-rail-width:    52px;
+}
