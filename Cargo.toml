@@ -52,6 +52,10 @@ path = "examples/android/main.rs"
 name = "steam"
 path = "examples/steam/main.rs"
 
+[[example]]
+name = "macos"
+path = "examples/macos/main.rs"
+
 [dependencies]
 slint = "1"
 tracing = "0.1"
