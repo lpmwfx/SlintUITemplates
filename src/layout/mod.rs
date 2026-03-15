@@ -2,6 +2,8 @@
 pub mod constraints;
 /// DSL v2 parser with named slot declarations.
 pub mod dsl_v2;
+/// Named-slot parse_named implementation.
+pub mod named_parser;
 /// DSL v1 parser that converts layout strings into a `PanelNode` tree.
 pub mod parser;
 /// Bi-directional ratio solver for interactive panel resizing.
@@ -12,7 +14,8 @@ pub mod solver;
 pub use parser::parse;
 pub use solver::{Solver, SolvedItem, ItemKind};
 pub use ratio_solver::{Panel, drag, normalize, check_sum};
-pub use dsl_v2::{parse_named, to_panels, NamedPanel};
+pub use dsl_v2::{to_panels, NamedPanel, SplitDir};
+pub use named_parser::parse_named;
 
 /// Parse a DSL string and solve layout for given window dimensions.
 /// Returns a flat Vec<SolvedItem> ready to push to Slint as [PanelItem].

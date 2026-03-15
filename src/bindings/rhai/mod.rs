@@ -1,5 +1,7 @@
 /// Rhai-to-AppAdapter function bindings registered on the scripting engine.
 pub mod api;
+/// DSL API — nav, toolbar, window, bg style registration.
+pub mod dsl;
 pub use api::register;
 
 use rhai::Engine;
@@ -25,6 +27,7 @@ mod tests {
     #[test]
     fn engine_set_get_active_view() {
         init();
+        // REASON: Rhai closures capture adapter — AppWindow is !Sync, single-threaded
         let adapter = Rc::new(RefCell::new(AppAdapter::new().unwrap()));
         let engine = build_engine(Rc::clone(&adapter));
         engine.eval::<()>(r#"set_active_view("settings")"#).unwrap();
@@ -34,6 +37,7 @@ mod tests {
     #[test]
     fn engine_set_dark_mode() {
         init();
+        // REASON: Rhai closures capture adapter — AppWindow is !Sync, single-threaded
         let adapter = Rc::new(RefCell::new(AppAdapter::new().unwrap()));
         let engine = build_engine(Rc::clone(&adapter));
         engine.eval::<()>("set_dark_mode(true)").unwrap();

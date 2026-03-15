@@ -1,3 +1,4 @@
+use std::path::Path;
 use std::rc::Rc;
 use std::cell::RefCell;
 use slint_ui_templates::adapter::AppAdapter;
@@ -11,8 +12,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let adapter = Rc::new(RefCell::new(AppAdapter::new()?));
     let engine = build_engine(Rc::clone(&adapter));
 
-    // NOTE: IO in example binary — acceptable outside gateway for demo/example code
-    let script = std::fs::read_to_string(DEMO_SCRIPT_PATH)?;
+    let script = slint_ui_templates::gateway::scripts::load_script(Path::new(DEMO_SCRIPT_PATH))?;
     engine.eval::<()>(&script)?;
 
     // Drop engine before consuming adapter — releases Rc clones held by closures
