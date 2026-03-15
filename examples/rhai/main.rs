@@ -1,7 +1,7 @@
 use std::path::Path;
 use std::rc::Rc;
 use std::cell::RefCell;
-use slint_ui_templates::adapter::AppAdapter;
+use slint_ui_templates::AppAdapter;
 use slint_ui_templates::bindings::rhai::build_engine;
 
 /// Path to the Rhai demo script loaded at startup.

@@ -23,6 +23,8 @@ pub mod shell;
 /// Per-view Rhai configuration auto-applied on navigation changes.
 pub mod view_config;
 
+/// Public API alias for `AppAdapter_adp` — callers use this name.
+pub use adapter::AppAdapter_adp as AppAdapter;
 pub use grid::{ZoneModel, TargetConfig};
 pub use layout::{build, SolvedItem, ItemKind, build_v2, Panel, drag, normalize};
 

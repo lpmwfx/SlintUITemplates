@@ -5,6 +5,7 @@ use std::str::FromStr;
 
 /// Strongly-typed icon names from the Fluent icon set.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
+/// I co nn am e enum.
 pub enum IconName {
     Home,
     Settings,
@@ -140,13 +141,7 @@ impl FromStr for IconName {
 /// Look up the Segoe Fluent Icons codepoint for an icon name string.
 /// Returns `None` if the name is not recognized.
 pub fn fluent_icon(name: &str) -> Option<&'static str> {
-    let icon = IconName::from_str(name).ok()?;
-    Some(fluent_icon_code(icon))
-}
-
-/// Look up the Segoe Fluent Icons codepoint for a typed icon name.
-pub fn fluent_icon_code(name: IconName) -> &'static str {
-    match name {
+    Some(match IconName::from_str(name).ok()? {
         IconName::Home         => "\u{E80F}",
         IconName::Settings     => "\u{E713}",
         IconName::List         => "\u{E8FD}",
@@ -204,5 +199,5 @@ pub fn fluent_icon_code(name: IconName) -> &'static str {
         IconName::Flag         => "\u{E7C1}",
         IconName::Print        => "\u{E749}",
         IconName::Code         => "\u{E943}",
-    }
+    })
 }

@@ -120,7 +120,7 @@ drag(&mut panels, 1, delta);   // content ↔ inspector, sidebar unchanged
 ```rust,no_run
 use slint_ui_templates::settings::{AppSettings, ZoomSettings, ThemeSettings, ThemeMode,
                                    IconSettings, IconStyle, FontSettings};
-use slint_ui_templates::adapter::AppAdapter;
+use slint_ui_templates::AppAdapter;
 
 let adapter = AppAdapter::new().unwrap();
 let settings = AppSettings {

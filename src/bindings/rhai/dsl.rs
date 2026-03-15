@@ -1,7 +1,7 @@
 use rhai::Engine;
 use std::rc::Rc;
 use std::cell::RefCell;
-use crate::adapter::AppAdapter;
+use crate::AppAdapter;
 use crate::dsl::{AppDsl, Nav};
 
 /// Maximum fields in a colon-separated Rhai DSL string (e.g. "id:icon:tooltip").

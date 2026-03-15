@@ -7,7 +7,7 @@ pub use api::register;
 use rhai::Engine;
 use std::rc::Rc;
 use std::cell::RefCell;
-use crate::adapter::AppAdapter;
+use crate::AppAdapter;
 
 /// Build a Rhai Engine with all AppAdapter API functions registered.
 pub fn build_engine(adapter: Rc<RefCell<AppAdapter>>) -> Engine {
