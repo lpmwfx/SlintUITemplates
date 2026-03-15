@@ -1,6 +1,5 @@
 import { Colors, Type } from "../tokens/theme.slint";
-import { Sizes }       from "../tokens/sizes.slint";
-import { FluentSpacing } from "../tokens/theme.slint";
+import { Sizes }        from "../tokens/sizes.slint";
 
 // A single panel content area.
 // Positioned absolutely by PanelContainer — fills its assigned rect.
@@ -22,8 +21,8 @@ export component PanelSlot inherits Rectangle {
 
     // Placeholder label — replaced by actual content in real use
     if root.label != root.empty-label: Text {
-        x: FluentSpacing.md;
-        y: FluentSpacing.md;
+        x: Colors.space-sm;
+        y: Colors.space-sm;
         text: root.label;
         color: Colors.text-secondary;
         font-size: Type.caption-size;
