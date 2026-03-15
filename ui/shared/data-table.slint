@@ -1,0 +1,71 @@
+import { Colors, Spacing } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
+import { TableColumn, TableRow } from "data-table-types.slint";
+import { DataTableHeaderCell }   from "DataTableHeaderCell.slint";
+import { RowsArea }              from "RowsArea.slint";
+
+export { TableColumn, TableRow }
+
+/// D at at ab le component.
+export component DataTable inherits Rectangle {
+    /// Input property "columns".
+    in property <[TableColumn]> columns: [];
+    /// Input property "rows".
+    in property <[TableRow]>    rows: [];
+    /// Input property "sort-key".
+    in property <string>    sort-key: "";
+    /// Input property "sort-asc".
+    in property <bool>      sort-asc: true;
+    /// Input property "selected".
+    in property <string>    selected: "";
+    /// Input property "sort-asc-indicator".
+    in property <string> sort-asc-indicator: "\u{25B2}";
+    /// Input property "sort-desc-indicator".
+    in property <string> sort-desc-indicator: "\u{25BC}";
+    /// Callback fired for s or t c ha ng ed.
+    callback sort-changed(string, bool);
+    /// Callback fired for r ow s el ec te d.
+    callback row-selected(string);
+
+    background: Colors.bg-surface;
+    border-width: Sizes.border-w;
+    border-color: Colors.border;
+    border-radius: Spacing.xs;
+    clip: true;
+
+    VerticalLayout {
+        // Header row
+        header := Rectangle {
+            height: Spacing.xl;
+            background: Colors.bg-elevated;
+
+            // Bottom border
+            Rectangle {
+                y: parent.height - Sizes.border-w;
+                height: Sizes.border-w;
+                width: parent.width;
+                background: Colors.border;
+            }
+
+            HorizontalLayout {
+                for col in root.columns: DataTableHeaderCell {
+                    label: col.label;
+                    col-width: col.width;
+                    is-sorted: root.sort-key == col.key;
+                    sort-asc: root.sort-asc;
+                    sort-asc-indicator: root.sort-asc-indicator;
+                    sort-desc-indicator: root.sort-desc-indicator;
+                    clicked => { root.sort-changed(col.key, root.sort-key == col.key ? !root.sort-asc : true); }
+                }
+            }
+        }
+
+        // Rows area
+        RowsArea {
+            rows: root.rows;
+            columns: root.columns;
+            selected: root.selected;
+            row-selected(id) => { root.row-selected(id); }
+        }
+    }
+}

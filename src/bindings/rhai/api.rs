@@ -1,11 +1,17 @@
 use rhai::Engine;
 use std::rc::Rc;
 use std::cell::RefCell;
-use crate::adapter::AppAdapter;
-use crate::dsl::{AppDsl, Nav};
+use crate::AppAdapter;
 
 /// Register all AppAdapter API functions into the Rhai engine.
 pub fn register(engine: &mut Engine, adapter: Rc<RefCell<AppAdapter>>) {
+    register_core(engine, Rc::clone(&adapter));
+    register_settings(engine, Rc::clone(&adapter));
+    super::dsl::register(engine, adapter);
+}
+
+/// Core view/theme/status API (4 functions).
+fn register_core(engine: &mut Engine, adapter: Rc<RefCell<AppAdapter>>) {
     let a = Rc::clone(&adapter);
     engine.register_fn("set_active_view", move |name: String| {
         a.borrow().set_active_view(&name);
@@ -25,8 +31,10 @@ pub fn register(engine: &mut Engine, adapter: Rc<RefCell<AppAdapter>>) {
     engine.register_fn("set_status", move |text: String| {
         a.borrow().set_status(&text);
     });
+}
 
-    // Settings API
+/// Settings API — zoom, icon, font (5 functions).
+fn register_settings(engine: &mut Engine, adapter: Rc<RefCell<AppAdapter>>) {
     let a = Rc::clone(&adapter);
     engine.register_fn("set_zoom", move |scale: f64| {
         let mut s = crate::settings::AppSettings::default();
@@ -37,11 +45,7 @@ pub fn register(engine: &mut Engine, adapter: Rc<RefCell<AppAdapter>>) {
     let a = Rc::clone(&adapter);
     engine.register_fn("set_icon_style", move |style: String| {
         let mut s = crate::settings::AppSettings::default();
-        s.icons.style = if style == "outlined" {
-            crate::settings::IconStyle::Outlined
-        } else {
-            crate::settings::IconStyle::Filled
-        };
+        s.icons.style = crate::settings::IconStyle::from_str(&style);
         a.borrow().apply_settings(&s);
     });
 
@@ -64,48 +68,5 @@ pub fn register(engine: &mut Engine, adapter: Rc<RefCell<AppAdapter>>) {
         let mut s = crate::settings::AppSettings::default();
         s.font.font_scale = scale as f32;
         a.borrow().apply_settings(&s);
-    });
-
-    // DSL: nav — array of "id:Label:icon" strings
-    // Example: set_nav(["home:Home:home", "list:List:list", "settings:Settings:settings"]);
-    let a = Rc::clone(&adapter);
-    engine.register_fn("set_nav", move |items: rhai::Array| {
-        let nav: Vec<Nav> = items.iter().filter_map(|v| {
-            let s = v.clone().into_string().ok()?;
-            let parts: Vec<&str> = s.splitn(3, ':').collect();
-            match parts.as_slice() {
-                [id, label, icon] => Some(Nav::new(*id, *label, *icon)),
-                [id, label]       => Some(Nav::new(*id, *label, "list")),
-                _                 => None,
-            }
-        }).collect();
-
-        match AppDsl::builder("").nav(nav).build() {
-            Ok(dsl)   => a.borrow_mut().apply_dsl(&dsl),
-            Err(errs) => { for e in &errs { eprintln!("[dsl] {e}"); } }
-        }
-    });
-
-    // DSL: toolbar — array of "id:icon:tooltip" strings
-    // Example: set_toolbar(["save:save:Save file", "undo:undo:Undo"]);
-    let a = Rc::clone(&adapter);
-    engine.register_fn("set_toolbar", move |items: rhai::Array| {
-        use crate::dsl::Toolbar;
-        let toolbar: Vec<Toolbar> = items.iter().filter_map(|v| {
-            let s = v.clone().into_string().ok()?;
-            let parts: Vec<&str> = s.splitn(3, ':').collect();
-            match parts.as_slice() {
-                [id, icon, tip] => Some(Toolbar::new(*id, *icon, *tip)),
-                [id, icon]      => Some(Toolbar::new(*id, *icon, "")),
-                _               => None,
-            }
-        }).collect();
-
-        // Re-use existing nav from a minimal DSL (toolbar-only update path)
-        let placeholder = vec![Nav::new("_", "_", "home")];
-        match AppDsl::builder("").nav(placeholder).toolbar(toolbar).build() {
-            Ok(dsl)   => a.borrow_mut().apply_dsl(&dsl),
-            Err(errs) => { for e in &errs { eprintln!("[dsl] {e}"); } }
-        }
     });
 }

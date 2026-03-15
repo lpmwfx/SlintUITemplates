@@ -1,0 +1,44 @@
+// Popover — inline overlay that appears below the trigger element.
+//
+// Usage:
+//   popover-wrap := Rectangle {
+//       Popover {
+//           open: show-popover;
+//           title: "Info";
+//           body: "This is a popover.";
+//           close-requested => { show-popover = false; }
+//       }
+//       Button { clicked => { show-popover = !show-popover; } }
+//   }
+
+import { Spacing } from "../tokens/theme.slint";
+import { PopoverInner } from "popover-inner.slint";
+
+/// P op ov er component.
+export component Popover inherits Rectangle {
+    /// Input property "open".
+    in property <bool>   open: false;
+    /// Input property "popup-width".
+    in property <length> popup-width:  220px;
+    /// Input property "popup-height".
+    in property <length> popup-height: 140px;
+    /// Input property "title".
+    in property <string> title: "";
+    /// Input property "body".
+    in property <string> body: "";
+    /// Callback fired for c lo se r eq ue st ed.
+    callback close-requested();
+
+    clip: false;
+
+    @children
+
+    if root.open: PopoverInner {
+        y: parent.height + Spacing.xs;
+        width: root.popup-width;
+        height: root.popup-height;
+        title: root.title;
+        body: root.body;
+        close-requested => { root.close-requested(); }
+    }
+}

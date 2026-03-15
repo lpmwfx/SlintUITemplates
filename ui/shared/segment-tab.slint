@@ -1,0 +1,48 @@
+import { Colors, Spacing, Type, FluentIcons } from "../tokens/theme.slint";
+
+/// S eg me nt it em struct.
+export struct SegmentItem {
+    id:    string,
+    label: string,
+    icon:  string,
+}
+
+/// S eg me nt ta b component.
+export component SegmentTab inherits Rectangle {
+    /// Input property "item".
+    in property <SegmentItem> item;
+    /// Input property "active".
+    in property <bool>        active: false;
+    /// Callback fired for c li ck ed.
+    callback clicked(string);
+
+    border-radius: Spacing.xs;
+    background: root.active  ? Colors.accent :
+                ta.has-hover ? Colors.bg-elevated : transparent;
+
+    HorizontalLayout {
+        padding-left:  Spacing.sm;
+        padding-right: Spacing.sm;
+        spacing: Spacing.xs;
+        alignment: center;
+
+        if item.icon != "": Text { text: item.icon;
+            font-family: FluentIcons.icon-font;
+            font-size: Type.body-size;
+            color: root.active ? Colors.accent-text : Colors.text-primary;
+            vertical-alignment: center;
+        }
+
+        Text {
+            text: item.label;
+            font-size: Type.body-size;
+            font-weight: root.active ? Type.weight-semibold : Type.weight-regular;
+            color: root.active ? Colors.accent-text : Colors.text-primary;
+            vertical-alignment: center;
+        }
+    }
+
+    ta := TouchArea {
+        clicked => { root.clicked(root.item.id); }
+    }
+}

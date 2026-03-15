@@ -1,0 +1,147 @@
+// PageIcons — Fluent icon catalog.
+// Shows all FluentIcons entries with their names in scrollable rows per category.
+
+import { Colors, Spacing, Type, Settings, FluentIcons } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
+import { ViewerSection } from "viewer-section.slint";
+import { IconRow } from "IconRow.slint";
+
+/// Viewer page listing icon tokens and icon-driven component examples.
+export component PageIcons inherits VerticalLayout {
+    spacing: Spacing.sm;
+
+    // ── demo labels ─────────────────────────────────────────────────────
+    /// Private property "cat-nav" used internally.
+    private property <string> cat-nav: "Navigation";
+    /// Private property "cat-actions" used internally.
+    private property <string> cat-actions: "Actions";
+    /// Private property "cat-chrome" used internally.
+    private property <string> cat-chrome: "Window Chrome";
+    /// Private property "cat-files" used internally.
+    private property <string> cat-files: "Files & Data";
+    /// Private property "cat-media" used internally.
+    private property <string> cat-media: "Media";
+    /// Private property "cat-ui" used internally.
+    private property <string> cat-ui: "UI / Layout";
+    /// Private property "cat-people" used internally.
+    private property <string> cat-people: "People & Communication";
+    /// Private property "cat-device" used internally.
+    private property <string> cat-device: "Device";
+
+    ViewerSection { title: root.cat-nav; }
+    IconRow {
+        icons: [
+            { glyph: FluentIcons.home,         name: "home" },
+            { glyph: FluentIcons.back,         name: "back" },
+            { glyph: FluentIcons.forward,      name: "forward" },
+            { glyph: FluentIcons.menu,         name: "menu" },
+            { glyph: FluentIcons.settings,     name: "settings" },
+            { glyph: FluentIcons.nav-collapse, name: "nav-collapse" },
+            { glyph: FluentIcons.nav-expand,   name: "nav-expand" },
+        ];
+    }
+
+    ViewerSection { title: root.cat-actions; }
+    IconRow {
+        icons: [
+            { glyph: FluentIcons.add,        name: "add" },
+            { glyph: FluentIcons.remove,     name: "remove" },
+            { glyph: FluentIcons.delete,     name: "delete" },
+            { glyph: FluentIcons.edit,       name: "edit" },
+            { glyph: FluentIcons.save,       name: "save" },
+            { glyph: FluentIcons.copy,       name: "copy" },
+            { glyph: FluentIcons.paste,      name: "paste" },
+            { glyph: FluentIcons.cut,        name: "cut" },
+            { glyph: FluentIcons.undo,       name: "undo" },
+            { glyph: FluentIcons.redo,       name: "redo" },
+            { glyph: FluentIcons.refresh,    name: "refresh" },
+            { glyph: FluentIcons.close,      name: "close" },
+            { glyph: FluentIcons.search,     name: "search" },
+            { glyph: FluentIcons.filter,     name: "filter" },
+            { glyph: FluentIcons.sort,       name: "sort" },
+            { glyph: FluentIcons.share,      name: "share" },
+            { glyph: FluentIcons.download,   name: "download" },
+            { glyph: FluentIcons.upload,     name: "upload" },
+            { glyph: FluentIcons.print,      name: "print" },
+            { glyph: FluentIcons.pin,        name: "pin" },
+            { glyph: FluentIcons.unpin,      name: "unpin" },
+            { glyph: FluentIcons.star,       name: "star" },
+            { glyph: FluentIcons.star-filled, name: "star-filled" },
+        ];
+    }
+
+    ViewerSection { title: root.cat-chrome; }
+    IconRow {
+        icons: [
+            { glyph: FluentIcons.maximize, name: "maximize" },
+            { glyph: FluentIcons.minimize, name: "minimize" },
+            { glyph: FluentIcons.restore,  name: "restore" },
+        ];
+    }
+
+    ViewerSection { title: root.cat-files; }
+    IconRow {
+        icons: [
+            { glyph: FluentIcons.folder,      name: "folder" },
+            { glyph: FluentIcons.folder-open, name: "folder-open" },
+            { glyph: FluentIcons.file,        name: "file" },
+            { glyph: FluentIcons.file-new,    name: "file-new" },
+            { glyph: FluentIcons.cloud,       name: "cloud" },
+            { glyph: FluentIcons.database,    name: "database" },
+        ];
+    }
+
+    ViewerSection { title: root.cat-media; }
+    IconRow {
+        icons: [
+            { glyph: FluentIcons.play,   name: "play" },
+            { glyph: FluentIcons.pause,  name: "pause" },
+            { glyph: FluentIcons.stop,   name: "stop" },
+            { glyph: FluentIcons.volume, name: "volume" },
+            { glyph: FluentIcons.mute,   name: "mute" },
+            { glyph: FluentIcons.camera, name: "camera" },
+            { glyph: FluentIcons.image,  name: "image" },
+        ];
+    }
+
+    ViewerSection { title: root.cat-ui; }
+    IconRow {
+        icons: [
+            { glyph: FluentIcons.list,        name: "list" },
+            { glyph: FluentIcons.grid,        name: "grid" },
+            { glyph: FluentIcons.layout,      name: "layout" },
+            { glyph: FluentIcons.apps,        name: "apps" },
+            { glyph: FluentIcons.panel-left,  name: "panel-left" },
+            { glyph: FluentIcons.panel-right, name: "panel-right" },
+            { glyph: FluentIcons.fullscreen,  name: "fullscreen" },
+        ];
+    }
+
+    ViewerSection { title: root.cat-people; }
+    IconRow {
+        icons: [
+            { glyph: FluentIcons.person,       name: "person" },
+            { glyph: FluentIcons.people,       name: "people" },
+            { glyph: FluentIcons.chat,         name: "chat" },
+            { glyph: FluentIcons.mail,         name: "mail" },
+            { glyph: FluentIcons.phone,        name: "phone" },
+            { glyph: FluentIcons.notification, name: "notification" },
+            { glyph: FluentIcons.help,         name: "help" },
+            { glyph: FluentIcons.info,         name: "info" },
+            { glyph: FluentIcons.warning,      name: "warning" },
+            { glyph: FluentIcons.error-icon,   name: "error-icon" },
+            { glyph: FluentIcons.checkmark,    name: "checkmark" },
+            { glyph: FluentIcons.dismiss,      name: "dismiss" },
+        ];
+    }
+
+    ViewerSection { title: root.cat-device; }
+    IconRow {
+        icons: [
+            { glyph: FluentIcons.device,    name: "device" },
+            { glyph: FluentIcons.keyboard,  name: "keyboard" },
+            { glyph: FluentIcons.wifi,      name: "wifi" },
+            { glyph: FluentIcons.bluetooth, name: "bluetooth" },
+        ];
+    }
+}

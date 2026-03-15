@@ -1,0 +1,113 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
+
+/// Pagination control with previous/next buttons and optional explicit page chips.
+export component Pagination inherits Rectangle {
+    /// Currently selected page number.
+    in property <int>   current: Sizes.one;
+    /// Highest available page number.
+    in property <int>   total: Sizes.one;
+    /// Explicit page numbers to render as clickable chips. Empty falls back to `current / total`.
+    in property <[int]> pages: [];
+    /// Fired when the user requests a different page.
+    callback changed(int);
+
+    // ── String constants ────────────────────────────────────────────────
+    /// Private property "nav-prev" used internally.
+    private property <string> nav-prev: "‹";
+    /// Private property "nav-next" used internally.
+    private property <string> nav-next: "›";
+    /// Private property "page-sep" used internally.
+    private property <string> page-sep: " / ";
+
+    // ── Opacity constants ───────────────────────────────────────────────
+    /// Private property "disabled-alpha" used internally.
+    private property <float> disabled-alpha: 0.4;
+
+    height: Spacing.xl;
+    background: transparent;
+
+    HorizontalLayout {
+        alignment: center;
+        spacing: Spacing.xs;
+
+        // Previous button
+        prev-btn := Rectangle {
+            width: Spacing.xl;
+            height: Spacing.xl;
+            border-radius: Spacing.xs;
+            border-width: Sizes.border-w;
+            border-color: Colors.border;
+            background: prev-ta.has-hover && root.current > Sizes.one
+                ? Colors.bg-elevated : Colors.bg-surface;
+            opacity: root.current > Sizes.one ? Sizes.fill : root.disabled-alpha;
+
+            Text {
+                text: root.nav-prev;
+                font-size: Type.subtitle-size;
+                color: Colors.text-primary;
+                horizontal-alignment: center;
+                vertical-alignment: center;
+            }
+
+            prev-ta := TouchArea {
+                enabled: root.current > Sizes.one;
+                clicked => { root.changed(root.current - Sizes.one); }
+            }
+        }
+
+        // Page numbers
+        for p in root.pages: page-btn := Rectangle {
+            width: Spacing.xl;
+            height: Spacing.xl;
+            border-radius: Spacing.xs;
+            background: p == root.current ? Colors.accent :
+                        page-ta.has-hover ? Colors.bg-elevated : transparent;
+
+            Text {
+                text: p;
+                font-size: Type.body-size;
+                color: p == root.current ? Colors.accent-text : Colors.text-primary;
+                horizontal-alignment: center;
+                vertical-alignment: center;
+            }
+
+            page-ta := TouchArea {
+                clicked => { root.changed(p); }
+            }
+        }
+
+        // Fallback if no pages array provided
+        if root.pages.length == Sizes.zero: Text {
+            text: root.current + root.page-sep + root.total;
+            font-size: Type.body-size;
+            color: Colors.text-secondary;
+            vertical-alignment: center;
+        }
+
+        // Next button
+        next-btn := Rectangle {
+            width: Spacing.xl;
+            height: Spacing.xl;
+            border-radius: Spacing.xs;
+            border-width: Sizes.border-w;
+            border-color: Colors.border;
+            background: next-ta.has-hover && root.current < root.total
+                ? Colors.bg-elevated : Colors.bg-surface;
+            opacity: root.current < root.total ? Sizes.fill : root.disabled-alpha;
+
+            Text {
+                text: root.nav-next;
+                font-size: Type.subtitle-size;
+                color: Colors.text-primary;
+                horizontal-alignment: center;
+                vertical-alignment: center;
+            }
+
+            next-ta := TouchArea {
+                enabled: root.current < root.total;
+                clicked => { root.changed(root.current + Sizes.one); }
+            }
+        }
+    }
+}

@@ -1,0 +1,167 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
+import { DatePickerGrid } from "./DatePickerGrid.slint";
+
+// Popup calendar panel — navigation header + day-name row + grid.
+// month-offset: months from initial-year/Jan-1 (negative = past, positive = future).
+/// D at ep ic ke rc al en da r component.
+export component DatePickerCalendar inherits Rectangle {
+    /// Input property "month-offset".
+    in property <int> month-offset: Sizes.zero;
+    /// Input property "initial-year".
+    in property <int> initial-year: 2026;
+    /// Callback fired for p re v m on th.
+    callback prev-month();
+    /// Callback fired for n ex t m on th.
+    callback next-month();
+    /// Callback fired for d ay s el ec te d.
+    callback day-selected(int);
+
+    // ── Calendar domain constants ────────────────────────────────────────
+    /// Private property "months-per-year" used internally.
+    private property <int> months-per-year:  Sizes.twelve;
+    /// Private property "zeller-shift" used internally.
+    private property <int> zeller-shift:     Sizes.five;
+    /// Private property "zeller-factor" used internally.
+    private property <int> zeller-factor:    13;
+    /// Private property "zeller-div" used internally.
+    private property <int> zeller-div:       Sizes.five;
+    /// Private property "days-cols" used internally.
+    private property <int> days-cols:        Sizes.seven;
+    /// Private property "leap-cycle" used internally.
+    private property <int> leap-cycle:       Sizes.four;
+    /// Private property "century-cycle" used internally.
+    private property <int> century-cycle:    Sizes.hundred;
+    /// Private property "grand-cycle" used internally.
+    private property <int> grand-cycle:      400;
+    /// Private property "feb-normal" used internally.
+    private property <int> feb-normal:       28;
+    /// Private property "feb-leap" used internally.
+    private property <int> feb-leap:         29;
+    /// Private property "short-month-days" used internally.
+    private property <int> short-month-days: Sizes.thirty;
+    /// Private property "long-month-days" used internally.
+    private property <int> long-month-days:  31;
+    /// Private property "cell-size" used internally.
+    private property <length> cell-size:     Spacing.control-md + Spacing.xs;
+    /// Private property "nav-prev" used internally.
+    private property <string> nav-prev:      "‹";
+    /// Private property "nav-next" used internally.
+    private property <string> nav-next:      "›";
+
+    // ── Derived display values from month-offset ─────────────────────────
+    /// Private property "display-month" used internally.
+    private property <int> display-month: Math.mod(root.month-offset, root.months-per-year) + Sizes.one;
+    /// Private property "display-year" used internally.
+    private property <int> display-year:  root.initial-year + Math.floor(root.month-offset / root.months-per-year);
+
+    /// Private property "month-names" used internally.
+    private property <[string]> month-names: [
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+    ];
+
+    // ── Zeller's congruence → first weekday ──────────────────────────────
+    /// Private property "zy" used internally.
+    private property <int> zy: root.display-month <= Sizes.two ? root.display-year - Sizes.one : root.display-year;
+    /// Private property "zm" used internally.
+    private property <int> zm: root.display-month <= Sizes.two ? root.display-month + root.months-per-year : root.display-month;
+    /// Private property "zeller-h" used internally.
+    private property <int> zeller-h: Math.mod(Sizes.one + (root.zeller-factor * (root.zm + Sizes.one) / root.zeller-div) + root.zy + root.zy / root.leap-cycle - root.zy / root.century-cycle + root.zy / root.grand-cycle, root.days-cols);
+    /// Private property "first-weekday" used internally.
+    private property <int> first-weekday: Math.mod(root.zeller-h + root.zeller-shift, root.days-cols);
+
+    /// Private property "days-in-month" used internally.
+    private property <int> days-in-month:
+        root.display-month == Sizes.two ? (
+            Math.mod(root.display-year, root.leap-cycle) == Sizes.zero &&
+            (Math.mod(root.display-year, root.century-cycle) != Sizes.zero || Math.mod(root.display-year, root.grand-cycle) == Sizes.zero) ? root.feb-leap : root.feb-normal
+        ) :
+        (root.display-month == Sizes.four || root.display-month == Sizes.six ||
+         root.display-month == Sizes.nine || root.display-month == Sizes.eleven) ? root.short-month-days : root.long-month-days;
+
+    background: Colors.bg-elevated;
+    border-radius: Spacing.xs;
+    border-width: Sizes.border-w;
+    border-color: Colors.border;
+    drop-shadow-blur: Spacing.sm;
+    drop-shadow-color: Colors.shadow;
+
+    VerticalLayout {
+        padding: Spacing.sm;
+        spacing: Spacing.sm;
+
+        // Month navigation row
+        HorizontalLayout {
+            spacing: Spacing.xs;
+
+            prev := Rectangle {
+                width:  Spacing.control-md;
+                height: Spacing.control-md;
+                border-radius: Spacing.xs;
+                background: pm-ta.has-hover ? Colors.bg-surface : transparent;
+
+                Text {
+                    text: root.nav-prev;
+                    font-size: Type.subtitle-size;
+                    color: Colors.text-primary;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+
+                pm-ta := TouchArea {
+                    clicked => { root.prev-month(); }
+                }
+            }
+
+            Text {
+                text: root.month-names[root.display-month - Sizes.one] + " " + root.display-year;
+                font-size: Type.body-size;
+                font-weight: Type.weight-semibold;
+                color: Colors.text-primary;
+                horizontal-alignment: center;
+                vertical-alignment: center;
+                horizontal-stretch: Sizes.one;
+            }
+
+            next := Rectangle {
+                width:  Spacing.control-md;
+                height: Spacing.control-md;
+                border-radius: Spacing.xs;
+                background: nm-ta.has-hover ? Colors.bg-surface : transparent;
+
+                Text {
+                    text: root.nav-next;
+                    font-size: Type.subtitle-size;
+                    color: Colors.text-primary;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+
+                nm-ta := TouchArea {
+                    clicked => { root.next-month(); }
+                }
+            }
+        }
+
+        // Day-of-week headers
+        HorizontalLayout {
+            spacing: Spacing.xs;
+            for d in ["M", "T", "W", "T", "F", "S", "S"]: Text {
+                text: d;
+                width: root.cell-size;
+                font-size: Type.caption-size;
+                color: Colors.text-secondary;
+                horizontal-alignment: center;
+            }
+        }
+
+        // Day grid
+        DatePickerGrid {
+            first-weekday:  root.first-weekday;
+            days-in-month:  root.days-in-month;
+            cell-size:      root.cell-size;
+            day-clicked(d) => { root.day-selected(d); }
+        }
+    }
+}

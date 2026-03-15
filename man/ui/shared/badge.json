@@ -1,0 +1,26 @@
+{
+  "source": "ui/shared/badge.slint",
+  "items": [
+    {
+      "name": "Badge",
+      "kind": "component",
+      "signature": "export component Badge inherits Rectangle",
+      "line": 3,
+      "doc": ""
+    },
+    {
+      "name": "text",
+      "kind": "property",
+      "signature": "in property <string> text: \"\";",
+      "line": 4,
+      "doc": ""
+    },
+    {
+      "name": "variant",
+      "kind": "property",
+      "signature": "in property <string> variant: \"info\";   // info | success | warning | error",
+      "line": 5,
+      "doc": ""
+    }
+  ]
+}

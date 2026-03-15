@@ -1,10 +1,15 @@
 import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Sizes }    from "../tokens/sizes.slint";
 import { ListItem } from "../shared/list-item.slint";
 
-// Designer-editable list view.
-// Preview: slint-viewer ui/desktop/app-window.slint --auto-reload
+/// Starter list page for the `list` navigation slot.
+///
+/// Demonstrates a simple header plus repeated `ListItem` rows.
 export component ListView inherits Rectangle {
     background: Colors.bg-primary;
+
+    /// Private property "header-title" used internally.
+    private property <string> header-title: "List";
 
     VerticalLayout {
         alignment: start;
@@ -15,7 +20,7 @@ export component ListView inherits Rectangle {
             HorizontalLayout {
                 padding-left: Spacing.md;
                 Text {
-                    text: "List";
+                    text: root.header-title;
                     font-size: Type.subtitle-size;
                     font-weight: Type.weight-semibold;
                     color: Colors.text-primary;

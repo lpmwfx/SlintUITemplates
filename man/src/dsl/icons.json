@@ -1,0 +1,12 @@
+{
+  "source": "src/dsl/icons.rs",
+  "items": [
+    {
+      "name": "fluent_icon",
+      "kind": "fn",
+      "signature": "pub fn fluent_icon(name: &str) -> Option<&'static str>",
+      "line": 3,
+      "doc": "Rust-side mirror of ui/tokens/fluent/icons.slint.\nAccepts icon name strings and returns Segoe Fluent Icons codepoints."
+    }
+  ]
+}

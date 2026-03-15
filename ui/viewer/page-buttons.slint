@@ -1,31 +1,40 @@
 // page-buttons — showcases Button (all variants) and Toggle.
 
 import { Spacing } from "../tokens/theme.slint";
+import { Variants } from "../globals/Variants.slint";
 import { Button }  from "../shared/button.slint";
 import { Toggle }  from "../shared/toggle.slint";
 import { ViewerSection } from "viewer-section.slint";
 
+/// Viewer page showcasing button variants and toggle controls.
 export component PageButtons inherits VerticalLayout {
     spacing: Spacing.md;
 
+    /// Private property "t1" used internally.
     private property <bool> t1: true;
+    /// Private property "t2" used internally.
     private property <bool> t2: false;
+    /// Private property "t3" used internally.
     private property <bool> t3: true;
+    /// Private property "section-button" used internally.
+    private property <string> section-button: "Button";
+    /// Private property "section-toggle" used internally.
+    private property <string> section-toggle: "Toggle";
 
     ViewerSection {
-        title: "Button";
+        title: root.section-button;
         HorizontalLayout {
             spacing: Spacing.sm;
-            Button { label: "Primary";   variant: "primary"; }
-            Button { label: "Secondary"; variant: "secondary"; }
-            Button { label: "Ghost";     variant: "ghost"; }
-            Button { label: "Danger";    variant: "danger"; }
-            Button { label: "Disabled";  variant: "primary"; enabled: false; }
+            Button { label: "Primary";   variant: Variants.primary; }
+            Button { label: "Secondary"; variant: Variants.secondary; }
+            Button { label: "Ghost";     variant: Variants.ghost; }
+            Button { label: "Danger";    variant: Variants.danger; }
+            Button { label: "Disabled";  variant: Variants.primary; enabled: false; }
         }
     }
 
     ViewerSection {
-        title: "Toggle";
+        title: root.section-toggle;
         HorizontalLayout {
             spacing: Spacing.lg;
             alignment: start;

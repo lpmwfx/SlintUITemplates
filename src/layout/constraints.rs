@@ -3,13 +3,23 @@
 /// All values are in the range [0.0, 1.0] where 1.0 = full container size.
 /// The solver enforces that no panel shrinks below `min` or grows above `max`.
 
+/// Minimum ratio — 5% of container.
+const RATIO_MIN: f32 = 0.05;
+/// Maximum ratio — 95% of container.
+const RATIO_MAX: f32 = 0.95;
+
+/// Ratio-space min/max constraint that bounds a panel's resizable range.
 #[derive(Debug, Clone, PartialEq)]
+/// C on st ra in t struct.
 pub struct Constraint {
-    pub min: f32,   // minimum ratio (default: 0.05 = 5% of container)
-    pub max: f32,   // maximum ratio (default: 0.95 = 95% of container)
+    /// M in.
+    pub min: f32,
+    /// M ax.
+    pub max: f32,
 }
 
 impl Constraint {
+    /// Create a constraint with the given min and max ratio bounds.
     pub fn new(min: f32, max: f32) -> Self {
         assert!(min >= 0.0, "min must be >= 0");
         assert!(max <= 1.0, "max must be <= 1");
@@ -17,6 +27,7 @@ impl Constraint {
         Self { min, max }
     }
 
+    /// Clamp a ratio value to the `[min, max]` range.
     pub fn clamp(&self, ratio: f32) -> f32 {
         ratio.clamp(self.min, self.max)
     }
@@ -24,7 +35,7 @@ impl Constraint {
 
 impl Default for Constraint {
     fn default() -> Self {
-        Self { min: 0.05, max: 0.95 }
+        Self { min: RATIO_MIN, max: RATIO_MAX }
     }
 }
 

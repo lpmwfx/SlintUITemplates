@@ -1,0 +1,33 @@
+{
+  "source": "src/shell/platform.rs",
+  "items": [
+    {
+      "name": "Platform",
+      "kind": "enum",
+      "signature": "pub enum Platform",
+      "line": 3,
+      "doc": "Target platform for AppShell rendering."
+    },
+    {
+      "name": "as_str",
+      "kind": "fn",
+      "signature": "pub fn as_str(&self) -> &'static str",
+      "line": 10,
+      "doc": ""
+    },
+    {
+      "name": "is_mobile",
+      "kind": "fn",
+      "signature": "pub fn is_mobile(&self) -> bool",
+      "line": 17,
+      "doc": ""
+    },
+    {
+      "name": "is_desktop",
+      "kind": "fn",
+      "signature": "pub fn is_desktop(&self) -> bool",
+      "line": 21,
+      "doc": ""
+    }
+  ]
+}

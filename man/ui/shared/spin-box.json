@@ -1,0 +1,61 @@
+{
+  "source": "ui/shared/spin-box.slint",
+  "items": [
+    {
+      "name": "SpinBox",
+      "kind": "component",
+      "signature": "export component SpinBox inherits Rectangle",
+      "line": 3,
+      "doc": ""
+    },
+    {
+      "name": "value",
+      "kind": "property",
+      "signature": "in-out property <int> value: 0;",
+      "line": 4,
+      "doc": ""
+    },
+    {
+      "name": "min",
+      "kind": "property",
+      "signature": "in property <int>    min: 0;",
+      "line": 5,
+      "doc": ""
+    },
+    {
+      "name": "max",
+      "kind": "property",
+      "signature": "in property <int>    max: 100;",
+      "line": 6,
+      "doc": ""
+    },
+    {
+      "name": "step",
+      "kind": "property",
+      "signature": "in property <int>    step: 1;",
+      "line": 7,
+      "doc": ""
+    },
+    {
+      "name": "label",
+      "kind": "property",
+      "signature": "in property <string> label: \"\";",
+      "line": 8,
+      "doc": ""
+    },
+    {
+      "name": "enabled",
+      "kind": "property",
+      "signature": "in property <bool>   enabled: true;",
+      "line": 9,
+      "doc": ""
+    },
+    {
+      "name": "changed",
+      "kind": "callback",
+      "signature": "callback changed(int);",
+      "line": 10,
+      "doc": ""
+    }
+  ]
+}

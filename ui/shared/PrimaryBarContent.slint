@@ -1,0 +1,40 @@
+import { Colors, Spacing } from "../tokens/theme.slint";
+import { CbfPrimaryBtn, CbfAction } from "cbf-primary-btn.slint";
+import { CbfOverflowBtn }           from "cbf-overflow-btn.slint";
+
+export { CbfAction }
+
+/// P ri ma ry ba rc on te nt component.
+export component PrimaryBarContent inherits Rectangle {
+    /// Input property "primary".
+    in property <[CbfAction]> primary;
+    /// Input property "has-secondary".
+    in property <bool>        has-secondary;
+    /// Input property "border-px".
+    in property <length>      border-px;
+    /// Callback fired for i te m a ct iv at ed.
+    callback item-activated(string);
+    /// Callback fired for s ho w s ec on da ry.
+    callback show-secondary();
+
+    background: Colors.bg-elevated;
+    border-radius: Spacing.sm;
+    border-width: root.border-px;
+    border-color: Colors.border;
+    drop-shadow-blur: Spacing.sm;
+    drop-shadow-color: Colors.shadow;
+
+    HorizontalLayout {
+        padding: Spacing.xs;
+        alignment: start;
+
+        for item in root.primary: CbfPrimaryBtn {
+            item: item;
+            activated(id) => { root.item-activated(id); }
+        }
+
+        if root.has-secondary: CbfOverflowBtn {
+            show-secondary => { root.show-secondary(); }
+        }
+    }
+}

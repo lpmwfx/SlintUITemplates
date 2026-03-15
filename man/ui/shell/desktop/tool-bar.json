@@ -1,0 +1,26 @@
+{
+  "source": "ui/shell/desktop/tool-bar.slint",
+  "items": [
+    {
+      "name": "ShellToolbar",
+      "kind": "component",
+      "signature": "export component ShellToolbar inherits Rectangle",
+      "line": 6,
+      "doc": ""
+    },
+    {
+      "name": "items",
+      "kind": "property",
+      "signature": "in property <[ShellToolbarItem]> items;",
+      "line": 7,
+      "doc": ""
+    },
+    {
+      "name": "item-clicked",
+      "kind": "callback",
+      "signature": "callback item-clicked(string);",
+      "line": 8,
+      "doc": ""
+    }
+  ]
+}

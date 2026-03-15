@@ -1,9 +1,16 @@
 import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
+import { Variants } from "../globals/Variants.slint";
 
+/// Generic action button with Fluent-style variants and hover feedback.
 export component Button inherits Rectangle {
+    /// Text rendered in the button body.
     in property <string> label: "Button";
-    in property <string> variant: "primary";   // primary | secondary | ghost | danger
+    /// Visual style key: `primary`, `secondary`, `ghost`, or `danger`.
+    in property <string> variant: Variants.primary;   // primary | secondary | ghost | danger
+    /// Enables pointer interaction and active styling when `true`.
     in property <bool> enabled: true;
+    /// Fired when the user activates the button.
     callback clicked();
 
     height: Spacing.xl;
@@ -12,27 +19,27 @@ export component Button inherits Rectangle {
 
     // Variant colors
     property <color> bg-normal:
-        variant == "primary"   ? Colors.accent :
-        variant == "secondary" ? Colors.bg-surface :
-        variant == "danger"    ? Colors.error :
+        variant == Variants.primary   ? Colors.accent :
+        variant == Variants.secondary ? Colors.bg-surface :
+        variant == Variants.danger    ? Colors.error :
         transparent;
 
     property <color> bg-hover:
-        variant == "primary"   ? Colors.accent-hover :
-        variant == "secondary" ? Colors.bg-elevated :
-        variant == "danger"    ? Colors.error :
+        variant == Variants.primary   ? Colors.accent-hover :
+        variant == Variants.secondary ? Colors.bg-elevated :
+        variant == Variants.danger    ? Colors.error :
         Colors.bg-surface;
 
     property <color> text-color:
         !enabled ? Colors.text-disabled :
-        variant == "primary"   ? Colors.accent-text :
-        variant == "danger"    ? Colors.accent-text :
+        variant == Variants.primary   ? Colors.accent-text :
+        variant == Variants.danger    ? Colors.accent-text :
         Colors.text-primary;
 
     background: !enabled ? Colors.bg-surface :
                 ta.has-hover ? bg-hover : bg-normal;
 
-    border-width: variant == "secondary" ? 1px : 0;
+    border-width: variant == Variants.secondary ? Sizes.border-w : Sizes.no-size;
     border-color: Colors.border;
 
     ta := TouchArea {

@@ -71,13 +71,31 @@ DSL v2: named slots with explicit ratios
   → drag(panels, 0, delta) → zero-sum flex, both neighbors update
 ```
 
+## Theme global + barrel alias
+
+`Theme` is the unified color global. `Colors` is a barrel alias for `Theme` —
+they are the same Slint singleton.
+
+```
+ui/tokens/theme.slint:
+  export { Theme }            from "../state/Theme.slint";
+  export { Theme as Colors }  from "../state/Theme.slint";
+```
+
+The 39+ component files that use `Colors.*` need zero changes. Rust uses `Theme`:
+
+```rust
+ui.global::<Theme>().set_dark(true);
+ui.global::<Theme>().set_material("mica".into());
+```
+
 ## Settings Pipeline
 
 ```
 AppSettings (Rust/TOML)
   → AppAdapter::apply_settings()
-    → Colors.dark-mode
-    → Colors.accent
+    → Theme.dark          (light/dark mode)
+    → Theme.accent-override
     → Settings.zoom
     → Settings.icon-style
     → Settings.icon-color

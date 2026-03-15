@@ -1,0 +1,58 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { DropdownMenu, DropdownMenuItem } from "../shared/dropdown-menu.slint";
+
+/// P op up dr op do wn de mo component.
+export component PopupDropdownDemo inherits Rectangle {
+    /// Input property "window-height".
+    in property <length> window-height;
+
+    /// Private property "demo-w" used internally.
+    private property <length> demo-w:    160px;
+    /// Private property "border-px" used internally.
+    private property <length> border-px: 1px;
+    /// Private property "h-stretch" used internally.
+    private property <int>    h-stretch: 1;
+
+    height: Spacing.control-lg;
+    width: root.demo-w;
+
+    dd := DropdownMenu { window-height: root.window-height;
+        items: [
+            { id: "new",    label: "New file",   icon: "\u{E8A5}", disabled: false, separator: false },
+            { id: "open",   label: "Open...",    icon: "\u{E8DA}", disabled: false, separator: false },
+            { id: "sep1",   label: "",           icon: "",         disabled: false, separator: true  },
+            { id: "save",   label: "Save",       icon: "\u{E74E}", disabled: false, separator: false },
+            { id: "saveas", label: "Save As...", icon: "",         disabled: true,  separator: false },
+        ];
+        activated(id) => { debug("dropdown: " + id); }
+    }
+
+    Rectangle {
+        width: parent.width;
+        height: parent.height;
+        border-radius: Spacing.xs;
+        border-width: root.border-px;
+        border-color: Colors.border;
+        background: btn-ta.has-hover ? Colors.bg-elevated : Colors.bg-surface;
+
+        HorizontalLayout {
+            padding-left: Spacing.sm;
+            padding-right: Spacing.sm;
+            Text { text: "File menu";
+                font-size: Type.body-size;
+                color: Colors.text-primary;
+                vertical-alignment: center;
+                horizontal-stretch: root.h-stretch;
+            }
+            Text { text: "▼";
+                font-size: Type.caption-size;
+                color: Colors.text-secondary;
+                vertical-alignment: center;
+            }
+        }
+
+        btn-ta := TouchArea {
+            clicked => { dd.show-at(self.mouse-x, self.mouse-y); }
+        }
+    }
+}

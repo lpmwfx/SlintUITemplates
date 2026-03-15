@@ -6,21 +6,30 @@
 ///
 /// This is the Rust owner of all layout math. Slint is pure render.
 
-use super::constraints::Constraint;
+use crate::layout::constraints::Constraint;
+
+/// Tolerance for floating-point ratio sum checks.
+const RATIO_EPSILON: f32 = 0.001;
 
 /// A resizable panel with a normalized ratio and min/max constraints.
 #[derive(Debug, Clone)]
+/// P an el struct.
 pub struct Panel {
+    /// I d.
     pub id:    String,
+    /// R at io.
     pub ratio: f32,
+    /// C on st ra in t.
     pub constraint: Constraint,
 }
 
 impl Panel {
+    /// Create a panel with the given id and initial ratio, using default constraints.
     pub fn new(id: impl Into<String>, ratio: f32) -> Self {
         Self { id: id.into(), ratio, constraint: Constraint::default() }
     }
 
+    /// Set custom min/max ratio constraints on this panel (builder pattern).
     pub fn with_constraint(mut self, min: f32, max: f32) -> Self {
         self.constraint = Constraint::new(min, max);
         self
@@ -70,7 +79,7 @@ pub fn normalize(panels: &mut [Panel]) {
 /// Verify that panel ratios sum to approximately 1.0.
 pub fn check_sum(panels: &[Panel]) -> bool {
     let total: f32 = panels.iter().map(|p| p.ratio).sum();
-    (total - 1.0).abs() < 0.001
+    (total - 1.0).abs() < RATIO_EPSILON
 }
 
 #[cfg(test)]

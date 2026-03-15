@@ -1,0 +1,21 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+
+// SearchIcon — icon wrapper for SearchInput.
+/// S ea rc hi co n component.
+export component SearchIcon inherits Rectangle {
+    /// Input property "icon".
+    in property <string> icon;
+    /// Input property "font-name".
+    in property <string> font-name;
+
+    width: Spacing.lg;
+
+    Text {
+        text: root.icon;
+        font-family: root.font-name;
+        font-size: Type.body-size;
+        color: Colors.text-secondary;
+        horizontal-alignment: center;
+        vertical-alignment: center;
+    }
+}

@@ -1,0 +1,49 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
+import { Variants } from "../globals/Variants.slint";
+
+/// T oo lt ip component.
+export component Tooltip inherits Rectangle {
+    /// Input property "text".
+    in property <string> text: "";
+    /// Input property "placement".
+    in property <string> placement: Variants.top;   // top | bottom | left | right
+    /// Input property "enabled".
+    in property <bool>   enabled: true;
+    @children
+
+    background: transparent;
+
+    ta := TouchArea {}
+
+    // Tooltip popup
+    if ta.has-hover && root.enabled && root.text != "": tip-rect := Rectangle {
+        property <length> tip-w: tip-text.preferred-width + Spacing.sm * Sizes.two;
+        property <length> tip-h: Type.caption-size + Spacing.sm * Sizes.two;
+
+        x: root.placement == Variants.left  ? -(tip-w + Spacing.xs) :
+           root.placement == Variants.right ? root.width + Spacing.xs :
+           (root.width - tip-w) / Sizes.two;
+
+        y: root.placement == Variants.bottom ? root.height + Spacing.xs :
+           root.placement == Variants.top    ? -(tip-h + Spacing.xs) :
+           (root.height - tip-h) / Sizes.two;
+
+        width: tip-w;
+        height: tip-h;
+        background: Colors.bg-elevated;
+        border-radius: Spacing.xs;
+        border-width: Sizes.border-w;
+        border-color: Colors.border;
+        drop-shadow-blur: Spacing.xs;
+        drop-shadow-color: Colors.shadow;
+
+        tip-text := Text {
+            x: Spacing.sm;
+            y: Spacing.sm;
+            text: root.text;
+            font-size: Type.caption-size;
+            color: Colors.text-primary;
+        }
+    }
+}

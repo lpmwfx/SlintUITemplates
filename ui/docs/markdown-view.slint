@@ -1,0 +1,70 @@
+import { Spacing }      from "../tokens/theme.slint";
+import { Sizes }        from "../tokens/sizes.slint";
+import { Variants }     from "../globals/Variants.slint";
+import { DocBlock }     from "doc-block.slint";
+import { MdHeading }    from "MdHeading.slint";
+import { MdParagraph }  from "MdParagraph.slint";
+import { MdCodeBlock }  from "MdCodeBlock.slint";
+import { MdListItem }   from "MdListItem.slint";
+import { MdTable }      from "MdTable.slint";
+import { MdBlockquote } from "MdBlockquote.slint";
+
+// MarkdownView — embeddable scrollable markdown renderer.
+//
+// Push a [DocBlock] model (from Rust docs::parse()) and the view
+// renders headings, paragraphs, code blocks, lists, tables, blockquotes.
+//
+// Usage:
+//   import { MarkdownView, DocBlock } from "docs/markdown-view.slint";
+//   MarkdownView { blocks: root.my-blocks; }
+/// M ar kd ow nv ie w component.
+export component MarkdownView inherits Rectangle {
+    /// Input property "blocks".
+    in property <[DocBlock]> blocks: [];
+    /// Input property "bullet-char".
+    in property <string> bullet-char: "\u{2022}";
+    /// Input property "bullet-sub-char".
+    in property <string> bullet-sub-char: "\u{25E6}";
+    /// Input property "mono-font".
+    in property <string> mono-font: "Consolas";
+
+    clip: true;
+
+    Flickable {
+        width: parent.width;
+        height: parent.height;
+        viewport-height: blocks-vl.preferred-height + Spacing.xl * Sizes.two;
+        interactive: true;
+
+        blocks-vl := VerticalLayout {
+            x: Spacing.xl;
+            y: Spacing.lg;
+            width: parent.width - Spacing.xl * Sizes.two;
+            spacing: Sizes.no-size;
+
+            for block in root.blocks: VerticalLayout {
+                width: parent.width;
+
+                if block.kind == Variants.h1 || block.kind == Variants.h2 || block.kind == Variants.h3:
+                    MdHeading { kind: block.kind; text: block.text; }
+
+                if block.kind == Variants.p:
+                    MdParagraph { text: block.text; }
+
+                if block.kind == Variants.code:
+                    MdCodeBlock { text: block.text; mono-font: root.mono-font; }
+
+                if block.kind == Variants.li || block.kind == Variants.li2:
+                    MdListItem { kind: block.kind; text: block.text; bullet-char: root.bullet-char; bullet-sub-char: root.bullet-sub-char; }
+
+                if block.kind == Variants.th || block.kind == Variants.tr:
+                    MdTable { kind: block.kind; text: block.text; mono-font: root.mono-font; }
+
+                if block.kind == Variants.hr || block.kind == Variants.bq:
+                    MdBlockquote { kind: block.kind; text: block.text; }
+            }
+
+            Rectangle { height: Spacing.xl; }
+        }
+    }
+}

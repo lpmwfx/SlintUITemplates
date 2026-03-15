@@ -1,24 +1,42 @@
-import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Colors, Spacing } from "../tokens/theme.slint";
+import { Sizes }       from "../tokens/sizes.slint";
+import { NavId }       from "../globals/NavId.slint";
 import { NavBar }      from "../desktop/nav-bar.slint";
 import { ContentArea } from "../desktop/content-area.slint";
 import { StatusBar }   from "../desktop/status-bar.slint";
 import { NavItem }     from "../desktop/types.slint";
+import { MobileNavItem } from "MobileNavItem.slint";
 
 export { NavItem }
 
+/// A pp wi nd ow component.
 export component AppWindow inherits Window {
-    preferred-width: 390px;
-    preferred-height: 844px;
-    title: "SlintUITemplates — Mobile";
+    preferred-width: Sizes.mobile-width;
+    preferred-height: Sizes.mobile-height;
+    title: root.app-title;
     background: Colors.bg-primary;
 
-    in-out property <string>    active-view: "home";
+    /// Private property "app-title" used internally.
+    private property <string> app-title: "SlintUITemplates \u{2014} Mobile";
+    /// Private property "icon-home" used internally.
+    private property <string> icon-home: "\u{1F3E0}";
+    /// Private property "icon-list" used internally.
+    private property <string> icon-list: "\u{1F4CB}";
+    /// Private property "icon-settings" used internally.
+    private property <string> icon-settings: "\u{2699}";
+    /// Private property "status-prefix" used internally.
+    private property <string> status-prefix: "View: ";
+
+    /// Two-way property "active-view".
+    in-out property <string>    active-view: NavId.home;
+    /// Two-way property "nav-items".
     in-out property <[NavItem]> nav-items: [
-        { id: "home",     label: "Home",     icon: "🏠" },
-        { id: "list",     label: "List",     icon: "📋" },
-        { id: "settings", label: "Settings", icon: "⚙" },
+        { id: NavId.home,     label: "Home",     icon: root.icon-home },
+        { id: NavId.list,     label: "List",     icon: root.icon-list },
+        { id: NavId.settings, label: "Settings", icon: root.icon-settings },
     ];
 
+    /// Callback fired for n av ig at e.
     callback navigate(string);
     navigate(view) => { self.active-view = view; }
 
@@ -26,13 +44,13 @@ export component AppWindow inherits Window {
         // Top nav bar
         NavBar {
             breadcrumb: root.active-view;
-            can-go-back: root.active-view != "home";
-            go-back => { root.active-view = "home"; }
+            can-go-back: root.active-view != NavId.home;
+            go-back => { root.active-view = NavId.home; }
         }
 
         // Content area fills remaining space
         ContentArea {
-            vertical-stretch: 1;
+            vertical-stretch: Sizes.one;
             active-view: root.active-view;
             navigate(view) => { root.active-view = view; }
         }
@@ -43,39 +61,19 @@ export component AppWindow inherits Window {
             background: Colors.bg-surface;
 
             HorizontalLayout {
-                for item in root.nav-items: Rectangle {
-                    horizontal-stretch: 1;
-                    background: transparent;
-
-                    tab-ta := TouchArea {
-                        clicked => { root.active-view = item.id; }
-                    }
-
-                    VerticalLayout {
-                        alignment: center;
-                        spacing: Spacing.xs;
-
-                        Text {
-                            text: item.icon;
-                            font-size: Type.subtitle-size;
-                            color: item.id == root.active-view ? Colors.accent : Colors.text-secondary;
-                            horizontal-alignment: center;
-                        }
-
-                        Text {
-                            text: item.label;
-                            font-size: Type.caption-size;
-                            color: item.id == root.active-view ? Colors.accent : Colors.text-secondary;
-                            horizontal-alignment: center;
-                        }
-                    }
+                for item in root.nav-items: MobileNavItem {
+                    item-id: item.id;
+                    icon: item.icon;
+                    label: item.label;
+                    is-active: item.id == root.active-view;
+                    clicked => { root.active-view = item.id; }
                 }
             }
         }
 
         // Status bar
         StatusBar {
-            status-text: "View: " + root.active-view;
+            status-text: root.status-prefix + root.active-view;
         }
     }
 }

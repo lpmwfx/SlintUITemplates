@@ -23,19 +23,26 @@ component MyComponent inherits Rectangle {
 
 ## Colors
 
-| Token | Light | Dark | Usage |
-|-------|-------|------|-------|
-| `Colors.bg-primary` | #FFFFFF | #202020 | Window background |
-| `Colors.bg-surface` | #F3F3F3 | #2C2C2C | Cards, panels |
-| `Colors.bg-elevated` | #FFFFFF | #383838 | Overlays, elevated |
-| `Colors.text-primary` | #1C1C1C | #FFFFFF | Body text |
-| `Colors.text-secondary` | #616161 | #9D9D9D | Supporting text |
-| `Colors.text-disabled` | #A0A0A0 | #6B6B6B | Disabled |
-| `Colors.accent` | #0078D4 | #60CDFF | Interactive, selection |
-| `Colors.accent-hover` | #106EBE | #4CC2F1 | Hover state |
-| `Colors.border` | #E0E0E0 | #3D3D3D | Default borders |
-| `Colors.border-strong` | #C0C0C0 | #575757 | Emphasized borders |
-| `Colors.error` | #C42B1C | #C42B1C | Error states |
+`Colors` is an alias for `Theme` — see [theme-system.md](theme-system.md) for the
+full 6-palette table (solid/mica/acrylic × dark/light). Below: solid mode values.
+
+| Token | Solid light | Solid dark | Usage |
+|-------|-------------|------------|-------|
+| `Colors.bg-primary` | `#FFFFFF` | `#202020` | Window background |
+| `Colors.bg-surface` | `#F3F3F3` | `#2C2C2C` | Cards, panels — LayerFillColorDefault |
+| `Colors.bg-elevated` | `#FFFFFF` | `#383838` | Elevated surfaces |
+| `Colors.text-primary` | `#1C1C1C` | `#FFFFFF` | Body text |
+| `Colors.text-secondary` | `#616161` | `#9D9D9D` | Supporting text |
+| `Colors.text-disabled` | `#A0A0A0` | `#6B6B6B` | Disabled states |
+| `Colors.accent` | `#0078D4` | `#60CDFF` | Interactive, selection |
+| `Colors.accent-hover` | `#106EBE` | `#4CC2F1` | Hover state |
+| `Colors.border` | `#E0E0E0` | `#3D3D3D` | Default borders |
+| `Colors.border-strong` | `#C0C0C0` | `#575757` | Emphasized borders |
+| `Colors.error` | `#C42B1C` | `#C42B1C` | Error states |
+
+On Mica/Acrylic: `bg-primary` = `transparent` (OS provides backdrop),
+surfaces use WinUI3 `LayerFillColorDefault` tints, text uses opacity-based
+`TextFillColor*` tokens. See [theme-system.md](theme-system.md).
 
 ## Spacing
 

@@ -1,0 +1,19 @@
+{
+  "source": "ui/viewer/viewer-section.slint",
+  "items": [
+    {
+      "name": "ViewerSection",
+      "kind": "component",
+      "signature": "export component ViewerSection inherits VerticalLayout",
+      "line": 6,
+      "doc": ""
+    },
+    {
+      "name": "title",
+      "kind": "property",
+      "signature": "in property <string> title;",
+      "line": 7,
+      "doc": ""
+    }
+  ]
+}

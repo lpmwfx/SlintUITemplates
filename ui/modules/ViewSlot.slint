@@ -12,8 +12,11 @@
 //       ViewSlot { slot-id: "settings"; active: root.active-view; SettingsView {} }
 //   }
 
+/// V ie ws lo t component.
 export component ViewSlot inherits Rectangle {
+    /// Input property "slot-id".
     in property <string> slot-id;
+    /// Input property "active".
     in property <string> active;
 
     visible: root.slot-id == root.active;

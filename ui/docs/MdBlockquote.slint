@@ -1,0 +1,50 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Sizes }                 from "../tokens/sizes.slint";
+import { Variants }              from "../globals/Variants.slint";
+
+// MdBlockquote — renders horizontal rule (hr) and blockquote (bq) blocks.
+/// M db lo ck qu ot e component.
+export component MdBlockquote inherits VerticalLayout {
+    /// Input property "kind".
+    in property <string> kind;
+    /// Input property "text".
+    in property <string> text;
+
+    /// Private property "bar-w" used internally.
+    private property <length> bar-w: Sizes.border-w-3;
+    /// Private property "bar-radius" used internally.
+    private property <length> bar-radius: Sizes.border-w-2;
+
+    // Horizontal rule
+    if root.kind == Variants.hr: VerticalLayout {
+        padding-top: Spacing.sm;
+        padding-bottom: Spacing.sm;
+
+        Rectangle { height: Sizes.border-w; background: Colors.border-strong; }
+    }
+
+    // Blockquote
+    if root.kind == Variants.bq: VerticalLayout {
+        width: parent.width;
+        padding-top: Spacing.xs;
+        padding-bottom: Spacing.xs;
+
+        HorizontalLayout {
+            width: parent.width;
+            spacing: Spacing.sm;
+
+            Rectangle {
+                width: root.bar-w;
+                background: Colors.accent;
+                border-radius: root.bar-radius;
+            }
+            Text {
+                horizontal-stretch: Sizes.one;
+                text: root.text;
+                font-size: Type.body-size;
+                color: Colors.text-secondary;
+                wrap: word-wrap;
+            }
+        }
+    }
+}

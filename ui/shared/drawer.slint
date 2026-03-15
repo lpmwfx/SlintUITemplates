@@ -1,0 +1,70 @@
+import { Colors, Spacing, FluentMotion } from "../tokens/theme.slint";
+import { DrawerHeader } from "drawer-header.slint";
+
+/// D ra we r component.
+export component Drawer inherits Rectangle {
+    /// Input property "open".
+    in property <bool>   open: false;
+    /// Input property "placement".
+    in property <string> placement: "left";    // left | right
+    /// Input property "drawer-width".
+    in property <length> drawer-width: 280px;
+    /// Input property "title".
+    in property <string> title: "";
+    /// Callback fired for c lo se r eq ue st ed.
+    callback close-requested();
+
+    /// Private property "place-right" used internally.
+    private property <string> place-right: "right";
+    /// Private property "border-px" used internally.
+    private property <length> border-px:   1px;
+    /// Private property "zero-len" used internally.
+    private property <length> zero-len:    0px;
+    /// Private property "no-gap" used internally.
+    private property <length> no-gap:      0px;
+    /// Private property "anim-dur" used internally.
+    private property <duration> anim-dur:  200ms;
+    /// Private property "panel-x" used internally.
+    private property <length> panel-x:
+        placement == root.place-right
+            ? (open ? root.width - root.drawer-width : root.width)
+            : (open ? root.zero-len : -root.drawer-width);
+
+    animate panel-x { duration: root.anim-dur; easing: ease-out; }
+
+    clip: true;
+    background: transparent;
+
+    if root.open: Rectangle {
+        width: parent.width;
+        height: parent.height;
+        background: Colors.overlay;
+
+        TouchArea {
+            clicked => { root.close-requested(); }
+        }
+    }
+
+    panel := Rectangle {
+        x: root.panel-x;
+        width: root.drawer-width;
+        height: parent.height;
+        background: Colors.bg-elevated;
+        border-width: root.border-px;
+        border-color: Colors.border;
+        drop-shadow-blur: Spacing.md;
+        drop-shadow-color: Colors.shadow;
+        clip: true;
+
+        VerticalLayout {
+            spacing: root.no-gap;
+
+            DrawerHeader {
+                title: root.title;
+                close-requested => { root.close-requested(); }
+            }
+
+            @children
+        }
+    }
+}

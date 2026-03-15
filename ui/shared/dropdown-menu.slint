@@ -1,0 +1,68 @@
+import { Colors, Spacing } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
+import { DropdownMenuItem }              from "dropdown-entry.slint";
+import { PopupContent }                  from "PopupContent.slint";
+
+export { DropdownMenuItem }
+
+/// D ro pd ow nm en u component.
+export component DropdownMenu inherits Rectangle {
+    /// Input property "items".
+    in property <[DropdownMenuItem]> items: [];
+    /// Input property "window-height".
+    in property <length>             window-height;
+    /// Input property "separator-count".
+    in property <int>                separator-count: 0;
+    /// Callback fired for a ct iv at ed.
+    callback activated(string);
+
+    /// Private property "pop-x" used internally.
+    private property <length> pop-x:     Sizes.no-size;
+    /// Private property "pop-y" used internally.
+    private property <length> pop-y:     Sizes.no-size;
+    /// Private property "border-px" used internally.
+    private property <length> border-px: 1px;
+    /// Private property "popup-w" used internally.
+    private property <length> popup-w:   220px;
+    /// Private property "est-popup-h" used internally.
+    private property <length> est-popup-h:
+        (items.length - root.separator-count) * Spacing.xl
+        + root.separator-count * Spacing.xs
+        + Spacing.sm * Sizes.two;
+    /// Private property "popup-h" used internally.
+    private property <length> popup-h:
+        root.window-height > root.pop-y
+            && root.est-popup-h > root.window-height - Spacing.md * Sizes.two
+            ? root.window-height - Spacing.md * Sizes.two
+            : root.est-popup-h;
+
+    background: transparent;
+
+    popup := PopupWindow {
+        x: root.pop-x;
+        y: root.pop-y;
+        width: root.popup-w;
+        height: root.popup-h;
+
+        PopupContent {
+            items: root.items;
+            est-popup-h: root.est-popup-h;
+            border-px: root.border-px;
+            item-activated(id) => { root.activated(id); popup.close(); }
+        }
+    }
+
+    public function show-at(xp: length, yp: length) {
+        root.pop-x = xp;
+        if root.window-height > root.pop-y
+                && root.absolute-position.y + yp + root.popup-h > root.window-height {
+            root.pop-y = yp - root.popup-h;
+            if root.absolute-position.y + root.pop-y < root.pop-x - root.pop-x {
+                root.pop-y = root.pop-x - root.pop-x;
+            }
+        } else {
+            root.pop-y = yp;
+        }
+        popup.show();
+    }
+}

@@ -1,0 +1,58 @@
+import { Colors, Spacing, Type, FluentIcons } from "../tokens/theme.slint";
+
+/// D ra we rh ea de r component.
+export component DrawerHeader inherits Rectangle {
+    /// Input property "title".
+    in property <string> title: "";
+    /// Callback fired for c lo se r eq ue st ed.
+    callback close-requested();
+
+    /// Private property "border-px" used internally.
+    private property <length> border-px:  1px;
+    /// Private property "h-stretch" used internally.
+    private property <int>    h-stretch:  1;
+
+    height: Spacing.xl;
+    background: Colors.bg-surface;
+
+    // Bottom border
+    Rectangle {
+        y: parent.height - root.border-px;
+        width: parent.width;
+        height: root.border-px;
+        background: Colors.border;
+    }
+
+    HorizontalLayout {
+        padding-left: Spacing.md;
+        padding-right: Spacing.sm;
+
+        if root.title != "": Text {
+            text: root.title;
+            font-size: Type.subtitle-size;
+            font-weight: Type.weight-semibold;
+            color: Colors.text-primary;
+            vertical-alignment: center;
+            horizontal-stretch: root.h-stretch;
+        }
+
+        Rectangle {
+            width: Spacing.control-md;
+            height: Spacing.control-md;
+            border-radius: Spacing.xs;
+            background: cls-ta.has-hover ? Colors.bg-elevated : transparent;
+
+            Text { text: "\u{E711}";
+                font-family: FluentIcons.icon-font;
+                font-size: Type.body-size;
+                color: Colors.text-secondary;
+                horizontal-alignment: center;
+                vertical-alignment: center;
+            }
+
+            cls-ta := TouchArea {
+                clicked => { root.close-requested(); }
+            }
+        }
+    }
+}

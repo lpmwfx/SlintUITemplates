@@ -1,0 +1,71 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
+import { StepperCircle } from "StepperCircle.slint";
+
+/// S te pi te m struct.
+export struct StepItem {
+    label: string,
+    completed: bool,
+}
+
+/// S te pp er component.
+export component Stepper inherits Rectangle {
+    /// Input property "steps".
+    in property <[StepItem]> steps: [];
+    /// Input property "active".
+    in property <int>    active: Sizes.zero;
+    /// Callback fired for s te p c ha ng ed.
+    callback step-changed(int);
+
+    // Named constants instead of inline literals
+    /// Private property "circle-size" used internally.
+    private property <length> circle-size:    Spacing.control-md - Spacing.xs;
+    /// Private property "connector-w" used internally.
+    private property <length> connector-w:    Spacing.xl;
+    /// Private property "connector-h" used internally.
+    private property <length> connector-h:    Sizes.border-w-2;
+
+    height: root.circle-size + Type.caption-size + Spacing.xs;
+    background: transparent;
+
+    HorizontalLayout {
+        alignment: center;
+        spacing: Sizes.no-size;
+
+        for step[i] in root.steps: HorizontalLayout {
+            spacing: Sizes.no-size;
+            alignment: center;
+
+            VerticalLayout {
+                alignment: center;
+                spacing: Spacing.xs;
+                width: root.circle-size + Spacing.lg;
+
+                StepperCircle {
+                    x: (parent.width - root.circle-size) / Sizes.two;
+                    circle-size: root.circle-size;
+                    completed: step.completed;
+                    is-active: i == root.active;
+                    index: i;
+                    clicked => { root.step-changed(i); }
+                }
+
+                Text {
+                    width: parent.width;
+                    text: step.label;
+                    font-size: Type.caption-size;
+                    color: i == root.active ? Colors.text-primary : Colors.text-secondary;
+                    horizontal-alignment: center;
+                    wrap: no-wrap;
+                }
+            }
+
+            if i < root.steps.length - Sizes.one: Rectangle {
+                width:  root.connector-w;
+                height: root.connector-h;
+                y: root.circle-size / Sizes.two;
+                background: step.completed ? Colors.accent : Colors.border;
+            }
+        }
+    }
+}

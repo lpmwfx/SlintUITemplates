@@ -1,0 +1,58 @@
+// Acrylic material palette — blur+tint+exclusion blend provides the backdrop.
+// bg-primary is transparent — surfaces use minimal tints so the blur effect shows through.
+// Text colors use WinUI3 TextFillColor* opacity tokens (RRGGBBAA in Slint).
+
+/// A cr yl ic global values.
+export global Acrylic {
+    // ── Dark ──────────────────────────────────────────────────────────────────
+    /// Output property "dark-bg-primary".
+    out property <color> dark-bg-primary:     transparent;
+    /// Output property "dark-bg-surface".
+    out property <color> dark-bg-surface:     #FFFFFF08;   // ~3% — recedes behind blur
+    /// Output property "dark-bg-elevated".
+    out property <color> dark-bg-elevated:    #FFFFFF12;   // ~7%
+    /// Output property "dark-text-primary".
+    out property <color> dark-text-primary:   #FFFFFFFF;   // TextFillColorPrimary   dark 100%
+    /// Output property "dark-text-secondary".
+    out property <color> dark-text-secondary: #FFFFFFC8;   // TextFillColorSecondary dark 78%
+    /// Output property "dark-text-disabled".
+    out property <color> dark-text-disabled:  #FFFFFF5C;   // TextFillColorDisabled  dark 36%
+    /// Output property "dark-accent".
+    out property <color> dark-accent:         #60CDFF;
+    /// Output property "dark-accent-hover".
+    out property <color> dark-accent-hover:   #4CC2F1;
+    /// Output property "dark-accent-text".
+    out property <color> dark-accent-text:    #000000;
+    /// Output property "dark-border".
+    out property <color> dark-border:         #FFFFFF14;
+    /// Output property "dark-border-strong".
+    out property <color> dark-border-strong:  #FFFFFF28;
+    /// Output property "dark-shadow".
+    out property <color> dark-shadow:         #00000066;
+
+    // ── Light ─────────────────────────────────────────────────────────────────
+    /// Output property "light-bg-primary".
+    out property <color> light-bg-primary:     transparent;
+    /// Output property "light-bg-surface".
+    out property <color> light-bg-surface:     #FFFFFF60;  // 38%
+    /// Output property "light-bg-elevated".
+    out property <color> light-bg-elevated:    #FFFFFF99;  // 60%
+    /// Output property "light-text-primary".
+    out property <color> light-text-primary:   #000000E4;  // TextFillColorPrimary   light 89%
+    /// Output property "light-text-secondary".
+    out property <color> light-text-secondary: #0000009A;  // TextFillColorSecondary light 60%
+    /// Output property "light-text-disabled".
+    out property <color> light-text-disabled:  #0000005C;  // TextFillColorDisabled  light 36%
+    /// Output property "light-accent".
+    out property <color> light-accent:         #0078D4;
+    /// Output property "light-accent-hover".
+    out property <color> light-accent-hover:   #106EBE;
+    /// Output property "light-accent-text".
+    out property <color> light-accent-text:    #FFFFFF;
+    /// Output property "light-border".
+    out property <color> light-border:         #00000014;
+    /// Output property "light-border-strong".
+    out property <color> light-border-strong:  #00000028;
+    /// Output property "light-shadow".
+    out property <color> light-shadow:         #00000014;
+}

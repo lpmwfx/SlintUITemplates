@@ -1,0 +1,25 @@
+import { Colors, Spacing, Type, FluentIcons } from "../tokens/theme.slint";
+
+/// C bf ov er fl ow bt n component.
+export component CbfOverflowBtn inherits Rectangle {
+    /// Callback fired for s ho w s ec on da ry.
+    callback show-secondary();
+
+    width: Spacing.xl;
+    height: Spacing.xl;
+    border-radius: Spacing.xs;
+    background: ta.has-hover ? Colors.bg-surface : transparent;
+
+    Text {
+        text: "\u{E712}";
+        font-family: FluentIcons.icon-font;
+        font-size: Type.body-size;
+        color: Colors.text-primary;
+        horizontal-alignment: center;
+        vertical-alignment: center;
+    }
+
+    ta := TouchArea {
+        clicked => { root.show-secondary(); }
+    }
+}

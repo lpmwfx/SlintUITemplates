@@ -1,0 +1,26 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Sizes }                   from "../tokens/sizes.slint";
+import { DragHandle }              from "../modules/DragHandle.slint";
+
+// Demo box with a live column drag handle.
+component ColHandleDemo inherits Rectangle {
+    /// Private property "split" used internally.
+    private property <length> split: Sizes.thumb-md;
+
+    width: Sizes.panel-md;
+    height: Sizes.thumb-sm;
+    border-width: Sizes.border-w;
+    border-color: Colors.border;
+    clip: true;
+
+    HorizontalLayout {
+        Rectangle { width: root.split; background: Colors.bg-surface; }
+        DragHandle {
+            min-width: Spacing.handle-thickness;
+            max-width: Spacing.handle-thickness;
+            vertical: false;
+            dragged(dx, dy) => { root.split = clamp(root.split + dx * Sizes.border-w, Sizes.icon-md, Sizes.panel-xs); }
+        }
+        Rectangle { horizontal-stretch: Sizes.one; background: Colors.bg-elevated; }
+    }
+}

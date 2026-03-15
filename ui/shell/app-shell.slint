@@ -7,15 +7,26 @@ import { DesktopShell } from "desktop/shell.slint";
 
 export { MobileShell } from "mobile/shell.slint";
 
+/// Cross-platform shell facade used by the viewer and host applications.
+///
+/// On desktop it wraps `DesktopShell`; mobile variants are re-exported separately.
 export component AppShell inherits Rectangle {
+    /// Navigation items rendered in the shell navigation surface.
     in property <[NavItem]>          nav-items;
+    /// Id of the currently active content slot.
     in property <string>             active-slot;
+    /// Controls whether the desktop toolbar row is visible.
     in property <bool>               show-toolbar:  false;
+    /// Toolbar buttons rendered below the desktop menu bar.
     in property <[ShellToolbarItem]> toolbar-items;
+    /// Status text shown in the desktop status bar.
     in property <string>             status-text:   "Ready";
+    /// Optional progress value for the desktop status bar. Negative hides it.
     in property <float>              progress:      -1.0;
 
+    /// Fired when navigation changes the active slot id.
     callback slot-changed(string);
+    /// Fired when a toolbar button is activated.
     callback toolbar-clicked(string);
 
     DesktopShell {

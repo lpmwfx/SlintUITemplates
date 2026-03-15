@@ -1,7 +1,12 @@
 use slint::ComponentHandle;
-use crate::{AppWindow, Colors, Settings as UiSettings};
-use crate::adapter::is_dark_mode;
+use crate::{AppWindow, Theme, Settings as UiSettings};
+use crate::pal::is_dark_mode;
 use super::{AppSettings, ThemeMode};
+
+/// Expected length of a hex color string (without '#' prefix).
+const HEX_COLOR_LEN: usize = 6;
+/// Radix for parsing hex color channel values.
+const HEX_RADIX: u32 = 16;
 
 /// Push all settings to the Slint globals of the given AppWindow.
 /// Called by AppAdapter::apply_settings().
@@ -12,11 +17,11 @@ pub fn apply(ui: &AppWindow, settings: &AppSettings) {
         ThemeMode::Dark   => true,
         ThemeMode::Light  => false,
     };
-    ui.global::<Colors>().set_dark_mode(dark);
+    ui.global::<Theme>().set_dark(dark);
 
     if let Some(hex) = &settings.theme.accent {
         if let Some(color) = hex_to_color(hex) {
-            ui.global::<Colors>().set_accent(color);
+            ui.global::<Theme>().set_accent_override(color);
         }
     }
 
@@ -31,10 +36,10 @@ pub fn apply(ui: &AppWindow, settings: &AppSettings) {
 
 fn hex_to_color(s: &str) -> Option<slint::Color> {
     let s = s.trim_start_matches('#');
-    if s.len() == 6 {
-        let r = u8::from_str_radix(&s[0..2], 16).ok()?;
-        let g = u8::from_str_radix(&s[2..4], 16).ok()?;
-        let b = u8::from_str_radix(&s[4..6], 16).ok()?;
+    if s.len() == HEX_COLOR_LEN {
+        let r = u8::from_str_radix(&s[0..2], HEX_RADIX).ok()?;
+        let g = u8::from_str_radix(&s[2..4], HEX_RADIX).ok()?;
+        let b = u8::from_str_radix(&s[4..6], HEX_RADIX).ok()?;
         Some(slint::Color::from_rgb_u8(r, g, b))
     } else {
         None

@@ -1,64 +1,78 @@
+/// Applies loaded settings to the live Slint UI globals.
 pub mod apply;
+/// Default implementations for all settings structs.
+mod defaults;
 
 use serde::{Deserialize, Serialize};
-use std::path::Path;
 
+/// Top-level application settings loaded from a TOML configuration file.
 #[derive(Debug, Clone, Serialize, Deserialize)]
+/// A pp se tt in gs struct.
 pub struct AppSettings {
     #[serde(default)]
+    /// Global UI zoom multiplier applied to layout and token scaling.
     pub zoom: ZoomSettings,
     #[serde(default)]
+    /// Theme mode and accent override settings.
     pub theme: ThemeSettings,
     #[serde(default)]
+    /// Icon style and colour strategy settings.
     pub icons: IconSettings,
     #[serde(default)]
+    /// Font family and font-only scaling settings.
     pub font: FontSettings,
 }
 
+/// UI zoom / DPI-scale configuration.
 #[derive(Debug, Clone, Serialize, Deserialize)]
+/// Z oo ms et ti ng s struct.
 pub struct ZoomSettings {
+    /// UI scale factor where `1.0` keeps the default logical size.
     pub scale: f32,
 }
 
+/// Light, dark, or system-detected colour-scheme selection.
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
 #[serde(rename_all = "lowercase")]
+/// T he me mo de enum.
 pub enum ThemeMode {
     System,
     Light,
     Dark,
 }
 
+/// Theme configuration: colour-scheme mode and optional accent override.
 #[derive(Debug, Clone, Serialize, Deserialize)]
+/// T he me se tt in gs struct.
 pub struct ThemeSettings {
+    /// Requested theme mode or OS-following behaviour.
     pub mode: ThemeMode,
     /// Optional hex accent override, e.g. "#ff6b35"
     pub accent: Option<String>,
 }
 
+/// Filled or outlined icon variant for the Fluent icon set.
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
 #[serde(rename_all = "lowercase")]
+/// I co ns ty le enum.
 pub enum IconStyle {
     Filled,
     Outlined,
 }
 
+/// Icon appearance configuration: style variant and colour strategy.
 #[derive(Debug, Clone, Serialize, Deserialize)]
+/// I co ns et ti ng s struct.
 pub struct IconSettings {
+    /// Icon glyph family variant to use in the UI.
     pub style: IconStyle,
     /// "theme" | "accent" | "#rrggbb"
     pub color: String,
 }
 
-impl IconSettings {
-    pub fn style_str(&self) -> &'static str {
-        match self.style {
-            IconStyle::Filled   => "filled",
-            IconStyle::Outlined => "outlined",
-        }
-    }
-}
-
+/// Font family and scale configuration.
 #[derive(Debug, Clone, Serialize, Deserialize)]
+/// F on ts et ti ng s struct.
 pub struct FontSettings {
     /// None = platform default; Some = system font family name
     pub family: Option<String>,
@@ -66,54 +80,22 @@ pub struct FontSettings {
     pub font_scale: f32,
 }
 
-// --- Defaults ---
-
-impl Default for AppSettings {
-    fn default() -> Self {
-        Self {
-            zoom:  ZoomSettings::default(),
-            theme: ThemeSettings::default(),
-            icons: IconSettings::default(),
-            font:  FontSettings::default(),
-        }
-    }
-}
-
-impl Default for ZoomSettings {
-    fn default() -> Self { Self { scale: 1.0 } }
-}
-
-impl Default for ThemeSettings {
-    fn default() -> Self { Self { mode: ThemeMode::System, accent: None } }
-}
-
-impl Default for IconSettings {
-    fn default() -> Self { Self { style: IconStyle::Filled, color: "theme".into() } }
-}
-
-impl Default for FontSettings {
-    fn default() -> Self { Self { family: None, font_scale: 1.0 } }
-}
-
-// --- Load / Save ---
+// --- Load / Save (delegated to gateway::settings) ---
 
 impl AppSettings {
-    pub fn from_file(path: &Path) -> Result<Self, Box<dyn std::error::Error>> {
-        let text = std::fs::read_to_string(path)?;
-        Ok(toml::from_str(&text)?)
+    /// Deserializes settings from a TOML file at the given path.
+    pub fn from_file(path: &std::path::Path) -> Result<Self, Box<dyn std::error::Error>> {
+        crate::gateway::settings::from_file(path)
     }
 
     /// Load from file, falling back to defaults if the file is absent or unparseable.
-    pub fn from_file_or_default(path: &Path) -> Self {
-        Self::from_file(path).unwrap_or_default()
+    pub fn from_file_or_default(path: &std::path::Path) -> Self {
+        crate::gateway::settings::from_file_or_default(path)
     }
 
-    pub fn to_file(&self, path: &Path) -> Result<(), Box<dyn std::error::Error>> {
-        if let Some(parent) = path.parent() {
-            std::fs::create_dir_all(parent)?;
-        }
-        std::fs::write(path, toml::to_string_pretty(self)?)?;
-        Ok(())
+    /// Serializes settings to a TOML file, creating parent directories if needed.
+    pub fn to_file(&self, path: &std::path::Path) -> Result<(), Box<dyn std::error::Error>> {
+        crate::gateway::settings::to_file(self, path)
     }
 }
 

@@ -1,26 +1,35 @@
 // ShellStatusBar — Fluent 2 status bar (bottom chrome).
 
 import { Colors, Spacing, Type } from "../../tokens/theme.slint";
+import { Sizes }          from "../../tokens/sizes.slint";
+import { FluentSpacing }  from "../../tokens/fluent/spacing.slint";
 
+/// Bottom status bar for the desktop shell with optional progress indicator.
 export component ShellStatusBar inherits Rectangle {
+    /// Primary status message shown on the left.
     in property <string>  status-text: "Ready";
+    /// Progress value in the range `0.0..=1.0`; negative hides the indicator.
     in property <float>   progress: -1.0;   // -1 = hidden, 0.0..1.0 = shown
+    /// Optional secondary message aligned to the right.
     in property <string>  right-text: "";
 
-    height: 24px;
+    /// Private property "bar-radius" used internally.
+    private property <length> bar-radius: Sizes.border-w-2;
+
+    height: FluentSpacing.status-bar-height;
     background: Colors.bg-surface;
 
     // Top border
     Rectangle {
-        height: 1px;
+        height: Sizes.border-w;
         background: Colors.border;
     }
 
     HorizontalLayout {
         padding-left: Spacing.sm;
         padding-right: Spacing.sm;
-        padding-top: 0px;
-        padding-bottom: 0px;
+        padding-top: Sizes.no-size;
+        padding-bottom: Sizes.no-size;
         spacing: Spacing.sm;
 
         Text {
@@ -30,22 +39,22 @@ export component ShellStatusBar inherits Rectangle {
             vertical-alignment: center;
         }
 
-        if root.progress >= 0.0: Rectangle {
-            width: 80px;
-            height: 4px;
-            y: (parent.height - self.height) / 2;
-            border-radius: 2px;
+        if root.progress >= Sizes.no-fill: Rectangle {
+            width: Sizes.thumb-sm;
+            height: Sizes.track-h;
+            y: (parent.height - self.height) / Sizes.two;
+            border-radius: root.bar-radius;
             background: Colors.border;
 
             Rectangle {
                 width: parent.width * root.progress;
                 height: parent.height;
-                border-radius: 2px;
+                border-radius: root.bar-radius;
                 background: Colors.accent;
             }
         }
 
-        Rectangle { horizontal-stretch: 1; }
+        Rectangle { horizontal-stretch: Sizes.one; }
 
         if root.right-text != "": Text {
             text: root.right-text;

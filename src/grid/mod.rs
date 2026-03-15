@@ -1,4 +1,6 @@
+/// Grid configuration loading and deserialization from TOML target files.
 pub mod config;
+/// Zone model representing the runtime layout grid with rows and columns.
 pub mod zone;
 
 pub use config::TargetConfig;
@@ -6,6 +8,7 @@ pub use zone::ZoneModel;
 
 use std::path::Path;
 
+/// Loads a target TOML file and converts its grid config into a `ZoneModel`.
 pub fn load_target(path: &Path) -> Result<ZoneModel, Box<dyn std::error::Error>> {
     let config = TargetConfig::load(path)?;
     Ok(ZoneModel::from_config(&config.grid))

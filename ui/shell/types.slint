@@ -3,8 +3,12 @@
 import { NavItem } from "../desktop/types.slint";
 export { NavItem }
 
+/// Toolbar action item consumed by `AppShell` and `DesktopShell`.
 export struct ShellToolbarItem {
+    /// Stable action id emitted back through toolbar callbacks.
     id:      string,
+    /// Icon glyph string, typically from `FluentIcons`.
     icon:    string,
+    /// Tooltip text shown for the toolbar button.
     tooltip: string,
 }

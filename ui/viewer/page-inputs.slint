@@ -1,30 +1,143 @@
-// page-inputs — showcases TextInput (plain/label/error) and SelectField.
+// page-inputs — TextInput, SelectField, SearchInput, PasswordInput, TextArea, SpinBox
 
 import { Spacing } from "../tokens/theme.slint";
-import { TextInput }   from "../shared/text-input.slint";
-import { SelectField } from "../shared/select-field.slint";
+import { Sizes } from "../tokens/sizes.slint";
+import { TextInput }      from "../shared/text-input.slint";
+import { SelectField }    from "../shared/select-field.slint";
+import { SearchInput }    from "../shared/search-input.slint";
+import { PasswordInput }  from "../shared/password-input.slint";
+import { TextArea }       from "../shared/text-area.slint";
+import { SpinBox }        from "../shared/spin-box.slint";
 import { ViewerSection } from "viewer-section.slint";
 
+/// Viewer page showcasing text-entry and form input components.
 export component PageInputs inherits VerticalLayout {
     spacing: Spacing.md;
 
+    // ── private integer tokens ──────────────────────────────────────────
+    /// Private property "spinbox-default-val" used internally.
+    private property <int> spinbox-default-val: 42;
+
+    // ── demo labels ─────────────────────────────────────────────────────
+    /// Private property "section-textinput" used internally.
+    private property <string> section-textinput: "TextInput";
+    /// Private property "section-selectfield" used internally.
+    private property <string> section-selectfield: "SelectField";
+    /// Private property "section-searchinput" used internally.
+    private property <string> section-searchinput: "SearchInput";
+    /// Private property "section-passwordinput" used internally.
+    private property <string> section-passwordinput: "PasswordInput";
+    /// Private property "section-textarea" used internally.
+    private property <string> section-textarea: "TextArea";
+    /// Private property "section-spinbox" used internally.
+    private property <string> section-spinbox: "SpinBox";
+    /// Private property "ti-placeholder" used internally.
+    private property <string> ti-placeholder: "Plain input...";
+    /// Private property "ti-label" used internally.
+    private property <string> ti-label: "With label";
+    /// Private property "ti-placeholder2" used internally.
+    private property <string> ti-placeholder2: "Enter text...";
+    /// Private property "ti-value" used internally.
+    private property <string> ti-value: "Hello";
+    /// Private property "ti-err-label" used internally.
+    private property <string> ti-err-label: "With error";
+    /// Private property "ti-err-value" used internally.
+    private property <string> ti-err-value: "bad-value";
+    /// Private property "ti-err-msg" used internally.
+    private property <string> ti-err-msg: "This field is required";
+    /// Private property "sf-placeholder" used internally.
+    private property <string> sf-placeholder: "Choose one...";
+    /// Private property "si-placeholder" used internally.
+    private property <string> si-placeholder: "Search...";
+    /// Private property "si-value" used internally.
+    private property <string> si-value: "hello world";
+    /// Private property "si-placeholder2" used internally.
+    private property <string> si-placeholder2: "With value + clear...";
+    /// Private property "pi-placeholder" used internally.
+    private property <string> pi-placeholder: "Enter password...";
+    /// Private property "pi-label" used internally.
+    private property <string> pi-label: "With label";
+    /// Private property "pi-placeholder2" used internally.
+    private property <string> pi-placeholder2: "Password";
+    /// Private property "pi-err-label" used internally.
+    private property <string> pi-err-label: "With error";
+    /// Private property "pi-err-msg" used internally.
+    private property <string> pi-err-msg: "Password too short";
+    /// Private property "ta-placeholder" used internally.
+    private property <string> ta-placeholder: "Enter multi-line text...";
+    /// Private property "ta-label" used internally.
+    private property <string> ta-label: "With label";
+    /// Private property "ta-placeholder2" used internally.
+    private property <string> ta-placeholder2: "Notes...";
+    /// Private property "ta-err-label" used internally.
+    private property <string> ta-err-label: "With error";
+    /// Private property "ta-err-msg" used internally.
+    private property <string> ta-err-msg: "This field is required";
+    /// Private property "sb-label" used internally.
+    private property <string> sb-label: "With label";
+    /// Private property "sb-disabled-label" used internally.
+    private property <string> sb-disabled-label: "Disabled";
+
     ViewerSection {
-        title: "TextInput";
+        title: root.section-textinput;
         VerticalLayout {
             spacing: Spacing.sm;
-            width: 320px;
-            TextInput { placeholder: "Plain input..."; }
-            TextInput { label: "With label"; placeholder: "Enter text..."; value: "Hello"; }
-            TextInput { label: "With error"; value: "bad-value"; error: "This field is required"; }
+            width: Sizes.panel-xxl;
+            TextInput { placeholder: root.ti-placeholder; }
+            TextInput { label: root.ti-label; placeholder: root.ti-placeholder2; value: root.ti-value; }
+            TextInput { label: root.ti-err-label; value: root.ti-err-value; error: root.ti-err-msg; }
         }
     }
 
     ViewerSection {
-        title: "SelectField";
+        title: root.section-selectfield;
         SelectField {
-            width: 220px;
+            width: Sizes.panel-md;
             options: ["Option A", "Option B", "Option C", "Option D"];
-            placeholder: "Choose one...";
+            placeholder: root.sf-placeholder;
+        }
+    }
+
+    ViewerSection {
+        title: root.section-searchinput;
+        VerticalLayout {
+            spacing: Spacing.sm;
+            width: Sizes.panel-lg;
+            SearchInput { placeholder: root.si-placeholder; }
+            SearchInput { value: root.si-value; placeholder: root.si-placeholder2; }
+        }
+    }
+
+    ViewerSection {
+        title: root.section-passwordinput;
+        VerticalLayout {
+            spacing: Spacing.sm;
+            width: Sizes.panel-lg;
+            PasswordInput { placeholder: root.pi-placeholder; }
+            PasswordInput { label: root.pi-label; placeholder: root.pi-placeholder2; }
+            PasswordInput { label: root.pi-err-label; error: root.pi-err-msg; }
+        }
+    }
+
+    ViewerSection {
+        title: root.section-textarea;
+        VerticalLayout {
+            spacing: Spacing.sm;
+            width: Sizes.panel-xxl;
+            TextArea { placeholder: root.ta-placeholder; rows: Sizes.three; }
+            TextArea { label: root.ta-label; placeholder: root.ta-placeholder2; rows: Sizes.four; }
+            TextArea { label: root.ta-err-label; error: root.ta-err-msg; rows: Sizes.three; }
+        }
+    }
+
+    ViewerSection {
+        title: root.section-spinbox;
+        VerticalLayout {
+            spacing: Spacing.sm;
+            width: Sizes.panel-xs;
+            SpinBox { value: Sizes.five; min: Sizes.zero; max: Sizes.twenty; }
+            SpinBox { label: root.sb-label; value: root.spinbox-default-val; min: Sizes.zero; max: Sizes.hundred; }
+            SpinBox { value: Sizes.ten; enabled: false; label: root.sb-disabled-label; }
         }
     }
 }

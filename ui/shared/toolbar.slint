@@ -1,0 +1,38 @@
+import { Colors, Spacing } from "../tokens/theme.slint";
+import { ToolbarBtn, ToolbarItem } from "toolbar-btn.slint";
+
+export { ToolbarItem }
+
+/// T oo lb ar component.
+export component Toolbar inherits Rectangle {
+    /// Input property "items".
+    in property <[ToolbarItem]> items: [];
+    /// Callback fired for c li ck ed.
+    callback clicked(string);
+
+    /// Private property "border-px" used internally.
+    private property <length> border-px: 1px;
+
+    height: Spacing.xl;
+    background: Colors.bg-surface;
+
+    // Bottom border
+    Rectangle {
+        y: parent.height - root.border-px;
+        width: parent.width;
+        height: root.border-px;
+        background: Colors.border;
+    }
+
+    HorizontalLayout {
+        padding-left: Spacing.sm;
+        padding-right: Spacing.sm;
+        spacing: Spacing.xs;
+        alignment: start;
+
+        for item in root.items: ToolbarBtn {
+            item: item;
+            clicked(id) => { root.clicked(id); }
+        }
+    }
+}

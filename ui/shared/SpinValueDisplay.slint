@@ -1,0 +1,18 @@
+import { Colors, Type } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
+
+/// S pi nv al ue di sp la y component.
+export component SpinValueDisplay inherits Rectangle {
+    /// Input property "display-value".
+    in property <int> display-value;
+
+    horizontal-stretch: Sizes.one;
+
+    Text {
+        text: root.display-value;
+        font-size: Type.body-size;
+        color: Colors.text-primary;
+        horizontal-alignment: center;
+        vertical-alignment: center;
+    }
+}

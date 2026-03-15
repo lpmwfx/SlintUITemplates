@@ -1,0 +1,30 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Sizes }    from "../tokens/sizes.slint";
+import { NavItem }  from "../desktop/types.slint";
+
+// DemoMobileNav — mobile bottom tab bar for the demo window.
+/// D em om ob il en av component.
+export component DemoMobileNav inherits Rectangle {
+    /// Input property "items".
+    in property <[NavItem]> items;
+    /// Input property "active-view".
+    in property <string>    active-view;
+    /// Callback fired for n av ig at e.
+    callback navigate(string);
+
+    height: Spacing.xl + Spacing.sm;
+    background: Colors.bg-surface;
+
+    HorizontalLayout {
+        for item in root.items: Rectangle {
+            horizontal-stretch: Sizes.one;
+            tab-ta := TouchArea { clicked => { root.navigate(item.id); } }
+            VerticalLayout {
+                alignment: center;
+                spacing: Spacing.xs;
+                Text { text: item.icon; font-size: Type.subtitle-size; color: item.id == root.active-view ? Colors.accent : Colors.text-secondary; horizontal-alignment: center; }
+                Text { text: item.label; font-size: Type.caption-size; color: item.id == root.active-view ? Colors.accent : Colors.text-secondary; horizontal-alignment: center; }
+            }
+        }
+    }
+}

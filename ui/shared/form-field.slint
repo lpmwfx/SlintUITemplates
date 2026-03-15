@@ -1,0 +1,35 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Label } from "label.slint";
+
+/// F or mf ie ld component.
+export component FormField inherits VerticalLayout {
+    /// Input property "label".
+    in property <string> label: "";
+    /// Input property "required".
+    in property <bool>   required: false;
+    /// Input property "error".
+    in property <string> error: "";
+    /// Input property "hint".
+    in property <string> hint: "";
+
+    spacing: Spacing.xs;
+
+    if root.label != "": Label {
+        text: root.label;
+        required: root.required;
+    }
+
+    @children
+
+    if root.error != "": Text {
+        text: root.error;
+        font-size: Type.caption-size;
+        color: Colors.error;
+    }
+
+    if root.error == "" && root.hint != "": Text {
+        text: root.hint;
+        font-size: Type.caption-size;
+        color: Colors.text-disabled;
+    }
+}

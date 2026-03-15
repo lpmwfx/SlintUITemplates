@@ -1,0 +1,40 @@
+{
+  "source": "ui/viewer/popup-dropdown-demo.slint",
+  "items": [
+    {
+      "name": "PopupDropdownDemo",
+      "kind": "component",
+      "signature": "export component PopupDropdownDemo inherits Rectangle",
+      "line": 4,
+      "doc": ""
+    },
+    {
+      "name": "window-height",
+      "kind": "property",
+      "signature": "in property <length> window-height;",
+      "line": 5,
+      "doc": ""
+    },
+    {
+      "name": "demo-w",
+      "kind": "property",
+      "signature": "private property <length> demo-w:    160px;",
+      "line": 7,
+      "doc": ""
+    },
+    {
+      "name": "border-px",
+      "kind": "property",
+      "signature": "private property <length> border-px: 1px;",
+      "line": 8,
+      "doc": ""
+    },
+    {
+      "name": "h-stretch",
+      "kind": "property",
+      "signature": "private property <int>    h-stretch: 1;",
+      "line": 9,
+      "doc": ""
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+import { Colors, Spacing } from "../tokens/theme.slint";
+import { SegmentTab, SegmentItem } from "segment-tab.slint";
+
+export { SegmentItem }
+
+/// S eg me nt ed component.
+export component Segmented inherits Rectangle {
+    /// Input property "items".
+    in property <[SegmentItem]> items: [];
+    /// Input property "selected".
+    in property <string>        selected: "";
+    /// Callback fired for c ha ng ed.
+    callback changed(string);
+
+    /// Private property "border-px" used internally.
+    private property <length> border-px: 1px;
+    /// Private property "pad-px" used internally.
+    private property <length> pad-px:    2px;
+    /// Private property "v-stretch" used internally.
+    private property <int>    v-stretch: 1;
+    /// Private property "h-stretch" used internally.
+    private property <int>    h-stretch: 1;
+
+    height: Spacing.control-lg;
+    border-radius: Spacing.sm;
+    border-width: root.border-px;
+    border-color: Colors.border;
+    background: Colors.bg-surface;
+
+    HorizontalLayout {
+        padding: root.pad-px;
+        spacing: root.pad-px;
+
+        for item in root.items: SegmentTab {
+            item: item;
+            active: item.id == root.selected;
+            vertical-stretch: root.v-stretch;
+            horizontal-stretch: root.h-stretch;
+            clicked(id) => { root.changed(id); }
+        }
+    }
+}

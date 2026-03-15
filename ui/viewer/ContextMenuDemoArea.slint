@@ -1,0 +1,64 @@
+// ContextMenuDemoArea — Demonstrates VS Code-style context menu on right-click.
+
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
+import { ContextMenu } from "../shared/context-menu.slint";
+
+/// C on te xt me nu de mo ar ea component.
+export component ContextMenuDemoArea inherits Rectangle {
+    /// Input property "window-height".
+    in property <length> window-height;
+
+    // ── private layout tokens ───────────────────────────────────────────
+    /// Private property "ctx-hint" used internally.
+    private property <string> ctx-hint: "Right-click here for VS Code-style file context menu";
+    // Right-click position tracker — changed only fires when value actually changes (new right-click)
+    /// Private property "rc-x" used internally.
+    private property <length> rc-x: Sizes.no-size;
+
+    width: Sizes.panel-xxl;
+    height: Sizes.thumb-sm;
+    border-width: Sizes.border-w;
+    border-color: Colors.border;
+    border-radius: Spacing.xs;
+    background: area-ta.has-hover ? Colors.bg-elevated : Colors.bg-surface;
+
+    Text {
+        text: root.ctx-hint;
+        font-size: Type.body-size;
+        color: Colors.text-secondary;
+        horizontal-alignment: center;
+        vertical-alignment: center;
+    }
+
+    ctx-menu := ContextMenu {
+        window-height: root.window-height;
+        separator-count: Sizes.five;
+        items: [
+            { id: "new-file",   label: "New File...",                  icon: "", keybinding: "",                     disabled: false, separator: false },
+            { id: "new-folder", label: "New Folder...",                icon: "", keybinding: "",                     disabled: false, separator: false },
+            { id: "sep1",       label: "",                             icon: "", keybinding: "",                     disabled: false, separator: true  },
+            { id: "reveal",     label: "Reveal in File Explorer",      icon: "", keybinding: "Shift+Alt+R",          disabled: false, separator: false },
+            { id: "terminal",   label: "Open in Integrated Terminal",  icon: "", keybinding: "",                     disabled: false, separator: false },
+            { id: "sep2",       label: "",                             icon: "", keybinding: "",                     disabled: false, separator: true  },
+            { id: "find",       label: "Find in Folder...",            icon: "", keybinding: "Shift+Alt+F",          disabled: false, separator: false },
+            { id: "chat",       label: "Add Folder to Chat",           icon: "", keybinding: "",                     disabled: false, separator: false },
+            { id: "sep3",       label: "",                             icon: "", keybinding: "",                     disabled: false, separator: true  },
+            { id: "cut",        label: "Cut",                          icon: "", keybinding: "Ctrl+X",               disabled: false, separator: false },
+            { id: "copy",       label: "Copy",                         icon: "", keybinding: "Ctrl+C",               disabled: false, separator: false },
+            { id: "paste",      label: "Paste",                        icon: "", keybinding: "Ctrl+V",               disabled: false, separator: false },
+            { id: "sep4",       label: "",                             icon: "", keybinding: "",                     disabled: false, separator: true  },
+            { id: "copy-path",  label: "Copy Path",                    icon: "", keybinding: "Shift+Alt+C",          disabled: false, separator: false },
+            { id: "copy-rel",   label: "Copy Relative Path",           icon: "", keybinding: "Ctrl+K Ctrl+Shift+C",  disabled: false, separator: false },
+            { id: "sep5",       label: "",                             icon: "", keybinding: "",                     disabled: false, separator: true  },
+            { id: "rename",     label: "Rename...",                    icon: "", keybinding: "F2",                   disabled: false, separator: false },
+            { id: "delete",     label: "Delete",                       icon: "", keybinding: "Del",                  disabled: false, separator: false },
+        ];
+    }
+
+    area-ta := TouchArea {
+        pointer-event(e) => { root.rc-x = (e.kind == PointerEventKind.up && e.button == PointerEventButton.right) ? self.mouse-x : root.rc-x; }
+    }
+
+    changed rc-x => { ctx-menu.show-at(root.rc-x, area-ta.mouse-y); }
+}

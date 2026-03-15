@@ -1,12 +1,14 @@
-import { Colors }     from "../tokens/theme.slint";
+import { Colors }    from "../tokens/theme.slint";
+import { Variants }  from "../globals/Variants.slint";
 import { DragHandle } from "DragHandle.slint";
 import { PanelSlot }  from "PanelSlot.slint";
 
 // Flat model item — Rust computes all geometry, Slint renders.
 // x, y, w, h are normalized 0.0..1.0 fractions of container size.
+/// P an el it em struct.
 export struct PanelItem {
     id:       int,
-    kind:     string,   // "panel" | "handle-h" | "handle-v"
+    kind:     string,   // Variants.panel | Variants.handle-h | Variants.handle-v
     label:    string,
     x: float, y: float,
     w: float, h: float,
@@ -15,13 +17,15 @@ export struct PanelItem {
 // Renders a flat [PanelItem] model as absolutely-positioned elements.
 // Mother (AppWindow) owns the model and all panel state.
 // Drag events go back to mother via panel-dragged callback.
+/// P an el co nt ai ne r component.
 export component PanelContainer inherits Rectangle {
+    /// Input property "panels".
     in property <[PanelItem]> panels;
 
+    /// Callback fired for p an el d ra gg ed.
     callback panel-dragged(int, float, float);   // id, dx, dy in logical px
 
-    preferred-width:  100%;
-    preferred-height: 100%;
+    // Width and height set by parent (layout or explicit sizing)
     background: Colors.bg-primary;
     clip: true;
 
@@ -31,24 +35,24 @@ export component PanelContainer inherits Rectangle {
         width:  item.w * root.width;
         height: item.h * root.height;
 
-        if item.kind == "panel": PanelSlot {
+        if item.kind == Variants.panel: PanelSlot {
             panel-id: item.id;
             label:    item.label;
-            width:    100%;
-            height:   100%;
+            width:    parent.width;
+            height:   parent.height;
         }
 
-        if item.kind == "handle-h": DragHandle {
+        if item.kind == Variants.handle-h: DragHandle {
             vertical: false;
-            width:    100%;
-            height:   100%;
+            width:    parent.width;
+            height:   parent.height;
             dragged(dx, dy) => { root.panel-dragged(item.id, dx, dy); }
         }
 
-        if item.kind == "handle-v": DragHandle {
+        if item.kind == Variants.handle-v: DragHandle {
             vertical: true;
-            width:    100%;
-            height:   100%;
+            width:    parent.width;
+            height:   parent.height;
             dragged(dx, dy) => { root.panel-dragged(item.id, dx, dy); }
         }
     }

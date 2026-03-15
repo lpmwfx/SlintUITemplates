@@ -1,0 +1,33 @@
+{
+  "source": "ui/modules/DragHandle.slint",
+  "items": [
+    {
+      "name": "DragHandle",
+      "kind": "component",
+      "signature": "export component DragHandle inherits Rectangle",
+      "line": 11,
+      "doc": ""
+    },
+    {
+      "name": "vertical",
+      "kind": "property",
+      "signature": "in property <bool> vertical: false;",
+      "line": 12,
+      "doc": ""
+    },
+    {
+      "name": "dragged",
+      "kind": "callback",
+      "signature": "callback dragged(float, float);  // cumulative dx, dy from press point (logical px)",
+      "line": 13,
+      "doc": ""
+    },
+    {
+      "name": "drag-started",
+      "kind": "callback",
+      "signature": "callback drag-started();         // fires on press and on release",
+      "line": 14,
+      "doc": ""
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+// SlintUITemplates — Public Component Hub
+//
+// Single import point for all public widgets + tokens.
+// Consumer .slint files import from here via:
+//   import { Button, Card, TextInput } from "@slint-ui-templates/components.slint";
+//
+// Only leaf/public components are re-exported here.
+// Internal helpers (ClearButton, SpinButton, etc.) are not part of the public API.
+
+// ── State globals ─────────────────────────────────────────────────────────────
+export { Theme }    from "state/Theme.slint";
+export { Settings } from "state/settings.slint";
+
+// ── Design tokens ─────────────────────────────────────────────────────────────
+export { Colors, Spacing, Type, FluentIcons,
+         FluentColors, FluentSpacing, FluentRadius,
+         FluentElevation, FluentMotion, FluentType,
+         MaterialColors, MaterialSpacing, MaterialRadius,
+         MaterialType, MaterialElevation }
+    from "tokens/theme.slint";
+
+export { Sizes }    from "tokens/sizes.slint";
+export { Scale }    from "tokens/scale.slint";
+
+// ── Globals ───────────────────────────────────────────────────────────────────
+export { Variants } from "globals/Variants.slint";
+export { ThemeMode } from "globals/ThemeMode.slint";
+
+// ── Components ────────────────────────────────────────────────────────────────
+export { Accordion, AccordionItem } from "shared/accordion.slint";
+export { Alert }                    from "shared/alert.slint";
+export { Avatar }                   from "shared/avatar.slint";
+export { Badge }                    from "shared/badge.slint";
+export { Breadcrumb, BreadcrumbItem } from "shared/breadcrumb.slint";
+export { Button }                   from "shared/button.slint";
+export { CanvasImage }              from "shared/canvas-image.slint";
+export { CanvasPath }               from "shared/canvas-path.slint";
+export { Card }                     from "shared/card.slint";
+export { Checkbox }                 from "shared/checkbox.slint";
+export { Chip }                     from "shared/chip.slint";
+export { CommandBarFlyout }         from "shared/command-bar-flyout.slint";
+export { ContextMenu }              from "shared/context-menu.slint";
+export { DataTable, TableColumn, TableRow } from "shared/data-table.slint";
+export { DatePicker }               from "shared/date-picker.slint";
+export { Dialog }                   from "shared/dialog.slint";
+export { Divider }                  from "shared/divider.slint";
+export { Drawer }                   from "shared/drawer.slint";
+export { DropdownMenu }             from "shared/dropdown-menu.slint";
+export { EmptyState }               from "shared/empty-state.slint";
+export { Flyout }                   from "shared/flyout.slint";
+export { FormField }                from "shared/form-field.slint";
+export { Label }                    from "shared/label.slint";
+export { ListItem }                 from "shared/list-item.slint";
+export { MessageBar }               from "shared/message-bar.slint";
+export { MultiSelect, MultiSelectOption } from "shared/multi-select.slint";
+export { Pagination }               from "shared/pagination.slint";
+export { PasswordInput }            from "shared/password-input.slint";
+export { Popover }                  from "shared/popover.slint";
+export { ProgressBar }              from "shared/progress-bar.slint";
+export { RadioButton }              from "shared/RadioButton.slint";
+export { RadioGroup }               from "shared/RadioGroup.slint";
+export { Rating }                   from "shared/rating.slint";
+export { ScrollView }               from "shared/scroll-view.slint";
+export { SearchInput }              from "shared/search-input.slint";
+export { Segmented }                from "shared/segmented.slint";
+export { SelectField }              from "shared/select-field.slint";
+export { Skeleton }                 from "shared/skeleton.slint";
+export { Slider }                   from "shared/slider.slint";
+export { SpinBox }                  from "shared/spin-box.slint";
+export { Spinner }                  from "shared/spinner.slint";
+export { Stepper, StepItem }        from "shared/stepper.slint";
+export { TabBar, TabItem }          from "shared/tab-bar.slint";
+export { TeachingTip }              from "shared/teaching-tip.slint";
+export { TextArea }                 from "shared/text-area.slint";
+export { TextInput }                from "shared/text-input.slint";
+export { Toast }                    from "shared/toast.slint";
+export { Toggle }                   from "shared/toggle.slint";
+export { Toolbar, ToolbarItem }     from "shared/toolbar.slint";
+export { Tooltip }                  from "shared/tooltip.slint";
+export { TreeView, TreeNode }       from "shared/tree-view.slint";

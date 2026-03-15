@@ -1,19 +1,21 @@
 import { Colors } from "../tokens/theme.slint";
+import { NavId }       from "../globals/NavId.slint";
 import { HomeView }     from "../views/home.slint";
 import { ListView }     from "../views/list.slint";
 import { SettingsView } from "../views/settings.slint";
 
 // Routes active-view to the designer-editable views in ui/views/.
 // To add a view: create ui/views/my-view.slint, add an import + if-block below.
+/// C on te nt ar ea component.
 export component ContentArea inherits Rectangle {
-    in property <string> active-view: "home";
+    /// Input property "active-view".
+    in property <string> active-view: NavId.home;
+    /// Callback fired for n av ig at e.
     callback navigate(string);
 
-    preferred-width: 100%;
-    preferred-height: 100%;
     background: Colors.bg-primary;
 
-    if root.active-view == "home":     HomeView     {}
-    if root.active-view == "list":     ListView     {}
-    if root.active-view == "settings": SettingsView {}
+    if root.active-view == NavId.home:     HomeView     {}
+    if root.active-view == NavId.list:     ListView     {}
+    if root.active-view == NavId.settings: SettingsView {}
 }

@@ -1,0 +1,19 @@
+{
+  "source": "ui/docs/markdown-view.slint",
+  "items": [
+    {
+      "name": "MarkdownView",
+      "kind": "component",
+      "signature": "export component MarkdownView inherits Rectangle",
+      "line": 12,
+      "doc": ""
+    },
+    {
+      "name": "blocks",
+      "kind": "property",
+      "signature": "in-out property <[DocBlock]> blocks: [];",
+      "line": 13,
+      "doc": ""
+    }
+  ]
+}

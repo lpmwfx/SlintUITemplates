@@ -1,0 +1,47 @@
+{
+  "source": "ui/tokens/fluent/radius.slint",
+  "items": [
+    {
+      "name": "none",
+      "kind": "property",
+      "signature": "out property <length> none:  0px;",
+      "line": 5,
+      "doc": ""
+    },
+    {
+      "name": "sm",
+      "kind": "property",
+      "signature": "out property <length> sm:    2px;   // checkboxes, small chips",
+      "line": 6,
+      "doc": ""
+    },
+    {
+      "name": "md",
+      "kind": "property",
+      "signature": "out property <length> md:    4px;   // buttons, inputs, cards",
+      "line": 7,
+      "doc": ""
+    },
+    {
+      "name": "lg",
+      "kind": "property",
+      "signature": "out property <length> lg:    8px;   // panels, dialogs, larger cards",
+      "line": 8,
+      "doc": ""
+    },
+    {
+      "name": "xl",
+      "kind": "property",
+      "signature": "out property <length> xl:   12px;   // navigation pane, large surfaces",
+      "line": 9,
+      "doc": ""
+    },
+    {
+      "name": "circle",
+      "kind": "property",
+      "signature": "out property <length> circle: 9999px; // pills, avatars",
+      "line": 10,
+      "doc": ""
+    }
+  ]
+}

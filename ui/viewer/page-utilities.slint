@@ -1,0 +1,161 @@
+// page-utilities — Label, Toolbar, MessageBar, EmptyState, Segmented, FormField
+
+import { Colors, Spacing, Type, FluentIcons } from "../tokens/theme.slint";
+import { Sizes }       from "../tokens/sizes.slint";
+import { Label }       from "../shared/label.slint";
+import { Toolbar, ToolbarItem } from "../shared/toolbar.slint";
+import { MessageBar }  from "../shared/message-bar.slint";
+import { EmptyState }  from "../shared/empty-state.slint";
+import { Segmented, SegmentItem } from "../shared/segmented.slint";
+import { FormField }   from "../shared/form-field.slint";
+import { TextInput }   from "../shared/text-input.slint";
+import { ViewerSection } from "viewer-section.slint";
+
+/// Viewer page showcasing utility components such as tooltips, labels, skeletons, and empty states.
+export component PageUtilities inherits VerticalLayout {
+    spacing: Spacing.md;
+
+    /// Private property "tb-w" used internally.
+    private property <length> tb-w:     400px;
+    /// Private property "mb-w" used internally.
+    private property <length> mb-w:     500px;
+    /// Private property "es-w" used internally.
+    private property <length> es-w:     340px;
+    /// Private property "es-h" used internally.
+    private property <length> es-h:     200px;
+    /// Private property "seg1-w" used internally.
+    private property <length> seg1-w:   240px;
+    /// Private property "seg2-w" used internally.
+    private property <length> seg2-w:   120px;
+    /// Private property "ff-w" used internally.
+    private property <length> ff-w:     300px;
+    /// Private property "border-px" used internally.
+    private property <length> border-px: Sizes.border-w;
+    /// Private property "seg-val" used internally.
+    private property <string> seg-val:   "day";
+    /// Private property "seg2-val" used internally.
+    private property <string> seg2-val:  "list";
+    /// Private property "mb-info-msg" used internally.
+    private property <string> mb-info-msg: "Your session will expire in 10 minutes.";
+
+    ViewerSection { title: "Label";
+        HorizontalLayout {
+            spacing: Spacing.lg;
+            alignment: start;
+            VerticalLayout {
+                spacing: Spacing.sm;
+                Label { text: "Normal label"; }
+                Label { text: "Required field"; required: true; }
+                Label { text: "Disabled label"; disabled: true; }
+            }
+        }
+    }
+
+    ViewerSection { title: "Toolbar";
+        VerticalLayout {
+            spacing: Spacing.sm;
+
+            Toolbar {
+                width: root.tb-w;
+                items: [
+                    { id: "new",    icon: FluentIcons.file-new,    tooltip: "New file",  enabled: true  },
+                    { id: "open",   icon: FluentIcons.folder-open, tooltip: "Open",      enabled: true  },
+                    { id: "save",   icon: FluentIcons.save,        tooltip: "Save",      enabled: true  },
+                    { id: "sep1",   icon: "",                      tooltip: "",          enabled: false },
+                    { id: "cut",    icon: FluentIcons.cut,         tooltip: "Cut",       enabled: true  },
+                    { id: "copy",   icon: FluentIcons.copy,        tooltip: "Copy",      enabled: true  },
+                    { id: "paste",  icon: FluentIcons.paste,       tooltip: "Paste",     enabled: false },
+                ];
+                clicked(id) => { debug("toolbar: " + id); }
+            }
+
+            Text { text: "Click toolbar buttons — IDs logged to console";
+                font-size: Type.caption-size;
+                color: Colors.text-disabled;
+            }
+        }
+    }
+
+    ViewerSection { title: "MessageBar";
+        VerticalLayout {
+            spacing: Spacing.sm;
+            width: root.mb-w;
+            MessageBar { variant: "info";    message: root.mb-info-msg; action-label: "Renew"; }
+            MessageBar { variant: "warning"; message: "Unsaved changes — remember to save your work."; }
+            MessageBar { variant: "error";   message: "Failed to connect to server."; action-label: "Retry"; }
+            MessageBar { variant: "success"; message: "File saved successfully."; closable: true;
+                closed => { debug("mb closed"); }
+            }
+        }
+    }
+
+    ViewerSection { title: "EmptyState";
+        Rectangle {
+            width: root.es-w;
+            height: root.es-h;
+            border-width: root.border-px;
+            border-color: Colors.border;
+            border-radius: Spacing.sm;
+
+            EmptyState { icon: FluentIcons.folder;
+                title:
+                    "No files found";
+                description:
+                    "Upload a file or create a new one to get started.";
+                action-label:
+                    "Upload file";
+            }
+        }
+    }
+
+    ViewerSection { title: "Segmented";
+        VerticalLayout {
+            spacing: Spacing.sm;
+
+            Segmented {
+                width: root.seg1-w;
+                selected: root.seg-val;
+                items: [
+                    { id: "day",   label: "Day",   icon: "" },
+                    { id: "week",  label: "Week",  icon: "" },
+                    { id: "month", label: "Month", icon: "" },
+                ];
+                changed(id) => { root.seg-val = id; }
+            }
+
+            Segmented {
+                width: root.seg2-w;
+                selected: root.seg2-val;
+                items: [
+                    { id: "list", label: "", icon: FluentIcons.list },
+                    { id: "grid", label: "", icon: FluentIcons.grid },
+                ];
+                changed(id) => { root.seg2-val = id; }
+            }
+
+            Text { text: "Selected: " + root.seg-val + " / " + root.seg2-val;
+                font-size: Type.caption-size;
+                color: Colors.text-secondary;
+            }
+        }
+    }
+
+    ViewerSection { title: "FormField";
+        VerticalLayout {
+            spacing: Spacing.md;
+            width: root.ff-w;
+
+            FormField { label: "Username"; required: true; hint: "Letters and numbers only";
+                TextInput { placeholder: "Enter username"; }
+            }
+
+            FormField { label: "Email"; error: "Invalid email address";
+                TextInput { placeholder: "Enter email"; }
+            }
+
+            FormField { label: "Optional field"; hint: "Leave blank to skip";
+                TextInput { placeholder: "Optional..."; }
+            }
+        }
+    }
+}

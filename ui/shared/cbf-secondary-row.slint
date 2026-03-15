@@ -1,0 +1,50 @@
+import { Colors, Spacing, Type, FluentIcons } from "../tokens/theme.slint";
+import { CbfAction } from "cbf-primary-btn.slint";
+
+/// C bf se co nd ar yr ow component.
+export component CbfSecondaryRow inherits Rectangle {
+    /// Input property "item".
+    in property <CbfAction> item;
+    /// Callback fired for a ct iv at ed.
+    callback activated(string);
+
+    /// Private property "stretch-full" used internally.
+    private property <int>   stretch-full: 1;
+    /// Private property "op-enabled" used internally.
+    private property <float> op-enabled:   1.0;
+    /// Private property "op-disabled" used internally.
+    private property <float> op-disabled:  0.5;
+
+    height: Spacing.xl;
+    border-radius: Spacing.xs;
+    background: !item.enabled ? transparent :
+                ta.has-hover  ? Colors.bg-surface : transparent;
+    opacity: item.enabled ? root.op-enabled : root.op-disabled;
+
+    HorizontalLayout {
+        padding-left: Spacing.sm;
+        padding-right: Spacing.sm;
+        spacing: Spacing.sm;
+
+        if item.icon != "": Text {
+            text: item.icon;
+            font-family: FluentIcons.icon-font;
+            font-size: Type.body-size;
+            color: Colors.text-secondary;
+            vertical-alignment: center;
+        }
+
+        Text {
+            text: item.label;
+            font-size: Type.body-size;
+            color: Colors.text-primary;
+            vertical-alignment: center;
+            horizontal-stretch: root.stretch-full;
+        }
+    }
+
+    ta := TouchArea {
+        enabled: item.enabled;
+        clicked => { root.activated(root.item.id); }
+    }
+}

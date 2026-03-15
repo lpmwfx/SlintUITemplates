@@ -1,7 +1,11 @@
 import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Variants } from "../globals/Variants.slint";
 
+/// T oa st component.
 export component Toast inherits Rectangle {
+    /// Input property "message".
     in property <string> message: "";
+    /// Input property "variant".
     in property <string> variant: "info";   // info | success | warning | error
     // visible is the built-in — caller sets visible: true/false directly
 
@@ -11,9 +15,9 @@ export component Toast inherits Rectangle {
     clip: true;
 
     background:
-        variant == "success" ? Colors.success :
-        variant == "warning" ? Colors.warning :
-        variant == "error"   ? Colors.error :
+        variant == Variants.success ? Colors.success :
+        variant == Variants.warning ? Colors.warning :
+        variant == Variants.error   ? Colors.error :
         Colors.accent;
 
     HorizontalLayout {

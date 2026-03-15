@@ -1,0 +1,75 @@
+{
+  "source": "ui/shared/data-table.slint",
+  "items": [
+    {
+      "name": "TableColumn",
+      "kind": "struct",
+      "signature": "export struct TableColumn",
+      "line": 3,
+      "doc": ""
+    },
+    {
+      "name": "TableRow",
+      "kind": "struct",
+      "signature": "export struct TableRow",
+      "line": 9,
+      "doc": ""
+    },
+    {
+      "name": "DataTable",
+      "kind": "component",
+      "signature": "export component DataTable inherits Rectangle",
+      "line": 14,
+      "doc": ""
+    },
+    {
+      "name": "columns",
+      "kind": "property",
+      "signature": "in property <[TableColumn]> columns: [];",
+      "line": 15,
+      "doc": ""
+    },
+    {
+      "name": "rows",
+      "kind": "property",
+      "signature": "in property <[TableRow]>    rows: [];",
+      "line": 16,
+      "doc": ""
+    },
+    {
+      "name": "sort-key",
+      "kind": "property",
+      "signature": "in-out property <string>    sort-key: \"\";",
+      "line": 17,
+      "doc": ""
+    },
+    {
+      "name": "sort-asc",
+      "kind": "property",
+      "signature": "in-out property <bool>      sort-asc: true;",
+      "line": 18,
+      "doc": ""
+    },
+    {
+      "name": "selected",
+      "kind": "property",
+      "signature": "in-out property <string>    selected: \"\";",
+      "line": 19,
+      "doc": ""
+    },
+    {
+      "name": "sort-changed",
+      "kind": "callback",
+      "signature": "callback sort-changed(string, bool);",
+      "line": 20,
+      "doc": ""
+    },
+    {
+      "name": "row-selected",
+      "kind": "callback",
+      "signature": "callback row-selected(string);",
+      "line": 21,
+      "doc": ""
+    }
+  ]
+}

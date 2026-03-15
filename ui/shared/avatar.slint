@@ -1,7 +1,11 @@
 import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
 
+/// A va ta r component.
 export component Avatar inherits Rectangle {
+    /// Input property "initials".
     in property <string> initials: "";
+    /// Input property "size".
     in property <string> size: "md";    // sm | md | lg
 
     // Size mapping via token expressions
@@ -12,7 +16,7 @@ export component Avatar inherits Rectangle {
 
     width: dim;
     height: dim;
-    border-radius: dim / 2;
+    border-radius: dim / Sizes.two;
     background: Colors.accent;
 
     Text {

@@ -1,0 +1,33 @@
+{
+  "source": "ui/shared/cbf-primary-btn.slint",
+  "items": [
+    {
+      "name": "CbfAction",
+      "kind": "struct",
+      "signature": "export struct CbfAction",
+      "line": 3,
+      "doc": ""
+    },
+    {
+      "name": "CbfPrimaryBtn",
+      "kind": "component",
+      "signature": "export component CbfPrimaryBtn inherits Rectangle",
+      "line": 10,
+      "doc": ""
+    },
+    {
+      "name": "item",
+      "kind": "property",
+      "signature": "in property <CbfAction> item;",
+      "line": 11,
+      "doc": ""
+    },
+    {
+      "name": "activated",
+      "kind": "callback",
+      "signature": "callback activated(string);",
+      "line": 12,
+      "doc": ""
+    }
+  ]
+}

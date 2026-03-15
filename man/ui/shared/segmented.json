@@ -1,0 +1,61 @@
+{
+  "source": "ui/shared/segmented.slint",
+  "items": [
+    {
+      "name": "Segmented",
+      "kind": "component",
+      "signature": "export component Segmented inherits Rectangle",
+      "line": 6,
+      "doc": ""
+    },
+    {
+      "name": "items",
+      "kind": "property",
+      "signature": "in property <[SegmentItem]> items: [];",
+      "line": 7,
+      "doc": ""
+    },
+    {
+      "name": "selected",
+      "kind": "property",
+      "signature": "in property <string>        selected: \"\";",
+      "line": 8,
+      "doc": ""
+    },
+    {
+      "name": "changed",
+      "kind": "callback",
+      "signature": "callback changed(string);",
+      "line": 9,
+      "doc": ""
+    },
+    {
+      "name": "border-px",
+      "kind": "property",
+      "signature": "private property <length> border-px: 1px;",
+      "line": 11,
+      "doc": ""
+    },
+    {
+      "name": "pad-px",
+      "kind": "property",
+      "signature": "private property <length> pad-px:    2px;",
+      "line": 12,
+      "doc": ""
+    },
+    {
+      "name": "v-stretch",
+      "kind": "property",
+      "signature": "private property <int>    v-stretch: 1;",
+      "line": 13,
+      "doc": ""
+    },
+    {
+      "name": "h-stretch",
+      "kind": "property",
+      "signature": "private property <int>    h-stretch: 1;",
+      "line": 14,
+      "doc": ""
+    }
+  ]
+}

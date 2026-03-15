@@ -1,0 +1,39 @@
+import { Colors, Spacing, Type, FluentIcons } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
+
+// StepperCircle — a single step circle with number/checkmark for Stepper.
+/// S te pp er ci rc le component.
+export component StepperCircle inherits Rectangle {
+    /// Input property "completed".
+    in property <bool>   completed;
+    /// Input property "is-active".
+    in property <bool>   is-active;
+    /// Input property "index".
+    in property <int>    index;
+    /// Input property "circle-size".
+    in property <length> circle-size;
+    /// Callback fired for c li ck ed.
+    callback clicked();
+
+    width:  root.circle-size;
+    height: root.circle-size;
+    border-radius: root.circle-size / Sizes.two;
+    background: root.completed || root.is-active
+        ? Colors.accent : Colors.bg-elevated;
+    border-width: (root.completed || root.is-active) ? Sizes.no-size : Sizes.border-w;
+    border-color: Colors.border;
+
+    Text {
+        text: root.completed ? FluentIcons.checkmark : (root.index + Sizes.one);
+        font-family: root.completed ? FluentIcons.icon-font : "";
+        font-size: Type.caption-size;
+        color: (root.is-active || root.completed)
+            ? Colors.accent-text : Colors.text-secondary;
+        horizontal-alignment: center;
+        vertical-alignment: center;
+    }
+
+    step-ta := TouchArea {
+        clicked => { root.clicked(); }
+    }
+}

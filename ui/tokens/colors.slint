@@ -1,33 +1,4 @@
-import { Palette } from "std-widgets.slint";
-
-export global Colors {
-    in-out property <bool> dark-mode: Palette.color-scheme == ColorScheme.dark;
-
-    // ── Backgrounds (Fluent 2 exact values) ──────────────────────────────
-    out property <color> bg-primary:   dark-mode ? #202020 : #FFFFFF;
-    out property <color> bg-surface:   dark-mode ? #2C2C2C : #F3F3F3;
-    out property <color> bg-elevated:  dark-mode ? #383838 : #FFFFFF;
-
-    // ── Text ──────────────────────────────────────────────────────────────
-    out property <color> text-primary:   dark-mode ? #FFFFFF : #1C1C1C;
-    out property <color> text-secondary: dark-mode ? #9D9D9D : #616161;
-    out property <color> text-disabled:  dark-mode ? #6B6B6B : #A0A0A0;
-
-    // ── Accent — in-out so Rust can override via apply_settings() ─────────
-    in-out property <color> accent:       dark-mode ? #60CDFF : #0078D4;
-    in-out property <color> accent-hover: dark-mode ? #4CC2F1 : #106EBE;
-    out property <color>    accent-text:  dark-mode ? #000000 : #FFFFFF;
-
-    // ── Semantic ──────────────────────────────────────────────────────────
-    out property <color> error:   #C42B1C;
-    out property <color> success: #0F7B0F;
-    out property <color> warning: #9D5D00;
-
-    // ── Border ────────────────────────────────────────────────────────────
-    out property <color> border:        dark-mode ? #3D3D3D : #E0E0E0;
-    out property <color> border-strong: dark-mode ? #575757 : #C0C0C0;
-    out property <color> border-focus:  accent;
-
-    // ── Shadow ────────────────────────────────────────────────────────────
-    out property <color> shadow: dark-mode ? #00000080 : #0000001F;
-}
+// colors.slint — superseded by ui/state/Theme.slint
+//
+// The Colors global is now Theme, re-exported as Colors via ui/tokens/theme.slint.
+// This file is intentionally empty. Do not add content here.

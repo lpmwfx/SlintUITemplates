@@ -1,0 +1,75 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Sizes }            from "../tokens/sizes.slint";
+import { SpinButton }       from "SpinButton.slint";
+import { SpinValueDisplay } from "SpinValueDisplay.slint";
+
+/// S pi nb ox component.
+export component SpinBox inherits Rectangle {
+    /// Input property "value".
+    in property <int> value: 0;
+    /// Input property "min".
+    in property <int>    min: 0;
+    /// Input property "max".
+    in property <int>    max: 100;
+    /// Input property "step".
+    in property <int>    step: 1;
+    /// Input property "label".
+    in property <string> label: "";
+    /// Input property "enabled".
+    in property <bool>   enabled: true;
+    /// Callback fired for c ha ng ed.
+    callback changed(int);
+
+    height: root.label != "" ? Spacing.xl + Type.caption-size + Spacing.xs : Spacing.xl;
+    background: transparent;
+    opacity: root.enabled ? Sizes.fill : Sizes.half;
+
+    VerticalLayout {
+        spacing: Spacing.xs;
+
+        if root.label != "": Text {
+            text: root.label;
+            font-size: Type.caption-size;
+            font-weight: Type.weight-semibold;
+            color: Colors.text-secondary;
+        }
+
+        // Spinner field
+        Rectangle {
+            height: Spacing.xl;
+            border-radius: Spacing.xs;
+            border-width: Sizes.border-w;
+            border-color: Colors.border;
+            background: Colors.bg-elevated;
+            clip: true;
+
+            HorizontalLayout {
+                SpinButton {
+                    label: "−";
+                    btn-enabled: root.enabled && root.value - root.step >= root.min;
+                    clicked => { root.changed(root.value - root.step); }
+                }
+
+                // Left divider
+                Rectangle {
+                    width: Sizes.border-w;
+                    background: Colors.border;
+                }
+
+                SpinValueDisplay { display-value: root.value; }
+
+                // Right divider
+                Rectangle {
+                    width: Sizes.border-w;
+                    background: Colors.border;
+                }
+
+                SpinButton {
+                    label: "+";
+                    btn-enabled: root.enabled && root.value + root.step <= root.max;
+                    clicked => { root.changed(root.value + root.step); }
+                }
+            }
+        }
+    }
+}

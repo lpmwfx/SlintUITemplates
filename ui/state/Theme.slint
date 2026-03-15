@@ -1,33 +1,123 @@
-// Theme — the ONLY source of color truth in the entire UI.
+// Theme — controller global. Imports palette files from theme/ and exposes the token surface.
 //
-// AXIOM: AppWindow is the only writer. All components read Theme.* — never raw values.
+// AXIOM: AppWindow is the only writer of `dark` and `material`.
+//        Components read Theme.* (or Colors.* via barrel alias in tokens/theme.slint).
 //
-// dark property is set by AppWindow based on theme-mode:
-//   "system" → follows OS  (via Palette.color-scheme)
-//   "dark"   → always dark
-//   "light"  → always light
-//
-// Rust adapter can also push Theme.dark via generated bindings.
+// Palettes live in theme/ — one file per material, pure constants, no logic.
 
+import { Palette }  from "std-widgets.slint";
+import { Solid }    from "theme/solid.slint";
+import { Mica }     from "theme/mica.slint";
+import { Acrylic }  from "theme/acrylic.slint";
+import { ThemeMode } from "../globals/ThemeMode.slint";
+
+/// T he me global values.
 export global Theme {
-    in-out property <bool> dark: true;
+    /// Two-way property "material".
+    in-out property <string> material: "solid";  // "solid" | "mica" | "acrylic"
+    /// Two-way property "dark".
+    in-out property <bool>   dark: Palette.color-scheme == ColorScheme.dark;
+    /// Two-way property "dark-mode".
+    in-out property <bool>   dark-mode <=> dark;  // backwards-compat alias
+    /// Two-way property "accent-override".
+    in-out property <color>  accent-override: transparent;  // alpha=0 → derive from palette
 
-    // Backgrounds
-    out property <color> bg-primary:  dark ? #1a1a1a : #f0f0f0;
-    out property <color> bg-surface:  dark ? #2d2d2d : #ffffff;
-    out property <color> bg-panel:    dark ? #242424 : #e8e8e8;
+    /// Output property "bg-primary".
+    out property <color> bg-primary:
+        material == ThemeMode.mica    ? (dark ? Mica.dark-bg-primary       : Mica.light-bg-primary)
+      : material == ThemeMode.acrylic ? (dark ? Acrylic.dark-bg-primary    : Acrylic.light-bg-primary)
+      :                         (dark ? Solid.dark-bg-primary      : Solid.light-bg-primary);
 
-    // Borders + handles
-    out property <color> border:        dark ? #3a3a3a : #cccccc;
-    out property <color> handle:        dark ? #3a3a3a : #cccccc;
-    out property <color> handle-hover:  dark ? #6a6a6a : #999999;
+    /// Output property "bg-surface".
+    out property <color> bg-surface:
+        material == ThemeMode.mica    ? (dark ? Mica.dark-bg-surface       : Mica.light-bg-surface)
+      : material == ThemeMode.acrylic ? (dark ? Acrylic.dark-bg-surface    : Acrylic.light-bg-surface)
+      :                         (dark ? Solid.dark-bg-surface      : Solid.light-bg-surface);
 
-    // Text
-    out property <color> text-primary:  dark ? #f0f0f0 : #1a1a1a;
-    out property <color> text-muted:    dark ? #888888 : #666666;
+    /// Output property "bg-elevated".
+    out property <color> bg-elevated:
+        material == ThemeMode.mica    ? (dark ? Mica.dark-bg-elevated      : Mica.light-bg-elevated)
+      : material == ThemeMode.acrylic ? (dark ? Acrylic.dark-bg-elevated   : Acrylic.light-bg-elevated)
+      :                         (dark ? Solid.dark-bg-elevated     : Solid.light-bg-elevated);
 
-    // Accent — same in both modes
-    out property <color> accent:        #4a90d9;
-    out property <color> accent-hover:  #5aa0e9;
-    out property <color> danger:        #d94a4a;
+    /// Output property "text-primary".
+    out property <color> text-primary:
+        material == ThemeMode.mica    ? (dark ? Mica.dark-text-primary     : Mica.light-text-primary)
+      : material == ThemeMode.acrylic ? (dark ? Acrylic.dark-text-primary  : Acrylic.light-text-primary)
+      :                         (dark ? Solid.dark-text-primary    : Solid.light-text-primary);
+
+    /// Output property "text-secondary".
+    out property <color> text-secondary:
+        material == ThemeMode.mica    ? (dark ? Mica.dark-text-secondary   : Mica.light-text-secondary)
+      : material == ThemeMode.acrylic ? (dark ? Acrylic.dark-text-secondary: Acrylic.light-text-secondary)
+      :                         (dark ? Solid.dark-text-secondary  : Solid.light-text-secondary);
+
+    /// Output property "text-disabled".
+    out property <color> text-disabled:
+        material == ThemeMode.mica    ? (dark ? Mica.dark-text-disabled    : Mica.light-text-disabled)
+      : material == ThemeMode.acrylic ? (dark ? Acrylic.dark-text-disabled : Acrylic.light-text-disabled)
+      :                         (dark ? Solid.dark-text-disabled   : Solid.light-text-disabled);
+
+    /// Output property "accent".
+    out property <color> accent:
+        accent-override.alpha > 0 ? accent-override
+      : material == ThemeMode.mica    ? (dark ? Mica.dark-accent           : Mica.light-accent)
+      : material == ThemeMode.acrylic ? (dark ? Acrylic.dark-accent        : Acrylic.light-accent)
+      :                         (dark ? Solid.dark-accent          : Solid.light-accent);
+
+    /// Output property "accent-hover".
+    out property <color> accent-hover:
+        material == ThemeMode.mica    ? (dark ? Mica.dark-accent-hover     : Mica.light-accent-hover)
+      : material == ThemeMode.acrylic ? (dark ? Acrylic.dark-accent-hover  : Acrylic.light-accent-hover)
+      :                         (dark ? Solid.dark-accent-hover    : Solid.light-accent-hover);
+
+    /// Output property "accent-text".
+    out property <color> accent-text:
+        material == ThemeMode.mica    ? (dark ? Mica.dark-accent-text      : Mica.light-accent-text)
+      : material == ThemeMode.acrylic ? (dark ? Acrylic.dark-accent-text   : Acrylic.light-accent-text)
+      :                         (dark ? Solid.dark-accent-text     : Solid.light-accent-text);
+
+    /// Output property "error".
+    out property <color> error:   #C42B1C;
+    /// Output property "success".
+    out property <color> success: #0F7B0F;
+    /// Output property "warning".
+    out property <color> warning: #9D5D00;
+
+    /// Output property "border".
+    out property <color> border:
+        material == ThemeMode.mica    ? (dark ? Mica.dark-border           : Mica.light-border)
+      : material == ThemeMode.acrylic ? (dark ? Acrylic.dark-border        : Acrylic.light-border)
+      :                         (dark ? Solid.dark-border          : Solid.light-border);
+
+    /// Output property "border-strong".
+    out property <color> border-strong:
+        material == ThemeMode.mica    ? (dark ? Mica.dark-border-strong    : Mica.light-border-strong)
+      : material == ThemeMode.acrylic ? (dark ? Acrylic.dark-border-strong : Acrylic.light-border-strong)
+      :                         (dark ? Solid.dark-border-strong   : Solid.light-border-strong);
+
+    /// Output property "border-focus".
+    out property <color> border-focus: accent;
+
+    /// Output property "shadow".
+    out property <color> shadow:
+        material == ThemeMode.mica    ? (dark ? Mica.dark-shadow           : Mica.light-shadow)
+      : material == ThemeMode.acrylic ? (dark ? Acrylic.dark-shadow        : Acrylic.light-shadow)
+      :                         (dark ? Solid.dark-shadow          : Solid.light-shadow);
+
+    // ── Overlay ───────────────────────────────────────────────────────────────
+    /// Output property "overlay".
+    out property <color> overlay: #00000040;
+
+    // ── Aliases ───────────────────────────────────────────────────────────────
+    /// Output property "bg-panel".
+    out property <color> bg-panel:     bg-surface;
+    /// Output property "handle".
+    out property <color> handle:       border;
+    /// Output property "handle-hover".
+    out property <color> handle-hover: border-strong;
+    /// Output property "danger".
+    out property <color> danger:       error;
+    /// Output property "text-muted".
+    out property <color> text-muted:   text-secondary;
 }

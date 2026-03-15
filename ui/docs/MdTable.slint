@@ -1,0 +1,72 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Sizes }                 from "../tokens/sizes.slint";
+import { Variants }              from "../globals/Variants.slint";
+
+// MdTable — renders table header (th) and data (tr) rows.
+/// M dt ab le component.
+export component MdTable inherits VerticalLayout {
+    /// Input property "kind".
+    in property <string> kind;
+    /// Input property "text".
+    in property <string> text;
+    /// Input property "mono-font".
+    in property <string> mono-font: "Consolas";
+
+    // Table header row
+    if root.kind == Variants.th: VerticalLayout {
+        width: parent.width;
+        padding-top: Spacing.xs;
+
+        Rectangle {
+            width: parent.width;
+            background: Colors.bg-elevated;
+            border-radius: Spacing.xs;
+            border-color: Colors.border;
+            border-width: Sizes.border-w;
+
+            HorizontalLayout {
+                padding-left: Spacing.sm;
+                padding-right: Spacing.sm;
+                padding-top: Spacing.xs;
+                padding-bottom: Spacing.xs;
+
+                Text {
+                    horizontal-stretch: Sizes.one;
+                    text: root.text;
+                    font-family: root.mono-font;
+                    font-size: Type.caption-size;
+                    font-weight: Type.weight-semibold;
+                    color: Colors.text-primary;
+                    wrap: word-wrap;
+                }
+            }
+        }
+    }
+
+    // Table data row
+    if root.kind == Variants.tr: VerticalLayout {
+        width: parent.width;
+
+        Rectangle {
+            width: parent.width;
+            border-color: Colors.border;
+            border-width: Sizes.border-w;
+
+            HorizontalLayout {
+                padding-left: Spacing.sm;
+                padding-right: Spacing.sm;
+                padding-top: Spacing.xs / Sizes.two;
+                padding-bottom: Spacing.xs / Sizes.two;
+
+                Text {
+                    horizontal-stretch: Sizes.one;
+                    text: root.text;
+                    font-family: root.mono-font;
+                    font-size: Type.caption-size;
+                    color: Colors.text-primary;
+                    wrap: word-wrap;
+                }
+            }
+        }
+    }
+}

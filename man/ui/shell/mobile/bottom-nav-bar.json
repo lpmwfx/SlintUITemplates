@@ -1,0 +1,33 @@
+{
+  "source": "ui/shell/mobile/bottom-nav-bar.slint",
+  "items": [
+    {
+      "name": "BottomNavBar",
+      "kind": "component",
+      "signature": "export component BottomNavBar inherits Rectangle",
+      "line": 7,
+      "doc": ""
+    },
+    {
+      "name": "items",
+      "kind": "property",
+      "signature": "in property <[NavItem]> items;",
+      "line": 8,
+      "doc": ""
+    },
+    {
+      "name": "active",
+      "kind": "property",
+      "signature": "in property <string>    active: \"\";",
+      "line": 9,
+      "doc": ""
+    },
+    {
+      "name": "navigate",
+      "kind": "callback",
+      "signature": "callback navigate(string);",
+      "line": 10,
+      "doc": ""
+    }
+  ]
+}

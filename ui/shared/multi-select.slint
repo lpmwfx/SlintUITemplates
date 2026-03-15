@@ -1,0 +1,47 @@
+import { Spacing } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
+import { MultiSelectOption }   from "multi-select-types.slint";
+import { MultiSelectChip }     from "MultiSelectChip.slint";
+import { MultiSelectDropdown } from "MultiSelectDropdown.slint";
+
+export { MultiSelectOption }
+
+/// M ul ti se le ct component.
+export component MultiSelect inherits Rectangle {
+    /// Input property "options".
+    in property <[MultiSelectOption]> options: [];
+    /// Input property "selected".
+    in property <[string]>        selected: [];
+    /// Input property "placeholder".
+    in property <string>              placeholder: "Select...";
+    /// Input property "enabled".
+    in property <bool>                enabled: true;
+    /// Callback fired for c ha ng ed.
+    callback changed([string]);
+
+    /// Private property "open" used internally.
+    private property <bool> open: false;
+
+    height: Spacing.xl;
+    opacity: root.enabled ? Sizes.fill : Sizes.half;
+    clip: false;
+
+    // Trigger row
+    MultiSelectChip {
+        selected-count: root.selected.length;
+        first-selected: root.selected.length > Sizes.zero ? root.selected[Sizes.zero] : "";
+        placeholder: root.placeholder;
+        open: root.open;
+        enabled: root.enabled;
+        toggle-open => { root.open = !root.open; }
+    }
+
+    // Dropdown list
+    if root.open: MultiSelectDropdown {
+        y: Spacing.xl + Spacing.xs;
+        width: parent.width;
+        height: min(root.options.length * Spacing.xl, Spacing.xl * Sizes.five);
+        options: root.options;
+        item-selected(val) => { root.changed([val]); }
+    }
+}

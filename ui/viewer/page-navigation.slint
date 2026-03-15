@@ -1,0 +1,95 @@
+// page-navigation — TabBar, Breadcrumb, Pagination, Stepper
+
+import { Spacing } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
+import { TabBar, TabItem }         from "../shared/tab-bar.slint";
+import { Breadcrumb, BreadcrumbItem } from "../shared/breadcrumb.slint";
+import { Pagination }              from "../shared/pagination.slint";
+import { Stepper, StepItem }       from "../shared/stepper.slint";
+import { ViewerSection } from "viewer-section.slint";
+
+/// Viewer page showcasing navigation widgets such as tabs, breadcrumbs, pagination, and steppers.
+export component PageNavigation inherits VerticalLayout {
+    spacing: Spacing.md;
+
+    /// Private property "active-tab" used internally.
+    private property <string> active-tab: "one";
+    /// Private property "page" used internally.
+    private property <int>    page: Sizes.three;
+    /// Private property "step-active" used internally.
+    private property <int>    step-active: Sizes.one;
+
+    // ── demo labels ─────────────────────────────────────────────────────
+    /// Private property "section-tabbar" used internally.
+    private property <string> section-tabbar: "TabBar";
+    /// Private property "section-breadcrumb" used internally.
+    private property <string> section-breadcrumb: "Breadcrumb";
+    /// Private property "section-pagination" used internally.
+    private property <string> section-pagination: "Pagination";
+    /// Private property "section-stepper" used internally.
+    private property <string> section-stepper: "Stepper";
+
+    ViewerSection {
+        title: root.section-tabbar;
+        VerticalLayout {
+            spacing: Spacing.sm;
+            width: Sizes.panel-max;
+            TabBar {
+                tabs: [
+                    { id: "one",   label: "Overview", icon: "" },
+                    { id: "two",   label: "Details",  icon: "" },
+                    { id: "three", label: "History",  icon: "" },
+                ];
+                active: active-tab;
+                changed(id) => { active-tab = id; }
+            }
+        }
+    }
+
+    ViewerSection {
+        title: root.section-breadcrumb;
+        Breadcrumb {
+            items: [
+                { id: "home",    label: "Home" },
+                { id: "docs",    label: "Documentation" },
+                { id: "widgets", label: "Widgets" },
+            ];
+        }
+    }
+
+    ViewerSection {
+        title: root.section-pagination;
+        VerticalLayout {
+            spacing: Spacing.sm;
+            Pagination {
+                current: page;
+                total: Sizes.ten;
+                pages: [Sizes.one, Sizes.two, Sizes.three, Sizes.four, Sizes.five, Sizes.six, Sizes.seven];
+                changed(p) => { page = p; }
+            }
+            Pagination {
+                current: Sizes.one;
+                total: Sizes.three;
+                pages: [];
+            }
+        }
+    }
+
+    ViewerSection {
+        title: root.section-stepper;
+        VerticalLayout {
+            spacing: Spacing.sm;
+            width: Sizes.panel-wide;
+            Stepper {
+                steps: [
+                    { label: "Account",  completed: true },
+                    { label: "Profile",  completed: true },
+                    { label: "Review",   completed: false },
+                    { label: "Confirm",  completed: false },
+                ];
+                active: step-active;
+                step-changed(i) => { step-active = i; }
+            }
+        }
+    }
+}

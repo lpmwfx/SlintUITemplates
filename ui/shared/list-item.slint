@@ -1,10 +1,19 @@
 import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
 
+/// Compact two-line list row with optional subtitle and selected state.
 export component ListItem inherits Rectangle {
+    /// Primary text shown for the row.
     in property <string> title: "";
+    /// Secondary text shown below the title when non-empty.
     in property <string> subtitle: "";
+    /// Highlights the row as the currently selected item.
     in property <bool> selected: false;
+    /// Fired when the row is clicked.
     callback clicked();
+
+    /// Private property "inner-gap" used internally.
+    private property <length> inner-gap: Sizes.border-w-2;
 
     height: subtitle != "" ? Spacing.xl + Type.caption-size + Spacing.xs : Spacing.xl;
     background: selected ? Colors.accent :
@@ -20,7 +29,7 @@ export component ListItem inherits Rectangle {
 
         VerticalLayout {
             alignment: center;
-            spacing: 2px;
+            spacing: root.inner-gap;
 
             Text {
                 text: root.title;

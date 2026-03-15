@@ -1,0 +1,33 @@
+{
+  "source": "ui/shared/toggle.slint",
+  "items": [
+    {
+      "name": "Toggle",
+      "kind": "component",
+      "signature": "export component Toggle inherits Rectangle",
+      "line": 3,
+      "doc": ""
+    },
+    {
+      "name": "checked",
+      "kind": "property",
+      "signature": "in property <bool> checked: false;",
+      "line": 4,
+      "doc": ""
+    },
+    {
+      "name": "label",
+      "kind": "property",
+      "signature": "in property <string> label: \"\";",
+      "line": 5,
+      "doc": ""
+    },
+    {
+      "name": "toggled",
+      "kind": "callback",
+      "signature": "callback toggled(bool);",
+      "line": 6,
+      "doc": ""
+    }
+  ]
+}

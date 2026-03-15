@@ -1,0 +1,40 @@
+{
+  "source": "ui/shared/form-field.slint",
+  "items": [
+    {
+      "name": "FormField",
+      "kind": "component",
+      "signature": "export component FormField inherits VerticalLayout",
+      "line": 4,
+      "doc": ""
+    },
+    {
+      "name": "label",
+      "kind": "property",
+      "signature": "in property <string> label: \"\";",
+      "line": 5,
+      "doc": ""
+    },
+    {
+      "name": "required",
+      "kind": "property",
+      "signature": "in property <bool>   required: false;",
+      "line": 6,
+      "doc": ""
+    },
+    {
+      "name": "error",
+      "kind": "property",
+      "signature": "in property <string> error: \"\";",
+      "line": 7,
+      "doc": ""
+    },
+    {
+      "name": "hint",
+      "kind": "property",
+      "signature": "in property <string> hint: \"\";",
+      "line": 8,
+      "doc": ""
+    }
+  ]
+}

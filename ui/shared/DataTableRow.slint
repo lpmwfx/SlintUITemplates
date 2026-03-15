@@ -1,0 +1,54 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
+import { TableColumn } from "data-table-types.slint";
+
+// DataTableRow — a single data row with cells matching column widths.
+/// D at at ab le ro w component.
+export component DataTableRow inherits Rectangle {
+    /// Input property "cells".
+    in property <[string]>       cells;
+    /// Input property "columns".
+    in property <[TableColumn]>  columns;
+    /// Input property "is-selected".
+    in property <bool>           is-selected: false;
+    /// Input property "is-alternate".
+    in property <bool>           is-alternate: false;
+    /// Callback fired for c li ck ed.
+    callback clicked();
+
+    /// Private property "fallback-col-width" used internally.
+    private property <length> fallback-col-width: 100px;
+
+    height: Spacing.xl;
+    background: root.is-selected ? Colors.accent :
+                root.is-alternate ? Colors.bg-elevated : Colors.bg-surface;
+
+    // Bottom border
+    Rectangle {
+        y: parent.height - Sizes.border-w;
+        height: Sizes.border-w;
+        width: parent.width;
+        background: Colors.border;
+    }
+
+    HorizontalLayout {
+        for cell[j] in root.cells: Rectangle {
+            width: j < root.columns.length ? root.columns[j].width : root.fallback-col-width;
+            height: parent.height;
+
+            Text {
+                x: Spacing.sm;
+                text: cell;
+                font-size: Type.body-size;
+                color: root.is-selected
+                    ? Colors.accent-text : Colors.text-primary;
+                vertical-alignment: center;
+                overflow: elide;
+            }
+        }
+    }
+
+    row-ta := TouchArea {
+        clicked => { root.clicked(); }
+    }
+}

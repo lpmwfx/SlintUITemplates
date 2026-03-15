@@ -1,0 +1,44 @@
+import { Colors, Spacing } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
+import { StarItem } from "StarItem.slint";
+
+/// R at in g component.
+export component Rating inherits Rectangle {
+    /// Input property "value".
+    in property <int> value: Sizes.zero;
+    /// Input property "max".
+    in property <int>  max: Sizes.five;
+    /// Input property "readonly".
+    in property <bool> readonly: false;
+    /// Callback fired for c ha ng ed.
+    callback changed(int);
+
+    /// Private property "hover-val" used internally.
+    private property <int> hover-val: Sizes.zero;
+
+    height: Spacing.xl;
+    background: transparent;
+
+    VerticalLayout {
+        alignment: center;
+
+        stars-row := HorizontalLayout {
+            alignment: start;
+            spacing: Spacing.xs;
+
+            for i in [Sizes.one, Sizes.two, Sizes.three, Sizes.four, Sizes.five]: StarItem {
+                visible: i <= root.max;
+                index: i;
+                display-val: root.hover-val > Sizes.zero ? root.hover-val : root.value;
+                readonly: root.readonly;
+                clicked => { root.changed(i); }
+                hover-changed(val) => { root.hover-val = val; }
+            }
+        }
+    }
+
+    // Reset hover when mouse leaves the widget
+    exit-ta := TouchArea {
+        pointer-event(e) => { root.hover-val = e.kind == PointerEventKind.cancel ? Sizes.zero : root.hover-val; }
+    }
+}

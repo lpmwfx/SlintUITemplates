@@ -12,6 +12,14 @@ repository  = "https://github.com/lpmwfx/SlintUITemplates"
 name = "slint-ui-templates"
 path = "src/main.rs"
 
+[[bin]]
+name = "slintui"
+path = "src/bin/slintui.rs"
+
+[[bin]]
+name = "docgen"
+path = "src/bin/docgen.rs"
+
 [lib]
 name = "slint_ui_templates"
 path = "src/lib.rs"
@@ -32,11 +40,19 @@ path = "examples/viewer/main.rs"
 name = "mobile"
 path = "examples/mobile/main.rs"
 
+[[example]]
+name = "docs"
+path = "examples/docs/main.rs"
+
 [dependencies]
 slint = "1"
+tracing = "0.1"
 toml = "0.8"
 serde = { version = "1", features = ["derive"] }
-rhai = { version = "1" }
+rhai            = { version = "1" }
+pulldown-cmark  = { version = "0.12", default-features = false, features = ["getopts"] }
+thiserror       = "2"
+tiny-skia       = "0.11"
 
 [target.'cfg(windows)'.dependencies]
 windows-sys = { version = "0.52", features = ["Win32_Graphics_Dwm", "Win32_Foundation", "Win32_UI_Controls"] }
@@ -47,4 +63,6 @@ raw-window-handle = "0.6"
 i-slint-backend-testing = "1.15"
 
 [build-dependencies]
-slint-build = "1.15"
+slint-build    = "1.15"
+rustscanners    = { git = "https://github.com/lpmwfx/RustScanners" }
+slintscanners   = { git = "https://github.com/lpmwfx/SlintScanners" }

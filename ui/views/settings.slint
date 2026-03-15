@@ -1,11 +1,15 @@
 import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Variants } from "../globals/Variants.slint";
 import { Toggle } from "../shared/toggle.slint";
 import { Button } from "../shared/button.slint";
 
-// Designer-editable settings view.
-// Preview: slint-viewer ui/desktop/app-window.slint --auto-reload
+/// Starter settings page for the `settings` navigation slot.
+///
+/// Shows basic toggle controls and action buttons for shell demos.
 export component SettingsView inherits Rectangle {
     background: Colors.bg-primary;
+    /// Private property "page-title" used internally.
+    private property <string> page-title: "Settings";
 
     VerticalLayout {
         padding: Spacing.lg;
@@ -13,7 +17,7 @@ export component SettingsView inherits Rectangle {
         alignment: start;
 
         Text {
-            text: "Settings";
+            text: root.page-title;
             font-size: Type.heading-size;
             font-weight: Type.weight-semibold;
             color: Colors.text-primary;
@@ -25,8 +29,8 @@ export component SettingsView inherits Rectangle {
 
         HorizontalLayout {
             spacing: Spacing.sm;
-            Button { label: "Save Changes"; variant: "primary";   clicked => {} }
-            Button { label: "Reset";        variant: "secondary"; clicked => {} }
+            Button { label: "Save Changes"; variant: Variants.primary;   clicked => {} }
+            Button { label: "Reset";        variant: Variants.secondary; clicked => {} }
         }
     }
 }

@@ -1,0 +1,152 @@
+import { Colors, Spacing, Type, Sizes, Settings } from "../tokens/theme.slint";
+import { NavBar }           from "../desktop/nav-bar.slint";
+import { NavItem }          from "../desktop/types.slint";
+import { SideBar }          from "../desktop/side-bar.slint";
+import { StatusBar }        from "../desktop/status-bar.slint";
+import { DragHandle }       from "../modules/DragHandle.slint";
+import { ShellToolbar }     from "../shell/desktop/tool-bar.slint";
+import { ShellToolbarItem } from "../shell/types.slint";
+import { MarkdownView }     from "markdown-view.slint";
+import { DocBlock }         from "doc-block.slint";
+
+export { DocBlock }
+
+// ── DocsApp — full-window docs browser ───────────────────────────────────────
+// Mother component: owns sidebar state + layout. Children receive in property.
+// Rust host sets doc-blocks on navigate and handles toggle-group for collapse.
+/// D oc sa pp component.
+export component DocsApp inherits Window {
+    /// Input property "window-title".
+    in property <string>             window-title:     "SlintUITemplates — Docs";
+    /// Input property "menu-file-label".
+    in property <string>             menu-file-label:  "File";
+    /// Input property "menu-theme-label".
+    in property <string>             menu-theme-label: "Theme";
+    preferred-width:  Sizes.docs-window-width;
+    preferred-height: Sizes.docs-window-height;
+    min-width:        Sizes.docs-window-min-width;
+    min-height:       Sizes.docs-window-min-height;
+    title:            root.window-title;
+    background:       Colors.bg-primary;
+    default-font-family: Settings.font-family;
+
+    // ── State ─────────────────────────────────────────────────────────────────
+    /// Two-way property "active-view".
+    in-out property <string>         active-view: "getting-started";
+    /// Two-way property "nav-items".
+    in-out property <[NavItem]>      nav-items: [];
+    /// Two-way property "doc-blocks".
+    in-out property <[DocBlock]>     doc-blocks: [];
+    /// Two-way property "doc-title".
+    in-out property <string>         doc-title: "";
+    /// Two-way property "status-text".
+    in-out property <string>         status-text: "Ready";
+    /// Input property "toolbar-items".
+    in property <[ShellToolbarItem]> toolbar-items: [];
+    /// Input property "show-toolbar".
+    in property <bool>               show-toolbar: false;
+
+    /// Two-way property "sidebar-collapsed".
+    in-out property <bool>   sidebar-collapsed: false;
+    /// Two-way property "col-left-width".
+    in-out property <length> col-left-width: Spacing.xl * 4 + Spacing.md;
+
+    property <length> sidebar-expanded-width:  Spacing.xl * 4 + Spacing.md;
+    property <length> sidebar-collapsed-width: Spacing.xl + Spacing.sm;
+    // Captures col-left-width at drag-start so drag-sidebar can use cumulative dx correctly.
+    /// Private property "drag-base-width" used internally.
+    private property <length> drag-base-width: Spacing.xl * 4 + Spacing.md;
+
+    // Keep col-left-width in sync when sidebar collapses/expands via toggle
+    changed sidebar-collapsed => {
+        root.col-left-width = root.sidebar-collapsed
+            ? root.sidebar-collapsed-width
+            : root.sidebar-expanded-width;
+    }
+
+    // ── Callbacks ─────────────────────────────────────────────────────────────
+    /// Callback fired for n av ig at e.
+    callback navigate(string);
+    /// Callback fired for t oo lb ar c li ck ed.
+    callback toolbar-clicked(string);
+    /// Callback fired for r eq ue st b g s ty le.
+    callback request-bg-style(string);
+    /// Callback fired for t og gl e g ro up.
+    callback toggle-group(string);   // Rust-siden håndterer hidden-toggle på nav-items
+    /// Callback fired for d ra g s id eb ar.
+    callback drag-sidebar(dx: float);
+    /// Callback fired for d ra g a nc ho r.
+    callback drag-anchor();   // called by DragHandle on press+release to re-anchor drag-base-width
+
+    // Anchor: capture current col-left-width as the drag baseline.
+    drag-anchor() => { root.drag-base-width = root.col-left-width; }
+
+    // DragHandle reports cumulative dx from press point — compute from anchor, not current width.
+    drag-sidebar(dx) => { root.col-left-width = clamp(root.drag-base-width + dx * Spacing.border, root.sidebar-collapsed-width, root.width - Sizes.docs-content-min-width); }
+
+    navigate(id) => { root.active-view = id; }
+
+    // ── MenuBar ───────────────────────────────────────────────────────────────
+    MenuBar {
+        Menu {
+            title: root.menu-file-label;
+            MenuItem { title: "Exit"; activated => { } }
+        }
+        Menu {
+            title: root.menu-theme-label;
+            MenuItem { title: "Solid";   activated => { root.request-bg-style("solid"); } }
+            MenuItem { title: "Mica";    activated => { root.request-bg-style("mica"); } }
+            MenuItem { title: "Acrylic"; activated => { root.request-bg-style("acrylic"); } }
+        }
+    }
+
+    // ── Layout ────────────────────────────────────────────────────────────────
+    VerticalLayout {
+        if root.show-toolbar: ShellToolbar {
+            items: root.toolbar-items;
+            item-clicked(id) => { root.toolbar-clicked(id); }
+        }
+
+        NavBar {
+            height: Spacing.xl;
+            breadcrumb: root.doc-title != "" ? root.doc-title : root.active-view;
+            can-go-back: false;
+        }
+
+        HorizontalLayout {
+            vertical-stretch: Sizes.fill;
+
+            SideBar {
+                horizontal-stretch: Sizes.no-fill;
+                min-width: root.col-left-width;
+                max-width: root.col-left-width;
+                items: root.nav-items;
+                active-item: root.active-view;
+                collapsed: root.sidebar-collapsed;
+                navigate(id)     => { root.navigate(id); }
+                toggle-group(id) => { root.toggle-group(id); }
+                toggle-collapsed() => { root.sidebar-collapsed = !root.sidebar-collapsed; }
+            }
+
+            DragHandle {
+                min-width:    Spacing.handle-thickness;
+                max-width:    Spacing.handle-thickness;
+                vertical:     false;
+                dragged(dx, _dy)  => { root.drag-sidebar(dx); }
+                drag-started()    => { root.drag-anchor(); }
+            }
+
+            // Content pane — the library's MarkdownView widget
+            MarkdownView {
+                horizontal-stretch: Sizes.fill;
+                background: Colors.bg-surface;
+                blocks: root.doc-blocks;
+            }
+        }
+
+        StatusBar {
+            height: Spacing.xl;
+            status-text: root.status-text;
+        }
+    }
+}

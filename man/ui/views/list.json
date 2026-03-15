@@ -1,0 +1,12 @@
+{
+  "source": "ui/views/list.slint",
+  "items": [
+    {
+      "name": "ListView",
+      "kind": "component",
+      "signature": "export component ListView inherits Rectangle",
+      "line": 6,
+      "doc": ""
+    }
+  ]
+}

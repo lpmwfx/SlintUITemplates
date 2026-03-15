@@ -1,0 +1,54 @@
+{
+  "source": "ui/tokens/fluent/motion.slint",
+  "items": [
+    {
+      "name": "fast",
+      "kind": "property",
+      "signature": "out property <duration> fast:   83ms;    // micro interactions (hover, press)",
+      "line": 6,
+      "doc": ""
+    },
+    {
+      "name": "normal",
+      "kind": "property",
+      "signature": "out property <duration> normal: 167ms;   // standard transitions (open, close)",
+      "line": 7,
+      "doc": ""
+    },
+    {
+      "name": "slow",
+      "kind": "property",
+      "signature": "out property <duration> slow:   250ms;   // larger transitions (page, panel)",
+      "line": 8,
+      "doc": ""
+    },
+    {
+      "name": "slower",
+      "kind": "property",
+      "signature": "out property <duration> slower: 383ms;   // deliberate / emphasis transitions",
+      "line": 9,
+      "doc": ""
+    },
+    {
+      "name": "entrance",
+      "kind": "property",
+      "signature": "out property <easing> entrance: ease-in-out;",
+      "line": 15,
+      "doc": ""
+    },
+    {
+      "name": "exit",
+      "kind": "property",
+      "signature": "out property <easing> exit:     ease-in;",
+      "line": 16,
+      "doc": ""
+    },
+    {
+      "name": "standard",
+      "kind": "property",
+      "signature": "out property <easing> standard: ease-in-out;",
+      "line": 17,
+      "doc": ""
+    }
+  ]
+}

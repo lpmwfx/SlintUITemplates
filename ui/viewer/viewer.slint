@@ -1,124 +1,195 @@
 // FrameworkViewer — browse and verify all SlintUI widgets in one window.
 // Dog-foods our own components; topbar writes to Colors/Settings globals live.
 
-import { Colors, Spacing, Type, Settings, FluentIcons } from "../tokens/theme.slint";
-import { SideBar }    from "../desktop/side-bar.slint";
-import { NavItem }    from "../desktop/types.slint";
-import { Button }     from "../shared/button.slint";
-import { Toggle }     from "../shared/toggle.slint";
-import { SelectField } from "../shared/select-field.slint";
-import { PageButtons }  from "page-buttons.slint";
-import { PageInputs }   from "page-inputs.slint";
-import { PageDisplay }  from "page-display.slint";
-import { PageFeedback } from "page-feedback.slint";
-import { PageLayout }   from "page-layout.slint";
-import { PageAppShell } from "page-app-shell.slint";
-import { PageIcons }    from "page-icons.slint";
+import { Colors, Spacing, FluentIcons, Settings } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
+import { ViewId }        from "../globals/ViewId.slint";
+import { SideBar }       from "../desktop/side-bar.slint";
+import { NavItem }       from "../desktop/types.slint";
+import { ViewerTopbar }  from "viewer-topbar.slint";
+import { PageAppShell }  from "page-app-shell.slint";
+import { ViewerContent } from "viewer-content.slint";
 
+/// F ra me wo rk vi ew er component.
 export component FrameworkViewer inherits Window {
-    preferred-width:  1100px;
-    preferred-height: 720px;
-    title: "SlintUI Framework Viewer";
+    preferred-width:  root.win-w;
+    preferred-height: root.win-h;
+    title:
+        "SlintUI Framework Viewer";
+
+    /// Two-way property "active-view".
+    in-out property <string> active-view: ViewId.buttons;
+    /// Input property "canvas-frame".
+    in property <image> canvas-frame;
+
+    /// Private property "win-w" used internally.
+    private property <length> win-w:     1100px;
+    /// Private property "win-h" used internally.
+    private property <length> win-h:     720px;
+    /// Private property "zoom-small" used internally.
+    private property <float>  zoom-small:   Sizes.three-quarter;
+    /// Private property "zoom-normal" used internally.
+    private property <float>  zoom-normal:  Sizes.fill;
+    /// Private property "zoom-large" used internally.
+    private property <float>  zoom-large:  1.25;
+    /// Private property "zoom-xlarge" used internally.
+    private property <float>  zoom-xlarge:  1.5;
+    /// Private property "menu-zoom-sm" used internally.
+    private property <string> menu-zoom-sm: "Zoom 75%";
+    /// Private property "menu-zoom-md" used internally.
+    private property <string> menu-zoom-md: "Zoom 100%";
+    /// Private property "menu-zoom-lg" used internally.
+    private property <string> menu-zoom-lg: "Zoom 125%";
+    /// Private property "menu-zoom-xl" used internally.
+    private property <string> menu-zoom-xl: "Zoom 150%";
+    /// Private property "v-stretch" used internally.
+    private property <int>    v-stretch: Sizes.one;
+    /// Private property "h-sidebar" used internally.
+    private property <int>    h-sidebar: Sizes.zero;
+    /// Private property "h-stretch" used internally.
+    private property <int>    h-stretch: Sizes.one;
+
     background: Colors.bg-primary;
 
-    in-out property <string> active-view: "buttons";
+    /// Callback fired for r eq ue st b g s ty le.
+    callback request-bg-style(string);
+    /// Callback fired for n ew f il e.
+    callback new-file();
+    /// Callback fired for n ew w in do w.
+    callback new-window();
+    /// Callback fired for o pe n f il e.
+    callback open-file();
+    /// Callback fired for s av e.
+    callback save();
+    /// Callback fired for s av e a s.
+    callback save-as();
+    /// Callback fired for q ui t.
+    callback quit();
+    /// Callback fired for u nd o.
+    callback undo();
+    /// Callback fired for r ed o.
+    callback redo();
+    /// Callback fired for c ut.
+    callback cut();
+    /// Callback fired for c op y.
+    callback copy();
+    /// Callback fired for p as te.
+    callback paste();
+    /// Callback fired for f in d.
+    callback find();
+    /// Callback fired for s el ec t a ll.
+    callback select-all();
+    /// Callback fired for o pe n d oc s.
+    callback open-docs();
+    /// Callback fired for o pe n s ho rt cu ts.
+    callback open-shortcuts();
+    /// Callback fired for a bo ut.
+    callback about();
 
-    // Native OS menu bar (muda-backed via Slint — must live in Window)
     MenuBar {
         Menu {
-            title: "View";
-            MenuItem { title: "Buttons";   activated => { root.active-view = "buttons"; } }
-            MenuItem { title: "Inputs";    activated => { root.active-view = "inputs"; } }
-            MenuItem { title: "Display";   activated => { root.active-view = "display"; } }
-            MenuItem { title: "Feedback";  activated => { root.active-view = "feedback"; } }
-            MenuItem { title: "Layout";    activated => { root.active-view = "layout"; } }
-            MenuItem { title: "App Shell"; activated => { root.active-view = "app-shell"; } }
-            MenuItem { title: "Icons";     activated => { root.active-view = "icons"; } }
+            title:
+                "File";
+            MenuItem { title: "New";          activated => { root.new-file(); } }
+            MenuItem { title: "New Window";   activated => { root.new-window(); } }
+            MenuItem { title: "Open...";      activated => { root.open-file(); } }
+            MenuSeparator {}
+            MenuItem { title: "Save";         activated => { root.save(); } }
+            MenuItem { title: "Save As...";   activated => { root.save-as(); } }
+            MenuSeparator {}
+            MenuItem { title: "Exit";         activated => { root.quit(); } }
         }
         Menu {
-            title: "Help";
-            MenuItem { title: "About SlintUI Framework Viewer"; activated => { } }
+            title:
+                "Edit";
+            MenuItem { title: "Undo";         activated => { root.undo(); } }
+            MenuItem { title: "Redo";         activated => { root.redo(); } }
+            MenuSeparator {}
+            MenuItem { title: "Cut";          activated => { root.cut(); } }
+            MenuItem { title: "Copy";         activated => { root.copy(); } }
+            MenuItem { title: "Paste";        activated => { root.paste(); } }
+            MenuSeparator {}
+            MenuItem { title: "Find...";      activated => { root.find(); } }
+            MenuItem { title: "Select All";   activated => { root.select-all(); } }
+        }
+        Menu {
+            title:
+                "View";
+            MenuItem { title: "Buttons";    activated => { root.active-view = ViewId.buttons; } }
+            MenuItem { title: "Inputs";     activated => { root.active-view = ViewId.inputs; } }
+            MenuItem { title: "Display";    activated => { root.active-view = ViewId.display; } }
+            MenuItem { title: "Feedback";   activated => { root.active-view = ViewId.feedback; } }
+            MenuItem { title: "Layout";     activated => { root.active-view = ViewId.layout; } }
+            MenuItem { title: "App Shell";  activated => { root.active-view = ViewId.app-shell; } }
+            MenuItem { title: "Icons";      activated => { root.active-view = ViewId.icons; } }
+            MenuItem { title: "Selection";  activated => { root.active-view = ViewId.selection; } }
+            MenuItem { title: "Navigation"; activated => { root.active-view = ViewId.navigation; } }
+            MenuItem { title: "Data";       activated => { root.active-view = ViewId.data; } }
+            MenuItem { title: "Canvas";     activated => { root.active-view = ViewId.canvas; } }
+            MenuItem { title: "Utilities";  activated => { root.active-view = ViewId.utilities; } }
+            MenuItem { title: "Popups";     activated => { root.active-view = ViewId.popups; } }
+            MenuItem { title: "Panels";     activated => { root.active-view = ViewId.panels; } }
+            MenuSeparator {}
+            MenuItem { title: "Dark Mode";  activated => { Colors.dark-mode = !Colors.dark-mode; } }
+            MenuSeparator {}
+            MenuItem { title: root.menu-zoom-sm; activated => { Settings.zoom = root.zoom-small; } }
+            MenuItem { title: root.menu-zoom-md; activated => { Settings.zoom = root.zoom-normal; } }
+            MenuItem { title: root.menu-zoom-lg; activated => { Settings.zoom = root.zoom-large; } }
+            MenuItem { title: root.menu-zoom-xl; activated => { Settings.zoom = root.zoom-xlarge; } }
+        }
+        Menu {
+            title:
+                "Help";
+            MenuItem { title: "Documentation";      activated => { root.open-docs(); } }
+            MenuItem { title: "Keyboard Shortcuts"; activated => { root.open-shortcuts(); } }
+            MenuSeparator {}
+            MenuItem { title: "About";              activated => { root.about(); } }
         }
     }
 
     VerticalLayout {
-        // ── Topbar ────────────────────────────────────────────────────────
-        Rectangle {
-            height: Spacing.xl;
-            background: Colors.bg-surface;
-            HorizontalLayout {
-                padding-left: Spacing.md;
-                padding-right: Spacing.md;
-                spacing: Spacing.sm;
-                Text {
-                    text: "SlintUI Framework Viewer";
-                    font-size: Type.subtitle-size;
-                    font-weight: Type.weight-semibold;
-                    color: Colors.text-primary;
-                    vertical-alignment: center;
-                }
-                Rectangle { horizontal-stretch: 1; }
-                Toggle { label: "Dark"; checked: Colors.dark-mode; toggled(v) => { Colors.dark-mode = v; } }
-                Button { label: "0.75×"; variant: "ghost"; clicked => { Settings.zoom = 0.75; } }
-                Button { label: "1×";    variant: "ghost"; clicked => { Settings.zoom = 1.0; } }
-                Button { label: "1.25×"; variant: "ghost"; clicked => { Settings.zoom = 1.25; } }
-                Button { label: "1.5×";  variant: "ghost"; clicked => { Settings.zoom = 1.5; } }
-                Toggle {
-                    label: "Outlined";
-                    checked: Settings.icon-style == "outlined";
-                    toggled(v) => { Settings.icon-style = v ? "outlined" : "filled"; }
-                }
-                SelectField {
-                    width: 140px;
-                    options: ["Default", "Segoe UI", "Arial", "Consolas", "Verdana"];
-                    placeholder: "Font...";
-                    changed(f) => { Settings.font-family = f == "Default" ? "" : f; }
-                }
-            }
-        }
+        ViewerTopbar { request-bg-style(s) => { root.request-bg-style(s); } }
 
-        // ── Sidebar + Content ─────────────────────────────────────────────
         HorizontalLayout {
-            vertical-stretch: 1;
+            vertical-stretch: root.v-stretch;
 
             SideBar {
-                horizontal-stretch: 0;
-                min-width: Spacing.xl * 4 + Spacing.md;
-                max-width: Spacing.xl * 4 + Spacing.md;
+                horizontal-stretch: root.h-sidebar;
+                min-width: Spacing.xl * Sizes.four + Spacing.md;
+                max-width: Spacing.xl * Sizes.four + Spacing.md;
                 active-item: root.active-view;
                 items: [
-                    { id: "buttons",   label: "Buttons",   icon: FluentIcons.apps },
-                    { id: "inputs",    label: "Inputs",    icon: FluentIcons.edit },
-                    { id: "display",   label: "Display",   icon: FluentIcons.list },
-                    { id: "feedback",  label: "Feedback",  icon: FluentIcons.notification },
-                    { id: "layout",    label: "Layout",    icon: FluentIcons.layout },
-                    { id: "app-shell", label: "App Shell", icon: FluentIcons.panel-left },
-                    { id: "icons",     label: "Icons",     icon: FluentIcons.star },
+                    { id: "buttons",    label: "Buttons",    icon: FluentIcons.apps },
+                    { id: "inputs",     label: "Inputs",     icon: FluentIcons.edit },
+                    { id: "display",    label: "Display",    icon: FluentIcons.list },
+                    { id: "feedback",   label: "Feedback",   icon: FluentIcons.notification },
+                    { id: "layout",     label: "Layout",     icon: FluentIcons.layout },
+                    { id: "app-shell",  label: "App Shell",  icon: FluentIcons.panel-left },
+                    { id: "icons",      label: "Icons",      icon: FluentIcons.star },
+                    { id: "selection",  label: "Selection",  icon: FluentIcons.checkmark },
+                    { id: "navigation", label: "Navigation", icon: FluentIcons.list },
+                    { id: "data",       label: "Data",       icon: FluentIcons.grid },
+                    { id: "canvas",     label: "Canvas",     icon: FluentIcons.image },
+                    { id: "utilities",  label: "Utilities",  icon: FluentIcons.settings },
+                    { id: "popups",     label: "Popups",     icon: FluentIcons.panel-left },
+                    { id: "panels",     label: "Panels",     icon: FluentIcons.layout },
                 ];
                 navigate(id) => { root.active-view = id; }
                 toggle-collapsed() => {}
             }
 
-            // App Shell page fills vertically — no scrolling wrapper
-            if root.active-view == "app-shell": PageAppShell {
-                horizontal-stretch: 1;
-            }
+            if root.active-view == ViewId.app-shell: PageAppShell { horizontal-stretch: root.h-stretch; }
 
-            // All other pages scroll via Flickable
-            if root.active-view != "app-shell": Flickable {
-                horizontal-stretch: 1;
-                viewport-width:  self.width;
-                viewport-height: pg.preferred-height;
+            if root.active-view != ViewId.app-shell: Rectangle {
+                horizontal-stretch: root.h-stretch;
+                background: Colors.bg-surface;
 
-                pg := VerticalLayout {
-                    padding: Spacing.md;
-                    spacing: Spacing.md;
-                    if root.active-view == "buttons":  PageButtons  {}
-                    if root.active-view == "inputs":   PageInputs   {}
-                    if root.active-view == "display":  PageDisplay  {}
-                    if root.active-view == "feedback": PageFeedback {}
-                    if root.active-view == "layout":   PageLayout   {}
-                    if root.active-view == "icons":    PageIcons    {}
+                ViewerContent {
+                    width: parent.width;
+                    height: parent.height;
+                    active-view:   root.active-view;
+                    canvas-frame:  root.canvas-frame;
+                    window-height: root.height;
                 }
             }
         }

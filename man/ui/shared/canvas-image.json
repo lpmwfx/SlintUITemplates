@@ -1,0 +1,26 @@
+{
+  "source": "ui/shared/canvas-image.slint",
+  "items": [
+    {
+      "name": "CanvasImage",
+      "kind": "component",
+      "signature": "export component CanvasImage inherits Rectangle",
+      "line": 6,
+      "doc": ""
+    },
+    {
+      "name": "frame",
+      "kind": "property",
+      "signature": "in property <image>  frame;",
+      "line": 7,
+      "doc": ""
+    },
+    {
+      "name": "show-placeholder",
+      "kind": "property",
+      "signature": "in property <bool>   show-placeholder: true;",
+      "line": 8,
+      "doc": ""
+    }
+  ]
+}

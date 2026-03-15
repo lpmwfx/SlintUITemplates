@@ -1,0 +1,47 @@
+{
+  "source": "ui/shared/select-field.slint",
+  "items": [
+    {
+      "name": "SelectField",
+      "kind": "component",
+      "signature": "export component SelectField inherits Rectangle",
+      "line": 3,
+      "doc": ""
+    },
+    {
+      "name": "options",
+      "kind": "property",
+      "signature": "in property <[string]> options: [];",
+      "line": 4,
+      "doc": ""
+    },
+    {
+      "name": "selected",
+      "kind": "property",
+      "signature": "in property <string>   selected: \"\";",
+      "line": 5,
+      "doc": ""
+    },
+    {
+      "name": "placeholder",
+      "kind": "property",
+      "signature": "in property <string>   placeholder: \"Select...\";",
+      "line": 6,
+      "doc": ""
+    },
+    {
+      "name": "changed",
+      "kind": "callback",
+      "signature": "callback changed(string);",
+      "line": 7,
+      "doc": ""
+    },
+    {
+      "name": "open",
+      "kind": "property",
+      "signature": "private property <bool> open: false;",
+      "line": 9,
+      "doc": ""
+    }
+  ]
+}

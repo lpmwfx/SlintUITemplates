@@ -1,0 +1,76 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
+import { SliderTrack } from "SliderTrack.slint";
+
+/// S li de r component.
+export component Slider inherits Rectangle {
+    /// Input property "value".
+    in property <float> value: Sizes.no-fill;
+    /// Input property "min".
+    in property <float>  min: Sizes.no-fill;
+    /// Input property "max".
+    in property <float>  max: Sizes.fill;
+    /// Input property "step".
+    in property <float>  step: Sizes.no-fill;
+    /// Input property "label".
+    in property <string> label: "";
+    /// Input property "show-value".
+    in property <bool>   show-value: false;
+    /// Input property "enabled".
+    in property <bool>   enabled: true;
+    /// Callback fired for c ha ng ed.
+    callback changed(float);
+
+    /// Private property "fill-ratio" used internally.
+    private property <float>  fill-ratio: (root.value - root.min) / (root.max - root.min);
+    /// Private property "track-h" used internally.
+    private property <length> track-h:    Spacing.xs;
+    /// Private property "thumb-size" used internally.
+    private property <length> thumb-size: Spacing.md;
+
+    height: (root.label != "" || root.show-value)
+        ? Spacing.xl + Type.caption-size + Spacing.xs
+        : Spacing.xl;
+    background: transparent;
+    opacity: root.enabled ? Sizes.fill : Sizes.half;
+
+    VerticalLayout {
+        spacing: Spacing.xs;
+
+        if root.label != "" || root.show-value: HorizontalLayout {
+            if root.label != "": Text {
+                text: root.label;
+                font-size: Type.caption-size;
+                font-weight: Type.weight-semibold;
+                color: Colors.text-secondary;
+                vertical-alignment: center;
+                horizontal-stretch: Sizes.one;
+            }
+            if root.label == "": Rectangle { horizontal-stretch: Sizes.one; }
+
+            if root.show-value: Text {
+                text: Math.round(root.value * Sizes.hundred) / Sizes.hundred;
+                font-size: Type.caption-size;
+                color: Colors.text-secondary;
+                vertical-alignment: center;
+            }
+        }
+
+        VerticalLayout {
+            alignment: center;
+            vertical-stretch: Sizes.one;
+
+            SliderTrack {
+                fill-ratio: root.fill-ratio;
+                track-h: root.track-h;
+                thumb-size: root.thumb-size;
+                enabled: root.enabled;
+                value-changed(ratio) => {
+                    root.changed(clamp(
+                        root.min + ratio * (root.max - root.min),
+                        root.min, root.max));
+                }
+            }
+        }
+    }
+}

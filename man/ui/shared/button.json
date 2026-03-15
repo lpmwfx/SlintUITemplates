@@ -1,0 +1,40 @@
+{
+  "source": "ui/shared/button.slint",
+  "items": [
+    {
+      "name": "Button",
+      "kind": "component",
+      "signature": "export component Button inherits Rectangle",
+      "line": 3,
+      "doc": ""
+    },
+    {
+      "name": "label",
+      "kind": "property",
+      "signature": "in property <string> label: \"Button\";",
+      "line": 4,
+      "doc": ""
+    },
+    {
+      "name": "variant",
+      "kind": "property",
+      "signature": "in property <string> variant: \"primary\";   // primary | secondary | ghost | danger",
+      "line": 5,
+      "doc": ""
+    },
+    {
+      "name": "enabled",
+      "kind": "property",
+      "signature": "in property <bool> enabled: true;",
+      "line": 6,
+      "doc": ""
+    },
+    {
+      "name": "clicked",
+      "kind": "callback",
+      "signature": "callback clicked();",
+      "line": 7,
+      "doc": ""
+    }
+  ]
+}

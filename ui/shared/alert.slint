@@ -1,0 +1,81 @@
+import { Colors, Spacing, Type, FluentIcons } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
+import { Variants } from "../globals/Variants.slint";
+
+/// A le rt component.
+export component Alert inherits Rectangle {
+    /// Input property "message".
+    in property <string> message: "";
+    /// Input property "title".
+    in property <string> title: "";
+    /// Input property "variant".
+    in property <string> variant: "info";   // info | success | warning | error
+    /// Input property "closable".
+    in property <bool>   closable: false;
+    /// Input property "show".
+    in property <bool>   show: true;
+    /// Callback fired for c lo se d.
+    callback closed();
+
+    visible: root.show;
+    background: Colors.bg-elevated;
+    border-radius: Spacing.xs;
+    border-width: Sizes.border-w;
+    border-color: Colors.border;
+    clip: true;
+
+    property <color> variant-color:
+        root.variant == Variants.success ? Colors.success :
+        root.variant == Variants.warning ? Colors.warning :
+        root.variant == Variants.error   ? Colors.error :
+        Colors.accent;
+
+    HorizontalLayout {
+        // Left accent bar
+        Rectangle {
+            width: Sizes.track-h;
+            background: root.variant-color;
+        }
+
+        // Content
+        VerticalLayout {
+            padding: Spacing.sm;
+            spacing: Spacing.xs;
+            horizontal-stretch: Sizes.one;
+
+            if root.title != "": Text {
+                text: root.title;
+                font-size: Type.body-size;
+                font-weight: Type.weight-bold;
+                color: root.variant-color;
+                wrap: word-wrap;
+            }
+
+            Text {
+                text: root.message;
+                font-size: Type.body-size;
+                color: Colors.text-primary;
+                wrap: word-wrap;
+            }
+        }
+
+        // Close button
+        if root.closable: Rectangle {
+            width: Spacing.xl;
+            background: close-ta.has-hover ? Colors.bg-surface : transparent;
+
+            Text {
+                text: FluentIcons.dismiss;
+                font-family: FluentIcons.icon-font;
+                font-size: Type.body-size;
+                color: Colors.text-secondary;
+                horizontal-alignment: center;
+                vertical-alignment: center;
+            }
+
+            close-ta := TouchArea {
+                clicked => { root.closed(); }
+            }
+        }
+    }
+}

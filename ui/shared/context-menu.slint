@@ -1,0 +1,101 @@
+// ContextMenu — custom popup with icon + label + keybinding columns.
+//
+// PLACEMENT RULE: declare ctx-menu INSIDE the same element as the TouchArea.
+// PopupWindow always renders at window z-level regardless of nesting depth.
+// Coordinates (pop-x/y) stay element-relative — Slint converts to window-absolute.
+//
+//   ctx-area := Rectangle {
+//       ctx-menu := ContextMenu { window-height: root.window-height; ... }
+//       ta := TouchArea {
+//           pointer-event(e) => {
+//               if e.kind == PointerEventKind.up && e.button == PointerEventButton.right {
+//                   ctx-menu.show-at(self.mouse-x, self.mouse-y);
+//               }
+//           }
+//       }
+//   }
+
+import { Colors, Spacing } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
+import { ContextMenuContent } from "./ContextMenuContent.slint";
+import { ContextMenuItem } from "./ContextMenuEntry.slint";
+
+export { ContextMenuItem }
+
+/// C on te xt me nu component.
+export component ContextMenu inherits Rectangle {
+    /// Input property "items".
+    in property <[ContextMenuItem]> items: [];
+    /// Input property "separator-count".
+    in property <int>    separator-count;
+    /// Input property "window-height".
+    in property <length> window-height;
+
+    /// Callback fired for a ct iv at ed.
+    callback activated(string);
+
+    /// Private property "pop-x" used internally.
+    private property <length> pop-x: Sizes.no-size;
+    /// Private property "pop-y" used internally.
+    private property <length> pop-y: Sizes.no-size;
+    /// Private property "popup-w" used internally.
+    private property <length> popup-w: Sizes.comp-260;
+    /// Private property "est-popup-h" used internally.
+    private property <length> est-popup-h:
+        (items.length - root.separator-count) * Spacing.xl
+        + root.separator-count * Spacing.xs
+        + Spacing.sm * Sizes.two;
+    // Visible height: capped so the popup never exceeds the window.
+    // Content scrolls inside via Flickable when est-popup-h > popup-h.
+    /// Private property "popup-h" used internally.
+    private property <length> popup-h:
+        root.window-height > Sizes.no-size && root.est-popup-h > root.window-height - Spacing.md * Sizes.two
+            ? root.window-height - Spacing.md * Sizes.two
+            : root.est-popup-h;
+
+    width: Sizes.no-size;
+    height: Sizes.no-size;
+    background: transparent;
+
+    popup := PopupWindow {
+        x: root.pop-x;
+        y: root.pop-y;
+        width: root.popup-w;
+        height: root.popup-h;
+
+        Rectangle {
+            background: Colors.bg-elevated;
+            border-radius: Spacing.xs;
+            border-width: Sizes.border-w;
+            border-color: Colors.border;
+            drop-shadow-blur: Spacing.sm;
+            drop-shadow-color: Colors.shadow;
+            clip: true;
+
+            ContextMenuContent {
+                width: parent.width;
+                height: parent.height;
+                items: root.items;
+                content-height: root.est-popup-h;
+                activated(id) => { root.activated(id); popup.close(); }
+            }
+        }
+    }
+
+    // xp/yp are element-relative (TouchArea.mouse-x/y).
+    // Flip upward when popup would extend below the window bottom.
+    // absolute-position.y converts element-y to window-y for overflow detection.
+    public function show-at(xp: length, yp: length) {
+        root.pop-x = xp;
+        if root.window-height > Sizes.no-size
+                && root.absolute-position.y + yp + root.popup-h > root.window-height {
+            root.pop-y = yp - root.popup-h;
+            if root.absolute-position.y + root.pop-y < Sizes.no-size {
+                root.pop-y = -root.absolute-position.y;
+            }
+        } else {
+            root.pop-y = yp;
+        }
+        popup.show();
+    }
+}

@@ -1,0 +1,33 @@
+{
+  "source": "ui/shell/desktop/status-bar.slint",
+  "items": [
+    {
+      "name": "ShellStatusBar",
+      "kind": "component",
+      "signature": "export component ShellStatusBar inherits Rectangle",
+      "line": 5,
+      "doc": ""
+    },
+    {
+      "name": "status-text",
+      "kind": "property",
+      "signature": "in property <string>  status-text: \"Ready\";",
+      "line": 6,
+      "doc": ""
+    },
+    {
+      "name": "progress",
+      "kind": "property",
+      "signature": "in property <float>   progress: -1.0;   // -1 = hidden, 0.0..1.0 = shown",
+      "line": 7,
+      "doc": ""
+    },
+    {
+      "name": "right-text",
+      "kind": "property",
+      "signature": "in property <string>  right-text: \"\";",
+      "line": 8,
+      "doc": ""
+    }
+  ]
+}

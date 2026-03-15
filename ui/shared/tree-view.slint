@@ -1,0 +1,62 @@
+import { Colors, Spacing } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
+import { TreeViewNode } from "TreeViewNode.slint";
+
+/// T re en od e struct.
+export struct TreeNode {
+    id: string,
+    label: string,
+    icon: string,
+    level: int,
+    expanded: bool,
+    leaf: bool,
+}
+
+/// T re ev ie w component.
+export component TreeView inherits Rectangle {
+    /// Input property "nodes".
+    in property <[TreeNode]> nodes: [];
+    /// Input property "selected".
+    in property <string> selected: "";
+    /// Callback fired for s el ec te d c ha ng ed.
+    callback selected-changed(string);
+    /// Callback fired for t og gl e e xp an de d.
+    callback toggle-expanded(string);
+
+    /// Private property "bar-radius" used internally.
+    private property <length> bar-radius: Sizes.border-w-2;
+    /// Private property "bar-opacity" used internally.
+    private property <float>  bar-opacity: Sizes.percent-60;
+
+    background: Colors.bg-surface;
+    clip: true;
+
+    Flickable {
+        width: parent.width;
+        height: parent.height;
+        viewport-height: root.nodes.length * Spacing.xl;
+
+        VerticalLayout {
+            for node in root.nodes: TreeViewNode {
+                node-id: node.id;
+                label: node.label;
+                icon: node.icon;
+                level: node.level;
+                expanded: node.expanded;
+                leaf: node.leaf;
+                is-selected: node.id == root.selected;
+                selected => { root.selected-changed(node.id); }
+                toggle-expanded => { root.toggle-expanded(node.id); }
+            }
+        }
+    }
+
+    // Vertical scrollbar
+    if root.nodes.length * Spacing.xl > root.height: Rectangle {
+        x: parent.width - Sizes.track-h;
+        width: Sizes.track-h;
+        border-radius: root.bar-radius;
+        background: Colors.border-strong;
+        opacity: root.bar-opacity;
+    }
+}

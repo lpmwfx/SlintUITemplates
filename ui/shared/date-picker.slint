@@ -1,0 +1,103 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
+import { DatePickerField }    from "./DatePickerField.slint";
+import { DatePickerCalendar } from "./DatePickerCalendar.slint";
+
+/// D at ep ic ke r component.
+export component DatePicker inherits Rectangle {
+    /// Input property "value".
+    in property <string> value: "";
+    /// Input property "label".
+    in property <string> label: "";
+    /// Input property "placeholder".
+    in property <string> placeholder: "Select date";
+    /// Input property "error".
+    in property <string> error: "";
+    /// Input property "enabled".
+    in property <bool>   enabled: true;
+    /// Input property "icon-font".
+    in property <string> icon-font: "Segoe Fluent Icons";
+    /// Callback fired for c ha ng ed.
+    callback changed(string);
+
+    // ── Navigation state ────────────────────────────────────────────────
+    /// Private property "initial-year" used internally.
+    private property <int>    initial-year:    2026;
+    /// Private property "month-offset" used internally.
+    private property <int>    month-offset:    Sizes.zero;
+    /// Private property "months-per-year" used internally.
+    private property <int>    months-per-year: Sizes.twelve;
+
+    // ── Date formatting constants ────────────────────────────────────────
+    /// Private property "date-sep" used internally.
+    private property <string> date-sep:  "-";
+    /// Private property "zero-pad" used internally.
+    private property <string> zero-pad:  "0";
+    /// Private property "display-month" used internally.
+    private property <int>    display-month: Math.mod(root.month-offset, root.months-per-year) + Sizes.one;
+    /// Private property "display-year" used internally.
+    private property <int>    display-year:  root.initial-year + Math.floor(root.month-offset / root.months-per-year);
+
+    // ── Popup calendar size ──────────────────────────────────────────────
+    // Precomputed year-month prefix for date formatting (day appended in callback)
+    /// Private property "ym-prefix" used internally.
+    private property <string> ym-prefix:
+        root.display-year + root.date-sep
+        + (root.display-month < Sizes.ten ? root.zero-pad : "") + root.display-month + root.date-sep;
+
+    /// Private property "cell-size" used internally.
+    private property <length> cell-size:  Spacing.control-md + Spacing.xs;
+    /// Private property "popup-w" used internally.
+    private property <length> popup-w:    cell-size * Sizes.seven + Spacing.sm * Sizes.two + Spacing.xs * Sizes.six;
+    /// Private property "popup-h" used internally.
+    private property <length> popup-h:    Spacing.xl + Spacing.xl + cell-size * Sizes.six + Spacing.sm * Sizes.five + Spacing.md * Sizes.two;
+
+    height: root.label != "" ? Spacing.xl + Type.caption-size + Spacing.xs : Spacing.xl;
+    opacity: root.enabled ? Sizes.fill : Sizes.half;
+    clip: false;
+
+    // Calendar popup — auto-closes on outside click (Slint PopupWindow behavior)
+    popup := PopupWindow {
+        x: Sizes.no-size;
+        y: root.height + Spacing.xs;
+        width:  root.popup-w;
+        height: root.popup-h;
+
+        DatePickerCalendar {
+            width:  root.popup-w;
+            height: root.popup-h;
+            month-offset:  root.month-offset;
+            initial-year:  root.initial-year;
+            prev-month()   => { root.month-offset = root.month-offset - Sizes.one; }
+            next-month()   => { root.month-offset = root.month-offset + Sizes.one; }
+            day-selected(d) => { root.changed(root.ym-prefix + (d < Sizes.ten ? root.zero-pad : "") + d); popup.close(); }
+        }
+    }
+
+    VerticalLayout {
+        spacing: Spacing.xs;
+
+        if root.label != "": Text {
+            text: root.label;
+            font-size: Type.caption-size;
+            font-weight: Type.weight-semibold;
+            color: root.error != "" ? Colors.error : Colors.text-secondary;
+        }
+
+        DatePickerField {
+            height: Spacing.xl;
+            value: root.value;
+            placeholder: root.placeholder;
+            error: root.error;
+            enabled: root.enabled;
+            icon-font: root.icon-font;
+            open-picker() => { popup.show(); }
+        }
+
+        if root.error != "": Text {
+            text: root.error;
+            font-size: Type.caption-size;
+            color: Colors.error;
+        }
+    }
+}

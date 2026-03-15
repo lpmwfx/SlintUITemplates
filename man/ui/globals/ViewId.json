@@ -1,0 +1,103 @@
+{
+  "source": "ui/globals/ViewId.slint",
+  "items": [
+    {
+      "name": "buttons",
+      "kind": "property",
+      "signature": "out property <string> buttons:    \"buttons\";",
+      "line": 5,
+      "doc": ""
+    },
+    {
+      "name": "inputs",
+      "kind": "property",
+      "signature": "out property <string> inputs:     \"inputs\";",
+      "line": 6,
+      "doc": ""
+    },
+    {
+      "name": "display",
+      "kind": "property",
+      "signature": "out property <string> display:    \"display\";",
+      "line": 7,
+      "doc": ""
+    },
+    {
+      "name": "feedback",
+      "kind": "property",
+      "signature": "out property <string> feedback:   \"feedback\";",
+      "line": 8,
+      "doc": ""
+    },
+    {
+      "name": "layout",
+      "kind": "property",
+      "signature": "out property <string> layout:     \"layout\";",
+      "line": 9,
+      "doc": ""
+    },
+    {
+      "name": "app-shell",
+      "kind": "property",
+      "signature": "out property <string> app-shell:  \"app-shell\";",
+      "line": 10,
+      "doc": ""
+    },
+    {
+      "name": "icons",
+      "kind": "property",
+      "signature": "out property <string> icons:      \"icons\";",
+      "line": 11,
+      "doc": ""
+    },
+    {
+      "name": "selection",
+      "kind": "property",
+      "signature": "out property <string> selection:  \"selection\";",
+      "line": 12,
+      "doc": ""
+    },
+    {
+      "name": "navigation",
+      "kind": "property",
+      "signature": "out property <string> navigation: \"navigation\";",
+      "line": 13,
+      "doc": ""
+    },
+    {
+      "name": "data",
+      "kind": "property",
+      "signature": "out property <string> data:       \"data\";",
+      "line": 14,
+      "doc": ""
+    },
+    {
+      "name": "canvas",
+      "kind": "property",
+      "signature": "out property <string> canvas:     \"canvas\";",
+      "line": 15,
+      "doc": ""
+    },
+    {
+      "name": "utilities",
+      "kind": "property",
+      "signature": "out property <string> utilities:  \"utilities\";",
+      "line": 16,
+      "doc": ""
+    },
+    {
+      "name": "popups",
+      "kind": "property",
+      "signature": "out property <string> popups:     \"popups\";",
+      "line": 17,
+      "doc": ""
+    },
+    {
+      "name": "panels",
+      "kind": "property",
+      "signature": "out property <string> panels:     \"panels\";",
+      "line": 18,
+      "doc": ""
+    }
+  ]
+}

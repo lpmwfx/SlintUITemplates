@@ -1,0 +1,46 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { TeachingTip } from "../shared/teaching-tip.slint";
+
+/// P op up te ac hi ng ti pd em o component.
+export component PopupTeachingTipDemo inherits Rectangle {
+    /// Input property "window-height".
+    in property <length> window-height;
+
+    /// Private property "demo-w" used internally.
+    private property <length> demo-w: 160px;
+
+    height: Spacing.control-lg;
+    width: root.demo-w;
+
+    tip := TeachingTip { window-height: root.window-height;
+        title:
+            "Did you know?";
+        body:
+            "You can right-click any item for a context menu with more options.";
+        action-label:
+            "Got it";
+        dismiss-label:
+            "Skip";
+        action    => { debug("tip: action"); }
+        dismissed => { debug("tip: dismissed"); }
+    }
+
+    Rectangle {
+        width: Spacing.control-lg;
+        height: Spacing.control-lg;
+        border-radius: Spacing.xl;
+        background: ta.has-hover ? Colors.accent-hover : Colors.accent;
+
+        Text { text: "?";
+            font-size: Type.body-size;
+            font-weight: Type.weight-bold;
+            color: Colors.accent-text;
+            horizontal-alignment: center;
+            vertical-alignment: center;
+        }
+
+        ta := TouchArea {
+            clicked => { tip.show-at(self.mouse-x, self.mouse-y); }
+        }
+    }
+}

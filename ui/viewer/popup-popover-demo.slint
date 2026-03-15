@@ -1,0 +1,48 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Popover } from "../shared/popover.slint";
+
+/// P op up po po ve rd em o component.
+export component PopupPopoverDemo inherits Rectangle {
+    /// Private property "show-pop" used internally.
+    private property <bool>   show-pop:   false;
+    /// Private property "demo-w" used internally.
+    private property <length> demo-w:     160px;
+    /// Private property "pop-w" used internally.
+    private property <length> pop-w:      220px;
+    /// Private property "pop-h" used internally.
+    private property <length> pop-h:      130px;
+    /// Private property "border-px" used internally.
+    private property <length> border-px:  1px;
+
+    height: Spacing.control-lg;
+    width: root.demo-w;
+    clip: false;
+
+    pop := Popover { open: root.show-pop; popup-width: root.pop-w; popup-height: root.pop-h;
+        title:
+            "Popover";
+        body:
+            "Inline overlay — appears directly below the trigger without a popup window.";
+        close-requested => { root.show-pop = false; }
+
+        Rectangle {
+            width: root.demo-w;
+            height: Spacing.control-lg;
+            border-radius: Spacing.xs;
+            border-width: root.border-px;
+            border-color: root.show-pop ? Colors.border-focus : Colors.border;
+            background: trig-ta.has-hover ? Colors.bg-elevated : Colors.bg-surface;
+
+            Text { text: root.show-pop ? "Close Popover" : "Open Popover";
+                font-size: Type.body-size;
+                color: Colors.text-primary;
+                horizontal-alignment: center;
+                vertical-alignment: center;
+            }
+
+            trig-ta := TouchArea {
+                clicked => { root.show-pop = !root.show-pop; }
+            }
+        }
+    }
+}

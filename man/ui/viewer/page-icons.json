@@ -1,0 +1,47 @@
+{
+  "source": "ui/viewer/page-icons.slint",
+  "items": [
+    {
+      "name": "icon-glyph",
+      "kind": "property",
+      "signature": "in property <string> icon-glyph;",
+      "line": 10,
+      "doc": ""
+    },
+    {
+      "name": "icon-name",
+      "kind": "property",
+      "signature": "in property <string> icon-name;",
+      "line": 11,
+      "doc": ""
+    },
+    {
+      "name": "is-outlined",
+      "kind": "property",
+      "signature": "private property <bool>  is-outlined: Settings.icon-style == \"outlined\";",
+      "line": 13,
+      "doc": ""
+    },
+    {
+      "name": "icon-color",
+      "kind": "property",
+      "signature": "private property <color> icon-color:  Settings.icon-color == \"accent\"",
+      "line": 14,
+      "doc": ""
+    },
+    {
+      "name": "icons",
+      "kind": "property",
+      "signature": "in property <[{glyph: string, name: string}]> icons;",
+      "line": 53,
+      "doc": ""
+    },
+    {
+      "name": "PageIcons",
+      "kind": "component",
+      "signature": "export component PageIcons inherits VerticalLayout",
+      "line": 67,
+      "doc": ""
+    }
+  ]
+}

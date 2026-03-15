@@ -1,0 +1,12 @@
+{
+  "source": "ui/shell/desktop/content-frame.slint",
+  "items": [
+    {
+      "name": "ShellContentFrame",
+      "kind": "component",
+      "signature": "export component ShellContentFrame inherits Rectangle",
+      "line": 6,
+      "doc": ""
+    }
+  ]
+}

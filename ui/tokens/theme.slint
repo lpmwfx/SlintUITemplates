@@ -1,14 +1,17 @@
 // Single import point for all UI tokens + state globals.
 // Components import ONLY this file — never individual token files or state directly.
+//
+// Barrel alias: Theme as Colors — all 39 component files that use Colors.* need zero changes.
 
-import { Colors } from "colors.slint";
 import { Spacing } from "spacing.slint";
 import { Type } from "typography.slint";
 import { Scale } from "scale.slint";
+import { Sizes } from "sizes.slint";
 
-export { Colors, Spacing, Type, Scale }
-export { Theme } from "../state/Theme.slint";
-export { Settings } from "../state/settings.slint";
+export { Spacing, Type, Scale, Sizes }
+export { Theme }             from "../state/Theme.slint";
+export { Theme as Colors }   from "../state/Theme.slint";
+export { Settings }          from "../state/settings.slint";
 
 // Fluent 2 token layer — exact WinUI3 values + Segoe Fluent Icons
 export { FluentColors, FluentSpacing, FluentRadius, FluentElevation, FluentMotion, FluentType, FluentIcons } from "fluent/mod.slint";

@@ -1,0 +1,19 @@
+{
+  "source": "ui/viewer/viewer-topbar.slint",
+  "items": [
+    {
+      "name": "ViewerTopbar",
+      "kind": "component",
+      "signature": "export component ViewerTopbar inherits Rectangle",
+      "line": 8,
+      "doc": ""
+    },
+    {
+      "name": "request-bg-style",
+      "kind": "callback",
+      "signature": "callback request-bg-style(string);",
+      "line": 9,
+      "doc": ""
+    }
+  ]
+}

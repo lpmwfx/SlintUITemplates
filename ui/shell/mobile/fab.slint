@@ -2,24 +2,41 @@
 // Reference: https://m3.material.io/components/floating-action-button
 
 import { MaterialColors, MaterialSpacing, MaterialType, MaterialRadius } from "../../tokens/material/mod.slint";
+import { Sizes }        from "../../tokens/sizes.slint";
+import { FluentSpacing } from "../../tokens/fluent/spacing.slint";
 
+/// F ab component.
 export component FAB inherits Rectangle {
+    /// Input property "icon".
     in property <string> icon;
+    /// Input property "label".
     in property <string> label: "";       // non-empty → extended FAB
+    /// Input property "icon-font".
+    in property <string> icon-font: "Segoe Fluent Icons";
+    /// Callback fired for c li ck ed.
     callback clicked();
 
+    /// Private property "extended" used internally.
     private property <bool> extended: root.label != "";
+    /// Private property "darken-amount" used internally.
+    private property <float>  darken-amount: Sizes.ratio-xs;
+    /// Private property "shadow-alpha" used internally.
+    private property <float>  shadow-alpha: Sizes.alpha-30;
+    /// Private property "shadow-blur" used internally.
+    private property <length> shadow-blur: Sizes.comp-6;
+    /// Private property "shadow-y" used internally.
+    private property <length> shadow-y: Sizes.border-w-3;
 
     // Extended FAB is wider; simple FAB is square
     min-width:  MaterialSpacing.fab-size;
     height: MaterialSpacing.fab-size;
     border-radius: MaterialRadius.extra-large;
     background: fab-ta.has-hover
-        ? MaterialColors.primary-container.darker(0.05)
+        ? MaterialColors.primary-container.darker(root.darken-amount)
         : MaterialColors.primary-container;
-    drop-shadow-color: MaterialColors.primary.with-alpha(0.3);
-    drop-shadow-blur: 6px;
-    drop-shadow-offset-y: 3px;
+    drop-shadow-color: MaterialColors.primary.with-alpha(root.shadow-alpha);
+    drop-shadow-blur: root.shadow-blur;
+    drop-shadow-offset-y: root.shadow-y;
 
     fab-ta := TouchArea {
         clicked => { root.clicked(); }
@@ -27,14 +44,14 @@ export component FAB inherits Rectangle {
 
     HorizontalLayout {
         alignment: center;
-        spacing: 8px;
-        padding-left: extended ? 16px : 0px;
-        padding-right: extended ? 20px : 0px;
+        spacing: FluentSpacing.sm;
+        padding-left: extended ? Sizes.icon-sm : Sizes.no-size;
+        padding-right: extended ? Sizes.icon-md : Sizes.no-size;
 
         Text {
             text: root.icon;
-            font-family: "Segoe Fluent Icons";
-            font-size: 24px;
+            font-family: root.icon-font;
+            font-size: Sizes.icon-lg;
             color: MaterialColors.on-primary-container;
             vertical-alignment: center;
         }

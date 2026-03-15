@@ -1,0 +1,61 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
+
+/// B re ad cr um bi te m struct.
+export struct BreadcrumbItem {
+    id: string,
+    label: string,
+}
+
+/// B re ad cr um b component.
+export component Breadcrumb inherits Rectangle {
+    /// Input property "items".
+    in property <[BreadcrumbItem]> items: [];
+    /// Input property "separator".
+    in property <string>           separator: "›";
+    /// Callback fired for n av ig at e.
+    callback navigate(string);
+
+    height: Spacing.xl;
+    background: transparent;
+
+    HorizontalLayout {
+        alignment: start;
+        spacing: Spacing.xs;
+        padding-left: Sizes.no-size;
+
+        for item[i] in root.items: HorizontalLayout {
+            spacing: Spacing.xs;
+            alignment: center;
+
+            if i > Sizes.zero: Text {
+                text: root.separator;
+                font-size: Type.body-size;
+                color: Colors.text-secondary;
+                vertical-alignment: center;
+            }
+
+            crumb-btn := Rectangle {
+                height: Spacing.xl;
+                width: crumb-text.preferred-width + Spacing.xs * Sizes.two;
+                background: crumb-ta.has-hover && i < root.items.length - Sizes.one
+                    ? Colors.bg-elevated : transparent;
+                border-radius: Spacing.xs;
+
+                crumb-text := Text {
+                    x: Spacing.xs;
+                    text: item.label;
+                    font-size: Type.body-size;
+                    color: i == root.items.length - Sizes.one ? Colors.text-primary : Colors.accent;
+                    font-weight: i == root.items.length - Sizes.one ? Type.weight-semibold : Type.weight-regular;
+                    vertical-alignment: center;
+                }
+
+                crumb-ta := TouchArea {
+                    enabled: i < root.items.length - Sizes.one;
+                    clicked => { root.navigate(item.id); }
+                }
+            }
+        }
+    }
+}

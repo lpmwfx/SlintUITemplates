@@ -1,0 +1,24 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
+
+/// S cr ol ld em or ow component.
+export component ScrollDemoRow inherits Rectangle {
+    /// Input property "row-index".
+    in property <int>    row-index;
+    /// Input property "row-prefix".
+    in property <string> row-prefix;
+
+    height: Spacing.xl;
+    border-radius: Spacing.xs;
+    background: Colors.bg-elevated;
+    border-width: Sizes.border-w;
+    border-color: Colors.border;
+
+    Text {
+        x: Spacing.sm;
+        text: root.row-prefix + root.row-index;
+        font-size: Type.body-size;
+        color: Colors.text-primary;
+        vertical-alignment: center;
+    }
+}

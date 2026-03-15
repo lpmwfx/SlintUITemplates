@@ -1,0 +1,75 @@
+import { Colors, Spacing, Type, FluentIcons } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
+
+/// C he ck bo x component.
+export component Checkbox inherits Rectangle {
+    /// Input property "checked".
+    in property <bool>   checked: false;
+    /// Input property "indeterminate".
+    in property <bool>   indeterminate: false;
+    /// Input property "label".
+    in property <string> label: "";
+    /// Input property "enabled".
+    in property <bool>   enabled: true;
+    /// Callback fired for t og gl ed.
+    callback toggled(bool);
+
+    // Widget-specific size constants — named, not inline literals
+    /// Private property "box-size" used internally.
+    private property <length> box-size:  Spacing.md + Spacing.xs;   // 20px
+    /// Private property "dash-w" used internally.
+    private property <length> dash-w:    Spacing.sm + Spacing.xs;   // 10px
+    /// Private property "dash-h" used internally.
+    private property <length> dash-h:    Sizes.border-w-2;
+
+    height: Spacing.xl;
+    background: transparent;
+    opacity: root.enabled ? Sizes.fill : Sizes.half;
+
+    VerticalLayout {
+        alignment: center;
+
+        HorizontalLayout {
+            alignment: start;
+            spacing: Spacing.sm;
+
+            box-rect := Rectangle {
+                width: root.box-size;
+                height: root.box-size;
+                border-radius: Spacing.xs;
+                background: (root.checked || root.indeterminate) ? Colors.accent : Colors.bg-elevated;
+                border-width: (root.checked || root.indeterminate) ? Sizes.no-size : Sizes.border-w;
+                border-color: Colors.border;
+
+                if root.checked && !root.indeterminate: Text {
+                    text: FluentIcons.checkmark;
+                    font-family: FluentIcons.icon-font;
+                    font-size: Type.caption-size;
+                    color: Colors.accent-text;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+
+                if root.indeterminate: Rectangle {
+                    x: (parent.width  - root.dash-w) / Sizes.two;
+                    y: (parent.height - root.dash-h) / Sizes.two;
+                    width:  root.dash-w;
+                    height: root.dash-h;
+                    background: Colors.accent-text;
+                }
+            }
+
+            if root.label != "": Text {
+                text: root.label;
+                font-size: Type.body-size;
+                color: Colors.text-primary;
+                vertical-alignment: center;
+            }
+        }
+    }
+
+    ta := TouchArea {
+        enabled: root.enabled;
+        clicked => { root.toggled(!root.checked); }
+    }
+}

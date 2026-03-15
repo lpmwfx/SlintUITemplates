@@ -1,11 +1,16 @@
 import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Sizes }               from "../tokens/sizes.slint";
 
+/// S ta tu sb ar component.
 export component StatusBar inherits Rectangle {
+    /// Input property "status-text".
     in property <string> status-text: "Ready";
-    in property <float>  progress: 0.0;
+    /// Input property "progress".
+    in property <float>  progress: Sizes.no-fill;
+    /// Input property "show-progress".
     in property <bool>   show-progress: false;
 
-    preferred-width: 100%;
+    // Remove preferred-width — let parent control layout
     background: Colors.bg-elevated;
 
     // Progress bar track width — token-derived (48+48+24 = 120px)
@@ -23,7 +28,7 @@ export component StatusBar inherits Rectangle {
             vertical-alignment: center;
         }
 
-        Rectangle { horizontal-stretch: 1; }
+        Rectangle { horizontal-stretch: Sizes.one; }
 
         if root.show-progress: Rectangle {
             width: root.bar-width;
@@ -32,8 +37,8 @@ export component StatusBar inherits Rectangle {
             background: Colors.bg-surface;
 
             Rectangle {
-                x: 0;
-                y: 0;
+                x: Sizes.no-size;
+                y: Sizes.no-size;
                 width: root.bar-width * root.progress;
                 height: parent.height;
                 border-radius: Spacing.xs;

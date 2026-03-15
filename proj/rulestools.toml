@@ -1,0 +1,7 @@
+languages = ["rust"]
+
+[rustscanners]
+enabled = true
+
+[slintscanners]
+enabled = true

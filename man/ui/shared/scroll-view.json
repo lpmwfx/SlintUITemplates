@@ -1,0 +1,40 @@
+{
+  "source": "ui/shared/scroll-view.slint",
+  "items": [
+    {
+      "name": "ScrollView",
+      "kind": "component",
+      "signature": "export component ScrollView inherits Rectangle",
+      "line": 3,
+      "doc": ""
+    },
+    {
+      "name": "interactive",
+      "kind": "property",
+      "signature": "in property <bool>  interactive:    true;",
+      "line": 4,
+      "doc": ""
+    },
+    {
+      "name": "show-scrollbar",
+      "kind": "property",
+      "signature": "in property <bool>  show-scrollbar: true;",
+      "line": 5,
+      "doc": ""
+    },
+    {
+      "name": "viewport-width",
+      "kind": "property",
+      "signature": "out property <length> viewport-width  <=> fl.viewport-width;",
+      "line": 6,
+      "doc": ""
+    },
+    {
+      "name": "viewport-height",
+      "kind": "property",
+      "signature": "out property <length> viewport-height <=> fl.viewport-height;",
+      "line": 7,
+      "doc": ""
+    }
+  ]
+}

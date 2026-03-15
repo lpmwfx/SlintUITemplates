@@ -1,0 +1,79 @@
+import { Colors, Spacing, Type, FluentIcons } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
+
+/// T ab it em struct.
+export struct TabItem {
+    id: string,
+    label: string,
+    icon: string,
+}
+
+/// T ab ba r component.
+export component TabBar inherits Rectangle {
+    /// Input property "tabs".
+    in property <[TabItem]> tabs: [];
+    /// Input property "active".
+    in property <string> active: "";
+    /// Callback fired for c ha ng ed.
+    callback changed(string);
+
+    /// Private property "indicator-h" used internally.
+    private property <length> indicator-h: Sizes.border-w-2;
+
+    height: Spacing.xl;
+    background: Colors.bg-surface;
+
+    // Bottom separator line
+    Rectangle {
+        y: parent.height - Sizes.border-w;
+        height: Sizes.border-w;
+        width: parent.width;
+        background: Colors.border;
+    }
+
+    HorizontalLayout {
+        alignment: start;
+
+        for tab in root.tabs: tab-item := Rectangle {
+            width: tab-lbl.preferred-width + Spacing.lg * Sizes.two;
+            height: parent.height;
+            background: tab-ta.has-hover && tab.id != root.active
+                ? Colors.bg-elevated : transparent;
+
+            // Active indicator bar
+            Rectangle {
+                y: parent.height - root.indicator-h;
+                height: root.indicator-h;
+                width: parent.width;
+                background: tab.id == root.active ? Colors.accent : transparent;
+            }
+
+            HorizontalLayout {
+                alignment: center;
+                spacing: Spacing.xs;
+                padding-left: Spacing.lg;
+                padding-right: Spacing.lg;
+
+                if tab.icon != "": Text {
+                    text: tab.icon;
+                    font-family: FluentIcons.icon-font;
+                    font-size: Type.caption-size;
+                    color: tab.id == root.active ? Colors.accent : Colors.text-secondary;
+                    vertical-alignment: center;
+                }
+
+                tab-lbl := Text {
+                    text: tab.label;
+                    font-size: Type.body-size;
+                    font-weight: tab.id == root.active ? Type.weight-semibold : Type.weight-regular;
+                    color: tab.id == root.active ? Colors.accent : Colors.text-secondary;
+                    vertical-alignment: center;
+                }
+            }
+
+            tab-ta := TouchArea {
+                clicked => { root.changed(tab.id); }
+            }
+        }
+    }
+}

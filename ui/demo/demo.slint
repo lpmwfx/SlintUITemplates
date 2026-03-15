@@ -1,34 +1,58 @@
 import { Colors, Spacing, Type } from "../tokens/theme.slint";
-import { NavBar }       from "../desktop/nav-bar.slint";
-import { SideBar }      from "../desktop/side-bar.slint";
-import { StatusBar }    from "../desktop/status-bar.slint";
-import { NavItem }      from "../desktop/types.slint";
-import { DragHandle }   from "../modules/DragHandle.slint";
-import { Button }       from "../shared/button.slint";
-import { Toggle }       from "../shared/toggle.slint";
-import { HomeView }     from "../views/home.slint";
-import { ListView }     from "../views/list.slint";
-import { SettingsView } from "../views/settings.slint";
+import { Sizes }         from "../tokens/sizes.slint";
+import { Variants }      from "../globals/Variants.slint";
+import { NavId }         from "../globals/NavId.slint";
+import { NavBar }        from "../desktop/nav-bar.slint";
+import { SideBar }       from "../desktop/side-bar.slint";
+import { StatusBar }     from "../desktop/status-bar.slint";
+import { NavItem }       from "../desktop/types.slint";
+import { DragHandle }    from "../modules/DragHandle.slint";
+import { Button }        from "../shared/button.slint";
+import { Toggle }        from "../shared/toggle.slint";
+import { HomeView }      from "../views/home.slint";
+import { ListView }      from "../views/list.slint";
+import { SettingsView }  from "../views/settings.slint";
+import { DemoMobileNav }    from "DemoMobileNav.slint";
+import { MobilePhoneFrame } from "MobilePhoneFrame.slint";
 
+/// D em ow in do w component.
 export component DemoWindow inherits Window {
-    preferred-width: 1000px;
-    preferred-height: 700px;
-    title: "SlintUITemplates — Phase 2 Demo";
+    preferred-width: Sizes.win-width-md;
+    preferred-height: Sizes.win-height-md;
+    /// Input property "window-title".
+    in property <string> window-title: "SlintUITemplates \u{2014} Phase 2 Demo";
+    title: window-title;
     background: Colors.bg-primary;
 
-    in-out property <string>    layout-mode: "desktop";
-    in-out property <string>    active-view: "home";
+    /// Two-way property "layout-mode".
+    in-out property <string>    layout-mode: Variants.desktop;
+    /// Two-way property "active-view".
+    in-out property <string>    active-view: NavId.home;
+    /// Two-way property "sidebar-collapsed".
     in-out property <bool>      sidebar-collapsed: false;
+    /// Two-way property "nav-items".
     in-out property <[NavItem]> nav-items: [
-        { id: "home", label: "Home", icon: "🏠" },
-        { id: "list", label: "List", icon: "📋" },
-        { id: "settings", label: "Settings", icon: "⚙" },
+        { id: NavId.home, label: "Home", icon: "\u{1F3E0}" },
+        { id: NavId.list, label: "List", icon: "\u{1F4CB}" },
+        { id: NavId.settings, label: "Settings", icon: "⚙" },
     ];
 
-    property <length> mobile-frame-width:      Spacing.xl * 8 + Spacing.md + Spacing.sm;
-    property <length> sidebar-expanded-width:  Spacing.xl * 4 + Spacing.md;
+    property <length> mobile-frame-width:      Spacing.xl * Sizes.eight + Spacing.md + Spacing.sm;
+    property <length> sidebar-expanded-width:  Spacing.xl * Sizes.four + Spacing.md;
     property <length> sidebar-collapsed-width: Spacing.xl + Spacing.sm;
-    in-out property <length> col-left-width:   Spacing.xl * 4 + Spacing.md;
+    /// Two-way property "col-left-width".
+    in-out property <length> col-left-width:   Spacing.xl * Sizes.four + Spacing.md;
+
+    /// Input property "control-bar-label".
+    in property <string> control-bar-label: "SlintUI \u{2014} Phase 2 Demo";
+    /// Input property "switch-to-mobile-label".
+    in property <string> switch-to-mobile-label: "Switch to Mobile";
+    /// Input property "switch-to-desktop-label".
+    in property <string> switch-to-desktop-label: "Switch to Desktop";
+    /// Input property "dark-label".
+    in property <string> dark-label: "Dark";
+    /// Input property "status-prefix".
+    in property <string> status-prefix: "View: ";
 
     VerticalLayout {
         // Control bar
@@ -40,90 +64,65 @@ export component DemoWindow inherits Window {
                 padding-right: Spacing.md;
                 spacing: Spacing.sm;
                 Text {
-                    text: "SlintUI — Phase 2 Demo";
+                    text: root.control-bar-label;
                     font-size: Type.subtitle-size;
                     font-weight: Type.weight-semibold;
                     color: Colors.text-primary;
                     vertical-alignment: center;
                 }
-                Rectangle { horizontal-stretch: 1; }
+                Rectangle { horizontal-stretch: Sizes.one; }
                 Button {
-                    label: root.layout-mode == "desktop" ? "Switch to Mobile" : "Switch to Desktop";
-                    variant: "secondary";
-                    clicked => { root.layout-mode = root.layout-mode == "desktop" ? "mobile" : "desktop"; }
+                    label: root.layout-mode == Variants.desktop ? root.switch-to-mobile-label : root.switch-to-desktop-label;
+                    variant: Variants.secondary;
+                    clicked => { root.layout-mode = root.layout-mode == Variants.desktop ? Variants.mobile : Variants.desktop; }
                 }
-                Toggle { label: "Dark"; checked: Colors.dark-mode; toggled(v) => { Colors.dark-mode = v; } }
+                Toggle { label: root.dark-label; checked: Colors.dark-mode; toggled(v) => { Colors.dark-mode = v; } }
             }
         }
 
         // Desktop layout
-        if root.layout-mode == "desktop": HorizontalLayout {
-            vertical-stretch: 1;
+        if root.layout-mode == Variants.desktop: HorizontalLayout {
+            vertical-stretch: Sizes.one;
             SideBar {
-                horizontal-stretch: 0;
-                min-width: root.col-left-width;
-                max-width: root.col-left-width;
+                horizontal-stretch: Sizes.zero;
+                min-width: root.sidebar-collapsed ? root.sidebar-collapsed-width : root.col-left-width;
+                max-width: root.sidebar-collapsed ? root.sidebar-collapsed-width : root.col-left-width;
                 items: root.nav-items;
                 active-item: root.active-view;
                 collapsed: root.sidebar-collapsed;
                 navigate(id) => { root.active-view = id; }
-                toggle-collapsed() => {
-                    root.sidebar-collapsed = !root.sidebar-collapsed;
-                    root.col-left-width = root.sidebar-collapsed ? root.sidebar-collapsed-width : root.sidebar-expanded-width;
-                }
+                toggle-collapsed() => { root.sidebar-collapsed = !root.sidebar-collapsed; }
             }
             DragHandle {
                 min-width: Spacing.handle-thickness;
                 max-width: Spacing.handle-thickness;
                 vertical: false;
                 dragged(dx, dy) => {
-                    root.col-left-width = root.col-left-width + dx * 1px;
-                    if (root.col-left-width < root.sidebar-collapsed-width) { root.col-left-width = root.sidebar-collapsed-width; }
+                    root.col-left-width = clamp(root.col-left-width + dx * Sizes.border-w, root.sidebar-collapsed-width, Sizes.panel-xl);
                 }
             }
             VerticalLayout {
-                horizontal-stretch: 1;
-                NavBar { breadcrumb: root.active-view; can-go-back: root.active-view != "home"; go-back => { root.active-view = "home"; } }
-                if root.active-view == "home":     HomeView     { vertical-stretch: 1; }
-                if root.active-view == "list":     ListView     { vertical-stretch: 1; }
-                if root.active-view == "settings": SettingsView { vertical-stretch: 1; }
-                StatusBar { status-text: "View: " + root.active-view; }
+                horizontal-stretch: Sizes.one;
+                NavBar { breadcrumb: root.active-view; can-go-back: root.active-view != NavId.home; go-back => { root.active-view = NavId.home; } }
+                if root.active-view == NavId.home:     HomeView     { vertical-stretch: Sizes.one; }
+                if root.active-view == NavId.list:     ListView     { vertical-stretch: Sizes.one; }
+                if root.active-view == NavId.settings: SettingsView { vertical-stretch: Sizes.one; }
+                StatusBar { status-text: root.status-prefix + root.active-view; }
             }
         }
 
         // Mobile layout — centered frame
-        if root.layout-mode == "mobile": Rectangle {
-            vertical-stretch: 1;
+        if root.layout-mode == Variants.mobile: Rectangle {
+            vertical-stretch: Sizes.one;
             background: Colors.bg-primary;
-            Rectangle {
+            MobilePhoneFrame {
                 width: root.mobile-frame-width;
                 height: parent.height;
-                x: (parent.width - self.width) / 2;
-                border-color: Colors.border;
-                border-width: 1px;
-                VerticalLayout {
-                    NavBar { breadcrumb: root.active-view; can-go-back: root.active-view != "home"; go-back => { root.active-view = "home"; } }
-                    if root.active-view == "home":     HomeView     { vertical-stretch: 1; }
-                    if root.active-view == "list":     ListView     { vertical-stretch: 1; }
-                    if root.active-view == "settings": SettingsView { vertical-stretch: 1; }
-                    Rectangle {
-                        height: Spacing.xl + Spacing.sm;
-                        background: Colors.bg-surface;
-                        HorizontalLayout {
-                            for item in root.nav-items: Rectangle {
-                                horizontal-stretch: 1;
-                                tab-ta := TouchArea { clicked => { root.active-view = item.id; } }
-                                VerticalLayout {
-                                    alignment: center;
-                                    spacing: Spacing.xs;
-                                    Text { text: item.icon; font-size: Type.subtitle-size; color: item.id == root.active-view ? Colors.accent : Colors.text-secondary; horizontal-alignment: center; }
-                                    Text { text: item.label; font-size: Type.caption-size; color: item.id == root.active-view ? Colors.accent : Colors.text-secondary; horizontal-alignment: center; }
-                                }
-                            }
-                        }
-                    }
-                    StatusBar { status-text: "View: " + root.active-view; }
-                }
+                x: (parent.width - self.width) / Sizes.two;
+                active-view: root.active-view;
+                items: root.nav-items;
+                status-prefix: root.status-prefix;
+                navigate(id) => { root.active-view = id; }
             }
         }
     }

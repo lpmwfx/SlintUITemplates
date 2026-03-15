@@ -1,22 +1,52 @@
 import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
+import { SelectFieldItem } from "./SelectFieldItem.slint";
 
+/// S el ec tf ie ld component.
 export component SelectField inherits Rectangle {
+    /// Input property "options".
     in property <[string]> options: [];
+    /// Input property "selected".
     in property <string>   selected: "";
+    /// Input property "placeholder".
     in property <string>   placeholder: "Select...";
+    /// Callback fired for c ha ng ed.
     callback changed(string);
-
-    private property <bool> open: false;
 
     height: Spacing.xl;
     clip: false;
 
-    // Closed: trigger row
+    // Dropdown popup — auto-closes on outside click (Slint PopupWindow behavior)
+    popup := PopupWindow {
+        x: Sizes.no-size;
+        y: Spacing.xl + Spacing.xs;
+        width: root.width;
+        height: Spacing.xl * root.options.length;
+
+        Rectangle {
+            border-radius: Spacing.xs;
+            border-width: Sizes.border-w;
+            border-color: Colors.border;
+            background: Colors.bg-elevated;
+            drop-shadow-blur: Spacing.sm;
+            drop-shadow-color: Colors.shadow;
+
+            VerticalLayout {
+                for item in root.options: SelectFieldItem {
+                    label: item;
+                    is-selected: item == root.selected;
+                    picked(v) => { root.changed(v); popup.close(); }
+                }
+            }
+        }
+    }
+
+    // Trigger row
     trigger := Rectangle {
         height: Spacing.xl;
         border-radius: Spacing.xs;
-        border-width: 1px;
-        border-color: root.open ? Colors.border-focus : Colors.border;
+        border-width: Sizes.border-w;
+        border-color: trigger-ta.has-hover ? Colors.border-focus : Colors.border;
         background: Colors.bg-elevated;
 
         HorizontalLayout {
@@ -28,55 +58,19 @@ export component SelectField inherits Rectangle {
                 font-size: Type.body-size;
                 color: root.selected != "" ? Colors.text-primary : Colors.text-disabled;
                 vertical-alignment: center;
-                horizontal-stretch: 1;
+                horizontal-stretch: Sizes.one;
             }
 
-            // Chevron indicator
             Text {
-                text: root.open ? "▲" : "▼";
+                text: "▼";
                 font-size: Type.caption-size;
                 color: Colors.text-secondary;
                 vertical-alignment: center;
             }
         }
 
-        TouchArea {
-            clicked => { root.open = !root.open; }
-        }
-    }
-
-    // Open: dropdown overlay
-    if root.open: Rectangle {
-        y: Spacing.xl + Spacing.xs;
-        width: parent.width;
-        height: Spacing.xl * options.length;
-        border-radius: Spacing.xs;
-        border-width: 1px;
-        border-color: Colors.border;
-        background: Colors.bg-elevated;
-        drop-shadow-blur: Spacing.sm;
-        drop-shadow-color: Colors.shadow;
-
-        VerticalLayout {
-            for item in root.options: Rectangle {
-                height: Spacing.xl;
-                background: item == root.selected ? Colors.bg-surface : transparent;
-
-                Text {
-                    x: Spacing.sm;
-                    text: item;
-                    font-size: Type.body-size;
-                    color: Colors.text-primary;
-                    vertical-alignment: center;
-                }
-
-                TouchArea {
-                    clicked => {
-                        root.changed(item);
-                        root.open = false;
-                    }
-                }
-            }
+        trigger-ta := TouchArea {
+            clicked => { popup.show(); }
         }
     }
 }

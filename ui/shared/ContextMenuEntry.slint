@@ -1,0 +1,71 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
+
+/// C on te xt me nu it em struct.
+export struct ContextMenuItem {
+    id:         string,
+    label:      string,
+    icon:       string,
+    disabled:   bool,
+    separator:  bool,
+    keybinding: string,
+}
+
+// Private helper — keeps popup VerticalLayout at nesting depth ≤ 5.
+/// C on te xt me nu en tr y component.
+export component ContextMenuEntry inherits Rectangle {
+    /// Input property "item".
+    in property <ContextMenuItem> item;
+    /// Input property "icon-font".
+    in property <string> icon-font: "Segoe Fluent Icons";
+    /// Callback fired for a ct iv at ed.
+    callback activated(string);
+
+    height: item.separator ? Spacing.xs : Spacing.xl;
+
+    // Separator line
+    if item.separator: Rectangle {
+        y: Spacing.xs / Sizes.two;
+        width: parent.width;
+        height: Sizes.border-w;
+        background: Colors.border;
+    }
+
+    // Item row
+    if !item.separator: Rectangle {
+        border-radius: Spacing.xs;
+        background: !item.disabled && row-ta.has-hover ? Colors.bg-surface : transparent;
+        opacity: item.disabled ? Sizes.half : Sizes.fill;
+
+        HorizontalLayout {
+            padding-left: Spacing.sm;
+            padding-right: Spacing.sm;
+            spacing: Spacing.sm;
+            if item.icon != "": Text {
+                text: item.icon;
+                font-family: root.icon-font;
+                font-size: Type.body-size;
+                color: Colors.text-secondary;
+                vertical-alignment: center;
+            }
+            Text {
+                text: item.label;
+                font-size: Type.body-size;
+                color: item.disabled ? Colors.text-disabled : Colors.text-primary;
+                vertical-alignment: center;
+                horizontal-stretch: Sizes.one;
+            }
+            if item.keybinding != "": Text {
+                text: item.keybinding;
+                font-size: Type.caption-size;
+                color: Colors.text-disabled;
+                vertical-alignment: center;
+            }
+        }
+
+        row-ta := TouchArea {
+            enabled: !item.disabled;
+            clicked => { root.activated(root.item.id); }
+        }
+    }
+}
