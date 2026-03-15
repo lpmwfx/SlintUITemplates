@@ -1,34 +1,59 @@
 import { Colors, Spacing } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
+import { Variants } from "../globals/Variants.slint";
 
+/// S ke le to n component.
 export component Skeleton inherits Rectangle {
-    in property <string> variant: "rect";   // text | circle | rect
+    /// Input property "variant".
+    in property <string> variant: root.variant-rect;   // text | circle | rect
+    /// Input property "animate".
     in property <bool>   animate: true;
+
+    // ── Variant constant ────────────────────────────────────────────────
+    /// Private property "variant-rect" used internally.
+    private property <string> variant-rect: "rect";
+
+    // ── Shimmer constants ───────────────────────────────────────────────
+    /// Private property "shimmer-step" used internally.
+    private property <float>    shimmer-step:    0.01;
+    /// Private property "shimmer-max" used internally.
+    private property <float>    shimmer-max:     1.33;
+    /// Private property "shimmer-reset" used internally.
+    private property <float>    shimmer-reset:  -0.33;
+    /// Private property "shimmer-alpha" used internally.
+    private property <float>    shimmer-alpha:   0.4;
+    /// Private property "frame-interval" used internally.
+    private property <duration> frame-interval:  16ms;
+    /// Private property "text-radius" used internally.
+    private property <length>   text-radius: Sizes.border-w-2;
 
     background: Colors.bg-elevated;
     clip: true;
     border-radius:
-        root.variant == "circle" ? root.height / 2 :
-        root.variant == "text"   ? 2px :
+        root.variant == Variants.circle ? root.height / Sizes.two :
+        root.variant == Variants.text   ? root.text-radius :
         Spacing.xs;
 
-    private property <float> shimmer-pos: 0.0;
+    /// Private property "shimmer-pos" used internally.
+    private property <float> shimmer-pos: Sizes.no-fill;
+    /// Private property "shimmer-next" used internally.
+    private property <float> shimmer-next:
+        Math.mod(root.shimmer-pos - root.shimmer-reset + root.shimmer-step,
+                 root.shimmer-max - root.shimmer-reset) + root.shimmer-reset;
 
     timer := Timer {
-        interval: 16ms;
+        interval: root.frame-interval;
         running: root.animate;
-        triggered => {
-            root.shimmer-pos = root.shimmer-pos + 0.01;
-            if root.shimmer-pos > 1.33 { root.shimmer-pos = -0.33; }
-        }
+        triggered => { root.shimmer-pos = root.shimmer-next; }
     }
 
     // Shimmer overlay
     if root.animate: Rectangle {
-        x: (root.shimmer-pos - 0.33) * parent.width;
-        y: 0;
-        width: parent.width * 0.33;
+        x: (root.shimmer-pos - Sizes.third) * parent.width;
+        y: Sizes.no-size;
+        width: parent.width * Sizes.third;
         height: parent.height;
-        opacity: 0.4;
+        opacity: root.shimmer-alpha;
         background: Colors.bg-surface;
     }
 }

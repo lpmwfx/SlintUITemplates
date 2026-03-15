@@ -1,17 +1,38 @@
 import { Colors, Spacing } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
+import { Variants } from "../globals/Variants.slint";
+import { FluentMotion } from "../tokens/fluent/motion.slint";
 
+/// S pi nn er component.
 export component Spinner inherits Rectangle {
-    in property <string> size:          "md";
+    /// Input property "size".
+    in property <string> size:          Variants.md;
+    /// Input property "spinner-color".
     in property <color>  spinner-color: Colors.accent;
+    /// Input property "active".
     in property <bool>   active:        true;
 
+    /// Private property "dim" used internally.
     private property <length> dim:
-        root.size == "sm" ? Spacing.md :
-        root.size == "lg" ? Spacing.control-lg :
+        root.size == Variants.sm ? Spacing.md :
+        root.size == Variants.lg ? Spacing.control-lg :
         Spacing.lg;
 
-    private property <float>  pulse-val: 1.0;
-    private property <bool>   pulse-up:  false;
+    /// Private property "anim-phase" used internally.
+    private property <float>  anim-phase: 0.0;
+    /// Private property "anim-speed" used internally.
+    private property <float>  anim-speed: 0.05;
+    /// Private property "anim-next" used internally.
+    private property <float>  anim-next: Math.mod(root.anim-phase + root.anim-speed, Sizes.two);
+    /// Private property "pulse-min" used internally.
+    private property <float>  pulse-min:  0.2;
+    /// Private property "track-alpha" used internally.
+    private property <float>  track-alpha: 0.15;
+    /// Private property "ring-width" used internally.
+    private property <length> ring-width: Sizes.border-w-2;
+    // opacity derived: triangle wave between pulse-min and 1.0
+    /// Private property "pulse-val" used internally.
+    private property <float>  pulse-val: Math.abs(root.anim-phase - Sizes.fill) * (Sizes.fill - root.pulse-min) + root.pulse-min;
 
     width:  root.dim;
     height: root.dim;
@@ -19,26 +40,18 @@ export component Spinner inherits Rectangle {
     visible: root.active;
 
     timer := Timer {
-        interval: 16ms;
+        interval: FluentMotion.tick;
         running: root.active;
-        triggered => {
-            if root.pulse-up {
-                root.pulse-val = root.pulse-val + 0.025;
-                if root.pulse-val >= 1.0 { root.pulse-up = false; }
-            } else {
-                root.pulse-val = root.pulse-val - 0.025;
-                if root.pulse-val <= 0.2 { root.pulse-up = true; }
-            }
-        }
+        triggered => { root.anim-phase = root.anim-next; }
     }
 
     // Track ring
     Rectangle {
         width:  root.dim;
         height: root.dim;
-        border-radius: root.dim / 2;
-        border-width: 2px;
-        border-color: root.spinner-color.with-alpha(0.15);
+        border-radius: root.dim / Sizes.two;
+        border-width: root.ring-width;
+        border-color: root.spinner-color.with-alpha(root.track-alpha);
         background: transparent;
     }
 
@@ -46,8 +59,8 @@ export component Spinner inherits Rectangle {
     Rectangle {
         width:  root.dim;
         height: root.dim;
-        border-radius: root.dim / 2;
-        border-width: 2px;
+        border-radius: root.dim / Sizes.two;
+        border-width: root.ring-width;
         border-color: root.spinner-color;
         background: transparent;
         opacity: root.pulse-val;

@@ -1,0 +1,40 @@
+import { Colors, Spacing } from "../tokens/theme.slint";
+import { Sizes }           from "../tokens/sizes.slint";
+import { DropdownEntry, DropdownMenuItem } from "dropdown-entry.slint";
+
+export { DropdownMenuItem }
+
+/// P op up co nt en t component.
+export component PopupContent inherits Rectangle {
+    /// Input property "items".
+    in property <[DropdownMenuItem]> items;
+    /// Input property "est-popup-h".
+    in property <length>             est-popup-h;
+    /// Input property "border-px".
+    in property <length>             border-px;
+    /// Callback fired for i te m a ct iv at ed.
+    callback item-activated(string);
+
+    background: Colors.bg-elevated;
+    border-radius: Spacing.xs;
+    border-width: root.border-px;
+    border-color: Colors.border;
+    drop-shadow-blur: Spacing.sm;
+    drop-shadow-color: Colors.shadow;
+    clip: true;
+
+    Flickable {
+        width: parent.width;
+        height: parent.height;
+        viewport-width: self.width;
+        viewport-height: root.est-popup-h;
+
+        VerticalLayout {
+            padding: Spacing.xs;
+            for item in root.items: DropdownEntry {
+                item: item;
+                activated(id) => { root.item-activated(id); }
+            }
+        }
+    }
+}

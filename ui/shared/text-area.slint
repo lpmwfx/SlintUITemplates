@@ -1,19 +1,29 @@
 import { Colors, Spacing, Type } from "../tokens/theme.slint";
 import { TextEdit } from "std-widgets.slint";
+import { Sizes } from "../tokens/sizes.slint";
 
+/// T ex ta re a component.
 export component TextArea inherits Rectangle {
+    /// Input property "label".
     in property <string> label: "";
-    in-out property <string> value: "";
+    /// Input property "value".
+    in property <string> value: "";
+    /// Input property "placeholder".
     in property <string> placeholder: "";
+    /// Input property "error".
     in property <string> error: "";
-    in property <int>    rows: 4;
+    /// Input property "rows".
+    in property <int>    rows: Sizes.four;
+    /// Input property "enabled".
     in property <bool>   enabled: true;
+    /// Callback fired for c ha ng ed.
     callback changed(string);
 
-    private property <length> area-height: root.rows * (Type.body-size + Spacing.xs) + Spacing.sm * 2;
+    /// Private property "area-height" used internally.
+    private property <length> area-height: root.rows * (Type.body-size + Spacing.xs) + Spacing.sm * Sizes.two;
 
     height: root.label != "" ? root.area-height + Type.caption-size + Spacing.xs : root.area-height;
-    opacity: root.enabled ? 1.0 : 0.5;
+    opacity: root.enabled ? Sizes.fill : Sizes.half;
 
     VerticalLayout {
         spacing: Spacing.xs;
@@ -28,7 +38,7 @@ export component TextArea inherits Rectangle {
         field := Rectangle {
             height: root.area-height;
             border-radius: Spacing.xs;
-            border-width: 1px;
+            border-width: Sizes.border-w;
             border-color: root.error != "" ? Colors.error :
                           edit.has-focus ? Colors.border-focus : Colors.border;
             background: Colors.bg-elevated;
@@ -37,9 +47,9 @@ export component TextArea inherits Rectangle {
             edit := TextEdit {
                 x: Spacing.sm;
                 y: Spacing.sm;
-                width: parent.width - Spacing.sm * 2;
-                height: parent.height - Spacing.sm * 2;
-                text <=> root.value;
+                width: parent.width - Spacing.sm * Sizes.two;
+                height: parent.height - Spacing.sm * Sizes.two;
+                text: root.value;
                 font-size: Type.body-size;
                 wrap: word-wrap;
                 enabled: root.enabled;

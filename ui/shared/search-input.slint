@@ -1,34 +1,37 @@
 import { Colors, Spacing, Type, FluentIcons } from "../tokens/theme.slint";
+import { Sizes }       from "../tokens/sizes.slint";
+import { SearchIcon }  from "SearchIcon.slint";
+import { ClearButton } from "ClearButton.slint";
 
+/// S ea rc hi np ut component.
 export component SearchInput inherits Rectangle {
-    in-out property <string> value: "";
+    /// Input property "value".
+    in property <string> value: "";
+    /// Input property "placeholder".
     in property <string> placeholder: "Search...";
+    /// Input property "enabled".
     in property <bool>   enabled: true;
+    /// Callback fired for c ha ng ed.
     callback changed(string);
+    /// Callback fired for s ub mi tt ed.
     callback submitted(string);
+    /// Callback fired for c le ar ed.
     callback cleared();
 
     height: Spacing.xl;
-    opacity: root.enabled ? 1.0 : 0.5;
+    opacity: root.enabled ? Sizes.fill : Sizes.half;
 
     field := Rectangle {
         border-radius: Spacing.xs;
-        border-width: 1px;
+        border-width: Sizes.border-w;
         border-color: input.has-focus ? Colors.border-focus : Colors.border;
         background: Colors.bg-elevated;
 
         HorizontalLayout {
             // Search icon
-            Rectangle {
-                width: Spacing.lg;
-                Text {
-                    text: FluentIcons.search;
-                    font-family: "Segoe Fluent Icons";
-                    font-size: Type.body-size;
-                    color: Colors.text-secondary;
-                    horizontal-alignment: center;
-                    vertical-alignment: center;
-                }
+            SearchIcon {
+                icon: FluentIcons.search;
+                font-name: FluentIcons.icon-font;
             }
 
             input := TextInput {
@@ -37,34 +40,15 @@ export component SearchInput inherits Rectangle {
                 color: Colors.text-primary;
                 vertical-alignment: center;
                 enabled: root.enabled;
-                horizontal-stretch: 1;
+                horizontal-stretch: Sizes.one;
 
-                edited => { root.value = self.text; root.changed(self.text); }
+                edited => { root.changed(self.text); }
                 accepted => { root.submitted(self.text); }
             }
 
             // Clear button
-            if root.value != "": Rectangle {
-                width: Spacing.lg;
-                background: clear-ta.has-hover ? Colors.bg-surface : transparent;
-                border-radius: Spacing.xs;
-
-                Text {
-                    text: FluentIcons.dismiss;
-                    font-family: "Segoe Fluent Icons";
-                    font-size: Type.caption-size;
-                    color: Colors.text-secondary;
-                    horizontal-alignment: center;
-                    vertical-alignment: center;
-                }
-
-                clear-ta := TouchArea {
-                    clicked => {
-                        root.value = "";
-                        input.text = "";
-                        root.cleared();
-                    }
-                }
+            if root.value != "": ClearButton {
+                cleared => { input.text = ""; root.cleared(); }
             }
         }
 

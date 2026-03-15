@@ -1,0 +1,139 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Sizes }                   from "../tokens/sizes.slint";
+import { Variants }                from "../globals/Variants.slint";
+import { PanelContainer, PanelItem } from "../modules/PanelContainer.slint";
+import { PanelSlot }               from "../modules/PanelSlot.slint";
+import { Divider }                 from "../shared/divider.slint";
+import { ScrollView }              from "../shared/scroll-view.slint";
+import { ViewerSection }           from "viewer-section.slint";
+import { ColHandleDemo }    from "ColHandleDemo.slint";
+import { RowHandleDemo }    from "RowHandleDemo.slint";
+import { BiDirDemo }        from "BiDirDemo.slint";
+import { ViewSlotDemo }     from "ViewSlotDemo.slint";
+import { ScrollDemoRow }    from "ScrollDemoRow.slint";
+
+/// Viewer page for layout primitives, drag handles, slots, and scrolling containers.
+export component PageLayout inherits VerticalLayout {
+    spacing: Spacing.md;
+    /// Private property "panel-c-y" used internally.
+    private property <float>  panel-c-y: Sizes.ratio-55;
+
+    /// Private property "title-draghandle" used internally.
+    private property <string> title-draghandle: "DragHandle";
+    /// Private property "title-bidir" used internally.
+    private property <string> title-bidir: "Bi-directional 3-panel (drag either handle \u{2014} both neighbors update)";
+    /// Private property "title-panel-container" used internally.
+    private property <string> title-panel-container: "PanelContainer (3 panels)";
+    /// Private property "title-panel-slot" used internally.
+    private property <string> title-panel-slot: "PanelSlot (standalone)";
+    /// Private property "title-viewslot" used internally.
+    private property <string> title-viewslot: "ViewSlot \u{2014} slot-id routing (click nav to switch view)";
+    /// Private property "title-divider" used internally.
+    private property <string> title-divider: "Divider";
+    /// Private property "title-scrollview" used internally.
+    private property <string> title-scrollview: "ScrollView";
+
+    /// Private property "lbl-panel-a" used internally.
+    private property <string> lbl-panel-a: "Panel A";
+    /// Private property "lbl-panel-b" used internally.
+    private property <string> lbl-panel-b: "Panel B";
+    /// Private property "lbl-panel-c" used internally.
+    private property <string> lbl-panel-c: "Panel C";
+    /// Private property "lbl-standalone" used internally.
+    private property <string> lbl-standalone: "Standalone slot";
+    /// Private property "lbl-section" used internally.
+    private property <string> lbl-section: "Section";
+    /// Private property "lbl-left" used internally.
+    private property <string> lbl-left: "Left";
+    /// Private property "lbl-right" used internally.
+    private property <string> lbl-right: "Right";
+    /// Private property "lbl-row-prefix" used internally.
+    private property <string> lbl-row-prefix: "Row ";
+
+    ViewerSection {
+        title: root.title-draghandle;
+        HorizontalLayout {
+            spacing: Spacing.lg;
+            alignment: start;
+            ColHandleDemo {}
+            RowHandleDemo {}
+        }
+    }
+
+    ViewerSection {
+        title: root.title-bidir;
+        BiDirDemo {}
+    }
+
+    ViewerSection {
+        title: root.title-panel-container;
+        PanelContainer {
+            width: Sizes.panel-max;
+            height: Sizes.panel-xs;
+            panels: [
+                { id: Sizes.zero, kind: Variants.panel,    label: root.lbl-panel-a, x: Sizes.no-fill,    y: Sizes.no-fill,    w: Sizes.ratio-lg, h: Sizes.fill  },
+                { id: Sizes.one,  kind: Variants.handle-h, label: "",               x: Sizes.ratio-lg,   y: Sizes.no-fill,    w: Sizes.ratio-xs, h: Sizes.fill  },
+                { id: Sizes.two,  kind: Variants.panel,    label: root.lbl-panel-b, x: Sizes.half,       y: Sizes.no-fill,    w: Sizes.half,     h: Sizes.half  },
+                { id: Sizes.three, kind: Variants.handle-v, label: "",              x: Sizes.half,       y: Sizes.half,       w: Sizes.half,     h: Sizes.ratio-xs },
+                { id: Sizes.four, kind: Variants.panel,    label: root.lbl-panel-c, x: Sizes.half,       y: root.panel-c-y,   w: Sizes.half,     h: Sizes.ratio-lg },
+            ];
+        }
+    }
+
+    ViewerSection {
+        title: root.title-panel-slot;
+        PanelSlot {
+            width: Sizes.panel-sm;
+            height: Sizes.thumb-sm;
+            panel-id: Sizes.ninety-nine;
+            label: root.lbl-standalone;
+        }
+    }
+
+    ViewerSection {
+        title: root.title-viewslot;
+        ViewSlotDemo {}
+    }
+
+    ViewerSection {
+        title: root.title-divider;
+        VerticalLayout {
+            spacing: Spacing.md;
+            width: Sizes.panel-xxl;
+
+            // Horizontal, no label
+            Divider { width: parent.width; height: Spacing.xs; }
+
+            // Horizontal with label
+            Divider { width: parent.width; height: Spacing.lg; label: root.lbl-section; }
+
+            // Vertical pair
+            HorizontalLayout {
+                height: Spacing.xl;
+                spacing: Spacing.sm;
+                Text { text: root.lbl-left;  font-size: Type.body-size; color: Colors.text-secondary; vertical-alignment: center; }
+                Divider { orientation: Variants.vertical; width: Spacing.xs; height: Spacing.xl; }
+                Text { text: root.lbl-right; font-size: Type.body-size; color: Colors.text-secondary; vertical-alignment: center; }
+            }
+        }
+    }
+
+    ViewerSection {
+        title: root.title-scrollview;
+        ScrollView {
+            width: Sizes.panel-lg;
+            height: Sizes.thumb-md;
+
+            VerticalLayout {
+                padding: Spacing.sm;
+                spacing: Spacing.sm;
+                width: Sizes.panel-lg;
+
+                for i in [Sizes.one, Sizes.two, Sizes.three, Sizes.four, Sizes.five, Sizes.six, Sizes.seven, Sizes.eight]: ScrollDemoRow {
+                    row-index: i;
+                    row-prefix: root.lbl-row-prefix;
+                }
+            }
+        }
+    }
+}

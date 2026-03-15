@@ -1,0 +1,44 @@
+import { Colors, Spacing, Type, FluentIcons } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
+
+// StarItem — a single star in the Rating component.
+/// S ta ri te m component.
+export component StarItem inherits Rectangle {
+    /// Input property "index".
+    in property <int>  index;
+    /// Input property "display-val".
+    in property <int>  display-val;
+    /// Input property "readonly".
+    in property <bool> readonly: false;
+    /// Callback fired for c li ck ed.
+    callback clicked();
+    /// Callback fired for h ov er c ha ng ed.
+    callback hover-changed(int);
+
+    width: Spacing.lg;
+    height: Spacing.lg;
+    background: transparent;
+
+    Text {
+        text: root.index <= root.display-val
+            ? FluentIcons.star-filled : FluentIcons.star;
+        font-family: FluentIcons.icon-font;
+        font-size: Type.subtitle-size;
+        color: root.index <= root.display-val
+            ? Colors.accent : Colors.text-disabled;
+        horizontal-alignment: center;
+        vertical-alignment: center;
+    }
+
+    pure function hover-index(e: PointerEvent) -> int {
+        e.kind == PointerEventKind.up || e.kind == PointerEventKind.cancel ? Sizes.zero :
+        e.kind == PointerEventKind.move || e.kind == PointerEventKind.down ? root.index :
+        root.display-val
+    }
+
+    star-ta := TouchArea {
+        enabled: !root.readonly;
+        clicked => { root.clicked(); }
+        pointer-event(e) => { root.hover-changed(root.hover-index(e)); }
+    }
+}

@@ -1,0 +1,42 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
+
+/// M ul ti se le ct it em component.
+export component MultiSelectItem inherits Rectangle {
+    /// Input property "opt-label".
+    in property <string> opt-label;
+    /// Input property "opt-value".
+    in property <string> opt-value;
+    /// Callback fired for i te m s el ec te d.
+    callback item-selected(string);
+
+    height: Spacing.xl;
+    background: item-ta.has-hover ? Colors.bg-surface : transparent;
+
+    HorizontalLayout {
+        padding-left: Spacing.sm;
+        padding-right: Spacing.sm;
+        spacing: Spacing.sm;
+
+        Rectangle {
+            width: Sizes.icon-sm;
+            height: Sizes.icon-sm;
+            border-radius: Spacing.xs;
+            border-width: Sizes.border-w;
+            border-color: Colors.border;
+            background: Colors.bg-elevated;
+        }
+
+        Text {
+            text: root.opt-label;
+            font-size: Type.body-size;
+            color: Colors.text-primary;
+            vertical-alignment: center;
+            horizontal-stretch: Sizes.one;
+        }
+    }
+
+    item-ta := TouchArea {
+        clicked => { root.item-selected(root.opt-value); }
+    }
+}

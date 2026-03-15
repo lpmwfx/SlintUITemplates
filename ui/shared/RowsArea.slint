@@ -1,0 +1,37 @@
+import { Spacing } from "../tokens/theme.slint";
+import { Sizes }   from "../tokens/sizes.slint";
+import { TableRow, TableColumn } from "data-table-types.slint";
+import { DataTableRow }          from "DataTableRow.slint";
+
+export { TableRow, TableColumn }
+
+/// R ow sa re a component.
+export component RowsArea inherits Rectangle {
+    /// Input property "rows".
+    in property <[TableRow]>    rows;
+    /// Input property "columns".
+    in property <[TableColumn]> columns;
+    /// Input property "selected".
+    in property <string>        selected;
+    /// Callback fired for r ow s el ec te d.
+    callback row-selected(string);
+
+    vertical-stretch: Sizes.one;
+    clip: true;
+
+    Flickable {
+        width: parent.width;
+        height: parent.height;
+        viewport-height: root.rows.length * Spacing.xl;
+
+        VerticalLayout {
+            for row[i] in root.rows: DataTableRow {
+                cells: row.cells;
+                columns: root.columns;
+                is-selected: row.id == root.selected;
+                is-alternate: Math.mod(i, Sizes.two) == Sizes.zero;
+                clicked => { root.row-selected(row.id); }
+            }
+        }
+    }
+}

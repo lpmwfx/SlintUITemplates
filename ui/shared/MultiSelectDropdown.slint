@@ -1,0 +1,35 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
+import { MultiSelectOption }  from "multi-select-types.slint";
+import { MultiSelectItem }    from "MultiSelectItem.slint";
+
+// MultiSelectDropdown — the dropdown list for multi-select options.
+/// M ul ti se le ct dr op do wn component.
+export component MultiSelectDropdown inherits Rectangle {
+    /// Input property "options".
+    in property <[MultiSelectOption]> options: [];
+    /// Callback fired for i te m s el ec te d.
+    callback item-selected(string);
+
+    border-radius: Spacing.xs;
+    border-width: Sizes.border-w;
+    border-color: Colors.border;
+    background: Colors.bg-elevated;
+    drop-shadow-blur: Spacing.sm;
+    drop-shadow-color: Colors.shadow;
+    clip: true;
+
+    Flickable {
+        width: parent.width;
+        height: parent.height;
+        viewport-height: root.options.length * Spacing.xl;
+
+        VerticalLayout {
+            for opt in root.options: MultiSelectItem {
+                opt-label: opt.label;
+                opt-value: opt.value;
+                item-selected(v) => { root.item-selected(v); }
+            }
+        }
+    }
+}

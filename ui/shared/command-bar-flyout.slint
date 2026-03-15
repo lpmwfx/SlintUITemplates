@@ -1,24 +1,37 @@
 import { Colors, Spacing } from "../tokens/theme.slint";
-import { CbfPrimaryBtn, CbfAction } from "cbf-primary-btn.slint";
-import { CbfSecondaryRow }          from "cbf-secondary-row.slint";
-import { CbfOverflowBtn }           from "cbf-overflow-btn.slint";
+import { CbfSecondaryRow }                   from "cbf-secondary-row.slint";
+import { PrimaryBarContent, CbfAction }      from "PrimaryBarContent.slint";
 
 export { CbfAction }
 
+/// C om ma nd ba rf ly ou t component.
 export component CommandBarFlyout inherits Rectangle {
+    /// Input property "primary".
     in property <[CbfAction]> primary: [];
+    /// Input property "secondary".
     in property <[CbfAction]> secondary: [];
+    /// Input property "window-height".
     in property <length>      window-height;
+    /// Callback fired for a ct io n.
     callback action(string);
 
+    /// Private property "pop-x" used internally.
     private property <length> pop-x:        0px;
+    /// Private property "pop-y" used internally.
     private property <length> pop-y:        0px;
+    /// Private property "border-px" used internally.
     private property <length> border-px:    1px;
+    /// Private property "has-secondary" used internally.
     private property <bool>   has-secondary: root.secondary.length > 0;
+    /// Private property "sec-add" used internally.
     private property <length> sec-add:      root.has-secondary ? Spacing.xl : 0px;
+    /// Private property "primary-w" used internally.
     private property <length> primary-w:    root.primary.length * Spacing.xl + root.sec-add + Spacing.sm * 2;
+    /// Private property "primary-h" used internally.
     private property <length> primary-h:    Spacing.xl + Spacing.sm * 2;
+    /// Private property "secondary-w" used internally.
     private property <length> secondary-w:  200px;
+    /// Private property "secondary-h" used internally.
     private property <length> secondary-h:  root.secondary.length * Spacing.xl + Spacing.sm * 2;
 
     background: transparent;
@@ -29,30 +42,12 @@ export component CommandBarFlyout inherits Rectangle {
         width: root.primary-w;
         height: root.primary-h;
 
-        Rectangle {
-            background: Colors.bg-elevated;
-            border-radius: Spacing.sm;
-            border-width: root.border-px;
-            border-color: Colors.border;
-            drop-shadow-blur: Spacing.sm;
-            drop-shadow-color: Colors.shadow;
-
-            HorizontalLayout {
-                padding: Spacing.xs;
-                alignment: start;
-
-                for item in root.primary: CbfPrimaryBtn {
-                    item: item;
-                    activated(id) => { primary-popup.close(); root.action(id); }
-                }
-
-                if root.has-secondary: CbfOverflowBtn {
-                    show-secondary => {
-                        primary-popup.close();
-                        secondary-popup.show();
-                    }
-                }
-            }
+        PrimaryBarContent {
+            primary: root.primary;
+            has-secondary: root.has-secondary;
+            border-px: root.border-px;
+            item-activated(id) => { primary-popup.close(); root.action(id); }
+            show-secondary => { primary-popup.close(); secondary-popup.show(); }
         }
     }
 

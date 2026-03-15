@@ -1,0 +1,42 @@
+import { Colors, Spacing } from "../tokens/theme.slint";
+import { Sizes }         from "../tokens/sizes.slint";
+import { NavId }         from "../globals/NavId.slint";
+import { NavBar }        from "../desktop/nav-bar.slint";
+import { StatusBar }     from "../desktop/status-bar.slint";
+import { NavItem }       from "../desktop/types.slint";
+import { HomeView }      from "../views/home.slint";
+import { ListView }      from "../views/list.slint";
+import { SettingsView }  from "../views/settings.slint";
+import { DemoMobileNav } from "DemoMobileNav.slint";
+
+/// M ob il ep ho ne fr am e component.
+export component MobilePhoneFrame inherits Rectangle {
+    /// Input property "active-view".
+    in property <string>    active-view;
+    /// Input property "items".
+    in property <[NavItem]> items;
+    /// Input property "status-prefix".
+    in property <string>    status-prefix;
+    /// Callback fired for n av ig at e.
+    callback navigate(string);
+
+    border-color: Colors.border;
+    border-width: Sizes.border-w;
+
+    VerticalLayout {
+        NavBar {
+            breadcrumb: root.active-view;
+            can-go-back: root.active-view != NavId.home;
+            go-back => { root.navigate(NavId.home); }
+        }
+        if root.active-view == NavId.home:     HomeView     { vertical-stretch: Sizes.one; }
+        if root.active-view == NavId.list:     ListView     { vertical-stretch: Sizes.one; }
+        if root.active-view == NavId.settings: SettingsView { vertical-stretch: Sizes.one; }
+        DemoMobileNav {
+            items: root.items;
+            active-view: root.active-view;
+            navigate(id) => { root.navigate(id); }
+        }
+        StatusBar { status-text: root.status-prefix + root.active-view; }
+    }
+}

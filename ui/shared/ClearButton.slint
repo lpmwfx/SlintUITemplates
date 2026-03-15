@@ -1,0 +1,25 @@
+import { Colors, Spacing, Type, FluentIcons } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
+
+/// C le ar bu tt on component.
+export component ClearButton inherits Rectangle {
+    /// Callback fired for c le ar ed.
+    callback cleared();
+
+    width: Spacing.lg;
+    background: btn-ta.has-hover ? Colors.bg-surface : transparent;
+    border-radius: Spacing.xs;
+
+    Text {
+        text: FluentIcons.dismiss;
+        font-family: FluentIcons.icon-font;
+        font-size: Type.caption-size;
+        color: Colors.text-secondary;
+        horizontal-alignment: center;
+        vertical-alignment: center;
+    }
+
+    btn-ta := TouchArea {
+        clicked => { root.cleared(); }
+    }
+}
