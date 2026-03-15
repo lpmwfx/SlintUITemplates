@@ -1,5 +1,6 @@
 use slint::ComponentHandle;
 use crate::Theme;
+use crate::shell::Platform;
 
 impl super::AppAdapter_adp {
     /// Switch the active view by name — updates cache and UI.
@@ -48,5 +49,11 @@ impl super::AppAdapter_adp {
     /// Get the main row ratio from the adapter cache.
     pub fn get_row_main_ratio(&self) -> f32 {
         *self.row_main_ratio.borrow()
+    }
+
+    /// Apply platform — sets Theme.platform, routing all token lookups.
+    /// Call once at startup (or when platform changes) before `run()`.
+    pub fn apply_platform(&self, platform: &Platform) {
+        self.ui.global::<Theme>().set_platform(platform.as_str().into());
     }
 }
