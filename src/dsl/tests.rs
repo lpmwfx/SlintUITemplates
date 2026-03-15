@@ -164,3 +164,47 @@ fn multiple_errors_collected() {
     let errs = AppDsl::builder("App").nav(nav).build().unwrap_err();
     assert_eq!(errs.len(), 2);
 }
+
+// ── Platform tier tests ───────────────────────────────────────────────────────
+
+#[test]
+fn platform_steam_deck_as_str() {
+    assert_eq!(Platform::SteamDeck.as_str(), "steam-deck");
+}
+
+#[test]
+fn platform_steam_linux_as_str() {
+    assert_eq!(Platform::SteamLinux.as_str(), "steam-linux");
+}
+
+#[test]
+fn platform_steam_deck_is_small() {
+    assert!(Platform::SteamDeck.is_small());
+    assert!(!Platform::SteamDeck.is_mobile());
+    assert!(!Platform::SteamDeck.is_desktop());
+}
+
+#[test]
+fn platform_steam_linux_is_desktop() {
+    assert!(Platform::SteamLinux.is_desktop());
+    assert!(!Platform::SteamLinux.is_small());
+    assert!(!Platform::SteamLinux.is_mobile());
+}
+
+#[test]
+fn dsl_steam_deck_nav_limit_five() {
+    // SteamDeck = small tier, same 5-item cap as mobile
+    let nav = (0..6).map(|i| Nav::new(format!("id{i}"), format!("L{i}"), "home")).collect();
+    let errs = AppDsl::builder("App")
+        .platform(Platform::SteamDeck).nav(nav).build().unwrap_err();
+    assert!(errs.contains(&DslError::TooManyNavItems { max: 5, got: 6 }));
+}
+
+#[test]
+fn dsl_steam_linux_nav_limit_seven() {
+    // SteamLinux = desktop tier, allows up to 7 nav items
+    let nav = (0..7).map(|i| Nav::new(format!("id{i}"), format!("L{i}"), "home")).collect();
+    let build_result = AppDsl::builder("App")
+        .platform(Platform::SteamLinux).nav(nav).build();
+    assert!(build_result.is_ok());
+}
