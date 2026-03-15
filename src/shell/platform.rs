@@ -9,6 +9,8 @@ pub enum Platform {
     SteamDeck,
     /// Steam Linux — GamepadUI fullscreen, desktop-class hardware, small tier.
     SteamLinux,
+    /// macOS — Apple HIG sidebar shell, SF Pro fonts, AppKit control sizing.
+    MacOS,
 }
 
 impl Platform {
@@ -19,6 +21,7 @@ impl Platform {
             Platform::Android    => "android",
             Platform::SteamDeck  => "steam-deck",
             Platform::SteamLinux => "steam-linux",
+            Platform::MacOS      => "macos",
         }
     }
 

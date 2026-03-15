@@ -168,6 +168,27 @@ fn multiple_errors_collected() {
 // ── Platform tier tests ───────────────────────────────────────────────────────
 
 #[test]
+fn platform_macos_as_str() {
+    assert_eq!(Platform::MacOS.as_str(), "macos");
+}
+
+#[test]
+fn platform_macos_is_desktop() {
+    assert!(Platform::MacOS.is_desktop());
+    assert!(!Platform::MacOS.is_mobile());
+    assert!(!Platform::MacOS.is_small());
+}
+
+#[test]
+fn dsl_macos_nav_limit_seven() {
+    // macOS = desktop tier, allows up to 7 nav items
+    let nav = (0..7).map(|i| Nav::new(format!("id{i}"), format!("L{i}"), "home")).collect();
+    let build_result = AppDsl::builder("App")
+        .platform(Platform::MacOS).nav(nav).build();
+    assert!(build_result.is_ok());
+}
+
+#[test]
 fn platform_steam_deck_as_str() {
     assert_eq!(Platform::SteamDeck.as_str(), "steam-deck");
 }
