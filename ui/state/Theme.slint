@@ -224,4 +224,15 @@ export global Theme {
     /// Top bar / title bar height.
     out property <length> top-bar-height:
         is-steam ? SteamSpacing.top-bar-height : is-material ? MaterialSpacing.top-app-bar-height : FluentSpacing.titlebar-height;
+
+    // ── Platform convenience shortcuts ────────────────────────────────────
+    /// Minimum safe interactive target for this platform.
+    /// Use for min-width / min-height on buttons and nav items.
+    out property <length> touch-target:
+        is-steam ? SteamSpacing.control-lg : is-material ? MaterialSpacing.control-md : FluentSpacing.control-md;
+    /// Recommended nav chrome pattern for this platform.
+    out property <string> nav-style:
+        is-steam   ? Variants.nav-compact :
+        is-material ? Variants.nav-bottom  :
+        Variants.nav-sidebar;
 }

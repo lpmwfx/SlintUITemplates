@@ -1,11 +1,13 @@
 // AppShell — Windows / Fluent 2 desktop shell.
 // MenuBar must be declared in the Window (Slint constraint + mother-child rule).
 // For Android/Material 3, use MobileShell directly (see mobile/shell.slint).
+// For Steam Deck / small-screen, use CompactShell (see small/shell.slint).
 
 import { NavItem, ShellToolbarItem } from "types.slint";
 import { DesktopShell } from "desktop/shell.slint";
 
-export { MobileShell } from "mobile/shell.slint";
+export { MobileShell }  from "mobile/shell.slint";
+export { CompactShell } from "small/shell.slint";
 
 /// Cross-platform shell facade used by the viewer and host applications.
 ///

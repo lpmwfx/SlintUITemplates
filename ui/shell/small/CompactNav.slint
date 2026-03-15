@@ -1,0 +1,56 @@
+// CompactNav — gamepad-safe navigation for small-tier / Steam platform.
+// mode == Variants.nav-bottom  → horizontal bar at bottom (Steam Deck default)
+// mode == Variants.nav-compact → vertical icon rail on the left (Steam Linux)
+
+import { SteamColors, SteamSpacing } from "../../tokens/steam/mod.slint";
+import { Sizes } from "../../tokens/sizes.slint";
+import { Variants } from "../../globals/Variants.slint";
+import { NavItem } from "../types.slint";
+import { CompactNavItem } from "CompactNavItem.slint";
+
+/// CompactNav — horizontal bottom bar or vertical compact rail.
+export component CompactNav inherits Rectangle {
+    /// Nav mode: `Variants.nav-bottom` (horizontal) or `Variants.nav-compact` (rail).
+    in property <string> mode: Variants.nav-bottom;
+    /// Navigation items to render.
+    in property <[NavItem]> items;
+    /// Id of the currently active item.
+    in property <string> active;
+    /// Fired when a nav item is tapped.
+    callback navigate(string);
+
+    /// Private property "is-rail" used internally.
+    private property <bool> is-rail: root.mode == Variants.nav-compact;
+
+    background: SteamColors.bg-surface;
+    border-color: SteamColors.border;
+    border-width: Sizes.border-w;
+
+    // Bottom bar mode — horizontal, fixed height
+    if !root.is-rail: HorizontalLayout {
+        height: SteamSpacing.bottom-rail-height;
+        alignment: center;
+        spacing: SteamSpacing.xs;
+        padding: SteamSpacing.xs;
+
+        for nav-item in root.items: CompactNavItem {
+            item: nav-item;
+            active: nav-item.id == root.active;
+            navigate(id) => { root.navigate(id); }
+        }
+    }
+
+    // Rail mode — vertical, fixed width
+    if root.is-rail: VerticalLayout {
+        width: SteamSpacing.nav-rail-width;
+        alignment: start;
+        spacing: SteamSpacing.xs;
+        padding: SteamSpacing.xs;
+
+        for nav-item in root.items: CompactNavItem {
+            item: nav-item;
+            active: nav-item.id == root.active;
+            navigate(id) => { root.navigate(id); }
+        }
+    }
+}
