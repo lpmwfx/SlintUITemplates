@@ -1,0 +1,57 @@
+// MacosTitleBar — macOS title bar with traffic light indicators and centred title.
+// Traffic light circles are visual only; native window controls overlay them on macOS.
+
+import { Colors }                                                  from "../../tokens/theme.slint";
+import { MacosColors, MacosRadius, MacosSpacing, MacosType }       from "../../tokens/macos/mod.slint";
+import { Sizes }                                                   from "../../tokens/sizes.slint";
+
+/// macOS-style title bar — traffic lights (decorative) and centred window title.
+export component MacosTitleBar inherits Rectangle {
+    /// Window or page title shown centred in the bar.
+    in property <string> title;
+
+    height:     MacosSpacing.titlebar-height;
+    background: Colors.dark ? MacosColors.bg-titlebar-dark : MacosColors.bg-titlebar-light;
+
+    // ── Traffic lights ────────────────────────────────────────────────────────
+    HorizontalLayout {
+        x:       MacosSpacing.sm;
+        y:       (root.height - Sizes.comp-12) / Sizes.two;
+        width:   Sizes.comp-12 * Sizes.three + MacosSpacing.xs * Sizes.two;
+        height:  Sizes.comp-12;
+        spacing: MacosSpacing.xs;
+
+        Rectangle {
+            width:         Sizes.comp-12;
+            height:        Sizes.comp-12;
+            border-radius: MacosRadius.circle;
+            background:    MacosColors.traffic-close;
+        }
+        Rectangle {
+            width:         Sizes.comp-12;
+            height:        Sizes.comp-12;
+            border-radius: MacosRadius.circle;
+            background:    MacosColors.traffic-min;
+        }
+        Rectangle {
+            width:         Sizes.comp-12;
+            height:        Sizes.comp-12;
+            border-radius: MacosRadius.circle;
+            background:    MacosColors.traffic-full;
+        }
+    }
+
+    // ── Centred title ─────────────────────────────────────────────────────────
+    Text {
+        text:                root.title;
+        font-size:           MacosType.subhead;
+        font-weight:         MacosType.weight-semibold;
+        color:               Colors.dark
+                                 ? MacosColors.text-primary-dark
+                                 : MacosColors.text-primary-light;
+        horizontal-alignment: center;
+        vertical-alignment:   center;
+        width:                root.width;
+        height:               root.height;
+    }
+}

@@ -1,0 +1,50 @@
+// MacosNavItem — one row in the macOS sidebar navigation.
+// Icon glyph + label, compact control height, accent highlight when active.
+
+import { Colors }                                                  from "../../tokens/theme.slint";
+import { MacosColors, MacosRadius, MacosSpacing, MacosType }       from "../../tokens/macos/mod.slint";
+import { Sizes }                                                   from "../../tokens/sizes.slint";
+import { NavItem }                                                 from "../types.slint";
+
+/// macOS sidebar navigation row — icon glyph + label, touch-target height.
+export component MacosNavItem inherits Rectangle {
+    /// Navigation data for this item.
+    in property <NavItem> item;
+    /// Whether this item is the active destination.
+    in property <bool>    active: false;
+
+    /// Fired when the user selects this item.
+    callback navigate(string);
+
+    height:        MacosSpacing.control-md;
+    border-radius: MacosRadius.md;
+    background:    root.active       ? Colors.accent.with-alpha(Sizes.alpha-15)
+                 : item-ta.has-hover ? Colors.border
+                 : transparent;
+
+    item-ta := TouchArea {
+        clicked => { root.navigate(root.item.id); }
+    }
+
+    HorizontalLayout {
+        padding:   MacosSpacing.xs;
+        spacing:   MacosSpacing.sm;
+        alignment: start;
+
+        Text {
+            text:               root.item.icon;
+            font-size:          Sizes.icon-sm;
+            color:              root.active ? Colors.accent : Colors.text-secondary;
+            vertical-alignment: center;
+        }
+
+        Text {
+            text:               root.item.label;
+            font-size:          MacosType.body;
+            font-weight:        root.active ? MacosType.weight-semibold : MacosType.weight-regular;
+            color:              root.active ? Colors.text-primary : Colors.text-secondary;
+            vertical-alignment: center;
+            overflow:           elide;
+        }
+    }
+}
