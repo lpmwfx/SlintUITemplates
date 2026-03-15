@@ -25,6 +25,8 @@ pub mod view_config;
 
 /// Public API alias for `AppAdapter_adp` — callers use this name.
 pub use adapter::AppAdapter_adp as AppAdapter;
+/// Re-export Platform at crate root for ergonomic consumer imports.
+pub use shell::Platform;
 pub use grid::{ZoneModel, TargetConfig};
 pub use layout::{build, SolvedItem, ItemKind, build_v2, Panel, drag, normalize};
 

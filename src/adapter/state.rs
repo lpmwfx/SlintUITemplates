@@ -51,9 +51,15 @@ impl super::AppAdapter_adp {
         *self.row_main_ratio.borrow()
     }
 
-    /// Apply platform — sets Theme.platform, routing all token lookups.
-    /// Call once at startup (or when platform changes) before `run()`.
-    pub fn apply_platform(&self, platform: &Platform) {
+    /// Set the active platform — updates cache and Theme.platform token router.
+    /// Call once at startup before `run()` (or when switching platforms).
+    pub fn set_platform(&self, platform: Platform) {
         self.ui.global::<Theme>().set_platform(platform.as_str().into());
+        *self.platform.borrow_mut() = platform;
+    }
+
+    /// Get the current platform from the adapter cache.
+    pub fn get_platform(&self) -> Platform {
+        self.platform.borrow().clone()
     }
 }

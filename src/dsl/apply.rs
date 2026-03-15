@@ -43,4 +43,7 @@ pub fn apply(ui: &AppWindow, dsl: &AppDsl) {
         BgStyle::Solid   => "solid",
     };
     ui.global::<crate::Theme>().set_material(material.into());
+
+    // Route platform — Theme router derives all agnostic tokens from this.
+    ui.global::<crate::Theme>().set_platform(dsl.platform.as_str().into());
 }

@@ -27,12 +27,14 @@ impl Platform {
         matches!(self, Platform::Android)
     }
 
-    /// Returns `true` if the platform is the small tier (landscape touch + gamepad).
+    /// Returns `true` if the platform is the small tier (1280×800 touchscreen + gamepad).
+    /// Small tier: gamepad-safe 56px touch targets, bottom/rail nav, max 5 nav items.
     pub fn is_small(&self) -> bool {
-        matches!(self, Platform::SteamDeck | Platform::SteamLinux)
+        matches!(self, Platform::SteamDeck)
     }
 
-    /// Returns `true` if the platform is a conventional desktop target.
+    /// Returns `true` if the platform is a desktop target (mouse+keyboard or gamepad fullscreen).
+    /// Desktop tier includes SteamLinux — fullscreen but with desktop nav limits.
     pub fn is_desktop(&self) -> bool {
         !self.is_mobile() && !self.is_small()
     }
