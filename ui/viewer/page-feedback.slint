@@ -1,6 +1,8 @@
 // page-feedback — Toast, Dialog, Spinner (all sizes), Alert (all variants), Tooltip demo
 
 import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
+import { Variants } from "../globals/Variants.slint";
 import { Toast }    from "../shared/toast.slint";
 import { Dialog }   from "../shared/dialog.slint";
 import { Spinner }  from "../shared/spinner.slint";
@@ -9,42 +11,103 @@ import { Tooltip }  from "../shared/tooltip.slint";
 import { Button }   from "../shared/button.slint";
 import { ViewerSection } from "viewer-section.slint";
 
+/// Viewer page showcasing transient feedback components such as alerts, toasts, and progress indicators.
 export component PageFeedback inherits VerticalLayout {
     spacing: Spacing.md;
 
+    // ── private variant strings ─────────────────────────────────────────
+    /// Private property "var-info" used internally.
+    private property <string> var-info: "info";
+    /// Private property "var-sm" used internally.
+    private property <string> var-sm: "sm";
+    /// Private property "var-md" used internally.
+    private property <string> var-md: "md";
+    /// Private property "var-lg" used internally.
+    private property <string> var-lg: "lg";
+
+    // ── demo labels ─────────────────────────────────────────────────────
+    /// Private property "section-toast" used internally.
+    private property <string> section-toast: "Toast";
+    /// Private property "section-dialog" used internally.
+    private property <string> section-dialog: "Dialog";
+    /// Private property "section-spinner" used internally.
+    private property <string> section-spinner: "Spinner";
+    /// Private property "section-alert" used internally.
+    private property <string> section-alert: "Alert";
+    /// Private property "section-tooltip" used internally.
+    private property <string> section-tooltip: "Tooltip";
+    /// Private property "toast-info-msg" used internally.
+    private property <string> toast-info-msg: "Information message";
+    /// Private property "toast-success-msg" used internally.
+    private property <string> toast-success-msg: "Success! Operation complete";
+    /// Private property "toast-warning-msg" used internally.
+    private property <string> toast-warning-msg: "Warning: please check input";
+    /// Private property "toast-error-msg" used internally.
+    private property <string> toast-error-msg: "Error: action failed";
+    /// Private property "dialog-title" used internally.
+    private property <string> dialog-title: "Confirm Action";
+    /// Private property "alert-info-msg" used internally.
+    private property <string> alert-info-msg: "This is an informational alert.";
+    /// Private property "alert-success-title" used internally.
+    private property <string> alert-success-title: "Success!";
+    /// Private property "alert-success-msg" used internally.
+    private property <string> alert-success-msg: "Your changes have been saved.";
+    /// Private property "alert-warning-title" used internally.
+    private property <string> alert-warning-title: "Warning";
+    /// Private property "alert-warning-msg" used internally.
+    private property <string> alert-warning-msg: "Please review before continuing.";
+    /// Private property "alert-error-title" used internally.
+    private property <string> alert-error-title: "Error";
+    /// Private property "alert-error-msg" used internally.
+    private property <string> alert-error-msg: "Something went wrong. Please try again.";
+    /// Private property "tooltip-top-text" used internally.
+    private property <string> tooltip-top-text: "Top tooltip (default)";
+    /// Private property "tooltip-bottom-text" used internally.
+    private property <string> tooltip-bottom-text: "Bottom tooltip";
+    /// Private property "tooltip-right-text" used internally.
+    private property <string> tooltip-right-text: "Right tooltip";
+    /// Private property "btn-hover" used internally.
+    private property <string> btn-hover: "Hover me";
+    /// Private property "btn-bottom" used internally.
+    private property <string> btn-bottom: "Bottom";
+    /// Private property "btn-right" used internally.
+    private property <string> btn-right: "Right";
+    /// Private property "dialog-w" used internally.
+    private property <length> dialog-w: Sizes.comp-480;
+
     ViewerSection {
-        title: "Toast";
+        title: root.section-toast;
         VerticalLayout {
             spacing: Spacing.sm;
-            width: 360px;
-            Toast { message: "Information message";         variant: "info";    visible: true; }
-            Toast { message: "Success! Operation complete"; variant: "success"; visible: true; }
-            Toast { message: "Warning: please check input"; variant: "warning"; visible: true; }
-            Toast { message: "Error: action failed";        variant: "error";   visible: true; }
+            width: Sizes.panel-xxxl;
+            Toast { message: root.toast-info-msg;         variant: root.var-info;    visible: true; }
+            Toast { message: root.toast-success-msg;      variant: Variants.success; visible: true; }
+            Toast { message: root.toast-warning-msg;      variant: Variants.warning; visible: true; }
+            Toast { message: root.toast-error-msg;        variant: Variants.error;   visible: true; }
         }
     }
 
     ViewerSection {
-        title: "Dialog";
+        title: root.section-dialog;
         Rectangle {
-            width: 480px;
-            height: 220px;
-            border-width: 1px;
+            width: root.dialog-w;
+            height: Sizes.panel-md;
+            border-width: Sizes.border-w;
             border-color: Colors.border;
             background: Colors.bg-primary;
             clip: true;
 
             Dialog {
-                title: "Confirm Action";
+                title: root.dialog-title;
                 visible: true;
-                width: 100%;
-                height: 100%;
+                width: parent.width;
+                height: parent.height;
             }
         }
     }
 
     ViewerSection {
-        title: "Spinner";
+        title: root.section-spinner;
         HorizontalLayout {
             alignment: start;
             spacing: Spacing.lg;
@@ -52,51 +115,51 @@ export component PageFeedback inherits VerticalLayout {
             VerticalLayout {
                 spacing: Spacing.xs;
                 alignment: center;
-                Spinner { size: "sm"; }
-                Text { text: "sm"; font-size: Type.caption-size; color: Colors.text-secondary; horizontal-alignment: center; }
+                Spinner { size: root.var-sm; }
+                Text { text: root.var-sm; font-size: Type.caption-size; color: Colors.text-secondary; horizontal-alignment: center; }
             }
             VerticalLayout {
                 spacing: Spacing.xs;
                 alignment: center;
-                Spinner { size: "md"; }
-                Text { text: "md"; font-size: Type.caption-size; color: Colors.text-secondary; horizontal-alignment: center; }
+                Spinner { size: root.var-md; }
+                Text { text: root.var-md; font-size: Type.caption-size; color: Colors.text-secondary; horizontal-alignment: center; }
             }
             VerticalLayout {
                 spacing: Spacing.xs;
                 alignment: center;
-                Spinner { size: "lg"; }
-                Text { text: "lg"; font-size: Type.caption-size; color: Colors.text-secondary; horizontal-alignment: center; }
+                Spinner { size: root.var-lg; }
+                Text { text: root.var-lg; font-size: Type.caption-size; color: Colors.text-secondary; horizontal-alignment: center; }
             }
-            Spinner { size: "md"; active: false; }
+            Spinner { size: root.var-md; active: false; }
         }
     }
 
     ViewerSection {
-        title: "Alert";
+        title: root.section-alert;
         VerticalLayout {
             spacing: Spacing.sm;
-            width: 400px;
-            Alert { message: "This is an informational alert."; variant: "info"; }
-            Alert { title: "Success!"; message: "Your changes have been saved."; variant: "success"; }
-            Alert { title: "Warning"; message: "Please review before continuing."; variant: "warning"; closable: true; }
-            Alert { title: "Error"; message: "Something went wrong. Please try again."; variant: "error"; closable: true; }
+            width: Sizes.panel-max;
+            Alert { message: root.alert-info-msg; variant: root.var-info; }
+            Alert { title: root.alert-success-title; message: root.alert-success-msg; variant: Variants.success; }
+            Alert { title: root.alert-warning-title; message: root.alert-warning-msg; variant: Variants.warning; closable: true; }
+            Alert { title: root.alert-error-title; message: root.alert-error-msg; variant: Variants.error; closable: true; }
         }
     }
 
     ViewerSection {
-        title: "Tooltip";
+        title: root.section-tooltip;
         HorizontalLayout {
             alignment: start;
             spacing: Spacing.lg;
 
-            Tooltip { text: "Top tooltip (default)"; width: 120px; height: Spacing.xl;
-                Button { label: "Hover me"; width: 100%; height: 100%; variant: "secondary"; }
+            Tooltip { text: root.tooltip-top-text; width: Sizes.thumb-lg; height: Spacing.xl;
+                Button { label: root.btn-hover; width: parent.width; height: parent.height; variant: Variants.secondary; }
             }
-            Tooltip { text: "Bottom tooltip"; placement: "bottom"; width: 120px; height: Spacing.xl;
-                Button { label: "Bottom"; width: 100%; height: 100%; variant: "secondary"; }
+            Tooltip { text: root.tooltip-bottom-text; placement: Variants.bottom; width: Sizes.thumb-lg; height: Spacing.xl;
+                Button { label: root.btn-bottom; width: parent.width; height: parent.height; variant: Variants.secondary; }
             }
-            Tooltip { text: "Right tooltip"; placement: "right"; width: 120px; height: Spacing.xl;
-                Button { label: "Right"; width: 100%; height: 100%; variant: "secondary"; }
+            Tooltip { text: root.tooltip-right-text; placement: Variants.right; width: Sizes.thumb-lg; height: Spacing.xl;
+                Button { label: root.btn-right; width: parent.width; height: parent.height; variant: Variants.secondary; }
             }
         }
     }

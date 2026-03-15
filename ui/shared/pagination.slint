@@ -1,10 +1,28 @@
 import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
 
+/// Pagination control with previous/next buttons and optional explicit page chips.
 export component Pagination inherits Rectangle {
-    in property <int>   current: 1;
-    in property <int>   total: 1;
+    /// Currently selected page number.
+    in property <int>   current: Sizes.one;
+    /// Highest available page number.
+    in property <int>   total: Sizes.one;
+    /// Explicit page numbers to render as clickable chips. Empty falls back to `current / total`.
     in property <[int]> pages: [];
+    /// Fired when the user requests a different page.
     callback changed(int);
+
+    // ── String constants ────────────────────────────────────────────────
+    /// Private property "nav-prev" used internally.
+    private property <string> nav-prev: "‹";
+    /// Private property "nav-next" used internally.
+    private property <string> nav-next: "›";
+    /// Private property "page-sep" used internally.
+    private property <string> page-sep: " / ";
+
+    // ── Opacity constants ───────────────────────────────────────────────
+    /// Private property "disabled-alpha" used internally.
+    private property <float> disabled-alpha: 0.4;
 
     height: Spacing.xl;
     background: transparent;
@@ -18,14 +36,14 @@ export component Pagination inherits Rectangle {
             width: Spacing.xl;
             height: Spacing.xl;
             border-radius: Spacing.xs;
-            border-width: 1px;
+            border-width: Sizes.border-w;
             border-color: Colors.border;
-            background: prev-ta.has-hover && root.current > 1
+            background: prev-ta.has-hover && root.current > Sizes.one
                 ? Colors.bg-elevated : Colors.bg-surface;
-            opacity: root.current > 1 ? 1.0 : 0.4;
+            opacity: root.current > Sizes.one ? Sizes.fill : root.disabled-alpha;
 
             Text {
-                text: "‹";
+                text: root.nav-prev;
                 font-size: Type.subtitle-size;
                 color: Colors.text-primary;
                 horizontal-alignment: center;
@@ -33,8 +51,8 @@ export component Pagination inherits Rectangle {
             }
 
             prev-ta := TouchArea {
-                enabled: root.current > 1;
-                clicked => { root.changed(root.current - 1); }
+                enabled: root.current > Sizes.one;
+                clicked => { root.changed(root.current - Sizes.one); }
             }
         }
 
@@ -60,8 +78,8 @@ export component Pagination inherits Rectangle {
         }
 
         // Fallback if no pages array provided
-        if root.pages.length == 0: Text {
-            text: root.current + " / " + root.total;
+        if root.pages.length == Sizes.zero: Text {
+            text: root.current + root.page-sep + root.total;
             font-size: Type.body-size;
             color: Colors.text-secondary;
             vertical-alignment: center;
@@ -72,14 +90,14 @@ export component Pagination inherits Rectangle {
             width: Spacing.xl;
             height: Spacing.xl;
             border-radius: Spacing.xs;
-            border-width: 1px;
+            border-width: Sizes.border-w;
             border-color: Colors.border;
             background: next-ta.has-hover && root.current < root.total
                 ? Colors.bg-elevated : Colors.bg-surface;
-            opacity: root.current < root.total ? 1.0 : 0.4;
+            opacity: root.current < root.total ? Sizes.fill : root.disabled-alpha;
 
             Text {
-                text: "›";
+                text: root.nav-next;
                 font-size: Type.subtitle-size;
                 color: Colors.text-primary;
                 horizontal-alignment: center;
@@ -88,7 +106,7 @@ export component Pagination inherits Rectangle {
 
             next-ta := TouchArea {
                 enabled: root.current < root.total;
-                clicked => { root.changed(root.current + 1); }
+                clicked => { root.changed(root.current + Sizes.one); }
             }
         }
     }

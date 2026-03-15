@@ -4,12 +4,19 @@ import { SideBarRow } from "side-bar-row.slint";
 
 // ── SideBar — scrollbart TOC-panel med kollapsible gruppe-headers ─────────────
 // Pure child: receives items + active state, emits navigate / toggle-group.
+/// S id eb ar component.
 export component SideBar inherits Rectangle {
+    /// Input property "items".
     in property <[NavItem]> items: [];
+    /// Input property "active-item".
     in property <string>    active-item: "";
+    /// Input property "collapsed".
     in property <bool>      collapsed: false;
+    /// Callback fired for n av ig at e.
     callback navigate(string);
+    /// Callback fired for t og gl e c ol la ps ed.
     callback toggle-collapsed();
+    /// Callback fired for t og gl e g ro up.
     callback toggle-group(string);
 
     background: Colors.bg-surface;

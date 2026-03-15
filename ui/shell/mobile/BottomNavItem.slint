@@ -1,0 +1,69 @@
+import { MaterialColors, MaterialType } from "../../tokens/material/mod.slint";
+import { Sizes }        from "../../tokens/sizes.slint";
+import { FluentMotion } from "../../tokens/fluent/motion.slint";
+
+// BottomNavItem — a single item in the Material 3 bottom navigation bar.
+/// B ot to mn av it em component.
+export component BottomNavItem inherits Rectangle {
+    /// Input property "item-id".
+    in property <string> item-id;
+    /// Input property "icon".
+    in property <string> icon;
+    /// Input property "label".
+    in property <string> label;
+    /// Input property "icon-font".
+    in property <string> icon-font;
+    /// Input property "is-active".
+    in property <bool>   is-active: false;
+    /// Input property "pill-w".
+    in property <length> pill-w;
+    /// Callback fired for c li ck ed.
+    callback clicked();
+
+    horizontal-stretch: Sizes.one;
+
+    nav-ta := TouchArea {
+        clicked => { root.clicked(); }
+    }
+
+    VerticalLayout {
+        alignment: center;
+        spacing: Sizes.track-h;
+
+        // Active indicator pill
+        Rectangle {
+            height: Sizes.icon-xl;
+            width: root.is-active ? root.pill-w : Sizes.icon-xl;
+            x: (parent.width - self.width) / Sizes.two;
+            border-radius: Sizes.icon-sm;
+            background: root.is-active
+                ? MaterialColors.secondary-container
+                : nav-ta.has-hover ? MaterialColors.surface-variant : transparent;
+
+            animate width { duration: FluentMotion.medium; easing: ease-in-out; }
+
+            Text {
+                text: root.icon;
+                font-family: root.icon-font;
+                font-size: Sizes.icon-md;
+                color: root.is-active
+                    ? MaterialColors.on-secondary-container
+                    : MaterialColors.on-surface-variant;
+                horizontal-alignment: center;
+                vertical-alignment: center;
+            }
+        }
+
+        Text {
+            text: root.label;
+            font-size: MaterialType.label-medium;
+            font-weight: root.is-active
+                ? MaterialType.weight-bold
+                : MaterialType.weight-regular;
+            color: root.is-active
+                ? MaterialColors.on-surface
+                : MaterialColors.on-surface-variant;
+            horizontal-alignment: center;
+        }
+    }
+}

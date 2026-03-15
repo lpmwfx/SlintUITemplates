@@ -1,6 +1,6 @@
 use slint::ComponentHandle;
 use crate::{AppWindow, Theme, Settings as UiSettings};
-use crate::adapter::is_dark_mode;
+use crate::pal::is_dark_mode;
 use super::{AppSettings, ThemeMode};
 
 /// Expected length of a hex color string (without '#' prefix).

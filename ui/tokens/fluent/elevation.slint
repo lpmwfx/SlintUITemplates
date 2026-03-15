@@ -4,18 +4,29 @@
 
 import { FluentColors } from "colors.slint";
 
+/// F lu en te le va ti on global values.
 export global FluentElevation {
     // Shadow as color tokens (usable in Slint drop-shadow)
+    /// Output property "level-2".
     out property <color> level-2:  FluentColors.shadow-2;
+    /// Output property "level-4".
     out property <color> level-4:  FluentColors.shadow-4;
+    /// Output property "level-8".
     out property <color> level-8:  FluentColors.shadow-8;
+    /// Output property "level-16".
     out property <color> level-16: FluentColors.shadow-16;
+    /// Output property "level-28".
     out property <color> level-28: FluentColors.shadow-28;
 
     // Blur radius per level
+    /// Output property "blur-2".
     out property <length> blur-2:  2px;
+    /// Output property "blur-4".
     out property <length> blur-4:  4px;
+    /// Output property "blur-8".
     out property <length> blur-8:  8px;
+    /// Output property "blur-16".
     out property <length> blur-16: 16px;
+    /// Output property "blur-28".
     out property <length> blur-28: 28px;
 }

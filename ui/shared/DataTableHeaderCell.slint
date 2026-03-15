@@ -1,0 +1,50 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
+
+// DataTableHeaderCell — a single header column cell with sort indicator.
+/// D at at ab le he ad er ce ll component.
+export component DataTableHeaderCell inherits Rectangle {
+    /// Input property "label".
+    in property <string> label;
+    /// Input property "col-width".
+    in property <length> col-width;
+    /// Input property "is-sorted".
+    in property <bool>   is-sorted: false;
+    /// Input property "sort-asc".
+    in property <bool>   sort-asc: true;
+    /// Input property "sort-asc-indicator".
+    in property <string> sort-asc-indicator: "\u{25B2}";
+    /// Input property "sort-desc-indicator".
+    in property <string> sort-desc-indicator: "\u{25BC}";
+    /// Callback fired for c li ck ed.
+    callback clicked();
+
+    width: root.col-width;
+    height: Spacing.xl;
+
+    HorizontalLayout {
+        padding-left: Spacing.sm;
+        padding-right: Spacing.sm;
+        spacing: Spacing.xs;
+
+        Text {
+            text: root.label;
+            font-size: Type.body-size;
+            font-weight: Type.weight-semibold;
+            color: Colors.text-primary;
+            vertical-alignment: center;
+            horizontal-stretch: Sizes.one;
+        }
+
+        if root.is-sorted: Text {
+            text: root.sort-asc ? root.sort-asc-indicator : root.sort-desc-indicator;
+            font-size: Type.caption-size;
+            color: Colors.accent;
+            vertical-alignment: center;
+        }
+    }
+
+    col-ta := TouchArea {
+        clicked => { root.clicked(); }
+    }
+}

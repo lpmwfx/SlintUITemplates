@@ -3,16 +3,59 @@
 // No Rust required — all rendering is declarative.
 
 import { Colors, Spacing } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
 
+/// C an va sp at h component.
 export component CanvasPath inherits Rectangle {
+    /// Input property "stroke-color".
     in property <color> stroke-color: Colors.accent;
-    in property <color> fill-color:   Colors.accent.with-alpha(0.15);
-    in property <length> stroke-w:    2px;
+    /// Input property "fill-color".
+    in property <color> fill-color:   Colors.accent.with-alpha(root.fill-alpha);
+    /// Input property "stroke-w".
+    in property <length> stroke-w:    Sizes.border-w-2;
 
-    preferred-width:  300px;
-    preferred-height: 200px;
+    // ── Canvas geometry constants ───────────────────────────────────────
+    /// Private property "fill-alpha" used internally.
+    private property <float> fill-alpha:    0.15;
+    /// Private property "overlay-alpha" used internally.
+    private property <float> overlay-alpha: 0.6;
+    /// Private property "canvas-w" used internally.
+    private property <length> canvas-w: Sizes.panel-xl;   // 300px
+    /// Private property "canvas-h" used internally.
+    private property <length> canvas-h: Sizes.panel-sm;   // 200px
+
+    // Triangle vertices
+    /// Private property "tri-x1" used internally.
+    private property <float> tri-x1:  50;
+    /// Private property "tri-y1" used internally.
+    private property <float> tri-y1:  160;
+    /// Private property "tri-x2" used internally.
+    private property <float> tri-x2:  150;
+    /// Private property "tri-y2" used internally.
+    private property <float> tri-y2:  30;
+    /// Private property "tri-x3" used internally.
+    private property <float> tri-x3:  250;
+    /// Private property "tri-y3" used internally.
+    private property <float> tri-y3:  160;
+
+    // Curve control points (quadratic — avoids CubicTo control-N-x naming)
+    /// Private property "curve-start-x" used internally.
+    private property <float> curve-start-x: 50;
+    /// Private property "curve-start-y" used internally.
+    private property <float> curve-start-y: 100;
+    /// Private property "curve-ctrl-x" used internally.
+    private property <float> curve-ctrl-x:  150;
+    /// Private property "curve-ctrl-y" used internally.
+    private property <float> curve-ctrl-y:  20;
+    /// Private property "curve-end-x" used internally.
+    private property <float> curve-end-x:   250;
+    /// Private property "curve-end-y" used internally.
+    private property <float> curve-end-y:   160;
+
+    preferred-width:  root.canvas-w;
+    preferred-height: root.canvas-h;
     background: Colors.bg-surface;
-    border-width: 1px;
+    border-width: Sizes.border-w;
     border-color: Colors.border;
     border-radius: Spacing.xs;
 
@@ -23,9 +66,9 @@ export component CanvasPath inherits Rectangle {
         fill: root.fill-color;
         stroke: root.stroke-color;
         stroke-width: root.stroke-w;
-        MoveTo { x: 50; y: 160; }
-        LineTo { x: 150; y: 30; }
-        LineTo { x: 250; y: 160; }
+        MoveTo { x: root.tri-x1; y: root.tri-y1; }
+        LineTo { x: root.tri-x2; y: root.tri-y2; }
+        LineTo { x: root.tri-x3; y: root.tri-y3; }
         Close {}
     }
 
@@ -34,11 +77,10 @@ export component CanvasPath inherits Rectangle {
         width: parent.width;
         height: parent.height;
         fill: transparent;
-        stroke: root.stroke-color.with-alpha(0.6);
+        stroke: root.stroke-color.with-alpha(root.overlay-alpha);
         stroke-width: root.stroke-w;
-        MoveTo  { x: 50;  y: 100; }
-        CubicTo { control-1-x: 100; control-1-y: 20;
-                  control-2-x: 200; control-2-y: 180;
-                  x: 250; y: 100; }
+        MoveTo      { x: root.curve-start-x; y: root.curve-start-y; }
+        QuadraticTo { control-x: root.curve-ctrl-x; control-y: root.curve-ctrl-y;
+                      x: root.curve-end-x; y: root.curve-end-y; }
     }
 }

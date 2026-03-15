@@ -1,15 +1,74 @@
 // ViewerTopbar — extracted from viewer.slint to keep that file under the 200-line limit.
 
 import { Colors, Spacing, Type, Settings } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
 import { Button }      from "../shared/button.slint";
 import { Toggle }      from "../shared/toggle.slint";
 import { SelectField } from "../shared/select-field.slint";
 
+/// V ie we rt op ba r component.
 export component ViewerTopbar inherits Rectangle {
+    /// Callback fired for r eq ue st b g s ty le.
     callback request-bg-style(string);
 
     height: Spacing.xl;
     background: Colors.bg-surface;
+
+    // ── private variant strings ─────────────────────────────────────────
+    /// Private property "var-ghost" used internally.
+    private property <string> var-ghost: "ghost";
+    /// Private property "var-outlined" used internally.
+    private property <string> var-outlined: "outlined";
+    /// Private property "var-filled" used internally.
+    private property <string> var-filled: "filled";
+    /// Private property "var-accent" used internally.
+    private property <string> var-accent: "accent";
+    /// Private property "var-theme" used internally.
+    private property <string> var-theme: "theme";
+
+    // ── private zoom values ─────────────────────────────────────────────
+    /// Private property "zoom-small" used internally.
+    private property <float> zoom-small: 0.75;
+    /// Private property "zoom-large" used internally.
+    private property <float> zoom-large: 1.25;
+    /// Private property "zoom-xlarge" used internally.
+    private property <float> zoom-xlarge: 1.50;
+
+    // ── demo labels ─────────────────────────────────────────────────────
+    /// Private property "topbar-title" used internally.
+    private property <string> topbar-title: "SlintUI Framework Viewer";
+    /// Private property "toggle-dark" used internally.
+    private property <string> toggle-dark: "Dark";
+    /// Private property "btn-zoom-small" used internally.
+    private property <string> btn-zoom-small: "0.75×";
+    /// Private property "btn-zoom-normal" used internally.
+    private property <string> btn-zoom-normal: "1×";
+    /// Private property "btn-zoom-large" used internally.
+    private property <string> btn-zoom-large: "1.25×";
+    /// Private property "btn-zoom-xlarge" used internally.
+    private property <string> btn-zoom-xlarge: "1.5×";
+    /// Private property "toggle-outlined" used internally.
+    private property <string> toggle-outlined: "Outlined";
+    /// Private property "toggle-accent" used internally.
+    private property <string> toggle-accent: "Accent icons";
+    /// Private property "btn-solid" used internally.
+    private property <string> btn-solid: "Solid";
+    /// Private property "btn-mica" used internally.
+    private property <string> btn-mica: "Mica";
+    /// Private property "btn-acrylic" used internally.
+    private property <string> btn-acrylic: "Acrylic";
+    /// Private property "bg-solid" used internally.
+    private property <string> bg-solid: "solid";
+    /// Private property "bg-mica" used internally.
+    private property <string> bg-mica: "mica";
+    /// Private property "bg-acrylic" used internally.
+    private property <string> bg-acrylic: "acrylic";
+    /// Private property "sf-placeholder" used internally.
+    private property <string> sf-placeholder: "Font...";
+    /// Private property "sf-default" used internally.
+    private property <string> sf-default: "Default";
+    /// Private property "sf-w" used internally.
+    private property <length> sf-w: Sizes.comp-140;
 
     HorizontalLayout {
         padding-left: Spacing.md;
@@ -17,36 +76,36 @@ export component ViewerTopbar inherits Rectangle {
         spacing: Spacing.sm;
 
         Text {
-            text: "SlintUI Framework Viewer";
+            text: root.topbar-title;
             font-size: Type.subtitle-size;
             font-weight: Type.weight-semibold;
             color: Colors.text-primary;
             vertical-alignment: center;
         }
-        Rectangle { horizontal-stretch: 1; }
-        Toggle { label: "Dark"; checked: Colors.dark-mode; toggled(v) => { Colors.dark-mode = v; } }
-        Button { label: "0.75×"; variant: "ghost"; clicked => { Settings.zoom = 0.75; } }
-        Button { label: "1×";    variant: "ghost"; clicked => { Settings.zoom = 1.0; } }
-        Button { label: "1.25×"; variant: "ghost"; clicked => { Settings.zoom = 1.25; } }
-        Button { label: "1.5×";  variant: "ghost"; clicked => { Settings.zoom = 1.5; } }
+        Rectangle { horizontal-stretch: Sizes.fill; }
+        Toggle { label: root.toggle-dark; checked: Colors.dark-mode; toggled(v) => { Colors.dark-mode = v; } }
+        Button { label: root.btn-zoom-small; variant: root.var-ghost; clicked => { Settings.zoom = root.zoom-small; } }
+        Button { label: root.btn-zoom-normal; variant: root.var-ghost; clicked => { Settings.zoom = Sizes.fill; } }
+        Button { label: root.btn-zoom-large; variant: root.var-ghost; clicked => { Settings.zoom = root.zoom-large; } }
+        Button { label: root.btn-zoom-xlarge; variant: root.var-ghost; clicked => { Settings.zoom = root.zoom-xlarge; } }
         Toggle {
-            label: "Outlined";
-            checked: Settings.icon-style == "outlined";
-            toggled(v) => { Settings.icon-style = v ? "outlined" : "filled"; }
+            label: root.toggle-outlined;
+            checked: Settings.icon-style == root.var-outlined;
+            toggled(v) => { Settings.icon-style = v ? root.var-outlined : root.var-filled; }
         }
         Toggle {
-            label: "Accent icons";
-            checked: Settings.icon-color == "accent";
-            toggled(v) => { Settings.icon-color = v ? "accent" : "theme"; }
+            label: root.toggle-accent;
+            checked: Settings.icon-color == root.var-accent;
+            toggled(v) => { Settings.icon-color = v ? root.var-accent : root.var-theme; }
         }
-        Button { label: "Solid";   variant: "ghost"; clicked => { root.request-bg-style("solid"); } }
-        Button { label: "Mica";    variant: "ghost"; clicked => { root.request-bg-style("mica"); } }
-        Button { label: "Acrylic"; variant: "ghost"; clicked => { root.request-bg-style("acrylic"); } }
+        Button { label: root.btn-solid;   variant: root.var-ghost; clicked => { root.request-bg-style(root.bg-solid); } }
+        Button { label: root.btn-mica;    variant: root.var-ghost; clicked => { root.request-bg-style(root.bg-mica); } }
+        Button { label: root.btn-acrylic; variant: root.var-ghost; clicked => { root.request-bg-style(root.bg-acrylic); } }
         SelectField {
-            width: 140px;
+            width: root.sf-w;
             options: ["Default", "Segoe UI", "Arial", "Consolas", "Verdana"];
-            placeholder: "Font...";
-            changed(f) => { Settings.font-family = f == "Default" ? "" : f; }
+            placeholder: root.sf-placeholder;
+            changed(f) => { Settings.font-family = f == root.sf-default ? "" : f; }
         }
     }
 }

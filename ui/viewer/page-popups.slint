@@ -8,7 +8,9 @@ import { PopupDropdownDemo }     from "popup-dropdown-demo.slint";
 import { PopupCbfDemo }          from "popup-cbf-demo.slint";
 import { ViewerSection } from "viewer-section.slint";
 
+/// Viewer page for popup-oriented demos including flyouts, popovers, dropdowns, and teaching tips.
 export component PagePopups inherits VerticalLayout {
+    /// Available viewer height passed to popup demos that need placement context.
     in property <length> window-height;
 
     spacing: Spacing.md;

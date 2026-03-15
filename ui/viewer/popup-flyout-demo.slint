@@ -1,12 +1,18 @@
 import { Colors, Spacing, Type } from "../tokens/theme.slint";
 import { Flyout } from "../shared/flyout.slint";
 
+/// P op up fl yo ut de mo component.
 export component PopupFlyoutDemo inherits Rectangle {
+    /// Input property "window-height".
     in property <length> window-height;
 
+    /// Private property "demo-w" used internally.
     private property <length> demo-w:   160px;
+    /// Private property "fly-w" used internally.
     private property <length> fly-w:    240px;
+    /// Private property "fly-h" used internally.
     private property <length> fly-h:    130px;
+    /// Private property "border-px" used internally.
     private property <length> border-px: 1px;
 
     height: Spacing.control-lg;

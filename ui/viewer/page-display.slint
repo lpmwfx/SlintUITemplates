@@ -1,6 +1,8 @@
 // page-display — Badge, Avatar, Card, ListItem, ProgressBar, Chip, Skeleton
 
 import { Spacing } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
+import { Variants } from "../globals/Variants.slint";
 import { Badge }       from "../shared/badge.slint";
 import { Avatar }      from "../shared/avatar.slint";
 import { Card }        from "../shared/card.slint";
@@ -10,90 +12,169 @@ import { Chip }        from "../shared/chip.slint";
 import { Skeleton }    from "../shared/skeleton.slint";
 import { ViewerSection } from "viewer-section.slint";
 
+/// Viewer page showcasing passive display components such as cards, badges, and avatars.
 export component PageDisplay inherits VerticalLayout {
     spacing: Spacing.md;
 
+    // ── private variant strings ─────────────────────────────────────────
+    /// Private property "var-info" used internally.
+    private property <string> var-info: "info";
+    /// Private property "var-sm" used internally.
+    private property <string> var-sm: "sm";
+    /// Private property "var-md" used internally.
+    private property <string> var-md: "md";
+    /// Private property "var-lg" used internally.
+    private property <string> var-lg: "lg";
+    /// Private property "var-rect" used internally.
+    private property <string> var-rect: "rect";
+
+    // ── private size tokens ─────────────────────────────────────────────
+    /// Private property "skel-circle-size" used internally.
+    private property <length> skel-circle-size: 40px;
+    /// Private property "progress-two-thirds" used internally.
+    private property <float> progress-two-thirds: 0.66;
+    /// Private property "skel-full" used internally.
+    private property <float> skel-full: Sizes.full;
+    /// Private property "skel-eighty" used internally.
+    private property <float> skel-eighty: Sizes.percent-80;
+    /// Private property "skel-sixty" used internally.
+    private property <float> skel-sixty: Sizes.percent-60;
+
+    // ── demo labels ─────────────────────────────────────────────────────
+    /// Private property "section-badge" used internally.
+    private property <string> section-badge: "Badge";
+    /// Private property "section-avatar" used internally.
+    private property <string> section-avatar: "Avatar";
+    /// Private property "section-card" used internally.
+    private property <string> section-card: "Card";
+    /// Private property "section-listitem" used internally.
+    private property <string> section-listitem: "ListItem";
+    /// Private property "section-progress" used internally.
+    private property <string> section-progress: "ProgressBar";
+    /// Private property "section-chip" used internally.
+    private property <string> section-chip: "Chip";
+    /// Private property "section-skeleton" used internally.
+    private property <string> section-skeleton: "Skeleton";
+    /// Private property "badge-info" used internally.
+    private property <string> badge-info: "Info";
+    /// Private property "badge-success" used internally.
+    private property <string> badge-success: "Success";
+    /// Private property "badge-warning" used internally.
+    private property <string> badge-warning: "Warning";
+    /// Private property "badge-error" used internally.
+    private property <string> badge-error: "Error";
+    /// Private property "card-title-only" used internally.
+    private property <string> card-title-only: "Title only";
+    /// Private property "card-title" used internally.
+    private property <string> card-title: "Card Title";
+    /// Private property "card-subtitle" used internally.
+    private property <string> card-subtitle: "Supporting subtitle text";
+    /// Private property "li-normal" used internally.
+    private property <string> li-normal: "Normal item";
+    /// Private property "li-selected" used internally.
+    private property <string> li-selected: "Selected item";
+    /// Private property "li-subtitle-title" used internally.
+    private property <string> li-subtitle-title: "With subtitle";
+    /// Private property "li-subtitle-text" used internally.
+    private property <string> li-subtitle-text: "Subtitle text here";
+    /// Private property "chip-default" used internally.
+    private property <string> chip-default: "Default";
+    /// Private property "chip-selected" used internally.
+    private property <string> chip-selected: "Selected";
+    /// Private property "chip-noclose" used internally.
+    private property <string> chip-noclose: "No close";
+    /// Private property "chip-disabled" used internally.
+    private property <string> chip-disabled: "Disabled";
+    /// Private property "chip-version" used internally.
+    private property <string> chip-version: "v1.0.0";
+    /// Private property "avatar-sm-initials" used internally.
+    private property <string> avatar-sm-initials: "SM";
+    /// Private property "avatar-md-initials" used internally.
+    private property <string> avatar-md-initials: "MD";
+    /// Private property "avatar-lg-initials" used internally.
+    private property <string> avatar-lg-initials: "LG";
+
     ViewerSection {
-        title: "Badge";
+        title: root.section-badge;
         HorizontalLayout {
             spacing: Spacing.sm;
             alignment: start;
-            Badge { text: "Info";    variant: "info"; }
-            Badge { text: "Success"; variant: "success"; }
-            Badge { text: "Warning"; variant: "warning"; }
-            Badge { text: "Error";   variant: "error"; }
+            Badge { text: root.badge-info;    variant: root.var-info; }
+            Badge { text: root.badge-success; variant: Variants.success; }
+            Badge { text: root.badge-warning; variant: Variants.warning; }
+            Badge { text: root.badge-error;   variant: Variants.error; }
         }
     }
 
     ViewerSection {
-        title: "Avatar";
+        title: root.section-avatar;
         HorizontalLayout {
             spacing: Spacing.sm;
             alignment: start;
-            Avatar { initials: "SM"; size: "sm"; }
-            Avatar { initials: "MD"; size: "md"; }
-            Avatar { initials: "LG"; size: "lg"; }
+            Avatar { initials: root.avatar-sm-initials; size: root.var-sm; }
+            Avatar { initials: root.avatar-md-initials; size: root.var-md; }
+            Avatar { initials: root.avatar-lg-initials; size: root.var-lg; }
         }
     }
 
     ViewerSection {
-        title: "Card";
+        title: root.section-card;
         HorizontalLayout {
             spacing: Spacing.md;
             alignment: start;
-            Card { title: "Title only"; width: 180px; }
-            Card { title: "Card Title"; subtitle: "Supporting subtitle text"; width: 200px; }
+            Card { title: root.card-title-only; width: Sizes.panel-xs; }
+            Card { title: root.card-title; subtitle: root.card-subtitle; width: Sizes.panel-sm; }
         }
     }
 
     ViewerSection {
-        title: "ListItem";
+        title: root.section-listitem;
         VerticalLayout {
-            width: 300px;
-            ListItem { title: "Normal item"; }
-            ListItem { title: "Selected item"; selected: true; }
-            ListItem { title: "With subtitle"; subtitle: "Subtitle text here"; }
+            width: Sizes.panel-xl;
+            ListItem { title: root.li-normal; }
+            ListItem { title: root.li-selected; selected: true; }
+            ListItem { title: root.li-subtitle-title; subtitle: root.li-subtitle-text; }
         }
     }
 
     ViewerSection {
-        title: "ProgressBar";
+        title: root.section-progress;
         VerticalLayout {
             spacing: Spacing.sm;
-            width: 300px;
-            ProgressBar { value: 0.0; }
-            ProgressBar { value: 0.33; }
-            ProgressBar { value: 0.66; }
-            ProgressBar { value: 1.0; }
+            width: Sizes.panel-xl;
+            ProgressBar { value: Sizes.no-fill; }
+            ProgressBar { value: Sizes.third; }
+            ProgressBar { value: root.progress-two-thirds; }
+            ProgressBar { value: Sizes.fill; }
         }
     }
 
     ViewerSection {
-        title: "Chip";
+        title: root.section-chip;
         HorizontalLayout {
             alignment: start;
             spacing: Spacing.sm;
-            Chip { label: "Default"; }
-            Chip { label: "Selected"; selected: true; }
-            Chip { label: "No close"; closable: false; }
-            Chip { label: "Disabled"; enabled: false; }
-            Chip { label: "v1.0.0"; closable: false; selected: true; }
+            Chip { label: root.chip-default; }
+            Chip { label: root.chip-selected; selected: true; }
+            Chip { label: root.chip-noclose; closable: false; }
+            Chip { label: root.chip-disabled; enabled: false; }
+            Chip { label: root.chip-version; closable: false; selected: true; }
         }
     }
 
     ViewerSection {
-        title: "Skeleton";
+        title: root.section-skeleton;
         VerticalLayout {
             spacing: Spacing.sm;
-            width: 280px;
-            Skeleton { width: 100%; height: 16px; variant: "text"; }
-            Skeleton { width: 80%; height: 16px; variant: "text"; }
-            Skeleton { width: 60%; height: 16px; variant: "text"; }
-            Skeleton { width: 280px; height: 80px; variant: "rect"; }
+            width: Sizes.panel-lg;
+            Skeleton { width: parent.width * root.skel-full; height: Sizes.icon-sm; variant: Variants.text; }
+            Skeleton { width: parent.width * root.skel-eighty; height: Sizes.icon-sm; variant: Variants.text; }
+            Skeleton { width: parent.width * root.skel-sixty; height: Sizes.icon-sm; variant: Variants.text; }
+            Skeleton { width: Sizes.panel-lg; height: Sizes.thumb-sm; variant: root.var-rect; }
             HorizontalLayout {
                 spacing: Spacing.sm;
-                Skeleton { width: 40px; height: 40px; variant: "circle"; }
-                Skeleton { width: 40px; height: 40px; variant: "circle"; animate: false; }
+                Skeleton { width: root.skel-circle-size; height: root.skel-circle-size; variant: Variants.circle; }
+                Skeleton { width: root.skel-circle-size; height: root.skel-circle-size; variant: Variants.circle; animate: false; }
             }
         }
     }

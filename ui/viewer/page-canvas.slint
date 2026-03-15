@@ -5,18 +5,25 @@ import { CanvasPath }  from "../shared/canvas-path.slint";
 import { CanvasImage } from "../shared/canvas-image.slint";
 import { ViewerSection } from "viewer-section.slint";
 
+/// Viewer page for canvas-based drawing and image primitives.
 export component PageCanvas inherits VerticalLayout {
+    /// Demo image frame shown inside the canvas examples.
     in property <image> canvas-frame;
+
+    /// Private property "path-title" used internally.
+    private property <string> path-title:  "Path Canvas (pure Slint)";
+    /// Private property "image-title" used internally.
+    private property <string> image-title: "Image Canvas (Rust-rendered frame)";
 
     spacing: Spacing.md;
 
     ViewerSection {
-        title: "Path Canvas (pure Slint)";
+        title: root.path-title;
         CanvasPath {}
     }
 
     ViewerSection {
-        title: "Image Canvas (Rust-rendered frame)";
+        title: root.image-title;
         CanvasImage {
             frame: root.canvas-frame;
         }

@@ -12,10 +12,12 @@
 
 /// Direction of a layout split: horizontal (columns) or vertical (rows).
 #[derive(Debug, Clone)]
+/// S pl it di r enum.
 pub enum SplitDir { H, V }
 
 /// A recursive tree node representing either a leaf panel or a split container.
 #[derive(Debug, Clone)]
+/// P an el no de enum.
 pub enum PanelNode {
     Leaf { ratio: f32 },
     Split { dir: SplitDir, ratio: f32, children: Vec<PanelNode> },

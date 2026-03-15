@@ -1,29 +1,39 @@
-import { Colors, Spacing, Type, FluentIcons } from "../tokens/theme.slint";
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
+import { StepperCircle } from "StepperCircle.slint";
 
+/// S te pi te m struct.
 export struct StepItem {
     label: string,
     completed: bool,
 }
 
+/// S te pp er component.
 export component Stepper inherits Rectangle {
+    /// Input property "steps".
     in property <[StepItem]> steps: [];
-    in-out property <int>    active: 0;
+    /// Input property "active".
+    in property <int>    active: Sizes.zero;
+    /// Callback fired for s te p c ha ng ed.
     callback step-changed(int);
 
     // Named constants instead of inline literals
-    private property <length> circle-size:    Spacing.control-md - Spacing.xs;   // 28px
+    /// Private property "circle-size" used internally.
+    private property <length> circle-size:    Spacing.control-md - Spacing.xs;
+    /// Private property "connector-w" used internally.
     private property <length> connector-w:    Spacing.xl;
-    private property <length> connector-h:    2px;
+    /// Private property "connector-h" used internally.
+    private property <length> connector-h:    Sizes.border-w-2;
 
     height: root.circle-size + Type.caption-size + Spacing.xs;
     background: transparent;
 
     HorizontalLayout {
         alignment: center;
-        spacing: 0;
+        spacing: Sizes.no-size;
 
         for step[i] in root.steps: HorizontalLayout {
-            spacing: 0;
+            spacing: Sizes.no-size;
             alignment: center;
 
             VerticalLayout {
@@ -31,32 +41,13 @@ export component Stepper inherits Rectangle {
                 spacing: Spacing.xs;
                 width: root.circle-size + Spacing.lg;
 
-                circle-btn := Rectangle {
-                    x: (parent.width - root.circle-size) / 2;
-                    width:  root.circle-size;
-                    height: root.circle-size;
-                    border-radius: root.circle-size / 2;
-                    background: step.completed || i == root.active
-                        ? Colors.accent : Colors.bg-elevated;
-                    border-width: (step.completed || i == root.active) ? 0 : 1px;
-                    border-color: Colors.border;
-
-                    Text {
-                        text: step.completed ? FluentIcons.checkmark : (i + 1);
-                        font-family: step.completed ? "Segoe Fluent Icons" : "";
-                        font-size: Type.caption-size;
-                        color: (i <= root.active || step.completed)
-                            ? Colors.accent-text : Colors.text-secondary;
-                        horizontal-alignment: center;
-                        vertical-alignment: center;
-                    }
-
-                    step-ta := TouchArea {
-                        clicked => {
-                            root.active = i;
-                            root.step-changed(i);
-                        }
-                    }
+                StepperCircle {
+                    x: (parent.width - root.circle-size) / Sizes.two;
+                    circle-size: root.circle-size;
+                    completed: step.completed;
+                    is-active: i == root.active;
+                    index: i;
+                    clicked => { root.step-changed(i); }
                 }
 
                 Text {
@@ -69,10 +60,10 @@ export component Stepper inherits Rectangle {
                 }
             }
 
-            if i < root.steps.length - 1: Rectangle {
+            if i < root.steps.length - Sizes.one: Rectangle {
                 width:  root.connector-w;
                 height: root.connector-h;
-                y: root.circle-size / 2;
+                y: root.circle-size / Sizes.two;
                 background: step.completed ? Colors.accent : Colors.border;
             }
         }

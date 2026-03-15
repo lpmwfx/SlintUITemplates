@@ -1,7 +1,7 @@
 use std::rc::Rc;
 
 use slint::{ComponentHandle, Model, ModelRc, VecModel};
-use slint_ui_templates::{docs, dsl::BgStyle, platform, DocBlock, DocsApp, NavItem, Theme};
+use slint_ui_templates::{docs, dsl::BgStyle, pal, DocBlock, DocsApp, NavItem, Theme};
 
 // Map: nav-id → (sidebar label, icon name, docs/ filename)
 const PAGES: &[(&str, &str, &str, &str)] = &[
@@ -126,7 +126,7 @@ fn wire_bg_style(ui: &DocsApp) {
                 BG_ACRYLIC => BgStyle::Acrylic,
                 _          => BgStyle::Solid,
             };
-            platform::apply_backdrop(h.window(), bg);
+            pal::apply_backdrop(h.window(), bg);
             h.global::<Theme>().set_material(style);
         }
     });

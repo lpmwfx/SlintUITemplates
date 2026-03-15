@@ -1,0 +1,47 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
+
+// 6×7 calendar day grid — emits the selected day number (1-based).
+/// D at ep ic ke rg ri d component.
+export component DatePickerGrid inherits VerticalLayout {
+    /// Input property "first-weekday".
+    in property <int>    first-weekday;    // 0=Mon … 6=Sun
+    /// Input property "days-in-month".
+    in property <int>    days-in-month;
+    /// Input property "cell-size".
+    in property <length> cell-size;
+    /// Input property "days-cols".
+    in property <int>    days-cols: Sizes.seven;
+    /// Callback fired for d ay c li ck ed.
+    callback day-clicked(int);
+
+    spacing: Spacing.xs;
+
+    for row in [Sizes.zero, Sizes.one, Sizes.two, Sizes.three, Sizes.four, Sizes.five]: HorizontalLayout {
+        spacing: Spacing.xs;
+
+        for col in [Sizes.zero, Sizes.one, Sizes.two, Sizes.three, Sizes.four, Sizes.five, Sizes.six]: cell := Rectangle {
+            width:  root.cell-size;
+            height: root.cell-size;
+            border-radius: root.cell-size / Sizes.two;
+
+            property <int>  day-num:   row * root.days-cols + col - root.first-weekday + Sizes.one;
+            property <bool> valid-day: cell.day-num >= Sizes.one && cell.day-num <= root.days-in-month;
+
+            background: cell.valid-day && day-ta.has-hover ? Colors.bg-surface : transparent;
+
+            if cell.valid-day: Text {
+                text: cell.day-num;
+                font-size: Type.body-size;
+                color: Colors.text-primary;
+                horizontal-alignment: center;
+                vertical-alignment: center;
+            }
+
+            day-ta := TouchArea {
+                enabled: cell.valid-day;
+                clicked => { root.day-clicked(cell.day-num); }
+            }
+        }
+    }
+}

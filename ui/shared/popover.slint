@@ -14,12 +14,19 @@
 import { Spacing } from "../tokens/theme.slint";
 import { PopoverInner } from "popover-inner.slint";
 
+/// P op ov er component.
 export component Popover inherits Rectangle {
+    /// Input property "open".
     in property <bool>   open: false;
+    /// Input property "popup-width".
     in property <length> popup-width:  220px;
+    /// Input property "popup-height".
     in property <length> popup-height: 140px;
+    /// Input property "title".
     in property <string> title: "";
+    /// Input property "body".
     in property <string> body: "";
+    /// Callback fired for c lo se r eq ue st ed.
     callback close-requested();
 
     clip: false;

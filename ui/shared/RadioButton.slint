@@ -1,14 +1,22 @@
 import { Colors, Spacing, Type } from "../tokens/theme.slint";
 import { Sizes } from "../tokens/sizes.slint";
 
+/// R ad io bu tt on component.
 export component RadioButton inherits Rectangle {
+    /// Input property "checked".
     in property <bool>   checked: false;
+    /// Input property "label".
     in property <string> label: "";
+    /// Input property "enabled".
     in property <bool>   enabled: true;
+    /// Callback fired for c li ck ed.
     callback clicked();
 
+    /// Private property "circle-size" used internally.
     private property <length> circle-size: Spacing.md + Spacing.xs;   // 20px
+    /// Private property "dot-size" used internally.
     private property <length> dot-size:    Spacing.sm + Spacing.xs;   // 10px
+    /// Private property "ring-border" used internally.
     private property <length> ring-border: Sizes.border-w-2;
 
     height: Spacing.xl;

@@ -11,15 +11,24 @@
 import { Spacing } from "../tokens/theme.slint";
 import { FlyoutInner } from "flyout-inner.slint";
 
+/// F ly ou t component.
 export component Flyout inherits Rectangle {
+    /// Input property "window-height".
     in property <length> window-height;
+    /// Input property "popup-width".
     in property <length> popup-width:  220px;
+    /// Input property "popup-height".
     in property <length> popup-height: 160px;
+    /// Input property "title".
     in property <string> title: "";
+    /// Input property "body".
     in property <string> body: "";
+    /// Callback fired for c lo se d.
     callback closed();
 
+    /// Private property "pop-x" used internally.
     private property <length> pop-x: 0px;
+    /// Private property "pop-y" used internally.
     private property <length> pop-y: 0px;
 
     width: root.pop-x - root.pop-x;

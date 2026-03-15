@@ -6,17 +6,26 @@ import { Sizes } from "../tokens/sizes.slint";
 import { ViewerSection } from "viewer-section.slint";
 import { IconRow } from "IconRow.slint";
 
+/// Viewer page listing icon tokens and icon-driven component examples.
 export component PageIcons inherits VerticalLayout {
     spacing: Spacing.sm;
 
     // ── demo labels ─────────────────────────────────────────────────────
+    /// Private property "cat-nav" used internally.
     private property <string> cat-nav: "Navigation";
+    /// Private property "cat-actions" used internally.
     private property <string> cat-actions: "Actions";
+    /// Private property "cat-chrome" used internally.
     private property <string> cat-chrome: "Window Chrome";
+    /// Private property "cat-files" used internally.
     private property <string> cat-files: "Files & Data";
+    /// Private property "cat-media" used internally.
     private property <string> cat-media: "Media";
+    /// Private property "cat-ui" used internally.
     private property <string> cat-ui: "UI / Layout";
+    /// Private property "cat-people" used internally.
     private property <string> cat-people: "People & Communication";
+    /// Private property "cat-device" used internally.
     private property <string> cat-device: "Device";
 
     ViewerSection { title: root.cat-nav; }

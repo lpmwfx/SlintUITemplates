@@ -1,18 +1,30 @@
 import { Colors, Spacing, FluentMotion } from "../tokens/theme.slint";
 import { DrawerHeader } from "drawer-header.slint";
 
+/// D ra we r component.
 export component Drawer inherits Rectangle {
+    /// Input property "open".
     in property <bool>   open: false;
+    /// Input property "placement".
     in property <string> placement: "left";    // left | right
+    /// Input property "drawer-width".
     in property <length> drawer-width: 280px;
+    /// Input property "title".
     in property <string> title: "";
+    /// Callback fired for c lo se r eq ue st ed.
     callback close-requested();
 
+    /// Private property "place-right" used internally.
     private property <string> place-right: "right";
+    /// Private property "border-px" used internally.
     private property <length> border-px:   1px;
+    /// Private property "zero-len" used internally.
     private property <length> zero-len:    0px;
+    /// Private property "no-gap" used internally.
     private property <length> no-gap:      0px;
+    /// Private property "anim-dur" used internally.
     private property <duration> anim-dur:  200ms;
+    /// Private property "panel-x" used internally.
     private property <length> panel-x:
         placement == root.place-right
             ? (open ? root.width - root.drawer-width : root.width)

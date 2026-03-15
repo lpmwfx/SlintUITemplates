@@ -1,0 +1,63 @@
+import { Colors, Spacing, Type, FluentIcons } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
+
+// Input row — displays the selected value and a calendar icon button.
+/// D at ep ic ke rf ie ld component.
+export component DatePickerField inherits Rectangle {
+    /// Input property "value".
+    in property <string> value;
+    /// Input property "placeholder".
+    in property <string> placeholder;
+    /// Input property "error".
+    in property <string> error;
+    /// Input property "enabled".
+    in property <bool>   enabled: true;
+    /// Input property "icon-font".
+    in property <string> icon-font: "Segoe Fluent Icons";
+    /// Callback fired for o pe n p ic ke r.
+    callback open-picker();
+
+    height: Spacing.xl;
+    border-radius: Spacing.xs;
+    border-width: Sizes.border-w;
+    border-color: root.error != "" ? Colors.error : field-ta.has-hover ? Colors.border-focus : Colors.border;
+    background: Colors.bg-elevated;
+
+    HorizontalLayout {
+        padding-left: Spacing.sm;
+        padding-right: Sizes.no-size;
+
+        Text {
+            text: root.value != "" ? root.value : root.placeholder;
+            font-size: Type.body-size;
+            color: root.value != "" ? Colors.text-primary : Colors.text-disabled;
+            vertical-alignment: center;
+            horizontal-stretch: Sizes.one;
+        }
+
+        btn := Rectangle {
+            width: Spacing.xl;
+            background: btn-ta.has-hover ? Colors.bg-surface : transparent;
+
+            Text {
+                text: FluentIcons.edit;
+                font-family: root.icon-font;
+                font-size: Type.body-size;
+                color: Colors.text-secondary;
+                horizontal-alignment: center;
+                vertical-alignment: center;
+            }
+
+            btn-ta := TouchArea {
+                enabled: root.enabled;
+                clicked => { root.open-picker(); }
+            }
+        }
+    }
+
+    field-ta := TouchArea {
+        width: parent.width - Spacing.xl;
+        enabled: root.enabled;
+        clicked => { root.open-picker(); }
+    }
+}

@@ -1,22 +1,34 @@
 import { Colors, Spacing, Type, FluentIcons } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
 
+/// C hi p component.
 export component Chip inherits Rectangle {
+    /// Input property "label".
     in property <string> label: "";
+    /// Input property "closable".
     in property <bool>   closable: true;
+    /// Input property "icon".
     in property <string> icon: "";
+    /// Input property "selected".
     in property <bool>   selected: false;
+    /// Input property "enabled".
     in property <bool>   enabled: true;
+    /// Callback fired for c lo se d.
     callback closed();
+    /// Callback fired for c li ck ed.
     callback clicked();
 
+    /// Private property "close-icon-size" used internally.
+    private property <length> close-icon-size: 10px;
+
     height: Spacing.control-md;
-    border-radius: root.height / 2;
-    border-width: 1px;
+    border-radius: root.height / Sizes.two;
+    border-width: Sizes.border-w;
     border-color: root.selected ? transparent : Colors.border;
     background: root.selected    ? Colors.accent :
                 body-ta.has-hover ? Colors.bg-elevated :
                 Colors.bg-surface;
-    opacity: root.enabled ? 1.0 : 0.5;
+    opacity: root.enabled ? Sizes.fill : Sizes.half;
     clip: true;
 
     HorizontalLayout {
@@ -27,7 +39,7 @@ export component Chip inherits Rectangle {
 
         if root.icon != "": Text {
             text: root.icon;
-            font-family: "Segoe Fluent Icons";
+            font-family: FluentIcons.icon-font;
             font-size: Type.caption-size;
             color: root.selected ? Colors.accent-text : Colors.text-primary;
             vertical-alignment: center;
@@ -43,13 +55,13 @@ export component Chip inherits Rectangle {
         if root.closable: close-btn := Rectangle {
             width: Spacing.md;
             height: Spacing.md;
-            border-radius: parent.height / 2;
-            background: close-ta.has-hover ? Colors.bg-surface.with-alpha(0.5) : transparent;
+            border-radius: parent.height / Sizes.two;
+            background: close-ta.has-hover ? Colors.bg-surface.with-alpha(Sizes.half) : transparent;
 
             Text {
                 text: FluentIcons.dismiss;
-                font-family: "Segoe Fluent Icons";
-                font-size: 10px;
+                font-family: FluentIcons.icon-font;
+                font-size: root.close-icon-size;
                 color: root.selected ? Colors.accent-text : Colors.text-secondary;
                 horizontal-alignment: center;
                 vertical-alignment: center;

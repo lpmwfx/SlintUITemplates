@@ -1,16 +1,22 @@
 // CanvasImage — image slot for Rust-rendered frames (tiny-skia or any painter).
 // Host sets `frame` each render tick. Placeholder shown when frame is empty.
 
-import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Colors, Spacing, Type, FluentIcons } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
 
+/// C an va si ma ge component.
 export component CanvasImage inherits Rectangle {
+    /// Input property "frame".
     in property <image>  frame;
+    /// Input property "show-placeholder".
     in property <bool>   show-placeholder: true;
+    /// Input property "placeholder-text".
+    in property <string> placeholder-text: "No frame — wire canvas-frame from Rust";
 
-    preferred-width:  300px;
-    preferred-height: 200px;
+    preferred-width:  Sizes.panel-xl;
+    preferred-height: Sizes.panel-sm;
     background: Colors.bg-surface;
-    border-width: 1px;
+    border-width: Sizes.border-w;
     border-color: Colors.border;
     border-radius: Spacing.xs;
     clip: true;
@@ -22,20 +28,20 @@ export component CanvasImage inherits Rectangle {
         image-fit: contain;
     }
 
-    if root.show-placeholder && root.frame.width == 0: Rectangle {
+    if root.show-placeholder && root.frame.width == Sizes.zero: Rectangle {
         background: Colors.bg-surface;
         VerticalLayout {
             alignment: center;
             spacing: Spacing.xs;
             Text {
                 text: "\u{E91B}";
-                font-family: "Segoe Fluent Icons";
+                font-family: FluentIcons.icon-font;
                 font-size: Type.title-size;
                 color: Colors.text-disabled;
                 horizontal-alignment: center;
             }
             Text {
-                text: "No frame — wire canvas-frame from Rust";
+                text: root.placeholder-text;
                 font-size: Type.caption-size;
                 color: Colors.text-disabled;
                 horizontal-alignment: center;

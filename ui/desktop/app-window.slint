@@ -1,4 +1,7 @@
 import { Colors, Spacing, Type, Settings, FluentIcons } from "../tokens/theme.slint";
+import { Sizes }       from "../tokens/sizes.slint";
+import { Variants }    from "../globals/Variants.slint";
+import { NavId }       from "../globals/NavId.slint";
 import { NavBar }      from "nav-bar.slint";
 import { NavItem }     from "types.slint";
 import { SideBar }     from "side-bar.slint";
@@ -12,10 +15,13 @@ export { Colors }
 export { Settings }
 export { NavItem }
 
+/// A pp wi nd ow component.
 export component AppWindow inherits Window {
-    title: "SlintUI Templates";
-    preferred-width: 900px;
-    preferred-height: 600px;
+    /// Input property "window-title".
+    in property <string> window-title: "SlintUI Templates";
+    title: window-title;
+    preferred-width: Sizes.win-width-sm;
+    preferred-height: Sizes.win-height-sm;
     default-font-family: Settings.font-family;
 
     // Window background follows Theme.bg-primary — transparent for mica/acrylic,
@@ -23,57 +29,94 @@ export component AppWindow inherits Window {
     background: Colors.bg-primary;
 
     // State (mother owns all)
-    in-out property <string>    active-view: "home";
+    /// Two-way property "active-view".
+    in-out property <string>    active-view: NavId.home;
+    /// Two-way property "sidebar-open".
     in-out property <bool>      sidebar-open: true;
+    /// Two-way property "sidebar-collapsed".
     in-out property <bool>      sidebar-collapsed: false;
+    /// Two-way property "nav-items".
     in-out property <[NavItem]> nav-items: [
-        { id: "home",     label: "Home",     icon: FluentIcons.home },
-        { id: "list",     label: "List",     icon: FluentIcons.list },
-        { id: "settings", label: "Settings", icon: FluentIcons.settings },
+        { id: NavId.home,     label: "Home",     icon: FluentIcons.home },
+        { id: NavId.list,     label: "List",     icon: FluentIcons.list },
+        { id: NavId.settings, label: "Settings", icon: FluentIcons.settings },
     ];
 
     // Toolbar
+    /// Input property "show-toolbar".
     in property <bool>               show-toolbar:  false;
+    /// Input property "toolbar-items".
     in property <[ShellToolbarItem]> toolbar-items: [];
 
     // Status bar text (Rhai / Rust override; empty = default "View: <active-view>")
+    /// Two-way property "status-text".
     in-out property <string> status-text: "";
+    /// Input property "status-prefix".
+    in property <string> status-prefix: "View: ";
+    /// Input property "right-panel-label".
+    in property <string> right-panel-label: "right";
+
+    // Menu labels
+    /// Input property "menu-file-label".
+    in property <string> menu-file-label: "File";
+    /// Input property "menu-exit-label".
+    in property <string> menu-exit-label: "Exit";
+    /// Input property "menu-view-label".
+    in property <string> menu-view-label: "View";
+    /// Input property "menu-home-label".
+    in property <string> menu-home-label: "Home";
+    /// Input property "menu-list-label".
+    in property <string> menu-list-label: "List";
+    /// Input property "menu-settings-label".
+    in property <string> menu-settings-label: "Settings";
+    /// Input property "menu-help-label".
+    in property <string> menu-help-label: "Help";
+    /// Input property "menu-about-label".
+    in property <string> menu-about-label: "About";
 
     // Callbacks wired by DSL / Rust host
+    /// Callback fired for m en u a ct io n.
     callback menu-action(string);
+    /// Callback fired for t oo lb ar c li ck ed.
     callback toolbar-clicked(string);
 
     // Grid ratios (pushed from Rust grid engine)
-    in-out property <float> row-top-ratio: 1;
-    in-out property <float> row-main-ratio: 10;
-    in-out property <float> row-bottom-ratio: 1;
+    /// Two-way property "row-top-ratio".
+    in-out property <float> row-top-ratio: Sizes.fill;
+    /// Two-way property "row-main-ratio".
+    in-out property <float> row-main-ratio: Sizes.ten;
+    /// Two-way property "row-bottom-ratio".
+    in-out property <float> row-bottom-ratio: Sizes.fill;
 
     // Column pixel widths — draggable (no literals — token expressions)
-    in-out property <length> col-left-width:  Spacing.xl * 4 + Spacing.md;   // 208px
-    in-out property <length> col-right-width: Spacing.xl * 5;                 // 240px
+    /// Two-way property "col-left-width".
+    in-out property <length> col-left-width:  Spacing.xl * Sizes.four + Spacing.md;   // 208px
+    /// Two-way property "col-right-width".
+    in-out property <length> col-right-width: Spacing.xl * Sizes.five;                 // 240px
 
     // Reference widths for sidebar toggle snap
-    property <length> sidebar-expanded-width:  Spacing.xl * 4 + Spacing.md;
+    property <length> sidebar-expanded-width:  Spacing.xl * Sizes.four + Spacing.md;
     property <length> sidebar-collapsed-width: Spacing.xl + Spacing.sm;
 
+    /// Callback fired for n av ig at e.
     callback navigate(string);
     navigate(view) => { self.active-view = view; }
 
     // Native OS menu bar (muda-backed via Slint — must live in Window)
     MenuBar {
         Menu {
-            title: "File";
-            MenuItem { title: "Exit"; activated => { } }
+            title: root.menu-file-label;
+            MenuItem { title: root.menu-exit-label; activated => { } }
         }
         Menu {
-            title: "View";
-            MenuItem { title: "Home";     activated => { root.active-view = "home"; } }
-            MenuItem { title: "List";     activated => { root.active-view = "list"; } }
-            MenuItem { title: "Settings"; activated => { root.active-view = "settings"; } }
+            title: root.menu-view-label;
+            MenuItem { title: root.menu-home-label;     activated => { root.active-view = NavId.home; } }
+            MenuItem { title: root.menu-list-label;     activated => { root.active-view = NavId.list; } }
+            MenuItem { title: root.menu-settings-label; activated => { root.active-view = NavId.settings; } }
         }
         Menu {
-            title: "Help";
-            MenuItem { title: "About"; activated => { } }
+            title: root.menu-help-label;
+            MenuItem { title: root.menu-about-label; activated => { } }
         }
     }
 
@@ -88,8 +131,8 @@ export component AppWindow inherits Window {
         NavBar {
             vertical-stretch: root.row-top-ratio;
             breadcrumb: root.active-view;
-            can-go-back: root.active-view != "home";
-            go-back => { root.active-view = "home"; }
+            can-go-back: root.active-view != NavId.home;
+            go-back => { root.active-view = NavId.home; }
         }
 
         // ROW: main — 3 columns with draggable vertical gutters
@@ -98,19 +141,14 @@ export component AppWindow inherits Window {
 
             // Left — SideBar (fixed width, drag-resizable)
             SideBar {
-                horizontal-stretch: 0;
-                min-width: root.col-left-width;
-                max-width: root.col-left-width;
+                horizontal-stretch: Sizes.zero;
+                min-width: root.sidebar-collapsed ? root.sidebar-collapsed-width : root.col-left-width;
+                max-width: root.sidebar-collapsed ? root.sidebar-collapsed-width : root.col-left-width;
                 items: root.nav-items;
                 active-item: root.active-view;
                 collapsed: root.sidebar-collapsed;
                 navigate(id) => { root.active-view = id; }
-                toggle-collapsed() => {
-                    root.sidebar-collapsed = !root.sidebar-collapsed;
-                    root.col-left-width = root.sidebar-collapsed
-                        ? root.sidebar-collapsed-width
-                        : root.sidebar-expanded-width;
-                }
+                toggle-collapsed() => { root.sidebar-collapsed = !root.sidebar-collapsed; }
             }
 
             // Gutter: left | center (draggable)
@@ -119,16 +157,13 @@ export component AppWindow inherits Window {
                 max-width: Spacing.handle-thickness;
                 vertical: false;
                 dragged(dx, dy) => {
-                    root.col-left-width = root.col-left-width + dx * 1px;
-                    if (root.col-left-width < root.sidebar-collapsed-width) {
-                        root.col-left-width = root.sidebar-collapsed-width;
-                    }
+                    root.col-left-width = clamp(root.col-left-width + dx * Sizes.border-w, root.sidebar-collapsed-width, Sizes.panel-xl);
                 }
             }
 
             // Center — ContentArea (takes remaining space)
             ContentArea {
-                horizontal-stretch: 1;
+                horizontal-stretch: Sizes.one;
                 active-view: root.active-view;
                 navigate(view) => { root.active-view = view; }
             }
@@ -139,27 +174,23 @@ export component AppWindow inherits Window {
                 max-width: Spacing.handle-thickness;
                 vertical: false;
                 dragged(dx, dy) => {
-                    root.col-right-width = root.col-right-width - dx * 1px;
-                    if (root.col-right-width < Spacing.xl + Spacing.lg) {
-                        root.col-right-width = Spacing.xl + Spacing.lg;
-                    }
+                    root.col-right-width = clamp(root.col-right-width - dx * Sizes.border-w, Spacing.xl + Spacing.lg, Sizes.panel-xl);
                 }
             }
 
             // Right — placeholder (phase 4 scope, fixed width, drag-resizable)
             Rectangle {
-                horizontal-stretch: 0;
+                horizontal-stretch: Sizes.zero;
                 min-width: root.col-right-width;
                 max-width: root.col-right-width;
                 background: Colors.bg-surface;
-                VerticalLayout {
-                    alignment: center;
-                    Text {
-                        text: "right";
-                        font-size: Type.caption-size;
-                        color: Colors.text-secondary;
-                        horizontal-alignment: center;
-                    }
+
+                Text {
+                    text: root.right-panel-label;
+                    font-size: Type.caption-size;
+                    color: Colors.text-secondary;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
                 }
             }
         }
@@ -167,7 +198,7 @@ export component AppWindow inherits Window {
         // ROW: bottom — StatusBar (fixed, not resizable)
         StatusBar {
             vertical-stretch: root.row-bottom-ratio;
-            status-text: root.status-text != "" ? root.status-text : "View: " + root.active-view;
+            status-text: root.status-text != "" ? root.status-text : root.status-prefix + root.active-view;
         }
     }
 }

@@ -1,16 +1,28 @@
 import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
 
+/// T ea ch in gt ip in ne r component.
 export component TeachingTipInner inherits Rectangle {
+    /// Input property "title".
     in property <string> title: "";
+    /// Input property "body".
     in property <string> body: "";
+    /// Input property "action-label".
     in property <string> action-label: "";
+    /// Input property "dismiss-label".
     in property <string> dismiss-label: "";
+    /// Callback fired for p op up c lo se.
     callback popup-close();
+    /// Callback fired for a ct io n.
     callback action();
+    /// Callback fired for d is mi ss ed.
     callback dismissed();
 
+    /// Private property "border-px" used internally.
     private property <length> border-px: 1px;
+    /// Private property "h-stretch" used internally.
     private property <int>    h-stretch: 1;
+    /// Private property "v-stretch" used internally.
     private property <int>    v-stretch: 1;
 
     background: Colors.bg-elevated;
@@ -45,7 +57,7 @@ export component TeachingTipInner inherits Rectangle {
             spacing: Spacing.sm;
 
             if root.dismiss-label != "": Rectangle {
-                width: dismiss-t.preferred-width + Spacing.md * 2;
+                width: dismiss-t.preferred-width + Spacing.md * Sizes.two;
                 height: Spacing.control-md;
                 border-radius: Spacing.xs;
                 border-width: root.border-px;
@@ -66,7 +78,7 @@ export component TeachingTipInner inherits Rectangle {
             }
 
             if root.action-label != "": Rectangle {
-                width: action-t.preferred-width + Spacing.md * 2;
+                width: action-t.preferred-width + Spacing.md * Sizes.two;
                 height: Spacing.control-md;
                 border-radius: Spacing.xs;
                 background: act-ta.has-hover ? Colors.accent-hover : Colors.accent;

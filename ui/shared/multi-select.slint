@@ -1,119 +1,47 @@
-import { Colors, Spacing, Type } from "../tokens/theme.slint";
-import { Checkbox } from "checkbox.slint";
+import { Spacing } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
+import { MultiSelectOption }   from "multi-select-types.slint";
+import { MultiSelectChip }     from "MultiSelectChip.slint";
+import { MultiSelectDropdown } from "MultiSelectDropdown.slint";
 
-export struct MultiSelectOption {
-    label: string,
-    value: string,
-}
+export { MultiSelectOption }
 
+/// M ul ti se le ct component.
 export component MultiSelect inherits Rectangle {
+    /// Input property "options".
     in property <[MultiSelectOption]> options: [];
-    in-out property <[string]>        selected: [];
+    /// Input property "selected".
+    in property <[string]>        selected: [];
+    /// Input property "placeholder".
     in property <string>              placeholder: "Select...";
+    /// Input property "enabled".
     in property <bool>                enabled: true;
+    /// Callback fired for c ha ng ed.
     callback changed([string]);
 
+    /// Private property "open" used internally.
     private property <bool> open: false;
 
     height: Spacing.xl;
-    opacity: root.enabled ? 1.0 : 0.5;
+    opacity: root.enabled ? Sizes.fill : Sizes.half;
     clip: false;
 
     // Trigger row
-    trigger := Rectangle {
-        height: Spacing.xl;
-        border-radius: Spacing.xs;
-        border-width: 1px;
-        border-color: root.open ? Colors.border-focus : Colors.border;
-        background: Colors.bg-elevated;
-
-        HorizontalLayout {
-            padding-left: Spacing.sm;
-            padding-right: Spacing.sm;
-
-            Text {
-                text: root.selected.length == 0 ? root.placeholder :
-                      root.selected.length == 1 ? root.selected[0] :
-                      root.selected.length + " selected";
-                font-size: Type.body-size;
-                color: root.selected.length == 0 ? Colors.text-disabled : Colors.text-primary;
-                vertical-alignment: center;
-                horizontal-stretch: 1;
-            }
-
-            Text {
-                text: root.open ? "▲" : "▼";
-                font-size: Type.caption-size;
-                color: Colors.text-secondary;
-                vertical-alignment: center;
-            }
-        }
-
-        TouchArea {
-            enabled: root.enabled;
-            clicked => { root.open = !root.open; }
-        }
+    MultiSelectChip {
+        selected-count: root.selected.length;
+        first-selected: root.selected.length > Sizes.zero ? root.selected[Sizes.zero] : "";
+        placeholder: root.placeholder;
+        open: root.open;
+        enabled: root.enabled;
+        toggle-open => { root.open = !root.open; }
     }
 
     // Dropdown list
-    if root.open: Rectangle {
+    if root.open: MultiSelectDropdown {
         y: Spacing.xl + Spacing.xs;
         width: parent.width;
-        height: min(root.options.length * Spacing.xl, Spacing.xl * 5);
-        border-radius: Spacing.xs;
-        border-width: 1px;
-        border-color: Colors.border;
-        background: Colors.bg-elevated;
-        drop-shadow-blur: Spacing.sm;
-        drop-shadow-color: Colors.shadow;
-        clip: true;
-
-        Flickable {
-            width: parent.width;
-            height: parent.height;
-            viewport-height: root.options.length * Spacing.xl;
-
-            VerticalLayout {
-                for opt in root.options: Rectangle {
-                    height: Spacing.xl;
-                    background: item-ta.has-hover ? Colors.bg-surface : transparent;
-
-                    HorizontalLayout {
-                        padding-left: Spacing.sm;
-                        padding-right: Spacing.sm;
-                        spacing: Spacing.sm;
-
-                        // Simple check indicator
-                        Rectangle {
-                            width: 16px;
-                            height: 16px;
-                            border-radius: Spacing.xs;
-                            border-width: 1px;
-                            border-color: Colors.border;
-                            background: Colors.bg-elevated;
-
-                            // We cannot check [string] contains in Slint expressions easily,
-                            // so we just show the label — host manages selected state
-                        }
-
-                        Text {
-                            text: opt.label;
-                            font-size: Type.body-size;
-                            color: Colors.text-primary;
-                            vertical-alignment: center;
-                            horizontal-stretch: 1;
-                        }
-                    }
-
-                    item-ta := TouchArea {
-                        clicked => {
-                            // Append value to selected — host expected to manage deduplication
-                            root.selected = [opt.value];
-                            root.changed(root.selected);
-                        }
-                    }
-                }
-            }
-        }
+        height: min(root.options.length * Spacing.xl, Spacing.xl * Sizes.five);
+        options: root.options;
+        item-selected(val) => { root.changed([val]); }
     }
 }

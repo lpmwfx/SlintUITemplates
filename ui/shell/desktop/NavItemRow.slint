@@ -1,0 +1,70 @@
+import { Colors, Spacing, Type } from "../../tokens/theme.slint";
+import { Sizes } from "../../tokens/sizes.slint";
+
+// NavItemRow — a single row in the ShellSideNav navigation list.
+/// N av it em ro w component.
+export component NavItemRow inherits Rectangle {
+    /// Input property "item-id".
+    in property <string> item-id;
+    /// Input property "icon".
+    in property <string> icon;
+    /// Input property "label".
+    in property <string> label;
+    /// Input property "icon-font".
+    in property <string> icon-font;
+    /// Input property "is-active".
+    in property <bool>   is-active: false;
+    /// Input property "collapsed".
+    in property <bool>   collapsed: false;
+    /// Input property "active-alpha".
+    in property <float>  active-alpha;
+    /// Input property "indicator-w".
+    in property <length> indicator-w;
+    /// Input property "indicator-radius".
+    in property <length> indicator-radius;
+    /// Callback fired for c li ck ed.
+    callback clicked();
+
+    height: Spacing.xl;
+    clip: true;
+    border-radius: Sizes.track-h;
+    background: root.is-active ? Colors.accent.with-alpha(root.active-alpha) :
+                item-ta.has-hover ? Colors.bg-elevated : transparent;
+
+    item-ta := TouchArea {
+        clicked => { root.clicked(); }
+    }
+
+    // Active indicator bar
+    if root.is-active: Rectangle {
+        width: root.indicator-w;
+        height: Sizes.icon-md;
+        y: (parent.height - self.height) / Sizes.two;
+        background: Colors.accent;
+        border-radius: root.indicator-radius;
+    }
+
+    HorizontalLayout {
+        padding-left: Spacing.sm;
+        padding-right: Spacing.sm;
+        spacing: Spacing.sm;
+        alignment: start;
+
+        Text {
+            text: root.icon;
+            font-family: root.icon-font;
+            font-size: Type.subtitle-size;
+            color: root.is-active ? Colors.accent : Colors.text-primary;
+            vertical-alignment: center;
+            horizontal-alignment: center;
+            width: Spacing.lg;
+        }
+
+        if !root.collapsed: Text {
+            text: root.label;
+            font-size: Type.body-size;
+            color: root.is-active ? Colors.accent : Colors.text-primary;
+            vertical-alignment: center;
+        }
+    }
+}

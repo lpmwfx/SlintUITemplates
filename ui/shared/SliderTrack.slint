@@ -1,0 +1,52 @@
+import { Colors, Spacing } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
+
+// SliderTrack — the track/thumb inner structure for Slider.
+/// S li de rt ra ck component.
+export component SliderTrack inherits Rectangle {
+    /// Input property "fill-ratio".
+    in property <float>  fill-ratio;
+    /// Input property "track-h".
+    in property <length> track-h;
+    /// Input property "thumb-size".
+    in property <length> thumb-size;
+    /// Input property "enabled".
+    in property <bool>   enabled: true;
+    /// Callback fired for v al ue c ha ng ed.
+    callback value-changed(float);
+
+    height: root.track-h;
+
+    track := Rectangle {
+        height: root.track-h;
+        border-radius: root.track-h / Sizes.two;
+        background: Colors.bg-elevated;
+        border-width: Sizes.border-w;
+        border-color: Colors.border;
+
+        Rectangle {
+            x: Sizes.no-size;
+            width: root.fill-ratio * parent.width;
+            height: root.track-h;
+            border-radius: root.track-h / Sizes.two;
+            background: Colors.accent;
+        }
+
+        Rectangle {
+            x:  root.fill-ratio * parent.width - root.thumb-size / Sizes.two;
+            y: -(root.thumb-size - root.track-h) / Sizes.two;
+            width:  root.thumb-size;
+            height: root.thumb-size;
+            border-radius: root.thumb-size / Sizes.two;
+            background: Colors.accent;
+            drop-shadow-blur: Spacing.xs;
+            drop-shadow-color: Colors.shadow;
+        }
+
+        track-ta := TouchArea {
+            enabled: root.enabled;
+            moved => { root.value-changed(self.mouse-x / track.width); }
+            clicked => { root.value-changed(self.mouse-x / track.width); }
+        }
+    }
+}

@@ -3,10 +3,14 @@ import { ToolbarBtn, ToolbarItem } from "toolbar-btn.slint";
 
 export { ToolbarItem }
 
+/// T oo lb ar component.
 export component Toolbar inherits Rectangle {
+    /// Input property "items".
     in property <[ToolbarItem]> items: [];
+    /// Callback fired for c li ck ed.
     callback clicked(string);
 
+    /// Private property "border-px" used internally.
     private property <length> border-px: 1px;
 
     height: Spacing.xl;

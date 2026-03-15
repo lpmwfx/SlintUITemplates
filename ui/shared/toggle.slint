@@ -1,9 +1,28 @@
 import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
 
+/// Binary on/off switch with an optional text label.
 export component Toggle inherits Rectangle {
+    /// Current checked state rendered by the switch.
     in property <bool> checked: false;
+    /// Optional label shown to the right of the switch.
     in property <string> label: "";
+    /// Fired with the next checked state when the user toggles the control.
     callback toggled(bool);
+
+    // ── Toggle geometry constants ───────────────────────────────────────
+    /// Private property "track-width" used internally.
+    private property <length> track-width:  Spacing.control-lg;  // 40px
+    /// Private property "track-height" used internally.
+    private property <length> track-height: Sizes.icon-md;       // 20px
+    /// Private property "knob-size" used internally.
+    private property <length> knob-size:    Sizes.icon-sm;       // 16px
+    /// Private property "knob-radius" used internally.
+    private property <length> knob-radius:  Spacing.sm;          // 8px
+    /// Private property "knob-inset" used internally.
+    private property <length> knob-inset:   Sizes.border-w-2;    // 2px
+    /// Private property "slide-dur" used internally.
+    private property <duration> slide-dur:  150ms;
 
     height: Spacing.xl;
 
@@ -16,23 +35,23 @@ export component Toggle inherits Rectangle {
 
             // Toggle track
             Rectangle {
-                width: 40px;
-                height: 20px;
-                border-radius: 10px;
+                width: root.track-width;
+                height: root.track-height;
+                border-radius: root.track-height / Sizes.two;
                 background: root.checked ? Colors.accent : Colors.bg-surface;
-                border-width: root.checked ? 0 : 1px;
+                border-width: root.checked ? Sizes.no-size : Sizes.border-w;
                 border-color: Colors.border;
 
                 // Toggle knob
                 Rectangle {
-                    x: root.checked ? parent.width - self.width - 2px : 2px;
-                    y: (parent.height - self.height) / 2;
-                    width: 16px;
-                    height: 16px;
-                    border-radius: 8px;
+                    x: root.checked ? parent.width - self.width - root.knob-inset : root.knob-inset;
+                    y: (parent.height - self.height) / Sizes.two;
+                    width: root.knob-size;
+                    height: root.knob-size;
+                    border-radius: root.knob-radius;
                     background: root.checked ? Colors.accent-text : Colors.text-secondary;
 
-                    animate x { duration: 150ms; easing: ease-in-out; }
+                    animate x { duration: root.slide-dur; easing: ease-in-out; }
                 }
 
                 TouchArea {

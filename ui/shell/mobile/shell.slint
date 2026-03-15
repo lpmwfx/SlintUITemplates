@@ -2,26 +2,36 @@
 // Parent provides content as @children.
 
 import { MaterialColors, MaterialSpacing } from "../../tokens/material/mod.slint";
+import { Sizes }           from "../../tokens/sizes.slint";
 import { NavItem }      from "../types.slint";
 import { TopAppBar }    from "top-app-bar.slint";
 import { BottomNavBar } from "bottom-nav-bar.slint";
 import { FAB }          from "fab.slint";
 import { FluentIcons }  from "../../tokens/theme.slint";
 
+/// M ob il es he ll component.
 export component MobileShell inherits VerticalLayout {
     // Config
+    /// Input property "title".
     in property <string>    title: "App";
+    /// Input property "nav-items".
     in property <[NavItem]> nav-items;
+    /// Input property "active-view".
     in property <string>    active-view: "";
+    /// Input property "fab-icon".
     in property <string>    fab-icon:    FluentIcons.add;
+    /// Input property "fab-label".
     in property <string>    fab-label:   "";
+    /// Input property "show-fab".
     in property <bool>      show-fab:    true;
 
     // Callbacks
+    /// Callback fired for n av ig at e.
     callback navigate(string);
+    /// Callback fired for f ab c li ck ed.
     callback fab-clicked();
 
-    spacing: 0px;
+    spacing: Sizes.no-size;
 
     // ── TopAppBar ─────────────────────────────────────────────────────────
     TopAppBar {
@@ -31,7 +41,7 @@ export component MobileShell inherits VerticalLayout {
 
     // ── Content area ──────────────────────────────────────────────────────
     Rectangle {
-        vertical-stretch: 1;
+        vertical-stretch: Sizes.one;
         background: MaterialColors.surface;
 
         VerticalLayout {

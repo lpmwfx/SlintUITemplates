@@ -1,28 +1,34 @@
 import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
+import { Variants } from "../globals/Variants.slint";
 
+/// D iv id er component.
 export component Divider inherits Rectangle {
-    in property <string> orientation: "horizontal";   // horizontal | vertical
+    /// Input property "orientation".
+    in property <string> orientation: Variants.horizontal;   // horizontal | vertical
+    /// Input property "label".
     in property <string> label: "";
+    /// Input property "line-color".
     in property <color>  line-color: Colors.border;
 
     background: transparent;
 
     // Horizontal — no label
-    if root.orientation == "horizontal" && root.label == "": Rectangle {
+    if root.orientation == Variants.horizontal && root.label == "": Rectangle {
         width: parent.width;
-        height: 1px;
-        y: (parent.height - 1px) / 2;
+        height: Sizes.border-w;
+        y: (parent.height - Sizes.border-w) / Sizes.two;
         background: root.line-color;
     }
 
     // Horizontal — with label
-    if root.orientation == "horizontal" && root.label != "": HorizontalLayout {
+    if root.orientation == Variants.horizontal && root.label != "": HorizontalLayout {
         alignment: stretch;
 
         Rectangle {
-            height: 1px;
-            y: parent.height / 2;
-            horizontal-stretch: 1;
+            height: Sizes.border-w;
+            y: parent.height / Sizes.two;
+            horizontal-stretch: Sizes.one;
             background: root.line-color;
         }
 
@@ -37,18 +43,18 @@ export component Divider inherits Rectangle {
         }
 
         Rectangle {
-            height: 1px;
-            y: parent.height / 2;
-            horizontal-stretch: 1;
+            height: Sizes.border-w;
+            y: parent.height / Sizes.two;
+            horizontal-stretch: Sizes.one;
             background: root.line-color;
         }
     }
 
     // Vertical
-    if root.orientation == "vertical": Rectangle {
-        width: 1px;
+    if root.orientation == Variants.vertical: Rectangle {
+        width: Sizes.border-w;
         height: parent.height;
-        x: (parent.width - 1px) / 2;
+        x: (parent.width - Sizes.border-w) / Sizes.two;
         background: root.line-color;
     }
 }

@@ -1,0 +1,23 @@
+import { Spacing } from "../tokens/theme.slint";
+import { RadioButton } from "./RadioButton.slint";
+
+/// R ad io gr ou p component.
+export component RadioGroup inherits VerticalLayout {
+    /// Input property "options".
+    in property <[string]> options: [];
+    /// Input property "value".
+    in property <string> value: "";
+    /// Input property "enabled".
+    in property <bool> enabled: true;
+    /// Callback fired for c ha ng ed.
+    callback changed(string);
+
+    spacing: Spacing.sm;
+
+    for opt in root.options: RadioButton {
+        label: opt;
+        checked: opt == root.value;
+        enabled: root.enabled;
+        clicked => { root.changed(opt); }
+    }
+}

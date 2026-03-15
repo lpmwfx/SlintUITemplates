@@ -10,46 +10,78 @@ import { Chip }                             from "../shared/chip.slint";
 import { ViewerSection } from "viewer-section.slint";
 import { ContextMenuDemoArea } from "ContextMenuDemoArea.slint";
 
+/// Viewer page showcasing data-heavy widgets such as tables, trees, date pickers, and context menus.
 export component PageData inherits VerticalLayout {
+    /// Available viewer height passed down to popups and context-menu demos.
     in property <length> window-height;
 
     spacing: Spacing.md;
 
+    /// Private property "table-selected" used internally.
     private property <string> table-selected: "";
+    /// Private property "tree-selected" used internally.
     private property <string> tree-selected: "";
+    /// Private property "date-value" used internally.
     private property <string> date-value: "";
 
     // ── demo labels ──────────────────────────────────────────────────────
+    /// Private property "section-datatable" used internally.
     private property <string> section-datatable: "DataTable";
+    /// Private property "section-treeview" used internally.
     private property <string> section-treeview: "TreeView";
+    /// Private property "section-datepicker" used internally.
     private property <string> section-datepicker: "DatePicker";
+    /// Private property "section-multiselect" used internally.
     private property <string> section-multiselect: "MultiSelect";
+    /// Private property "section-chip" used internally.
     private property <string> section-chip: "Chip";
+    /// Private property "section-contextmenu" used internally.
     private property <string> section-contextmenu: "ContextMenu — File Explorer (right-click area)";
+    /// Private property "dp-label" used internally.
     private property <string> dp-label: "Select date";
+    /// Private property "dp-error-label" used internally.
     private property <string> dp-error-label: "With error";
+    /// Private property "dp-error-msg" used internally.
     private property <string> dp-error-msg: "Date is required";
+    /// Private property "ms-placeholder" used internally.
     private property <string> ms-placeholder: "Choose languages...";
+    /// Private property "chip-default" used internally.
     private property <string> chip-default: "Default";
+    /// Private property "chip-selected" used internally.
     private property <string> chip-selected: "Selected";
+    /// Private property "chip-noclose" used internally.
     private property <string> chip-noclose: "No close";
+    /// Private property "chip-disabled" used internally.
     private property <string> chip-disabled: "Disabled";
 
     // ── private size tokens ────────────────────────────────────────────
+    /// Private property "col-name-w" used internally.
     private property <length> col-name-w: Sizes.comp-160;
+    /// Private property "dp-w" used internally.
     private property <length> dp-w: Sizes.comp-260;
+    /// Private property "ms-w" used internally.
     private property <length> ms-w: Sizes.comp-240;
 
     // ── demo row data ─────────────────────────────────────────────────
+    /// Private property "row-id-a" used internally.
     private property <string> row-id-a: "1";
+    /// Private property "row-id-b" used internally.
     private property <string> row-id-b: "2";
+    /// Private property "row-id-c" used internally.
     private property <string> row-id-c: "3";
+    /// Private property "row-id-d" used internally.
     private property <string> row-id-d: "4";
+    /// Private property "row-id-e" used internally.
     private property <string> row-id-e: "5";
+    /// Private property "date-a" used internally.
     private property <string> date-a: "2023-01";
+    /// Private property "date-b" used internally.
     private property <string> date-b: "2022-06";
+    /// Private property "date-c" used internally.
     private property <string> date-c: "2021-11";
+    /// Private property "date-d" used internally.
     private property <string> date-d: "2023-04";
+    /// Private property "date-e" used internally.
     private property <string> date-e: "2024-02";
 
     ViewerSection {

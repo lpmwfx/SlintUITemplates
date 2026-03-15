@@ -10,8 +10,11 @@ const RATIO_MAX: f32 = 0.95;
 
 /// Ratio-space min/max constraint that bounds a panel's resizable range.
 #[derive(Debug, Clone, PartialEq)]
+/// C on st ra in t struct.
 pub struct Constraint {
+    /// M in.
     pub min: f32,
+    /// M ax.
     pub max: f32,
 }
 

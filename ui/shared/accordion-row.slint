@@ -1,19 +1,29 @@
 import { Colors, Spacing, Type, FluentIcons } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
 
+/// A cc or di on it em struct.
 export struct AccordionItem {
     id:      string,
     title:   string,
     content: string,
 }
 
+/// A cc or di on ro w component.
 export component AccordionRow inherits Rectangle {
+    /// Input property "item".
     in property <AccordionItem> item;
+    /// Input property "expanded".
     in property <bool>          expanded: false;
+    /// Callback fired for t og gl ed.
     callback toggled(string);
 
+    /// Private property "border-px" used internally.
     private property <length>   border-px:    1px;
-    private property <length>   content-h:    Spacing.xl * 2;
+    /// Private property "content-h" used internally.
+    private property <length>   content-h:    Spacing.xl * Sizes.two;
+    /// Private property "stretch-full" used internally.
     private property <int>      stretch-full: 1;
+    /// Private property "anim-dur" used internally.
     private property <duration> anim-dur:     180ms;
 
     border-width: border-px;
@@ -28,7 +38,7 @@ export component AccordionRow inherits Rectangle {
     animate height { duration: root.anim-dur; easing: ease-in-out; }
 
     VerticalLayout {
-        spacing: 0;
+        spacing: Sizes.no-size;
 
         header := Rectangle {
             height: Spacing.xl;
@@ -69,7 +79,7 @@ export component AccordionRow inherits Rectangle {
             Text {
                 x: Spacing.md;
                 y: Spacing.sm;
-                width: parent.width - Spacing.md * 2;
+                width: parent.width - Spacing.md * Sizes.two;
                 text: item.content;
                 font-size: Type.body-size;
                 color: Colors.text-secondary;

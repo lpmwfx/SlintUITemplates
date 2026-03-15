@@ -1,5 +1,6 @@
 import { Colors, Spacing, Type, FluentIcons } from "../tokens/theme.slint";
 
+/// D ro pd ow nm en ui te m struct.
 export struct DropdownMenuItem {
     id:        string,
     label:     string,
@@ -8,14 +9,22 @@ export struct DropdownMenuItem {
     separator: bool,
 }
 
+/// D ro pd ow ne nt ry component.
 export component DropdownEntry inherits Rectangle {
+    /// Input property "item".
     in property <DropdownMenuItem> item;
+    /// Callback fired for a ct iv at ed.
     callback activated(string);
 
+    /// Private property "border-px" used internally.
     private property <length> border-px:    1px;
+    /// Private property "half-xs" used internally.
     private property <length> half-xs:     Spacing.xs / 2;
+    /// Private property "stretch-full" used internally.
     private property <int>    stretch-full: 1;
+    /// Private property "op-enabled" used internally.
     private property <float>  op-enabled:   1.0;
+    /// Private property "op-disabled" used internally.
     private property <float>  op-disabled:  0.5;
 
     height: item.separator ? Spacing.xs : Spacing.xl;

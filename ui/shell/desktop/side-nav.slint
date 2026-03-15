@@ -2,75 +2,59 @@
 // Collapsible; shows icon + label per nav item; Segoe Fluent Icons.
 
 import { Colors, Spacing, Type, FluentIcons } from "../../tokens/theme.slint";
-import { NavItem } from "../types.slint";
+import { Sizes }    from "../../tokens/sizes.slint";
+import { NavItem }  from "../types.slint";
+import { NavItemRow } from "NavItemRow.slint";
 
+/// Collapsible desktop side navigation listing shell destinations.
 export component ShellSideNav inherits Rectangle {
+    /// Navigation items rendered in the side rail.
     in property <[NavItem]> items;
+    /// Id of the currently active navigation item.
     in property <string>    active-item: "";
+    /// Renders the compact icon-only mode when `true`.
     in property <bool>      collapsed: false;
+    /// Font family used to render icon glyph strings.
+    in property <string>    icon-font: "Segoe Fluent Icons";
+    /// Fired when the user chooses a navigation item.
     callback navigate(string);
+    /// Fired when the collapse/expand affordance is clicked.
     callback toggle-collapsed();
 
+    /// Private property "active-alpha" used internally.
+    private property <float>  active-alpha: Sizes.alpha-15;
+    /// Private property "indicator-w" used internally.
+    private property <length> indicator-w: Sizes.border-w-3;
+    /// Private property "indicator-radius" used internally.
+    private property <length> indicator-radius: Sizes.border-w-2;
+
     background: Colors.bg-surface;
-    // Width is controlled by parent (DesktopShell sets min-width/max-width)
 
     HorizontalLayout {
         // Nav item list
         VerticalLayout {
-            horizontal-stretch: 1;
+            horizontal-stretch: Sizes.one;
             padding-top: Spacing.sm;
 
-            for item in root.items: Rectangle {
-                height: Spacing.xl;
-                clip: true;
-                border-radius: 4px;
-                background: item.id == root.active-item ? Colors.accent.with-alpha(0.15) :
-                            item-ta.has-hover ? Colors.bg-elevated : transparent;
-
-                item-ta := TouchArea {
-                    clicked => { root.navigate(item.id); }
-                }
-
-                // Active indicator bar
-                if item.id == root.active-item: Rectangle {
-                    width: 3px;
-                    height: 20px;
-                    y: (parent.height - self.height) / 2;
-                    background: Colors.accent;
-                    border-radius: 2px;
-                }
-
-                HorizontalLayout {
-                    padding-left: Spacing.sm;
-                    padding-right: Spacing.sm;
-                    spacing: Spacing.sm;
-                    alignment: start;
-
-                    Text {
-                        text: item.icon;
-                        font-family: "Segoe Fluent Icons";
-                        font-size: Type.subtitle-size;
-                        color: item.id == root.active-item ? Colors.accent : Colors.text-primary;
-                        vertical-alignment: center;
-                        horizontal-alignment: center;
-                        width: Spacing.lg;
-                    }
-
-                    if !root.collapsed: Text {
-                        text: item.label;
-                        font-size: Type.body-size;
-                        color: item.id == root.active-item ? Colors.accent : Colors.text-primary;
-                        vertical-alignment: center;
-                    }
-                }
+            for item in root.items: NavItemRow {
+                item-id: item.id;
+                icon: item.icon;
+                label: item.label;
+                icon-font: root.icon-font;
+                is-active: item.id == root.active-item;
+                collapsed: root.collapsed;
+                active-alpha: root.active-alpha;
+                indicator-w: root.indicator-w;
+                indicator-radius: root.indicator-radius;
+                clicked => { root.navigate(item.id); }
             }
 
-            Rectangle { vertical-stretch: 1; }
+            Rectangle { vertical-stretch: Sizes.one; }
 
             // Collapse toggle button
             Rectangle {
                 height: Spacing.xl;
-                border-radius: 4px;
+                border-radius: Sizes.track-h;
                 background: collapse-ta.has-hover ? Colors.bg-elevated : transparent;
 
                 collapse-ta := TouchArea {
@@ -79,7 +63,7 @@ export component ShellSideNav inherits Rectangle {
 
                 Text {
                     text: root.collapsed ? FluentIcons.nav-expand : FluentIcons.nav-collapse;
-                    font-family: "Segoe Fluent Icons";
+                    font-family: root.icon-font;
                     font-size: Type.subtitle-size;
                     color: Colors.text-secondary;
                     horizontal-alignment: center;
@@ -90,7 +74,7 @@ export component ShellSideNav inherits Rectangle {
 
         // Right border
         Rectangle {
-            width: 1px;
+            width: Sizes.border-w;
             background: Colors.border;
         }
     }

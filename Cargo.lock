@@ -4293,8 +4293,10 @@ dependencies = [
  "slint",
  "slint-build",
  "slintscanners",
+ "thiserror 2.0.18",
  "tiny-skia",
  "toml 0.8.23",
+ "tracing",
  "windows-sys 0.52.0",
 ]
 

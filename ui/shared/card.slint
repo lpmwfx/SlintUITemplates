@@ -1,14 +1,21 @@
 import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
 
+/// C ar d component.
 export component Card inherits Rectangle {
+    /// Input property "title".
     in property <string> title: "";
+    /// Input property "subtitle".
     in property <string> subtitle: "";
+
+    /// Private property "shadow-y" used internally.
+    private property <length> shadow-y: Sizes.border-w-2;
 
     background: Colors.bg-elevated;
     border-radius: Spacing.sm;
     drop-shadow-blur: Spacing.sm;
-    drop-shadow-color: Colors.dark-mode ? #00000080 : #00000020;
-    drop-shadow-offset-y: 2px;
+    drop-shadow-color: Colors.shadow;
+    drop-shadow-offset-y: root.shadow-y;
 
     VerticalLayout {
         padding: Spacing.md;

@@ -8,9 +8,13 @@ import { Colors, Spacing, Sizes } from "../tokens/theme.slint";
 // dragged(dx, dy)  — cumulative offset from press point (logical px).
 // drag-started()   — fires on BOTH mouse-press AND release so callers can
 //                    capture and re-anchor their drag-base value each time.
+/// D ra gh an dl e component.
 export component DragHandle inherits Rectangle {
+    /// Input property "vertical".
     in property <bool> vertical: false;
+    /// Callback fired for d ra gg ed.
     callback dragged(float, float);  // cumulative dx, dy from press point (logical px)
+    /// Callback fired for d ra g s ta rt ed.
     callback drag-started();         // fires on press and on release
 
     background: touch.has-hover ? Colors.accent : Colors.border;

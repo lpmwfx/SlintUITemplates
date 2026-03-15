@@ -1,14 +1,19 @@
 import { Colors, Spacing, Type, FluentIcons } from "../tokens/theme.slint";
 
+/// S eg me nt it em struct.
 export struct SegmentItem {
     id:    string,
     label: string,
     icon:  string,
 }
 
+/// S eg me nt ta b component.
 export component SegmentTab inherits Rectangle {
+    /// Input property "item".
     in property <SegmentItem> item;
+    /// Input property "active".
     in property <bool>        active: false;
+    /// Callback fired for c li ck ed.
     callback clicked(string);
 
     border-radius: Spacing.xs;

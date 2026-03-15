@@ -1,0 +1,101 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Sizes }                 from "../tokens/sizes.slint";
+import { Variants }              from "../globals/Variants.slint";
+import { ViewSlot }              from "../modules/ViewSlot.slint";
+import { Button }                from "../shared/button.slint";
+
+// ViewSlotDemo — demonstrates ViewSlot slot-id routing with nav buttons.
+/// V ie ws lo td em o component.
+export component ViewSlotDemo inherits VerticalLayout {
+    /// Private property "active-slot" used internally.
+    private property <string> active-slot: Variants.alpha;
+    /// Private property "alpha-subtle" used internally.
+    private property <float>  alpha-subtle: Sizes.alpha-10;
+
+    /// Private property "lbl-alpha" used internally.
+    private property <string> lbl-alpha: "Alpha";
+    /// Private property "lbl-beta" used internally.
+    private property <string> lbl-beta: "Beta";
+    /// Private property "lbl-gamma" used internally.
+    private property <string> lbl-gamma: "Gamma";
+    /// Private property "slot-alpha-text" used internally.
+    private property <string> slot-alpha-text: "slot-id: \"alpha\" \u{2014} visible when active == \"alpha\"";
+    /// Private property "slot-beta-text" used internally.
+    private property <string> slot-beta-text: "slot-id: \"beta\"";
+    /// Private property "slot-gamma-text" used internally.
+    private property <string> slot-gamma-text: "slot-id: \"gamma\"";
+
+    spacing: Spacing.sm;
+    width: Sizes.panel-xxxl;
+
+    // Nav buttons
+    HorizontalLayout {
+        spacing: Spacing.sm;
+        alignment: start;
+        Button {
+            label: root.lbl-alpha;
+            variant: root.active-slot == Variants.alpha ? Variants.primary : Variants.secondary;
+            clicked => { root.active-slot = Variants.alpha; }
+        }
+        Button {
+            label: root.lbl-beta;
+            variant: root.active-slot == Variants.beta ? Variants.primary : Variants.secondary;
+            clicked => { root.active-slot = Variants.beta; }
+        }
+        Button {
+            label: root.lbl-gamma;
+            variant: root.active-slot == Variants.gamma ? Variants.primary : Variants.secondary;
+            clicked => { root.active-slot = Variants.gamma; }
+        }
+    }
+
+    // Slot content area
+    Rectangle {
+        height: Sizes.thumb-sm;
+        border-width: Sizes.border-w;
+        border-color: Colors.border;
+        background: Colors.bg-surface;
+        clip: true;
+
+        ViewSlot {
+            slot-id: Variants.alpha;
+            active: root.active-slot;
+            width: parent.width; height: parent.height;
+            Text {
+                text: root.slot-alpha-text;
+                color: Colors.text-primary;
+                font-size: Type.body-size;
+                horizontal-alignment: center;
+                vertical-alignment: center;
+            }
+        }
+
+        ViewSlot {
+            slot-id: Variants.beta;
+            active: root.active-slot;
+            width: parent.width; height: parent.height;
+            background: Colors.accent.with-alpha(root.alpha-subtle);
+            Text {
+                text: root.slot-beta-text;
+                color: Colors.accent;
+                font-size: Type.body-size;
+                horizontal-alignment: center;
+                vertical-alignment: center;
+            }
+        }
+
+        ViewSlot {
+            slot-id: Variants.gamma;
+            active: root.active-slot;
+            width: parent.width; height: parent.height;
+            background: Colors.bg-elevated;
+            Text {
+                text: root.slot-gamma-text;
+                color: Colors.text-secondary;
+                font-size: Type.body-size;
+                horizontal-alignment: center;
+                vertical-alignment: center;
+            }
+        }
+    }
+}

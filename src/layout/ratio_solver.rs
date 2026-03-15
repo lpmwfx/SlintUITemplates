@@ -13,9 +13,13 @@ const RATIO_EPSILON: f32 = 0.001;
 
 /// A resizable panel with a normalized ratio and min/max constraints.
 #[derive(Debug, Clone)]
+/// P an el struct.
 pub struct Panel {
+    /// I d.
     pub id:    String,
+    /// R at io.
     pub ratio: f32,
+    /// C on st ra in t.
     pub constraint: Constraint,
 }
 

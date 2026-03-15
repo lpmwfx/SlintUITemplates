@@ -1,5 +1,6 @@
 /// Target platform for AppShell rendering.
 #[derive(Debug, Clone, PartialEq, Default)]
+/// P la tf or m enum.
 pub enum Platform {
     #[default]
     Windows,

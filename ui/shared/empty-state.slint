@@ -1,13 +1,20 @@
 import { Colors, Spacing, Type, FluentIcons } from "../tokens/theme.slint";
 import { Button } from "button.slint";
 
+/// E mp ty st at e component.
 export component EmptyState inherits Rectangle {
+    /// Input property "icon".
     in property <string> icon: "\u{E8FD}";
+    /// Input property "title".
     in property <string> title: "No items";
+    /// Input property "description".
     in property <string> description: "";
+    /// Input property "action-label".
     in property <string> action-label: "";
+    /// Callback fired for a ct io n.
     callback action();
 
+    /// Private property "icon-sz" used internally.
     private property <length> icon-sz: Type.heading-size * 2;
 
     background: transparent;

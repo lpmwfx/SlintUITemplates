@@ -1,10 +1,19 @@
 import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Sizes }               from "../tokens/sizes.slint";
 
+/// N av ba r component.
 export component NavBar inherits Rectangle {
+    /// Input property "breadcrumb".
     in property <string> breadcrumb: "";
+    /// Input property "can-go-back".
     in property <bool> can-go-back: false;
+    /// Callback fired for g o b ac k.
     callback go-back();
+    /// Callback fired for n av ig at e.
     callback navigate(string);
+
+    /// Private property "back-icon" used internally.
+    private property <string> back-icon: "\u{2190}";
 
     background: Colors.bg-surface;
 
@@ -16,10 +25,10 @@ export component NavBar inherits Rectangle {
 
         // Back button
         if root.can-go-back: Rectangle {
-            width: 32px;
+            width: Sizes.icon-xl;
 
             Text {
-                text: "\u{2190}";
+                text: root.back-icon;
                 font-size: Type.subtitle-size;
                 color: Colors.text-primary;
                 horizontal-alignment: center;

@@ -1,8 +1,15 @@
 import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
+import { FluentMotion } from "../tokens/fluent/motion.slint";
 
+/// P ro gr es sb ar component.
 export component ProgressBar inherits Rectangle {
-    in property <float> value: 0.0;      // 0.0..1.0
+    /// Input property "value".
+    in property <float> value: Sizes.no-fill;      // 0.0..1.0
+    /// Input property "show-label".
     in property <bool>  show-label: false;
+    /// Input property "label-suffix".
+    in property <string> label-suffix: "%";
 
     height: Spacing.sm;
 
@@ -10,28 +17,28 @@ export component ProgressBar inherits Rectangle {
     Rectangle {
         width: parent.width;
         height: parent.height;
-        border-radius: parent.height / 2;
+        border-radius: parent.height / Sizes.two;
         background: Colors.bg-surface;
-        border-width: 1px;
+        border-width: Sizes.border-w;
         border-color: Colors.border;
 
         // Fill
         Rectangle {
-            x: 0;
-            y: 0;
+            x: Sizes.no-size;
+            y: Sizes.no-size;
             width: parent.width * root.value;
             height: parent.height;
-            border-radius: parent.height / 2;
+            border-radius: parent.height / Sizes.two;
             background: Colors.accent;
 
-            animate width { duration: 200ms; easing: ease-in-out; }
+            animate width { duration: FluentMotion.medium; easing: ease-in-out; }
         }
     }
 
     if root.show-label: Text {
-        x: (parent.width - self.width) / 2;
+        x: (parent.width - self.width) / Sizes.two;
         y: -(self.height + Spacing.xs);
-        text: Math.round(root.value * 100) + "%";
+        text: Math.round(root.value * Sizes.hundred) + root.label-suffix;
         font-size: Type.caption-size;
         color: Colors.text-secondary;
     }

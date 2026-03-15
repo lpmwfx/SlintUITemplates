@@ -1,21 +1,34 @@
+/// S pa ci ng global values.
 export global Spacing {
     // ── Existing scale (used by components for container sizing) ──────────
+    /// Output property "xs".
     out property <length> xs:  4px;
+    /// Output property "sm".
     out property <length> sm:  8px;
+    /// Output property "md".
     out property <length> md:  16px;
+    /// Output property "lg".
     out property <length> lg:  24px;
+    /// Output property "xl".
     out property <length> xl:  48px;   // component container height (nav rows, toolbar)
 
     // ── Fluent 2 control heights ──────────────────────────────────────────
+    /// Output property "control-sm".
     out property <length> control-sm: 24px;
+    /// Output property "control-md".
     out property <length> control-md: 32px;
+    /// Output property "control-lg".
     out property <length> control-lg: 40px;
 
     // ── Chrome ────────────────────────────────────────────────────────────
+    /// Output property "handle-thickness".
     out property <length> handle-thickness: 5px;
+    /// Output property "handle-hit".
     out property <length> handle-hit:       12px;
 
     // ── Utility ───────────────────────────────────────────────────────────
+    /// Output property "border".
     out property <length> border: 1px;   // standard 1px divider / border
+    /// Output property "none".
     out property <length> none:   0px;   // zero-length (collapsed state)
 }

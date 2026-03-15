@@ -1,0 +1,43 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
+
+// MobileNavItem — a single nav item in the mobile bottom tab bar.
+/// M ob il en av it em component.
+export component MobileNavItem inherits Rectangle {
+    /// Input property "item-id".
+    in property <string> item-id;
+    /// Input property "icon".
+    in property <string> icon;
+    /// Input property "label".
+    in property <string> label;
+    /// Input property "is-active".
+    in property <bool>   is-active: false;
+    /// Callback fired for c li ck ed.
+    callback clicked();
+
+    horizontal-stretch: Sizes.one;
+    background: transparent;
+
+    nav-ta := TouchArea {
+        clicked => { root.clicked(); }
+    }
+
+    VerticalLayout {
+        alignment: center;
+        spacing: Spacing.xs;
+
+        Text {
+            text: root.icon;
+            font-size: Type.subtitle-size;
+            color: root.is-active ? Colors.accent : Colors.text-secondary;
+            horizontal-alignment: center;
+        }
+
+        Text {
+            text: root.label;
+            font-size: Type.caption-size;
+            color: root.is-active ? Colors.accent : Colors.text-secondary;
+            horizontal-alignment: center;
+        }
+    }
+}

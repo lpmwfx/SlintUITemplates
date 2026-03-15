@@ -1,5 +1,6 @@
 import { Colors, Spacing, Type, FluentIcons } from "../tokens/theme.slint";
 
+/// C bf ac ti on struct.
 export struct CbfAction {
     id:      string,
     icon:    string,
@@ -7,8 +8,11 @@ export struct CbfAction {
     enabled: bool,
 }
 
+/// C bf pr im ar yb tn component.
 export component CbfPrimaryBtn inherits Rectangle {
+    /// Input property "item".
     in property <CbfAction> item;
+    /// Callback fired for a ct iv at ed.
     callback activated(string);
 
     width: Spacing.xl;

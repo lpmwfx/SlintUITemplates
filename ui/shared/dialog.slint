@@ -1,24 +1,40 @@
-import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Colors, Spacing, Type, FluentColors } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
+import { DialogButton } from "DialogButton.slint";
 
+/// D ia lo g component.
 export component Dialog inherits Rectangle {
+    /// Input property "title".
     in property <string> title: "Dialog";
+    /// Input property "cancel-label".
+    in property <string> cancel-label: "Cancel";
+    /// Input property "confirm-label".
+    in property <string> confirm-label: "OK";
     // visible is the built-in — caller sets visible: true/false directly
+    /// Callback fired for c on fi rm ed.
     callback confirmed();
+    /// Callback fired for c an ce ll ed.
     callback cancelled();
 
+    // Overlay constants
+    /// Private property "overlay-bg" used internally.
+    private property <color> overlay-bg:     FluentColors.overlay-medium;
+    /// Private property "shadow-color" used internally.
+    private property <color> shadow-color:   FluentColors.overlay-light;
+
     // Full overlay
-    background: #00000060;
+    background: root.overlay-bg;
 
     // Center card
     Rectangle {
-        width: 400px;
-        height: 200px;
-        x: (parent.width - self.width) / 2;
-        y: (parent.height - self.height) / 2;
+        width: Sizes.panel-max;
+        height: Sizes.panel-sm;
+        x: (parent.width - self.width) / Sizes.two;
+        y: (parent.height - self.height) / Sizes.two;
         background: Colors.bg-elevated;
         border-radius: Spacing.sm;
         drop-shadow-blur: Spacing.lg;
-        drop-shadow-color: #00000040;
+        drop-shadow-color: root.shadow-color;
 
         VerticalLayout {
             padding: Spacing.lg;
@@ -32,52 +48,28 @@ export component Dialog inherits Rectangle {
             }
 
             // Spacer
-            Rectangle { vertical-stretch: 1; }
+            Rectangle { vertical-stretch: Sizes.one; }
 
             // Action buttons
             HorizontalLayout {
                 alignment: end;
                 spacing: Spacing.sm;
 
-                // Cancel
-                Rectangle {
-                    width: 80px;
-                    height: 36px;
-                    border-radius: Spacing.xs;
-                    background: cancel-ta.has-hover ? Colors.bg-surface : transparent;
-
-                    cancel-ta := TouchArea {
-                        clicked => { root.cancelled(); }
-                    }
-
-                    Text {
-                        text: "Cancel";
-                        font-size: Type.body-size;
-                        color: Colors.text-primary;
-                        horizontal-alignment: center;
-                        vertical-alignment: center;
-                    }
+                DialogButton {
+                    label: root.cancel-label;
+                    bg-normal: transparent;
+                    bg-hover: Colors.bg-surface;
+                    text-color: Colors.text-primary;
+                    clicked => { root.cancelled(); }
                 }
 
-                // Confirm
-                Rectangle {
-                    width: 80px;
-                    height: 36px;
-                    border-radius: Spacing.xs;
-                    background: confirm-ta.has-hover ? Colors.accent-hover : Colors.accent;
-
-                    confirm-ta := TouchArea {
-                        clicked => { root.confirmed(); }
-                    }
-
-                    Text {
-                        text: "OK";
-                        font-size: Type.body-size;
-                        font-weight: Type.weight-semibold;
-                        color: Colors.accent-text;
-                        horizontal-alignment: center;
-                        vertical-alignment: center;
-                    }
+                DialogButton {
+                    label: root.confirm-label;
+                    bg-normal: Colors.accent;
+                    bg-hover: Colors.accent-hover;
+                    text-color: Colors.accent-text;
+                    text-weight: Type.weight-semibold;
+                    clicked => { root.confirmed(); }
                 }
             }
         }

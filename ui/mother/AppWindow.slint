@@ -1,6 +1,8 @@
 import { Palette }                           from "std-widgets.slint";
 import { Theme }                             from "../state/Theme.slint";
 import { Spacing }                           from "../tokens/theme.slint";
+import { Sizes }                             from "../tokens/sizes.slint";
+import { Variants }                          from "../globals/Variants.slint";
 import { PanelContainer, PanelItem }         from "../modules/PanelContainer.slint";
 
 // AppWindow — the ONLY state owner in the entire UI.
@@ -14,19 +16,24 @@ import { PanelContainer, PanelItem }         from "../modules/PanelContainer.sli
 //   dark   → always dark
 //   light  → always light
 
+/// A pp wi nd ow component.
 export component AppWindow inherits Window {
-    preferred-width:  1280px;
-    preferred-height: 800px;
-    title: "SlintUITemplates";
+    preferred-width:  Sizes.win-width-xl;
+    preferred-height: Sizes.win-height-xl;
+    title: root.app-title;
+    /// Private property "app-title" used internally.
+    private property <string> app-title: "SlintUITemplates";
 
     // ── Theme state ────────────────────────────────────────────────────────
-    in-out property <string> theme-mode: "system";
-    in-out property <string> material: "solid";  // "solid" | "mica" | "acrylic"
+    /// Two-way property "theme-mode".
+    in-out property <string> theme-mode: Variants.system;
+    /// Two-way property "material".
+    in-out property <string> material: Variants.solid;  // "solid" | "mica" | "acrylic"
 
     // Reactive: recomputes whenever theme-mode or OS scheme changes
     property <bool> effective-dark:
-        theme-mode == "dark"  ? true  :
-        theme-mode == "light" ? false :
+        theme-mode == Variants.dark  ? true  :
+        theme-mode == Variants.light ? false :
         Palette.color-scheme == ColorScheme.dark;
 
     // Drive Theme global — AppWindow is the only writer
@@ -37,15 +44,17 @@ export component AppWindow inherits Window {
 
     // ── Panel layout state ──────────────────────────────────────────────────
     // Rust pushes [PanelItem] here after parsing DSL + solving geometry.
+    /// Two-way property "panels".
     in-out property <[PanelItem]> panels;
 
     // Drag event — Rust adapter recalculates ratios, re-pushes model
+    /// Callback fired for p an el d ra gg ed.
     callback panel-dragged(int, float, float);   // id, dx, dy in logical px
 
     // ── Layout ──────────────────────────────────────────────────────────────
     PanelContainer {
-        width:  100%;
-        height: 100%;
+        width:  root.width;
+        height: root.height;
         panels: root.panels;
         panel-dragged(id, dx, dy) => { root.panel-dragged(id, dx, dy); }
     }

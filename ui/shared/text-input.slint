@@ -1,11 +1,19 @@
 import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
 
+/// T ex ti np ut component.
 export component TextInput inherits Rectangle {
+    /// Input property "label".
     in property <string> label: "";
+    /// Input property "value".
     in property <string> value: "";
+    /// Input property "placeholder".
     in property <string> placeholder: "";
+    /// Input property "error".
     in property <string> error: "";
+    /// Callback fired for c ha ng ed.
     callback changed(string);
+    /// Callback fired for s ub mi tt ed.
     callback submitted(string);
 
     height: label != "" ? Spacing.xl + Type.caption-size + Spacing.xs : Spacing.xl;
@@ -23,7 +31,7 @@ export component TextInput inherits Rectangle {
         Rectangle {
             height: Spacing.xl;
             border-radius: Spacing.xs;
-            border-width: 1px;
+            border-width: Sizes.border-w;
             border-color: root.error != "" ? Colors.error :
                           input.has-focus ? Colors.border-focus : Colors.border;
             background: Colors.bg-elevated;

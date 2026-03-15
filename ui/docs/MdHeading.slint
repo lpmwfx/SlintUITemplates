@@ -1,0 +1,59 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Sizes }                 from "../tokens/sizes.slint";
+import { Variants }              from "../globals/Variants.slint";
+
+// MdHeading — renders H1, H2, H3 blocks based on kind.
+/// M dh ea di ng component.
+export component MdHeading inherits VerticalLayout {
+    /// Input property "kind".
+    in property <string> kind;
+    /// Input property "text".
+    in property <string> text;
+
+    /// Private property "gap-sm" used internally.
+    private property <length> gap-sm: Sizes.border-w-2;
+
+    // H1
+    if root.kind == Variants.h1: VerticalLayout {
+        padding-top: Spacing.lg;
+        padding-bottom: Spacing.xs;
+        spacing: Spacing.xs;
+
+        Text {
+            text: root.text;
+            font-size: Type.title-size;
+            font-weight: Type.weight-bold;
+            color: Colors.text-primary;
+            wrap: word-wrap;
+        }
+        Rectangle { height: Sizes.border-w; background: Colors.border; }
+    }
+
+    // H2
+    if root.kind == Variants.h2: VerticalLayout {
+        padding-top: Spacing.md;
+        padding-bottom: Spacing.xs;
+
+        Text {
+            text: root.text;
+            font-size: Type.heading-size;
+            font-weight: Type.weight-bold;
+            color: Colors.text-primary;
+            wrap: word-wrap;
+        }
+    }
+
+    // H3
+    if root.kind == Variants.h3: VerticalLayout {
+        padding-top: Spacing.sm;
+        padding-bottom: root.gap-sm;
+
+        Text {
+            text: root.text;
+            font-size: Type.subtitle-size;
+            font-weight: Type.weight-semibold;
+            color: Colors.text-primary;
+            wrap: word-wrap;
+        }
+    }
+}

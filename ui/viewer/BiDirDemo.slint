@@ -1,0 +1,94 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Sizes }                   from "../tokens/sizes.slint";
+import { DragHandle }              from "../modules/DragHandle.slint";
+
+// Bi-directional 3-panel demo — drag either handle, both neighbors update.
+// Ratio math: ratio_a + ratio_b + ratio_c = 1.0 always (zero-sum flex).
+component BiDirDemo inherits Rectangle {
+    // Panel ratios — normalized to sum 1.0.  Min per panel: 0.1
+    /// Private property "ratio-a" used internally.
+    private property <float> ratio-a: Sizes.quarter;
+    /// Private property "ratio-c" used internally.
+    private property <float> ratio-c: Sizes.quarter;
+    // ratio-b is derived — always 1 - ratio-a - ratio-c (zero-sum flex)
+    /// Private property "ratio-b" used internally.
+    private property <float> ratio-b: Sizes.fill - root.ratio-a - root.ratio-c;
+    /// Private property "panel-b-alpha" used internally.
+    private property <float> panel-b-alpha: Sizes.alpha-12;
+
+    /// Private property "lbl-a" used internally.
+    private property <string> lbl-a: "A ";
+    /// Private property "lbl-b" used internally.
+    private property <string> lbl-b: "B ";
+    /// Private property "lbl-c" used internally.
+    private property <string> lbl-c: "C ";
+    /// Private property "pct-suffix" used internally.
+    private property <string> pct-suffix: "%";
+
+    width: Sizes.panel-xxxl;
+    height: Sizes.thumb-md;
+    border-width: Sizes.border-w;
+    border-color: Colors.border;
+    clip: true;
+
+    HorizontalLayout {
+        // Panel A
+        Rectangle {
+            horizontal-stretch: Sizes.zero;
+            min-width: root.width * root.ratio-a;
+            max-width: root.width * root.ratio-a;
+            background: Colors.bg-surface;
+            Text {
+                text: root.lbl-a + Math.round(root.ratio-a * Sizes.hundred) + root.pct-suffix;
+                font-size: Type.caption-size;
+                color: Colors.text-secondary;
+                horizontal-alignment: center;
+                vertical-alignment: center;
+            }
+        }
+
+        // Handle A–B: drag transfers ratio between A and B, C stays fixed.
+        DragHandle {
+            min-width: Spacing.handle-thickness;
+            max-width: Spacing.handle-thickness;
+            vertical: false;
+            dragged(dx, dy) => { root.ratio-a = clamp(root.ratio-a + dx / (root.width / Sizes.border-w), Sizes.ratio-sm, Sizes.fill - root.ratio-c - Sizes.ratio-sm); }
+        }
+
+        // Panel B
+        Rectangle {
+            horizontal-stretch: Sizes.zero;
+            min-width: root.width * root.ratio-b;
+            max-width: root.width * root.ratio-b;
+            background: Colors.accent.with-alpha(root.panel-b-alpha);
+            Text {
+                text: root.lbl-b + Math.round(root.ratio-b * Sizes.hundred) + root.pct-suffix;
+                font-size: Type.caption-size;
+                color: Colors.text-primary;
+                horizontal-alignment: center;
+                vertical-alignment: center;
+            }
+        }
+
+        // Handle B–C: drag transfers ratio between B and C, A stays fixed.
+        DragHandle {
+            min-width: Spacing.handle-thickness;
+            max-width: Spacing.handle-thickness;
+            vertical: false;
+            dragged(dx, dy) => { root.ratio-c = clamp(root.ratio-c - dx / (root.width / Sizes.border-w), Sizes.ratio-sm, Sizes.fill - root.ratio-a - Sizes.ratio-sm); }
+        }
+
+        // Panel C
+        Rectangle {
+            horizontal-stretch: Sizes.one;
+            background: Colors.bg-elevated;
+            Text {
+                text: root.lbl-c + Math.round(root.ratio-c * Sizes.hundred) + root.pct-suffix;
+                font-size: Type.caption-size;
+                color: Colors.text-secondary;
+                horizontal-alignment: center;
+                vertical-alignment: center;
+            }
+        }
+    }
+}

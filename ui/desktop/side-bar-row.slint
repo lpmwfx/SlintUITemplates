@@ -3,11 +3,17 @@ import { NavItem } from "types.slint";
 
 // ── SideBarRow — enkelt navigationsrække (header eller fil-item) ──────────────
 // Pure child: receives item data via in property, emits clicks via callbacks.
+/// S id eb ar ro w component.
 export component SideBarRow inherits Rectangle {
+    /// Input property "item".
     in property <NavItem> item;
+    /// Input property "is-active".
     in property <bool>    is-active;
+    /// Input property "sidebar-collapsed".
     in property <bool>    sidebar-collapsed;
+    /// Callback fired for n av ig at e.
     callback navigate(string);
+    /// Callback fired for t og gl e g ro up.
     callback toggle-group(string);
 
     height:     item.hidden ? Spacing.none : Spacing.xl;

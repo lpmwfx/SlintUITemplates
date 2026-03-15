@@ -1,0 +1,75 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Sizes }                 from "../tokens/sizes.slint";
+import { Variants }              from "../globals/Variants.slint";
+
+// MdListItem — renders L0 and L1 list items with bullet characters.
+/// M dl is ti te m component.
+export component MdListItem inherits VerticalLayout {
+    /// Input property "kind".
+    in property <string> kind;
+    /// Input property "text".
+    in property <string> text;
+    /// Input property "bullet-char".
+    in property <string> bullet-char: "\u{2022}";
+    /// Input property "bullet-sub-char".
+    in property <string> bullet-sub-char: "\u{25E6}";
+
+    /// Private property "gap-sm" used internally.
+    private property <length> gap-sm: Sizes.border-w-2;
+
+    // Level 0
+    if root.kind == Variants.li: VerticalLayout {
+        width: parent.width;
+        padding-top: root.gap-sm;
+        padding-bottom: root.gap-sm;
+
+        HorizontalLayout {
+            width: parent.width;
+            spacing: Spacing.xs;
+            padding-left: Spacing.md;
+
+            Text {
+                text: root.bullet-char;
+                width: Spacing.sm + Sizes.track-h;
+                font-size: Type.body-size;
+                color: Colors.accent;
+                vertical-alignment: top;
+            }
+            Text {
+                horizontal-stretch: Sizes.one;
+                text: root.text;
+                font-size: Type.body-size;
+                color: Colors.text-primary;
+                wrap: word-wrap;
+            }
+        }
+    }
+
+    // Level 1+
+    if root.kind == Variants.li2: VerticalLayout {
+        width: parent.width;
+        padding-top: root.gap-sm;
+        padding-bottom: root.gap-sm;
+
+        HorizontalLayout {
+            width: parent.width;
+            spacing: Spacing.xs;
+            padding-left: Spacing.lg + Spacing.md;
+
+            Text {
+                text: root.bullet-sub-char;
+                width: Spacing.sm + Sizes.track-h;
+                font-size: Type.body-size;
+                color: Colors.text-secondary;
+                vertical-alignment: top;
+            }
+            Text {
+                horizontal-stretch: Sizes.one;
+                text: root.text;
+                font-size: Type.body-size;
+                color: Colors.text-secondary;
+                wrap: word-wrap;
+            }
+        }
+    }
+}

@@ -1,19 +1,32 @@
 // Fluent 2 motion / animation durations.
 // Reference: https://learn.microsoft.com/en-us/windows/apps/design/motion/timing-and-easing
 
+/// F lu en tm ot io n global values.
 export global FluentMotion {
     // Duration tokens (milliseconds as int — use in animate blocks)
+    /// Output property "fast".
     out property <duration> fast:   83ms;    // micro interactions (hover, press)
+    /// Output property "normal".
     out property <duration> normal: 167ms;   // standard transitions (open, close)
+    /// Output property "slow".
     out property <duration> slow:   250ms;   // larger transitions (page, panel)
+    /// Output property "slower".
     out property <duration> slower: 383ms;   // deliberate / emphasis transitions
+    /// Output property "tick".
     out property <duration> tick:   16ms;    // animation frame tick (~60fps)
+    /// Output property "medium".
+    out property <duration> medium: 200ms;   // slides, progress bars
+    /// Output property "quick".
+    out property <duration> quick:  150ms;   // toggles, micro-transitions
 
     // Easing curves — Slint easing type
     // Fluent uses:  cubic-bezier(0.1, 0.9, 0.2, 1.0) for decelerate (entrances)
     //               cubic-bezier(0.7, 0.0, 1.0, 0.5) for accelerate (exits)
     // Slint built-ins:  ease-in-out  ≈ standard,  ease  ≈ decelerate
+    /// Output property "entrance".
     out property <easing> entrance: ease-in-out;
+    /// Output property "exit".
     out property <easing> exit:     ease-in;
+    /// Output property "standard".
     out property <easing> standard: ease-in-out;
 }

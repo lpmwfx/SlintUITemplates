@@ -12,8 +12,10 @@ pub mod dsl;
 pub mod grid;
 /// Layout DSL parser, constraint solver, and ratio-based panel engine.
 pub mod layout;
+/// File I/O gateway — all `std::fs` calls are funnelled through this module.
+pub mod gateway;
 /// OS-level window backdrop and composition effects (Mica, Acrylic).
-pub mod platform;
+pub mod pal;
 /// Persistent application settings (zoom, theme, icons, font).
 pub mod settings;
 /// Platform-native window chrome, navigation models, and shell lifecycle.

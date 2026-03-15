@@ -1,0 +1,27 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
+
+/// S el ec tf ie ld it em component.
+export component SelectFieldItem inherits Rectangle {
+    /// Input property "label".
+    in property <string> label;
+    /// Input property "is-selected".
+    in property <bool>   is-selected: false;
+    /// Callback fired for p ic ke d.
+    callback picked(string);
+
+    height: Spacing.xl;
+    background: root.is-selected ? Colors.bg-surface : transparent;
+
+    Text {
+        x: Spacing.sm;
+        text: root.label;
+        font-size: Type.body-size;
+        color: Colors.text-primary;
+        vertical-alignment: center;
+    }
+
+    TouchArea {
+        clicked => { root.picked(root.label); }
+    }
+}

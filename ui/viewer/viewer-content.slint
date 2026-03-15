@@ -14,9 +14,13 @@ import { PageUtilities } from "page-utilities.slint";
 import { PagePopups }    from "page-popups.slint";
 import { PagePanels }    from "page-panels.slint";
 
+/// V ie we rc on te nt component.
 export component ViewerContent inherits Flickable {
+    /// Input property "active-view".
     in property <string> active-view: "";
+    /// Input property "canvas-frame".
     in property <image>  canvas-frame;
+    /// Input property "window-height".
     in property <length> window-height;
 
     viewport-width:  self.width;

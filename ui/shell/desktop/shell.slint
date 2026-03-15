@@ -3,6 +3,7 @@
 // Parent provides content as @children (placed inside the content frame).
 
 import { Colors, Spacing } from "../../tokens/theme.slint";
+import { Sizes }           from "../../tokens/sizes.slint";
 import { NavItem }         from "../types.slint";
 import { ShellToolbarItem } from "../types.slint";
 import { ShellToolbar }    from "tool-bar.slint";
@@ -11,24 +12,33 @@ import { ShellContentFrame } from "content-frame.slint";
 import { ShellStatusBar }  from "status-bar.slint";
 import { DragHandle }      from "../../modules/DragHandle.slint";
 
+/// Fluent desktop shell composed of toolbar, side navigation, content frame, and status bar.
 export component DesktopShell inherits VerticalLayout {
-    // Config inputs
+    /// Navigation items rendered in the left side navigation.
     in property <[NavItem]>          nav-items;
+    /// Toolbar items rendered in the optional toolbar row.
     in property <[ShellToolbarItem]> toolbar-items;
+    /// Controls whether the toolbar row is shown.
     in property <bool>               show-toolbar: false;
+    /// Id of the currently active content view.
     in property <string>             active-view: "";
+    /// Status text shown in the bottom status bar.
     in property <string>             status-text: "Ready";
+    /// Optional progress value shown in the status bar. Negative hides it.
     in property <float>              progress: -1.0;
 
     // State
-    private property <length> nav-width: 200px;
+    /// Private property "nav-width" used internally.
+    private property <length> nav-width: Sizes.panel-sm;
+    /// Private property "nav-collapsed" used internally.
     private property <bool>   nav-collapsed: nav-width <= Spacing.xl + Spacing.sm + Spacing.xs;
 
-    // Callbacks
+    /// Fired when a navigation destination is selected.
     callback navigate(string);
+    /// Fired when a toolbar action is selected.
     callback toolbar-clicked(string);
 
-    spacing: 0px;
+    spacing: Sizes.no-size;
 
     // ── Toolbar (optional) ────────────────────────────────────────────────
     if root.show-toolbar: ShellToolbar {
@@ -38,11 +48,11 @@ export component DesktopShell inherits VerticalLayout {
 
     // ── SideNav + Content (main area) ─────────────────────────────────────
     HorizontalLayout {
-        vertical-stretch: 1;
-        spacing: 0px;
+        vertical-stretch: Sizes.one;
+        spacing: Sizes.no-size;
 
         ShellSideNav {
-            horizontal-stretch: 0;
+            horizontal-stretch: Sizes.zero;
             min-width: root.nav-width;
             max-width: root.nav-width;
             items: root.nav-items;
@@ -51,7 +61,7 @@ export component DesktopShell inherits VerticalLayout {
             navigate(id) => { root.navigate(id); }
             toggle-collapsed() => {
                 root.nav-width = root.nav-collapsed
-                    ? 200px
+                    ? Sizes.panel-sm
                     : Spacing.xl + Spacing.sm;
             }
         }
@@ -60,17 +70,11 @@ export component DesktopShell inherits VerticalLayout {
             min-width: Spacing.handle-thickness;
             max-width: Spacing.handle-thickness;
             vertical: false;
-            dragged(dx, dy) => {
-                root.nav-width = clamp(
-                    root.nav-width + dx * 1px,
-                    Spacing.xl + Spacing.sm,
-                    320px,
-                );
-            }
+            dragged(dx, dy) => { root.nav-width = clamp(root.nav-width + dx * Sizes.border-w, Spacing.xl + Spacing.sm, Sizes.panel-xxl); }
         }
 
         ShellContentFrame {
-            horizontal-stretch: 1;
+            horizontal-stretch: Sizes.one;
             @children
         }
     }

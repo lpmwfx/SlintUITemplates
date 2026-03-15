@@ -2,6 +2,8 @@
 // Toggle between platforms to see Fluent 2 vs Material 3 shell.
 
 import { Colors, Spacing, Type, FluentIcons } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
+import { Variants } from "../globals/Variants.slint";
 import { AppShell, MobileShell } from "../shell/app-shell.slint";
 import { NavItem }      from "../desktop/types.slint";
 import { Button }       from "../shared/button.slint";
@@ -10,10 +12,45 @@ import { HomeView }     from "../views/home.slint";
 import { ListView }     from "../views/list.slint";
 import { SettingsView } from "../views/settings.slint";
 
+/// Viewer page demonstrating desktop and mobile shell composition with shared content slots.
 export component PageAppShell inherits VerticalLayout {
-    private property <string>    layout-mode: "windows";
-    private property <string>    active-view: "home";
+    /// Private property "layout-mode" used internally.
+    private property <string>    layout-mode: Variants.windows;
+    // ── private view ids ───────────────────────────────────────────────
+    /// Private property "view-home" used internally.
+    private property <string> view-home: "home";
+    /// Private property "view-list" used internally.
+    private property <string> view-list: "list";
+    /// Private property "view-settings" used internally.
+    private property <string> view-settings: "settings";
 
+    // Per-mode active views — resets to home on mode switch via derivation
+    /// Private property "active-windows" used internally.
+    private property <string>    active-windows: root.view-home;
+    /// Private property "active-android" used internally.
+    private property <string>    active-android: root.view-home;
+    /// Private property "active-view" used internally.
+    private property <string>    active-view: root.layout-mode == Variants.windows ? root.active-windows : root.active-android;
+
+    // ── demo labels ─────────────────────────────────────────────────────
+    /// Private property "shell-label-win" used internally.
+    private property <string> shell-label-win: "App Shell — Windows (Fluent 2)";
+    /// Private property "shell-label-android" used internally.
+    private property <string> shell-label-android: "App Shell — Android (Material 3)";
+    /// Private property "btn-to-android" used internally.
+    private property <string> btn-to-android: "→ Android";
+    /// Private property "btn-to-windows" used internally.
+    private property <string> btn-to-windows: "→ Windows";
+    /// Private property "status-prefix" used internally.
+    private property <string> status-prefix: "Active: ";
+    /// Private property "mobile-title" used internally.
+    private property <string> mobile-title: "App";
+    /// Private property "phone-w" used internally.
+    private property <length> phone-w: Sizes.comp-380;
+    /// Private property "phone-border" used internally.
+    private property <length> phone-border: Sizes.border-w-2;
+
+    /// Private property "nav-items" used internally.
     private property <[NavItem]> nav-items: [
         { id: "home",     label: "Home",     icon: FluentIcons.home },
         { id: "list",     label: "List",     icon: FluentIcons.list },
@@ -29,61 +66,58 @@ export component PageAppShell inherits VerticalLayout {
             padding-right: Spacing.md;
             spacing: Spacing.sm;
             Text {
-                text: root.layout-mode == "windows" ? "App Shell — Windows (Fluent 2)" : "App Shell — Android (Material 3)";
+                text: root.layout-mode == Variants.windows ? root.shell-label-win : root.shell-label-android;
                 font-size: Type.subtitle-size;
                 font-weight: Type.weight-semibold;
                 color: Colors.text-primary;
                 vertical-alignment: center;
             }
-            Rectangle { horizontal-stretch: 1; }
+            Rectangle { horizontal-stretch: Sizes.fill; }
             Button {
-                label: root.layout-mode == "windows" ? "→ Android" : "→ Windows";
-                variant: "secondary";
-                clicked => {
-                    root.layout-mode = root.layout-mode == "windows" ? "android" : "windows";
-                    root.active-view = "home";
-                }
+                label: root.layout-mode == Variants.windows ? root.btn-to-android : root.btn-to-windows;
+                variant: Variants.secondary;
+                clicked => { root.layout-mode = root.layout-mode == Variants.windows ? Variants.android : Variants.windows; }
             }
         }
     }
 
     // ── Windows: AppShell (Fluent 2 desktop) ──────────────────────────────
-    if root.layout-mode == "windows": AppShell {
-        vertical-stretch: 1;
+    if root.layout-mode == Variants.windows: AppShell {
+        vertical-stretch: Sizes.fill;
         nav-items: root.nav-items;
-        status-text: "Active: " + root.active-view;
+        status-text: root.status-prefix + root.active-view;
         active-slot: root.active-view;
-        slot-changed(id) => { root.active-view = id; }
+        slot-changed(id) => { root.active-windows = id; }
 
-        ViewSlot { slot-id: "home";     active: root.active-view; HomeView {} }
-        ViewSlot { slot-id: "list";     active: root.active-view; ListView {} }
-        ViewSlot { slot-id: "settings"; active: root.active-view; SettingsView {} }
+        ViewSlot { slot-id: root.view-home;     active: root.active-view; HomeView {} }
+        ViewSlot { slot-id: root.view-list;     active: root.active-view; ListView {} }
+        ViewSlot { slot-id: root.view-settings; active: root.active-view; SettingsView {} }
     }
 
     // ── Android: MobileShell (Material 3) — centered phone frame ─────────
-    if root.layout-mode == "android": Rectangle {
-        vertical-stretch: 1;
+    if root.layout-mode == Variants.android: Rectangle {
+        vertical-stretch: Sizes.fill;
         background: Colors.bg-primary;
 
         // Phone frame (simulated)
         Rectangle {
-            width: 380px;
+            width: root.phone-w;
             height: parent.height;
-            x: (parent.width - self.width) / 2;
-            border-width: 2px;
+            x: (parent.width - self.width) / Sizes.two;
+            border-width: root.phone-border;
             border-color: Colors.border-strong;
 
             MobileShell {
-                title: "App";
+                title: root.mobile-title;
                 nav-items: root.nav-items;
                 active-view: root.active-view;
                 fab-icon: FluentIcons.add;
                 show-fab: true;
-                navigate(id) => { root.active-view = id; }
+                navigate(id) => { root.active-android = id; }
 
-                ViewSlot { slot-id: "home";     active: root.active-view; HomeView {} }
-                ViewSlot { slot-id: "list";     active: root.active-view; ListView {} }
-                ViewSlot { slot-id: "settings"; active: root.active-view; SettingsView {} }
+                ViewSlot { slot-id: root.view-home;     active: root.active-view; HomeView {} }
+                ViewSlot { slot-id: root.view-list;     active: root.active-view; ListView {} }
+                ViewSlot { slot-id: root.view-settings; active: root.active-view; SettingsView {} }
             }
         }
     }

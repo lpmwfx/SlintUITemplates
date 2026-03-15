@@ -1,12 +1,20 @@
-import { Colors, Spacing, Type, FluentIcons } from "../tokens/theme.slint";
+import { Colors, Spacing } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
+import { StarItem } from "StarItem.slint";
 
+/// R at in g component.
 export component Rating inherits Rectangle {
-    in-out property <int> value: 0;
-    in property <int>  max: 5;
+    /// Input property "value".
+    in property <int> value: Sizes.zero;
+    /// Input property "max".
+    in property <int>  max: Sizes.five;
+    /// Input property "readonly".
     in property <bool> readonly: false;
+    /// Callback fired for c ha ng ed.
     callback changed(int);
 
-    private property <int> hover-val: 0;
+    /// Private property "hover-val" used internally.
+    private property <int> hover-val: Sizes.zero;
 
     height: Spacing.xl;
     background: transparent;
@@ -18,48 +26,19 @@ export component Rating inherits Rectangle {
             alignment: start;
             spacing: Spacing.xs;
 
-            for i in [1, 2, 3, 4, 5]: Rectangle {
+            for i in [Sizes.one, Sizes.two, Sizes.three, Sizes.four, Sizes.five]: StarItem {
                 visible: i <= root.max;
-                width: Spacing.lg;
-                height: Spacing.lg;
-                background: transparent;
-
-                Text {
-                    text: i <= (root.hover-val > 0 ? root.hover-val : root.value)
-                        ? FluentIcons.star-filled : FluentIcons.star;
-                    font-family: "Segoe Fluent Icons";
-                    font-size: Type.subtitle-size;
-                    color: i <= (root.hover-val > 0 ? root.hover-val : root.value)
-                        ? Colors.accent : Colors.text-disabled;
-                    horizontal-alignment: center;
-                    vertical-alignment: center;
-                }
-
-                star-ta := TouchArea {
-                    enabled: !root.readonly;
-                    clicked => {
-                        root.value = i;
-                        root.changed(i);
-                    }
-                    pointer-event(e) => {
-                        if e.kind == PointerEventKind.move || e.kind == PointerEventKind.down {
-                            root.hover-val = i;
-                        }
-                        if e.kind == PointerEventKind.up || e.kind == PointerEventKind.cancel {
-                            root.hover-val = 0;
-                        }
-                    }
-                }
+                index: i;
+                display-val: root.hover-val > Sizes.zero ? root.hover-val : root.value;
+                readonly: root.readonly;
+                clicked => { root.changed(i); }
+                hover-changed(val) => { root.hover-val = val; }
             }
         }
     }
 
     // Reset hover when mouse leaves the widget
     exit-ta := TouchArea {
-        pointer-event(e) => {
-            if e.kind == PointerEventKind.cancel {
-                root.hover-val = 0;
-            }
-        }
+        pointer-event(e) => { root.hover-val = e.kind == PointerEventKind.cancel ? Sizes.zero : root.hover-val; }
     }
 }

@@ -1,10 +1,21 @@
 import { Colors, Spacing } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
 
+/// S cr ol lv ie w component.
 export component ScrollView inherits Rectangle {
+    /// Input property "interactive".
     in property <bool>  interactive:    true;
+    /// Input property "show-scrollbar".
     in property <bool>  show-scrollbar: true;
+    /// Output property "viewport-width".
     out property <length> viewport-width  <=> fl.viewport-width;
+    /// Output property "viewport-height".
     out property <length> viewport-height <=> fl.viewport-height;
+
+    /// Private property "scrollbar-inset" used internally.
+    private property <length> scrollbar-inset: Sizes.border-w-2;
+    /// Private property "scrollbar-w" used internally.
+    private property <length> scrollbar-w: Sizes.border-w-3;
 
     clip: true;
 
@@ -18,12 +29,12 @@ export component ScrollView inherits Rectangle {
 
     // Vertical scrollbar thumb
     if root.show-scrollbar && fl.viewport-height > fl.height: Rectangle {
-        x: parent.width - Spacing.xs - 2px;
+        x: parent.width - Spacing.xs - root.scrollbar-inset;
         y: (-fl.viewport-y / fl.viewport-height) * fl.height;
-        width: 3px;
+        width: root.scrollbar-w;
         height: max((fl.height / fl.viewport-height) * fl.height, Spacing.md);
         border-radius: Spacing.xs;
         background: Colors.border-strong;
-        opacity: 0.7;
+        opacity: Sizes.three-quarter;
     }
 }

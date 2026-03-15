@@ -1,12 +1,21 @@
 import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Variants } from "../globals/Variants.slint";
 import { Card }   from "../shared/card.slint";
 import { Badge }  from "../shared/badge.slint";
 import { Button } from "../shared/button.slint";
 
-// Designer-editable home view.
-// Preview: slint-viewer ui/desktop/app-window.slint --auto-reload
+/// Default starter view shown for the `home` navigation slot.
+///
+/// Intended as a simple designer-editable page for app-specific content.
 export component HomeView inherits Rectangle {
     background: Colors.bg-primary;
+
+    /// Private property "card-subtitle" used internally.
+    private property <string> card-subtitle: "Edit ui/views/home.slint to design this view";
+    /// Private property "page-title" used internally.
+    private property <string> page-title: "Home";
+    /// Private property "card-title" used internally.
+    private property <string> card-title: "Getting started";
 
     VerticalLayout {
         padding: Spacing.lg;
@@ -14,22 +23,22 @@ export component HomeView inherits Rectangle {
         alignment: start;
 
         Text {
-            text: "Home";
+            text: root.page-title;
             font-size: Type.heading-size;
             font-weight: Type.weight-semibold;
             color: Colors.text-primary;
         }
 
         Card {
-            title: "Getting started";
-            subtitle: "Edit ui/views/home.slint to design this view";
+            title: root.card-title;
+            subtitle: root.card-subtitle;
         }
 
         HorizontalLayout {
             spacing: Spacing.sm;
-            Button { label: "Primary action"; variant: "primary"; clicked => {} }
-            Button { label: "Secondary"; variant: "secondary"; clicked => {} }
-            Badge { text: "New"; variant: "info"; }
+            Button { label: "Primary action"; variant: Variants.primary; clicked => {} }
+            Button { label: "Secondary"; variant: Variants.secondary; clicked => {} }
+            Badge { text: "New"; variant: Variants.info; }
         }
     }
 }

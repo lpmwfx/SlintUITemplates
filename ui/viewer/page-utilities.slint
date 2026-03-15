@@ -1,6 +1,7 @@
 // page-utilities — Label, Toolbar, MessageBar, EmptyState, Segmented, FormField
 
 import { Colors, Spacing, Type, FluentIcons } from "../tokens/theme.slint";
+import { Sizes }       from "../tokens/sizes.slint";
 import { Label }       from "../shared/label.slint";
 import { Toolbar, ToolbarItem } from "../shared/toolbar.slint";
 import { MessageBar }  from "../shared/message-bar.slint";
@@ -10,19 +11,32 @@ import { FormField }   from "../shared/form-field.slint";
 import { TextInput }   from "../shared/text-input.slint";
 import { ViewerSection } from "viewer-section.slint";
 
+/// Viewer page showcasing utility components such as tooltips, labels, skeletons, and empty states.
 export component PageUtilities inherits VerticalLayout {
     spacing: Spacing.md;
 
+    /// Private property "tb-w" used internally.
     private property <length> tb-w:     400px;
+    /// Private property "mb-w" used internally.
     private property <length> mb-w:     500px;
+    /// Private property "es-w" used internally.
     private property <length> es-w:     340px;
+    /// Private property "es-h" used internally.
     private property <length> es-h:     200px;
+    /// Private property "seg1-w" used internally.
     private property <length> seg1-w:   240px;
+    /// Private property "seg2-w" used internally.
     private property <length> seg2-w:   120px;
+    /// Private property "ff-w" used internally.
     private property <length> ff-w:     300px;
-    private property <length> border-px: 1px;
+    /// Private property "border-px" used internally.
+    private property <length> border-px: Sizes.border-w;
+    /// Private property "seg-val" used internally.
     private property <string> seg-val:   "day";
+    /// Private property "seg2-val" used internally.
     private property <string> seg2-val:  "list";
+    /// Private property "mb-info-msg" used internally.
+    private property <string> mb-info-msg: "Your session will expire in 10 minutes.";
 
     ViewerSection { title: "Label";
         HorizontalLayout {
@@ -66,7 +80,7 @@ export component PageUtilities inherits VerticalLayout {
         VerticalLayout {
             spacing: Spacing.sm;
             width: root.mb-w;
-            MessageBar { variant: "info";    message: "Your session will expire in 10 minutes."; action-label: "Renew"; }
+            MessageBar { variant: "info";    message: root.mb-info-msg; action-label: "Renew"; }
             MessageBar { variant: "warning"; message: "Unsaved changes — remember to save your work."; }
             MessageBar { variant: "error";   message: "Failed to connect to server."; action-label: "Retry"; }
             MessageBar { variant: "success"; message: "File saved successfully."; closable: true;

@@ -1,16 +1,20 @@
 import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Variants } from "../globals/Variants.slint";
 
+/// B ad ge component.
 export component Badge inherits Rectangle {
+    /// Input property "text".
     in property <string> text: "";
+    /// Input property "variant".
     in property <string> variant: "info";   // info | success | warning | error
 
     height: Type.caption-size + Spacing.sm;
     border-radius: Spacing.xs;
 
     background:
-        variant == "success" ? Colors.success :
-        variant == "warning" ? Colors.warning :
-        variant == "error"   ? Colors.error :
+        variant == Variants.success ? Colors.success :
+        variant == Variants.warning ? Colors.warning :
+        variant == Variants.error   ? Colors.error :
         Colors.accent;
 
     HorizontalLayout {

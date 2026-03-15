@@ -1,0 +1,59 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
+
+// MultiSelectChip — the trigger row for the multi-select dropdown.
+/// M ul ti se le ct ch ip component.
+export component MultiSelectChip inherits Rectangle {
+    /// Input property "selected-count".
+    in property <int>    selected-count: Sizes.zero;
+    /// Input property "first-selected".
+    in property <string> first-selected: "";
+    /// Input property "placeholder".
+    in property <string> placeholder: "Select...";
+    /// Input property "open".
+    in property <bool>   open: false;
+    /// Input property "enabled".
+    in property <bool>   enabled: true;
+    /// Callback fired for t og gl e o pe n.
+    callback toggle-open();
+
+    /// Private property "arrow-up" used internally.
+    private property <string> arrow-up:   "\u{25B2}";
+    /// Private property "arrow-down" used internally.
+    private property <string> arrow-down: "\u{25BC}";
+    /// Private property "selected-suffix" used internally.
+    private property <string> selected-suffix: " selected";
+
+    height: Spacing.xl;
+    border-radius: Spacing.xs;
+    border-width: Sizes.border-w;
+    border-color: root.open ? Colors.border-focus : Colors.border;
+    background: Colors.bg-elevated;
+
+    HorizontalLayout {
+        padding-left: Spacing.sm;
+        padding-right: Spacing.sm;
+
+        Text {
+            text: root.selected-count == Sizes.zero ? root.placeholder :
+                  root.selected-count == Sizes.one ? root.first-selected :
+                  root.selected-count + root.selected-suffix;
+            font-size: Type.body-size;
+            color: root.selected-count == Sizes.zero ? Colors.text-disabled : Colors.text-primary;
+            vertical-alignment: center;
+            horizontal-stretch: Sizes.one;
+        }
+
+        Text {
+            text: root.open ? root.arrow-up : root.arrow-down;
+            font-size: Type.caption-size;
+            color: Colors.text-secondary;
+            vertical-alignment: center;
+        }
+    }
+
+    TouchArea {
+        enabled: root.enabled;
+        clicked => { root.toggle-open(); }
+    }
+}

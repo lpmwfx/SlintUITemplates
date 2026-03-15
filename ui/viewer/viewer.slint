@@ -2,6 +2,7 @@
 // Dog-foods our own components; topbar writes to Colors/Settings globals live.
 
 import { Colors, Spacing, FluentIcons, Settings } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
 import { ViewId }        from "../globals/ViewId.slint";
 import { SideBar }       from "../desktop/side-bar.slint";
 import { NavItem }       from "../desktop/types.slint";
@@ -9,43 +10,80 @@ import { ViewerTopbar }  from "viewer-topbar.slint";
 import { PageAppShell }  from "page-app-shell.slint";
 import { ViewerContent } from "viewer-content.slint";
 
+/// F ra me wo rk vi ew er component.
 export component FrameworkViewer inherits Window {
     preferred-width:  root.win-w;
     preferred-height: root.win-h;
     title:
         "SlintUI Framework Viewer";
 
+    /// Two-way property "active-view".
     in-out property <string> active-view: ViewId.buttons;
+    /// Input property "canvas-frame".
     in property <image> canvas-frame;
 
+    /// Private property "win-w" used internally.
     private property <length> win-w:     1100px;
+    /// Private property "win-h" used internally.
     private property <length> win-h:     720px;
-    private property <float>  zoom-75:   0.75;
-    private property <float>  zoom-100:  1.0;
-    private property <float>  zoom-125:  1.25;
-    private property <float>  zoom-150:  1.5;
-    private property <int>    v-stretch: 1;
-    private property <int>    h-sidebar: 0;
-    private property <int>    h-stretch: 1;
+    /// Private property "zoom-small" used internally.
+    private property <float>  zoom-small:   Sizes.three-quarter;
+    /// Private property "zoom-normal" used internally.
+    private property <float>  zoom-normal:  Sizes.fill;
+    /// Private property "zoom-large" used internally.
+    private property <float>  zoom-large:  1.25;
+    /// Private property "zoom-xlarge" used internally.
+    private property <float>  zoom-xlarge:  1.5;
+    /// Private property "menu-zoom-sm" used internally.
+    private property <string> menu-zoom-sm: "Zoom 75%";
+    /// Private property "menu-zoom-md" used internally.
+    private property <string> menu-zoom-md: "Zoom 100%";
+    /// Private property "menu-zoom-lg" used internally.
+    private property <string> menu-zoom-lg: "Zoom 125%";
+    /// Private property "menu-zoom-xl" used internally.
+    private property <string> menu-zoom-xl: "Zoom 150%";
+    /// Private property "v-stretch" used internally.
+    private property <int>    v-stretch: Sizes.one;
+    /// Private property "h-sidebar" used internally.
+    private property <int>    h-sidebar: Sizes.zero;
+    /// Private property "h-stretch" used internally.
+    private property <int>    h-stretch: Sizes.one;
 
     background: Colors.bg-primary;
 
+    /// Callback fired for r eq ue st b g s ty le.
     callback request-bg-style(string);
+    /// Callback fired for n ew f il e.
     callback new-file();
+    /// Callback fired for n ew w in do w.
     callback new-window();
+    /// Callback fired for o pe n f il e.
     callback open-file();
+    /// Callback fired for s av e.
     callback save();
+    /// Callback fired for s av e a s.
     callback save-as();
+    /// Callback fired for q ui t.
     callback quit();
+    /// Callback fired for u nd o.
     callback undo();
+    /// Callback fired for r ed o.
     callback redo();
+    /// Callback fired for c ut.
     callback cut();
+    /// Callback fired for c op y.
     callback copy();
+    /// Callback fired for p as te.
     callback paste();
+    /// Callback fired for f in d.
     callback find();
+    /// Callback fired for s el ec t a ll.
     callback select-all();
+    /// Callback fired for o pe n d oc s.
     callback open-docs();
+    /// Callback fired for o pe n s ho rt cu ts.
     callback open-shortcuts();
+    /// Callback fired for a bo ut.
     callback about();
 
     MenuBar {
@@ -94,10 +132,10 @@ export component FrameworkViewer inherits Window {
             MenuSeparator {}
             MenuItem { title: "Dark Mode";  activated => { Colors.dark-mode = !Colors.dark-mode; } }
             MenuSeparator {}
-            MenuItem { title: "Zoom 75%";   activated => { Settings.zoom = root.zoom-75; } }
-            MenuItem { title: "Zoom 100%";  activated => { Settings.zoom = root.zoom-100; } }
-            MenuItem { title: "Zoom 125%";  activated => { Settings.zoom = root.zoom-125; } }
-            MenuItem { title: "Zoom 150%";  activated => { Settings.zoom = root.zoom-150; } }
+            MenuItem { title: root.menu-zoom-sm; activated => { Settings.zoom = root.zoom-small; } }
+            MenuItem { title: root.menu-zoom-md; activated => { Settings.zoom = root.zoom-normal; } }
+            MenuItem { title: root.menu-zoom-lg; activated => { Settings.zoom = root.zoom-large; } }
+            MenuItem { title: root.menu-zoom-xl; activated => { Settings.zoom = root.zoom-xlarge; } }
         }
         Menu {
             title:
@@ -117,8 +155,8 @@ export component FrameworkViewer inherits Window {
 
             SideBar {
                 horizontal-stretch: root.h-sidebar;
-                min-width: Spacing.xl * 4 + Spacing.md;
-                max-width: Spacing.xl * 4 + Spacing.md;
+                min-width: Spacing.xl * Sizes.four + Spacing.md;
+                max-width: Spacing.xl * Sizes.four + Spacing.md;
                 active-item: root.active-view;
                 items: [
                     { id: "buttons",    label: "Buttons",    icon: FluentIcons.apps },

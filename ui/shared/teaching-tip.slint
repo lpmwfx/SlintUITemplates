@@ -11,22 +11,37 @@
 //   TouchArea { clicked => { tip.show-at(self.mouse-x, self.mouse-y); } }
 
 import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
 import { TeachingTipInner } from "teaching-tip-inner.slint";
 
+/// T ea ch in gt ip component.
 export component TeachingTip inherits Rectangle {
+    /// Input property "window-height".
     in property <length> window-height;
+    /// Input property "title".
     in property <string> title: "";
+    /// Input property "body".
     in property <string> body: "";
+    /// Input property "action-label".
     in property <string> action-label: "Got it";
+    /// Input property "dismiss-label".
     in property <string> dismiss-label: "";
+    /// Callback fired for a ct io n.
     callback action();
+    /// Callback fired for d is mi ss ed.
     callback dismissed();
 
+    /// Private property "pop-x" used internally.
     private property <length> pop-x:    0px;
+    /// Private property "pop-y" used internally.
     private property <length> pop-y:    0px;
+    /// Private property "popup-w" used internally.
     private property <length> popup-w:  260px;
+    /// Private property "popup-h" used internally.
     private property <length> popup-h:  180px;
+    /// Private property "arrow-sz" used internally.
     private property <length> arrow-sz: 10px;
+    /// Private property "flip-up" used internally.
     private property <bool>   flip-up:  false;
 
     width: root.pop-x - root.pop-x;
@@ -68,7 +83,7 @@ export component TeachingTip inherits Rectangle {
     }
 
     public function show-at(xp: length, yp: length) {
-        root.pop-x = xp - root.popup-w / 2;
+        root.pop-x = xp - root.popup-w / Sizes.two;
         if root.window-height > root.pop-x - root.pop-x
                 && root.absolute-position.y + yp + root.popup-h + root.arrow-sz > root.window-height {
             root.flip-up = true;

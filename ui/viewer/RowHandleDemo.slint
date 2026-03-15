@@ -4,7 +4,9 @@ import { DragHandle }              from "../modules/DragHandle.slint";
 
 // Demo box with a live row drag handle.
 component RowHandleDemo inherits Rectangle {
+    /// Private property "split" used internally.
     private property <length> split: Sizes.comp-40;
+    /// Private property "split-max" used internally.
     private property <length> split-max: Sizes.comp-60;
 
     width: Sizes.panel-md;

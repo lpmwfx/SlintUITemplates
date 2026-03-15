@@ -1,25 +1,42 @@
 import { Colors, Spacing, Type, FluentIcons } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
 
+/// M es sa ge ba r component.
 export component MessageBar inherits Rectangle {
+    /// Input property "message".
     in property <string> message: "";
+    /// Input property "variant".
     in property <string> variant: "info";   // info | warning | error | success
+    /// Input property "action-label".
     in property <string> action-label: "";
+    /// Input property "closable".
     in property <bool>   closable: true;
+    /// Callback fired for a ct io n.
     callback action();
+    /// Callback fired for c lo se d.
     callback closed();
 
+    /// Private property "v-error" used internally.
     private property <string> v-error:   "error";
+    /// Private property "v-warning" used internally.
     private property <string> v-warning: "warning";
+    /// Private property "v-success" used internally.
     private property <string> v-success: "success";
+    /// Private property "border-px" used internally.
     private property <length> border-px: 1px;
+    /// Private property "bar-w" used internally.
     private property <length> bar-w:     3px;
+    /// Private property "btn-shrink" used internally.
     private property <int>    btn-shrink: 0;
+    /// Private property "text-grow" used internally.
     private property <int>    text-grow:  1;
+    /// Private property "accent-color" used internally.
     private property <color> accent-color:
         variant == root.v-error   ? Colors.error   :
         variant == root.v-warning ? Colors.warning :
         variant == root.v-success ? Colors.success :
         Colors.accent;
+    /// Private property "icon-glyph" used internally.
     private property <string> icon-glyph:
         variant == root.v-error   ? "\u{E783}" :
         variant == root.v-warning ? "\u{E7BA}" :
@@ -63,7 +80,7 @@ export component MessageBar inherits Rectangle {
         }
 
         if root.action-label != "": Rectangle {
-            width: action-text.preferred-width + Spacing.sm * 2;
+            width: action-text.preferred-width + Spacing.sm * Sizes.two;
             height: Spacing.control-md;
             border-radius: Spacing.xs;
             border-width: root.border-px;

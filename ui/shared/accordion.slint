@@ -3,9 +3,13 @@ import { AccordionRow, AccordionItem } from "accordion-row.slint";
 
 export { AccordionItem }
 
+/// A cc or di on component.
 export component Accordion inherits VerticalLayout {
+    /// Input property "items".
     in property <[AccordionItem]> items: [];
+    /// Input property "expanded-id".
     in property <string>          expanded-id: "";
+    /// Callback fired for t og gl ed.
     callback toggled(string);
 
     spacing: Spacing.xs;

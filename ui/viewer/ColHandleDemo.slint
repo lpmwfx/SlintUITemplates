@@ -4,6 +4,7 @@ import { DragHandle }              from "../modules/DragHandle.slint";
 
 // Demo box with a live column drag handle.
 component ColHandleDemo inherits Rectangle {
+    /// Private property "split" used internally.
     private property <length> split: Sizes.thumb-md;
 
     width: Sizes.panel-md;

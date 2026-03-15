@@ -1,0 +1,35 @@
+import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Sizes }                 from "../tokens/sizes.slint";
+
+// MdCodeBlock — renders a code block with monospace font.
+/// M dc od eb lo ck component.
+export component MdCodeBlock inherits VerticalLayout {
+    /// Input property "text".
+    in property <string> text;
+    /// Input property "mono-font".
+    in property <string> mono-font: "Consolas";
+
+    padding-top: Spacing.xs;
+    padding-bottom: Spacing.xs;
+
+    Rectangle {
+        width: parent.width;
+        background: Colors.bg-elevated;
+        border-radius: Spacing.xs;
+        border-color: Colors.border;
+        border-width: Sizes.border-w;
+
+        VerticalLayout {
+            padding: Spacing.sm;
+
+            Text {
+                width: parent.width - Spacing.sm * Sizes.two;
+                text: root.text;
+                font-family: root.mono-font;
+                font-size: Type.caption-size;
+                color: Colors.text-primary;
+                wrap: word-wrap;
+            }
+        }
+    }
+}

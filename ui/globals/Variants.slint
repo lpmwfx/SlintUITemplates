@@ -1,52 +1,123 @@
 // Variants — named constants for component variant/style discriminators.
 // Prevents stringly-typed state comparisons.
 
+/// V ar ia nt s global values.
 export global Variants {
     // ── Button / component variants ─────────────────────────────────────
+    /// Output property "primary".
     out property <string> primary:   "primary";
+    /// Output property "secondary".
     out property <string> secondary: "secondary";
+    /// Output property "accent".
     out property <string> accent:    "accent";
+    /// Output property "danger".
     out property <string> danger:    "danger";
+    /// Output property "outlined".
     out property <string> outlined:  "outlined";
+    /// Output property "ghost".
+    out property <string> ghost:     "ghost";
+    /// Output property "text".
     out property <string> text:      "text";
 
     // ── Severity / status ───────────────────────────────────────────────
+    /// Output property "info".
+    out property <string> info:    "info";
+    /// Output property "success".
     out property <string> success: "success";
+    /// Output property "warning".
     out property <string> warning: "warning";
+    /// Output property "error".
     out property <string> error:   "error";
 
     // ── Platform ────────────────────────────────────────────────────────
+    /// Output property "desktop".
     out property <string> desktop:  "desktop";
+    /// Output property "mobile".
     out property <string> mobile:   "mobile";
+    /// Output property "windows".
     out property <string> windows:  "windows";
+    /// Output property "android".
     out property <string> android:  "android";
 
     // ── Theme ───────────────────────────────────────────────────────────
-    out property <string> dark:  "dark";
-    out property <string> light: "light";
+    /// Output property "system".
+    out property <string> system: "system";
+    /// Output property "dark".
+    out property <string> dark:   "dark";
+    /// Output property "light".
+    out property <string> light:  "light";
+
+    // ── Material / backdrop ───────────────────────────────────────────
+    /// Output property "solid".
+    out property <string> solid:   "solid";
+    /// Output property "mica".
+    out property <string> mica:    "mica";
+    /// Output property "acrylic".
+    out property <string> acrylic: "acrylic";
 
     // ── Orientation / position ──────────────────────────────────────────
+    /// Output property "horizontal".
     out property <string> horizontal: "horizontal";
+    /// Output property "vertical".
     out property <string> vertical:   "vertical";
+    /// Output property "left".
     out property <string> left:   "left";
+    /// Output property "right".
     out property <string> right:  "right";
+    /// Output property "top".
     out property <string> top:    "top";
+    /// Output property "bottom".
     out property <string> bottom: "bottom";
 
+    // ── Size ──────────────────────────────────────────────────────────
+    /// Output property "sm".
+    out property <string> sm: "sm";
+    /// Output property "md".
+    out property <string> md: "md";
+    /// Output property "lg".
+    out property <string> lg: "lg";
+
     // ── Shape ───────────────────────────────────────────────────────────
+    /// Output property "circle".
     out property <string> circle: "circle";
+    /// Output property "panel".
     out property <string> panel:  "panel";
 
     // ── Handle types ────────────────────────────────────────────────────
+    /// Output property "handle-h".
     out property <string> handle-h: "handle-h";
+    /// Output property "handle-v".
     out property <string> handle-v: "handle-v";
 
     // ── Doc block kinds ─────────────────────────────────────────────────
+    /// Output property "h1".
+    out property <string> h1:   "h1";
+    /// Output property "h2".
+    out property <string> h2:   "h2";
+    /// Output property "h3".
+    out property <string> h3:   "h3";
+    /// Output property "p".
+    out property <string> p:    "p";
+    /// Output property "code".
     out property <string> code: "code";
+    /// Output property "li".
+    out property <string> li:   "li";
+    /// Output property "li2".
     out property <string> li2:  "li2";
+    /// Output property "th".
+    out property <string> th:   "th";
+    /// Output property "tr".
+    out property <string> tr:   "tr";
+    /// Output property "hr".
+    out property <string> hr:   "hr";
+    /// Output property "bq".
+    out property <string> bq:   "bq";
 
     // ── Test IDs ────────────────────────────────────────────────────────
+    /// Output property "alpha".
     out property <string> alpha: "alpha";
+    /// Output property "beta".
     out property <string> beta:  "beta";
+    /// Output property "gamma".
     out property <string> gamma: "gamma";
 }

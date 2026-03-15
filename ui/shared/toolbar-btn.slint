@@ -1,5 +1,6 @@
 import { Colors, Spacing, Type, FluentIcons } from "../tokens/theme.slint";
 
+/// T oo lb ar it em struct.
 export struct ToolbarItem {
     id:      string,
     icon:    string,
@@ -7,8 +8,11 @@ export struct ToolbarItem {
     enabled: bool,
 }
 
+/// T oo lb ar bt n component.
 export component ToolbarBtn inherits Rectangle {
+    /// Input property "item".
     in property <ToolbarItem> item;
+    /// Callback fired for c li ck ed.
     callback clicked(string);
 
     width: Spacing.xl;

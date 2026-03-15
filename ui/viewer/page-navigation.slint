@@ -1,24 +1,39 @@
 // page-navigation — TabBar, Breadcrumb, Pagination, Stepper
 
 import { Spacing } from "../tokens/theme.slint";
+import { Sizes } from "../tokens/sizes.slint";
 import { TabBar, TabItem }         from "../shared/tab-bar.slint";
 import { Breadcrumb, BreadcrumbItem } from "../shared/breadcrumb.slint";
 import { Pagination }              from "../shared/pagination.slint";
 import { Stepper, StepItem }       from "../shared/stepper.slint";
 import { ViewerSection } from "viewer-section.slint";
 
+/// Viewer page showcasing navigation widgets such as tabs, breadcrumbs, pagination, and steppers.
 export component PageNavigation inherits VerticalLayout {
     spacing: Spacing.md;
 
+    /// Private property "active-tab" used internally.
     private property <string> active-tab: "one";
-    private property <int>    page: 3;
-    private property <int>    step-active: 1;
+    /// Private property "page" used internally.
+    private property <int>    page: Sizes.three;
+    /// Private property "step-active" used internally.
+    private property <int>    step-active: Sizes.one;
+
+    // ── demo labels ─────────────────────────────────────────────────────
+    /// Private property "section-tabbar" used internally.
+    private property <string> section-tabbar: "TabBar";
+    /// Private property "section-breadcrumb" used internally.
+    private property <string> section-breadcrumb: "Breadcrumb";
+    /// Private property "section-pagination" used internally.
+    private property <string> section-pagination: "Pagination";
+    /// Private property "section-stepper" used internally.
+    private property <string> section-stepper: "Stepper";
 
     ViewerSection {
-        title: "TabBar";
+        title: root.section-tabbar;
         VerticalLayout {
             spacing: Spacing.sm;
-            width: 400px;
+            width: Sizes.panel-max;
             TabBar {
                 tabs: [
                     { id: "one",   label: "Overview", icon: "" },
@@ -32,7 +47,7 @@ export component PageNavigation inherits VerticalLayout {
     }
 
     ViewerSection {
-        title: "Breadcrumb";
+        title: root.section-breadcrumb;
         Breadcrumb {
             items: [
                 { id: "home",    label: "Home" },
@@ -43,28 +58,28 @@ export component PageNavigation inherits VerticalLayout {
     }
 
     ViewerSection {
-        title: "Pagination";
+        title: root.section-pagination;
         VerticalLayout {
             spacing: Spacing.sm;
             Pagination {
                 current: page;
-                total: 10;
-                pages: [1, 2, 3, 4, 5, 6, 7];
+                total: Sizes.ten;
+                pages: [Sizes.one, Sizes.two, Sizes.three, Sizes.four, Sizes.five, Sizes.six, Sizes.seven];
                 changed(p) => { page = p; }
             }
             Pagination {
-                current: 1;
-                total: 3;
+                current: Sizes.one;
+                total: Sizes.three;
                 pages: [];
             }
         }
     }
 
     ViewerSection {
-        title: "Stepper";
+        title: root.section-stepper;
         VerticalLayout {
             spacing: Spacing.sm;
-            width: 500px;
+            width: Sizes.panel-wide;
             Stepper {
                 steps: [
                     { label: "Account",  completed: true },
