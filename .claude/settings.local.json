@@ -101,7 +101,13 @@
       "Read(//c/Users/mathi/.cargo/git/checkouts/**)",
       "Bash(cd:*)",
       "Bash(find:*)",
-      "Bash(mcp__rulestools__scan_tree . 2>&1 | head -100)"
+      "Bash(mcp__rulestools__scan_tree . 2>&1 | head -100)",
+      "mcp__rules__help",
+      "Bash(python3:*)",
+      "Bash(wc:*)",
+      "Bash(ls:*)",
+      "Bash(grep:*)",
+      "Bash(git checkout:*)"
     ]
   }
 }

@@ -16,7 +16,7 @@ Level 2 — Shell / Views (ui/shell/, ui/views/)
   Receives state via `in property`. Emits changes via `callback`.
   Never owns state. Never writes globals.
 
-Level 3 — Modules (ui/shared/, ui/modules/)
+Level 3 — Modules (ui/widgets/, ui/modules/)
   Atomic building blocks. In property + callback only.
   Single responsibility. One component per file.
 ```
