@@ -1,0 +1,61 @@
+{
+  "source": "tokens/steam/typography.slint",
+  "items": [
+    {
+      "name": "caption",
+      "kind": "property",
+      "signature": "out property <length> caption:  Settings.zoom * Settings.font-scale * 12px;",
+      "line": 8,
+      "doc": "Small label / caption."
+    },
+    {
+      "name": "body",
+      "kind": "property",
+      "signature": "out property <length> body:     Settings.zoom * Settings.font-scale * 16px;",
+      "line": 10,
+      "doc": "Body text — larger than Fluent (16px vs 14px)."
+    },
+    {
+      "name": "subtitle",
+      "kind": "property",
+      "signature": "out property <length> subtitle: Settings.zoom * Settings.font-scale * 20px;",
+      "line": 12,
+      "doc": "Subtitle / section heading."
+    },
+    {
+      "name": "heading",
+      "kind": "property",
+      "signature": "out property <length> heading:  Settings.zoom * Settings.font-scale * 24px;",
+      "line": 14,
+      "doc": "Heading."
+    },
+    {
+      "name": "title",
+      "kind": "property",
+      "signature": "out property <length> title:    Settings.zoom * Settings.font-scale * 32px;",
+      "line": 16,
+      "doc": "Title — large display text."
+    },
+    {
+      "name": "weight-regular",
+      "kind": "property",
+      "signature": "out property <int> weight-regular:  400;",
+      "line": 20,
+      "doc": "Regular weight."
+    },
+    {
+      "name": "weight-medium",
+      "kind": "property",
+      "signature": "out property <int> weight-medium:   500;",
+      "line": 22,
+      "doc": "Medium weight."
+    },
+    {
+      "name": "weight-bold",
+      "kind": "property",
+      "signature": "out property <int> weight-bold:     700;",
+      "line": 24,
+      "doc": "Bold weight."
+    }
+  ]
+}

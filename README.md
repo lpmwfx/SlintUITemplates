@@ -46,6 +46,19 @@ Or as a dependency:
 slint-ui-templates = "0.1"
 ```
 
+### Feature flags
+
+| Feature    | Default | Enables                                      |
+|------------|---------|----------------------------------------------|
+| `rhai`     | yes     | Rhai scripting engine, view-config evaluation |
+| `markdown` | yes     | Markdown parser (`docs` module)              |
+
+Core-only (no scripting, no markdown):
+```toml
+[dependencies]
+slint-ui-templates = { version = "0.1", default-features = false }
+```
+
 ---
 
 ## Architecture

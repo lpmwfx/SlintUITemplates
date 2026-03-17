@@ -1,0 +1,19 @@
+{
+  "source": "viewer/RowHandleDemo.slint",
+  "items": [
+    {
+      "name": "split",
+      "kind": "property",
+      "signature": "private property <length> split: Sizes.comp-40;",
+      "line": 8,
+      "doc": "Private property \"split\" used internally."
+    },
+    {
+      "name": "split-max",
+      "kind": "property",
+      "signature": "private property <length> split-max: Sizes.comp-60;",
+      "line": 10,
+      "doc": "Private property \"split-max\" used internally."
+    }
+  ]
+}

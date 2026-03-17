@@ -1,0 +1,16 @@
+// Steam border-radius scale — moderate rounding, gamepad-friendly.
+
+export global SteamRadius {
+    /// No rounding.
+    out property <length> none:   0px;
+    /// Extra small — checkboxes, small elements.
+    out property <length> sm:     2px;
+    /// Medium — buttons, inputs.
+    out property <length> md:     4px;
+    /// Large — cards, panels.
+    out property <length> lg:     8px;
+    /// Extra large — dialogs, large surfaces.
+    out property <length> xl:     12px;
+    /// Full pill.
+    out property <length> circle: 9999px;
+}

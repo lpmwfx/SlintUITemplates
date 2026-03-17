@@ -1,0 +1,432 @@
+{
+  "source": "globals/Variants.slint",
+  "items": [
+    {
+      "name": "primary",
+      "kind": "property",
+      "signature": "out property <string> primary:   \"primary\";",
+      "line": 8,
+      "doc": "Output property \"primary\"."
+    },
+    {
+      "name": "secondary",
+      "kind": "property",
+      "signature": "out property <string> secondary: \"secondary\";",
+      "line": 10,
+      "doc": "Output property \"secondary\"."
+    },
+    {
+      "name": "accent",
+      "kind": "property",
+      "signature": "out property <string> accent:    \"accent\";",
+      "line": 12,
+      "doc": "Output property \"accent\"."
+    },
+    {
+      "name": "danger",
+      "kind": "property",
+      "signature": "out property <string> danger:    \"danger\";",
+      "line": 14,
+      "doc": "Output property \"danger\"."
+    },
+    {
+      "name": "outlined",
+      "kind": "property",
+      "signature": "out property <string> outlined:  \"outlined\";",
+      "line": 16,
+      "doc": "Output property \"outlined\"."
+    },
+    {
+      "name": "ghost",
+      "kind": "property",
+      "signature": "out property <string> ghost:     \"ghost\";",
+      "line": 18,
+      "doc": "Output property \"ghost\"."
+    },
+    {
+      "name": "text",
+      "kind": "property",
+      "signature": "out property <string> text:      \"text\";",
+      "line": 20,
+      "doc": "Output property \"text\"."
+    },
+    {
+      "name": "info",
+      "kind": "property",
+      "signature": "out property <string> info:    \"info\";",
+      "line": 24,
+      "doc": "Output property \"info\"."
+    },
+    {
+      "name": "success",
+      "kind": "property",
+      "signature": "out property <string> success: \"success\";",
+      "line": 26,
+      "doc": "Output property \"success\"."
+    },
+    {
+      "name": "warning",
+      "kind": "property",
+      "signature": "out property <string> warning: \"warning\";",
+      "line": 28,
+      "doc": "Output property \"warning\"."
+    },
+    {
+      "name": "error",
+      "kind": "property",
+      "signature": "out property <string> error:   \"error\";",
+      "line": 30,
+      "doc": "Output property \"error\"."
+    },
+    {
+      "name": "desktop",
+      "kind": "property",
+      "signature": "out property <string> desktop:     \"desktop\";",
+      "line": 34,
+      "doc": "Output property \"desktop\"."
+    },
+    {
+      "name": "mobile",
+      "kind": "property",
+      "signature": "out property <string> mobile:      \"mobile\";",
+      "line": 36,
+      "doc": "Output property \"mobile\"."
+    },
+    {
+      "name": "windows",
+      "kind": "property",
+      "signature": "out property <string> windows:     \"windows\";",
+      "line": 38,
+      "doc": "Output property \"windows\"."
+    },
+    {
+      "name": "android",
+      "kind": "property",
+      "signature": "out property <string> android:     \"android\";",
+      "line": 40,
+      "doc": "Output property \"android\"."
+    },
+    {
+      "name": "ios",
+      "kind": "property",
+      "signature": "out property <string> ios:         \"ios\";",
+      "line": 42,
+      "doc": "Output property \"ios\"."
+    },
+    {
+      "name": "macos",
+      "kind": "property",
+      "signature": "out property <string> macos:       \"macos\";",
+      "line": 44,
+      "doc": "Output property \"macos\"."
+    },
+    {
+      "name": "linux",
+      "kind": "property",
+      "signature": "out property <string> linux:       \"linux\";",
+      "line": 46,
+      "doc": "Output property \"linux\"."
+    },
+    {
+      "name": "steam-linux",
+      "kind": "property",
+      "signature": "out property <string> steam-linux: \"steam-linux\";",
+      "line": 48,
+      "doc": "Output property \"steam-linux\"."
+    },
+    {
+      "name": "steam-deck",
+      "kind": "property",
+      "signature": "out property <string> steam-deck:  \"steam-deck\";",
+      "line": 50,
+      "doc": "Output property \"steam-deck\"."
+    },
+    {
+      "name": "tablet",
+      "kind": "property",
+      "signature": "out property <string> tablet:      \"tablet\";",
+      "line": 52,
+      "doc": "Output property \"tablet\"."
+    },
+    {
+      "name": "handheld",
+      "kind": "property",
+      "signature": "out property <string> handheld:    \"handheld\";",
+      "line": 54,
+      "doc": "Output property \"handheld\"."
+    },
+    {
+      "name": "gnome",
+      "kind": "property",
+      "signature": "out property <string> gnome:       \"gnome\";",
+      "line": 56,
+      "doc": "Output property \"gnome\"."
+    },
+    {
+      "name": "kde",
+      "kind": "property",
+      "signature": "out property <string> kde:         \"kde\";",
+      "line": 58,
+      "doc": "Output property \"kde\"."
+    },
+    {
+      "name": "nav-sidebar",
+      "kind": "property",
+      "signature": "out property <string> nav-sidebar: \"nav-sidebar\";",
+      "line": 62,
+      "doc": "Output property \"nav-sidebar\"."
+    },
+    {
+      "name": "nav-bottom",
+      "kind": "property",
+      "signature": "out property <string> nav-bottom:  \"nav-bottom\";",
+      "line": 64,
+      "doc": "Output property \"nav-bottom\"."
+    },
+    {
+      "name": "nav-compact",
+      "kind": "property",
+      "signature": "out property <string> nav-compact: \"nav-compact\";",
+      "line": 66,
+      "doc": "Output property \"nav-compact\"."
+    },
+    {
+      "name": "nav-gamepad",
+      "kind": "property",
+      "signature": "out property <string> nav-gamepad: \"nav-gamepad\";",
+      "line": 68,
+      "doc": "Output property \"nav-gamepad\"."
+    },
+    {
+      "name": "system",
+      "kind": "property",
+      "signature": "out property <string> system: \"system\";",
+      "line": 72,
+      "doc": "Output property \"system\"."
+    },
+    {
+      "name": "dark",
+      "kind": "property",
+      "signature": "out property <string> dark:   \"dark\";",
+      "line": 74,
+      "doc": "Output property \"dark\"."
+    },
+    {
+      "name": "light",
+      "kind": "property",
+      "signature": "out property <string> light:  \"light\";",
+      "line": 76,
+      "doc": "Output property \"light\"."
+    },
+    {
+      "name": "solid",
+      "kind": "property",
+      "signature": "out property <string> solid:   \"solid\";",
+      "line": 80,
+      "doc": "Output property \"solid\"."
+    },
+    {
+      "name": "mica",
+      "kind": "property",
+      "signature": "out property <string> mica:    \"mica\";",
+      "line": 82,
+      "doc": "Output property \"mica\"."
+    },
+    {
+      "name": "acrylic",
+      "kind": "property",
+      "signature": "out property <string> acrylic: \"acrylic\";",
+      "line": 84,
+      "doc": "Output property \"acrylic\"."
+    },
+    {
+      "name": "horizontal",
+      "kind": "property",
+      "signature": "out property <string> horizontal: \"horizontal\";",
+      "line": 88,
+      "doc": "Output property \"horizontal\"."
+    },
+    {
+      "name": "vertical",
+      "kind": "property",
+      "signature": "out property <string> vertical:   \"vertical\";",
+      "line": 90,
+      "doc": "Output property \"vertical\"."
+    },
+    {
+      "name": "left",
+      "kind": "property",
+      "signature": "out property <string> left:   \"left\";",
+      "line": 92,
+      "doc": "Output property \"left\"."
+    },
+    {
+      "name": "right",
+      "kind": "property",
+      "signature": "out property <string> right:  \"right\";",
+      "line": 94,
+      "doc": "Output property \"right\"."
+    },
+    {
+      "name": "top",
+      "kind": "property",
+      "signature": "out property <string> top:    \"top\";",
+      "line": 96,
+      "doc": "Output property \"top\"."
+    },
+    {
+      "name": "bottom",
+      "kind": "property",
+      "signature": "out property <string> bottom: \"bottom\";",
+      "line": 98,
+      "doc": "Output property \"bottom\"."
+    },
+    {
+      "name": "sm",
+      "kind": "property",
+      "signature": "out property <string> sm: \"sm\";",
+      "line": 102,
+      "doc": "Output property \"sm\"."
+    },
+    {
+      "name": "md",
+      "kind": "property",
+      "signature": "out property <string> md: \"md\";",
+      "line": 104,
+      "doc": "Output property \"md\"."
+    },
+    {
+      "name": "lg",
+      "kind": "property",
+      "signature": "out property <string> lg: \"lg\";",
+      "line": 106,
+      "doc": "Output property \"lg\"."
+    },
+    {
+      "name": "circle",
+      "kind": "property",
+      "signature": "out property <string> circle: \"circle\";",
+      "line": 110,
+      "doc": "Output property \"circle\"."
+    },
+    {
+      "name": "panel",
+      "kind": "property",
+      "signature": "out property <string> panel:  \"panel\";",
+      "line": 112,
+      "doc": "Output property \"panel\"."
+    },
+    {
+      "name": "handle-h",
+      "kind": "property",
+      "signature": "out property <string> handle-h: \"handle-h\";",
+      "line": 116,
+      "doc": "Output property \"handle-h\"."
+    },
+    {
+      "name": "handle-v",
+      "kind": "property",
+      "signature": "out property <string> handle-v: \"handle-v\";",
+      "line": 118,
+      "doc": "Output property \"handle-v\"."
+    },
+    {
+      "name": "h1",
+      "kind": "property",
+      "signature": "out property <string> h1:   \"h1\";",
+      "line": 122,
+      "doc": "Output property \"h1\"."
+    },
+    {
+      "name": "h2",
+      "kind": "property",
+      "signature": "out property <string> h2:   \"h2\";",
+      "line": 124,
+      "doc": "Output property \"h2\"."
+    },
+    {
+      "name": "h3",
+      "kind": "property",
+      "signature": "out property <string> h3:   \"h3\";",
+      "line": 126,
+      "doc": "Output property \"h3\"."
+    },
+    {
+      "name": "p",
+      "kind": "property",
+      "signature": "out property <string> p:    \"p\";",
+      "line": 128,
+      "doc": "Output property \"p\"."
+    },
+    {
+      "name": "code",
+      "kind": "property",
+      "signature": "out property <string> code: \"code\";",
+      "line": 130,
+      "doc": "Output property \"code\"."
+    },
+    {
+      "name": "li",
+      "kind": "property",
+      "signature": "out property <string> li:   \"li\";",
+      "line": 132,
+      "doc": "Output property \"li\"."
+    },
+    {
+      "name": "li2",
+      "kind": "property",
+      "signature": "out property <string> li2:  \"li2\";",
+      "line": 134,
+      "doc": "Output property \"li2\"."
+    },
+    {
+      "name": "th",
+      "kind": "property",
+      "signature": "out property <string> th:   \"th\";",
+      "line": 136,
+      "doc": "Output property \"th\"."
+    },
+    {
+      "name": "tr",
+      "kind": "property",
+      "signature": "out property <string> tr:   \"tr\";",
+      "line": 138,
+      "doc": "Output property \"tr\"."
+    },
+    {
+      "name": "hr",
+      "kind": "property",
+      "signature": "out property <string> hr:   \"hr\";",
+      "line": 140,
+      "doc": "Output property \"hr\"."
+    },
+    {
+      "name": "bq",
+      "kind": "property",
+      "signature": "out property <string> bq:   \"bq\";",
+      "line": 142,
+      "doc": "Output property \"bq\"."
+    },
+    {
+      "name": "alpha",
+      "kind": "property",
+      "signature": "out property <string> alpha: \"alpha\";",
+      "line": 146,
+      "doc": "Output property \"alpha\"."
+    },
+    {
+      "name": "beta",
+      "kind": "property",
+      "signature": "out property <string> beta:  \"beta\";",
+      "line": 148,
+      "doc": "Output property \"beta\"."
+    },
+    {
+      "name": "gamma",
+      "kind": "property",
+      "signature": "out property <string> gamma: \"gamma\";",
+      "line": 150,
+      "doc": "Output property \"gamma\"."
+    }
+  ]
+}

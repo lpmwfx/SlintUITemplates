@@ -1,0 +1,89 @@
+{
+  "source": "widgets/spinner.slint",
+  "items": [
+    {
+      "name": "Spinner",
+      "kind": "component",
+      "signature": "export component Spinner inherits Rectangle",
+      "line": 7,
+      "doc": "S pi nn er component."
+    },
+    {
+      "name": "size",
+      "kind": "property",
+      "signature": "in property <string> size:          Variants.md;",
+      "line": 9,
+      "doc": "Input property \"size\"."
+    },
+    {
+      "name": "spinner-color",
+      "kind": "property",
+      "signature": "in property <color>  spinner-color: Colors.accent;",
+      "line": 11,
+      "doc": "Input property \"spinner-color\"."
+    },
+    {
+      "name": "active",
+      "kind": "property",
+      "signature": "in property <bool>   active:        true;",
+      "line": 13,
+      "doc": "Input property \"active\"."
+    },
+    {
+      "name": "dim",
+      "kind": "property",
+      "signature": "private property <length> dim:",
+      "line": 16,
+      "doc": "Private property \"dim\" used internally."
+    },
+    {
+      "name": "anim-phase",
+      "kind": "property",
+      "signature": "private property <float>  anim-phase: 0.0;",
+      "line": 22,
+      "doc": "Private property \"anim-phase\" used internally."
+    },
+    {
+      "name": "anim-speed",
+      "kind": "property",
+      "signature": "private property <float>  anim-speed: 0.05;",
+      "line": 24,
+      "doc": "Private property \"anim-speed\" used internally."
+    },
+    {
+      "name": "anim-next",
+      "kind": "property",
+      "signature": "private property <float>  anim-next: Math.mod(root.anim-phase + root.anim-speed, Sizes.two);",
+      "line": 26,
+      "doc": "Private property \"anim-next\" used internally."
+    },
+    {
+      "name": "pulse-min",
+      "kind": "property",
+      "signature": "private property <float>  pulse-min:  0.2;",
+      "line": 28,
+      "doc": "Private property \"pulse-min\" used internally."
+    },
+    {
+      "name": "track-alpha",
+      "kind": "property",
+      "signature": "private property <float>  track-alpha: 0.15;",
+      "line": 30,
+      "doc": "Private property \"track-alpha\" used internally."
+    },
+    {
+      "name": "ring-width",
+      "kind": "property",
+      "signature": "private property <length> ring-width: Sizes.border-w-2;",
+      "line": 32,
+      "doc": "Private property \"ring-width\" used internally."
+    },
+    {
+      "name": "pulse-val",
+      "kind": "property",
+      "signature": "private property <float>  pulse-val: Math.abs(root.anim-phase - Sizes.fill) * (Sizes.fill - root.pulse-min) + root.pulse-min;",
+      "line": 35,
+      "doc": "Private property \"pulse-val\" used internally."
+    }
+  ]
+}

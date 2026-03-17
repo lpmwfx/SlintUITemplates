@@ -1,0 +1,145 @@
+{
+  "source": "docs/docs-app.slint",
+  "items": [
+    {
+      "name": "DocsApp",
+      "kind": "component",
+      "signature": "export component DocsApp inherits Window",
+      "line": 18,
+      "doc": "D oc sa pp component."
+    },
+    {
+      "name": "window-title",
+      "kind": "property",
+      "signature": "in property <string>             window-title:     \"SlintUITemplates — Docs\";",
+      "line": 20,
+      "doc": "Input property \"window-title\"."
+    },
+    {
+      "name": "menu-file-label",
+      "kind": "property",
+      "signature": "in property <string>             menu-file-label:  \"File\";",
+      "line": 22,
+      "doc": "Input property \"menu-file-label\"."
+    },
+    {
+      "name": "menu-theme-label",
+      "kind": "property",
+      "signature": "in property <string>             menu-theme-label: \"Theme\";",
+      "line": 24,
+      "doc": "Input property \"menu-theme-label\"."
+    },
+    {
+      "name": "active-view",
+      "kind": "property",
+      "signature": "in-out property <string>         active-view: \"getting-started\";",
+      "line": 35,
+      "doc": "Two-way property \"active-view\"."
+    },
+    {
+      "name": "nav-items",
+      "kind": "property",
+      "signature": "in-out property <[NavItem]>      nav-items: [];",
+      "line": 37,
+      "doc": "Two-way property \"nav-items\"."
+    },
+    {
+      "name": "doc-blocks",
+      "kind": "property",
+      "signature": "in-out property <[DocBlock]>     doc-blocks: [];",
+      "line": 39,
+      "doc": "Two-way property \"doc-blocks\"."
+    },
+    {
+      "name": "doc-title",
+      "kind": "property",
+      "signature": "in-out property <string>         doc-title: \"\";",
+      "line": 41,
+      "doc": "Two-way property \"doc-title\"."
+    },
+    {
+      "name": "status-text",
+      "kind": "property",
+      "signature": "in-out property <string>         status-text: \"Ready\";",
+      "line": 43,
+      "doc": "Two-way property \"status-text\"."
+    },
+    {
+      "name": "toolbar-items",
+      "kind": "property",
+      "signature": "in property <[ShellToolbarItem]> toolbar-items: [];",
+      "line": 45,
+      "doc": "Input property \"toolbar-items\"."
+    },
+    {
+      "name": "show-toolbar",
+      "kind": "property",
+      "signature": "in property <bool>               show-toolbar: false;",
+      "line": 47,
+      "doc": "Input property \"show-toolbar\"."
+    },
+    {
+      "name": "sidebar-collapsed",
+      "kind": "property",
+      "signature": "in-out property <bool>   sidebar-collapsed: false;",
+      "line": 50,
+      "doc": "Two-way property \"sidebar-collapsed\"."
+    },
+    {
+      "name": "col-left-width",
+      "kind": "property",
+      "signature": "in-out property <length> col-left-width: Spacing.xl * 4 + Spacing.md;",
+      "line": 52,
+      "doc": "Two-way property \"col-left-width\"."
+    },
+    {
+      "name": "drag-base-width",
+      "kind": "property",
+      "signature": "private property <length> drag-base-width: Spacing.xl * 4 + Spacing.md;",
+      "line": 58,
+      "doc": "Private property \"drag-base-width\" used internally."
+    },
+    {
+      "name": "navigate",
+      "kind": "callback",
+      "signature": "callback navigate(string);",
+      "line": 69,
+      "doc": "Callback fired for n av ig at e."
+    },
+    {
+      "name": "toolbar-clicked",
+      "kind": "callback",
+      "signature": "callback toolbar-clicked(string);",
+      "line": 71,
+      "doc": "Callback fired for t oo lb ar c li ck ed."
+    },
+    {
+      "name": "request-bg-style",
+      "kind": "callback",
+      "signature": "callback request-bg-style(string);",
+      "line": 73,
+      "doc": "Callback fired for r eq ue st b g s ty le."
+    },
+    {
+      "name": "toggle-group",
+      "kind": "callback",
+      "signature": "callback toggle-group(string);   // Rust-siden håndterer hidden-toggle på nav-items",
+      "line": 75,
+      "doc": "Callback fired for t og gl e g ro up."
+    },
+    {
+      "name": "drag-sidebar",
+      "kind": "callback",
+      "signature": "callback drag-sidebar(dx: float);",
+      "line": 77,
+      "doc": "Callback fired for d ra g s id eb ar."
+    },
+    {
+      "name": "drag-anchor",
+      "kind": "callback",
+      "signature": "callback drag-anchor();   // called by DragHandle on press+release to re-anchor drag-base-width",
+      "line": 79,
+      "doc": "Callback fired for d ra g a nc ho r."
+    }
+  ]
+}

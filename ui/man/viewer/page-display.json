@@ -1,0 +1,264 @@
+{
+  "source": "viewer/page-display.slint",
+  "items": [
+    {
+      "name": "PageDisplay",
+      "kind": "component",
+      "signature": "export component PageDisplay inherits VerticalLayout",
+      "line": 16,
+      "doc": "Viewer page showcasing passive display components such as cards, badges, and avatars."
+    },
+    {
+      "name": "var-info",
+      "kind": "property",
+      "signature": "private property <string> var-info: \"info\";",
+      "line": 21,
+      "doc": "Private property \"var-info\" used internally."
+    },
+    {
+      "name": "var-sm",
+      "kind": "property",
+      "signature": "private property <string> var-sm: \"sm\";",
+      "line": 23,
+      "doc": "Private property \"var-sm\" used internally."
+    },
+    {
+      "name": "var-md",
+      "kind": "property",
+      "signature": "private property <string> var-md: \"md\";",
+      "line": 25,
+      "doc": "Private property \"var-md\" used internally."
+    },
+    {
+      "name": "var-lg",
+      "kind": "property",
+      "signature": "private property <string> var-lg: \"lg\";",
+      "line": 27,
+      "doc": "Private property \"var-lg\" used internally."
+    },
+    {
+      "name": "var-rect",
+      "kind": "property",
+      "signature": "private property <string> var-rect: \"rect\";",
+      "line": 29,
+      "doc": "Private property \"var-rect\" used internally."
+    },
+    {
+      "name": "skel-circle-size",
+      "kind": "property",
+      "signature": "private property <length> skel-circle-size: 40px;",
+      "line": 33,
+      "doc": "Private property \"skel-circle-size\" used internally."
+    },
+    {
+      "name": "progress-two-thirds",
+      "kind": "property",
+      "signature": "private property <float> progress-two-thirds: 0.66;",
+      "line": 35,
+      "doc": "Private property \"progress-two-thirds\" used internally."
+    },
+    {
+      "name": "skel-full",
+      "kind": "property",
+      "signature": "private property <float> skel-full: Sizes.full;",
+      "line": 37,
+      "doc": "Private property \"skel-full\" used internally."
+    },
+    {
+      "name": "skel-eighty",
+      "kind": "property",
+      "signature": "private property <float> skel-eighty: Sizes.percent-80;",
+      "line": 39,
+      "doc": "Private property \"skel-eighty\" used internally."
+    },
+    {
+      "name": "skel-sixty",
+      "kind": "property",
+      "signature": "private property <float> skel-sixty: Sizes.percent-60;",
+      "line": 41,
+      "doc": "Private property \"skel-sixty\" used internally."
+    },
+    {
+      "name": "section-badge",
+      "kind": "property",
+      "signature": "private property <string> section-badge: \"Badge\";",
+      "line": 45,
+      "doc": "Private property \"section-badge\" used internally."
+    },
+    {
+      "name": "section-avatar",
+      "kind": "property",
+      "signature": "private property <string> section-avatar: \"Avatar\";",
+      "line": 47,
+      "doc": "Private property \"section-avatar\" used internally."
+    },
+    {
+      "name": "section-card",
+      "kind": "property",
+      "signature": "private property <string> section-card: \"Card\";",
+      "line": 49,
+      "doc": "Private property \"section-card\" used internally."
+    },
+    {
+      "name": "section-listitem",
+      "kind": "property",
+      "signature": "private property <string> section-listitem: \"ListItem\";",
+      "line": 51,
+      "doc": "Private property \"section-listitem\" used internally."
+    },
+    {
+      "name": "section-progress",
+      "kind": "property",
+      "signature": "private property <string> section-progress: \"ProgressBar\";",
+      "line": 53,
+      "doc": "Private property \"section-progress\" used internally."
+    },
+    {
+      "name": "section-chip",
+      "kind": "property",
+      "signature": "private property <string> section-chip: \"Chip\";",
+      "line": 55,
+      "doc": "Private property \"section-chip\" used internally."
+    },
+    {
+      "name": "section-skeleton",
+      "kind": "property",
+      "signature": "private property <string> section-skeleton: \"Skeleton\";",
+      "line": 57,
+      "doc": "Private property \"section-skeleton\" used internally."
+    },
+    {
+      "name": "badge-info",
+      "kind": "property",
+      "signature": "private property <string> badge-info: \"Info\";",
+      "line": 59,
+      "doc": "Private property \"badge-info\" used internally."
+    },
+    {
+      "name": "badge-success",
+      "kind": "property",
+      "signature": "private property <string> badge-success: \"Success\";",
+      "line": 61,
+      "doc": "Private property \"badge-success\" used internally."
+    },
+    {
+      "name": "badge-warning",
+      "kind": "property",
+      "signature": "private property <string> badge-warning: \"Warning\";",
+      "line": 63,
+      "doc": "Private property \"badge-warning\" used internally."
+    },
+    {
+      "name": "badge-error",
+      "kind": "property",
+      "signature": "private property <string> badge-error: \"Error\";",
+      "line": 65,
+      "doc": "Private property \"badge-error\" used internally."
+    },
+    {
+      "name": "card-title-only",
+      "kind": "property",
+      "signature": "private property <string> card-title-only: \"Title only\";",
+      "line": 67,
+      "doc": "Private property \"card-title-only\" used internally."
+    },
+    {
+      "name": "card-title",
+      "kind": "property",
+      "signature": "private property <string> card-title: \"Card Title\";",
+      "line": 69,
+      "doc": "Private property \"card-title\" used internally."
+    },
+    {
+      "name": "card-subtitle",
+      "kind": "property",
+      "signature": "private property <string> card-subtitle: \"Supporting subtitle text\";",
+      "line": 71,
+      "doc": "Private property \"card-subtitle\" used internally."
+    },
+    {
+      "name": "li-normal",
+      "kind": "property",
+      "signature": "private property <string> li-normal: \"Normal item\";",
+      "line": 73,
+      "doc": "Private property \"li-normal\" used internally."
+    },
+    {
+      "name": "li-selected",
+      "kind": "property",
+      "signature": "private property <string> li-selected: \"Selected item\";",
+      "line": 75,
+      "doc": "Private property \"li-selected\" used internally."
+    },
+    {
+      "name": "li-subtitle-title",
+      "kind": "property",
+      "signature": "private property <string> li-subtitle-title: \"With subtitle\";",
+      "line": 77,
+      "doc": "Private property \"li-subtitle-title\" used internally."
+    },
+    {
+      "name": "li-subtitle-text",
+      "kind": "property",
+      "signature": "private property <string> li-subtitle-text: \"Subtitle text here\";",
+      "line": 79,
+      "doc": "Private property \"li-subtitle-text\" used internally."
+    },
+    {
+      "name": "chip-default",
+      "kind": "property",
+      "signature": "private property <string> chip-default: \"Default\";",
+      "line": 81,
+      "doc": "Private property \"chip-default\" used internally."
+    },
+    {
+      "name": "chip-selected",
+      "kind": "property",
+      "signature": "private property <string> chip-selected: \"Selected\";",
+      "line": 83,
+      "doc": "Private property \"chip-selected\" used internally."
+    },
+    {
+      "name": "chip-noclose",
+      "kind": "property",
+      "signature": "private property <string> chip-noclose: \"No close\";",
+      "line": 85,
+      "doc": "Private property \"chip-noclose\" used internally."
+    },
+    {
+      "name": "chip-disabled",
+      "kind": "property",
+      "signature": "private property <string> chip-disabled: \"Disabled\";",
+      "line": 87,
+      "doc": "Private property \"chip-disabled\" used internally."
+    },
+    {
+      "name": "chip-version",
+      "kind": "property",
+      "signature": "private property <string> chip-version: \"v1.0.0\";",
+      "line": 89,
+      "doc": "Private property \"chip-version\" used internally."
+    },
+    {
+      "name": "avatar-sm-initials",
+      "kind": "property",
+      "signature": "private property <string> avatar-sm-initials: \"SM\";",
+      "line": 91,
+      "doc": "Private property \"avatar-sm-initials\" used internally."
+    },
+    {
+      "name": "avatar-md-initials",
+      "kind": "property",
+      "signature": "private property <string> avatar-md-initials: \"MD\";",
+      "line": 93,
+      "doc": "Private property \"avatar-md-initials\" used internally."
+    },
+    {
+      "name": "avatar-lg-initials",
+      "kind": "property",
+      "signature": "private property <string> avatar-lg-initials: \"LG\";",
+      "line": 95,
+      "doc": "Private property \"avatar-lg-initials\" used internally."
+    }
+  ]
+}

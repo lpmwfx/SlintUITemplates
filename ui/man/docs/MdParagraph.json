@@ -1,0 +1,19 @@
+{
+  "source": "docs/MdParagraph.slint",
+  "items": [
+    {
+      "name": "MdParagraph",
+      "kind": "component",
+      "signature": "export component MdParagraph inherits VerticalLayout",
+      "line": 5,
+      "doc": "M dp ar ag ra ph component."
+    },
+    {
+      "name": "text",
+      "kind": "property",
+      "signature": "in property <string> text;",
+      "line": 7,
+      "doc": "Input property \"text\"."
+    }
+  ]
+}

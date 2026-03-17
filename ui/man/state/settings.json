@@ -1,0 +1,40 @@
+{
+  "source": "state/settings.slint",
+  "items": [
+    {
+      "name": "zoom",
+      "kind": "property",
+      "signature": "in-out property <float>  zoom:         1.0;",
+      "line": 10,
+      "doc": "Two-way property \"zoom\"."
+    },
+    {
+      "name": "icon-style",
+      "kind": "property",
+      "signature": "in-out property <string> icon-style:   \"filled\";   // \"filled\" | \"outlined\"",
+      "line": 12,
+      "doc": "Two-way property \"icon-style\"."
+    },
+    {
+      "name": "icon-color",
+      "kind": "property",
+      "signature": "in-out property <string> icon-color:   \"theme\";    // \"theme\" | \"accent\" | \"#rrggbb\"",
+      "line": 14,
+      "doc": "Two-way property \"icon-color\"."
+    },
+    {
+      "name": "font-family",
+      "kind": "property",
+      "signature": "in-out property <string> font-family:  \"\";         // \"\" = platform default",
+      "line": 16,
+      "doc": "Two-way property \"font-family\"."
+    },
+    {
+      "name": "font-scale",
+      "kind": "property",
+      "signature": "in-out property <float>  font-scale:   1.0;        // font-only multiplier on top of zoom",
+      "line": 18,
+      "doc": "Two-way property \"font-scale\"."
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "source": "tokens/typography.slint",
+  "items": [
+    {
+      "name": "caption-size",
+      "kind": "property",
+      "signature": "out property <length> caption-size:  Settings.zoom * Settings.font-scale * 12px;",
+      "line": 12,
+      "doc": "Output property \"caption-size\"."
+    },
+    {
+      "name": "body-size",
+      "kind": "property",
+      "signature": "out property <length> body-size:     Settings.zoom * Settings.font-scale * 14px;",
+      "line": 14,
+      "doc": "Output property \"body-size\"."
+    },
+    {
+      "name": "subtitle-size",
+      "kind": "property",
+      "signature": "out property <length> subtitle-size: Settings.zoom * Settings.font-scale * 16px;",
+      "line": 16,
+      "doc": "Output property \"subtitle-size\"."
+    },
+    {
+      "name": "heading-size",
+      "kind": "property",
+      "signature": "out property <length> heading-size:  Settings.zoom * Settings.font-scale * 20px;",
+      "line": 18,
+      "doc": "Output property \"heading-size\"."
+    },
+    {
+      "name": "title-size",
+      "kind": "property",
+      "signature": "out property <length> title-size:    Settings.zoom * Settings.font-scale * 28px;",
+      "line": 20,
+      "doc": "Output property \"title-size\"."
+    },
+    {
+      "name": "weight-regular",
+      "kind": "property",
+      "signature": "out property <int> weight-regular:   400;",
+      "line": 23,
+      "doc": "Output property \"weight-regular\"."
+    },
+    {
+      "name": "weight-semibold",
+      "kind": "property",
+      "signature": "out property <int> weight-semibold:  600;",
+      "line": 25,
+      "doc": "Output property \"weight-semibold\"."
+    },
+    {
+      "name": "weight-bold",
+      "kind": "property",
+      "signature": "out property <int> weight-bold:      700;",
+      "line": 27,
+      "doc": "Output property \"weight-bold\"."
+    }
+  ]
+}

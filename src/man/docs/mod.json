@@ -1,0 +1,12 @@
+{
+  "source": "docs/mod.rs",
+  "items": [
+    {
+      "name": "parser",
+      "kind": "mod",
+      "signature": "pub mod parser;",
+      "line": 10,
+      "doc": "Markdown-to-DocBlock parser implementation."
+    }
+  ]
+}

@@ -1,8 +1,7 @@
 // ShellStatusBar — Fluent 2 status bar (bottom chrome).
 
 import { Colors, Spacing, Type } from "../../tokens/theme.slint";
-import { Sizes }          from "../../tokens/sizes.slint";
-import { FluentSpacing }  from "../../tokens/fluent/spacing.slint";
+import { Sizes }                 from "../../tokens/sizes.slint";
 
 /// Bottom status bar for the desktop shell with optional progress indicator.
 export component ShellStatusBar inherits Rectangle {
@@ -16,7 +15,7 @@ export component ShellStatusBar inherits Rectangle {
     /// Private property "bar-radius" used internally.
     private property <length> bar-radius: Sizes.border-w-2;
 
-    height: FluentSpacing.status-bar-height;
+    height: Spacing.lg;
     background: Colors.bg-surface;
 
     // Top border

@@ -1,0 +1,19 @@
+{
+  "source": "widgets/SpinValueDisplay.slint",
+  "items": [
+    {
+      "name": "SpinValueDisplay",
+      "kind": "component",
+      "signature": "export component SpinValueDisplay inherits Rectangle",
+      "line": 5,
+      "doc": "S pi nv al ue di sp la y component."
+    },
+    {
+      "name": "display-value",
+      "kind": "property",
+      "signature": "in property <int> display-value;",
+      "line": 7,
+      "doc": "Input property \"display-value\"."
+    }
+  ]
+}

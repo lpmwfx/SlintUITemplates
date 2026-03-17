@@ -1,0 +1,44 @@
+// GameTopBar — compact top bar for small-tier / Steam platform.
+// Back button on the left, centred title, right slot for action icons.
+
+import { SteamColors, SteamSpacing, SteamType } from "../../tokens/steam/mod.slint";
+import { Sizes } from "../../tokens/sizes.slint";
+import { BackButton } from "BackButton.slint";
+
+/// GameTopBar — top chrome for Steam Deck / small-tier shell.
+/// Height is fixed at `SteamSpacing.top-bar-height` (48px).
+export component GameTopBar inherits Rectangle {
+    /// Page or app title shown in the centre.
+    in property <string> title;
+    /// Show the back button on the left.
+    in property <bool> show-back: false;
+    /// Fired when the back button is tapped.
+    callback back();
+
+    height: SteamSpacing.top-bar-height;
+    background: SteamColors.bg-surface;
+    border-color: SteamColors.border;
+    border-width: Sizes.border-w;
+
+    HorizontalLayout {
+        padding-left: SteamSpacing.sm;
+        padding-right: SteamSpacing.sm;
+
+        if root.show-back: BackButton {
+            clicked => { root.back(); }
+        }
+
+        Text {
+            text: root.title;
+            font-size: SteamType.subtitle;
+            font-weight: SteamType.weight-medium;
+            color: SteamColors.text-primary;
+            horizontal-alignment: center;
+            vertical-alignment: center;
+            horizontal-stretch: Sizes.fill;
+        }
+
+        // Right action slot — caller places icon-buttons here
+        @children
+    }
+}

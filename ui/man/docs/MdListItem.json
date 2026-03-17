@@ -1,0 +1,47 @@
+{
+  "source": "docs/MdListItem.slint",
+  "items": [
+    {
+      "name": "MdListItem",
+      "kind": "component",
+      "signature": "export component MdListItem inherits VerticalLayout",
+      "line": 7,
+      "doc": "M dl is ti te m component."
+    },
+    {
+      "name": "kind",
+      "kind": "property",
+      "signature": "in property <string> kind;",
+      "line": 9,
+      "doc": "Input property \"kind\"."
+    },
+    {
+      "name": "text",
+      "kind": "property",
+      "signature": "in property <string> text;",
+      "line": 11,
+      "doc": "Input property \"text\"."
+    },
+    {
+      "name": "bullet-char",
+      "kind": "property",
+      "signature": "in property <string> bullet-char: \"\\u{2022}\";",
+      "line": 13,
+      "doc": "Input property \"bullet-char\"."
+    },
+    {
+      "name": "bullet-sub-char",
+      "kind": "property",
+      "signature": "in property <string> bullet-sub-char: \"\\u{25E6}\";",
+      "line": 15,
+      "doc": "Input property \"bullet-sub-char\"."
+    },
+    {
+      "name": "gap-sm",
+      "kind": "property",
+      "signature": "private property <length> gap-sm: Sizes.border-w-2;",
+      "line": 18,
+      "doc": "Private property \"gap-sm\" used internally."
+    }
+  ]
+}

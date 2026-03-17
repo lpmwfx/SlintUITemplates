@@ -1,0 +1,26 @@
+{
+  "source": "widgets/SearchIcon.slint",
+  "items": [
+    {
+      "name": "SearchIcon",
+      "kind": "component",
+      "signature": "export component SearchIcon inherits Rectangle",
+      "line": 5,
+      "doc": "S ea rc hi co n component."
+    },
+    {
+      "name": "icon",
+      "kind": "property",
+      "signature": "in property <string> icon;",
+      "line": 7,
+      "doc": "Input property \"icon\"."
+    },
+    {
+      "name": "font-name",
+      "kind": "property",
+      "signature": "in property <string> font-name;",
+      "line": 9,
+      "doc": "Input property \"font-name\"."
+    }
+  ]
+}

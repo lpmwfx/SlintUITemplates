@@ -1,0 +1,33 @@
+{
+  "source": "demo/DemoMobileNav.slint",
+  "items": [
+    {
+      "name": "DemoMobileNav",
+      "kind": "component",
+      "signature": "export component DemoMobileNav inherits Rectangle",
+      "line": 7,
+      "doc": "D em om ob il en av component."
+    },
+    {
+      "name": "items",
+      "kind": "property",
+      "signature": "in property <[NavItem]> items;",
+      "line": 9,
+      "doc": "Input property \"items\"."
+    },
+    {
+      "name": "active-view",
+      "kind": "property",
+      "signature": "in property <string>    active-view;",
+      "line": 11,
+      "doc": "Input property \"active-view\"."
+    },
+    {
+      "name": "navigate",
+      "kind": "callback",
+      "signature": "callback navigate(string);",
+      "line": 13,
+      "doc": "Callback fired for n av ig at e."
+    }
+  ]
+}

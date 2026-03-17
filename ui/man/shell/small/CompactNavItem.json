@@ -1,0 +1,33 @@
+{
+  "source": "shell/small/CompactNavItem.slint",
+  "items": [
+    {
+      "name": "CompactNavItem",
+      "kind": "component",
+      "signature": "export component CompactNavItem inherits Rectangle",
+      "line": 9,
+      "doc": "One item inside the compact nav bar — icon + label, touch-target sized."
+    },
+    {
+      "name": "item",
+      "kind": "property",
+      "signature": "in property <NavItem> item;",
+      "line": 11,
+      "doc": "The nav item data."
+    },
+    {
+      "name": "active",
+      "kind": "property",
+      "signature": "in property <bool> active: false;",
+      "line": 13,
+      "doc": "Whether this item is currently active."
+    },
+    {
+      "name": "navigate",
+      "kind": "callback",
+      "signature": "callback navigate(string);",
+      "line": 15,
+      "doc": "Fired when this item is tapped."
+    }
+  ]
+}

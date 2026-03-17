@@ -1,0 +1,19 @@
+{
+  "source": "gateway/view_config.rs",
+  "items": [
+    {
+      "name": "eval_file",
+      "kind": "fn",
+      "signature": "pub fn eval_file(path: &Path) -> Result<ViewConfig, ViewConfigError>",
+      "line": 6,
+      "doc": "Load and evaluate a single `.rhai` file via the gateway."
+    },
+    {
+      "name": "load_all",
+      "kind": "fn",
+      "signature": "pub fn load_all(dir: &Path) -> Result<HashMap<String, ViewConfig>, ViewConfigError>",
+      "line": 13,
+      "doc": "Scan `dir/*.rhai` and return a map of `{stem → ViewConfig}`.\nMissing or empty directory is not an error — returns an empty map."
+    }
+  ]
+}

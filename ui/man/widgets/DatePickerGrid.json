@@ -1,0 +1,47 @@
+{
+  "source": "widgets/DatePickerGrid.slint",
+  "items": [
+    {
+      "name": "DatePickerGrid",
+      "kind": "component",
+      "signature": "export component DatePickerGrid inherits VerticalLayout",
+      "line": 6,
+      "doc": "D at ep ic ke rg ri d component."
+    },
+    {
+      "name": "first-weekday",
+      "kind": "property",
+      "signature": "in property <int>    first-weekday;    // 0=Mon … 6=Sun",
+      "line": 8,
+      "doc": "Input property \"first-weekday\"."
+    },
+    {
+      "name": "days-in-month",
+      "kind": "property",
+      "signature": "in property <int>    days-in-month;",
+      "line": 10,
+      "doc": "Input property \"days-in-month\"."
+    },
+    {
+      "name": "cell-size",
+      "kind": "property",
+      "signature": "in property <length> cell-size;",
+      "line": 12,
+      "doc": "Input property \"cell-size\"."
+    },
+    {
+      "name": "days-cols",
+      "kind": "property",
+      "signature": "in property <int>    days-cols: Sizes.seven;",
+      "line": 14,
+      "doc": "Input property \"days-cols\"."
+    },
+    {
+      "name": "day-clicked",
+      "kind": "callback",
+      "signature": "callback day-clicked(int);",
+      "line": 16,
+      "doc": "Callback fired for d ay c li ck ed."
+    }
+  ]
+}

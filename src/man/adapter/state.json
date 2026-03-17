@@ -1,0 +1,82 @@
+{
+  "source": "adapter/state.rs",
+  "items": [
+    {
+      "name": "set_active_view",
+      "kind": "fn",
+      "signature": "pub fn set_active_view(&self, name: &str)",
+      "line": 7,
+      "doc": "Switch the active view by name — updates cache and UI."
+    },
+    {
+      "name": "get_active_view",
+      "kind": "fn",
+      "signature": "pub fn get_active_view(&self) -> String",
+      "line": 13,
+      "doc": "Get the currently active view name from the adapter cache."
+    },
+    {
+      "name": "set_dark_mode",
+      "kind": "fn",
+      "signature": "pub fn set_dark_mode(&self, on: bool)",
+      "line": 18,
+      "doc": "Set dark mode on/off — updates cache and UI Theme global."
+    },
+    {
+      "name": "get_dark_mode",
+      "kind": "fn",
+      "signature": "pub fn get_dark_mode(&self) -> bool",
+      "line": 24,
+      "doc": "Check if dark mode is currently active (reads from cache)."
+    },
+    {
+      "name": "set_status",
+      "kind": "fn",
+      "signature": "pub fn set_status(&self, text: &str)",
+      "line": 29,
+      "doc": "Set the status bar text — updates cache and UI."
+    },
+    {
+      "name": "get_status",
+      "kind": "fn",
+      "signature": "pub fn get_status(&self) -> String",
+      "line": 35,
+      "doc": "Get the current status bar text from the adapter cache."
+    },
+    {
+      "name": "get_zoom",
+      "kind": "fn",
+      "signature": "pub fn get_zoom(&self) -> f32",
+      "line": 40,
+      "doc": "Get the current UI zoom scale from the adapter cache."
+    },
+    {
+      "name": "get_row_top_ratio",
+      "kind": "fn",
+      "signature": "pub fn get_row_top_ratio(&self) -> f32",
+      "line": 45,
+      "doc": "Get the top row ratio from the adapter cache."
+    },
+    {
+      "name": "get_row_main_ratio",
+      "kind": "fn",
+      "signature": "pub fn get_row_main_ratio(&self) -> f32",
+      "line": 50,
+      "doc": "Get the main row ratio from the adapter cache."
+    },
+    {
+      "name": "set_platform",
+      "kind": "fn",
+      "signature": "pub fn set_platform(&self, platform: Platform)",
+      "line": 56,
+      "doc": "Set the active platform — updates cache and Theme.platform token router.\nCall once at startup before `run()` (or when switching platforms)."
+    },
+    {
+      "name": "get_platform",
+      "kind": "fn",
+      "signature": "pub fn get_platform(&self) -> Platform",
+      "line": 62,
+      "doc": "Get the current platform from the adapter cache."
+    }
+  ]
+}

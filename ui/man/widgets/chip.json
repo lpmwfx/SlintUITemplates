@@ -1,0 +1,68 @@
+{
+  "source": "widgets/chip.slint",
+  "items": [
+    {
+      "name": "Chip",
+      "kind": "component",
+      "signature": "export component Chip inherits Rectangle",
+      "line": 5,
+      "doc": "C hi p component."
+    },
+    {
+      "name": "label",
+      "kind": "property",
+      "signature": "in property <string> label: \"\";",
+      "line": 7,
+      "doc": "Input property \"label\"."
+    },
+    {
+      "name": "closable",
+      "kind": "property",
+      "signature": "in property <bool>   closable: true;",
+      "line": 9,
+      "doc": "Input property \"closable\"."
+    },
+    {
+      "name": "icon",
+      "kind": "property",
+      "signature": "in property <string> icon: \"\";",
+      "line": 11,
+      "doc": "Input property \"icon\"."
+    },
+    {
+      "name": "selected",
+      "kind": "property",
+      "signature": "in property <bool>   selected: false;",
+      "line": 13,
+      "doc": "Input property \"selected\"."
+    },
+    {
+      "name": "enabled",
+      "kind": "property",
+      "signature": "in property <bool>   enabled: true;",
+      "line": 15,
+      "doc": "Input property \"enabled\"."
+    },
+    {
+      "name": "closed",
+      "kind": "callback",
+      "signature": "callback closed();",
+      "line": 17,
+      "doc": "Callback fired for c lo se d."
+    },
+    {
+      "name": "clicked",
+      "kind": "callback",
+      "signature": "callback clicked();",
+      "line": 19,
+      "doc": "Callback fired for c li ck ed."
+    },
+    {
+      "name": "close-icon-size",
+      "kind": "property",
+      "signature": "private property <length> close-icon-size: 10px;",
+      "line": 22,
+      "doc": "Private property \"close-icon-size\" used internally."
+    }
+  ]
+}

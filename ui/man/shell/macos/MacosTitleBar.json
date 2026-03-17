@@ -1,0 +1,19 @@
+{
+  "source": "shell/macos/MacosTitleBar.slint",
+  "items": [
+    {
+      "name": "MacosTitleBar",
+      "kind": "component",
+      "signature": "export component MacosTitleBar inherits Rectangle",
+      "line": 9,
+      "doc": "macOS-style title bar — traffic lights (decorative) and centred window title."
+    },
+    {
+      "name": "title",
+      "kind": "property",
+      "signature": "in property <string> title;",
+      "line": 11,
+      "doc": "Window or page title shown centred in the bar."
+    }
+  ]
+}

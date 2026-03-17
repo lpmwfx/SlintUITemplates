@@ -1,0 +1,15 @@
+// Dev compilation entry — extends lib.slint with example-only components.
+// build.rs compiles this file; include_modules!() gets all types.
+// Published crate uses lib.slint (no viewer/docs-app).
+
+// ── Library exports (same as lib.slint) ──────────────────────────────────
+export { AppWindow }       from "desktop/app-window.slint";
+export { DocBlock }        from "docs/doc-block.slint";
+export { Theme }           from "state/Theme.slint";
+export { Settings }        from "state/settings.slint";
+export { NavItem }         from "desktop/types.slint";
+export { ShellToolbarItem } from "shell/types.slint";
+
+// ── Dev-only exports (examples, not published) ──────────────────────────
+export { FrameworkViewer } from "viewer/viewer.slint";
+export { DocsApp }         from "docs/docs-app.slint";

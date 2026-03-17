@@ -1,0 +1,19 @@
+{
+  "source": "viewer/page-popups.slint",
+  "items": [
+    {
+      "name": "PagePopups",
+      "kind": "component",
+      "signature": "export component PagePopups inherits VerticalLayout",
+      "line": 12,
+      "doc": "Viewer page for popup-oriented demos including flyouts, popovers, dropdowns, and teaching tips."
+    },
+    {
+      "name": "window-height",
+      "kind": "property",
+      "signature": "in property <length> window-height;",
+      "line": 14,
+      "doc": "Available viewer height passed to popup demos that need placement context."
+    }
+  ]
+}

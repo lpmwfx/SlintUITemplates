@@ -1,0 +1,131 @@
+{
+  "source": "tokens/material/typography.slint",
+  "items": [
+    {
+      "name": "display-large",
+      "kind": "property",
+      "signature": "out property <length> display-large:  Settings.zoom * Settings.font-scale * 57px;",
+      "line": 10,
+      "doc": "Output property \"display-large\"."
+    },
+    {
+      "name": "display-medium",
+      "kind": "property",
+      "signature": "out property <length> display-medium: Settings.zoom * Settings.font-scale * 45px;",
+      "line": 12,
+      "doc": "Output property \"display-medium\"."
+    },
+    {
+      "name": "display-small",
+      "kind": "property",
+      "signature": "out property <length> display-small:  Settings.zoom * Settings.font-scale * 36px;",
+      "line": 14,
+      "doc": "Output property \"display-small\"."
+    },
+    {
+      "name": "headline-large",
+      "kind": "property",
+      "signature": "out property <length> headline-large:  Settings.zoom * Settings.font-scale * 32px;",
+      "line": 18,
+      "doc": "Output property \"headline-large\"."
+    },
+    {
+      "name": "headline-medium",
+      "kind": "property",
+      "signature": "out property <length> headline-medium: Settings.zoom * Settings.font-scale * 28px;",
+      "line": 20,
+      "doc": "Output property \"headline-medium\"."
+    },
+    {
+      "name": "headline-small",
+      "kind": "property",
+      "signature": "out property <length> headline-small:  Settings.zoom * Settings.font-scale * 24px;",
+      "line": 22,
+      "doc": "Output property \"headline-small\"."
+    },
+    {
+      "name": "title-large",
+      "kind": "property",
+      "signature": "out property <length> title-large:  Settings.zoom * Settings.font-scale * 22px;",
+      "line": 26,
+      "doc": "Output property \"title-large\"."
+    },
+    {
+      "name": "title-medium",
+      "kind": "property",
+      "signature": "out property <length> title-medium: Settings.zoom * Settings.font-scale * 16px;",
+      "line": 28,
+      "doc": "Output property \"title-medium\"."
+    },
+    {
+      "name": "title-small",
+      "kind": "property",
+      "signature": "out property <length> title-small:  Settings.zoom * Settings.font-scale * 14px;",
+      "line": 30,
+      "doc": "Output property \"title-small\"."
+    },
+    {
+      "name": "body-large",
+      "kind": "property",
+      "signature": "out property <length> body-large:  Settings.zoom * Settings.font-scale * 16px;",
+      "line": 34,
+      "doc": "Output property \"body-large\"."
+    },
+    {
+      "name": "body-medium",
+      "kind": "property",
+      "signature": "out property <length> body-medium: Settings.zoom * Settings.font-scale * 14px;",
+      "line": 36,
+      "doc": "Output property \"body-medium\"."
+    },
+    {
+      "name": "body-small",
+      "kind": "property",
+      "signature": "out property <length> body-small:  Settings.zoom * Settings.font-scale * 12px;",
+      "line": 38,
+      "doc": "Output property \"body-small\"."
+    },
+    {
+      "name": "label-large",
+      "kind": "property",
+      "signature": "out property <length> label-large:  Settings.zoom * Settings.font-scale * 14px;",
+      "line": 42,
+      "doc": "Output property \"label-large\"."
+    },
+    {
+      "name": "label-medium",
+      "kind": "property",
+      "signature": "out property <length> label-medium: Settings.zoom * Settings.font-scale * 12px;",
+      "line": 44,
+      "doc": "Output property \"label-medium\"."
+    },
+    {
+      "name": "label-small",
+      "kind": "property",
+      "signature": "out property <length> label-small:  Settings.zoom * Settings.font-scale * 11px;",
+      "line": 46,
+      "doc": "Output property \"label-small\"."
+    },
+    {
+      "name": "weight-regular",
+      "kind": "property",
+      "signature": "out property <int> weight-regular: 400;",
+      "line": 50,
+      "doc": "Output property \"weight-regular\"."
+    },
+    {
+      "name": "weight-medium",
+      "kind": "property",
+      "signature": "out property <int> weight-medium:  500;",
+      "line": 52,
+      "doc": "Output property \"weight-medium\"."
+    },
+    {
+      "name": "weight-bold",
+      "kind": "property",
+      "signature": "out property <int> weight-bold:    700;",
+      "line": 54,
+      "doc": "Output property \"weight-bold\"."
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "source": "widgets/teaching-tip.slint",
+  "items": [
+    {
+      "name": "TeachingTip",
+      "kind": "component",
+      "signature": "export component TeachingTip inherits Rectangle",
+      "line": 18,
+      "doc": "T ea ch in gt ip component."
+    },
+    {
+      "name": "window-height",
+      "kind": "property",
+      "signature": "in property <length> window-height;",
+      "line": 20,
+      "doc": "Input property \"window-height\"."
+    },
+    {
+      "name": "title",
+      "kind": "property",
+      "signature": "in property <string> title: \"\";",
+      "line": 22,
+      "doc": "Input property \"title\"."
+    },
+    {
+      "name": "body",
+      "kind": "property",
+      "signature": "in property <string> body: \"\";",
+      "line": 24,
+      "doc": "Input property \"body\"."
+    },
+    {
+      "name": "action-label",
+      "kind": "property",
+      "signature": "in property <string> action-label: \"Got it\";",
+      "line": 26,
+      "doc": "Input property \"action-label\"."
+    },
+    {
+      "name": "dismiss-label",
+      "kind": "property",
+      "signature": "in property <string> dismiss-label: \"\";",
+      "line": 28,
+      "doc": "Input property \"dismiss-label\"."
+    },
+    {
+      "name": "action",
+      "kind": "callback",
+      "signature": "callback action();",
+      "line": 30,
+      "doc": "Callback fired for a ct io n."
+    },
+    {
+      "name": "dismissed",
+      "kind": "callback",
+      "signature": "callback dismissed();",
+      "line": 32,
+      "doc": "Callback fired for d is mi ss ed."
+    },
+    {
+      "name": "pop-x",
+      "kind": "property",
+      "signature": "private property <length> pop-x:    0px;",
+      "line": 35,
+      "doc": "Private property \"pop-x\" used internally."
+    },
+    {
+      "name": "pop-y",
+      "kind": "property",
+      "signature": "private property <length> pop-y:    0px;",
+      "line": 37,
+      "doc": "Private property \"pop-y\" used internally."
+    },
+    {
+      "name": "popup-w",
+      "kind": "property",
+      "signature": "private property <length> popup-w:  260px;",
+      "line": 39,
+      "doc": "Private property \"popup-w\" used internally."
+    },
+    {
+      "name": "popup-h",
+      "kind": "property",
+      "signature": "private property <length> popup-h:  180px;",
+      "line": 41,
+      "doc": "Private property \"popup-h\" used internally."
+    },
+    {
+      "name": "arrow-sz",
+      "kind": "property",
+      "signature": "private property <length> arrow-sz: 10px;",
+      "line": 43,
+      "doc": "Private property \"arrow-sz\" used internally."
+    },
+    {
+      "name": "flip-up",
+      "kind": "property",
+      "signature": "private property <bool>   flip-up:  false;",
+      "line": 45,
+      "doc": "Private property \"flip-up\" used internally."
+    }
+  ]
+}

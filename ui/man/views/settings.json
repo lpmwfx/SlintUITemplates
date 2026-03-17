@@ -1,0 +1,19 @@
+{
+  "source": "views/settings.slint",
+  "items": [
+    {
+      "name": "SettingsView",
+      "kind": "component",
+      "signature": "export component SettingsView inherits Rectangle",
+      "line": 9,
+      "doc": "Starter settings page for the `settings` navigation slot.\n\nShows basic toggle controls and action buttons for shell demos."
+    },
+    {
+      "name": "page-title",
+      "kind": "property",
+      "signature": "private property <string> page-title: \"Settings\";",
+      "line": 12,
+      "doc": "Private property \"page-title\" used internally."
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "source": "widgets/DatePickerField.slint",
+  "items": [
+    {
+      "name": "DatePickerField",
+      "kind": "component",
+      "signature": "export component DatePickerField inherits Rectangle",
+      "line": 6,
+      "doc": "D at ep ic ke rf ie ld component."
+    },
+    {
+      "name": "value",
+      "kind": "property",
+      "signature": "in property <string> value;",
+      "line": 8,
+      "doc": "Input property \"value\"."
+    },
+    {
+      "name": "placeholder",
+      "kind": "property",
+      "signature": "in property <string> placeholder;",
+      "line": 10,
+      "doc": "Input property \"placeholder\"."
+    },
+    {
+      "name": "error",
+      "kind": "property",
+      "signature": "in property <string> error;",
+      "line": 12,
+      "doc": "Input property \"error\"."
+    },
+    {
+      "name": "enabled",
+      "kind": "property",
+      "signature": "in property <bool>   enabled: true;",
+      "line": 14,
+      "doc": "Input property \"enabled\"."
+    },
+    {
+      "name": "icon-font",
+      "kind": "property",
+      "signature": "in property <string> icon-font: \"Segoe Fluent Icons\";",
+      "line": 16,
+      "doc": "Input property \"icon-font\"."
+    },
+    {
+      "name": "open-picker",
+      "kind": "callback",
+      "signature": "callback open-picker();",
+      "line": 18,
+      "doc": "Callback fired for o pe n p ic ke r."
+    }
+  ]
+}

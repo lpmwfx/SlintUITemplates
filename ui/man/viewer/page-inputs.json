@@ -1,0 +1,222 @@
+{
+  "source": "viewer/page-inputs.slint",
+  "items": [
+    {
+      "name": "PageInputs",
+      "kind": "component",
+      "signature": "export component PageInputs inherits VerticalLayout",
+      "line": 14,
+      "doc": "Viewer page showcasing text-entry and form input components."
+    },
+    {
+      "name": "spinbox-default-val",
+      "kind": "property",
+      "signature": "private property <int> spinbox-default-val: 42;",
+      "line": 19,
+      "doc": "Private property \"spinbox-default-val\" used internally."
+    },
+    {
+      "name": "section-textinput",
+      "kind": "property",
+      "signature": "private property <string> section-textinput: \"TextInput\";",
+      "line": 23,
+      "doc": "Private property \"section-textinput\" used internally."
+    },
+    {
+      "name": "section-selectfield",
+      "kind": "property",
+      "signature": "private property <string> section-selectfield: \"SelectField\";",
+      "line": 25,
+      "doc": "Private property \"section-selectfield\" used internally."
+    },
+    {
+      "name": "section-searchinput",
+      "kind": "property",
+      "signature": "private property <string> section-searchinput: \"SearchInput\";",
+      "line": 27,
+      "doc": "Private property \"section-searchinput\" used internally."
+    },
+    {
+      "name": "section-passwordinput",
+      "kind": "property",
+      "signature": "private property <string> section-passwordinput: \"PasswordInput\";",
+      "line": 29,
+      "doc": "Private property \"section-passwordinput\" used internally."
+    },
+    {
+      "name": "section-textarea",
+      "kind": "property",
+      "signature": "private property <string> section-textarea: \"TextArea\";",
+      "line": 31,
+      "doc": "Private property \"section-textarea\" used internally."
+    },
+    {
+      "name": "section-spinbox",
+      "kind": "property",
+      "signature": "private property <string> section-spinbox: \"SpinBox\";",
+      "line": 33,
+      "doc": "Private property \"section-spinbox\" used internally."
+    },
+    {
+      "name": "ti-placeholder",
+      "kind": "property",
+      "signature": "private property <string> ti-placeholder: \"Plain input...\";",
+      "line": 35,
+      "doc": "Private property \"ti-placeholder\" used internally."
+    },
+    {
+      "name": "ti-label",
+      "kind": "property",
+      "signature": "private property <string> ti-label: \"With label\";",
+      "line": 37,
+      "doc": "Private property \"ti-label\" used internally."
+    },
+    {
+      "name": "ti-placeholder2",
+      "kind": "property",
+      "signature": "private property <string> ti-placeholder2: \"Enter text...\";",
+      "line": 39,
+      "doc": "Private property \"ti-placeholder2\" used internally."
+    },
+    {
+      "name": "ti-value",
+      "kind": "property",
+      "signature": "private property <string> ti-value: \"Hello\";",
+      "line": 41,
+      "doc": "Private property \"ti-value\" used internally."
+    },
+    {
+      "name": "ti-err-label",
+      "kind": "property",
+      "signature": "private property <string> ti-err-label: \"With error\";",
+      "line": 43,
+      "doc": "Private property \"ti-err-label\" used internally."
+    },
+    {
+      "name": "ti-err-value",
+      "kind": "property",
+      "signature": "private property <string> ti-err-value: \"bad-value\";",
+      "line": 45,
+      "doc": "Private property \"ti-err-value\" used internally."
+    },
+    {
+      "name": "ti-err-msg",
+      "kind": "property",
+      "signature": "private property <string> ti-err-msg: \"This field is required\";",
+      "line": 47,
+      "doc": "Private property \"ti-err-msg\" used internally."
+    },
+    {
+      "name": "sf-placeholder",
+      "kind": "property",
+      "signature": "private property <string> sf-placeholder: \"Choose one...\";",
+      "line": 49,
+      "doc": "Private property \"sf-placeholder\" used internally."
+    },
+    {
+      "name": "si-placeholder",
+      "kind": "property",
+      "signature": "private property <string> si-placeholder: \"Search...\";",
+      "line": 51,
+      "doc": "Private property \"si-placeholder\" used internally."
+    },
+    {
+      "name": "si-value",
+      "kind": "property",
+      "signature": "private property <string> si-value: \"hello world\";",
+      "line": 53,
+      "doc": "Private property \"si-value\" used internally."
+    },
+    {
+      "name": "si-placeholder2",
+      "kind": "property",
+      "signature": "private property <string> si-placeholder2: \"With value + clear...\";",
+      "line": 55,
+      "doc": "Private property \"si-placeholder2\" used internally."
+    },
+    {
+      "name": "pi-placeholder",
+      "kind": "property",
+      "signature": "private property <string> pi-placeholder: \"Enter password...\";",
+      "line": 57,
+      "doc": "Private property \"pi-placeholder\" used internally."
+    },
+    {
+      "name": "pi-label",
+      "kind": "property",
+      "signature": "private property <string> pi-label: \"With label\";",
+      "line": 59,
+      "doc": "Private property \"pi-label\" used internally."
+    },
+    {
+      "name": "pi-placeholder2",
+      "kind": "property",
+      "signature": "private property <string> pi-placeholder2: \"Password\";",
+      "line": 61,
+      "doc": "Private property \"pi-placeholder2\" used internally."
+    },
+    {
+      "name": "pi-err-label",
+      "kind": "property",
+      "signature": "private property <string> pi-err-label: \"With error\";",
+      "line": 63,
+      "doc": "Private property \"pi-err-label\" used internally."
+    },
+    {
+      "name": "pi-err-msg",
+      "kind": "property",
+      "signature": "private property <string> pi-err-msg: \"Password too short\";",
+      "line": 65,
+      "doc": "Private property \"pi-err-msg\" used internally."
+    },
+    {
+      "name": "ta-placeholder",
+      "kind": "property",
+      "signature": "private property <string> ta-placeholder: \"Enter multi-line text...\";",
+      "line": 67,
+      "doc": "Private property \"ta-placeholder\" used internally."
+    },
+    {
+      "name": "ta-label",
+      "kind": "property",
+      "signature": "private property <string> ta-label: \"With label\";",
+      "line": 69,
+      "doc": "Private property \"ta-label\" used internally."
+    },
+    {
+      "name": "ta-placeholder2",
+      "kind": "property",
+      "signature": "private property <string> ta-placeholder2: \"Notes...\";",
+      "line": 71,
+      "doc": "Private property \"ta-placeholder2\" used internally."
+    },
+    {
+      "name": "ta-err-label",
+      "kind": "property",
+      "signature": "private property <string> ta-err-label: \"With error\";",
+      "line": 73,
+      "doc": "Private property \"ta-err-label\" used internally."
+    },
+    {
+      "name": "ta-err-msg",
+      "kind": "property",
+      "signature": "private property <string> ta-err-msg: \"This field is required\";",
+      "line": 75,
+      "doc": "Private property \"ta-err-msg\" used internally."
+    },
+    {
+      "name": "sb-label",
+      "kind": "property",
+      "signature": "private property <string> sb-label: \"With label\";",
+      "line": 77,
+      "doc": "Private property \"sb-label\" used internally."
+    },
+    {
+      "name": "sb-disabled-label",
+      "kind": "property",
+      "signature": "private property <string> sb-disabled-label: \"Disabled\";",
+      "line": 79,
+      "doc": "Private property \"sb-disabled-label\" used internally."
+    }
+  ]
+}

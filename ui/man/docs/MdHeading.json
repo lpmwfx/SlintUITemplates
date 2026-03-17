@@ -1,0 +1,33 @@
+{
+  "source": "docs/MdHeading.slint",
+  "items": [
+    {
+      "name": "MdHeading",
+      "kind": "component",
+      "signature": "export component MdHeading inherits VerticalLayout",
+      "line": 7,
+      "doc": "M dh ea di ng component."
+    },
+    {
+      "name": "kind",
+      "kind": "property",
+      "signature": "in property <string> kind;",
+      "line": 9,
+      "doc": "Input property \"kind\"."
+    },
+    {
+      "name": "text",
+      "kind": "property",
+      "signature": "in property <string> text;",
+      "line": 11,
+      "doc": "Input property \"text\"."
+    },
+    {
+      "name": "gap-sm",
+      "kind": "property",
+      "signature": "private property <length> gap-sm: Sizes.border-w-2;",
+      "line": 14,
+      "doc": "Private property \"gap-sm\" used internally."
+    }
+  ]
+}

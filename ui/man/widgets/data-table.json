@@ -1,0 +1,75 @@
+{
+  "source": "widgets/data-table.slint",
+  "items": [
+    {
+      "name": "DataTable",
+      "kind": "component",
+      "signature": "export component DataTable inherits Rectangle",
+      "line": 10,
+      "doc": "D at at ab le component."
+    },
+    {
+      "name": "columns",
+      "kind": "property",
+      "signature": "in property <[TableColumn]> columns: [];",
+      "line": 12,
+      "doc": "Input property \"columns\"."
+    },
+    {
+      "name": "rows",
+      "kind": "property",
+      "signature": "in property <[TableRow]>    rows: [];",
+      "line": 14,
+      "doc": "Input property \"rows\"."
+    },
+    {
+      "name": "sort-key",
+      "kind": "property",
+      "signature": "in property <string>    sort-key: \"\";",
+      "line": 16,
+      "doc": "Input property \"sort-key\"."
+    },
+    {
+      "name": "sort-asc",
+      "kind": "property",
+      "signature": "in property <bool>      sort-asc: true;",
+      "line": 18,
+      "doc": "Input property \"sort-asc\"."
+    },
+    {
+      "name": "selected",
+      "kind": "property",
+      "signature": "in property <string>    selected: \"\";",
+      "line": 20,
+      "doc": "Input property \"selected\"."
+    },
+    {
+      "name": "sort-asc-indicator",
+      "kind": "property",
+      "signature": "in property <string> sort-asc-indicator: \"\\u{25B2}\";",
+      "line": 22,
+      "doc": "Input property \"sort-asc-indicator\"."
+    },
+    {
+      "name": "sort-desc-indicator",
+      "kind": "property",
+      "signature": "in property <string> sort-desc-indicator: \"\\u{25BC}\";",
+      "line": 24,
+      "doc": "Input property \"sort-desc-indicator\"."
+    },
+    {
+      "name": "sort-changed",
+      "kind": "callback",
+      "signature": "callback sort-changed(string, bool);",
+      "line": 26,
+      "doc": "Callback fired for s or t c ha ng ed."
+    },
+    {
+      "name": "row-selected",
+      "kind": "callback",
+      "signature": "callback row-selected(string);",
+      "line": 28,
+      "doc": "Callback fired for r ow s el ec te d."
+    }
+  ]
+}

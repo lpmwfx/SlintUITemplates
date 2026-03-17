@@ -1,0 +1,40 @@
+{
+  "source": "shell/desktop/status-bar.slint",
+  "items": [
+    {
+      "name": "ShellStatusBar",
+      "kind": "component",
+      "signature": "export component ShellStatusBar inherits Rectangle",
+      "line": 7,
+      "doc": "Bottom status bar for the desktop shell with optional progress indicator."
+    },
+    {
+      "name": "status-text",
+      "kind": "property",
+      "signature": "in property <string>  status-text: \"Ready\";",
+      "line": 9,
+      "doc": "Primary status message shown on the left."
+    },
+    {
+      "name": "progress",
+      "kind": "property",
+      "signature": "in property <float>   progress: -1.0;   // -1 = hidden, 0.0..1.0 = shown",
+      "line": 11,
+      "doc": "Progress value in the range `0.0..=1.0`; negative hides the indicator."
+    },
+    {
+      "name": "right-text",
+      "kind": "property",
+      "signature": "in property <string>  right-text: \"\";",
+      "line": 13,
+      "doc": "Optional secondary message aligned to the right."
+    },
+    {
+      "name": "bar-radius",
+      "kind": "property",
+      "signature": "private property <length> bar-radius: Sizes.border-w-2;",
+      "line": 16,
+      "doc": "Private property \"bar-radius\" used internally."
+    }
+  ]
+}

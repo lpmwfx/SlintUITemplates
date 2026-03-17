@@ -1,0 +1,61 @@
+{
+  "source": "viewer/page-navigation.slint",
+  "items": [
+    {
+      "name": "PageNavigation",
+      "kind": "component",
+      "signature": "export component PageNavigation inherits VerticalLayout",
+      "line": 12,
+      "doc": "Viewer page showcasing navigation widgets such as tabs, breadcrumbs, pagination, and steppers."
+    },
+    {
+      "name": "active-tab",
+      "kind": "property",
+      "signature": "private property <string> active-tab: \"one\";",
+      "line": 16,
+      "doc": "Private property \"active-tab\" used internally."
+    },
+    {
+      "name": "page",
+      "kind": "property",
+      "signature": "private property <int>    page: Sizes.three;",
+      "line": 18,
+      "doc": "Private property \"page\" used internally."
+    },
+    {
+      "name": "step-active",
+      "kind": "property",
+      "signature": "private property <int>    step-active: Sizes.one;",
+      "line": 20,
+      "doc": "Private property \"step-active\" used internally."
+    },
+    {
+      "name": "section-tabbar",
+      "kind": "property",
+      "signature": "private property <string> section-tabbar: \"TabBar\";",
+      "line": 24,
+      "doc": "Private property \"section-tabbar\" used internally."
+    },
+    {
+      "name": "section-breadcrumb",
+      "kind": "property",
+      "signature": "private property <string> section-breadcrumb: \"Breadcrumb\";",
+      "line": 26,
+      "doc": "Private property \"section-breadcrumb\" used internally."
+    },
+    {
+      "name": "section-pagination",
+      "kind": "property",
+      "signature": "private property <string> section-pagination: \"Pagination\";",
+      "line": 28,
+      "doc": "Private property \"section-pagination\" used internally."
+    },
+    {
+      "name": "section-stepper",
+      "kind": "property",
+      "signature": "private property <string> section-stepper: \"Stepper\";",
+      "line": 30,
+      "doc": "Private property \"section-stepper\" used internally."
+    }
+  ]
+}

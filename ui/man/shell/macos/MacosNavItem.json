@@ -1,0 +1,33 @@
+{
+  "source": "shell/macos/MacosNavItem.slint",
+  "items": [
+    {
+      "name": "MacosNavItem",
+      "kind": "component",
+      "signature": "export component MacosNavItem inherits Rectangle",
+      "line": 10,
+      "doc": "macOS sidebar navigation row — icon glyph + label, touch-target height."
+    },
+    {
+      "name": "item",
+      "kind": "property",
+      "signature": "in property <NavItem> item;",
+      "line": 12,
+      "doc": "Navigation data for this item."
+    },
+    {
+      "name": "active",
+      "kind": "property",
+      "signature": "in property <bool>    active: false;",
+      "line": 14,
+      "doc": "Whether this item is the active destination."
+    },
+    {
+      "name": "navigate",
+      "kind": "callback",
+      "signature": "callback navigate(string);",
+      "line": 17,
+      "doc": "Fired when the user selects this item."
+    }
+  ]
+}

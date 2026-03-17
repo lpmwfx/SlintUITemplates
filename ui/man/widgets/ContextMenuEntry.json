@@ -1,0 +1,40 @@
+{
+  "source": "widgets/ContextMenuEntry.slint",
+  "items": [
+    {
+      "name": "ContextMenuItem",
+      "kind": "struct",
+      "signature": "export struct ContextMenuItem",
+      "line": 5,
+      "doc": "C on te xt me nu it em struct."
+    },
+    {
+      "name": "ContextMenuEntry",
+      "kind": "component",
+      "signature": "export component ContextMenuEntry inherits Rectangle",
+      "line": 16,
+      "doc": "C on te xt me nu en tr y component."
+    },
+    {
+      "name": "item",
+      "kind": "property",
+      "signature": "in property <ContextMenuItem> item;",
+      "line": 18,
+      "doc": "Input property \"item\"."
+    },
+    {
+      "name": "icon-font",
+      "kind": "property",
+      "signature": "in property <string> icon-font: \"Segoe Fluent Icons\";",
+      "line": 20,
+      "doc": "Input property \"icon-font\"."
+    },
+    {
+      "name": "activated",
+      "kind": "callback",
+      "signature": "callback activated(string);",
+      "line": 22,
+      "doc": "Callback fired for a ct iv at ed."
+    }
+  ]
+}

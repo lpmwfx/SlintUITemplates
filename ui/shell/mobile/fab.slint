@@ -2,8 +2,7 @@
 // Reference: https://m3.material.io/components/floating-action-button
 
 import { MaterialColors, MaterialSpacing, MaterialType, MaterialRadius } from "../../tokens/material/mod.slint";
-import { Sizes }        from "../../tokens/sizes.slint";
-import { FluentSpacing } from "../../tokens/fluent/spacing.slint";
+import { Sizes } from "../../tokens/sizes.slint";
 
 /// F ab component.
 export component FAB inherits Rectangle {
@@ -44,7 +43,7 @@ export component FAB inherits Rectangle {
 
     HorizontalLayout {
         alignment: center;
-        spacing: FluentSpacing.sm;
+        spacing: MaterialSpacing.sm;
         padding-left: extended ? Sizes.icon-sm : Sizes.no-size;
         padding-right: extended ? Sizes.icon-md : Sizes.no-size;
 

@@ -1,0 +1,19 @@
+// macOS corner radius scale — softer than iOS, more rectangular than Fluent.
+// Reference: Apple HIG rounded rectangles
+
+export global MacosRadius {
+    /// No rounding — table cells, flat areas.
+    out property <length> none:   0px;
+    /// Extra small — checkboxes, small tags.
+    out property <length> sm:     4px;
+    /// Standard — buttons, text fields, menu items.
+    out property <length> md:     6px;
+    /// Large — cards, panels, popovers.
+    out property <length> lg:     8px;
+    /// Extra large — dialogs, sheets, large containers.
+    out property <length> xl:    12px;
+    /// Window-level rounding (macOS 14+ rounded window corners).
+    out property <length> window: 10px;
+    /// Full pill — tags, badges, segmented controls.
+    out property <length> circle: 9999px;
+}

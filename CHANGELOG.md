@@ -2,6 +2,14 @@
 
 ## [Unreleased] — 0.1.0
 
+### Phase 22 — Workspace Split
+- Flat workspace: root = library crate, `tools/` = slintui + docgen + scanners (publish = false)
+- Feature flags: `rhai` (optional Rhai scripting), `markdown` (optional docs module)
+- `tiny-skia` moved to dev-dependencies (unused by library)
+- Scanner build-deps removed from root — now in `tools/scanners`
+- CI updated for workspace builds + no-default-features check
+- Publish workflow targets `-p slint-ui-templates` specifically
+
 ### Phase 12 — Publish
 - README with architecture diagram, quick-start, AppShell declaration example
 - docs/architecture.md — mother-child pattern, token system, AppShell flow

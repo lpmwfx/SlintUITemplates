@@ -1,0 +1,12 @@
+{
+  "source": "bindings/rhai/dsl.rs",
+  "items": [
+    {
+      "name": "register",
+      "kind": "fn",
+      "signature": "pub fn register(engine: &mut Engine, adapter: Rc<RefCell<AppAdapter>>)",
+      "line": 11,
+      "doc": "Register DSL API functions into the Rhai engine: nav, toolbar, window size, bg style."
+    }
+  ]
+}

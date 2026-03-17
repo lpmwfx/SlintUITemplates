@@ -1,0 +1,26 @@
+{
+  "source": "viewer/ScrollDemoRow.slint",
+  "items": [
+    {
+      "name": "ScrollDemoRow",
+      "kind": "component",
+      "signature": "export component ScrollDemoRow inherits Rectangle",
+      "line": 5,
+      "doc": "S cr ol ld em or ow component."
+    },
+    {
+      "name": "row-index",
+      "kind": "property",
+      "signature": "in property <int>    row-index;",
+      "line": 7,
+      "doc": "Input property \"row-index\"."
+    },
+    {
+      "name": "row-prefix",
+      "kind": "property",
+      "signature": "in property <string> row-prefix;",
+      "line": 9,
+      "doc": "Input property \"row-prefix\"."
+    }
+  ]
+}

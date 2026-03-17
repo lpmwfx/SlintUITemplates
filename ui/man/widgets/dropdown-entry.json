@@ -1,0 +1,68 @@
+{
+  "source": "widgets/dropdown-entry.slint",
+  "items": [
+    {
+      "name": "DropdownMenuItem",
+      "kind": "struct",
+      "signature": "export struct DropdownMenuItem",
+      "line": 4,
+      "doc": "D ro pd ow nm en ui te m struct."
+    },
+    {
+      "name": "DropdownEntry",
+      "kind": "component",
+      "signature": "export component DropdownEntry inherits Rectangle",
+      "line": 13,
+      "doc": "D ro pd ow ne nt ry component."
+    },
+    {
+      "name": "item",
+      "kind": "property",
+      "signature": "in property <DropdownMenuItem> item;",
+      "line": 15,
+      "doc": "Input property \"item\"."
+    },
+    {
+      "name": "activated",
+      "kind": "callback",
+      "signature": "callback activated(string);",
+      "line": 17,
+      "doc": "Callback fired for a ct iv at ed."
+    },
+    {
+      "name": "border-px",
+      "kind": "property",
+      "signature": "private property <length> border-px:    1px;",
+      "line": 20,
+      "doc": "Private property \"border-px\" used internally."
+    },
+    {
+      "name": "half-xs",
+      "kind": "property",
+      "signature": "private property <length> half-xs:     Spacing.xs / 2;",
+      "line": 22,
+      "doc": "Private property \"half-xs\" used internally."
+    },
+    {
+      "name": "stretch-full",
+      "kind": "property",
+      "signature": "private property <int>    stretch-full: 1;",
+      "line": 24,
+      "doc": "Private property \"stretch-full\" used internally."
+    },
+    {
+      "name": "op-enabled",
+      "kind": "property",
+      "signature": "private property <float>  op-enabled:   1.0;",
+      "line": 26,
+      "doc": "Private property \"op-enabled\" used internally."
+    },
+    {
+      "name": "op-disabled",
+      "kind": "property",
+      "signature": "private property <float>  op-disabled:  0.5;",
+      "line": 28,
+      "doc": "Private property \"op-disabled\" used internally."
+    }
+  ]
+}

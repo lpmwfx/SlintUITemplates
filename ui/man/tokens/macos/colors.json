@@ -1,0 +1,222 @@
+{
+  "source": "tokens/macos/colors.slint",
+  "items": [
+    {
+      "name": "bg-primary-light",
+      "kind": "property",
+      "signature": "out property <color> bg-primary-light:    #ffffff;",
+      "line": 8,
+      "doc": "Primary window background (light: white, dark: #1e1e1e)."
+    },
+    {
+      "name": "bg-primary-dark",
+      "kind": "property",
+      "signature": "out property <color> bg-primary-dark:     #1e1e1e;",
+      "line": 10,
+      "doc": "Primary dark background color for content areas and main containers in dark mode themes."
+    },
+    {
+      "name": "bg-surface-light",
+      "kind": "property",
+      "signature": "out property <color> bg-surface-light:    #f2f2f7;",
+      "line": 12,
+      "doc": "Secondary surface (light: #f2f2f7, dark: #2c2c2e)."
+    },
+    {
+      "name": "bg-surface-dark",
+      "kind": "property",
+      "signature": "out property <color> bg-surface-dark:     #2c2c2e;",
+      "line": 14,
+      "doc": "Dark background color for surfaces used in dark mode themes. Provides a neutral dark gray tone for UI backgrounds."
+    },
+    {
+      "name": "bg-elevated-light",
+      "kind": "property",
+      "signature": "out property <color> bg-elevated-light:   #ffffff;",
+      "line": 16,
+      "doc": "Elevated surface — cards, popovers (light: white, dark: #3a3a3c)."
+    },
+    {
+      "name": "bg-elevated-dark",
+      "kind": "property",
+      "signature": "out property <color> bg-elevated-dark:    #3a3a3c;",
+      "line": 18,
+      "doc": "Background color for elevated surfaces in a dark theme. Provides visual hierarchy for containers, panels, and modal elements above the base background level."
+    },
+    {
+      "name": "bg-titlebar-light",
+      "kind": "property",
+      "signature": "out property <color> bg-titlebar-light:   #ebebeb;",
+      "line": 20,
+      "doc": "Title bar / toolbar (light: #ebebeb, dark: #323232)."
+    },
+    {
+      "name": "bg-titlebar-dark",
+      "kind": "property",
+      "signature": "out property <color> bg-titlebar-dark:    #323232;",
+      "line": 22,
+      "doc": "Dark gray background color for the application titlebar used in dark mode themes."
+    },
+    {
+      "name": "text-primary-light",
+      "kind": "property",
+      "signature": "out property <color> text-primary-light:   #000000;",
+      "line": 26,
+      "doc": "Primary label (light: #000000, dark: #ffffff)."
+    },
+    {
+      "name": "text-primary-dark",
+      "kind": "property",
+      "signature": "out property <color> text-primary-dark:    #ffffff;",
+      "line": 28,
+      "doc": "Primary text color used in dark theme UI, defaulting to white for optimal contrast on dark backgrounds."
+    },
+    {
+      "name": "text-secondary-light",
+      "kind": "property",
+      "signature": "out property <color> text-secondary-light: #3c3c4399;",
+      "line": 30,
+      "doc": "Secondary label (light: #3c3c4399, dark: #ebebf599)."
+    },
+    {
+      "name": "text-secondary-dark",
+      "kind": "property",
+      "signature": "out property <color> text-secondary-dark:  #ebebf599;",
+      "line": 32,
+      "doc": "Secondary text color for dark-themed UI elements, providing reduced emphasis with transparency for visual hierarchy."
+    },
+    {
+      "name": "text-disabled-light",
+      "kind": "property",
+      "signature": "out property <color> text-disabled-light:  #3c3c4340;",
+      "line": 34,
+      "doc": "Disabled label."
+    },
+    {
+      "name": "text-disabled-dark",
+      "kind": "property",
+      "signature": "out property <color> text-disabled-dark:   #ebebf540;",
+      "line": 36,
+      "doc": "Color used for disabled text elements in the dark theme."
+    },
+    {
+      "name": "accent-light",
+      "kind": "property",
+      "signature": "out property <color> accent-light:         #007aff;",
+      "line": 40,
+      "doc": "System blue accent."
+    },
+    {
+      "name": "accent-dark",
+      "kind": "property",
+      "signature": "out property <color> accent-dark:          #0a84ff;",
+      "line": 42,
+      "doc": "Dark accent color used for primary UI emphasis in dark mode contexts"
+    },
+    {
+      "name": "accent-hover-light",
+      "kind": "property",
+      "signature": "out property <color> accent-hover-light:   #0066d6;",
+      "line": 44,
+      "doc": "Accent hover."
+    },
+    {
+      "name": "accent-hover-dark",
+      "kind": "property",
+      "signature": "out property <color> accent-hover-dark:    #409cff;",
+      "line": 46,
+      "doc": "Accent color applied to interactive elements when hovered in dark mode."
+    },
+    {
+      "name": "accent-text",
+      "kind": "property",
+      "signature": "out property <color> accent-text:          #ffffff;",
+      "line": 48,
+      "doc": "Text on accent."
+    },
+    {
+      "name": "border-light",
+      "kind": "property",
+      "signature": "out property <color> border-light:         #c6c6c8;",
+      "line": 52,
+      "doc": "Separator (light: #c6c6c8, dark: #38383a)."
+    },
+    {
+      "name": "border-dark",
+      "kind": "property",
+      "signature": "out property <color> border-dark:          #38383a;",
+      "line": 54,
+      "doc": "Dark gray color used for rendering dark-themed borders and UI element outlines."
+    },
+    {
+      "name": "border-strong-light",
+      "kind": "property",
+      "signature": "out property <color> border-strong-light:  #aeaeb2;",
+      "line": 56,
+      "doc": "Strong separator."
+    },
+    {
+      "name": "border-strong-dark",
+      "kind": "property",
+      "signature": "out property <color> border-strong-dark:   #545458;",
+      "line": 58,
+      "doc": "Dark gray color used for strong, high-contrast borders that require prominent visual emphasis."
+    },
+    {
+      "name": "error",
+      "kind": "property",
+      "signature": "out property <color> error:    #ff3b30;",
+      "line": 62,
+      "doc": "System red."
+    },
+    {
+      "name": "success",
+      "kind": "property",
+      "signature": "out property <color> success:  #34c759;",
+      "line": 64,
+      "doc": "System green."
+    },
+    {
+      "name": "warning",
+      "kind": "property",
+      "signature": "out property <color> warning:  #ff9500;",
+      "line": 66,
+      "doc": "System orange."
+    },
+    {
+      "name": "shadow",
+      "kind": "property",
+      "signature": "out property <color> shadow:   #00000033;",
+      "line": 70,
+      "doc": "Shadow color for creating depth and visual separation effects in the UI."
+    },
+    {
+      "name": "overlay",
+      "kind": "property",
+      "signature": "out property <color> overlay:  #00000040;",
+      "line": 72,
+      "doc": "A semi-transparent overlay color that can be applied to darken or tint the component. Defaults to black at 25% opacity."
+    },
+    {
+      "name": "traffic-close",
+      "kind": "property",
+      "signature": "out property <color> traffic-close:    #ff5f57;",
+      "line": 76,
+      "doc": "Close button red."
+    },
+    {
+      "name": "traffic-min",
+      "kind": "property",
+      "signature": "out property <color> traffic-min:      #febc2e;",
+      "line": 78,
+      "doc": "Minimise button yellow."
+    },
+    {
+      "name": "traffic-full",
+      "kind": "property",
+      "signature": "out property <color> traffic-full:     #28c840;",
+      "line": 80,
+      "doc": "Fullscreen button green."
+    }
+  ]
+}

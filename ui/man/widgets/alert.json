@@ -1,0 +1,54 @@
+{
+  "source": "widgets/alert.slint",
+  "items": [
+    {
+      "name": "Alert",
+      "kind": "component",
+      "signature": "export component Alert inherits Rectangle",
+      "line": 6,
+      "doc": "A le rt component."
+    },
+    {
+      "name": "message",
+      "kind": "property",
+      "signature": "in property <string> message: \"\";",
+      "line": 8,
+      "doc": "Input property \"message\"."
+    },
+    {
+      "name": "title",
+      "kind": "property",
+      "signature": "in property <string> title: \"\";",
+      "line": 10,
+      "doc": "Input property \"title\"."
+    },
+    {
+      "name": "variant",
+      "kind": "property",
+      "signature": "in property <string> variant: \"info\";   // info | success | warning | error",
+      "line": 12,
+      "doc": "Input property \"variant\"."
+    },
+    {
+      "name": "closable",
+      "kind": "property",
+      "signature": "in property <bool>   closable: false;",
+      "line": 14,
+      "doc": "Input property \"closable\"."
+    },
+    {
+      "name": "show",
+      "kind": "property",
+      "signature": "in property <bool>   show: true;",
+      "line": 16,
+      "doc": "Input property \"show\"."
+    },
+    {
+      "name": "closed",
+      "kind": "callback",
+      "signature": "callback closed();",
+      "line": 18,
+      "doc": "Callback fired for c lo se d."
+    }
+  ]
+}

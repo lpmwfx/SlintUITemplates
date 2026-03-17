@@ -1,0 +1,47 @@
+{
+  "source": "widgets/label.slint",
+  "items": [
+    {
+      "name": "Label",
+      "kind": "component",
+      "signature": "export component Label inherits HorizontalLayout",
+      "line": 4,
+      "doc": "L ab el component."
+    },
+    {
+      "name": "text",
+      "kind": "property",
+      "signature": "in property <string> text: \"\";",
+      "line": 6,
+      "doc": "Input property \"text\"."
+    },
+    {
+      "name": "required",
+      "kind": "property",
+      "signature": "in property <bool>   required: false;",
+      "line": 8,
+      "doc": "Input property \"required\"."
+    },
+    {
+      "name": "disabled",
+      "kind": "property",
+      "signature": "in property <bool>   disabled: false;",
+      "line": 10,
+      "doc": "Input property \"disabled\"."
+    },
+    {
+      "name": "half-xs",
+      "kind": "property",
+      "signature": "private property <length> half-xs:  Spacing.xs / 2;",
+      "line": 13,
+      "doc": "Private property \"half-xs\" used internally."
+    },
+    {
+      "name": "req-mark",
+      "kind": "property",
+      "signature": "private property <string> req-mark: \" *\";",
+      "line": 15,
+      "doc": "Private property \"req-mark\" used internally."
+    }
+  ]
+}

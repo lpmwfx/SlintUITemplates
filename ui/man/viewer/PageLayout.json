@@ -1,0 +1,124 @@
+{
+  "source": "viewer/PageLayout.slint",
+  "items": [
+    {
+      "name": "PageLayout",
+      "kind": "component",
+      "signature": "export component PageLayout inherits VerticalLayout",
+      "line": 16,
+      "doc": "Viewer page for layout primitives, drag handles, slots, and scrolling containers."
+    },
+    {
+      "name": "panel-c-y",
+      "kind": "property",
+      "signature": "private property <float>  panel-c-y: Sizes.ratio-55;",
+      "line": 19,
+      "doc": "Private property \"panel-c-y\" used internally."
+    },
+    {
+      "name": "title-draghandle",
+      "kind": "property",
+      "signature": "private property <string> title-draghandle: \"DragHandle\";",
+      "line": 22,
+      "doc": "Private property \"title-draghandle\" used internally."
+    },
+    {
+      "name": "title-bidir",
+      "kind": "property",
+      "signature": "private property <string> title-bidir: \"Bi-directional 3-panel (drag either handle \\u{2014} both neighbors update)\";",
+      "line": 24,
+      "doc": "Private property \"title-bidir\" used internally."
+    },
+    {
+      "name": "title-panel-container",
+      "kind": "property",
+      "signature": "private property <string> title-panel-container: \"PanelContainer (3 panels)\";",
+      "line": 26,
+      "doc": "Private property \"title-panel-container\" used internally."
+    },
+    {
+      "name": "title-panel-slot",
+      "kind": "property",
+      "signature": "private property <string> title-panel-slot: \"PanelSlot (standalone)\";",
+      "line": 28,
+      "doc": "Private property \"title-panel-slot\" used internally."
+    },
+    {
+      "name": "title-viewslot",
+      "kind": "property",
+      "signature": "private property <string> title-viewslot: \"ViewSlot \\u{2014} slot-id routing (click nav to switch view)\";",
+      "line": 30,
+      "doc": "Private property \"title-viewslot\" used internally."
+    },
+    {
+      "name": "title-divider",
+      "kind": "property",
+      "signature": "private property <string> title-divider: \"Divider\";",
+      "line": 32,
+      "doc": "Private property \"title-divider\" used internally."
+    },
+    {
+      "name": "title-scrollview",
+      "kind": "property",
+      "signature": "private property <string> title-scrollview: \"ScrollView\";",
+      "line": 34,
+      "doc": "Private property \"title-scrollview\" used internally."
+    },
+    {
+      "name": "lbl-panel-a",
+      "kind": "property",
+      "signature": "private property <string> lbl-panel-a: \"Panel A\";",
+      "line": 37,
+      "doc": "Private property \"lbl-panel-a\" used internally."
+    },
+    {
+      "name": "lbl-panel-b",
+      "kind": "property",
+      "signature": "private property <string> lbl-panel-b: \"Panel B\";",
+      "line": 39,
+      "doc": "Private property \"lbl-panel-b\" used internally."
+    },
+    {
+      "name": "lbl-panel-c",
+      "kind": "property",
+      "signature": "private property <string> lbl-panel-c: \"Panel C\";",
+      "line": 41,
+      "doc": "Private property \"lbl-panel-c\" used internally."
+    },
+    {
+      "name": "lbl-standalone",
+      "kind": "property",
+      "signature": "private property <string> lbl-standalone: \"Standalone slot\";",
+      "line": 43,
+      "doc": "Private property \"lbl-standalone\" used internally."
+    },
+    {
+      "name": "lbl-section",
+      "kind": "property",
+      "signature": "private property <string> lbl-section: \"Section\";",
+      "line": 45,
+      "doc": "Private property \"lbl-section\" used internally."
+    },
+    {
+      "name": "lbl-left",
+      "kind": "property",
+      "signature": "private property <string> lbl-left: \"Left\";",
+      "line": 47,
+      "doc": "Private property \"lbl-left\" used internally."
+    },
+    {
+      "name": "lbl-right",
+      "kind": "property",
+      "signature": "private property <string> lbl-right: \"Right\";",
+      "line": 49,
+      "doc": "Private property \"lbl-right\" used internally."
+    },
+    {
+      "name": "lbl-row-prefix",
+      "kind": "property",
+      "signature": "private property <string> lbl-row-prefix: \"Row \";",
+      "line": 51,
+      "doc": "Private property \"lbl-row-prefix\" used internally."
+    }
+  ]
+}

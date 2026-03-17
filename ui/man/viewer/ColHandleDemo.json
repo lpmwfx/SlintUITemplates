@@ -1,0 +1,12 @@
+{
+  "source": "viewer/ColHandleDemo.slint",
+  "items": [
+    {
+      "name": "split",
+      "kind": "property",
+      "signature": "private property <length> split: Sizes.thumb-md;",
+      "line": 8,
+      "doc": "Private property \"split\" used internally."
+    }
+  ]
+}

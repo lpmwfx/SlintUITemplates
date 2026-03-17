@@ -1,0 +1,40 @@
+{
+  "source": "widgets/RadioGroup.slint",
+  "items": [
+    {
+      "name": "RadioGroup",
+      "kind": "component",
+      "signature": "export component RadioGroup inherits VerticalLayout",
+      "line": 5,
+      "doc": "R ad io gr ou p component."
+    },
+    {
+      "name": "options",
+      "kind": "property",
+      "signature": "in property <[string]> options: [];",
+      "line": 7,
+      "doc": "Input property \"options\"."
+    },
+    {
+      "name": "value",
+      "kind": "property",
+      "signature": "in property <string> value: \"\";",
+      "line": 9,
+      "doc": "Input property \"value\"."
+    },
+    {
+      "name": "enabled",
+      "kind": "property",
+      "signature": "in property <bool> enabled: true;",
+      "line": 11,
+      "doc": "Input property \"enabled\"."
+    },
+    {
+      "name": "changed",
+      "kind": "callback",
+      "signature": "callback changed(string);",
+      "line": 13,
+      "doc": "Callback fired for c ha ng ed."
+    }
+  ]
+}

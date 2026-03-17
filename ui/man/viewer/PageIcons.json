@@ -1,0 +1,68 @@
+{
+  "source": "viewer/PageIcons.slint",
+  "items": [
+    {
+      "name": "PageIcons",
+      "kind": "component",
+      "signature": "export component PageIcons inherits VerticalLayout",
+      "line": 10,
+      "doc": "Viewer page listing icon tokens and icon-driven component examples."
+    },
+    {
+      "name": "cat-nav",
+      "kind": "property",
+      "signature": "private property <string> cat-nav: \"Navigation\";",
+      "line": 15,
+      "doc": "Private property \"cat-nav\" used internally."
+    },
+    {
+      "name": "cat-actions",
+      "kind": "property",
+      "signature": "private property <string> cat-actions: \"Actions\";",
+      "line": 17,
+      "doc": "Private property \"cat-actions\" used internally."
+    },
+    {
+      "name": "cat-chrome",
+      "kind": "property",
+      "signature": "private property <string> cat-chrome: \"Window Chrome\";",
+      "line": 19,
+      "doc": "Private property \"cat-chrome\" used internally."
+    },
+    {
+      "name": "cat-files",
+      "kind": "property",
+      "signature": "private property <string> cat-files: \"Files & Data\";",
+      "line": 21,
+      "doc": "Private property \"cat-files\" used internally."
+    },
+    {
+      "name": "cat-media",
+      "kind": "property",
+      "signature": "private property <string> cat-media: \"Media\";",
+      "line": 23,
+      "doc": "Private property \"cat-media\" used internally."
+    },
+    {
+      "name": "cat-ui",
+      "kind": "property",
+      "signature": "private property <string> cat-ui: \"UI / Layout\";",
+      "line": 25,
+      "doc": "Private property \"cat-ui\" used internally."
+    },
+    {
+      "name": "cat-people",
+      "kind": "property",
+      "signature": "private property <string> cat-people: \"People & Communication\";",
+      "line": 27,
+      "doc": "Private property \"cat-people\" used internally."
+    },
+    {
+      "name": "cat-device",
+      "kind": "property",
+      "signature": "private property <string> cat-device: \"Device\";",
+      "line": 29,
+      "doc": "Private property \"cat-device\" used internally."
+    }
+  ]
+}

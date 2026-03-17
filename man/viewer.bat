@@ -1,1 +1,0 @@
-rustdoc-viewer.exe

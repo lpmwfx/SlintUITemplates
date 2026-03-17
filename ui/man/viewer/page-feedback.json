@@ -1,0 +1,208 @@
+{
+  "source": "viewer/page-feedback.slint",
+  "items": [
+    {
+      "name": "PageFeedback",
+      "kind": "component",
+      "signature": "export component PageFeedback inherits VerticalLayout",
+      "line": 15,
+      "doc": "Viewer page showcasing transient feedback components such as alerts, toasts, and progress indicators."
+    },
+    {
+      "name": "var-info",
+      "kind": "property",
+      "signature": "private property <string> var-info: \"info\";",
+      "line": 20,
+      "doc": "Private property \"var-info\" used internally."
+    },
+    {
+      "name": "var-sm",
+      "kind": "property",
+      "signature": "private property <string> var-sm: \"sm\";",
+      "line": 22,
+      "doc": "Private property \"var-sm\" used internally."
+    },
+    {
+      "name": "var-md",
+      "kind": "property",
+      "signature": "private property <string> var-md: \"md\";",
+      "line": 24,
+      "doc": "Private property \"var-md\" used internally."
+    },
+    {
+      "name": "var-lg",
+      "kind": "property",
+      "signature": "private property <string> var-lg: \"lg\";",
+      "line": 26,
+      "doc": "Private property \"var-lg\" used internally."
+    },
+    {
+      "name": "section-toast",
+      "kind": "property",
+      "signature": "private property <string> section-toast: \"Toast\";",
+      "line": 30,
+      "doc": "Private property \"section-toast\" used internally."
+    },
+    {
+      "name": "section-dialog",
+      "kind": "property",
+      "signature": "private property <string> section-dialog: \"Dialog\";",
+      "line": 32,
+      "doc": "Private property \"section-dialog\" used internally."
+    },
+    {
+      "name": "section-spinner",
+      "kind": "property",
+      "signature": "private property <string> section-spinner: \"Spinner\";",
+      "line": 34,
+      "doc": "Private property \"section-spinner\" used internally."
+    },
+    {
+      "name": "section-alert",
+      "kind": "property",
+      "signature": "private property <string> section-alert: \"Alert\";",
+      "line": 36,
+      "doc": "Private property \"section-alert\" used internally."
+    },
+    {
+      "name": "section-tooltip",
+      "kind": "property",
+      "signature": "private property <string> section-tooltip: \"Tooltip\";",
+      "line": 38,
+      "doc": "Private property \"section-tooltip\" used internally."
+    },
+    {
+      "name": "toast-info-msg",
+      "kind": "property",
+      "signature": "private property <string> toast-info-msg: \"Information message\";",
+      "line": 40,
+      "doc": "Private property \"toast-info-msg\" used internally."
+    },
+    {
+      "name": "toast-success-msg",
+      "kind": "property",
+      "signature": "private property <string> toast-success-msg: \"Success! Operation complete\";",
+      "line": 42,
+      "doc": "Private property \"toast-success-msg\" used internally."
+    },
+    {
+      "name": "toast-warning-msg",
+      "kind": "property",
+      "signature": "private property <string> toast-warning-msg: \"Warning: please check input\";",
+      "line": 44,
+      "doc": "Private property \"toast-warning-msg\" used internally."
+    },
+    {
+      "name": "toast-error-msg",
+      "kind": "property",
+      "signature": "private property <string> toast-error-msg: \"Error: action failed\";",
+      "line": 46,
+      "doc": "Private property \"toast-error-msg\" used internally."
+    },
+    {
+      "name": "dialog-title",
+      "kind": "property",
+      "signature": "private property <string> dialog-title: \"Confirm Action\";",
+      "line": 48,
+      "doc": "Private property \"dialog-title\" used internally."
+    },
+    {
+      "name": "alert-info-msg",
+      "kind": "property",
+      "signature": "private property <string> alert-info-msg: \"This is an informational alert.\";",
+      "line": 50,
+      "doc": "Private property \"alert-info-msg\" used internally."
+    },
+    {
+      "name": "alert-success-title",
+      "kind": "property",
+      "signature": "private property <string> alert-success-title: \"Success!\";",
+      "line": 52,
+      "doc": "Private property \"alert-success-title\" used internally."
+    },
+    {
+      "name": "alert-success-msg",
+      "kind": "property",
+      "signature": "private property <string> alert-success-msg: \"Your changes have been saved.\";",
+      "line": 54,
+      "doc": "Private property \"alert-success-msg\" used internally."
+    },
+    {
+      "name": "alert-warning-title",
+      "kind": "property",
+      "signature": "private property <string> alert-warning-title: \"Warning\";",
+      "line": 56,
+      "doc": "Private property \"alert-warning-title\" used internally."
+    },
+    {
+      "name": "alert-warning-msg",
+      "kind": "property",
+      "signature": "private property <string> alert-warning-msg: \"Please review before continuing.\";",
+      "line": 58,
+      "doc": "Private property \"alert-warning-msg\" used internally."
+    },
+    {
+      "name": "alert-error-title",
+      "kind": "property",
+      "signature": "private property <string> alert-error-title: \"Error\";",
+      "line": 60,
+      "doc": "Private property \"alert-error-title\" used internally."
+    },
+    {
+      "name": "alert-error-msg",
+      "kind": "property",
+      "signature": "private property <string> alert-error-msg: \"Something went wrong. Please try again.\";",
+      "line": 62,
+      "doc": "Private property \"alert-error-msg\" used internally."
+    },
+    {
+      "name": "tooltip-top-text",
+      "kind": "property",
+      "signature": "private property <string> tooltip-top-text: \"Top tooltip (default)\";",
+      "line": 64,
+      "doc": "Private property \"tooltip-top-text\" used internally."
+    },
+    {
+      "name": "tooltip-bottom-text",
+      "kind": "property",
+      "signature": "private property <string> tooltip-bottom-text: \"Bottom tooltip\";",
+      "line": 66,
+      "doc": "Private property \"tooltip-bottom-text\" used internally."
+    },
+    {
+      "name": "tooltip-right-text",
+      "kind": "property",
+      "signature": "private property <string> tooltip-right-text: \"Right tooltip\";",
+      "line": 68,
+      "doc": "Private property \"tooltip-right-text\" used internally."
+    },
+    {
+      "name": "btn-hover",
+      "kind": "property",
+      "signature": "private property <string> btn-hover: \"Hover me\";",
+      "line": 70,
+      "doc": "Private property \"btn-hover\" used internally."
+    },
+    {
+      "name": "btn-bottom",
+      "kind": "property",
+      "signature": "private property <string> btn-bottom: \"Bottom\";",
+      "line": 72,
+      "doc": "Private property \"btn-bottom\" used internally."
+    },
+    {
+      "name": "btn-right",
+      "kind": "property",
+      "signature": "private property <string> btn-right: \"Right\";",
+      "line": 74,
+      "doc": "Private property \"btn-right\" used internally."
+    },
+    {
+      "name": "dialog-w",
+      "kind": "property",
+      "signature": "private property <length> dialog-w: Sizes.comp-480;",
+      "line": 76,
+      "doc": "Private property \"dialog-w\" used internally."
+    }
+  ]
+}

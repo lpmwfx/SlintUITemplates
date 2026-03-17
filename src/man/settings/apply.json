@@ -1,0 +1,12 @@
+{
+  "source": "settings/apply.rs",
+  "items": [
+    {
+      "name": "apply",
+      "kind": "fn",
+      "signature": "pub fn apply(ui: &AppWindow, settings: &AppSettings)",
+      "line": 13,
+      "doc": "Push all settings to the Slint globals of the given AppWindow.\nCalled by AppAdapter::apply_settings()."
+    }
+  ]
+}

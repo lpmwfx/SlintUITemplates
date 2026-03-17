@@ -1,0 +1,19 @@
+{
+  "source": "widgets/ClearButton.slint",
+  "items": [
+    {
+      "name": "ClearButton",
+      "kind": "component",
+      "signature": "export component ClearButton inherits Rectangle",
+      "line": 5,
+      "doc": "C le ar bu tt on component."
+    },
+    {
+      "name": "cleared",
+      "kind": "callback",
+      "signature": "callback cleared();",
+      "line": 7,
+      "doc": "Callback fired for c le ar ed."
+    }
+  ]
+}

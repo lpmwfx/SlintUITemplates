@@ -1,15 +1,23 @@
 // Theme — controller global. Imports palette files from theme/ and exposes the token surface.
 //
-// AXIOM: AppWindow is the only writer of `dark` and `material`.
+// AXIOM: AppWindow is the only writer of `dark`, `material`, and `platform`.
 //        Components read Theme.* (or Colors.* via barrel alias in tokens/theme.slint).
 //
 // Palettes live in theme/ — one file per material, pure constants, no logic.
+// Platform routing: Theme derives ~24 platform-agnostic tokens that widgets use
+// instead of FluentXxx.* directly. AppAdapter sets `platform` at startup.
 
 import { Palette }  from "std-widgets.slint";
 import { Solid }    from "theme/solid.slint";
 import { Mica }     from "theme/mica.slint";
 import { Acrylic }  from "theme/acrylic.slint";
 import { ThemeMode } from "../globals/ThemeMode.slint";
+
+import { FluentRadius, FluentSpacing, FluentType } from "../tokens/fluent/mod.slint";
+import { MaterialRadius, MaterialSpacing, MaterialType } from "../tokens/material/mod.slint";
+import { SteamRadius, SteamSpacing, SteamType } from "../tokens/steam/mod.slint";
+import { MacosRadius, MacosSpacing, MacosType } from "../tokens/macos/mod.slint";
+import { Variants } from "../globals/Variants.slint";
 
 /// T he me global values.
 export global Theme {
@@ -106,6 +114,9 @@ export global Theme {
       :                         (dark ? Solid.dark-shadow          : Solid.light-shadow);
 
     // ── Overlay ───────────────────────────────────────────────────────────────
+    /// Output property "transparent" — fully transparent color token.
+    /// Use instead of inline #00000000 literals.
+    out property <color> transparent: #00000000;
     /// Output property "overlay".
     out property <color> overlay: #00000040;
 
@@ -120,4 +131,114 @@ export global Theme {
     out property <color> danger:       error;
     /// Output property "text-muted".
     out property <color> text-muted:   text-secondary;
+
+    // ── Platform router ───────────────────────────────────────────────────────
+    // AppWindow is the only writer of `platform`.
+    // Values: "windows" | "android" | "ios" | "steam-linux" | "steam-deck" |
+    //         "tablet" | "handheld" | "macos" | "linux"
+    /// Two-way property "platform".
+    in-out property <string> platform: Variants.windows;
+
+    // Internal routing helpers — not part of the public surface.
+    property <bool> is-steam:
+        platform == Variants.steam-linux || platform == Variants.steam-deck || platform == Variants.handheld;
+    property <bool> is-material:
+        platform == Variants.android || platform == Variants.ios || platform == Variants.tablet || platform == Variants.gnome;
+    property <bool> is-macos:
+        platform == Variants.macos;
+
+    // ── Platform-routed radius ─────────────────────────────────────────────
+    /// Small border radius — checkboxes, chips.
+    out property <length> radius-sm:
+        is-steam ? SteamRadius.sm : is-material ? MaterialRadius.extra-small : is-macos ? MacosRadius.sm : FluentRadius.sm;
+    /// Standard border radius — buttons, inputs.
+    out property <length> radius-md:
+        is-steam ? SteamRadius.md : is-material ? MaterialRadius.small : is-macos ? MacosRadius.md : FluentRadius.md;
+    /// Large border radius — cards, panels.
+    out property <length> radius-lg:
+        is-steam ? SteamRadius.lg : is-material ? MaterialRadius.medium : is-macos ? MacosRadius.lg : FluentRadius.lg;
+    /// Extra-large border radius — dialogs, large surfaces.
+    out property <length> radius-xl:
+        is-steam ? SteamRadius.xl : is-material ? MaterialRadius.large : is-macos ? MacosRadius.xl : FluentRadius.xl;
+    /// Full pill / circle radius.
+    out property <length> radius-circle:
+        is-steam ? SteamRadius.circle : is-material ? MaterialRadius.full : is-macos ? MacosRadius.circle : FluentRadius.circle;
+
+    // ── Platform-routed touch targets ─────────────────────────────────────
+    /// Small control height — compact items.
+    out property <length> touch-sm:
+        is-steam ? SteamSpacing.control-sm : is-material ? MaterialSpacing.control-sm : is-macos ? MacosSpacing.control-sm : FluentSpacing.control-sm;
+    /// Standard control height — buttons, inputs.
+    out property <length> touch-md:
+        is-steam ? SteamSpacing.control-md : is-material ? MaterialSpacing.control-md : is-macos ? MacosSpacing.control-md : FluentSpacing.control-md;
+    /// Large control height — primary targets.
+    out property <length> touch-lg:
+        is-steam ? SteamSpacing.control-lg : is-material ? MaterialSpacing.control-lg : is-macos ? MacosSpacing.control-lg : FluentSpacing.control-lg;
+
+    // ── Platform-routed typography ────────────────────────────────────────
+    /// Caption / label text size.
+    out property <length> font-caption:
+        is-steam ? SteamType.caption : is-material ? MaterialType.label-medium : is-macos ? MacosType.caption : FluentType.caption;
+    /// Body text size.
+    out property <length> font-body:
+        is-steam ? SteamType.body : is-material ? MaterialType.body-medium : is-macos ? MacosType.body : FluentType.body;
+    /// Subtitle / section heading.
+    out property <length> font-subtitle:
+        is-steam ? SteamType.subtitle : is-material ? MaterialType.title-large : is-macos ? MacosType.headline : FluentType.subtitle;
+    /// Heading.
+    out property <length> font-heading:
+        is-steam ? SteamType.heading : is-material ? MaterialType.headline-small : is-macos ? MacosType.title3 : FluentType.subtitle;
+    /// Title / display.
+    out property <length> font-title:
+        is-steam ? SteamType.title : is-material ? MaterialType.headline-medium : is-macos ? MacosType.title2 : FluentType.title;
+
+    // ── Platform-routed font weights ──────────────────────────────────────
+    /// Regular weight (400).
+    out property <int> font-weight-regular:
+        is-steam ? SteamType.weight-regular : is-material ? MaterialType.weight-regular : is-macos ? MacosType.weight-regular : FluentType.weight-regular;
+    /// Medium weight (500).
+    out property <int> font-weight-medium:
+        is-steam ? SteamType.weight-medium : is-material ? MaterialType.weight-medium : is-macos ? MacosType.weight-medium : FluentType.weight-medium;
+    /// Bold weight (700).
+    out property <int> font-weight-bold:
+        is-steam ? SteamType.weight-bold : is-material ? MaterialType.weight-bold : is-macos ? MacosType.weight-bold : FluentType.weight-bold;
+
+    // ── Platform-routed spacing ────────────────────────────────────────────
+    /// Extra-small spacing.
+    out property <length> space-xs:
+        is-steam ? SteamSpacing.xs : is-material ? MaterialSpacing.xs : is-macos ? MacosSpacing.xs : FluentSpacing.xs;
+    /// Small spacing.
+    out property <length> space-sm:
+        is-steam ? SteamSpacing.sm : is-material ? MaterialSpacing.sm : is-macos ? MacosSpacing.sm : FluentSpacing.sm;
+    /// Medium spacing.
+    out property <length> space-md:
+        is-steam ? SteamSpacing.md : is-material ? MaterialSpacing.md : is-macos ? MacosSpacing.md : FluentSpacing.md;
+    /// Large spacing.
+    out property <length> space-lg:
+        is-steam ? SteamSpacing.lg : is-material ? MaterialSpacing.lg : is-macos ? MacosSpacing.lg : FluentSpacing.lg;
+    /// Extra-large spacing.
+    out property <length> space-xl:
+        is-steam ? SteamSpacing.xl : is-material ? MaterialSpacing.xl : is-macos ? MacosSpacing.xl : FluentSpacing.xl;
+
+    // ── Platform-routed nav chrome ─────────────────────────────────────────
+    /// Side navigation rail width.
+    out property <length> nav-rail-width:
+        is-steam ? SteamSpacing.nav-rail-width : is-material ? MaterialSpacing.nav-rail-width : is-macos ? MacosSpacing.nav-rail-width : FluentSpacing.nav-width-collapsed;
+    /// Navigation bar height (bottom nav / toolbar).
+    out property <length> nav-bar-height:
+        is-steam ? SteamSpacing.bottom-rail-height : is-material ? MaterialSpacing.bottom-nav-bar-height : is-macos ? MacosSpacing.toolbar-height : FluentSpacing.toolbar-height;
+    /// Top bar / title bar height.
+    out property <length> top-bar-height:
+        is-steam ? SteamSpacing.top-bar-height : is-material ? MaterialSpacing.top-app-bar-height : is-macos ? MacosSpacing.titlebar-height : FluentSpacing.titlebar-height;
+
+    // ── Platform convenience shortcuts ────────────────────────────────────
+    /// Minimum safe interactive target for this platform.
+    /// Use for min-width / min-height on buttons and nav items.
+    out property <length> touch-target:
+        is-steam ? SteamSpacing.control-lg : is-material ? MaterialSpacing.control-md : is-macos ? MacosSpacing.control-md : FluentSpacing.control-md;
+    /// Recommended nav chrome pattern for this platform.
+    out property <string> nav-style:
+        is-steam    ? Variants.nav-compact :
+        is-material ? Variants.nav-bottom  :
+        Variants.nav-sidebar;
 }

@@ -1,0 +1,75 @@
+{
+  "source": "widgets/context-menu.slint",
+  "items": [
+    {
+      "name": "ContextMenu",
+      "kind": "component",
+      "signature": "export component ContextMenu inherits Rectangle",
+      "line": 26,
+      "doc": "C on te xt me nu component."
+    },
+    {
+      "name": "items",
+      "kind": "property",
+      "signature": "in property <[ContextMenuItem]> items: [];",
+      "line": 28,
+      "doc": "Input property \"items\"."
+    },
+    {
+      "name": "separator-count",
+      "kind": "property",
+      "signature": "in property <int>    separator-count;",
+      "line": 30,
+      "doc": "Input property \"separator-count\"."
+    },
+    {
+      "name": "window-height",
+      "kind": "property",
+      "signature": "in property <length> window-height;",
+      "line": 32,
+      "doc": "Input property \"window-height\"."
+    },
+    {
+      "name": "activated",
+      "kind": "callback",
+      "signature": "callback activated(string);",
+      "line": 35,
+      "doc": "Callback fired for a ct iv at ed."
+    },
+    {
+      "name": "pop-x",
+      "kind": "property",
+      "signature": "private property <length> pop-x: Sizes.no-size;",
+      "line": 38,
+      "doc": "Private property \"pop-x\" used internally."
+    },
+    {
+      "name": "pop-y",
+      "kind": "property",
+      "signature": "private property <length> pop-y: Sizes.no-size;",
+      "line": 40,
+      "doc": "Private property \"pop-y\" used internally."
+    },
+    {
+      "name": "popup-w",
+      "kind": "property",
+      "signature": "private property <length> popup-w: Sizes.comp-260;",
+      "line": 42,
+      "doc": "Private property \"popup-w\" used internally."
+    },
+    {
+      "name": "est-popup-h",
+      "kind": "property",
+      "signature": "private property <length> est-popup-h:",
+      "line": 44,
+      "doc": "Private property \"est-popup-h\" used internally."
+    },
+    {
+      "name": "popup-h",
+      "kind": "property",
+      "signature": "private property <length> popup-h:",
+      "line": 51,
+      "doc": "Private property \"popup-h\" used internally."
+    }
+  ]
+}

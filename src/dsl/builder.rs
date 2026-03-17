@@ -115,7 +115,11 @@ impl AppDslBuilder {
     pub fn build(self) -> Result<AppDsl, Vec<DslError>> {
         let mut errors: Vec<DslError> = Vec::new();
 
-        let nav_max = if self.platform.is_mobile() { NAV_MAX_MOBILE } else { NAV_MAX_DESKTOP };
+        let nav_max = if self.platform.is_mobile() || self.platform.is_small() {
+            NAV_MAX_MOBILE
+        } else {
+            NAV_MAX_DESKTOP
+        };
 
         if self.nav.is_empty() {
             errors.push(DslError::NoNavItems);
@@ -159,6 +163,7 @@ impl AppDslBuilder {
                 toolbar:      resolved_toolbar,
                 window_size:  self.window_size,
                 bg_style:     self.bg_style,
+                platform:     self.platform,
             })
         } else {
             Err(errors)

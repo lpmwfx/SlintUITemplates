@@ -1,0 +1,33 @@
+{
+  "source": "widgets/cbf-primary-btn.slint",
+  "items": [
+    {
+      "name": "CbfAction",
+      "kind": "struct",
+      "signature": "export struct CbfAction",
+      "line": 4,
+      "doc": "C bf ac ti on struct."
+    },
+    {
+      "name": "CbfPrimaryBtn",
+      "kind": "component",
+      "signature": "export component CbfPrimaryBtn inherits Rectangle",
+      "line": 12,
+      "doc": "C bf pr im ar yb tn component."
+    },
+    {
+      "name": "item",
+      "kind": "property",
+      "signature": "in property <CbfAction> item;",
+      "line": 14,
+      "doc": "Input property \"item\"."
+    },
+    {
+      "name": "activated",
+      "kind": "callback",
+      "signature": "callback activated(string);",
+      "line": 16,
+      "doc": "Callback fired for a ct iv at ed."
+    }
+  ]
+}

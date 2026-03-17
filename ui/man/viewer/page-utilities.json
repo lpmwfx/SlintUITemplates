@@ -1,0 +1,89 @@
+{
+  "source": "viewer/page-utilities.slint",
+  "items": [
+    {
+      "name": "PageUtilities",
+      "kind": "component",
+      "signature": "export component PageUtilities inherits VerticalLayout",
+      "line": 15,
+      "doc": "Viewer page showcasing utility components such as tooltips, labels, skeletons, and empty states."
+    },
+    {
+      "name": "tb-w",
+      "kind": "property",
+      "signature": "private property <length> tb-w:     400px;",
+      "line": 19,
+      "doc": "Private property \"tb-w\" used internally."
+    },
+    {
+      "name": "mb-w",
+      "kind": "property",
+      "signature": "private property <length> mb-w:     500px;",
+      "line": 21,
+      "doc": "Private property \"mb-w\" used internally."
+    },
+    {
+      "name": "es-w",
+      "kind": "property",
+      "signature": "private property <length> es-w:     340px;",
+      "line": 23,
+      "doc": "Private property \"es-w\" used internally."
+    },
+    {
+      "name": "es-h",
+      "kind": "property",
+      "signature": "private property <length> es-h:     200px;",
+      "line": 25,
+      "doc": "Private property \"es-h\" used internally."
+    },
+    {
+      "name": "seg1-w",
+      "kind": "property",
+      "signature": "private property <length> seg1-w:   240px;",
+      "line": 27,
+      "doc": "Private property \"seg1-w\" used internally."
+    },
+    {
+      "name": "seg2-w",
+      "kind": "property",
+      "signature": "private property <length> seg2-w:   120px;",
+      "line": 29,
+      "doc": "Private property \"seg2-w\" used internally."
+    },
+    {
+      "name": "ff-w",
+      "kind": "property",
+      "signature": "private property <length> ff-w:     300px;",
+      "line": 31,
+      "doc": "Private property \"ff-w\" used internally."
+    },
+    {
+      "name": "border-px",
+      "kind": "property",
+      "signature": "private property <length> border-px: Sizes.border-w;",
+      "line": 33,
+      "doc": "Private property \"border-px\" used internally."
+    },
+    {
+      "name": "seg-val",
+      "kind": "property",
+      "signature": "private property <string> seg-val:   \"day\";",
+      "line": 35,
+      "doc": "Private property \"seg-val\" used internally."
+    },
+    {
+      "name": "seg2-val",
+      "kind": "property",
+      "signature": "private property <string> seg2-val:  \"list\";",
+      "line": 37,
+      "doc": "Private property \"seg2-val\" used internally."
+    },
+    {
+      "name": "mb-info-msg",
+      "kind": "property",
+      "signature": "private property <string> mb-info-msg: \"Your session will expire in 10 minutes.\";",
+      "line": 39,
+      "doc": "Private property \"mb-info-msg\" used internally."
+    }
+  ]
+}

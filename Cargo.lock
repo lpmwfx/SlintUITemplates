@@ -1148,6 +1148,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "docgen"
+version = "0.1.0"
+
+[[package]]
 name = "downcast-rs"
 version = "1.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3964,6 +3968,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "rustdocumenter"
+version = "0.1.0"
+source = "git+https://github.com/lpmwfx/RustDocumenter#4287df0489665684e96c18a56fc7c465365e4709"
+dependencies = [
+ "chrono",
+ "regex",
+ "serde",
+ "serde_json",
+ "walkdir",
+]
+
+[[package]]
 name = "rustix"
 version = "0.38.44"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -4032,6 +4048,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "93fc1dc3aaa9bfed95e02e6eadabb4baf7e3078b0bd1b4d7b6b0b68378900502"
 dependencies = [
  "winapi-util",
+]
+
+[[package]]
+name = "scanners"
+version = "0.1.0"
+dependencies = [
+ "rustdocumenter",
+ "rustscanners",
+ "slintscanners",
 ]
 
 [[package]]
@@ -4289,11 +4314,9 @@ dependencies = [
  "pulldown-cmark 0.12.2",
  "raw-window-handle",
  "rhai",
- "rustscanners",
  "serde",
  "slint",
  "slint-build",
- "slintscanners",
  "thiserror 2.0.18",
  "tiny-skia",
  "toml 0.8.23",
@@ -4311,6 +4334,14 @@ dependencies = [
  "serde",
  "toml 0.8.23",
  "walkdir",
+]
+
+[[package]]
+name = "slintui"
+version = "0.1.0"
+dependencies = [
+ "slint-ui-templates",
+ "tracing",
 ]
 
 [[package]]

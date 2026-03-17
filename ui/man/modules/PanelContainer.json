@@ -1,0 +1,33 @@
+{
+  "source": "modules/PanelContainer.slint",
+  "items": [
+    {
+      "name": "PanelItem",
+      "kind": "struct",
+      "signature": "export struct PanelItem",
+      "line": 9,
+      "doc": "P an el it em struct."
+    },
+    {
+      "name": "PanelContainer",
+      "kind": "component",
+      "signature": "export component PanelContainer inherits Rectangle",
+      "line": 21,
+      "doc": "P an el co nt ai ne r component."
+    },
+    {
+      "name": "panels",
+      "kind": "property",
+      "signature": "in property <[PanelItem]> panels;",
+      "line": 23,
+      "doc": "Input property \"panels\"."
+    },
+    {
+      "name": "panel-dragged",
+      "kind": "callback",
+      "signature": "callback panel-dragged(int, float, float);   // id, dx, dy in logical px",
+      "line": 26,
+      "doc": "Callback fired for p an el d ra gg ed."
+    }
+  ]
+}

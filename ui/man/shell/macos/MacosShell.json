@@ -1,0 +1,40 @@
+{
+  "source": "shell/macos/MacosShell.slint",
+  "items": [
+    {
+      "name": "MacosShell",
+      "kind": "component",
+      "signature": "export component MacosShell inherits VerticalLayout",
+      "line": 12,
+      "doc": "macOS app shell — title bar + sidebar navigation + content area."
+    },
+    {
+      "name": "title",
+      "kind": "property",
+      "signature": "in property <string>    title;",
+      "line": 14,
+      "doc": "Window or app title shown in the title bar."
+    },
+    {
+      "name": "nav-items",
+      "kind": "property",
+      "signature": "in property <[NavItem]> nav-items;",
+      "line": 16,
+      "doc": "Navigation items shown in the sidebar."
+    },
+    {
+      "name": "active-slot",
+      "kind": "property",
+      "signature": "in property <string>    active-slot;",
+      "line": 18,
+      "doc": "Id of the currently active view / slot."
+    },
+    {
+      "name": "slot-changed",
+      "kind": "callback",
+      "signature": "callback slot-changed(string);",
+      "line": 21,
+      "doc": "Fired when the user selects a nav destination."
+    }
+  ]
+}

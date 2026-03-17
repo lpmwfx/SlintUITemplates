@@ -1,0 +1,68 @@
+{
+  "source": "shell/small/shell.slint",
+  "items": [
+    {
+      "name": "CompactShell",
+      "kind": "component",
+      "signature": "export component CompactShell inherits Rectangle",
+      "line": 14,
+      "doc": "CompactShell — fullscreen shell for Steam Deck, handheld, and small-screen targets."
+    },
+    {
+      "name": "title",
+      "kind": "property",
+      "signature": "in property <string> title;",
+      "line": 16,
+      "doc": "Page or app title shown in the top bar."
+    },
+    {
+      "name": "nav-items",
+      "kind": "property",
+      "signature": "in property <[NavItem]> nav-items;",
+      "line": 18,
+      "doc": "Navigation items rendered in the bottom bar or side rail."
+    },
+    {
+      "name": "active-view",
+      "kind": "property",
+      "signature": "in property <string> active-view;",
+      "line": 20,
+      "doc": "Id of the currently active view / slot."
+    },
+    {
+      "name": "show-topbar",
+      "kind": "property",
+      "signature": "in property <bool> show-topbar: true;",
+      "line": 22,
+      "doc": "Whether the top bar is visible."
+    },
+    {
+      "name": "show-back",
+      "kind": "property",
+      "signature": "in property <bool> show-back: false;",
+      "line": 24,
+      "doc": "Whether the back button in the top bar is shown."
+    },
+    {
+      "name": "nav-mode",
+      "kind": "property",
+      "signature": "in property <string> nav-mode: Variants.nav-bottom;",
+      "line": 26,
+      "doc": "Nav chrome mode forwarded to CompactNav."
+    },
+    {
+      "name": "navigate",
+      "kind": "callback",
+      "signature": "callback navigate(string);",
+      "line": 28,
+      "doc": "Fired when a nav item is tapped."
+    },
+    {
+      "name": "back",
+      "kind": "callback",
+      "signature": "callback back();",
+      "line": 30,
+      "doc": "Fired when the top-bar back button is tapped."
+    }
+  ]
+}

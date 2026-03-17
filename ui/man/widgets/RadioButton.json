@@ -1,0 +1,61 @@
+{
+  "source": "widgets/RadioButton.slint",
+  "items": [
+    {
+      "name": "RadioButton",
+      "kind": "component",
+      "signature": "export component RadioButton inherits Rectangle",
+      "line": 5,
+      "doc": "R ad io bu tt on component."
+    },
+    {
+      "name": "checked",
+      "kind": "property",
+      "signature": "in property <bool>   checked: false;",
+      "line": 7,
+      "doc": "Input property \"checked\"."
+    },
+    {
+      "name": "label",
+      "kind": "property",
+      "signature": "in property <string> label: \"\";",
+      "line": 9,
+      "doc": "Input property \"label\"."
+    },
+    {
+      "name": "enabled",
+      "kind": "property",
+      "signature": "in property <bool>   enabled: true;",
+      "line": 11,
+      "doc": "Input property \"enabled\"."
+    },
+    {
+      "name": "clicked",
+      "kind": "callback",
+      "signature": "callback clicked();",
+      "line": 13,
+      "doc": "Callback fired for c li ck ed."
+    },
+    {
+      "name": "circle-size",
+      "kind": "property",
+      "signature": "private property <length> circle-size: Spacing.md + Spacing.xs;   // 20px",
+      "line": 16,
+      "doc": "Private property \"circle-size\" used internally."
+    },
+    {
+      "name": "dot-size",
+      "kind": "property",
+      "signature": "private property <length> dot-size:    Spacing.sm + Spacing.xs;   // 10px",
+      "line": 18,
+      "doc": "Private property \"dot-size\" used internally."
+    },
+    {
+      "name": "ring-border",
+      "kind": "property",
+      "signature": "private property <length> ring-border: Sizes.border-w-2;",
+      "line": 20,
+      "doc": "Private property \"ring-border\" used internally."
+    }
+  ]
+}

@@ -1,0 +1,194 @@
+{
+  "source": "viewer/viewer-topbar.slint",
+  "items": [
+    {
+      "name": "ViewerTopbar",
+      "kind": "component",
+      "signature": "export component ViewerTopbar inherits Rectangle",
+      "line": 10,
+      "doc": "V ie we rt op ba r component."
+    },
+    {
+      "name": "request-bg-style",
+      "kind": "callback",
+      "signature": "callback request-bg-style(string);",
+      "line": 12,
+      "doc": "Callback fired for r eq ue st b g s ty le."
+    },
+    {
+      "name": "var-ghost",
+      "kind": "property",
+      "signature": "private property <string> var-ghost: \"ghost\";",
+      "line": 19,
+      "doc": "Private property \"var-ghost\" used internally."
+    },
+    {
+      "name": "var-outlined",
+      "kind": "property",
+      "signature": "private property <string> var-outlined: \"outlined\";",
+      "line": 21,
+      "doc": "Private property \"var-outlined\" used internally."
+    },
+    {
+      "name": "var-filled",
+      "kind": "property",
+      "signature": "private property <string> var-filled: \"filled\";",
+      "line": 23,
+      "doc": "Private property \"var-filled\" used internally."
+    },
+    {
+      "name": "var-accent",
+      "kind": "property",
+      "signature": "private property <string> var-accent: \"accent\";",
+      "line": 25,
+      "doc": "Private property \"var-accent\" used internally."
+    },
+    {
+      "name": "var-theme",
+      "kind": "property",
+      "signature": "private property <string> var-theme: \"theme\";",
+      "line": 27,
+      "doc": "Private property \"var-theme\" used internally."
+    },
+    {
+      "name": "zoom-small",
+      "kind": "property",
+      "signature": "private property <float> zoom-small: 0.75;",
+      "line": 31,
+      "doc": "Private property \"zoom-small\" used internally."
+    },
+    {
+      "name": "zoom-large",
+      "kind": "property",
+      "signature": "private property <float> zoom-large: 1.25;",
+      "line": 33,
+      "doc": "Private property \"zoom-large\" used internally."
+    },
+    {
+      "name": "zoom-xlarge",
+      "kind": "property",
+      "signature": "private property <float> zoom-xlarge: 1.50;",
+      "line": 35,
+      "doc": "Private property \"zoom-xlarge\" used internally."
+    },
+    {
+      "name": "topbar-title",
+      "kind": "property",
+      "signature": "private property <string> topbar-title: \"SlintUI Framework Viewer\";",
+      "line": 39,
+      "doc": "Private property \"topbar-title\" used internally."
+    },
+    {
+      "name": "toggle-dark",
+      "kind": "property",
+      "signature": "private property <string> toggle-dark: \"Dark\";",
+      "line": 41,
+      "doc": "Private property \"toggle-dark\" used internally."
+    },
+    {
+      "name": "btn-zoom-small",
+      "kind": "property",
+      "signature": "private property <string> btn-zoom-small: \"0.75×\";",
+      "line": 43,
+      "doc": "Private property \"btn-zoom-small\" used internally."
+    },
+    {
+      "name": "btn-zoom-normal",
+      "kind": "property",
+      "signature": "private property <string> btn-zoom-normal: \"1×\";",
+      "line": 45,
+      "doc": "Private property \"btn-zoom-normal\" used internally."
+    },
+    {
+      "name": "btn-zoom-large",
+      "kind": "property",
+      "signature": "private property <string> btn-zoom-large: \"1.25×\";",
+      "line": 47,
+      "doc": "Private property \"btn-zoom-large\" used internally."
+    },
+    {
+      "name": "btn-zoom-xlarge",
+      "kind": "property",
+      "signature": "private property <string> btn-zoom-xlarge: \"1.5×\";",
+      "line": 49,
+      "doc": "Private property \"btn-zoom-xlarge\" used internally."
+    },
+    {
+      "name": "toggle-outlined",
+      "kind": "property",
+      "signature": "private property <string> toggle-outlined: \"Outlined\";",
+      "line": 51,
+      "doc": "Private property \"toggle-outlined\" used internally."
+    },
+    {
+      "name": "toggle-accent",
+      "kind": "property",
+      "signature": "private property <string> toggle-accent: \"Accent icons\";",
+      "line": 53,
+      "doc": "Private property \"toggle-accent\" used internally."
+    },
+    {
+      "name": "btn-solid",
+      "kind": "property",
+      "signature": "private property <string> btn-solid: \"Solid\";",
+      "line": 55,
+      "doc": "Private property \"btn-solid\" used internally."
+    },
+    {
+      "name": "btn-mica",
+      "kind": "property",
+      "signature": "private property <string> btn-mica: \"Mica\";",
+      "line": 57,
+      "doc": "Private property \"btn-mica\" used internally."
+    },
+    {
+      "name": "btn-acrylic",
+      "kind": "property",
+      "signature": "private property <string> btn-acrylic: \"Acrylic\";",
+      "line": 59,
+      "doc": "Private property \"btn-acrylic\" used internally."
+    },
+    {
+      "name": "bg-solid",
+      "kind": "property",
+      "signature": "private property <string> bg-solid: \"solid\";",
+      "line": 61,
+      "doc": "Private property \"bg-solid\" used internally."
+    },
+    {
+      "name": "bg-mica",
+      "kind": "property",
+      "signature": "private property <string> bg-mica: \"mica\";",
+      "line": 63,
+      "doc": "Private property \"bg-mica\" used internally."
+    },
+    {
+      "name": "bg-acrylic",
+      "kind": "property",
+      "signature": "private property <string> bg-acrylic: \"acrylic\";",
+      "line": 65,
+      "doc": "Private property \"bg-acrylic\" used internally."
+    },
+    {
+      "name": "sf-placeholder",
+      "kind": "property",
+      "signature": "private property <string> sf-placeholder: \"Font...\";",
+      "line": 67,
+      "doc": "Private property \"sf-placeholder\" used internally."
+    },
+    {
+      "name": "sf-default",
+      "kind": "property",
+      "signature": "private property <string> sf-default: \"Default\";",
+      "line": 69,
+      "doc": "Private property \"sf-default\" used internally."
+    },
+    {
+      "name": "sf-w",
+      "kind": "property",
+      "signature": "private property <length> sf-w: Sizes.comp-140;",
+      "line": 71,
+      "doc": "Private property \"sf-w\" used internally."
+    }
+  ]
+}

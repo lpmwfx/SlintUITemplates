@@ -1,0 +1,26 @@
+{
+  "source": "gateway/settings.rs",
+  "items": [
+    {
+      "name": "from_file",
+      "kind": "fn",
+      "signature": "pub fn from_file(path: &Path) -> Result<AppSettings, Box<dyn std::error::Error>>",
+      "line": 5,
+      "doc": "Deserializes settings from a TOML file at the given path."
+    },
+    {
+      "name": "from_file_or_default",
+      "kind": "fn",
+      "signature": "pub fn from_file_or_default(path: &Path) -> AppSettings",
+      "line": 11,
+      "doc": "Load from file, falling back to defaults if the file is absent or unparseable."
+    },
+    {
+      "name": "to_file",
+      "kind": "fn",
+      "signature": "pub fn to_file(settings: &AppSettings, path: &Path) -> Result<(), Box<dyn std::error::Error>>",
+      "line": 16,
+      "doc": "Serializes settings to a TOML file, creating parent directories if needed."
+    }
+  ]
+}

@@ -4,6 +4,7 @@ use std::cell::RefCell;
 use slint::ComponentHandle;
 use crate::AppWindow;
 use crate::dsl::{AppDsl, BgStyle};
+use crate::shell::Platform;
 
 mod apply;
 mod callbacks;
@@ -27,6 +28,7 @@ pub struct AppAdapter_adp {
     // State cache — adapter is source of truth, not the UI widget
     pub(super) active_view:    RefCell<String>,
     pub(super) dark_mode:      RefCell<bool>,
+    pub(super) platform:       RefCell<Platform>,
     // REASON: Navigate handler closure updates status cache on view_config apply
     pub(super) status_text:    Rc<RefCell<String>>,
     pub(super) row_top_ratio:  RefCell<f32>,
@@ -87,6 +89,7 @@ impl AppAdapter_adp {
             status_text,
             active_view:    RefCell::new(String::new()),
             dark_mode:      RefCell::new(false),
+            platform:       RefCell::new(Platform::default()),
             row_top_ratio:  RefCell::new(0.0),
             row_main_ratio: RefCell::new(0.0),
             zoom:           RefCell::new(1.0),

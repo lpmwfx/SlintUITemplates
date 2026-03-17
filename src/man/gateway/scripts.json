@@ -1,0 +1,12 @@
+{
+  "source": "gateway/scripts.rs",
+  "items": [
+    {
+      "name": "load_script",
+      "kind": "fn",
+      "signature": "pub fn load_script(path: &Path) -> std::io::Result<String>",
+      "line": 4,
+      "doc": "Load a Rhai script file from disk."
+    }
+  ]
+}

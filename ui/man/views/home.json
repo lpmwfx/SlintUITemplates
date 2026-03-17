@@ -1,0 +1,33 @@
+{
+  "source": "views/home.slint",
+  "items": [
+    {
+      "name": "HomeView",
+      "kind": "component",
+      "signature": "export component HomeView inherits Rectangle",
+      "line": 10,
+      "doc": "Default starter view shown for the `home` navigation slot.\n\nIntended as a simple designer-editable page for app-specific content."
+    },
+    {
+      "name": "card-subtitle",
+      "kind": "property",
+      "signature": "private property <string> card-subtitle: \"Edit ui/views/home.slint to design this view\";",
+      "line": 14,
+      "doc": "Private property \"card-subtitle\" used internally."
+    },
+    {
+      "name": "page-title",
+      "kind": "property",
+      "signature": "private property <string> page-title: \"Home\";",
+      "line": 16,
+      "doc": "Private property \"page-title\" used internally."
+    },
+    {
+      "name": "card-title",
+      "kind": "property",
+      "signature": "private property <string> card-title: \"Getting started\";",
+      "line": 18,
+      "doc": "Private property \"card-title\" used internally."
+    }
+  ]
+}

@@ -1,0 +1,194 @@
+{
+  "source": "desktop/app-window.slint",
+  "items": [
+    {
+      "name": "AppWindow",
+      "kind": "component",
+      "signature": "export component AppWindow inherits Window",
+      "line": 19,
+      "doc": "A pp wi nd ow component."
+    },
+    {
+      "name": "window-title",
+      "kind": "property",
+      "signature": "in property <string> window-title: \"SlintUI Templates\";",
+      "line": 21,
+      "doc": "Input property \"window-title\"."
+    },
+    {
+      "name": "active-view",
+      "kind": "property",
+      "signature": "in-out property <string>    active-view: NavId.home;",
+      "line": 34,
+      "doc": "Two-way property \"active-view\"."
+    },
+    {
+      "name": "sidebar-open",
+      "kind": "property",
+      "signature": "in-out property <bool>      sidebar-open: true;",
+      "line": 36,
+      "doc": "Two-way property \"sidebar-open\"."
+    },
+    {
+      "name": "sidebar-collapsed",
+      "kind": "property",
+      "signature": "in-out property <bool>      sidebar-collapsed: false;",
+      "line": 38,
+      "doc": "Two-way property \"sidebar-collapsed\"."
+    },
+    {
+      "name": "nav-items",
+      "kind": "property",
+      "signature": "in-out property <[NavItem]> nav-items: [",
+      "line": 40,
+      "doc": "Two-way property \"nav-items\"."
+    },
+    {
+      "name": "show-toolbar",
+      "kind": "property",
+      "signature": "in property <bool>               show-toolbar:  false;",
+      "line": 48,
+      "doc": "Input property \"show-toolbar\"."
+    },
+    {
+      "name": "toolbar-items",
+      "kind": "property",
+      "signature": "in property <[ShellToolbarItem]> toolbar-items: [];",
+      "line": 50,
+      "doc": "Input property \"toolbar-items\"."
+    },
+    {
+      "name": "status-text",
+      "kind": "property",
+      "signature": "in-out property <string> status-text: \"\";",
+      "line": 54,
+      "doc": "Two-way property \"status-text\"."
+    },
+    {
+      "name": "status-prefix",
+      "kind": "property",
+      "signature": "in property <string> status-prefix: \"View: \";",
+      "line": 56,
+      "doc": "Input property \"status-prefix\"."
+    },
+    {
+      "name": "right-panel-label",
+      "kind": "property",
+      "signature": "in property <string> right-panel-label: \"right\";",
+      "line": 58,
+      "doc": "Input property \"right-panel-label\"."
+    },
+    {
+      "name": "menu-file-label",
+      "kind": "property",
+      "signature": "in property <string> menu-file-label: \"File\";",
+      "line": 62,
+      "doc": "Input property \"menu-file-label\"."
+    },
+    {
+      "name": "menu-exit-label",
+      "kind": "property",
+      "signature": "in property <string> menu-exit-label: \"Exit\";",
+      "line": 64,
+      "doc": "Input property \"menu-exit-label\"."
+    },
+    {
+      "name": "menu-view-label",
+      "kind": "property",
+      "signature": "in property <string> menu-view-label: \"View\";",
+      "line": 66,
+      "doc": "Input property \"menu-view-label\"."
+    },
+    {
+      "name": "menu-home-label",
+      "kind": "property",
+      "signature": "in property <string> menu-home-label: \"Home\";",
+      "line": 68,
+      "doc": "Input property \"menu-home-label\"."
+    },
+    {
+      "name": "menu-list-label",
+      "kind": "property",
+      "signature": "in property <string> menu-list-label: \"List\";",
+      "line": 70,
+      "doc": "Input property \"menu-list-label\"."
+    },
+    {
+      "name": "menu-settings-label",
+      "kind": "property",
+      "signature": "in property <string> menu-settings-label: \"Settings\";",
+      "line": 72,
+      "doc": "Input property \"menu-settings-label\"."
+    },
+    {
+      "name": "menu-help-label",
+      "kind": "property",
+      "signature": "in property <string> menu-help-label: \"Help\";",
+      "line": 74,
+      "doc": "Input property \"menu-help-label\"."
+    },
+    {
+      "name": "menu-about-label",
+      "kind": "property",
+      "signature": "in property <string> menu-about-label: \"About\";",
+      "line": 76,
+      "doc": "Input property \"menu-about-label\"."
+    },
+    {
+      "name": "menu-action",
+      "kind": "callback",
+      "signature": "callback menu-action(string);",
+      "line": 80,
+      "doc": "Callback fired for m en u a ct io n."
+    },
+    {
+      "name": "toolbar-clicked",
+      "kind": "callback",
+      "signature": "callback toolbar-clicked(string);",
+      "line": 82,
+      "doc": "Callback fired for t oo lb ar c li ck ed."
+    },
+    {
+      "name": "row-top-ratio",
+      "kind": "property",
+      "signature": "in-out property <float> row-top-ratio: Sizes.fill;",
+      "line": 86,
+      "doc": "Two-way property \"row-top-ratio\"."
+    },
+    {
+      "name": "row-main-ratio",
+      "kind": "property",
+      "signature": "in-out property <float> row-main-ratio: Sizes.ten;",
+      "line": 88,
+      "doc": "Two-way property \"row-main-ratio\"."
+    },
+    {
+      "name": "row-bottom-ratio",
+      "kind": "property",
+      "signature": "in-out property <float> row-bottom-ratio: Sizes.fill;",
+      "line": 90,
+      "doc": "Two-way property \"row-bottom-ratio\"."
+    },
+    {
+      "name": "col-left-width",
+      "kind": "property",
+      "signature": "in-out property <length> col-left-width:  Spacing.xl * Sizes.four + Spacing.md;   // 208px",
+      "line": 94,
+      "doc": "Two-way property \"col-left-width\"."
+    },
+    {
+      "name": "col-right-width",
+      "kind": "property",
+      "signature": "in-out property <length> col-right-width: Spacing.xl * Sizes.five;                 // 240px",
+      "line": 96,
+      "doc": "Two-way property \"col-right-width\"."
+    },
+    {
+      "name": "navigate",
+      "kind": "callback",
+      "signature": "callback navigate(string);",
+      "line": 103,
+      "doc": "Callback fired for n av ig at e."
+    }
+  ]
+}

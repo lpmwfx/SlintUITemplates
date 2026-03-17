@@ -1,0 +1,26 @@
+{
+  "source": "modules/ViewSlot.slint",
+  "items": [
+    {
+      "name": "ViewSlot",
+      "kind": "component",
+      "signature": "export component ViewSlot inherits Rectangle",
+      "line": 16,
+      "doc": "V ie ws lo t component."
+    },
+    {
+      "name": "slot-id",
+      "kind": "property",
+      "signature": "in property <string> slot-id;",
+      "line": 18,
+      "doc": "Input property \"slot-id\"."
+    },
+    {
+      "name": "active",
+      "kind": "property",
+      "signature": "in property <string> active;",
+      "line": 20,
+      "doc": "Input property \"active\"."
+    }
+  ]
+}

@@ -77,6 +77,7 @@ pub struct AppDsl {
     pub(crate) show_toolbar: bool,
     pub(crate) window_size:  Option<(u32, u32)>,
     pub(crate) bg_style:     BgStyle,
+    pub(crate) platform:     crate::shell::Platform,
 }
 
 impl AppDsl {

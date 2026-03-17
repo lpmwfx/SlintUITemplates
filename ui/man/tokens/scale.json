@@ -1,0 +1,33 @@
+{
+  "source": "tokens/scale.slint",
+  "items": [
+    {
+      "name": "icon-sm",
+      "kind": "property",
+      "signature": "out property <length> icon-sm: Settings.zoom * 16px;",
+      "line": 11,
+      "doc": "Output property \"icon-sm\"."
+    },
+    {
+      "name": "icon-md",
+      "kind": "property",
+      "signature": "out property <length> icon-md: Settings.zoom * 24px;",
+      "line": 13,
+      "doc": "Output property \"icon-md\"."
+    },
+    {
+      "name": "icon-lg",
+      "kind": "property",
+      "signature": "out property <length> icon-lg: Settings.zoom * 32px;",
+      "line": 15,
+      "doc": "Output property \"icon-lg\"."
+    },
+    {
+      "name": "icon-xl",
+      "kind": "property",
+      "signature": "out property <length> icon-xl: Settings.zoom * 48px;",
+      "line": 17,
+      "doc": "Output property \"icon-xl\"."
+    }
+  ]
+}

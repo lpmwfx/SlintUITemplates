@@ -1,0 +1,54 @@
+{
+  "source": "mother/AppWindow.slint",
+  "items": [
+    {
+      "name": "AppWindow",
+      "kind": "component",
+      "signature": "export component AppWindow inherits Window",
+      "line": 20,
+      "doc": "A pp wi nd ow component."
+    },
+    {
+      "name": "app-title",
+      "kind": "property",
+      "signature": "private property <string> app-title: \"SlintUITemplates\";",
+      "line": 25,
+      "doc": "Private property \"app-title\" used internally."
+    },
+    {
+      "name": "theme-mode",
+      "kind": "property",
+      "signature": "in-out property <string> theme-mode: Variants.system;",
+      "line": 29,
+      "doc": "Two-way property \"theme-mode\"."
+    },
+    {
+      "name": "material",
+      "kind": "property",
+      "signature": "in-out property <string> material: Variants.solid;  // \"solid\" | \"mica\" | \"acrylic\"",
+      "line": 31,
+      "doc": "Two-way property \"material\"."
+    },
+    {
+      "name": "platform",
+      "kind": "property",
+      "signature": "in-out property <string> platform: Variants.windows;",
+      "line": 33,
+      "doc": "Two-way property \"platform\"."
+    },
+    {
+      "name": "panels",
+      "kind": "property",
+      "signature": "in-out property <[PanelItem]> panels;",
+      "line": 51,
+      "doc": "Two-way property \"panels\"."
+    },
+    {
+      "name": "panel-dragged",
+      "kind": "callback",
+      "signature": "callback panel-dragged(int, float, float);   // id, dx, dy in logical px",
+      "line": 55,
+      "doc": "Callback fired for p an el d ra gg ed."
+    }
+  ]
+}

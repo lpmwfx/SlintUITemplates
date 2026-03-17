@@ -1,0 +1,69 @@
+// CompactShell — fullscreen shell for small-tier / Steam platform.
+// Composes GameTopBar + content area + CompactNav.
+// Caller places view content via @children.
+
+import { Colors } from "../../tokens/theme.slint";
+import { SteamColors, SteamSpacing } from "../../tokens/steam/mod.slint";
+import { Sizes } from "../../tokens/sizes.slint";
+import { Variants } from "../../globals/Variants.slint";
+import { NavItem } from "../types.slint";
+import { GameTopBar } from "GameTopBar.slint";
+import { CompactNav } from "CompactNav.slint";
+
+/// CompactShell — fullscreen shell for Steam Deck, handheld, and small-screen targets.
+export component CompactShell inherits Rectangle {
+    /// Page or app title shown in the top bar.
+    in property <string> title;
+    /// Navigation items rendered in the bottom bar or side rail.
+    in property <[NavItem]> nav-items;
+    /// Id of the currently active view / slot.
+    in property <string> active-view;
+    /// Whether the top bar is visible.
+    in property <bool> show-topbar: true;
+    /// Whether the back button in the top bar is shown.
+    in property <bool> show-back: false;
+    /// Nav chrome mode forwarded to CompactNav.
+    in property <string> nav-mode: Variants.nav-bottom;
+    /// Fired when a nav item is tapped.
+    callback navigate(string);
+    /// Fired when the top-bar back button is tapped.
+    callback back();
+
+    background: SteamColors.bg-primary;
+
+    VerticalLayout {
+        // Top bar
+        if root.show-topbar: GameTopBar {
+            title: root.title;
+            show-back: root.show-back;
+            back => { root.back(); }
+        }
+
+        // Content area — expands to fill remaining space
+        Rectangle {
+            vertical-stretch: Sizes.fill;
+            background: Colors.bg-primary;
+            clip: true;
+            @children
+        }
+
+        // Nav bar (bottom or rail)
+        if root.nav-mode != Variants.nav-compact: CompactNav {
+            mode: root.nav-mode;
+            items: root.nav-items;
+            active: root.active-view;
+            navigate(id) => { root.navigate(id); }
+        }
+    }
+
+    // Rail overlay — positioned left, full height, behind content
+    if root.nav-mode == Variants.nav-compact: CompactNav {
+        x: Sizes.no-size;
+        y: root.show-topbar ? SteamSpacing.top-bar-height : Sizes.no-size;
+        height: root.show-topbar ? root.height - SteamSpacing.top-bar-height : root.height;
+        mode: root.nav-mode;
+        items: root.nav-items;
+        active: root.active-view;
+        navigate(id) => { root.navigate(id); }
+    }
+}

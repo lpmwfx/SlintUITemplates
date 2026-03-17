@@ -1,0 +1,502 @@
+{
+  "source": "tokens/fluent/icons.slint",
+  "items": [
+    {
+      "name": "icon-font",
+      "kind": "property",
+      "signature": "out property <string> icon-font: \"Segoe Fluent Icons\";",
+      "line": 13,
+      "doc": "Output property \"icon-font\"."
+    },
+    {
+      "name": "home",
+      "kind": "property",
+      "signature": "out property <string> home:         \"\\u{E80F}\";",
+      "line": 17,
+      "doc": "Output property \"home\"."
+    },
+    {
+      "name": "back",
+      "kind": "property",
+      "signature": "out property <string> back:         \"\\u{E72B}\";",
+      "line": 19,
+      "doc": "Output property \"back\"."
+    },
+    {
+      "name": "forward",
+      "kind": "property",
+      "signature": "out property <string> forward:      \"\\u{E72A}\";",
+      "line": 21,
+      "doc": "Output property \"forward\"."
+    },
+    {
+      "name": "menu",
+      "kind": "property",
+      "signature": "out property <string> menu:         \"\\u{E700}\";",
+      "line": 23,
+      "doc": "Output property \"menu\"."
+    },
+    {
+      "name": "settings",
+      "kind": "property",
+      "signature": "out property <string> settings:     \"\\u{E713}\";",
+      "line": 25,
+      "doc": "Output property \"settings\"."
+    },
+    {
+      "name": "nav-collapse",
+      "kind": "property",
+      "signature": "out property <string> nav-collapse: \"\\u{E89F}\";  // CollapseMenu",
+      "line": 27,
+      "doc": "Output property \"nav-collapse\"."
+    },
+    {
+      "name": "nav-expand",
+      "kind": "property",
+      "signature": "out property <string> nav-expand:   \"\\u{E8A0}\";  // OpenPane",
+      "line": 29,
+      "doc": "Output property \"nav-expand\"."
+    },
+    {
+      "name": "add",
+      "kind": "property",
+      "signature": "out property <string> add:          \"\\u{E710}\";",
+      "line": 33,
+      "doc": "Output property \"add\"."
+    },
+    {
+      "name": "remove",
+      "kind": "property",
+      "signature": "out property <string> remove:       \"\\u{E738}\";",
+      "line": 35,
+      "doc": "Output property \"remove\"."
+    },
+    {
+      "name": "delete",
+      "kind": "property",
+      "signature": "out property <string> delete:       \"\\u{E74D}\";",
+      "line": 37,
+      "doc": "Output property \"delete\"."
+    },
+    {
+      "name": "edit",
+      "kind": "property",
+      "signature": "out property <string> edit:         \"\\u{E70F}\";",
+      "line": 39,
+      "doc": "Output property \"edit\"."
+    },
+    {
+      "name": "save",
+      "kind": "property",
+      "signature": "out property <string> save:         \"\\u{E74E}\";",
+      "line": 41,
+      "doc": "Output property \"save\"."
+    },
+    {
+      "name": "copy",
+      "kind": "property",
+      "signature": "out property <string> copy:         \"\\u{E8C8}\";",
+      "line": 43,
+      "doc": "Output property \"copy\"."
+    },
+    {
+      "name": "paste",
+      "kind": "property",
+      "signature": "out property <string> paste:        \"\\u{E77F}\";",
+      "line": 45,
+      "doc": "Output property \"paste\"."
+    },
+    {
+      "name": "cut",
+      "kind": "property",
+      "signature": "out property <string> cut:          \"\\u{E8C6}\";",
+      "line": 47,
+      "doc": "Output property \"cut\"."
+    },
+    {
+      "name": "undo",
+      "kind": "property",
+      "signature": "out property <string> undo:         \"\\u{E7A7}\";",
+      "line": 49,
+      "doc": "Output property \"undo\"."
+    },
+    {
+      "name": "redo",
+      "kind": "property",
+      "signature": "out property <string> redo:         \"\\u{E7A6}\";",
+      "line": 51,
+      "doc": "Output property \"redo\"."
+    },
+    {
+      "name": "refresh",
+      "kind": "property",
+      "signature": "out property <string> refresh:      \"\\u{E72C}\";",
+      "line": 53,
+      "doc": "Output property \"refresh\"."
+    },
+    {
+      "name": "close",
+      "kind": "property",
+      "signature": "out property <string> close:        \"\\u{E8BB}\";",
+      "line": 55,
+      "doc": "Output property \"close\"."
+    },
+    {
+      "name": "search",
+      "kind": "property",
+      "signature": "out property <string> search:       \"\\u{E721}\";",
+      "line": 57,
+      "doc": "Output property \"search\"."
+    },
+    {
+      "name": "filter",
+      "kind": "property",
+      "signature": "out property <string> filter:       \"\\u{E71C}\";",
+      "line": 59,
+      "doc": "Output property \"filter\"."
+    },
+    {
+      "name": "sort",
+      "kind": "property",
+      "signature": "out property <string> sort:         \"\\u{E8CB}\";",
+      "line": 61,
+      "doc": "Output property \"sort\"."
+    },
+    {
+      "name": "share",
+      "kind": "property",
+      "signature": "out property <string> share:        \"\\u{E72D}\";",
+      "line": 63,
+      "doc": "Output property \"share\"."
+    },
+    {
+      "name": "download",
+      "kind": "property",
+      "signature": "out property <string> download:     \"\\u{E896}\";",
+      "line": 65,
+      "doc": "Output property \"download\"."
+    },
+    {
+      "name": "upload",
+      "kind": "property",
+      "signature": "out property <string> upload:       \"\\u{E898}\";",
+      "line": 67,
+      "doc": "Output property \"upload\"."
+    },
+    {
+      "name": "print",
+      "kind": "property",
+      "signature": "out property <string> print:        \"\\u{E749}\";",
+      "line": 69,
+      "doc": "Output property \"print\"."
+    },
+    {
+      "name": "pin",
+      "kind": "property",
+      "signature": "out property <string> pin:          \"\\u{E718}\";",
+      "line": 71,
+      "doc": "Output property \"pin\"."
+    },
+    {
+      "name": "unpin",
+      "kind": "property",
+      "signature": "out property <string> unpin:        \"\\u{E77A}\";",
+      "line": 73,
+      "doc": "Output property \"unpin\"."
+    },
+    {
+      "name": "star",
+      "kind": "property",
+      "signature": "out property <string> star:         \"\\u{E734}\";",
+      "line": 75,
+      "doc": "Output property \"star\"."
+    },
+    {
+      "name": "star-filled",
+      "kind": "property",
+      "signature": "out property <string> star-filled:  \"\\u{E735}\";",
+      "line": 77,
+      "doc": "Output property \"star-filled\"."
+    },
+    {
+      "name": "maximize",
+      "kind": "property",
+      "signature": "out property <string> maximize:     \"\\u{E922}\";",
+      "line": 81,
+      "doc": "Output property \"maximize\"."
+    },
+    {
+      "name": "minimize",
+      "kind": "property",
+      "signature": "out property <string> minimize:     \"\\u{E921}\";",
+      "line": 83,
+      "doc": "Output property \"minimize\"."
+    },
+    {
+      "name": "restore",
+      "kind": "property",
+      "signature": "out property <string> restore:      \"\\u{E923}\";",
+      "line": 85,
+      "doc": "Output property \"restore\"."
+    },
+    {
+      "name": "folder",
+      "kind": "property",
+      "signature": "out property <string> folder:       \"\\u{E8B7}\";",
+      "line": 89,
+      "doc": "Output property \"folder\"."
+    },
+    {
+      "name": "folder-open",
+      "kind": "property",
+      "signature": "out property <string> folder-open:  \"\\u{E8DA}\";",
+      "line": 91,
+      "doc": "Output property \"folder-open\"."
+    },
+    {
+      "name": "file",
+      "kind": "property",
+      "signature": "out property <string> file:         \"\\u{E7C3}\";",
+      "line": 93,
+      "doc": "Output property \"file\"."
+    },
+    {
+      "name": "file-new",
+      "kind": "property",
+      "signature": "out property <string> file-new:     \"\\u{E8A5}\";",
+      "line": 95,
+      "doc": "Output property \"file-new\"."
+    },
+    {
+      "name": "cloud",
+      "kind": "property",
+      "signature": "out property <string> cloud:        \"\\u{E753}\";",
+      "line": 97,
+      "doc": "Output property \"cloud\"."
+    },
+    {
+      "name": "database",
+      "kind": "property",
+      "signature": "out property <string> database:     \"\\u{EFC7}\";",
+      "line": 99,
+      "doc": "Output property \"database\"."
+    },
+    {
+      "name": "play",
+      "kind": "property",
+      "signature": "out property <string> play:         \"\\u{E768}\";",
+      "line": 103,
+      "doc": "Output property \"play\"."
+    },
+    {
+      "name": "pause",
+      "kind": "property",
+      "signature": "out property <string> pause:        \"\\u{E769}\";",
+      "line": 105,
+      "doc": "Output property \"pause\"."
+    },
+    {
+      "name": "stop",
+      "kind": "property",
+      "signature": "out property <string> stop:         \"\\u{E71A}\";",
+      "line": 107,
+      "doc": "Output property \"stop\"."
+    },
+    {
+      "name": "volume",
+      "kind": "property",
+      "signature": "out property <string> volume:       \"\\u{E767}\";",
+      "line": 109,
+      "doc": "Output property \"volume\"."
+    },
+    {
+      "name": "mute",
+      "kind": "property",
+      "signature": "out property <string> mute:         \"\\u{E74F}\";",
+      "line": 111,
+      "doc": "Output property \"mute\"."
+    },
+    {
+      "name": "camera",
+      "kind": "property",
+      "signature": "out property <string> camera:       \"\\u{E722}\";",
+      "line": 113,
+      "doc": "Output property \"camera\"."
+    },
+    {
+      "name": "image",
+      "kind": "property",
+      "signature": "out property <string> image:        \"\\u{E8B9}\";",
+      "line": 115,
+      "doc": "Output property \"image\"."
+    },
+    {
+      "name": "list",
+      "kind": "property",
+      "signature": "out property <string> list:         \"\\u{E8FD}\";",
+      "line": 119,
+      "doc": "Output property \"list\"."
+    },
+    {
+      "name": "grid",
+      "kind": "property",
+      "signature": "out property <string> grid:         \"\\u{F0E2}\";",
+      "line": 121,
+      "doc": "Output property \"grid\"."
+    },
+    {
+      "name": "layout",
+      "kind": "property",
+      "signature": "out property <string> layout:       \"\\u{E8EF}\";",
+      "line": 123,
+      "doc": "Output property \"layout\"."
+    },
+    {
+      "name": "apps",
+      "kind": "property",
+      "signature": "out property <string> apps:         \"\\u{E8A9}\";",
+      "line": 125,
+      "doc": "Output property \"apps\"."
+    },
+    {
+      "name": "view-all",
+      "kind": "property",
+      "signature": "out property <string> view-all:     \"\\u{E8A9}\";",
+      "line": 127,
+      "doc": "Output property \"view-all\"."
+    },
+    {
+      "name": "panel-left",
+      "kind": "property",
+      "signature": "out property <string> panel-left:   \"\\u{F6D9}\";",
+      "line": 129,
+      "doc": "Output property \"panel-left\"."
+    },
+    {
+      "name": "panel-right",
+      "kind": "property",
+      "signature": "out property <string> panel-right:  \"\\u{F6DA}\";",
+      "line": 131,
+      "doc": "Output property \"panel-right\"."
+    },
+    {
+      "name": "fullscreen",
+      "kind": "property",
+      "signature": "out property <string> fullscreen:   \"\\u{E740}\";",
+      "line": 133,
+      "doc": "Output property \"fullscreen\"."
+    },
+    {
+      "name": "person",
+      "kind": "property",
+      "signature": "out property <string> person:       \"\\u{E77B}\";",
+      "line": 137,
+      "doc": "Output property \"person\"."
+    },
+    {
+      "name": "people",
+      "kind": "property",
+      "signature": "out property <string> people:       \"\\u{E716}\";",
+      "line": 139,
+      "doc": "Output property \"people\"."
+    },
+    {
+      "name": "chat",
+      "kind": "property",
+      "signature": "out property <string> chat:         \"\\u{E8BD}\";",
+      "line": 141,
+      "doc": "Output property \"chat\"."
+    },
+    {
+      "name": "mail",
+      "kind": "property",
+      "signature": "out property <string> mail:         \"\\u{E715}\";",
+      "line": 143,
+      "doc": "Output property \"mail\"."
+    },
+    {
+      "name": "phone",
+      "kind": "property",
+      "signature": "out property <string> phone:        \"\\u{E717}\";",
+      "line": 145,
+      "doc": "Output property \"phone\"."
+    },
+    {
+      "name": "notification",
+      "kind": "property",
+      "signature": "out property <string> notification: \"\\u{EA8F}\";",
+      "line": 147,
+      "doc": "Output property \"notification\"."
+    },
+    {
+      "name": "help",
+      "kind": "property",
+      "signature": "out property <string> help:         \"\\u{E897}\";",
+      "line": 149,
+      "doc": "Output property \"help\"."
+    },
+    {
+      "name": "info",
+      "kind": "property",
+      "signature": "out property <string> info:         \"\\u{E946}\";",
+      "line": 151,
+      "doc": "Output property \"info\"."
+    },
+    {
+      "name": "warning",
+      "kind": "property",
+      "signature": "out property <string> warning:      \"\\u{E7BA}\";",
+      "line": 153,
+      "doc": "Output property \"warning\"."
+    },
+    {
+      "name": "error-icon",
+      "kind": "property",
+      "signature": "out property <string> error-icon:   \"\\u{EA39}\";",
+      "line": 155,
+      "doc": "Output property \"error-icon\"."
+    },
+    {
+      "name": "checkmark",
+      "kind": "property",
+      "signature": "out property <string> checkmark:    \"\\u{E73E}\";",
+      "line": 157,
+      "doc": "Output property \"checkmark\"."
+    },
+    {
+      "name": "dismiss",
+      "kind": "property",
+      "signature": "out property <string> dismiss:      \"\\u{E8BB}\";",
+      "line": 159,
+      "doc": "Output property \"dismiss\"."
+    },
+    {
+      "name": "device",
+      "kind": "property",
+      "signature": "out property <string> device:       \"\\u{E8FC}\";",
+      "line": 163,
+      "doc": "Output property \"device\"."
+    },
+    {
+      "name": "keyboard",
+      "kind": "property",
+      "signature": "out property <string> keyboard:     \"\\u{E765}\";",
+      "line": 165,
+      "doc": "Output property \"keyboard\"."
+    },
+    {
+      "name": "wifi",
+      "kind": "property",
+      "signature": "out property <string> wifi:         \"\\u{E701}\";",
+      "line": 167,
+      "doc": "Output property \"wifi\"."
+    },
+    {
+      "name": "bluetooth",
+      "kind": "property",
+      "signature": "out property <string> bluetooth:    \"\\u{E702}\";",
+      "line": 169,
+      "doc": "Output property \"bluetooth\"."
+    }
+  ]
+}

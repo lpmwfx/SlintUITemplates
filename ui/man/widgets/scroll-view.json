@@ -1,0 +1,54 @@
+{
+  "source": "widgets/scroll-view.slint",
+  "items": [
+    {
+      "name": "ScrollView",
+      "kind": "component",
+      "signature": "export component ScrollView inherits Rectangle",
+      "line": 5,
+      "doc": "S cr ol lv ie w component."
+    },
+    {
+      "name": "interactive",
+      "kind": "property",
+      "signature": "in property <bool>  interactive:    true;",
+      "line": 7,
+      "doc": "Input property \"interactive\"."
+    },
+    {
+      "name": "show-scrollbar",
+      "kind": "property",
+      "signature": "in property <bool>  show-scrollbar: true;",
+      "line": 9,
+      "doc": "Input property \"show-scrollbar\"."
+    },
+    {
+      "name": "viewport-width",
+      "kind": "property",
+      "signature": "out property <length> viewport-width  <=> fl.viewport-width;",
+      "line": 11,
+      "doc": "Output property \"viewport-width\"."
+    },
+    {
+      "name": "viewport-height",
+      "kind": "property",
+      "signature": "out property <length> viewport-height <=> fl.viewport-height;",
+      "line": 13,
+      "doc": "Output property \"viewport-height\"."
+    },
+    {
+      "name": "scrollbar-inset",
+      "kind": "property",
+      "signature": "private property <length> scrollbar-inset: Sizes.border-w-2;",
+      "line": 16,
+      "doc": "Private property \"scrollbar-inset\" used internally."
+    },
+    {
+      "name": "scrollbar-w",
+      "kind": "property",
+      "signature": "private property <length> scrollbar-w: Sizes.border-w-3;",
+      "line": 18,
+      "doc": "Private property \"scrollbar-w\" used internally."
+    }
+  ]
+}

@@ -1,0 +1,208 @@
+{
+  "source": "tokens/material/colors.slint",
+  "items": [
+    {
+      "name": "primary",
+      "kind": "property",
+      "signature": "out property <color> primary:           #6750A4;",
+      "line": 8,
+      "doc": "Output property \"primary\"."
+    },
+    {
+      "name": "on-primary",
+      "kind": "property",
+      "signature": "out property <color> on-primary:        #FFFFFF;",
+      "line": 10,
+      "doc": "Output property \"on-primary\"."
+    },
+    {
+      "name": "primary-container",
+      "kind": "property",
+      "signature": "out property <color> primary-container: #EADDFF;",
+      "line": 12,
+      "doc": "Output property \"primary-container\"."
+    },
+    {
+      "name": "on-primary-container",
+      "kind": "property",
+      "signature": "out property <color> on-primary-container: #21005D;",
+      "line": 14,
+      "doc": "Output property \"on-primary-container\"."
+    },
+    {
+      "name": "secondary",
+      "kind": "property",
+      "signature": "out property <color> secondary:           #625B71;",
+      "line": 18,
+      "doc": "Output property \"secondary\"."
+    },
+    {
+      "name": "on-secondary",
+      "kind": "property",
+      "signature": "out property <color> on-secondary:        #FFFFFF;",
+      "line": 20,
+      "doc": "Output property \"on-secondary\"."
+    },
+    {
+      "name": "secondary-container",
+      "kind": "property",
+      "signature": "out property <color> secondary-container: #E8DEF8;",
+      "line": 22,
+      "doc": "Output property \"secondary-container\"."
+    },
+    {
+      "name": "on-secondary-container",
+      "kind": "property",
+      "signature": "out property <color> on-secondary-container: #1D192B;",
+      "line": 24,
+      "doc": "Output property \"on-secondary-container\"."
+    },
+    {
+      "name": "tertiary",
+      "kind": "property",
+      "signature": "out property <color> tertiary:           #7D5260;",
+      "line": 28,
+      "doc": "Output property \"tertiary\"."
+    },
+    {
+      "name": "on-tertiary",
+      "kind": "property",
+      "signature": "out property <color> on-tertiary:        #FFFFFF;",
+      "line": 30,
+      "doc": "Output property \"on-tertiary\"."
+    },
+    {
+      "name": "tertiary-container",
+      "kind": "property",
+      "signature": "out property <color> tertiary-container: #FFD8E4;",
+      "line": 32,
+      "doc": "Output property \"tertiary-container\"."
+    },
+    {
+      "name": "on-tertiary-container",
+      "kind": "property",
+      "signature": "out property <color> on-tertiary-container: #31111D;",
+      "line": 34,
+      "doc": "Output property \"on-tertiary-container\"."
+    },
+    {
+      "name": "error",
+      "kind": "property",
+      "signature": "out property <color> error:            #B3261E;",
+      "line": 38,
+      "doc": "Output property \"error\"."
+    },
+    {
+      "name": "on-error",
+      "kind": "property",
+      "signature": "out property <color> on-error:         #FFFFFF;",
+      "line": 40,
+      "doc": "Output property \"on-error\"."
+    },
+    {
+      "name": "error-container",
+      "kind": "property",
+      "signature": "out property <color> error-container:  #F9DEDC;",
+      "line": 42,
+      "doc": "Output property \"error-container\"."
+    },
+    {
+      "name": "on-error-container",
+      "kind": "property",
+      "signature": "out property <color> on-error-container: #410E0B;",
+      "line": 44,
+      "doc": "Output property \"on-error-container\"."
+    },
+    {
+      "name": "surface",
+      "kind": "property",
+      "signature": "out property <color> surface:           #FFFBFE;",
+      "line": 48,
+      "doc": "Output property \"surface\"."
+    },
+    {
+      "name": "on-surface",
+      "kind": "property",
+      "signature": "out property <color> on-surface:        #1C1B1F;",
+      "line": 50,
+      "doc": "Output property \"on-surface\"."
+    },
+    {
+      "name": "surface-variant",
+      "kind": "property",
+      "signature": "out property <color> surface-variant:   #E7E0EC;",
+      "line": 52,
+      "doc": "Output property \"surface-variant\"."
+    },
+    {
+      "name": "on-surface-variant",
+      "kind": "property",
+      "signature": "out property <color> on-surface-variant: #49454F;",
+      "line": 54,
+      "doc": "Output property \"on-surface-variant\"."
+    },
+    {
+      "name": "surface-container",
+      "kind": "property",
+      "signature": "out property <color> surface-container: #F3EDF7;",
+      "line": 56,
+      "doc": "Output property \"surface-container\"."
+    },
+    {
+      "name": "surface-container-high",
+      "kind": "property",
+      "signature": "out property <color> surface-container-high: #ECE6F0;",
+      "line": 58,
+      "doc": "Output property \"surface-container-high\"."
+    },
+    {
+      "name": "background",
+      "kind": "property",
+      "signature": "out property <color> background:    #FFFBFE;",
+      "line": 62,
+      "doc": "Output property \"background\"."
+    },
+    {
+      "name": "on-background",
+      "kind": "property",
+      "signature": "out property <color> on-background: #1C1B1F;",
+      "line": 64,
+      "doc": "Output property \"on-background\"."
+    },
+    {
+      "name": "outline",
+      "kind": "property",
+      "signature": "out property <color> outline:         #79747E;",
+      "line": 68,
+      "doc": "Output property \"outline\"."
+    },
+    {
+      "name": "outline-variant",
+      "kind": "property",
+      "signature": "out property <color> outline-variant: #CAC4D0;",
+      "line": 70,
+      "doc": "Output property \"outline-variant\"."
+    },
+    {
+      "name": "inverse-surface",
+      "kind": "property",
+      "signature": "out property <color> inverse-surface:    #313033;",
+      "line": 74,
+      "doc": "Output property \"inverse-surface\"."
+    },
+    {
+      "name": "inverse-on-surface",
+      "kind": "property",
+      "signature": "out property <color> inverse-on-surface: #F4EFF4;",
+      "line": 76,
+      "doc": "Output property \"inverse-on-surface\"."
+    },
+    {
+      "name": "inverse-primary",
+      "kind": "property",
+      "signature": "out property <color> inverse-primary:    #D0BCFF;",
+      "line": 78,
+      "doc": "Output property \"inverse-primary\"."
+    }
+  ]
+}

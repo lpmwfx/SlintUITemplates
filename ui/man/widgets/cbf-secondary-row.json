@@ -1,0 +1,47 @@
+{
+  "source": "widgets/cbf-secondary-row.slint",
+  "items": [
+    {
+      "name": "CbfSecondaryRow",
+      "kind": "component",
+      "signature": "export component CbfSecondaryRow inherits Rectangle",
+      "line": 5,
+      "doc": "C bf se co nd ar yr ow component."
+    },
+    {
+      "name": "item",
+      "kind": "property",
+      "signature": "in property <CbfAction> item;",
+      "line": 7,
+      "doc": "Input property \"item\"."
+    },
+    {
+      "name": "activated",
+      "kind": "callback",
+      "signature": "callback activated(string);",
+      "line": 9,
+      "doc": "Callback fired for a ct iv at ed."
+    },
+    {
+      "name": "stretch-full",
+      "kind": "property",
+      "signature": "private property <int>   stretch-full: 1;",
+      "line": 12,
+      "doc": "Private property \"stretch-full\" used internally."
+    },
+    {
+      "name": "op-enabled",
+      "kind": "property",
+      "signature": "private property <float> op-enabled:   1.0;",
+      "line": 14,
+      "doc": "Private property \"op-enabled\" used internally."
+    },
+    {
+      "name": "op-disabled",
+      "kind": "property",
+      "signature": "private property <float> op-disabled:  0.5;",
+      "line": 16,
+      "doc": "Private property \"op-disabled\" used internally."
+    }
+  ]
+}

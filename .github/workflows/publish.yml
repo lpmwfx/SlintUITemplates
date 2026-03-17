@@ -19,14 +19,14 @@ jobs:
       - name: Install Rust stable
         uses: dtolnay/rust-toolchain@stable
 
-      - name: Build
-        run: cargo build
+      - name: Build library
+        run: cargo build -p slint-ui-templates
 
       - name: Run tests
-        run: cargo test
+        run: cargo test -p slint-ui-templates
 
       - name: Dry run publish
-        run: cargo publish --dry-run
+        run: cargo publish --dry-run -p slint-ui-templates
 
       - name: Publish to crates.io
-        run: cargo publish --token ${{ secrets.CARGO_REGISTRY_TOKEN }}
+        run: cargo publish -p slint-ui-templates --token ${{ secrets.CARGO_REGISTRY_TOKEN }}

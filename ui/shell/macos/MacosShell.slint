@@ -1,0 +1,46 @@
+// MacosShell — macOS-style app shell.
+// Layout: TitleBar | (SideNav + Content).
+// Caller places view content via @children.
+
+import { Colors }           from "../../tokens/theme.slint";
+import { Sizes }            from "../../tokens/sizes.slint";
+import { NavItem }          from "../types.slint";
+import { MacosTitleBar }    from "MacosTitleBar.slint";
+import { MacosSideNav }     from "MacosSideNav.slint";
+
+/// macOS app shell — title bar + sidebar navigation + content area.
+export component MacosShell inherits VerticalLayout {
+    /// Window or app title shown in the title bar.
+    in property <string>    title;
+    /// Navigation items shown in the sidebar.
+    in property <[NavItem]> nav-items;
+    /// Id of the currently active view / slot.
+    in property <string>    active-slot;
+
+    /// Fired when the user selects a nav destination.
+    callback slot-changed(string);
+
+    spacing: Sizes.no-size;
+
+    // ── Title bar ─────────────────────────────────────────────────────────────
+    MacosTitleBar { title: root.title; }
+
+    // ── SideNav + Content ─────────────────────────────────────────────────────
+    HorizontalLayout {
+        vertical-stretch: Sizes.one;
+        spacing:          Sizes.no-size;
+
+        MacosSideNav {
+            items:       root.nav-items;
+            active-item: root.active-slot;
+            navigate(id) => { root.slot-changed(id); }
+        }
+
+        Rectangle {
+            horizontal-stretch: Sizes.one;
+            background:         Colors.bg-primary;
+            clip:               true;
+            @children
+        }
+    }
+}

@@ -1,0 +1,16 @@
+# `widgets/SpinValueDisplay.slint`
+
+## `export component SpinValueDisplay inherits Rectangle`
+*Line 5 · component*
+
+S pi nv al ue di sp la y component.
+
+---
+
+## `in property <int> display-value;`
+*Line 7 · property*
+
+Input property "display-value".
+
+---
+

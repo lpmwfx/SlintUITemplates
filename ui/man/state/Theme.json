@@ -1,0 +1,376 @@
+{
+  "source": "state/Theme.slint",
+  "items": [
+    {
+      "name": "material",
+      "kind": "property",
+      "signature": "in-out property <string> material: \"solid\";  // \"solid\" | \"mica\" | \"acrylic\"",
+      "line": 25,
+      "doc": "Two-way property \"material\"."
+    },
+    {
+      "name": "dark",
+      "kind": "property",
+      "signature": "in-out property <bool>   dark: Palette.color-scheme == ColorScheme.dark;",
+      "line": 27,
+      "doc": "Two-way property \"dark\"."
+    },
+    {
+      "name": "dark-mode",
+      "kind": "property",
+      "signature": "in-out property <bool>   dark-mode <=> dark;  // backwards-compat alias",
+      "line": 29,
+      "doc": "Two-way property \"dark-mode\"."
+    },
+    {
+      "name": "accent-override",
+      "kind": "property",
+      "signature": "in-out property <color>  accent-override: transparent;  // alpha=0 → derive from palette",
+      "line": 31,
+      "doc": "Two-way property \"accent-override\"."
+    },
+    {
+      "name": "bg-primary",
+      "kind": "property",
+      "signature": "out property <color> bg-primary:",
+      "line": 34,
+      "doc": "Output property \"bg-primary\"."
+    },
+    {
+      "name": "bg-surface",
+      "kind": "property",
+      "signature": "out property <color> bg-surface:",
+      "line": 40,
+      "doc": "Output property \"bg-surface\"."
+    },
+    {
+      "name": "bg-elevated",
+      "kind": "property",
+      "signature": "out property <color> bg-elevated:",
+      "line": 46,
+      "doc": "Output property \"bg-elevated\"."
+    },
+    {
+      "name": "text-primary",
+      "kind": "property",
+      "signature": "out property <color> text-primary:",
+      "line": 52,
+      "doc": "Output property \"text-primary\"."
+    },
+    {
+      "name": "text-secondary",
+      "kind": "property",
+      "signature": "out property <color> text-secondary:",
+      "line": 58,
+      "doc": "Output property \"text-secondary\"."
+    },
+    {
+      "name": "text-disabled",
+      "kind": "property",
+      "signature": "out property <color> text-disabled:",
+      "line": 64,
+      "doc": "Output property \"text-disabled\"."
+    },
+    {
+      "name": "accent",
+      "kind": "property",
+      "signature": "out property <color> accent:",
+      "line": 70,
+      "doc": "Output property \"accent\"."
+    },
+    {
+      "name": "accent-hover",
+      "kind": "property",
+      "signature": "out property <color> accent-hover:",
+      "line": 77,
+      "doc": "Output property \"accent-hover\"."
+    },
+    {
+      "name": "accent-text",
+      "kind": "property",
+      "signature": "out property <color> accent-text:",
+      "line": 83,
+      "doc": "Output property \"accent-text\"."
+    },
+    {
+      "name": "error",
+      "kind": "property",
+      "signature": "out property <color> error:   #C42B1C;",
+      "line": 89,
+      "doc": "Output property \"error\"."
+    },
+    {
+      "name": "success",
+      "kind": "property",
+      "signature": "out property <color> success: #0F7B0F;",
+      "line": 91,
+      "doc": "Output property \"success\"."
+    },
+    {
+      "name": "warning",
+      "kind": "property",
+      "signature": "out property <color> warning: #9D5D00;",
+      "line": 93,
+      "doc": "Output property \"warning\"."
+    },
+    {
+      "name": "border",
+      "kind": "property",
+      "signature": "out property <color> border:",
+      "line": 96,
+      "doc": "Output property \"border\"."
+    },
+    {
+      "name": "border-strong",
+      "kind": "property",
+      "signature": "out property <color> border-strong:",
+      "line": 102,
+      "doc": "Output property \"border-strong\"."
+    },
+    {
+      "name": "border-focus",
+      "kind": "property",
+      "signature": "out property <color> border-focus: accent;",
+      "line": 108,
+      "doc": "Output property \"border-focus\"."
+    },
+    {
+      "name": "shadow",
+      "kind": "property",
+      "signature": "out property <color> shadow:",
+      "line": 111,
+      "doc": "Output property \"shadow\"."
+    },
+    {
+      "name": "overlay",
+      "kind": "property",
+      "signature": "out property <color> overlay: #00000040;",
+      "line": 118,
+      "doc": "Output property \"overlay\"."
+    },
+    {
+      "name": "bg-panel",
+      "kind": "property",
+      "signature": "out property <color> bg-panel:     bg-surface;",
+      "line": 122,
+      "doc": "Output property \"bg-panel\"."
+    },
+    {
+      "name": "handle",
+      "kind": "property",
+      "signature": "out property <color> handle:       border;",
+      "line": 124,
+      "doc": "Output property \"handle\"."
+    },
+    {
+      "name": "handle-hover",
+      "kind": "property",
+      "signature": "out property <color> handle-hover: border-strong;",
+      "line": 126,
+      "doc": "Output property \"handle-hover\"."
+    },
+    {
+      "name": "danger",
+      "kind": "property",
+      "signature": "out property <color> danger:       error;",
+      "line": 128,
+      "doc": "Output property \"danger\"."
+    },
+    {
+      "name": "text-muted",
+      "kind": "property",
+      "signature": "out property <color> text-muted:   text-secondary;",
+      "line": 130,
+      "doc": "Output property \"text-muted\"."
+    },
+    {
+      "name": "platform",
+      "kind": "property",
+      "signature": "in-out property <string> platform: Variants.windows;",
+      "line": 137,
+      "doc": "Two-way property \"platform\"."
+    },
+    {
+      "name": "radius-sm",
+      "kind": "property",
+      "signature": "out property <length> radius-sm:",
+      "line": 149,
+      "doc": "Small border radius — checkboxes, chips."
+    },
+    {
+      "name": "radius-md",
+      "kind": "property",
+      "signature": "out property <length> radius-md:",
+      "line": 152,
+      "doc": "Standard border radius — buttons, inputs."
+    },
+    {
+      "name": "radius-lg",
+      "kind": "property",
+      "signature": "out property <length> radius-lg:",
+      "line": 155,
+      "doc": "Large border radius — cards, panels."
+    },
+    {
+      "name": "radius-xl",
+      "kind": "property",
+      "signature": "out property <length> radius-xl:",
+      "line": 158,
+      "doc": "Extra-large border radius — dialogs, large surfaces."
+    },
+    {
+      "name": "radius-circle",
+      "kind": "property",
+      "signature": "out property <length> radius-circle:",
+      "line": 161,
+      "doc": "Full pill / circle radius."
+    },
+    {
+      "name": "touch-sm",
+      "kind": "property",
+      "signature": "out property <length> touch-sm:",
+      "line": 166,
+      "doc": "Small control height — compact items."
+    },
+    {
+      "name": "touch-md",
+      "kind": "property",
+      "signature": "out property <length> touch-md:",
+      "line": 169,
+      "doc": "Standard control height — buttons, inputs."
+    },
+    {
+      "name": "touch-lg",
+      "kind": "property",
+      "signature": "out property <length> touch-lg:",
+      "line": 172,
+      "doc": "Large control height — primary targets."
+    },
+    {
+      "name": "font-caption",
+      "kind": "property",
+      "signature": "out property <length> font-caption:",
+      "line": 177,
+      "doc": "Caption / label text size."
+    },
+    {
+      "name": "font-body",
+      "kind": "property",
+      "signature": "out property <length> font-body:",
+      "line": 180,
+      "doc": "Body text size."
+    },
+    {
+      "name": "font-subtitle",
+      "kind": "property",
+      "signature": "out property <length> font-subtitle:",
+      "line": 183,
+      "doc": "Subtitle / section heading."
+    },
+    {
+      "name": "font-heading",
+      "kind": "property",
+      "signature": "out property <length> font-heading:",
+      "line": 186,
+      "doc": "Heading."
+    },
+    {
+      "name": "font-title",
+      "kind": "property",
+      "signature": "out property <length> font-title:",
+      "line": 189,
+      "doc": "Title / display."
+    },
+    {
+      "name": "font-weight-regular",
+      "kind": "property",
+      "signature": "out property <int> font-weight-regular:",
+      "line": 194,
+      "doc": "Regular weight (400)."
+    },
+    {
+      "name": "font-weight-medium",
+      "kind": "property",
+      "signature": "out property <int> font-weight-medium:",
+      "line": 197,
+      "doc": "Medium weight (500)."
+    },
+    {
+      "name": "font-weight-bold",
+      "kind": "property",
+      "signature": "out property <int> font-weight-bold:",
+      "line": 200,
+      "doc": "Bold weight (700)."
+    },
+    {
+      "name": "space-xs",
+      "kind": "property",
+      "signature": "out property <length> space-xs:",
+      "line": 205,
+      "doc": "Extra-small spacing."
+    },
+    {
+      "name": "space-sm",
+      "kind": "property",
+      "signature": "out property <length> space-sm:",
+      "line": 208,
+      "doc": "Small spacing."
+    },
+    {
+      "name": "space-md",
+      "kind": "property",
+      "signature": "out property <length> space-md:",
+      "line": 211,
+      "doc": "Medium spacing."
+    },
+    {
+      "name": "space-lg",
+      "kind": "property",
+      "signature": "out property <length> space-lg:",
+      "line": 214,
+      "doc": "Large spacing."
+    },
+    {
+      "name": "space-xl",
+      "kind": "property",
+      "signature": "out property <length> space-xl:",
+      "line": 217,
+      "doc": "Extra-large spacing."
+    },
+    {
+      "name": "nav-rail-width",
+      "kind": "property",
+      "signature": "out property <length> nav-rail-width:",
+      "line": 222,
+      "doc": "Side navigation rail width."
+    },
+    {
+      "name": "nav-bar-height",
+      "kind": "property",
+      "signature": "out property <length> nav-bar-height:",
+      "line": 225,
+      "doc": "Navigation bar height (bottom nav / toolbar)."
+    },
+    {
+      "name": "top-bar-height",
+      "kind": "property",
+      "signature": "out property <length> top-bar-height:",
+      "line": 228,
+      "doc": "Top bar / title bar height."
+    },
+    {
+      "name": "touch-target",
+      "kind": "property",
+      "signature": "out property <length> touch-target:",
+      "line": 234,
+      "doc": "Minimum safe interactive target for this platform.\nUse for min-width / min-height on buttons and nav items."
+    },
+    {
+      "name": "nav-style",
+      "kind": "property",
+      "signature": "out property <string> nav-style:",
+      "line": 237,
+      "doc": "Recommended nav chrome pattern for this platform."
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "source": "shell/small/BackButton.slint",
+  "items": [
+    {
+      "name": "BackButton",
+      "kind": "component",
+      "signature": "export component BackButton inherits Rectangle",
+      "line": 7,
+      "doc": "Touch-target-safe back button for the GameTopBar."
+    },
+    {
+      "name": "clicked",
+      "kind": "callback",
+      "signature": "callback clicked();",
+      "line": 9,
+      "doc": "Callback fired for c l i c k e d."
+    },
+    {
+      "name": "icon",
+      "kind": "property",
+      "signature": "in property <string> icon: \"\";",
+      "line": 11,
+      "doc": "Icon glyph to render (default: Fluent back-arrow U+E72B)."
+    }
+  ]
+}

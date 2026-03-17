@@ -1,0 +1,40 @@
+{
+  "source": "docs/MdBlockquote.slint",
+  "items": [
+    {
+      "name": "MdBlockquote",
+      "kind": "component",
+      "signature": "export component MdBlockquote inherits VerticalLayout",
+      "line": 7,
+      "doc": "M db lo ck qu ot e component."
+    },
+    {
+      "name": "kind",
+      "kind": "property",
+      "signature": "in property <string> kind;",
+      "line": 9,
+      "doc": "Input property \"kind\"."
+    },
+    {
+      "name": "text",
+      "kind": "property",
+      "signature": "in property <string> text;",
+      "line": 11,
+      "doc": "Input property \"text\"."
+    },
+    {
+      "name": "bar-w",
+      "kind": "property",
+      "signature": "private property <length> bar-w: Sizes.border-w-3;",
+      "line": 14,
+      "doc": "Private property \"bar-w\" used internally."
+    },
+    {
+      "name": "bar-radius",
+      "kind": "property",
+      "signature": "private property <length> bar-radius: Sizes.border-w-2;",
+      "line": 16,
+      "doc": "Private property \"bar-radius\" used internally."
+    }
+  ]
+}

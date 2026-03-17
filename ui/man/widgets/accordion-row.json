@@ -1,0 +1,68 @@
+{
+  "source": "widgets/accordion-row.slint",
+  "items": [
+    {
+      "name": "AccordionItem",
+      "kind": "struct",
+      "signature": "export struct AccordionItem",
+      "line": 5,
+      "doc": "A cc or di on it em struct."
+    },
+    {
+      "name": "AccordionRow",
+      "kind": "component",
+      "signature": "export component AccordionRow inherits Rectangle",
+      "line": 12,
+      "doc": "A cc or di on ro w component."
+    },
+    {
+      "name": "item",
+      "kind": "property",
+      "signature": "in property <AccordionItem> item;",
+      "line": 14,
+      "doc": "Input property \"item\"."
+    },
+    {
+      "name": "expanded",
+      "kind": "property",
+      "signature": "in property <bool>          expanded: false;",
+      "line": 16,
+      "doc": "Input property \"expanded\"."
+    },
+    {
+      "name": "toggled",
+      "kind": "callback",
+      "signature": "callback toggled(string);",
+      "line": 18,
+      "doc": "Callback fired for t og gl ed."
+    },
+    {
+      "name": "border-px",
+      "kind": "property",
+      "signature": "private property <length>   border-px:    1px;",
+      "line": 21,
+      "doc": "Private property \"border-px\" used internally."
+    },
+    {
+      "name": "content-h",
+      "kind": "property",
+      "signature": "private property <length>   content-h:    Spacing.xl * Sizes.two;",
+      "line": 23,
+      "doc": "Private property \"content-h\" used internally."
+    },
+    {
+      "name": "stretch-full",
+      "kind": "property",
+      "signature": "private property <int>      stretch-full: 1;",
+      "line": 25,
+      "doc": "Private property \"stretch-full\" used internally."
+    },
+    {
+      "name": "anim-dur",
+      "kind": "property",
+      "signature": "private property <duration> anim-dur:     180ms;",
+      "line": 27,
+      "doc": "Private property \"anim-dur\" used internally."
+    }
+  ]
+}

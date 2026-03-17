@@ -1,0 +1,68 @@
+{
+  "source": "shell/app-shell.slint",
+  "items": [
+    {
+      "name": "AppShell",
+      "kind": "component",
+      "signature": "export component AppShell inherits Rectangle",
+      "line": 16,
+      "doc": "Cross-platform shell facade used by the viewer and host applications.\n\nOn desktop it wraps `DesktopShell`; mobile variants are re-exported separately."
+    },
+    {
+      "name": "nav-items",
+      "kind": "property",
+      "signature": "in property <[NavItem]>          nav-items;",
+      "line": 18,
+      "doc": "Navigation items rendered in the shell navigation surface."
+    },
+    {
+      "name": "active-slot",
+      "kind": "property",
+      "signature": "in property <string>             active-slot;",
+      "line": 20,
+      "doc": "Id of the currently active content slot."
+    },
+    {
+      "name": "show-toolbar",
+      "kind": "property",
+      "signature": "in property <bool>               show-toolbar:  false;",
+      "line": 22,
+      "doc": "Controls whether the desktop toolbar row is visible."
+    },
+    {
+      "name": "toolbar-items",
+      "kind": "property",
+      "signature": "in property <[ShellToolbarItem]> toolbar-items;",
+      "line": 24,
+      "doc": "Toolbar buttons rendered below the desktop menu bar."
+    },
+    {
+      "name": "status-text",
+      "kind": "property",
+      "signature": "in property <string>             status-text:   \"Ready\";",
+      "line": 26,
+      "doc": "Status text shown in the desktop status bar."
+    },
+    {
+      "name": "progress",
+      "kind": "property",
+      "signature": "in property <float>              progress:      -1.0;",
+      "line": 28,
+      "doc": "Optional progress value for the desktop status bar. Negative hides it."
+    },
+    {
+      "name": "slot-changed",
+      "kind": "callback",
+      "signature": "callback slot-changed(string);",
+      "line": 31,
+      "doc": "Fired when navigation changes the active slot id."
+    },
+    {
+      "name": "toolbar-clicked",
+      "kind": "callback",
+      "signature": "callback toolbar-clicked(string);",
+      "line": 33,
+      "doc": "Fired when a toolbar button is activated."
+    }
+  ]
+}

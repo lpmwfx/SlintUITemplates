@@ -1,0 +1,54 @@
+{
+  "source": "desktop/side-bar.slint",
+  "items": [
+    {
+      "name": "SideBar",
+      "kind": "component",
+      "signature": "export component SideBar inherits Rectangle",
+      "line": 8,
+      "doc": "S id eb ar component."
+    },
+    {
+      "name": "items",
+      "kind": "property",
+      "signature": "in property <[NavItem]> items: [];",
+      "line": 10,
+      "doc": "Input property \"items\"."
+    },
+    {
+      "name": "active-item",
+      "kind": "property",
+      "signature": "in property <string>    active-item: \"\";",
+      "line": 12,
+      "doc": "Input property \"active-item\"."
+    },
+    {
+      "name": "collapsed",
+      "kind": "property",
+      "signature": "in property <bool>      collapsed: false;",
+      "line": 14,
+      "doc": "Input property \"collapsed\"."
+    },
+    {
+      "name": "navigate",
+      "kind": "callback",
+      "signature": "callback navigate(string);",
+      "line": 16,
+      "doc": "Callback fired for n av ig at e."
+    },
+    {
+      "name": "toggle-collapsed",
+      "kind": "callback",
+      "signature": "callback toggle-collapsed();",
+      "line": 18,
+      "doc": "Callback fired for t og gl e c ol la ps ed."
+    },
+    {
+      "name": "toggle-group",
+      "kind": "callback",
+      "signature": "callback toggle-group(string);",
+      "line": 20,
+      "doc": "Callback fired for t og gl e g ro up."
+    }
+  ]
+}

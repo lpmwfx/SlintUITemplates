@@ -1,0 +1,75 @@
+{
+  "source": "widgets/TreeViewNode.slint",
+  "items": [
+    {
+      "name": "TreeViewNode",
+      "kind": "component",
+      "signature": "export component TreeViewNode inherits Rectangle",
+      "line": 6,
+      "doc": "T re ev ie wn od e component."
+    },
+    {
+      "name": "node-id",
+      "kind": "property",
+      "signature": "in property <string> node-id;",
+      "line": 8,
+      "doc": "Input property \"node-id\"."
+    },
+    {
+      "name": "label",
+      "kind": "property",
+      "signature": "in property <string> label;",
+      "line": 10,
+      "doc": "Input property \"label\"."
+    },
+    {
+      "name": "icon",
+      "kind": "property",
+      "signature": "in property <string> icon;",
+      "line": 12,
+      "doc": "Input property \"icon\"."
+    },
+    {
+      "name": "level",
+      "kind": "property",
+      "signature": "in property <int>    level;",
+      "line": 14,
+      "doc": "Input property \"level\"."
+    },
+    {
+      "name": "expanded",
+      "kind": "property",
+      "signature": "in property <bool>   expanded;",
+      "line": 16,
+      "doc": "Input property \"expanded\"."
+    },
+    {
+      "name": "leaf",
+      "kind": "property",
+      "signature": "in property <bool>   leaf;",
+      "line": 18,
+      "doc": "Input property \"leaf\"."
+    },
+    {
+      "name": "is-selected",
+      "kind": "property",
+      "signature": "in property <bool>   is-selected: false;",
+      "line": 20,
+      "doc": "Input property \"is-selected\"."
+    },
+    {
+      "name": "selected",
+      "kind": "callback",
+      "signature": "callback selected();",
+      "line": 22,
+      "doc": "Callback fired for s el ec te d."
+    },
+    {
+      "name": "toggle-expanded",
+      "kind": "callback",
+      "signature": "callback toggle-expanded();",
+      "line": 24,
+      "doc": "Callback fired for t og gl e e xp an de d."
+    }
+  ]
+}

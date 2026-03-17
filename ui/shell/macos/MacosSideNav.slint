@@ -1,0 +1,43 @@
+// MacosSideNav — macOS left sidebar showing nav items.
+// Fixed sidebar-width, surface background, right-edge separator.
+
+import { Colors }                              from "../../tokens/theme.slint";
+import { MacosColors, MacosSpacing }           from "../../tokens/macos/mod.slint";
+import { Sizes }                               from "../../tokens/sizes.slint";
+import { NavItem }                             from "../types.slint";
+import { MacosNavItem }                        from "MacosNavItem.slint";
+
+/// macOS left sidebar — stacked nav items inside a fixed-width surface panel.
+export component MacosSideNav inherits Rectangle {
+    /// Items to render in the sidebar.
+    in property <[NavItem]> items;
+    /// Id of the currently active item.
+    in property <string>    active-item;
+
+    /// Fired when a nav item is selected.
+    callback navigate(string);
+
+    width:      MacosSpacing.sidebar-width;
+    background: Colors.dark ? MacosColors.bg-surface-dark : MacosColors.bg-surface-light;
+
+    // ── Nav items ─────────────────────────────────────────────────────────────
+    VerticalLayout {
+        padding: MacosSpacing.xs;
+        spacing: MacosSpacing.xs;
+
+        for item in root.items: MacosNavItem {
+            item:   item;
+            active: item.id == root.active-item;
+            navigate(id) => { root.navigate(id); }
+        }
+    }
+
+    // ── Right-edge separator (drawn on top of layout) ─────────────────────────
+    Rectangle {
+        x:          root.width - Sizes.border-w;
+        y:          Sizes.no-size;
+        width:      Sizes.border-w;
+        height:     root.height;
+        background: Colors.border;
+    }
+}

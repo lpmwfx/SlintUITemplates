@@ -1,0 +1,68 @@
+{
+  "source": "widgets/checkbox.slint",
+  "items": [
+    {
+      "name": "Checkbox",
+      "kind": "component",
+      "signature": "export component Checkbox inherits Rectangle",
+      "line": 5,
+      "doc": "C he ck bo x component."
+    },
+    {
+      "name": "checked",
+      "kind": "property",
+      "signature": "in property <bool>   checked: false;",
+      "line": 7,
+      "doc": "Input property \"checked\"."
+    },
+    {
+      "name": "indeterminate",
+      "kind": "property",
+      "signature": "in property <bool>   indeterminate: false;",
+      "line": 9,
+      "doc": "Input property \"indeterminate\"."
+    },
+    {
+      "name": "label",
+      "kind": "property",
+      "signature": "in property <string> label: \"\";",
+      "line": 11,
+      "doc": "Input property \"label\"."
+    },
+    {
+      "name": "enabled",
+      "kind": "property",
+      "signature": "in property <bool>   enabled: true;",
+      "line": 13,
+      "doc": "Input property \"enabled\"."
+    },
+    {
+      "name": "toggled",
+      "kind": "callback",
+      "signature": "callback toggled(bool);",
+      "line": 15,
+      "doc": "Callback fired for t og gl ed."
+    },
+    {
+      "name": "box-size",
+      "kind": "property",
+      "signature": "private property <length> box-size:  Spacing.md + Spacing.xs;   // 20px",
+      "line": 19,
+      "doc": "Private property \"box-size\" used internally."
+    },
+    {
+      "name": "dash-w",
+      "kind": "property",
+      "signature": "private property <length> dash-w:    Spacing.sm + Spacing.xs;   // 10px",
+      "line": 21,
+      "doc": "Private property \"dash-w\" used internally."
+    },
+    {
+      "name": "dash-h",
+      "kind": "property",
+      "signature": "private property <length> dash-h:    Sizes.border-w-2;",
+      "line": 23,
+      "doc": "Private property \"dash-h\" used internally."
+    }
+  ]
+}

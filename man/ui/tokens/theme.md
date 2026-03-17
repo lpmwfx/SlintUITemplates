@@ -1,3 +1,0 @@
-# `ui/tokens/theme.slint`
-
-*No public items found in this file.*

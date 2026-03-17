@@ -1,0 +1,33 @@
+{
+  "source": "shell/macos/MacosSideNav.slint",
+  "items": [
+    {
+      "name": "MacosSideNav",
+      "kind": "component",
+      "signature": "export component MacosSideNav inherits Rectangle",
+      "line": 11,
+      "doc": "macOS left sidebar — stacked nav items inside a fixed-width surface panel."
+    },
+    {
+      "name": "items",
+      "kind": "property",
+      "signature": "in property <[NavItem]> items;",
+      "line": 13,
+      "doc": "Items to render in the sidebar."
+    },
+    {
+      "name": "active-item",
+      "kind": "property",
+      "signature": "in property <string>    active-item;",
+      "line": 15,
+      "doc": "Id of the currently active item."
+    },
+    {
+      "name": "navigate",
+      "kind": "callback",
+      "signature": "callback navigate(string);",
+      "line": 18,
+      "doc": "Fired when a nav item is selected."
+    }
+  ]
+}

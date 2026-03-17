@@ -1,0 +1,1546 @@
+{
+  "generated": "2026-03-15T21:41:57.005331500+01:00",
+  "project": "src",
+  "files": [
+    {
+      "source": "adapter/apply.rs",
+      "man_path": "man/adapter/apply.json",
+      "item_count": 3,
+      "undoc_count": 0
+    },
+    {
+      "source": "adapter/callbacks.rs",
+      "man_path": "man/adapter/callbacks.json",
+      "item_count": 3,
+      "undoc_count": 0
+    },
+    {
+      "source": "adapter/config.rs",
+      "man_path": "man/adapter/config.json",
+      "item_count": 3,
+      "undoc_count": 0
+    },
+    {
+      "source": "adapter/mod.rs",
+      "man_path": "man/adapter/mod.json",
+      "item_count": 4,
+      "undoc_count": 0
+    },
+    {
+      "source": "adapter/state.rs",
+      "man_path": "man/adapter/state.json",
+      "item_count": 11,
+      "undoc_count": 0
+    },
+    {
+      "source": "adapter/tests.rs",
+      "man_path": "man/adapter/tests.json",
+      "item_count": 0,
+      "undoc_count": 0
+    },
+    {
+      "source": "bin/docgen.rs",
+      "man_path": "man/bin/docgen.json",
+      "item_count": 0,
+      "undoc_count": 0
+    },
+    {
+      "source": "bin/slintui.rs",
+      "man_path": "man/bin/slintui.json",
+      "item_count": 0,
+      "undoc_count": 0
+    },
+    {
+      "source": "bindings/mod.rs",
+      "man_path": "man/bindings/mod.json",
+      "item_count": 1,
+      "undoc_count": 0
+    },
+    {
+      "source": "bindings/rhai/api.rs",
+      "man_path": "man/bindings/rhai/api.json",
+      "item_count": 1,
+      "undoc_count": 0
+    },
+    {
+      "source": "bindings/rhai/dsl.rs",
+      "man_path": "man/bindings/rhai/dsl.json",
+      "item_count": 1,
+      "undoc_count": 0
+    },
+    {
+      "source": "bindings/rhai/mod.rs",
+      "man_path": "man/bindings/rhai/mod.json",
+      "item_count": 3,
+      "undoc_count": 0
+    },
+    {
+      "source": "docs/mod.rs",
+      "man_path": "man/docs/mod.json",
+      "item_count": 1,
+      "undoc_count": 0
+    },
+    {
+      "source": "docs/parser.rs",
+      "man_path": "man/docs/parser.json",
+      "item_count": 1,
+      "undoc_count": 0
+    },
+    {
+      "source": "dsl/apply.rs",
+      "man_path": "man/dsl/apply.json",
+      "item_count": 1,
+      "undoc_count": 0
+    },
+    {
+      "source": "dsl/builder.rs",
+      "man_path": "man/dsl/builder.json",
+      "item_count": 10,
+      "undoc_count": 0
+    },
+    {
+      "source": "dsl/error.rs",
+      "man_path": "man/dsl/error.json",
+      "item_count": 1,
+      "undoc_count": 0
+    },
+    {
+      "source": "dsl/icons.rs",
+      "man_path": "man/dsl/icons.json",
+      "item_count": 2,
+      "undoc_count": 0
+    },
+    {
+      "source": "dsl/mod.rs",
+      "man_path": "man/dsl/mod.json",
+      "item_count": 9,
+      "undoc_count": 0
+    },
+    {
+      "source": "dsl/tests.rs",
+      "man_path": "man/dsl/tests.json",
+      "item_count": 0,
+      "undoc_count": 0
+    },
+    {
+      "source": "dsl/types.rs",
+      "man_path": "man/dsl/types.json",
+      "item_count": 6,
+      "undoc_count": 0
+    },
+    {
+      "source": "gateway/grid.rs",
+      "man_path": "man/gateway/grid.json",
+      "item_count": 1,
+      "undoc_count": 0
+    },
+    {
+      "source": "gateway/mod.rs",
+      "man_path": "man/gateway/mod.json",
+      "item_count": 5,
+      "undoc_count": 0
+    },
+    {
+      "source": "gateway/scaffold.rs",
+      "man_path": "man/gateway/scaffold.json",
+      "item_count": 1,
+      "undoc_count": 0
+    },
+    {
+      "source": "gateway/scripts.rs",
+      "man_path": "man/gateway/scripts.json",
+      "item_count": 1,
+      "undoc_count": 0
+    },
+    {
+      "source": "gateway/settings.rs",
+      "man_path": "man/gateway/settings.json",
+      "item_count": 3,
+      "undoc_count": 0
+    },
+    {
+      "source": "gateway/view_config.rs",
+      "man_path": "man/gateway/view_config.json",
+      "item_count": 2,
+      "undoc_count": 0
+    },
+    {
+      "source": "grid/config.rs",
+      "man_path": "man/grid/config.json",
+      "item_count": 6,
+      "undoc_count": 0
+    },
+    {
+      "source": "grid/mod.rs",
+      "man_path": "man/grid/mod.json",
+      "item_count": 3,
+      "undoc_count": 0
+    },
+    {
+      "source": "grid/zone.rs",
+      "man_path": "man/grid/zone.json",
+      "item_count": 10,
+      "undoc_count": 0
+    },
+    {
+      "source": "layout/constraints.rs",
+      "man_path": "man/layout/constraints.json",
+      "item_count": 3,
+      "undoc_count": 0
+    },
+    {
+      "source": "layout/dsl_v2.rs",
+      "man_path": "man/layout/dsl_v2.json",
+      "item_count": 3,
+      "undoc_count": 0
+    },
+    {
+      "source": "layout/mod.rs",
+      "man_path": "man/layout/mod.json",
+      "item_count": 8,
+      "undoc_count": 0
+    },
+    {
+      "source": "layout/named_parser.rs",
+      "man_path": "man/layout/named_parser.json",
+      "item_count": 1,
+      "undoc_count": 0
+    },
+    {
+      "source": "layout/parser.rs",
+      "man_path": "man/layout/parser.json",
+      "item_count": 4,
+      "undoc_count": 0
+    },
+    {
+      "source": "layout/ratio_solver.rs",
+      "man_path": "man/layout/ratio_solver.json",
+      "item_count": 6,
+      "undoc_count": 0
+    },
+    {
+      "source": "layout/solver.rs",
+      "man_path": "man/layout/solver.json",
+      "item_count": 6,
+      "undoc_count": 0
+    },
+    {
+      "source": "lib.rs",
+      "man_path": "man/lib.json",
+      "item_count": 11,
+      "undoc_count": 0
+    },
+    {
+      "source": "main.rs",
+      "man_path": "man/main.json",
+      "item_count": 0,
+      "undoc_count": 0
+    },
+    {
+      "source": "pal/dark_mode.rs",
+      "man_path": "man/pal/dark_mode.json",
+      "item_count": 1,
+      "undoc_count": 0
+    },
+    {
+      "source": "pal/imp.rs",
+      "man_path": "man/pal/imp.json",
+      "item_count": 1,
+      "undoc_count": 0
+    },
+    {
+      "source": "pal/mod.rs",
+      "man_path": "man/pal/mod.json",
+      "item_count": 2,
+      "undoc_count": 0
+    },
+    {
+      "source": "settings/apply.rs",
+      "man_path": "man/settings/apply.json",
+      "item_count": 1,
+      "undoc_count": 0
+    },
+    {
+      "source": "settings/defaults.rs",
+      "man_path": "man/settings/defaults.json",
+      "item_count": 2,
+      "undoc_count": 0
+    },
+    {
+      "source": "settings/mod.rs",
+      "man_path": "man/settings/mod.json",
+      "item_count": 11,
+      "undoc_count": 0
+    },
+    {
+      "source": "shell/mod.rs",
+      "man_path": "man/shell/mod.json",
+      "item_count": 8,
+      "undoc_count": 0
+    },
+    {
+      "source": "shell/models.rs",
+      "man_path": "man/shell/models.json",
+      "item_count": 2,
+      "undoc_count": 0
+    },
+    {
+      "source": "shell/platform.rs",
+      "man_path": "man/shell/platform.json",
+      "item_count": 5,
+      "undoc_count": 0
+    },
+    {
+      "source": "view_config/error.rs",
+      "man_path": "man/view_config/error.json",
+      "item_count": 1,
+      "undoc_count": 0
+    },
+    {
+      "source": "view_config/eval.rs",
+      "man_path": "man/view_config/eval.json",
+      "item_count": 3,
+      "undoc_count": 0
+    },
+    {
+      "source": "view_config/mod.rs",
+      "man_path": "man/view_config/mod.json",
+      "item_count": 4,
+      "undoc_count": 0
+    }
+  ],
+  "all_items": [
+    {
+      "name": "apply_settings",
+      "kind": "fn",
+      "source": "adapter/apply.rs",
+      "line": 24,
+      "documented": true
+    },
+    {
+      "name": "apply_theme",
+      "kind": "fn",
+      "source": "adapter/apply.rs",
+      "line": 30,
+      "documented": true
+    },
+    {
+      "name": "apply_grid",
+      "kind": "fn",
+      "source": "adapter/apply.rs",
+      "line": 35,
+      "documented": true
+    },
+    {
+      "name": "on_navigate",
+      "kind": "fn",
+      "source": "adapter/callbacks.rs",
+      "line": 4,
+      "documented": true
+    },
+    {
+      "name": "on_toolbar_clicked",
+      "kind": "fn",
+      "source": "adapter/callbacks.rs",
+      "line": 10,
+      "documented": true
+    },
+    {
+      "name": "on_menu_action",
+      "kind": "fn",
+      "source": "adapter/callbacks.rs",
+      "line": 16,
+      "documented": true
+    },
+    {
+      "name": "load_view_configs",
+      "kind": "fn",
+      "source": "adapter/config.rs",
+      "line": 7,
+      "documented": true
+    },
+    {
+      "name": "set_window_size",
+      "kind": "fn",
+      "source": "adapter/config.rs",
+      "line": 14,
+      "documented": true
+    },
+    {
+      "name": "set_bg_style_str",
+      "kind": "fn",
+      "source": "adapter/config.rs",
+      "line": 19,
+      "documented": true
+    },
+    {
+      "name": "AppAdapter_adp",
+      "kind": "struct",
+      "source": "adapter/mod.rs",
+      "line": 17,
+      "documented": true
+    },
+    {
+      "name": "new",
+      "kind": "fn",
+      "source": "adapter/mod.rs",
+      "line": 41,
+      "documented": true
+    },
+    {
+      "name": "apply_dsl",
+      "kind": "fn",
+      "source": "adapter/mod.rs",
+      "line": 100,
+      "documented": true
+    },
+    {
+      "name": "run",
+      "kind": "fn",
+      "source": "adapter/mod.rs",
+      "line": 107,
+      "documented": true
+    },
+    {
+      "name": "set_active_view",
+      "kind": "fn",
+      "source": "adapter/state.rs",
+      "line": 7,
+      "documented": true
+    },
+    {
+      "name": "get_active_view",
+      "kind": "fn",
+      "source": "adapter/state.rs",
+      "line": 13,
+      "documented": true
+    },
+    {
+      "name": "set_dark_mode",
+      "kind": "fn",
+      "source": "adapter/state.rs",
+      "line": 18,
+      "documented": true
+    },
+    {
+      "name": "get_dark_mode",
+      "kind": "fn",
+      "source": "adapter/state.rs",
+      "line": 24,
+      "documented": true
+    },
+    {
+      "name": "set_status",
+      "kind": "fn",
+      "source": "adapter/state.rs",
+      "line": 29,
+      "documented": true
+    },
+    {
+      "name": "get_status",
+      "kind": "fn",
+      "source": "adapter/state.rs",
+      "line": 35,
+      "documented": true
+    },
+    {
+      "name": "get_zoom",
+      "kind": "fn",
+      "source": "adapter/state.rs",
+      "line": 40,
+      "documented": true
+    },
+    {
+      "name": "get_row_top_ratio",
+      "kind": "fn",
+      "source": "adapter/state.rs",
+      "line": 45,
+      "documented": true
+    },
+    {
+      "name": "get_row_main_ratio",
+      "kind": "fn",
+      "source": "adapter/state.rs",
+      "line": 50,
+      "documented": true
+    },
+    {
+      "name": "set_platform",
+      "kind": "fn",
+      "source": "adapter/state.rs",
+      "line": 56,
+      "documented": true
+    },
+    {
+      "name": "get_platform",
+      "kind": "fn",
+      "source": "adapter/state.rs",
+      "line": 62,
+      "documented": true
+    },
+    {
+      "name": "rhai",
+      "kind": "mod",
+      "source": "bindings/mod.rs",
+      "line": 2,
+      "documented": true
+    },
+    {
+      "name": "register",
+      "kind": "fn",
+      "source": "bindings/rhai/api.rs",
+      "line": 7,
+      "documented": true
+    },
+    {
+      "name": "register",
+      "kind": "fn",
+      "source": "bindings/rhai/dsl.rs",
+      "line": 11,
+      "documented": true
+    },
+    {
+      "name": "api",
+      "kind": "mod",
+      "source": "bindings/rhai/mod.rs",
+      "line": 2,
+      "documented": true
+    },
+    {
+      "name": "dsl",
+      "kind": "mod",
+      "source": "bindings/rhai/mod.rs",
+      "line": 4,
+      "documented": true
+    },
+    {
+      "name": "build_engine",
+      "kind": "fn",
+      "source": "bindings/rhai/mod.rs",
+      "line": 13,
+      "documented": true
+    },
+    {
+      "name": "parser",
+      "kind": "mod",
+      "source": "docs/mod.rs",
+      "line": 10,
+      "documented": true
+    },
+    {
+      "name": "parse",
+      "kind": "fn",
+      "source": "docs/parser.rs",
+      "line": 19,
+      "documented": true
+    },
+    {
+      "name": "apply",
+      "kind": "fn",
+      "source": "dsl/apply.rs",
+      "line": 8,
+      "documented": true
+    },
+    {
+      "name": "AppDslBuilder",
+      "kind": "struct",
+      "source": "dsl/builder.rs",
+      "line": 11,
+      "documented": true
+    },
+    {
+      "name": "new",
+      "kind": "fn",
+      "source": "dsl/builder.rs",
+      "line": 58,
+      "documented": true
+    },
+    {
+      "name": "platform",
+      "kind": "fn",
+      "source": "dsl/builder.rs",
+      "line": 73,
+      "documented": true
+    },
+    {
+      "name": "nav",
+      "kind": "fn",
+      "source": "dsl/builder.rs",
+      "line": 79,
+      "documented": true
+    },
+    {
+      "name": "status",
+      "kind": "fn",
+      "source": "dsl/builder.rs",
+      "line": 85,
+      "documented": true
+    },
+    {
+      "name": "toolbar",
+      "kind": "fn",
+      "source": "dsl/builder.rs",
+      "line": 91,
+      "documented": true
+    },
+    {
+      "name": "window_size",
+      "kind": "fn",
+      "source": "dsl/builder.rs",
+      "line": 97,
+      "documented": true
+    },
+    {
+      "name": "bg_style",
+      "kind": "fn",
+      "source": "dsl/builder.rs",
+      "line": 103,
+      "documented": true
+    },
+    {
+      "name": "views",
+      "kind": "fn",
+      "source": "dsl/builder.rs",
+      "line": 109,
+      "documented": true
+    },
+    {
+      "name": "build",
+      "kind": "fn",
+      "source": "dsl/builder.rs",
+      "line": 115,
+      "documented": true
+    },
+    {
+      "name": "DslError",
+      "kind": "enum",
+      "source": "dsl/error.rs",
+      "line": 6,
+      "documented": true
+    },
+    {
+      "name": "IconName",
+      "kind": "enum",
+      "source": "dsl/icons.rs",
+      "line": 9,
+      "documented": true
+    },
+    {
+      "name": "fluent_icon",
+      "kind": "fn",
+      "source": "dsl/icons.rs",
+      "line": 143,
+      "documented": true
+    },
+    {
+      "name": "apply",
+      "kind": "mod",
+      "source": "dsl/mod.rs",
+      "line": 25,
+      "documented": true
+    },
+    {
+      "name": "builder",
+      "kind": "mod",
+      "source": "dsl/mod.rs",
+      "line": 27,
+      "documented": true
+    },
+    {
+      "name": "icons",
+      "kind": "mod",
+      "source": "dsl/mod.rs",
+      "line": 29,
+      "documented": true
+    },
+    {
+      "name": "types",
+      "kind": "mod",
+      "source": "dsl/mod.rs",
+      "line": 31,
+      "documented": true
+    },
+    {
+      "name": "error",
+      "kind": "mod",
+      "source": "dsl/mod.rs",
+      "line": 33,
+      "documented": true
+    },
+    {
+      "name": "ResolvedNav",
+      "kind": "struct",
+      "source": "dsl/mod.rs",
+      "line": 47,
+      "documented": true
+    },
+    {
+      "name": "ResolvedToolbar",
+      "kind": "struct",
+      "source": "dsl/mod.rs",
+      "line": 58,
+      "documented": true
+    },
+    {
+      "name": "AppDsl",
+      "kind": "struct",
+      "source": "dsl/mod.rs",
+      "line": 73,
+      "documented": true
+    },
+    {
+      "name": "builder",
+      "kind": "fn",
+      "source": "dsl/mod.rs",
+      "line": 85,
+      "documented": true
+    },
+    {
+      "name": "BgStyle",
+      "kind": "enum",
+      "source": "dsl/types.rs",
+      "line": 8,
+      "documented": true
+    },
+    {
+      "name": "from_str",
+      "kind": "fn",
+      "source": "dsl/types.rs",
+      "line": 20,
+      "documented": true
+    },
+    {
+      "name": "Nav",
+      "kind": "struct",
+      "source": "dsl/types.rs",
+      "line": 34,
+      "documented": true
+    },
+    {
+      "name": "new",
+      "kind": "fn",
+      "source": "dsl/types.rs",
+      "line": 45,
+      "documented": true
+    },
+    {
+      "name": "Toolbar",
+      "kind": "struct",
+      "source": "dsl/types.rs",
+      "line": 57,
+      "documented": true
+    },
+    {
+      "name": "new",
+      "kind": "fn",
+      "source": "dsl/types.rs",
+      "line": 68,
+      "documented": true
+    },
+    {
+      "name": "load",
+      "kind": "fn",
+      "source": "gateway/grid.rs",
+      "line": 5,
+      "documented": true
+    },
+    {
+      "name": "settings",
+      "kind": "mod",
+      "source": "gateway/mod.rs",
+      "line": 2,
+      "documented": true
+    },
+    {
+      "name": "view_config",
+      "kind": "mod",
+      "source": "gateway/mod.rs",
+      "line": 4,
+      "documented": true
+    },
+    {
+      "name": "grid",
+      "kind": "mod",
+      "source": "gateway/mod.rs",
+      "line": 6,
+      "documented": true
+    },
+    {
+      "name": "scaffold",
+      "kind": "mod",
+      "source": "gateway/mod.rs",
+      "line": 8,
+      "documented": true
+    },
+    {
+      "name": "scripts",
+      "kind": "mod",
+      "source": "gateway/mod.rs",
+      "line": 10,
+      "documented": true
+    },
+    {
+      "name": "scaffold",
+      "kind": "fn",
+      "source": "gateway/scaffold.rs",
+      "line": 11,
+      "documented": true
+    },
+    {
+      "name": "load_script",
+      "kind": "fn",
+      "source": "gateway/scripts.rs",
+      "line": 4,
+      "documented": true
+    },
+    {
+      "name": "from_file",
+      "kind": "fn",
+      "source": "gateway/settings.rs",
+      "line": 5,
+      "documented": true
+    },
+    {
+      "name": "from_file_or_default",
+      "kind": "fn",
+      "source": "gateway/settings.rs",
+      "line": 11,
+      "documented": true
+    },
+    {
+      "name": "to_file",
+      "kind": "fn",
+      "source": "gateway/settings.rs",
+      "line": 16,
+      "documented": true
+    },
+    {
+      "name": "eval_file",
+      "kind": "fn",
+      "source": "gateway/view_config.rs",
+      "line": 6,
+      "documented": true
+    },
+    {
+      "name": "load_all",
+      "kind": "fn",
+      "source": "gateway/view_config.rs",
+      "line": 13,
+      "documented": true
+    },
+    {
+      "name": "TargetConfig",
+      "kind": "struct",
+      "source": "grid/config.rs",
+      "line": 6,
+      "documented": true
+    },
+    {
+      "name": "TargetInfo",
+      "kind": "struct",
+      "source": "grid/config.rs",
+      "line": 16,
+      "documented": true
+    },
+    {
+      "name": "GridConfig",
+      "kind": "struct",
+      "source": "grid/config.rs",
+      "line": 28,
+      "documented": true
+    },
+    {
+      "name": "RowConfig",
+      "kind": "struct",
+      "source": "grid/config.rs",
+      "line": 36,
+      "documented": true
+    },
+    {
+      "name": "ColumnConfig",
+      "kind": "struct",
+      "source": "grid/config.rs",
+      "line": 51,
+      "documented": true
+    },
+    {
+      "name": "load",
+      "kind": "fn",
+      "source": "grid/config.rs",
+      "line": 60,
+      "documented": true
+    },
+    {
+      "name": "config",
+      "kind": "mod",
+      "source": "grid/mod.rs",
+      "line": 2,
+      "documented": true
+    },
+    {
+      "name": "zone",
+      "kind": "mod",
+      "source": "grid/mod.rs",
+      "line": 4,
+      "documented": true
+    },
+    {
+      "name": "load_target",
+      "kind": "fn",
+      "source": "grid/mod.rs",
+      "line": 12,
+      "documented": true
+    },
+    {
+      "name": "ZoneModel",
+      "kind": "struct",
+      "source": "grid/zone.rs",
+      "line": 6,
+      "documented": true
+    },
+    {
+      "name": "RowZone",
+      "kind": "struct",
+      "source": "grid/zone.rs",
+      "line": 15,
+      "documented": true
+    },
+    {
+      "name": "RowKind",
+      "kind": "enum",
+      "source": "grid/zone.rs",
+      "line": 27,
+      "documented": true
+    },
+    {
+      "name": "ColumnZone",
+      "kind": "struct",
+      "source": "grid/zone.rs",
+      "line": 36,
+      "documented": true
+    },
+    {
+      "name": "from_config",
+      "kind": "fn",
+      "source": "grid/zone.rs",
+      "line": 47,
+      "documented": true
+    },
+    {
+      "name": "total_row_ratio",
+      "kind": "fn",
+      "source": "grid/zone.rs",
+      "line": 57,
+      "documented": true
+    },
+    {
+      "name": "row",
+      "kind": "fn",
+      "source": "grid/zone.rs",
+      "line": 62,
+      "documented": true
+    },
+    {
+      "name": "column",
+      "kind": "fn",
+      "source": "grid/zone.rs",
+      "line": 67,
+      "documented": true
+    },
+    {
+      "name": "set_module",
+      "kind": "fn",
+      "source": "grid/zone.rs",
+      "line": 75,
+      "documented": true
+    },
+    {
+      "name": "total_column_ratio",
+      "kind": "fn",
+      "source": "grid/zone.rs",
+      "line": 123,
+      "documented": true
+    },
+    {
+      "name": "Constraint",
+      "kind": "struct",
+      "source": "layout/constraints.rs",
+      "line": 14,
+      "documented": true
+    },
+    {
+      "name": "new",
+      "kind": "fn",
+      "source": "layout/constraints.rs",
+      "line": 23,
+      "documented": true
+    },
+    {
+      "name": "clamp",
+      "kind": "fn",
+      "source": "layout/constraints.rs",
+      "line": 31,
+      "documented": true
+    },
+    {
+      "name": "NamedPanel",
+      "kind": "struct",
+      "source": "layout/dsl_v2.rs",
+      "line": 19,
+      "documented": true
+    },
+    {
+      "name": "SplitDir",
+      "kind": "enum",
+      "source": "layout/dsl_v2.rs",
+      "line": 31,
+      "documented": true
+    },
+    {
+      "name": "to_panels",
+      "kind": "fn",
+      "source": "layout/dsl_v2.rs",
+      "line": 34,
+      "documented": true
+    },
+    {
+      "name": "constraints",
+      "kind": "mod",
+      "source": "layout/mod.rs",
+      "line": 2,
+      "documented": true
+    },
+    {
+      "name": "dsl_v2",
+      "kind": "mod",
+      "source": "layout/mod.rs",
+      "line": 4,
+      "documented": true
+    },
+    {
+      "name": "named_parser",
+      "kind": "mod",
+      "source": "layout/mod.rs",
+      "line": 6,
+      "documented": true
+    },
+    {
+      "name": "parser",
+      "kind": "mod",
+      "source": "layout/mod.rs",
+      "line": 8,
+      "documented": true
+    },
+    {
+      "name": "ratio_solver",
+      "kind": "mod",
+      "source": "layout/mod.rs",
+      "line": 10,
+      "documented": true
+    },
+    {
+      "name": "solver",
+      "kind": "mod",
+      "source": "layout/mod.rs",
+      "line": 12,
+      "documented": true
+    },
+    {
+      "name": "build",
+      "kind": "fn",
+      "source": "layout/mod.rs",
+      "line": 22,
+      "documented": true
+    },
+    {
+      "name": "build_v2",
+      "kind": "fn",
+      "source": "layout/mod.rs",
+      "line": 29,
+      "documented": true
+    },
+    {
+      "name": "parse_named",
+      "kind": "fn",
+      "source": "layout/named_parser.rs",
+      "line": 7,
+      "documented": true
+    },
+    {
+      "name": "SplitDir",
+      "kind": "enum",
+      "source": "layout/parser.rs",
+      "line": 16,
+      "documented": true
+    },
+    {
+      "name": "PanelNode",
+      "kind": "enum",
+      "source": "layout/parser.rs",
+      "line": 21,
+      "documented": true
+    },
+    {
+      "name": "ratio",
+      "kind": "fn",
+      "source": "layout/parser.rs",
+      "line": 28,
+      "documented": true
+    },
+    {
+      "name": "parse",
+      "kind": "fn",
+      "source": "layout/parser.rs",
+      "line": 38,
+      "documented": true
+    },
+    {
+      "name": "Panel",
+      "kind": "struct",
+      "source": "layout/ratio_solver.rs",
+      "line": 17,
+      "documented": true
+    },
+    {
+      "name": "new",
+      "kind": "fn",
+      "source": "layout/ratio_solver.rs",
+      "line": 28,
+      "documented": true
+    },
+    {
+      "name": "with_constraint",
+      "kind": "fn",
+      "source": "layout/ratio_solver.rs",
+      "line": 33,
+      "documented": true
+    },
+    {
+      "name": "drag",
+      "kind": "fn",
+      "source": "layout/ratio_solver.rs",
+      "line": 45,
+      "documented": true
+    },
+    {
+      "name": "normalize",
+      "kind": "fn",
+      "source": "layout/ratio_solver.rs",
+      "line": 70,
+      "documented": true
+    },
+    {
+      "name": "check_sum",
+      "kind": "fn",
+      "source": "layout/ratio_solver.rs",
+      "line": 80,
+      "documented": true
+    },
+    {
+      "name": "SolvedItem",
+      "kind": "struct",
+      "source": "layout/solver.rs",
+      "line": 14,
+      "documented": true
+    },
+    {
+      "name": "ItemKind",
+      "kind": "enum",
+      "source": "layout/solver.rs",
+      "line": 34,
+      "documented": true
+    },
+    {
+      "name": "as_str",
+      "kind": "fn",
+      "source": "layout/solver.rs",
+      "line": 38,
+      "documented": true
+    },
+    {
+      "name": "Solver",
+      "kind": "struct",
+      "source": "layout/solver.rs",
+      "line": 48,
+      "documented": true
+    },
+    {
+      "name": "new",
+      "kind": "fn",
+      "source": "layout/solver.rs",
+      "line": 58,
+      "documented": true
+    },
+    {
+      "name": "solve",
+      "kind": "fn",
+      "source": "layout/solver.rs",
+      "line": 63,
+      "documented": true
+    },
+    {
+      "name": "adapter",
+      "kind": "mod",
+      "source": "lib.rs",
+      "line": 4,
+      "documented": true
+    },
+    {
+      "name": "bindings",
+      "kind": "mod",
+      "source": "lib.rs",
+      "line": 6,
+      "documented": true
+    },
+    {
+      "name": "docs",
+      "kind": "mod",
+      "source": "lib.rs",
+      "line": 8,
+      "documented": true
+    },
+    {
+      "name": "dsl",
+      "kind": "mod",
+      "source": "lib.rs",
+      "line": 10,
+      "documented": true
+    },
+    {
+      "name": "grid",
+      "kind": "mod",
+      "source": "lib.rs",
+      "line": 12,
+      "documented": true
+    },
+    {
+      "name": "layout",
+      "kind": "mod",
+      "source": "lib.rs",
+      "line": 14,
+      "documented": true
+    },
+    {
+      "name": "gateway",
+      "kind": "mod",
+      "source": "lib.rs",
+      "line": 16,
+      "documented": true
+    },
+    {
+      "name": "pal",
+      "kind": "mod",
+      "source": "lib.rs",
+      "line": 18,
+      "documented": true
+    },
+    {
+      "name": "settings",
+      "kind": "mod",
+      "source": "lib.rs",
+      "line": 20,
+      "documented": true
+    },
+    {
+      "name": "shell",
+      "kind": "mod",
+      "source": "lib.rs",
+      "line": 22,
+      "documented": true
+    },
+    {
+      "name": "view_config",
+      "kind": "mod",
+      "source": "lib.rs",
+      "line": 24,
+      "documented": true
+    },
+    {
+      "name": "is_dark_mode",
+      "kind": "fn",
+      "source": "pal/dark_mode.rs",
+      "line": 3,
+      "documented": true
+    },
+    {
+      "name": "apply_backdrop",
+      "kind": "fn",
+      "source": "pal/imp.rs",
+      "line": 16,
+      "documented": true
+    },
+    {
+      "name": "is_dark_mode",
+      "kind": "fn",
+      "source": "pal/mod.rs",
+      "line": 23,
+      "documented": true
+    },
+    {
+      "name": "apply_backdrop",
+      "kind": "fn",
+      "source": "pal/mod.rs",
+      "line": 27,
+      "documented": true
+    },
+    {
+      "name": "apply",
+      "kind": "fn",
+      "source": "settings/apply.rs",
+      "line": 13,
+      "documented": true
+    },
+    {
+      "name": "from_str",
+      "kind": "fn",
+      "source": "settings/defaults.rs",
+      "line": 5,
+      "documented": true
+    },
+    {
+      "name": "style_str",
+      "kind": "fn",
+      "source": "settings/defaults.rs",
+      "line": 12,
+      "documented": true
+    },
+    {
+      "name": "apply",
+      "kind": "mod",
+      "source": "settings/mod.rs",
+      "line": 2,
+      "documented": true
+    },
+    {
+      "name": "AppSettings",
+      "kind": "struct",
+      "source": "settings/mod.rs",
+      "line": 11,
+      "documented": true
+    },
+    {
+      "name": "ZoomSettings",
+      "kind": "struct",
+      "source": "settings/mod.rs",
+      "line": 29,
+      "documented": true
+    },
+    {
+      "name": "ThemeMode",
+      "kind": "enum",
+      "source": "settings/mod.rs",
+      "line": 38,
+      "documented": true
+    },
+    {
+      "name": "ThemeSettings",
+      "kind": "struct",
+      "source": "settings/mod.rs",
+      "line": 47,
+      "documented": true
+    },
+    {
+      "name": "IconStyle",
+      "kind": "enum",
+      "source": "settings/mod.rs",
+      "line": 58,
+      "documented": true
+    },
+    {
+      "name": "IconSettings",
+      "kind": "struct",
+      "source": "settings/mod.rs",
+      "line": 66,
+      "documented": true
+    },
+    {
+      "name": "FontSettings",
+      "kind": "struct",
+      "source": "settings/mod.rs",
+      "line": 76,
+      "documented": true
+    },
+    {
+      "name": "from_file",
+      "kind": "fn",
+      "source": "settings/mod.rs",
+      "line": 87,
+      "documented": true
+    },
+    {
+      "name": "from_file_or_default",
+      "kind": "fn",
+      "source": "settings/mod.rs",
+      "line": 92,
+      "documented": true
+    },
+    {
+      "name": "to_file",
+      "kind": "fn",
+      "source": "settings/mod.rs",
+      "line": 97,
+      "documented": true
+    },
+    {
+      "name": "platform",
+      "kind": "mod",
+      "source": "shell/mod.rs",
+      "line": 2,
+      "documented": true
+    },
+    {
+      "name": "models",
+      "kind": "mod",
+      "source": "shell/mod.rs",
+      "line": 6,
+      "documented": true
+    },
+    {
+      "name": "NavItemConfig",
+      "kind": "struct",
+      "source": "shell/mod.rs",
+      "line": 12,
+      "documented": true
+    },
+    {
+      "name": "ToolbarItemConfig",
+      "kind": "struct",
+      "source": "shell/mod.rs",
+      "line": 24,
+      "documented": true
+    },
+    {
+      "name": "ShellConfig",
+      "kind": "struct",
+      "source": "shell/mod.rs",
+      "line": 37,
+      "documented": true
+    },
+    {
+      "name": "new",
+      "kind": "fn",
+      "source": "shell/mod.rs",
+      "line": 52,
+      "documented": true
+    },
+    {
+      "name": "with_nav",
+      "kind": "fn",
+      "source": "shell/mod.rs",
+      "line": 61,
+      "documented": true
+    },
+    {
+      "name": "with_toolbar",
+      "kind": "fn",
+      "source": "shell/mod.rs",
+      "line": 67,
+      "documented": true
+    },
+    {
+      "name": "nav_model",
+      "kind": "fn",
+      "source": "shell/models.rs",
+      "line": 9,
+      "documented": true
+    },
+    {
+      "name": "toolbar_model",
+      "kind": "fn",
+      "source": "shell/models.rs",
+      "line": 22,
+      "documented": true
+    },
+    {
+      "name": "Platform",
+      "kind": "enum",
+      "source": "shell/platform.rs",
+      "line": 4,
+      "documented": true
+    },
+    {
+      "name": "as_str",
+      "kind": "fn",
+      "source": "shell/platform.rs",
+      "line": 18,
+      "documented": true
+    },
+    {
+      "name": "is_mobile",
+      "kind": "fn",
+      "source": "shell/platform.rs",
+      "line": 29,
+      "documented": true
+    },
+    {
+      "name": "is_small",
+      "kind": "fn",
+      "source": "shell/platform.rs",
+      "line": 35,
+      "documented": true
+    },
+    {
+      "name": "is_desktop",
+      "kind": "fn",
+      "source": "shell/platform.rs",
+      "line": 41,
+      "documented": true
+    },
+    {
+      "name": "ViewConfigError",
+      "kind": "enum",
+      "source": "view_config/error.rs",
+      "line": 4,
+      "documented": true
+    },
+    {
+      "name": "eval_script",
+      "kind": "fn",
+      "source": "view_config/eval.rs",
+      "line": 33,
+      "documented": true
+    },
+    {
+      "name": "eval_file",
+      "kind": "fn",
+      "source": "view_config/eval.rs",
+      "line": 63,
+      "documented": true
+    },
+    {
+      "name": "load_all",
+      "kind": "fn",
+      "source": "view_config/eval.rs",
+      "line": 68,
+      "documented": true
+    },
+    {
+      "name": "error",
+      "kind": "mod",
+      "source": "view_config/mod.rs",
+      "line": 8,
+      "documented": true
+    },
+    {
+      "name": "eval",
+      "kind": "mod",
+      "source": "view_config/mod.rs",
+      "line": 10,
+      "documented": true
+    },
+    {
+      "name": "ViewConfig",
+      "kind": "struct",
+      "source": "view_config/mod.rs",
+      "line": 27,
+      "documented": true
+    },
+    {
+      "name": "apply",
+      "kind": "fn",
+      "source": "view_config/mod.rs",
+      "line": 37,
+      "documented": true
+    }
+  ]
+}

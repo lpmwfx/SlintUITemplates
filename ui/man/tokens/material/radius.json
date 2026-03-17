@@ -1,0 +1,54 @@
+{
+  "source": "tokens/material/radius.slint",
+  "items": [
+    {
+      "name": "none",
+      "kind": "property",
+      "signature": "out property <length> none:       0px;",
+      "line": 7,
+      "doc": "Output property \"none\"."
+    },
+    {
+      "name": "extra-small",
+      "kind": "property",
+      "signature": "out property <length> extra-small: 4px;",
+      "line": 9,
+      "doc": "Output property \"extra-small\"."
+    },
+    {
+      "name": "small",
+      "kind": "property",
+      "signature": "out property <length> small:       8px;",
+      "line": 11,
+      "doc": "Output property \"small\"."
+    },
+    {
+      "name": "medium",
+      "kind": "property",
+      "signature": "out property <length> medium:     12px;",
+      "line": 13,
+      "doc": "Output property \"medium\"."
+    },
+    {
+      "name": "large",
+      "kind": "property",
+      "signature": "out property <length> large:      16px;",
+      "line": 15,
+      "doc": "Output property \"large\"."
+    },
+    {
+      "name": "extra-large",
+      "kind": "property",
+      "signature": "out property <length> extra-large: 28px;  // FAB, BottomSheet",
+      "line": 17,
+      "doc": "Output property \"extra-large\"."
+    },
+    {
+      "name": "full",
+      "kind": "property",
+      "signature": "out property <length> full:       9999px; // pills, avatars",
+      "line": 19,
+      "doc": "Output property \"full\"."
+    }
+  ]
+}
