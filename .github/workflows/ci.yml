@@ -30,14 +30,23 @@ jobs:
           key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
           restore-keys: ${{ runner.os }}-cargo-
 
-      - name: Build (all targets)
-        run: cargo build --all-targets
+      - name: Run scanners
+        run: cargo run -p scanners
 
-      - name: Run tests
-        run: cargo test
+      - name: Build (workspace, all targets)
+        run: cargo build --workspace --all-targets
+
+      - name: Run tests (workspace)
+        run: cargo test --workspace
+
+      - name: Build core-only (no default features)
+        run: cargo build -p slint-ui-templates --no-default-features
+
+      - name: Test core-only (no default features)
+        run: cargo test -p slint-ui-templates --no-default-features
 
       - name: Check formatting
         run: cargo fmt --check
 
-      - name: Clippy (warnings as errors)
-        run: cargo clippy -- -D warnings
+      - name: Clippy (workspace, warnings as errors)
+        run: cargo clippy --workspace -- -D warnings
