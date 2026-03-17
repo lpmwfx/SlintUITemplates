@@ -41,7 +41,7 @@ name = "{name}"
 path = "src/main.rs"
 
 [dependencies]
-slint-ui-templates = {{ path = ".." }}
+slint-ui-templates = {{ path = "..", features = ["rhai"] }}
 rhai = "1"
 "#
     );
