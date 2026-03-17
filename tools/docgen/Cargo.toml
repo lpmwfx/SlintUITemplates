@@ -1,0 +1,9 @@
+[package]
+name = "docgen"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[[bin]]
+name = "docgen"
+path = "src/main.rs"

@@ -1,5 +1,5 @@
 //! docgen — generates docs/components.md Shared-Components section from ui/widgets/*.slint.
-//! Usage: cargo run --bin docgen
+//! Usage: cargo run -p docgen
 
 use std::{fs, io::Write, path::Path};
 

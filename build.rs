@@ -1,13 +1,6 @@
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     use std::io::Write;
 
-    // ── AI doc generation (fills in missing /// before scanners run) ──────
-    rustdocumenter::document_project();
-
-    // ── Zero-literal scanners ──────────────────────────────────
-    rustscanners::scan_project();
-    slintscanners::scan_project();
-
     // ── Slint compilation ──────────────────────────────────────
     slint_build::compile("ui/lib.slint")?;
 

@@ -1,0 +1,14 @@
+[package]
+name = "scanners"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[[bin]]
+name = "scanners"
+path = "src/main.rs"
+
+[dependencies]
+rustdocumenter = { git = "https://github.com/lpmwfx/RustDocumenter" }
+rustscanners   = { git = "https://github.com/lpmwfx/RustScanners" }
+slintscanners  = { git = "https://github.com/lpmwfx/SlintScanners" }

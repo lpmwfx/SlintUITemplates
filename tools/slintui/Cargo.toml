@@ -1,0 +1,13 @@
+[package]
+name = "slintui"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[[bin]]
+name = "slintui"
+path = "src/main.rs"
+
+[dependencies]
+slint-ui-templates = { path = "../.." }
+tracing = "0.1"

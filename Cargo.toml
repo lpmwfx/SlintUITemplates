@@ -1,3 +1,6 @@
+[workspace]
+members = [".", "tools/slintui", "tools/docgen", "tools/scanners"]
+
 [package]
 name = "slint-ui-templates"
 version = "0.1.0"
@@ -7,18 +10,7 @@ description = "Composable Slint UI building blocks — mother-child pattern, tok
 keywords    = ["slint", "ui", "gui", "layout", "templates"]
 categories  = ["gui", "template-engine"]
 repository  = "https://github.com/lpmwfx/SlintUITemplates"
-
-[[bin]]
-name = "slint-ui-templates"
-path = "src/main.rs"
-
-[[bin]]
-name = "slintui"
-path = "src/bin/slintui.rs"
-
-[[bin]]
-name = "docgen"
-path = "src/bin/docgen.rs"
+include     = ["src/**/*", "ui/**/*", "build.rs", "config/**/*", "README.md", "LICENSE", "Cargo.toml"]
 
 [lib]
 name = "slint_ui_templates"
@@ -75,7 +67,4 @@ i-slint-backend-testing = "1.15"
 tiny-skia               = "0.11"
 
 [build-dependencies]
-slint-build      = "1.15"
-rustdocumenter   = { git = "https://github.com/lpmwfx/RustDocumenter" }
-rustscanners     = { git = "https://github.com/lpmwfx/RustScanners" }
-slintscanners    = { git = "https://github.com/lpmwfx/SlintScanners" }
+slint-build = "1.15"
