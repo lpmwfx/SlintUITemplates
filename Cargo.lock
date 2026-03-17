@@ -1148,6 +1148,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "docgen"
+version = "0.1.0"
+
+[[package]]
 name = "downcast-rs"
 version = "1.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -4047,6 +4051,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "scanners"
+version = "0.1.0"
+dependencies = [
+ "rustdocumenter",
+ "rustscanners",
+ "slintscanners",
+]
+
+[[package]]
 name = "scoped-tls"
 version = "1.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -4301,12 +4314,9 @@ dependencies = [
  "pulldown-cmark 0.12.2",
  "raw-window-handle",
  "rhai",
- "rustdocumenter",
- "rustscanners",
  "serde",
  "slint",
  "slint-build",
- "slintscanners",
  "thiserror 2.0.18",
  "tiny-skia",
  "toml 0.8.23",
@@ -4324,6 +4334,14 @@ dependencies = [
  "serde",
  "toml 0.8.23",
  "walkdir",
+]
+
+[[package]]
+name = "slintui"
+version = "0.1.0"
+dependencies = [
+ "slint-ui-templates",
+ "tracing",
 ]
 
 [[package]]
