@@ -61,6 +61,65 @@ slint-ui-templates = { version = "0.1", default-features = false }
 
 ---
 
+## Usage
+
+### Minimal — just the window
+
+```rust,no_run
+use slint::ComponentHandle;
+use slint_ui_templates::AppWindow;
+
+fn main() -> Result<(), slint::PlatformError> {
+    let app = AppWindow::new()?;
+    app.run()
+}
+```
+
+### With adapter — theme, grid, settings
+
+```rust,no_run
+use slint_ui_templates::AppAdapter;
+use std::path::Path;
+
+fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let app = AppAdapter::new()?;
+    app.apply_theme();
+    app.apply_grid(Path::new("config/desktop.toml"))?;
+    app.run()?;
+    Ok(())
+}
+```
+
+### With Rhai scripting — full DSL
+
+```toml
+[dependencies]
+slint-ui-templates = { version = "0.1", features = ["rhai"] }
+rhai = "1"
+```
+
+```rust,no_run
+use std::{rc::Rc, cell::RefCell, path::Path};
+use slint_ui_templates::AppAdapter;
+use slint_ui_templates::bindings::rhai::build_engine;
+
+fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let adapter = Rc::new(RefCell::new(AppAdapter::new()?));
+    adapter.borrow().load_view_configs(Path::new("views"))?;
+    let engine = build_engine(Rc::clone(&adapter));
+    engine.eval::<()>(&std::fs::read_to_string("app.rhai")?)?;
+    drop(engine);
+    Rc::try_unwrap(adapter)
+        .map_err(|_| "adapter Rc still has multiple owners")?
+        .into_inner().run()?;
+    Ok(())
+}
+```
+
+Or scaffold a complete project instantly: `cargo run -p slintui -- new myapp`
+
+---
+
 ## Architecture
 
 ```text
