@@ -15,6 +15,8 @@ pub fn scaffold(name: &str) -> Result<(), Box<dyn std::error::Error>> {
     }
     create_dirs(root)?;
     write_cargo_toml(root, name)?;
+    write_build_rs(root)?;
+    write_app_slint(root)?;
     write_app_rhai(root, name)?;
     write_view_rhai(root, "home",     "view_status(\"Welcome\");")?;
     write_view_rhai(root, "list",     "view_status(\"Browse\");\nview_toolbar([\"add:add:New\"]);")?;
@@ -26,6 +28,7 @@ pub fn scaffold(name: &str) -> Result<(), Box<dyn std::error::Error>> {
 fn create_dirs(root: &std::path::Path) -> Result<(), std::io::Error> {
     std::fs::create_dir_all(root.join("src"))?;
     std::fs::create_dir_all(root.join("views"))?;
+    std::fs::create_dir_all(root.join("ui"))?;
     Ok(())
 }
 
@@ -41,11 +44,58 @@ name = "{name}"
 path = "src/main.rs"
 
 [dependencies]
-slint-ui-templates = {{ path = "..", features = ["rhai"] }}
+slint-ui-templates = {{ version = "0.1", features = ["rhai"] }}
 rhai = "1"
+
+[build-dependencies]
+slint-build = "1.15"
 "#
     );
     std::fs::write(root.join(CARGO_TOML), content)
+}
+
+fn write_build_rs(root: &std::path::Path) -> Result<(), std::io::Error> {
+    std::fs::write(
+        root.join("build.rs"),
+        r#"fn main() {
+    let ui_path = match std::env::var("DEP_SLINT_UI_TEMPLATES_SLINT_INCLUDE_PATH") {
+        Ok(p) => std::path::PathBuf::from(p),
+        Err(_) => {
+            eprintln!("slint-ui-templates must be a dependency");
+            std::process::exit(1);
+        }
+    };
+    let config = slint_build::CompilerConfiguration::new()
+        .with_include_paths(vec![ui_path]);
+    if let Err(e) = slint_build::compile_with_config("ui/app.slint", config) {
+        eprintln!("slint compile failed: {e}");
+        std::process::exit(1);
+    }
+}
+"#,
+    )
+}
+
+fn write_app_slint(root: &std::path::Path) -> Result<(), std::io::Error> {
+    std::fs::write(root.join("ui").join("app.slint"), "\
+import { Button, Toggle, Card } from \"components.slint\";\n\
+import { Colors, Spacing, Type } from \"theme.slint\";\n\
+\n\
+export component App inherits Window {\n\
+    title: \"My App\";\n\
+    preferred-width: 800px;\n\
+    preferred-height: 600px;\n\
+    background: Colors.bg-primary;\n\
+\n\
+    Text {\n\
+        text: \"Hello from SlintUITemplates!\";\n\
+        color: Colors.text-primary;\n\
+        font-size: Type.subtitle-size;\n\
+        horizontal-alignment: center;\n\
+        vertical-alignment: center;\n\
+    }\n\
+}\n\
+")
 }
 
 fn write_app_rhai(root: &std::path::Path, name: &str) -> Result<(), std::io::Error> {
