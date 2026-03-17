@@ -23,6 +23,7 @@ path = "examples/desktop/main.rs"
 [[example]]
 name = "rhai-demo"
 path = "examples/rhai/main.rs"
+required-features = ["rhai"]
 
 [[example]]
 name = "viewer"
@@ -35,6 +36,7 @@ path = "examples/mobile/main.rs"
 [[example]]
 name = "docs"
 path = "examples/docs/main.rs"
+required-features = ["markdown"]
 
 [[example]]
 name = "android"
@@ -48,13 +50,18 @@ path = "examples/steam/main.rs"
 name = "macos"
 path = "examples/macos/main.rs"
 
+[features]
+default = ["rhai", "markdown"]
+rhai     = ["dep:rhai"]
+markdown = ["dep:pulldown-cmark"]
+
 [dependencies]
 slint = "1"
 tracing = "0.1"
 toml = "0.8"
 serde = { version = "1", features = ["derive"] }
-rhai            = { version = "1" }
-pulldown-cmark  = { version = "0.12", default-features = false, features = ["getopts"] }
+rhai            = { version = "1", optional = true }
+pulldown-cmark  = { version = "0.12", default-features = false, features = ["getopts"], optional = true }
 thiserror       = "2"
 
 [target.'cfg(windows)'.dependencies]

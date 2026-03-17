@@ -3,8 +3,10 @@
 /// Adapter layer between the host app and the Slint UI grid/shell.
 pub mod adapter;
 /// Script-engine bindings (Rhai) exposed to configuration scripts.
+#[cfg(feature = "rhai")]
 pub mod bindings;
 /// Markdown parser that converts CommonMark + GFM to `DocBlock` models.
+#[cfg(feature = "markdown")]
 pub mod docs;
 /// Composition DSL — fluent builder API for shell and window configuration.
 pub mod dsl;

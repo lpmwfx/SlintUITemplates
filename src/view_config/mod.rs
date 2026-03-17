@@ -5,11 +5,15 @@
 //! manual wiring in the host application.
 
 /// Typed error for view-config evaluation and loading.
+#[cfg(feature = "rhai")]
 pub mod error;
 /// Rhai evaluation and file loading helpers.
+#[cfg(feature = "rhai")]
 pub mod eval;
 
+#[cfg(feature = "rhai")]
 pub use error::ViewConfigError;
+#[cfg(feature = "rhai")]
 pub use eval::{eval_script, eval_file, load_all};
 
 use std::rc::Rc;
@@ -54,6 +58,7 @@ pub fn apply(ui: &AppWindow, cfg: &ViewConfig) {
 }
 
 #[cfg(test)]
+#[cfg(feature = "rhai")]
 mod tests {
     use super::*;
 
