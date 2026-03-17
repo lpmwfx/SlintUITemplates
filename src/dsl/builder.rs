@@ -7,7 +7,25 @@ const NAV_MAX_MOBILE: usize = 5;
 /// Maximum nav items allowed on desktop platforms (Windows/macOS/Linux).
 const NAV_MAX_DESKTOP: usize = 7;
 
-/// Fluent builder for constructing a validated `AppDsl` configuration.
+/// Fluent builder for [`AppDsl`] — the validated shell configuration.
+///
+/// # Example
+/// ```rust,no_run
+/// use slint_ui_templates::dsl::{AppDsl, Nav, Toolbar};
+/// use slint_ui_templates::dsl::BgStyle;
+///
+/// let dsl = AppDsl::builder("My App")
+///     .nav(vec![
+///         Nav::new("home", "Home", "home"),
+///         Nav::new("settings", "Settings", "settings"),
+///     ])
+///     .toolbar(vec![Toolbar::new("add", "add", "New item")])
+///     .status("Ready")
+///     .bg_style(BgStyle::Mica)
+///     .window_size(1200, 800)
+///     .build()
+///     .unwrap();
+/// ```
 pub struct AppDslBuilder {
     title:       String,
     platform:    Platform,

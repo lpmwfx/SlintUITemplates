@@ -19,6 +19,14 @@ impl RowName_adp {
     }
 }
 
+/// # Example
+/// ```rust,no_run
+/// # let app = slint_ui_templates::AppAdapter::new().unwrap();
+/// use slint_ui_templates::settings::AppSettings;
+/// let settings = AppSettings::default();
+/// app.apply_settings(&settings);
+/// app.apply_theme();
+/// ```
 impl super::AppAdapter_adp {
     /// Apply settings to the Slint UI — also caches zoom scale.
     pub fn apply_settings(&self, settings: &crate::settings::AppSettings) {
