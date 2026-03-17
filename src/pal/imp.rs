@@ -20,8 +20,8 @@ pub fn apply_backdrop(window: &slint::Window, style: BgStyle) {
             _ => return,
         };
 
-        // REASON: unsafe required — Win32 DWM API via FFI, HWND validated by Slint backend
-        unsafe { // SAFETY: hwnd is a valid Win32 HWND from WinIT; DWM APIs accept any valid HWND and return HRESULT on failure
+        // SAFETY: hwnd is a valid Win32 HWND from WinIT; DWM APIs return HRESULT on failure.
+        unsafe {
             // Extend DWM non-client frame into the entire client area.
             // Required for client-area backdrop to show through.
             let margins = MARGINS {

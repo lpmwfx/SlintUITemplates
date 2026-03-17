@@ -7,6 +7,12 @@ use super::{AppSettings, ThemeMode};
 const HEX_COLOR_LEN: usize = 6;
 /// Radix for parsing hex color channel values.
 const HEX_RADIX: u32 = 16;
+/// Byte offset: end of red channel in hex string.
+const HEX_RED_END: usize = 2;
+/// Byte offset: end of green channel in hex string.
+const HEX_GREEN_END: usize = 4;
+/// Byte offset: end of blue channel in hex string.
+const HEX_BLUE_END: usize = 6;
 
 /// Push all settings to the Slint globals of the given AppWindow.
 /// Called by AppAdapter::apply_settings().
@@ -37,9 +43,9 @@ pub fn apply(ui: &AppWindow, settings: &AppSettings) {
 fn hex_to_color(s: &str) -> Option<slint::Color> {
     let s = s.trim_start_matches('#');
     if s.len() == HEX_COLOR_LEN {
-        let r = u8::from_str_radix(&s[0..2], HEX_RADIX).ok()?;
-        let g = u8::from_str_radix(&s[2..4], HEX_RADIX).ok()?;
-        let b = u8::from_str_radix(&s[4..6], HEX_RADIX).ok()?;
+        let r = u8::from_str_radix(&s[0..HEX_RED_END], HEX_RADIX).ok()?;
+        let g = u8::from_str_radix(&s[HEX_RED_END..HEX_GREEN_END], HEX_RADIX).ok()?;
+        let b = u8::from_str_radix(&s[HEX_GREEN_END..HEX_BLUE_END], HEX_RADIX).ok()?;
         Some(slint::Color::from_rgb_u8(r, g, b))
     } else {
         None

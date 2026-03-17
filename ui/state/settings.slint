@@ -6,14 +6,14 @@
 
 /// S et ti ng s global values.
 export global Settings {
-    /// Two-way property "zoom".
-    in-out property <float>  zoom:         1.0;
-    /// Two-way property "icon-style".
-    in-out property <string> icon-style:   "filled";   // "filled" | "outlined"
-    /// Two-way property "icon-color".
-    in-out property <string> icon-color:   "theme";    // "theme" | "accent" | "#rrggbb"
-    /// Two-way property "font-family".
-    in-out property <string> font-family:  "";         // "" = platform default
-    /// Two-way property "font-scale".
-    in-out property <float>  font-scale:   1.0;        // font-only multiplier on top of zoom
+    /// Input property "zoom".
+    in property <float>  zoom:         1.0;
+    /// Input property "icon-style".
+    in property <string> icon-style:   "filled";   // "filled" | "outlined"
+    /// Input property "icon-color".
+    in property <string> icon-color:   "theme";    // "theme" | "accent" | "#rrggbb"
+    /// Input property "font-family".
+    in property <string> font-family:  "";         // "" = platform default
+    /// Input property "font-scale".
+    in property <float>  font-scale:   1.0;        // font-only multiplier on top of zoom
 }

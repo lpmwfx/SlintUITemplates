@@ -9,6 +9,7 @@ license = "MIT"
 description = "Composable Slint UI building blocks — mother-child pattern, token-driven"
 keywords    = ["slint", "ui", "gui", "layout", "templates"]
 categories  = ["gui", "template-engine"]
+links       = "slint-ui-templates"
 repository  = "https://github.com/lpmwfx/SlintUITemplates"
 include     = ["src/**/*", "ui/**/*", "!ui/viewer/**", "!ui/demo/**", "!ui/lib-dev.slint", "assets/**/*", "build.rs", "config/**/*", "README.md", "LICENSE", "Cargo.toml"]
 

@@ -27,10 +27,9 @@ export component AppWindow inherits Window {
     /// Private property "status-prefix" used internally.
     private property <string> status-prefix: "View: ";
 
-    /// Two-way property "active-view".
-    in-out property <string>    active-view: NavId.home;
-    /// Two-way property "nav-items".
-    in-out property <[NavItem]> nav-items: [
+    property <string>    active-view: NavId.home;
+    /// Input property "nav-items".
+    in property <[NavItem]> nav-items: [
         { id: NavId.home,     label: "Home",     icon: root.icon-home },
         { id: NavId.list,     label: "List",     icon: root.icon-list },
         { id: NavId.settings, label: "Settings", icon: root.icon-settings },

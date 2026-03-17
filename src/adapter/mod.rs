@@ -65,6 +65,8 @@ impl AppAdapter_adp {
         let ui_nav = ui.clone_strong();
         let status = Rc::clone(&status_text);
         ui.on_navigate(move |id| {
+            // active-view is `in property` — only Rust can set it
+            ui_nav.set_active_view(id.clone());
             if let Some(cfg) = vc.borrow().get(id.as_str()) {
                 crate::view_config::apply(&ui_nav, cfg);
                 if let Some(ref text) = cfg.status {

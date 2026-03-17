@@ -21,14 +21,12 @@ import { Variants } from "../globals/Variants.slint";
 
 /// T he me global values.
 export global Theme {
-    /// Two-way property "material".
-    in-out property <string> material: "solid";  // "solid" | "mica" | "acrylic"
-    /// Two-way property "dark".
-    in-out property <bool>   dark: Palette.color-scheme == ColorScheme.dark;
-    /// Two-way property "dark-mode".
-    in-out property <bool>   dark-mode <=> dark;  // backwards-compat alias
-    /// Two-way property "accent-override".
-    in-out property <color>  accent-override: transparent;  // alpha=0 → derive from palette
+    /// Input property "material".
+    in property <string> material: "solid";  // "solid" | "mica" | "acrylic"
+    /// Input property "dark".
+    in property <bool>   dark: Palette.color-scheme == ColorScheme.dark;
+    /// Input property "accent-override".
+    in property <color>  accent-override: transparent;  // alpha=0 → derive from palette
 
     /// Output property "bg-primary".
     out property <color> bg-primary:
@@ -136,8 +134,8 @@ export global Theme {
     // AppWindow is the only writer of `platform`.
     // Values: "windows" | "android" | "ios" | "steam-linux" | "steam-deck" |
     //         "tablet" | "handheld" | "macos" | "linux"
-    /// Two-way property "platform".
-    in-out property <string> platform: Variants.windows;
+    /// Input property "platform".
+    in property <string> platform: Variants.windows;
 
     // Internal routing helpers — not part of the public surface.
     property <bool> is-steam:
