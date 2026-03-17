@@ -114,6 +114,9 @@ export global Theme {
       :                         (dark ? Solid.dark-shadow          : Solid.light-shadow);
 
     // ── Overlay ───────────────────────────────────────────────────────────────
+    /// Output property "transparent" — fully transparent color token.
+    /// Use instead of inline #00000000 literals.
+    out property <color> transparent: #00000000;
     /// Output property "overlay".
     out property <color> overlay: #00000040;
 

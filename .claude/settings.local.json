@@ -107,7 +107,26 @@
       "Bash(wc:*)",
       "Bash(ls:*)",
       "Bash(grep:*)",
-      "Bash(git checkout:*)"
+      "Bash(git checkout:*)",
+      "Bash(cargo apk:*)",
+      "Read(//c/Program Files/Android//**)",
+      "Read(//c/Users/mathi/AppData/Local/Android//**)",
+      "Bash(\"/c/Users/mathi/AppData/Local/Android/Sdk/cmdline-tools/latest/bin/sdkmanager\" --list 2>/dev/null | grep \"ndk\" | head -10 || ls \"/c/Users/mathi/AppData/Local/Android/Sdk/cmdline-tools/\" 2>/dev/null)",
+      "Bash(rustup target:*)",
+      "Bash(mkdir -p /d/DEMO/android-demo)",
+      "Read(//d/DEMO//**)",
+      "Bash(export:*)",
+      "Bash(cat:*)",
+      "Bash(ANDROID_HOME=\"/c/Users/mathi/AppData/Local/Android/Sdk\")",
+      "Bash(mkdir -p \"$ANDROID_HOME/cmdline-tools\")",
+      "Read(//d/DEMO/android-demo/$ANDROID_HOME/**)",
+      "Bash(unzip -q /tmp/cmdtools.zip)",
+      "Bash(\"$SDKMANAGER\" \"platforms;android-35\")",
+      "Bash(cmd.exe /c \"echo y | \\\\\"C:\\\\\\\\Users\\\\\\\\mathi\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Android\\\\\\\\Sdk\\\\\\\\cmdline-tools\\\\\\\\latest\\\\\\\\bin\\\\\\\\sdkmanager.bat\\\\\" \\\\\"platforms;android-35\\\\\"\" 2>&1 | tail -15)",
+      "Bash(cp:*)",
+      "Bash(curl:*)",
+      "Bash(sleep:*)",
+      "Bash(git rm:*)"
     ]
   }
 }
