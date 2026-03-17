@@ -66,7 +66,7 @@ slint-ui-templates = { version = "0.1", default-features = false }
 To use the widgets in your own `.slint` files, your `build.rs` must pick up the
 include path exported by this crate:
 
-```rust
+```rust,ignore
 // build.rs
 fn main() {
     let ui_path = std::path::PathBuf::from(
