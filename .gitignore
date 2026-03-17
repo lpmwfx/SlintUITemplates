@@ -1,2 +1,4 @@
 proj/
 target/
+.claude/settings.local.json
+*.code-workspace
