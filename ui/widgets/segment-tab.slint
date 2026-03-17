@@ -17,6 +17,7 @@ export component SegmentTab inherits Rectangle {
     callback clicked(string);
 
     border-radius: Spacing.xs;
+    clip: true;
     background: root.active  ? Colors.accent :
                 ta.has-hover ? Colors.bg-elevated : transparent;
 
@@ -39,6 +40,7 @@ export component SegmentTab inherits Rectangle {
             font-weight: root.active ? Type.weight-semibold : Type.weight-regular;
             color: root.active ? Colors.accent-text : Colors.text-primary;
             vertical-alignment: center;
+            overflow: elide;
         }
     }
 
