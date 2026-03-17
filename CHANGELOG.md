@@ -1,5 +1,25 @@
 # Changelog
 
+## [0.1.1] — 2026-03-17
+
+### Phase 23 — Consumer Experience + Scanner Fix
+- **Fix:** 44 scanner errors → 0 (unblocks pre-commit hook)
+  - `in-out property` → `in`/`property` across 8 `.slint` files
+  - Magic numbers replaced with named constants
+  - docgen split into parser.rs + renderer.rs (mother-too-many-fns)
+  - SAFETY comment format fixed
+- **Fix:** Import syntax: `@slint-ui-templates/...` → `"components.slint"` (#7)
+- **Fix:** DSL title flows from builder → AppDsl → Window (#10, #11)
+- **Feat:** Scaffold generates consumer `build.rs` + `ui/app.slint` (#8)
+- **Feat:** `dsl::builder` module made public for consumers (#9)
+- **Feat:** `links = "slint-ui-templates"` in Cargo.toml for DEP_ env var (#6)
+- **Feat:** Consumer Setup section in README with build.rs example
+- **Test:** 3 consumer integration tests (components.slint, lib.slint, scaffold)
+- **Refactor:** `active-view` → navigate callback pattern (desktop, viewer)
+- **Refactor:** Remove `dark-mode` alias, use `Colors.dark` directly
+
+## [0.1.0] — 2026-03-17
+
 ## [Unreleased] — 0.1.0
 
 ### Phase 22 — Workspace Split
