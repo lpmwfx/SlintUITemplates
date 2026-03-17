@@ -1,3 +1,10 @@
+/// # Example
+/// ```rust,no_run
+/// # let app = slint_ui_templates::AppAdapter::new().unwrap();
+/// app.on_navigate(|view| { println!("navigated to {view}"); });
+/// app.on_toolbar_clicked(|id| { println!("toolbar: {id}"); });
+/// app.on_menu_action("exit", || { std::process::exit(0); });
+/// ```
 impl super::AppAdapter_adp {
     /// Register a handler for the navigate callback (nav item clicked).
     /// Replaces any previously registered handler.

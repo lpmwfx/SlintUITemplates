@@ -86,18 +86,22 @@ pub fn check_sum(panels: &[Panel]) -> bool {
 mod tests {
     use super::*;
 
+    const HALF_RATIO: f32 = 0.5;
+    const THIRD_SMALL: f32 = 0.33;
+    const THIRD_LARGE: f32 = 0.34;
+
     fn two_panels() -> Vec<Panel> {
         vec![
-            Panel::new("left",  0.5),
-            Panel::new("right", 0.5),
+            Panel::new("left",  HALF_RATIO),
+            Panel::new("right", HALF_RATIO),
         ]
     }
 
     fn three_panels() -> Vec<Panel> {
         vec![
-            Panel::new("a", 0.33),
-            Panel::new("b", 0.34),
-            Panel::new("c", 0.33),
+            Panel::new("a", THIRD_SMALL),
+            Panel::new("b", THIRD_LARGE),
+            Panel::new("c", THIRD_SMALL),
         ]
     }
 

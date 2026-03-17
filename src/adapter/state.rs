@@ -2,6 +2,14 @@ use slint::ComponentHandle;
 use crate::Theme;
 use crate::shell::Platform;
 
+/// # Example
+/// ```rust,no_run
+/// # let app = slint_ui_templates::AppAdapter::new().unwrap();
+/// app.set_active_view("settings");
+/// app.set_dark_mode(true);
+/// app.set_status("Loading...");
+/// assert_eq!(app.get_active_view(), "settings");
+/// ```
 impl super::AppAdapter_adp {
     /// Switch the active view by name — updates cache and UI.
     pub fn set_active_view(&self, name: &str) {

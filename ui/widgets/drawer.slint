@@ -52,8 +52,10 @@ export component Drawer inherits Rectangle {
         background: Colors.bg-elevated;
         border-width: root.border-px;
         border-color: Colors.border;
-        drop-shadow-blur: Spacing.md;
+        drop-shadow-blur: root.open ? Spacing.md : 0px;
         drop-shadow-color: Colors.shadow;
+
+        animate drop-shadow-blur { duration: root.anim-dur; easing: ease-out; }
         clip: true;
 
         VerticalLayout {

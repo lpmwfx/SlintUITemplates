@@ -30,14 +30,12 @@ export component AppWindow inherits Window {
     background: Colors.bg-primary;
 
     // State (mother owns all)
-    /// Two-way property "active-view".
-    in-out property <string>    active-view: NavId.home;
-    /// Two-way property "sidebar-open".
-    in-out property <bool>      sidebar-open: true;
-    /// Two-way property "sidebar-collapsed".
-    in-out property <bool>      sidebar-collapsed: false;
-    /// Two-way property "nav-items".
-    in-out property <[NavItem]> nav-items: [
+    /// Input property "active-view".
+    in property <string>    active-view: NavId.home;
+    property <bool>      sidebar-open: true;
+    property <bool>      sidebar-collapsed: false;
+    /// Input property "nav-items".
+    in property <[NavItem]> nav-items: [
         { id: NavId.home,     label: "Home",     icon: FluentIcons.home },
         { id: NavId.list,     label: "List",     icon: FluentIcons.list },
         { id: NavId.settings, label: "Settings", icon: FluentIcons.settings },
@@ -50,8 +48,8 @@ export component AppWindow inherits Window {
     in property <[ShellToolbarItem]> toolbar-items: [];
 
     // Status bar text (Rhai / Rust override; empty = default "View: <active-view>")
-    /// Two-way property "status-text".
-    in-out property <string> status-text: "";
+    /// Input property "status-text".
+    in property <string> status-text: "";
     /// Input property "status-prefix".
     in property <string> status-prefix: "View: ";
     /// Input property "right-panel-label".
@@ -82,18 +80,16 @@ export component AppWindow inherits Window {
     callback toolbar-clicked(string);
 
     // Grid ratios (pushed from Rust grid engine)
-    /// Two-way property "row-top-ratio".
-    in-out property <float> row-top-ratio: Sizes.fill;
-    /// Two-way property "row-main-ratio".
-    in-out property <float> row-main-ratio: Sizes.ten;
-    /// Two-way property "row-bottom-ratio".
-    in-out property <float> row-bottom-ratio: Sizes.fill;
+    /// Input property "row-top-ratio".
+    in property <float> row-top-ratio: Sizes.fill;
+    /// Input property "row-main-ratio".
+    in property <float> row-main-ratio: Sizes.ten;
+    /// Input property "row-bottom-ratio".
+    in property <float> row-bottom-ratio: Sizes.fill;
 
     // Column pixel widths — draggable (no literals — token expressions)
-    /// Two-way property "col-left-width".
-    in-out property <length> col-left-width:  Spacing.xl * Sizes.four + Spacing.md;   // 208px
-    /// Two-way property "col-right-width".
-    in-out property <length> col-right-width: Spacing.xl * Sizes.five;                 // 240px
+    property <length> col-left-width:  Spacing.xl * Sizes.four + Spacing.md;   // 208px
+    property <length> col-right-width: Spacing.xl * Sizes.five;                 // 240px
 
     // Reference widths for sidebar toggle snap
     property <length> sidebar-expanded-width:  Spacing.xl * Sizes.four + Spacing.md;
@@ -101,7 +97,6 @@ export component AppWindow inherits Window {
 
     /// Callback fired for n av ig at e.
     callback navigate(string);
-    navigate(view) => { self.active-view = view; }
 
     // Native OS menu bar (muda-backed via Slint — must live in Window)
     MenuBar {
@@ -111,9 +106,9 @@ export component AppWindow inherits Window {
         }
         Menu {
             title: root.menu-view-label;
-            MenuItem { title: root.menu-home-label;     activated => { root.active-view = NavId.home; } }
-            MenuItem { title: root.menu-list-label;     activated => { root.active-view = NavId.list; } }
-            MenuItem { title: root.menu-settings-label; activated => { root.active-view = NavId.settings; } }
+            MenuItem { title: root.menu-home-label;     activated => { root.navigate(NavId.home); } }
+            MenuItem { title: root.menu-list-label;     activated => { root.navigate(NavId.list); } }
+            MenuItem { title: root.menu-settings-label; activated => { root.navigate(NavId.settings); } }
         }
         Menu {
             title: root.menu-help-label;
@@ -133,7 +128,7 @@ export component AppWindow inherits Window {
             vertical-stretch: root.row-top-ratio;
             breadcrumb: root.active-view;
             can-go-back: root.active-view != NavId.home;
-            go-back => { root.active-view = NavId.home; }
+            go-back => { root.navigate(NavId.home); }
         }
 
         // ROW: main — 3 columns with draggable vertical gutters
@@ -148,7 +143,7 @@ export component AppWindow inherits Window {
                 items: root.nav-items;
                 active-item: root.active-view;
                 collapsed: root.sidebar-collapsed;
-                navigate(id) => { root.active-view = id; }
+                navigate(id) => { root.navigate(id); }
                 toggle-collapsed() => { root.sidebar-collapsed = !root.sidebar-collapsed; }
             }
 
@@ -166,7 +161,7 @@ export component AppWindow inherits Window {
             ContentArea {
                 horizontal-stretch: Sizes.one;
                 active-view: root.active-view;
-                navigate(view) => { root.active-view = view; }
+                navigate(view) => { root.navigate(view); }
             }
 
             // Gutter: center | right (draggable)

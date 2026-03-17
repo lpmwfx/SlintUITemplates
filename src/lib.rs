@@ -29,7 +29,9 @@ pub mod view_config;
 pub use adapter::AppAdapter_adp as AppAdapter;
 /// Re-export Platform at crate root for ergonomic consumer imports.
 pub use shell::Platform;
+/// Grid zone model and target configuration types.
 pub use grid::{ZoneModel, TargetConfig};
+/// Layout DSL parser, panel solver, and drag-resize utilities.
 pub use layout::{build, SolvedItem, ItemKind, build_v2, Panel, drag, normalize};
 
 slint::include_modules!();

@@ -1,5 +1,11 @@
 use slint::ComponentHandle;
 
+/// # Example
+/// ```rust,no_run
+/// # let mut app = slint_ui_templates::AppAdapter::new().unwrap();
+/// app.set_window_size(1920, 1080);
+/// app.set_bg_style_str("mica");
+/// ```
 impl super::AppAdapter_adp {
     /// Load all `*.rhai` files from `dir` and register as per-view configs.
     /// Auto-applied by the navigate handler on every nav event.

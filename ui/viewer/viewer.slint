@@ -17,10 +17,13 @@ export component FrameworkViewer inherits Window {
     title:
         "SlintUI Framework Viewer";
 
-    /// Two-way property "active-view".
-    in-out property <string> active-view: ViewId.buttons;
+    /// Input property "active-view".
+    in property <string> active-view: ViewId.buttons;
     /// Input property "canvas-frame".
     in property <image> canvas-frame;
+
+    /// Callback fired for n av ig at e.
+    callback navigate(string);
 
     /// Private property "win-w" used internally.
     private property <length> win-w:     1100px;
@@ -115,22 +118,22 @@ export component FrameworkViewer inherits Window {
         Menu {
             title:
                 "View";
-            MenuItem { title: "Buttons";    activated => { root.active-view = ViewId.buttons; } }
-            MenuItem { title: "Inputs";     activated => { root.active-view = ViewId.inputs; } }
-            MenuItem { title: "Display";    activated => { root.active-view = ViewId.display; } }
-            MenuItem { title: "Feedback";   activated => { root.active-view = ViewId.feedback; } }
-            MenuItem { title: "Layout";     activated => { root.active-view = ViewId.layout; } }
-            MenuItem { title: "App Shell";  activated => { root.active-view = ViewId.app-shell; } }
-            MenuItem { title: "Icons";      activated => { root.active-view = ViewId.icons; } }
-            MenuItem { title: "Selection";  activated => { root.active-view = ViewId.selection; } }
-            MenuItem { title: "Navigation"; activated => { root.active-view = ViewId.navigation; } }
-            MenuItem { title: "Data";       activated => { root.active-view = ViewId.data; } }
-            MenuItem { title: "Canvas";     activated => { root.active-view = ViewId.canvas; } }
-            MenuItem { title: "Utilities";  activated => { root.active-view = ViewId.utilities; } }
-            MenuItem { title: "Popups";     activated => { root.active-view = ViewId.popups; } }
-            MenuItem { title: "Panels";     activated => { root.active-view = ViewId.panels; } }
+            MenuItem { title: "Buttons";    activated => { root.navigate(ViewId.buttons); } }
+            MenuItem { title: "Inputs";     activated => { root.navigate(ViewId.inputs); } }
+            MenuItem { title: "Display";    activated => { root.navigate(ViewId.display); } }
+            MenuItem { title: "Feedback";   activated => { root.navigate(ViewId.feedback); } }
+            MenuItem { title: "Layout";     activated => { root.navigate(ViewId.layout); } }
+            MenuItem { title: "App Shell";  activated => { root.navigate(ViewId.app-shell); } }
+            MenuItem { title: "Icons";      activated => { root.navigate(ViewId.icons); } }
+            MenuItem { title: "Selection";  activated => { root.navigate(ViewId.selection); } }
+            MenuItem { title: "Navigation"; activated => { root.navigate(ViewId.navigation); } }
+            MenuItem { title: "Data";       activated => { root.navigate(ViewId.data); } }
+            MenuItem { title: "Canvas";     activated => { root.navigate(ViewId.canvas); } }
+            MenuItem { title: "Utilities";  activated => { root.navigate(ViewId.utilities); } }
+            MenuItem { title: "Popups";     activated => { root.navigate(ViewId.popups); } }
+            MenuItem { title: "Panels";     activated => { root.navigate(ViewId.panels); } }
             MenuSeparator {}
-            MenuItem { title: "Dark Mode";  activated => { Colors.dark-mode = !Colors.dark-mode; } }
+            MenuItem { title: "Dark Mode";  activated => { Colors.dark = !Colors.dark; } }
             MenuSeparator {}
             MenuItem { title: root.menu-zoom-sm; activated => { Settings.zoom = root.zoom-small; } }
             MenuItem { title: root.menu-zoom-md; activated => { Settings.zoom = root.zoom-normal; } }
@@ -174,7 +177,7 @@ export component FrameworkViewer inherits Window {
                     { id: "popups",     label: "Popups",     icon: FluentIcons.panel-left },
                     { id: "panels",     label: "Panels",     icon: FluentIcons.layout },
                 ];
-                navigate(id) => { root.active-view = id; }
+                navigate(id) => { root.navigate(id); }
                 toggle-collapsed() => {}
             }
 

@@ -83,7 +83,7 @@ export component ViewerTopbar inherits Rectangle {
             vertical-alignment: center;
         }
         Rectangle { horizontal-stretch: Sizes.fill; }
-        Toggle { label: root.toggle-dark; checked: Colors.dark-mode; toggled(v) => { Colors.dark-mode = v; } }
+        Toggle { label: root.toggle-dark; checked: Colors.dark; toggled(v) => { Colors.dark = v; } }
         Button { label: root.btn-zoom-small; variant: root.var-ghost; clicked => { Settings.zoom = root.zoom-small; } }
         Button { label: root.btn-zoom-normal; variant: root.var-ghost; clicked => { Settings.zoom = Sizes.fill; } }
         Button { label: root.btn-zoom-large; variant: root.var-ghost; clicked => { Settings.zoom = root.zoom-large; } }

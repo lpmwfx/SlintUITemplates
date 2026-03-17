@@ -13,6 +13,19 @@ mod state;
 
 /// Adapter layer between host app and Slint UI window.
 /// Owns AppWindow handle, ViewConfig registry, menu actions, and all cached state.
+///
+/// # Example
+/// ```rust,no_run
+/// use slint_ui_templates::AppAdapter;
+/// use slint_ui_templates::dsl::{AppDsl, Nav};
+///
+/// let mut app = AppAdapter::new().unwrap();
+/// let dsl = AppDsl::builder("My App")
+///     .nav(vec![Nav::new("home", "Home", "home")])
+///     .build().unwrap();
+/// app.apply_dsl(&dsl);
+/// app.run().unwrap();
+/// ```
 /// A pp ad ap te r adp struct.
 pub struct AppAdapter_adp {
     pub(super) ui:           AppWindow,
@@ -65,6 +78,8 @@ impl AppAdapter_adp {
         let ui_nav = ui.clone_strong();
         let status = Rc::clone(&status_text);
         ui.on_navigate(move |id| {
+            // active-view is `in property` — only Rust can set it
+            ui_nav.set_active_view(id.clone());
             if let Some(cfg) = vc.borrow().get(id.as_str()) {
                 crate::view_config::apply(&ui_nav, cfg);
                 if let Some(ref text) = cfg.status {

@@ -13,11 +13,11 @@ export { NavItem }
 export component AppWindow inherits Window {
     preferred-width: Sizes.mobile-width;
     preferred-height: Sizes.mobile-height;
-    title: root.app-title;
+    title: root.window-title;
     background: Colors.bg-primary;
 
-    /// Private property "app-title" used internally.
-    private property <string> app-title: "SlintUITemplates \u{2014} Mobile";
+    /// Input property "window-title".
+    in property <string> window-title: "SlintUITemplates \u{2014} Mobile";
     /// Private property "icon-home" used internally.
     private property <string> icon-home: "\u{1F3E0}";
     /// Private property "icon-list" used internally.
@@ -27,10 +27,9 @@ export component AppWindow inherits Window {
     /// Private property "status-prefix" used internally.
     private property <string> status-prefix: "View: ";
 
-    /// Two-way property "active-view".
-    in-out property <string>    active-view: NavId.home;
-    /// Two-way property "nav-items".
-    in-out property <[NavItem]> nav-items: [
+    property <string>    active-view: NavId.home;
+    /// Input property "nav-items".
+    in property <[NavItem]> nav-items: [
         { id: NavId.home,     label: "Home",     icon: root.icon-home },
         { id: NavId.list,     label: "List",     icon: root.icon-list },
         { id: NavId.settings, label: "Settings", icon: root.icon-settings },

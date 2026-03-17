@@ -11,8 +11,15 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     };
     slint_build::compile(slint_entry)?;
 
-    // ── Model B: expose ui/ as Slint library path for downstream consumers ──
-    // Consumers read DEP_SLINT_UI_TEMPLATES_SLINT_INCLUDE_PATH in their build.rs.
+    // ── DEP_ env-var mechanism ─────────────────────────────────────────────
+    // Cargo `links = "slint-ui-templates"` in [package] + the metadata line
+    // below combine to expose `DEP_SLINT_UI_TEMPLATES_SLINT_INCLUDE_PATH`
+    // to every crate that depends on this library.
+    //
+    // Consumer build.rs reads:
+    //   std::env::var("DEP_SLINT_UI_TEMPLATES_SLINT_INCLUDE_PATH")
+    // and passes the path to `slint_build::CompilerConfiguration::with_include_paths()`.
+    //
     // writeln! on stdout is the cargo build script metadata protocol — not logging.
     let manifest = std::env::var("CARGO_MANIFEST_DIR")?;
     writeln!(std::io::stdout(), "cargo:SLINT_INCLUDE_PATH={}/ui", manifest)?;

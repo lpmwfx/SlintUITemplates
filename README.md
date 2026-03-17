@@ -61,6 +61,36 @@ slint-ui-templates = { version = "0.1", default-features = false }
 
 ---
 
+## Consumer Setup
+
+To use the widgets in your own `.slint` files, your `build.rs` must pick up the
+include path exported by this crate:
+
+```rust,ignore
+// build.rs
+fn main() {
+    let ui_path = std::path::PathBuf::from(
+        std::env::var("DEP_SLINT_UI_TEMPLATES_SLINT_INCLUDE_PATH")
+            .expect("slint-ui-templates must be a dependency"),
+    );
+    slint_build::compile_with_config(
+        "ui/app.slint",
+        slint_build::CompilerConfiguration::new()
+            .with_include_paths(vec![ui_path]),
+    )
+    .unwrap();
+}
+```
+
+Then import in your `.slint` files (no `@` prefix — just the filename):
+
+```slint
+import { Button, Card, Toggle } from "components.slint";
+import { Colors, Spacing, Type } from "theme.slint";
+```
+
+---
+
 ## Usage
 
 ### Minimal — just the window

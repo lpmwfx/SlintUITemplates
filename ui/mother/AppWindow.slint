@@ -20,17 +20,17 @@ import { PanelContainer, PanelItem }         from "../modules/PanelContainer.sli
 export component AppWindow inherits Window {
     preferred-width:  Sizes.win-width-xl;
     preferred-height: Sizes.win-height-xl;
-    title: root.app-title;
-    /// Private property "app-title" used internally.
-    private property <string> app-title: "SlintUITemplates";
+    title: root.window-title;
+    /// Input property "window-title".
+    in property <string> window-title: "SlintUITemplates";
 
     // ── Theme state ────────────────────────────────────────────────────────
-    /// Two-way property "theme-mode".
-    in-out property <string> theme-mode: Variants.system;
-    /// Two-way property "material".
-    in-out property <string> material: Variants.solid;  // "solid" | "mica" | "acrylic"
-    /// Two-way property "platform".
-    in-out property <string> platform: Variants.windows;
+    /// Input property "theme-mode".
+    in property <string> theme-mode: Variants.system;
+    /// Input property "material".
+    in property <string> material: Variants.solid;  // "solid" | "mica" | "acrylic"
+    /// Input property "platform".
+    in property <string> platform: Variants.windows;
 
     // Reactive: recomputes whenever theme-mode or OS scheme changes
     property <bool> effective-dark:
@@ -47,8 +47,8 @@ export component AppWindow inherits Window {
 
     // ── Panel layout state ──────────────────────────────────────────────────
     // Rust pushes [PanelItem] here after parsing DSL + solving geometry.
-    /// Two-way property "panels".
-    in-out property <[PanelItem]> panels;
+    /// Input property "panels".
+    in property <[PanelItem]> panels;
 
     // Drag event — Rust adapter recalculates ratios, re-pushes model
     /// Callback fired for p an el d ra gg ed.

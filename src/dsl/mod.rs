@@ -24,7 +24,7 @@
 /// Applies a validated `AppDsl` configuration to a live Slint window.
 pub mod apply;
 /// Builder implementation for `AppDslBuilder`.
-pub(crate) mod builder;
+pub mod builder;
 /// Fluent icon name-to-codepoint registry used for icon resolution.
 pub mod icons;
 /// Public input types: `BgStyle`, `Nav`, `Toolbar`.
@@ -71,6 +71,7 @@ pub(crate) struct ResolvedToolbar {
 #[derive(Debug)]
 /// A pp ds l struct.
 pub struct AppDsl {
+    pub(crate) title:        String,
     pub(crate) nav:          Vec<ResolvedNav>,
     pub(crate) status:       String,
     pub(crate) toolbar:      Vec<ResolvedToolbar>,

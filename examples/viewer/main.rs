@@ -6,6 +6,10 @@ use slint_ui_templates::{dsl::BgStyle, pal};
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let ui = slint_ui_templates::FrameworkViewer::new()?;
 
+    // Wire navigate callback — active-view is `in property`, only Rust can set it
+    let nav_ui = ui.clone_strong();
+    ui.on_navigate(move |id| { nav_ui.set_active_view(id); });
+
     // Wire canvas frame — rendered once at startup
     ui.set_canvas_frame(demo_frame::render(demo_frame::DEMO_FRAME_WIDTH, demo_frame::DEMO_FRAME_HEIGHT)?);
 
