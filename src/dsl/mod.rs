@@ -24,7 +24,7 @@
 /// Applies a validated `AppDsl` configuration to a live Slint window.
 pub mod apply;
 /// Builder implementation for `AppDslBuilder`.
-pub(crate) mod builder;
+pub mod builder;
 /// Fluent icon name-to-codepoint registry used for icon resolution.
 pub mod icons;
 /// Public input types: `BgStyle`, `Nav`, `Toolbar`.
