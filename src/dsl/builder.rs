@@ -9,7 +9,6 @@ const NAV_MAX_DESKTOP: usize = 7;
 
 /// Fluent builder for constructing a validated `AppDsl` configuration.
 pub struct AppDslBuilder {
-    #[allow(dead_code)]
     title:       String,
     platform:    Platform,
     nav:         Vec<Nav>,
@@ -157,6 +156,7 @@ impl AppDslBuilder {
 
         if errors.is_empty() {
             Ok(AppDsl {
+                title:        self.title,
                 nav:          resolved_nav,
                 status:       self.status,
                 show_toolbar: !resolved_toolbar.is_empty(),

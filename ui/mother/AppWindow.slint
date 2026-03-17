@@ -20,9 +20,9 @@ import { PanelContainer, PanelItem }         from "../modules/PanelContainer.sli
 export component AppWindow inherits Window {
     preferred-width:  Sizes.win-width-xl;
     preferred-height: Sizes.win-height-xl;
-    title: root.app-title;
-    /// Private property "app-title" used internally.
-    private property <string> app-title: "SlintUITemplates";
+    title: root.window-title;
+    /// Input property "window-title".
+    in property <string> window-title: "SlintUITemplates";
 
     // ── Theme state ────────────────────────────────────────────────────────
     /// Input property "theme-mode".

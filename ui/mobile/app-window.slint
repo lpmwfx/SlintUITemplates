@@ -13,11 +13,11 @@ export { NavItem }
 export component AppWindow inherits Window {
     preferred-width: Sizes.mobile-width;
     preferred-height: Sizes.mobile-height;
-    title: root.app-title;
+    title: root.window-title;
     background: Colors.bg-primary;
 
-    /// Private property "app-title" used internally.
-    private property <string> app-title: "SlintUITemplates \u{2014} Mobile";
+    /// Input property "window-title".
+    in property <string> window-title: "SlintUITemplates \u{2014} Mobile";
     /// Private property "icon-home" used internally.
     private property <string> icon-home: "\u{1F3E0}";
     /// Private property "icon-list" used internally.

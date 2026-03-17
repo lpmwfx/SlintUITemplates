@@ -71,6 +71,7 @@ pub(crate) struct ResolvedToolbar {
 #[derive(Debug)]
 /// A pp ds l struct.
 pub struct AppDsl {
+    pub(crate) title:        String,
     pub(crate) nav:          Vec<ResolvedNav>,
     pub(crate) status:       String,
     pub(crate) toolbar:      Vec<ResolvedToolbar>,

@@ -6,6 +6,9 @@ use super::{AppDsl, BgStyle};
 /// Apply a validated `AppDsl` to an `AppWindow`.
 /// All composition rules already satisfied — this is pure wiring, no validation.
 pub fn apply(ui: &AppWindow, dsl: &AppDsl) {
+    // Window title
+    ui.set_window_title(dsl.title.as_str().into());
+
     // Nav items — resolved codepoints
     let nav: Vec<NavItem> = dsl.nav.iter().map(|n| NavItem {
         id:        n.id.as_str().into(),
