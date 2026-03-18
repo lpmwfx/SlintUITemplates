@@ -1,0 +1,145 @@
+{
+  "source": "ui/docs/docs-app.slint",
+  "items": [
+    {
+      "name": "DocsApp",
+      "kind": "Component",
+      "signature": "export component DocsApp inherits Window {",
+      "line": 19,
+      "doc": ""
+    },
+    {
+      "name": "window-title",
+      "kind": "Property",
+      "signature": "in property <string>             window-title:     \"SlintUITemplates — Docs\";",
+      "line": 22,
+      "doc": ""
+    },
+    {
+      "name": "menu-file-label",
+      "kind": "Property",
+      "signature": "in property <string>             menu-file-label:  \"File\";",
+      "line": 25,
+      "doc": ""
+    },
+    {
+      "name": "menu-theme-label",
+      "kind": "Property",
+      "signature": "in property <string>             menu-theme-label: \"Theme\";",
+      "line": 28,
+      "doc": ""
+    },
+    {
+      "name": "active-view",
+      "kind": "Property",
+      "signature": "in-out property <string>         active-view: \"getting-started\";",
+      "line": 40,
+      "doc": ""
+    },
+    {
+      "name": "nav-items",
+      "kind": "Property",
+      "signature": "in-out property <[NavItem]>      nav-items: [];",
+      "line": 43,
+      "doc": ""
+    },
+    {
+      "name": "doc-blocks",
+      "kind": "Property",
+      "signature": "in-out property <[DocBlock]>     doc-blocks: [];",
+      "line": 46,
+      "doc": ""
+    },
+    {
+      "name": "doc-title",
+      "kind": "Property",
+      "signature": "in-out property <string>         doc-title: \"\";",
+      "line": 49,
+      "doc": ""
+    },
+    {
+      "name": "status-text",
+      "kind": "Property",
+      "signature": "in-out property <string>         status-text: \"Ready\";",
+      "line": 52,
+      "doc": ""
+    },
+    {
+      "name": "toolbar-items",
+      "kind": "Property",
+      "signature": "in property <[ShellToolbarItem]> toolbar-items: [];",
+      "line": 55,
+      "doc": ""
+    },
+    {
+      "name": "show-toolbar",
+      "kind": "Property",
+      "signature": "in property <bool>               show-toolbar: false;",
+      "line": 58,
+      "doc": ""
+    },
+    {
+      "name": "sidebar-collapsed",
+      "kind": "Property",
+      "signature": "in-out property <bool>   sidebar-collapsed: false;",
+      "line": 62,
+      "doc": ""
+    },
+    {
+      "name": "col-left-width",
+      "kind": "Property",
+      "signature": "in-out property <length> col-left-width: Spacing.xl * 4 + Spacing.md;",
+      "line": 65,
+      "doc": ""
+    },
+    {
+      "name": "drag-base-width",
+      "kind": "Property",
+      "signature": "private property <length> drag-base-width: Spacing.xl * 4 + Spacing.md;",
+      "line": 72,
+      "doc": ""
+    },
+    {
+      "name": "navigate",
+      "kind": "Callback",
+      "signature": "callback navigate(string);",
+      "line": 84,
+      "doc": ""
+    },
+    {
+      "name": "toolbar-clicked",
+      "kind": "Callback",
+      "signature": "callback toolbar-clicked(string);",
+      "line": 87,
+      "doc": ""
+    },
+    {
+      "name": "request-bg-style",
+      "kind": "Callback",
+      "signature": "callback request-bg-style(string);",
+      "line": 90,
+      "doc": ""
+    },
+    {
+      "name": "toggle-group",
+      "kind": "Callback",
+      "signature": "callback toggle-group(string);   // Rust-siden håndterer hidden-toggle på nav-items",
+      "line": 93,
+      "doc": ""
+    },
+    {
+      "name": "drag-sidebar",
+      "kind": "Callback",
+      "signature": "callback drag-sidebar(dx: float);",
+      "line": 96,
+      "doc": ""
+    },
+    {
+      "name": "drag-anchor",
+      "kind": "Callback",
+      "signature": "callback drag-anchor();   // called by DragHandle on press+release to re-anchor drag-base-width",
+      "line": 99,
+      "doc": ""
+    }
+  ]
+}

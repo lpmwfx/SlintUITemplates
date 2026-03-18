@@ -1,19 +1,25 @@
-import { Colors, Spacing, Type, Sizes } from "../tokens/theme.slint";
+import { Colors, Spacing, Type, Sizes } from "../globals/theme.slint";
 import { NavItem } from "types.slint";
 
 // ── SideBarRow — enkelt navigationsrække (header eller fil-item) ──────────────
 // Pure child: receives item data via in property, emits clicks via callbacks.
 /// S id eb ar ro w component.
+/// component `SideBarRow`.
 export component SideBarRow inherits Rectangle {
     /// Input property "item".
+    /// property `item`.
     in property <NavItem> item;
     /// Input property "is-active".
+    /// property `is-active`.
     in property <bool>    is-active;
     /// Input property "sidebar-collapsed".
+    /// property `sidebar-collapsed`.
     in property <bool>    sidebar-collapsed;
     /// Callback fired for n av ig at e.
+    /// callback `navigate`.
     callback navigate(string);
     /// Callback fired for t og gl e g ro up.
+    /// callback `toggle-group`.
     callback toggle-group(string);
 
     height:     item.hidden ? Spacing.none : Spacing.xl;

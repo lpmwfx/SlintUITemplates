@@ -1,4 +1,4 @@
-import { Colors, Spacing, Sizes } from "../tokens/theme.slint";
+import { Colors, Spacing, Sizes } from "../globals/theme.slint";
 
 // Drag handle between panels.
 // vertical=false → column handle (col-resize cursor, reports dx)
@@ -9,12 +9,16 @@ import { Colors, Spacing, Sizes } from "../tokens/theme.slint";
 // drag-started()   — fires on BOTH mouse-press AND release so callers can
 //                    capture and re-anchor their drag-base value each time.
 /// D ra gh an dl e component.
+/// component `DragHandle`.
 export component DragHandle inherits Rectangle {
     /// Input property "vertical".
+    /// property `vertical`.
     in property <bool> vertical: false;
     /// Callback fired for d ra gg ed.
+    /// callback `dragged`.
     callback dragged(float, float);  // cumulative dx, dy from press point (logical px)
     /// Callback fired for d ra g s ta rt ed.
+    /// callback `drag-started`.
     callback drag-started();         // fires on press and on release
 
     background: touch.has-hover ? Colors.accent : Colors.border;

@@ -1,0 +1,33 @@
+{
+  "source": "ui/docs/MdTable.slint",
+  "items": [
+    {
+      "name": "MdTable",
+      "kind": "Component",
+      "signature": "export component MdTable inherits VerticalLayout {",
+      "line": 8,
+      "doc": ""
+    },
+    {
+      "name": "kind",
+      "kind": "Property",
+      "signature": "in property <string> kind;",
+      "line": 11,
+      "doc": ""
+    },
+    {
+      "name": "text",
+      "kind": "Property",
+      "signature": "in property <string> text;",
+      "line": 14,
+      "doc": ""
+    },
+    {
+      "name": "mono-font",
+      "kind": "Property",
+      "signature": "in property <string> mono-font: \"Consolas\";",
+      "line": 17,
+      "doc": ""
+    }
+  ]
+}

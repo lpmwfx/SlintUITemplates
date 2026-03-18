@@ -1,0 +1,47 @@
+{
+  "source": "ui/widgets/label.slint",
+  "items": [
+    {
+      "name": "Label",
+      "kind": "Component",
+      "signature": "export component Label inherits HorizontalLayout {",
+      "line": 5,
+      "doc": ""
+    },
+    {
+      "name": "text",
+      "kind": "Property",
+      "signature": "in property <string> text: \"\";",
+      "line": 8,
+      "doc": ""
+    },
+    {
+      "name": "required",
+      "kind": "Property",
+      "signature": "in property <bool>   required: false;",
+      "line": 11,
+      "doc": ""
+    },
+    {
+      "name": "disabled",
+      "kind": "Property",
+      "signature": "in property <bool>   disabled: false;",
+      "line": 14,
+      "doc": ""
+    },
+    {
+      "name": "half-xs",
+      "kind": "Property",
+      "signature": "private property <length> half-xs:  Spacing.xs / 2;",
+      "line": 18,
+      "doc": ""
+    },
+    {
+      "name": "req-mark",
+      "kind": "Property",
+      "signature": "private property <string> req-mark: \" *\";",
+      "line": 21,
+      "doc": ""
+    }
+  ]
+}

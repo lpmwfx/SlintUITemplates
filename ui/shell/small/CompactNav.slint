@@ -2,24 +2,30 @@
 // mode == Variants.nav-bottom  → horizontal bar at bottom (Steam Deck default)
 // mode == Variants.nav-compact → vertical icon rail on the left (Steam Linux)
 
-import { SteamColors, SteamSpacing } from "../../tokens/steam/mod.slint";
-import { Sizes } from "../../tokens/sizes.slint";
-import { Variants } from "../../globals/Variants.slint";
+import { SteamColors, SteamSpacing } from "../../globals/theme/steam/mod.slint";
+import { Sizes } from "../../state/sizes.slint";
+import { Variants } from "../../state/variants.slint";
 import { NavItem } from "../types.slint";
 import { CompactNavItem } from "CompactNavItem.slint";
 
 /// CompactNav — horizontal bottom bar or vertical compact rail.
+/// component `CompactNav`.
 export component CompactNav inherits Rectangle {
     /// Nav mode: `Variants.nav-bottom` (horizontal) or `Variants.nav-compact` (rail).
+    /// property `mode`.
     in property <string> mode: Variants.nav-bottom;
     /// Navigation items to render.
+    /// property `items`.
     in property <[NavItem]> items;
     /// Id of the currently active item.
+    /// property `active`.
     in property <string> active;
     /// Fired when a nav item is tapped.
+    /// callback `navigate`.
     callback navigate(string);
 
     /// Private property "is-rail" used internally.
+    /// property `is-rail`.
     private property <bool> is-rail: root.mode == Variants.nav-compact;
 
     background: SteamColors.bg-surface;

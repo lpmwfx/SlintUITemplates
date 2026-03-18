@@ -1,0 +1,47 @@
+{
+  "source": "ui/widgets/StepperCircle.slint",
+  "items": [
+    {
+      "name": "StepperCircle",
+      "kind": "Component",
+      "signature": "export component StepperCircle inherits Rectangle {",
+      "line": 7,
+      "doc": ""
+    },
+    {
+      "name": "completed",
+      "kind": "Property",
+      "signature": "in property <bool>   completed;",
+      "line": 10,
+      "doc": ""
+    },
+    {
+      "name": "is-active",
+      "kind": "Property",
+      "signature": "in property <bool>   is-active;",
+      "line": 13,
+      "doc": ""
+    },
+    {
+      "name": "index",
+      "kind": "Property",
+      "signature": "in property <int>    index;",
+      "line": 16,
+      "doc": ""
+    },
+    {
+      "name": "circle-size",
+      "kind": "Property",
+      "signature": "in property <length> circle-size;",
+      "line": 19,
+      "doc": ""
+    },
+    {
+      "name": "clicked",
+      "kind": "Callback",
+      "signature": "callback clicked();",
+      "line": 22,
+      "doc": ""
+    }
+  ]
+}

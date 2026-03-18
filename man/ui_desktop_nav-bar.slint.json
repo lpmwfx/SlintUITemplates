@@ -1,0 +1,47 @@
+{
+  "source": "ui/desktop/nav-bar.slint",
+  "items": [
+    {
+      "name": "NavBar",
+      "kind": "Component",
+      "signature": "export component NavBar inherits Rectangle {",
+      "line": 6,
+      "doc": ""
+    },
+    {
+      "name": "breadcrumb",
+      "kind": "Property",
+      "signature": "in property <string> breadcrumb: \"\";",
+      "line": 9,
+      "doc": ""
+    },
+    {
+      "name": "can-go-back",
+      "kind": "Property",
+      "signature": "in property <bool> can-go-back: false;",
+      "line": 12,
+      "doc": ""
+    },
+    {
+      "name": "go-back",
+      "kind": "Callback",
+      "signature": "callback go-back();",
+      "line": 15,
+      "doc": ""
+    },
+    {
+      "name": "navigate",
+      "kind": "Callback",
+      "signature": "callback navigate(string);",
+      "line": 18,
+      "doc": ""
+    },
+    {
+      "name": "back-icon",
+      "kind": "Property",
+      "signature": "private property <string> back-icon: \"\\u{2190}\";",
+      "line": 22,
+      "doc": ""
+    }
+  ]
+}

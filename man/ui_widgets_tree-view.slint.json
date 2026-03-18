@@ -1,0 +1,61 @@
+{
+  "source": "ui/widgets/tree-view.slint",
+  "items": [
+    {
+      "name": "TreeNode",
+      "kind": "Struct",
+      "signature": "export struct TreeNode {",
+      "line": 7,
+      "doc": ""
+    },
+    {
+      "name": "TreeView",
+      "kind": "Component",
+      "signature": "export component TreeView inherits Rectangle {",
+      "line": 18,
+      "doc": ""
+    },
+    {
+      "name": "nodes",
+      "kind": "Property",
+      "signature": "in property <[TreeNode]> nodes: [];",
+      "line": 21,
+      "doc": ""
+    },
+    {
+      "name": "selected",
+      "kind": "Property",
+      "signature": "in property <string> selected: \"\";",
+      "line": 24,
+      "doc": ""
+    },
+    {
+      "name": "selected-changed",
+      "kind": "Callback",
+      "signature": "callback selected-changed(string);",
+      "line": 27,
+      "doc": ""
+    },
+    {
+      "name": "toggle-expanded",
+      "kind": "Callback",
+      "signature": "callback toggle-expanded(string);",
+      "line": 30,
+      "doc": ""
+    },
+    {
+      "name": "bar-radius",
+      "kind": "Property",
+      "signature": "private property <length> bar-radius: Sizes.border-w-2;",
+      "line": 34,
+      "doc": ""
+    },
+    {
+      "name": "bar-opacity",
+      "kind": "Property",
+      "signature": "private property <float>  bar-opacity: Sizes.percent-60;",
+      "line": 37,
+      "doc": ""
+    }
+  ]
+}

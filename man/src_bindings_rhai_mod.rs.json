@@ -1,0 +1,26 @@
+{
+  "source": "src/bindings/rhai/mod.rs",
+  "items": [
+    {
+      "name": "api",
+      "kind": "Mod",
+      "signature": "pub mod api;",
+      "line": 2,
+      "doc": "Rhai-to-AppAdapter function bindings registered on the scripting engine."
+    },
+    {
+      "name": "dsl",
+      "kind": "Mod",
+      "signature": "pub mod dsl;",
+      "line": 4,
+      "doc": "DSL API — nav, toolbar, window, bg style registration."
+    },
+    {
+      "name": "build_engine",
+      "kind": "Fn",
+      "signature": "pub fn build_engine(adapter: Rc<RefCell<AppAdapter>>) -> Engine",
+      "line": 13,
+      "doc": "Build a Rhai Engine with all AppAdapter API functions registered."
+    }
+  ]
+}

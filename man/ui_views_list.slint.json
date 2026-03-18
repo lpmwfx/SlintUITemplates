@@ -1,0 +1,19 @@
+{
+  "source": "ui/views/list.slint",
+  "items": [
+    {
+      "name": "ListView",
+      "kind": "Component",
+      "signature": "export component ListView inherits Rectangle {",
+      "line": 9,
+      "doc": ""
+    },
+    {
+      "name": "header-title",
+      "kind": "Property",
+      "signature": "private property <string> header-title: \"List\";",
+      "line": 14,
+      "doc": ""
+    }
+  ]
+}

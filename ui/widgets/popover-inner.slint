@@ -1,17 +1,23 @@
-import { Colors, Spacing, Type, FluentIcons } from "../tokens/theme.slint";
+import { Colors, Spacing, Type, FluentIcons } from "../globals/theme.slint";
 
 /// P op ov er in ne r component.
+/// component `PopoverInner`.
 export component PopoverInner inherits Rectangle {
     /// Input property "title".
+    /// property `title`.
     in property <string> title: "";
     /// Input property "body".
+    /// property `body`.
     in property <string> body: "";
     /// Callback fired for c lo se r eq ue st ed.
+    /// callback `close-requested`.
     callback close-requested();
 
     /// Private property "border-px" used internally.
+    /// property `border-px`.
     private property <length> border-px: 1px;
     /// Private property "h-stretch" used internally.
+    /// property `h-stretch`.
     private property <int>    h-stretch: 1;
 
     background: Colors.bg-elevated;

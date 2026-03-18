@@ -1,14 +1,16 @@
-import { Colors, Spacing, Type } from "../tokens/theme.slint";
-import { Variants } from "../globals/Variants.slint";
+import { Colors, Spacing, Type } from "../globals/theme.slint";
+import { Variants } from "../state/variants.slint";
 import { Toggle } from "../widgets/toggle.slint";
 import { Button } from "../widgets/button.slint";
 
 /// Starter settings page for the `settings` navigation slot.
 ///
 /// Shows basic toggle controls and action buttons for shell demos.
+/// component `SettingsView`.
 export component SettingsView inherits Rectangle {
     background: Colors.bg-primary;
     /// Private property "page-title" used internally.
+    /// property `page-title`.
     private property <string> page-title: "Settings";
 
     VerticalLayout {

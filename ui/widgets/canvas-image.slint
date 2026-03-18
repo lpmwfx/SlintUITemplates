@@ -1,16 +1,20 @@
 // CanvasImage — image slot for Rust-rendered frames (tiny-skia or any painter).
 // Host sets `frame` each render tick. Placeholder shown when frame is empty.
 
-import { Colors, Spacing, Type, FluentIcons } from "../tokens/theme.slint";
-import { Sizes } from "../tokens/sizes.slint";
+import { Colors, Spacing, Type, FluentIcons } from "../globals/theme.slint";
+import { Sizes } from "../state/sizes.slint";
 
 /// C an va si ma ge component.
+/// component `CanvasImage`.
 export component CanvasImage inherits Rectangle {
     /// Input property "frame".
+    /// property `frame`.
     in property <image>  frame;
     /// Input property "show-placeholder".
+    /// property `show-placeholder`.
     in property <bool>   show-placeholder: true;
     /// Input property "placeholder-text".
+    /// property `placeholder-text`.
     in property <string> placeholder-text: "No frame — wire canvas-frame from Rust";
 
     preferred-width:  Sizes.panel-xl;

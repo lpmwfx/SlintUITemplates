@@ -1,0 +1,68 @@
+{
+  "source": "ui/widgets/pagination.slint",
+  "items": [
+    {
+      "name": "Pagination",
+      "kind": "Component",
+      "signature": "export component Pagination inherits Rectangle {",
+      "line": 6,
+      "doc": ""
+    },
+    {
+      "name": "current",
+      "kind": "Property",
+      "signature": "in property <int>   current: Sizes.one;",
+      "line": 9,
+      "doc": ""
+    },
+    {
+      "name": "total",
+      "kind": "Property",
+      "signature": "in property <int>   total: Sizes.one;",
+      "line": 12,
+      "doc": ""
+    },
+    {
+      "name": "pages",
+      "kind": "Property",
+      "signature": "in property <[int]> pages: [];",
+      "line": 15,
+      "doc": ""
+    },
+    {
+      "name": "changed",
+      "kind": "Callback",
+      "signature": "callback changed(int);",
+      "line": 18,
+      "doc": ""
+    },
+    {
+      "name": "nav-prev",
+      "kind": "Property",
+      "signature": "private property <string> nav-prev: \"‹\";",
+      "line": 23,
+      "doc": ""
+    },
+    {
+      "name": "nav-next",
+      "kind": "Property",
+      "signature": "private property <string> nav-next: \"›\";",
+      "line": 26,
+      "doc": ""
+    },
+    {
+      "name": "page-sep",
+      "kind": "Property",
+      "signature": "private property <string> page-sep: \" / \";",
+      "line": 29,
+      "doc": ""
+    },
+    {
+      "name": "disabled-alpha",
+      "kind": "Property",
+      "signature": "private property <float> disabled-alpha: 0.4;",
+      "line": 34,
+      "doc": ""
+    }
+  ]
+}

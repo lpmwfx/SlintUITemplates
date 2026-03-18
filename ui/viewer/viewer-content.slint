@@ -1,5 +1,5 @@
-import { Spacing } from "../tokens/theme.slint";
-import { ViewId } from "../globals/ViewId.slint";
+import { Spacing } from "../globals/theme.slint";
+import { ViewId } from "../state/view-id.slint";
 import { PageButtons }   from "page-buttons.slint";
 import { PageInputs }    from "page-inputs.slint";
 import { PageDisplay }   from "page-display.slint";
@@ -15,12 +15,16 @@ import { PagePopups }    from "page-popups.slint";
 import { PagePanels }    from "page-panels.slint";
 
 /// V ie we rc on te nt component.
+/// component `ViewerContent`.
 export component ViewerContent inherits Flickable {
     /// Input property "active-view".
+    /// property `active-view`.
     in property <string> active-view: "";
     /// Input property "canvas-frame".
+    /// property `canvas-frame`.
     in property <image>  canvas-frame;
     /// Input property "window-height".
+    /// property `window-height`.
     in property <length> window-height;
 
     viewport-width:  self.width;

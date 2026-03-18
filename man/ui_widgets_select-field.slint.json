@@ -1,0 +1,40 @@
+{
+  "source": "ui/widgets/select-field.slint",
+  "items": [
+    {
+      "name": "SelectField",
+      "kind": "Component",
+      "signature": "export component SelectField inherits Rectangle {",
+      "line": 7,
+      "doc": ""
+    },
+    {
+      "name": "options",
+      "kind": "Property",
+      "signature": "in property <[string]> options: [];",
+      "line": 10,
+      "doc": ""
+    },
+    {
+      "name": "selected",
+      "kind": "Property",
+      "signature": "in property <string>   selected: \"\";",
+      "line": 13,
+      "doc": ""
+    },
+    {
+      "name": "placeholder",
+      "kind": "Property",
+      "signature": "in property <string>   placeholder: \"Select...\";",
+      "line": 16,
+      "doc": ""
+    },
+    {
+      "name": "changed",
+      "kind": "Callback",
+      "signature": "callback changed(string);",
+      "line": 19,
+      "doc": ""
+    }
+  ]
+}

@@ -1,0 +1,376 @@
+{
+  "source": "ui/state/Theme.slint",
+  "items": [
+    {
+      "name": "material",
+      "kind": "Property",
+      "signature": "in property <string> material: \"solid\";  // \"solid\" | \"mica\" | \"acrylic\"",
+      "line": 26,
+      "doc": ""
+    },
+    {
+      "name": "dark",
+      "kind": "Property",
+      "signature": "in property <bool>   dark: Palette.color-scheme == ColorScheme.dark;",
+      "line": 29,
+      "doc": ""
+    },
+    {
+      "name": "accent-override",
+      "kind": "Property",
+      "signature": "in property <color>  accent-override: transparent;  // alpha=0 → derive from palette",
+      "line": 32,
+      "doc": ""
+    },
+    {
+      "name": "bg-primary",
+      "kind": "Property",
+      "signature": "out property <color> bg-primary:",
+      "line": 36,
+      "doc": ""
+    },
+    {
+      "name": "bg-surface",
+      "kind": "Property",
+      "signature": "out property <color> bg-surface:",
+      "line": 43,
+      "doc": ""
+    },
+    {
+      "name": "bg-elevated",
+      "kind": "Property",
+      "signature": "out property <color> bg-elevated:",
+      "line": 50,
+      "doc": ""
+    },
+    {
+      "name": "text-primary",
+      "kind": "Property",
+      "signature": "out property <color> text-primary:",
+      "line": 57,
+      "doc": ""
+    },
+    {
+      "name": "text-secondary",
+      "kind": "Property",
+      "signature": "out property <color> text-secondary:",
+      "line": 64,
+      "doc": ""
+    },
+    {
+      "name": "text-disabled",
+      "kind": "Property",
+      "signature": "out property <color> text-disabled:",
+      "line": 71,
+      "doc": ""
+    },
+    {
+      "name": "accent",
+      "kind": "Property",
+      "signature": "out property <color> accent:",
+      "line": 78,
+      "doc": ""
+    },
+    {
+      "name": "accent-hover",
+      "kind": "Property",
+      "signature": "out property <color> accent-hover:",
+      "line": 86,
+      "doc": ""
+    },
+    {
+      "name": "accent-text",
+      "kind": "Property",
+      "signature": "out property <color> accent-text:",
+      "line": 93,
+      "doc": ""
+    },
+    {
+      "name": "error",
+      "kind": "Property",
+      "signature": "out property <color> error:   #C42B1C;",
+      "line": 100,
+      "doc": ""
+    },
+    {
+      "name": "success",
+      "kind": "Property",
+      "signature": "out property <color> success: #0F7B0F;",
+      "line": 103,
+      "doc": ""
+    },
+    {
+      "name": "warning",
+      "kind": "Property",
+      "signature": "out property <color> warning: #9D5D00;",
+      "line": 106,
+      "doc": ""
+    },
+    {
+      "name": "border",
+      "kind": "Property",
+      "signature": "out property <color> border:",
+      "line": 110,
+      "doc": ""
+    },
+    {
+      "name": "border-strong",
+      "kind": "Property",
+      "signature": "out property <color> border-strong:",
+      "line": 117,
+      "doc": ""
+    },
+    {
+      "name": "border-focus",
+      "kind": "Property",
+      "signature": "out property <color> border-focus: accent;",
+      "line": 124,
+      "doc": ""
+    },
+    {
+      "name": "shadow",
+      "kind": "Property",
+      "signature": "out property <color> shadow:",
+      "line": 128,
+      "doc": ""
+    },
+    {
+      "name": "transparent",
+      "kind": "Property",
+      "signature": "out property <color> transparent: #00000000;",
+      "line": 137,
+      "doc": ""
+    },
+    {
+      "name": "overlay",
+      "kind": "Property",
+      "signature": "out property <color> overlay: #00000040;",
+      "line": 140,
+      "doc": ""
+    },
+    {
+      "name": "bg-panel",
+      "kind": "Property",
+      "signature": "out property <color> bg-panel:     bg-surface;",
+      "line": 145,
+      "doc": ""
+    },
+    {
+      "name": "handle",
+      "kind": "Property",
+      "signature": "out property <color> handle:       border;",
+      "line": 148,
+      "doc": ""
+    },
+    {
+      "name": "handle-hover",
+      "kind": "Property",
+      "signature": "out property <color> handle-hover: border-strong;",
+      "line": 151,
+      "doc": ""
+    },
+    {
+      "name": "danger",
+      "kind": "Property",
+      "signature": "out property <color> danger:       error;",
+      "line": 154,
+      "doc": ""
+    },
+    {
+      "name": "text-muted",
+      "kind": "Property",
+      "signature": "out property <color> text-muted:   text-secondary;",
+      "line": 157,
+      "doc": ""
+    },
+    {
+      "name": "platform",
+      "kind": "Property",
+      "signature": "in property <string> platform: Variants.windows;",
+      "line": 165,
+      "doc": ""
+    },
+    {
+      "name": "radius-sm",
+      "kind": "Property",
+      "signature": "out property <length> radius-sm:",
+      "line": 178,
+      "doc": ""
+    },
+    {
+      "name": "radius-md",
+      "kind": "Property",
+      "signature": "out property <length> radius-md:",
+      "line": 182,
+      "doc": ""
+    },
+    {
+      "name": "radius-lg",
+      "kind": "Property",
+      "signature": "out property <length> radius-lg:",
+      "line": 186,
+      "doc": ""
+    },
+    {
+      "name": "radius-xl",
+      "kind": "Property",
+      "signature": "out property <length> radius-xl:",
+      "line": 190,
+      "doc": ""
+    },
+    {
+      "name": "radius-circle",
+      "kind": "Property",
+      "signature": "out property <length> radius-circle:",
+      "line": 194,
+      "doc": ""
+    },
+    {
+      "name": "touch-sm",
+      "kind": "Property",
+      "signature": "out property <length> touch-sm:",
+      "line": 200,
+      "doc": ""
+    },
+    {
+      "name": "touch-md",
+      "kind": "Property",
+      "signature": "out property <length> touch-md:",
+      "line": 204,
+      "doc": ""
+    },
+    {
+      "name": "touch-lg",
+      "kind": "Property",
+      "signature": "out property <length> touch-lg:",
+      "line": 208,
+      "doc": ""
+    },
+    {
+      "name": "font-caption",
+      "kind": "Property",
+      "signature": "out property <length> font-caption:",
+      "line": 214,
+      "doc": ""
+    },
+    {
+      "name": "font-body",
+      "kind": "Property",
+      "signature": "out property <length> font-body:",
+      "line": 218,
+      "doc": ""
+    },
+    {
+      "name": "font-subtitle",
+      "kind": "Property",
+      "signature": "out property <length> font-subtitle:",
+      "line": 222,
+      "doc": ""
+    },
+    {
+      "name": "font-heading",
+      "kind": "Property",
+      "signature": "out property <length> font-heading:",
+      "line": 226,
+      "doc": ""
+    },
+    {
+      "name": "font-title",
+      "kind": "Property",
+      "signature": "out property <length> font-title:",
+      "line": 230,
+      "doc": ""
+    },
+    {
+      "name": "font-weight-regular",
+      "kind": "Property",
+      "signature": "out property <int> font-weight-regular:",
+      "line": 236,
+      "doc": ""
+    },
+    {
+      "name": "font-weight-medium",
+      "kind": "Property",
+      "signature": "out property <int> font-weight-medium:",
+      "line": 240,
+      "doc": ""
+    },
+    {
+      "name": "font-weight-bold",
+      "kind": "Property",
+      "signature": "out property <int> font-weight-bold:",
+      "line": 244,
+      "doc": ""
+    },
+    {
+      "name": "space-xs",
+      "kind": "Property",
+      "signature": "out property <length> space-xs:",
+      "line": 250,
+      "doc": ""
+    },
+    {
+      "name": "space-sm",
+      "kind": "Property",
+      "signature": "out property <length> space-sm:",
+      "line": 254,
+      "doc": ""
+    },
+    {
+      "name": "space-md",
+      "kind": "Property",
+      "signature": "out property <length> space-md:",
+      "line": 258,
+      "doc": ""
+    },
+    {
+      "name": "space-lg",
+      "kind": "Property",
+      "signature": "out property <length> space-lg:",
+      "line": 262,
+      "doc": ""
+    },
+    {
+      "name": "space-xl",
+      "kind": "Property",
+      "signature": "out property <length> space-xl:",
+      "line": 266,
+      "doc": ""
+    },
+    {
+      "name": "nav-rail-width",
+      "kind": "Property",
+      "signature": "out property <length> nav-rail-width:",
+      "line": 272,
+      "doc": ""
+    },
+    {
+      "name": "nav-bar-height",
+      "kind": "Property",
+      "signature": "out property <length> nav-bar-height:",
+      "line": 276,
+      "doc": ""
+    },
+    {
+      "name": "top-bar-height",
+      "kind": "Property",
+      "signature": "out property <length> top-bar-height:",
+      "line": 280,
+      "doc": ""
+    },
+    {
+      "name": "touch-target",
+      "kind": "Property",
+      "signature": "out property <length> touch-target:",
+      "line": 287,
+      "doc": ""
+    },
+    {
+      "name": "nav-style",
+      "kind": "Property",
+      "signature": "out property <string> nav-style:",
+      "line": 291,
+      "doc": ""
+    }
+  ]
+}

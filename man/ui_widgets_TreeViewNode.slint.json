@@ -1,0 +1,75 @@
+{
+  "source": "ui/widgets/TreeViewNode.slint",
+  "items": [
+    {
+      "name": "TreeViewNode",
+      "kind": "Component",
+      "signature": "export component TreeViewNode inherits Rectangle {",
+      "line": 7,
+      "doc": ""
+    },
+    {
+      "name": "node-id",
+      "kind": "Property",
+      "signature": "in property <string> node-id;",
+      "line": 10,
+      "doc": ""
+    },
+    {
+      "name": "label",
+      "kind": "Property",
+      "signature": "in property <string> label;",
+      "line": 13,
+      "doc": ""
+    },
+    {
+      "name": "icon",
+      "kind": "Property",
+      "signature": "in property <string> icon;",
+      "line": 16,
+      "doc": ""
+    },
+    {
+      "name": "level",
+      "kind": "Property",
+      "signature": "in property <int>    level;",
+      "line": 19,
+      "doc": ""
+    },
+    {
+      "name": "expanded",
+      "kind": "Property",
+      "signature": "in property <bool>   expanded;",
+      "line": 22,
+      "doc": ""
+    },
+    {
+      "name": "leaf",
+      "kind": "Property",
+      "signature": "in property <bool>   leaf;",
+      "line": 25,
+      "doc": ""
+    },
+    {
+      "name": "is-selected",
+      "kind": "Property",
+      "signature": "in property <bool>   is-selected: false;",
+      "line": 28,
+      "doc": ""
+    },
+    {
+      "name": "selected",
+      "kind": "Callback",
+      "signature": "callback selected();",
+      "line": 31,
+      "doc": ""
+    },
+    {
+      "name": "toggle-expanded",
+      "kind": "Callback",
+      "signature": "callback toggle-expanded();",
+      "line": 34,
+      "doc": ""
+    }
+  ]
+}

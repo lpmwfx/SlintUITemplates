@@ -1,42 +1,58 @@
-import { Colors, Spacing, Type, FluentIcons } from "../tokens/theme.slint";
-import { Sizes } from "../tokens/sizes.slint";
+import { Colors, Spacing, Type, FluentIcons } from "../globals/theme.slint";
+import { Sizes } from "../state/sizes.slint";
 
 /// M es sa ge ba r component.
+/// component `MessageBar`.
 export component MessageBar inherits Rectangle {
     /// Input property "message".
+    /// property `message`.
     in property <string> message: "";
     /// Input property "variant".
+    /// property `variant`.
     in property <string> variant: "info";   // info | warning | error | success
     /// Input property "action-label".
+    /// property `action-label`.
     in property <string> action-label: "";
     /// Input property "closable".
+    /// property `closable`.
     in property <bool>   closable: true;
     /// Callback fired for a ct io n.
+    /// callback `action`.
     callback action();
     /// Callback fired for c lo se d.
+    /// callback `closed`.
     callback closed();
 
     /// Private property "v-error" used internally.
+    /// property `v-error`.
     private property <string> v-error:   "error";
     /// Private property "v-warning" used internally.
+    /// property `v-warning`.
     private property <string> v-warning: "warning";
     /// Private property "v-success" used internally.
+    /// property `v-success`.
     private property <string> v-success: "success";
     /// Private property "border-px" used internally.
+    /// property `border-px`.
     private property <length> border-px: 1px;
     /// Private property "bar-w" used internally.
+    /// property `bar-w`.
     private property <length> bar-w:     3px;
     /// Private property "btn-shrink" used internally.
+    /// property `btn-shrink`.
     private property <int>    btn-shrink: 0;
     /// Private property "text-grow" used internally.
+    /// property `text-grow`.
     private property <int>    text-grow:  1;
     /// Private property "accent-color" used internally.
+    /// property `accent-color`.
     private property <color> accent-color:
         variant == root.v-error   ? Colors.error   :
         variant == root.v-warning ? Colors.warning :
         variant == root.v-success ? Colors.success :
         Colors.accent;
     /// Private property "icon-glyph" used internally.
+    /// property `icon-glyph`.
     private property <string> icon-glyph:
         variant == root.v-error   ? "\u{E783}" :
         variant == root.v-warning ? "\u{E7BA}" :

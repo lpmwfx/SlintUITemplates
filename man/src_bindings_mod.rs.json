@@ -1,0 +1,12 @@
+{
+  "source": "src/bindings/mod.rs",
+  "items": [
+    {
+      "name": "rhai",
+      "kind": "Mod",
+      "signature": "pub mod rhai;",
+      "line": 2,
+      "doc": "Rhai scripting engine integration for runtime UI automation."
+    }
+  ]
+}

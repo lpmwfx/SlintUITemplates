@@ -1,0 +1,173 @@
+{
+  "source": "ui/state/theme/mica.slint",
+  "items": [
+    {
+      "name": "dark-bg-primary",
+      "kind": "Property",
+      "signature": "out property <color> dark-bg-primary:     transparent;",
+      "line": 11,
+      "doc": ""
+    },
+    {
+      "name": "dark-bg-surface",
+      "kind": "Property",
+      "signature": "out property <color> dark-bg-surface:     #FFFFFF0F;   // LayerFillColorDefault  6%",
+      "line": 14,
+      "doc": ""
+    },
+    {
+      "name": "dark-bg-elevated",
+      "kind": "Property",
+      "signature": "out property <color> dark-bg-elevated:    #FFFFFF18;   // LayerFillColorSecondary 9%",
+      "line": 17,
+      "doc": ""
+    },
+    {
+      "name": "dark-text-primary",
+      "kind": "Property",
+      "signature": "out property <color> dark-text-primary:   #FFFFFFFF;   // TextFillColorPrimary   dark 100%",
+      "line": 20,
+      "doc": ""
+    },
+    {
+      "name": "dark-text-secondary",
+      "kind": "Property",
+      "signature": "out property <color> dark-text-secondary: #FFFFFFC8;   // TextFillColorSecondary dark 78%",
+      "line": 23,
+      "doc": ""
+    },
+    {
+      "name": "dark-text-disabled",
+      "kind": "Property",
+      "signature": "out property <color> dark-text-disabled:  #FFFFFF5C;   // TextFillColorDisabled  dark 36%",
+      "line": 26,
+      "doc": ""
+    },
+    {
+      "name": "dark-accent",
+      "kind": "Property",
+      "signature": "out property <color> dark-accent:         #60CDFF;",
+      "line": 29,
+      "doc": ""
+    },
+    {
+      "name": "dark-accent-hover",
+      "kind": "Property",
+      "signature": "out property <color> dark-accent-hover:   #4CC2F1;",
+      "line": 32,
+      "doc": ""
+    },
+    {
+      "name": "dark-accent-text",
+      "kind": "Property",
+      "signature": "out property <color> dark-accent-text:    #000000;",
+      "line": 35,
+      "doc": ""
+    },
+    {
+      "name": "dark-border",
+      "kind": "Property",
+      "signature": "out property <color> dark-border:         #FFFFFF1A;   // SubtleFillColorSecondary dark",
+      "line": 38,
+      "doc": ""
+    },
+    {
+      "name": "dark-border-strong",
+      "kind": "Property",
+      "signature": "out property <color> dark-border-strong:  #FFFFFF33;",
+      "line": 41,
+      "doc": ""
+    },
+    {
+      "name": "dark-shadow",
+      "kind": "Property",
+      "signature": "out property <color> dark-shadow:         #00000040;",
+      "line": 44,
+      "doc": ""
+    },
+    {
+      "name": "light-bg-primary",
+      "kind": "Property",
+      "signature": "out property <color> light-bg-primary:     transparent;",
+      "line": 49,
+      "doc": ""
+    },
+    {
+      "name": "light-bg-surface",
+      "kind": "Property",
+      "signature": "out property <color> light-bg-surface:     #FFFFFFB2;  // LayerFillColorDefault  light 70%",
+      "line": 52,
+      "doc": ""
+    },
+    {
+      "name": "light-bg-elevated",
+      "kind": "Property",
+      "signature": "out property <color> light-bg-elevated:    #FFFFFFCC;  // LayerFillColorSecondary light 80%",
+      "line": 55,
+      "doc": ""
+    },
+    {
+      "name": "light-text-primary",
+      "kind": "Property",
+      "signature": "out property <color> light-text-primary:   #000000E4;  // TextFillColorPrimary   light 89%",
+      "line": 58,
+      "doc": ""
+    },
+    {
+      "name": "light-text-secondary",
+      "kind": "Property",
+      "signature": "out property <color> light-text-secondary: #0000009A;  // TextFillColorSecondary light 60%",
+      "line": 61,
+      "doc": ""
+    },
+    {
+      "name": "light-text-disabled",
+      "kind": "Property",
+      "signature": "out property <color> light-text-disabled:  #0000005C;  // TextFillColorDisabled  light 36%",
+      "line": 64,
+      "doc": ""
+    },
+    {
+      "name": "light-accent",
+      "kind": "Property",
+      "signature": "out property <color> light-accent:         #0078D4;",
+      "line": 67,
+      "doc": ""
+    },
+    {
+      "name": "light-accent-hover",
+      "kind": "Property",
+      "signature": "out property <color> light-accent-hover:   #106EBE;",
+      "line": 70,
+      "doc": ""
+    },
+    {
+      "name": "light-accent-text",
+      "kind": "Property",
+      "signature": "out property <color> light-accent-text:    #FFFFFF;",
+      "line": 73,
+      "doc": ""
+    },
+    {
+      "name": "light-border",
+      "kind": "Property",
+      "signature": "out property <color> light-border:         #0000001A;  // SubtleFillColorSecondary light",
+      "line": 76,
+      "doc": ""
+    },
+    {
+      "name": "light-border-strong",
+      "kind": "Property",
+      "signature": "out property <color> light-border-strong:  #00000033;",
+      "line": 79,
+      "doc": ""
+    },
+    {
+      "name": "light-shadow",
+      "kind": "Property",
+      "signature": "out property <color> light-shadow:         #0000000F;",
+      "line": 82,
+      "doc": ""
+    }
+  ]
+}

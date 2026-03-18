@@ -1,0 +1,47 @@
+{
+  "source": "ui/viewer/page-buttons.slint",
+  "items": [
+    {
+      "name": "PageButtons",
+      "kind": "Component",
+      "signature": "export component PageButtons inherits VerticalLayout {",
+      "line": 11,
+      "doc": ""
+    },
+    {
+      "name": "t1",
+      "kind": "Property",
+      "signature": "private property <bool> t1: true;",
+      "line": 16,
+      "doc": ""
+    },
+    {
+      "name": "t2",
+      "kind": "Property",
+      "signature": "private property <bool> t2: false;",
+      "line": 19,
+      "doc": ""
+    },
+    {
+      "name": "t3",
+      "kind": "Property",
+      "signature": "private property <bool> t3: true;",
+      "line": 22,
+      "doc": ""
+    },
+    {
+      "name": "section-button",
+      "kind": "Property",
+      "signature": "private property <string> section-button: \"Button\";",
+      "line": 25,
+      "doc": ""
+    },
+    {
+      "name": "section-toggle",
+      "kind": "Property",
+      "signature": "private property <string> section-toggle: \"Toggle\";",
+      "line": 28,
+      "doc": ""
+    }
+  ]
+}

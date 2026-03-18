@@ -1,0 +1,61 @@
+{
+  "source": "ui/widgets/stepper.slint",
+  "items": [
+    {
+      "name": "StepItem",
+      "kind": "Struct",
+      "signature": "export struct StepItem {",
+      "line": 7,
+      "doc": ""
+    },
+    {
+      "name": "Stepper",
+      "kind": "Component",
+      "signature": "export component Stepper inherits Rectangle {",
+      "line": 14,
+      "doc": ""
+    },
+    {
+      "name": "steps",
+      "kind": "Property",
+      "signature": "in property <[StepItem]> steps: [];",
+      "line": 17,
+      "doc": ""
+    },
+    {
+      "name": "active",
+      "kind": "Property",
+      "signature": "in property <int>    active: Sizes.zero;",
+      "line": 20,
+      "doc": ""
+    },
+    {
+      "name": "step-changed",
+      "kind": "Callback",
+      "signature": "callback step-changed(int);",
+      "line": 23,
+      "doc": ""
+    },
+    {
+      "name": "circle-size",
+      "kind": "Property",
+      "signature": "private property <length> circle-size:    Spacing.control-md - Spacing.xs;",
+      "line": 28,
+      "doc": ""
+    },
+    {
+      "name": "connector-w",
+      "kind": "Property",
+      "signature": "private property <length> connector-w:    Spacing.xl;",
+      "line": 31,
+      "doc": ""
+    },
+    {
+      "name": "connector-h",
+      "kind": "Property",
+      "signature": "private property <length> connector-h:    Sizes.border-w-2;",
+      "line": 34,
+      "doc": ""
+    }
+  ]
+}

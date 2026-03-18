@@ -1,17 +1,23 @@
-import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Colors, Spacing, Type } from "../globals/theme.slint";
 
 /// L ab el component.
+/// component `Label`.
 export component Label inherits HorizontalLayout {
     /// Input property "text".
+    /// property `text`.
     in property <string> text: "";
     /// Input property "required".
+    /// property `required`.
     in property <bool>   required: false;
     /// Input property "disabled".
+    /// property `disabled`.
     in property <bool>   disabled: false;
 
     /// Private property "half-xs" used internally.
+    /// property `half-xs`.
     private property <length> half-xs:  Spacing.xs / 2;
     /// Private property "req-mark" used internally.
+    /// property `req-mark`.
     private property <string> req-mark: " *";
 
     spacing: root.half-xs;

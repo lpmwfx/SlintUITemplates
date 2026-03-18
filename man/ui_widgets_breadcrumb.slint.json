@@ -1,0 +1,40 @@
+{
+  "source": "ui/widgets/breadcrumb.slint",
+  "items": [
+    {
+      "name": "BreadcrumbItem",
+      "kind": "Struct",
+      "signature": "export struct BreadcrumbItem {",
+      "line": 6,
+      "doc": ""
+    },
+    {
+      "name": "Breadcrumb",
+      "kind": "Component",
+      "signature": "export component Breadcrumb inherits Rectangle {",
+      "line": 13,
+      "doc": ""
+    },
+    {
+      "name": "items",
+      "kind": "Property",
+      "signature": "in property <[BreadcrumbItem]> items: [];",
+      "line": 16,
+      "doc": ""
+    },
+    {
+      "name": "separator",
+      "kind": "Property",
+      "signature": "in property <string>           separator: \"›\";",
+      "line": 19,
+      "doc": ""
+    },
+    {
+      "name": "navigate",
+      "kind": "Callback",
+      "signature": "callback navigate(string);",
+      "line": 22,
+      "doc": ""
+    }
+  ]
+}

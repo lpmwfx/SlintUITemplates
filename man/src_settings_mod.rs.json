@@ -1,0 +1,82 @@
+{
+  "source": "src/settings/mod.rs",
+  "items": [
+    {
+      "name": "apply",
+      "kind": "Mod",
+      "signature": "pub mod apply;",
+      "line": 2,
+      "doc": "Applies loaded settings to the live Slint UI globals."
+    },
+    {
+      "name": "AppSettings",
+      "kind": "Struct",
+      "signature": "pub struct AppSettings",
+      "line": 11,
+      "doc": "Top-level application settings loaded from a TOML configuration file.\nA pp se tt in gs struct."
+    },
+    {
+      "name": "ZoomSettings",
+      "kind": "Struct",
+      "signature": "pub struct ZoomSettings",
+      "line": 29,
+      "doc": "UI zoom / DPI-scale configuration.\nZ oo ms et ti ng s struct."
+    },
+    {
+      "name": "ThemeMode",
+      "kind": "Enum",
+      "signature": "pub enum ThemeMode",
+      "line": 38,
+      "doc": "Light, dark, or system-detected colour-scheme selection.\nT he me mo de enum."
+    },
+    {
+      "name": "ThemeSettings",
+      "kind": "Struct",
+      "signature": "pub struct ThemeSettings",
+      "line": 47,
+      "doc": "Theme configuration: colour-scheme mode and optional accent override.\nT he me se tt in gs struct."
+    },
+    {
+      "name": "IconStyle",
+      "kind": "Enum",
+      "signature": "pub enum IconStyle",
+      "line": 58,
+      "doc": "Filled or outlined icon variant for the Fluent icon set.\nI co ns ty le enum."
+    },
+    {
+      "name": "IconSettings",
+      "kind": "Struct",
+      "signature": "pub struct IconSettings",
+      "line": 66,
+      "doc": "Icon appearance configuration: style variant and colour strategy.\nI co ns et ti ng s struct."
+    },
+    {
+      "name": "FontSettings",
+      "kind": "Struct",
+      "signature": "pub struct FontSettings",
+      "line": 76,
+      "doc": "Font family and scale configuration.\nF on ts et ti ng s struct."
+    },
+    {
+      "name": "from_file",
+      "kind": "Fn",
+      "signature": "pub fn from_file(path: &std::path::Path) -> Result<Self, Box<dyn std::error::Error>>",
+      "line": 87,
+      "doc": "Deserializes settings from a TOML file at the given path."
+    },
+    {
+      "name": "from_file_or_default",
+      "kind": "Fn",
+      "signature": "pub fn from_file_or_default(path: &std::path::Path) -> Self",
+      "line": 92,
+      "doc": "Load from file, falling back to defaults if the file is absent or unparseable."
+    },
+    {
+      "name": "to_file",
+      "kind": "Fn",
+      "signature": "pub fn to_file(&self, path: &std::path::Path) -> Result<(), Box<dyn std::error::Error>>",
+      "line": 97,
+      "doc": "Serializes settings to a TOML file, creating parent directories if needed."
+    }
+  ]
+}

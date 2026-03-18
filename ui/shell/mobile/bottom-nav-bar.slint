@@ -1,25 +1,32 @@
 // Material 3 NavigationBar (bottom nav) — 3-5 destinations.
 // Reference: https://m3.material.io/components/navigation-bar
 
-import { MaterialColors, MaterialSpacing } from "../../tokens/material/mod.slint";
-import { Sizes }         from "../../tokens/sizes.slint";
+import { MaterialColors, MaterialSpacing } from "../../globals/theme/material/mod.slint";
+import { Sizes }         from "../../state/sizes.slint";
 import { NavItem }       from "../types.slint";
 import { BottomNavItem } from "BottomNavItem.slint";
 
 /// B ot to mn av ba r component.
+/// component `BottomNavBar`.
 export component BottomNavBar inherits Rectangle {
     /// Input property "items".
+    /// property `items`.
     in property <[NavItem]> items;
     /// Input property "active".
+    /// property `active`.
     in property <string>    active: "";
     /// Input property "icon-font".
+    /// property `icon-font`.
     in property <string>    icon-font: "Segoe Fluent Icons";
     /// Callback fired for n av ig at e.
+    /// callback `navigate`.
     callback navigate(string);
 
     /// Private property "pad-top" used internally.
+    /// property `pad-top`.
     private property <length> pad-top: Sizes.comp-12;
     /// Private property "pill-w" used internally.
+    /// property `pill-w`.
     private property <length> pill-w:  Sizes.comp-64;
 
     height: MaterialSpacing.bottom-nav-bar-height;

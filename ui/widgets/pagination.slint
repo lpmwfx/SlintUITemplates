@@ -1,27 +1,36 @@
-import { Colors, Spacing, Type } from "../tokens/theme.slint";
-import { Sizes } from "../tokens/sizes.slint";
+import { Colors, Spacing, Type } from "../globals/theme.slint";
+import { Sizes } from "../state/sizes.slint";
 
 /// Pagination control with previous/next buttons and optional explicit page chips.
+/// component `Pagination`.
 export component Pagination inherits Rectangle {
     /// Currently selected page number.
+    /// property `current`.
     in property <int>   current: Sizes.one;
     /// Highest available page number.
+    /// property `total`.
     in property <int>   total: Sizes.one;
     /// Explicit page numbers to render as clickable chips. Empty falls back to `current / total`.
+    /// property `pages`.
     in property <[int]> pages: [];
     /// Fired when the user requests a different page.
+    /// callback `changed`.
     callback changed(int);
 
     // ── String constants ────────────────────────────────────────────────
     /// Private property "nav-prev" used internally.
+    /// property `nav-prev`.
     private property <string> nav-prev: "‹";
     /// Private property "nav-next" used internally.
+    /// property `nav-next`.
     private property <string> nav-next: "›";
     /// Private property "page-sep" used internally.
+    /// property `page-sep`.
     private property <string> page-sep: " / ";
 
     // ── Opacity constants ───────────────────────────────────────────────
     /// Private property "disabled-alpha" used internally.
+    /// property `disabled-alpha`.
     private property <float> disabled-alpha: 0.4;
 
     height: Spacing.xl;

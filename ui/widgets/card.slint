@@ -1,14 +1,18 @@
-import { Colors, Spacing, Type } from "../tokens/theme.slint";
-import { Sizes } from "../tokens/sizes.slint";
+import { Colors, Spacing, Type } from "../globals/theme.slint";
+import { Sizes } from "../state/sizes.slint";
 
 /// C ar d component.
+/// component `Card`.
 export component Card inherits Rectangle {
     /// Input property "title".
+    /// property `title`.
     in property <string> title: "";
     /// Input property "subtitle".
+    /// property `subtitle`.
     in property <string> subtitle: "";
 
     /// Private property "shadow-y" used internally.
+    /// property `shadow-y`.
     private property <length> shadow-y: Sizes.border-w-2;
 
     background: Colors.bg-elevated;

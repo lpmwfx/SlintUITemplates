@@ -2,31 +2,40 @@
 // Composes GameTopBar + content area + CompactNav.
 // Caller places view content via @children.
 
-import { Colors } from "../../tokens/theme.slint";
-import { SteamColors, SteamSpacing } from "../../tokens/steam/mod.slint";
-import { Sizes } from "../../tokens/sizes.slint";
-import { Variants } from "../../globals/Variants.slint";
+import { Colors } from "../../globals/theme.slint";
+import { SteamColors, SteamSpacing } from "../../globals/theme/steam/mod.slint";
+import { Sizes } from "../../state/sizes.slint";
+import { Variants } from "../../state/variants.slint";
 import { NavItem } from "../types.slint";
 import { GameTopBar } from "GameTopBar.slint";
 import { CompactNav } from "CompactNav.slint";
 
 /// CompactShell — fullscreen shell for Steam Deck, handheld, and small-screen targets.
+/// component `CompactShell`.
 export component CompactShell inherits Rectangle {
     /// Page or app title shown in the top bar.
+    /// property `title`.
     in property <string> title;
     /// Navigation items rendered in the bottom bar or side rail.
+    /// property `nav-items`.
     in property <[NavItem]> nav-items;
     /// Id of the currently active view / slot.
+    /// property `active-view`.
     in property <string> active-view;
     /// Whether the top bar is visible.
+    /// property `show-topbar`.
     in property <bool> show-topbar: true;
     /// Whether the back button in the top bar is shown.
+    /// property `show-back`.
     in property <bool> show-back: false;
     /// Nav chrome mode forwarded to CompactNav.
+    /// property `nav-mode`.
     in property <string> nav-mode: Variants.nav-bottom;
     /// Fired when a nav item is tapped.
+    /// callback `navigate`.
     callback navigate(string);
     /// Fired when the top-bar back button is tapped.
+    /// callback `back`.
     callback back();
 
     background: SteamColors.bg-primary;

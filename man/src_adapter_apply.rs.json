@@ -1,0 +1,26 @@
+{
+  "source": "src/adapter/apply.rs",
+  "items": [
+    {
+      "name": "apply_settings",
+      "kind": "Fn",
+      "signature": "pub fn apply_settings(&self, settings: &crate::settings::AppSettings)",
+      "line": 32,
+      "doc": "Apply settings to the Slint UI — also caches zoom scale."
+    },
+    {
+      "name": "apply_theme",
+      "kind": "Fn",
+      "signature": "pub fn apply_theme(&self)",
+      "line": 38,
+      "doc": "Sync UI theme with OS dark mode preference."
+    },
+    {
+      "name": "apply_grid",
+      "kind": "Fn",
+      "signature": "pub fn apply_grid(&self, path: &Path) -> Result<(), Box<dyn std::error::Error>>",
+      "line": 43,
+      "doc": "Load grid layout from config file, apply row ratios, and update cache."
+    }
+  ]
+}

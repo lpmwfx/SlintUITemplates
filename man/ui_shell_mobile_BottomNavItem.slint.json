@@ -1,0 +1,61 @@
+{
+  "source": "ui/shell/mobile/BottomNavItem.slint",
+  "items": [
+    {
+      "name": "BottomNavItem",
+      "kind": "Component",
+      "signature": "export component BottomNavItem inherits Rectangle {",
+      "line": 8,
+      "doc": ""
+    },
+    {
+      "name": "item-id",
+      "kind": "Property",
+      "signature": "in property <string> item-id;",
+      "line": 11,
+      "doc": ""
+    },
+    {
+      "name": "icon",
+      "kind": "Property",
+      "signature": "in property <string> icon;",
+      "line": 14,
+      "doc": ""
+    },
+    {
+      "name": "label",
+      "kind": "Property",
+      "signature": "in property <string> label;",
+      "line": 17,
+      "doc": ""
+    },
+    {
+      "name": "icon-font",
+      "kind": "Property",
+      "signature": "in property <string> icon-font;",
+      "line": 20,
+      "doc": ""
+    },
+    {
+      "name": "is-active",
+      "kind": "Property",
+      "signature": "in property <bool>   is-active: false;",
+      "line": 23,
+      "doc": ""
+    },
+    {
+      "name": "pill-w",
+      "kind": "Property",
+      "signature": "in property <length> pill-w;",
+      "line": 26,
+      "doc": ""
+    },
+    {
+      "name": "clicked",
+      "kind": "Callback",
+      "signature": "callback clicked();",
+      "line": 29,
+      "doc": ""
+    }
+  ]
+}

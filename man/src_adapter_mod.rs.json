@@ -1,0 +1,33 @@
+{
+  "source": "src/adapter/mod.rs",
+  "items": [
+    {
+      "name": "AppAdapter_adp",
+      "kind": "Struct",
+      "signature": "pub struct AppAdapter_adp",
+      "line": 30,
+      "doc": "Adapter layer between host app and Slint UI window.\nOwns AppWindow handle, ViewConfig registry, menu actions, and all cached state.\n\n# Example\n```rust,no_run\nuse slint_ui_templates::AppAdapter;\nuse slint_ui_templates::dsl::{AppDsl, Nav};\n\nlet mut app = AppAdapter::new().unwrap();\nlet dsl = AppDsl::builder(\"My App\")\n    .nav(vec![Nav::new(\"home\", \"Home\", \"home\")])\n    .build().unwrap();\napp.apply_dsl(&dsl);\napp.run().unwrap();\n```\nA pp ad ap te r adp struct."
+    },
+    {
+      "name": "new",
+      "kind": "Fn",
+      "signature": "pub fn new() -> Result<Self, slint::PlatformError>",
+      "line": 54,
+      "doc": "Create a new adapter, initializing the Slint window and wiring event dispatch."
+    },
+    {
+      "name": "apply_dsl",
+      "kind": "Fn",
+      "signature": "pub fn apply_dsl(&mut self, dsl: &AppDsl)",
+      "line": 115,
+      "doc": "Apply a validated `AppDsl` — composition rules already enforced."
+    },
+    {
+      "name": "run",
+      "kind": "Fn",
+      "signature": "pub fn run(self) -> Result<(), slint::PlatformError>",
+      "line": 122,
+      "doc": "Show window and apply OS-level backdrop effects, then enter event loop."
+    }
+  ]
+}

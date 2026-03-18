@@ -1,0 +1,19 @@
+{
+  "source": "examples/docs/pages.rs",
+  "items": [
+    {
+      "name": "build",
+      "kind": "Fn",
+      "signature": "pub fn build() -> Result<DocsApp, Box<dyn std::error::Error>>",
+      "line": 22,
+      "doc": "Build and configure a `DocsApp` with nav items, initial page, and all callbacks wired."
+    },
+    {
+      "name": "push_blocks",
+      "kind": "Fn",
+      "signature": "pub fn push_blocks(handle: &DocsApp, page_id: &str)",
+      "line": 30,
+      "doc": "Push doc blocks for `page_id` into the UI and update title + status bar."
+    }
+  ]
+}

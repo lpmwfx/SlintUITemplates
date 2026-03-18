@@ -7,235 +7,334 @@
 export global Sizes {
     // ── Layout stretch ────────────────────────────────────────────────────
     /// Output property "fill".
+    /// property `fill`.
     out property <float> fill:    1.0;   // fill remaining space
     /// Output property "no-fill".
+    /// property `no-fill`.
     out property <float> no-fill: 0.0;   // fixed / no stretch
 
     // ── Percentage fills ────────────────────────────────────────────────
     /// Output property "full".
+    /// property `full`.
     out property <float> full: 1.0;      // 100%
     /// Output property "half".
+    /// property `half`.
     out property <float> half: 0.5;      // 50%
     /// Output property "third".
+    /// property `third`.
     out property <float> third: 0.33;    // 33%
     /// Output property "quarter".
+    /// property `quarter`.
     out property <float> quarter: 0.25;  // 25%
     /// Output property "three-quarter".
+    /// property `three-quarter`.
     out property <float> three-quarter: 0.75;
 
     // ── Common ratios ───────────────────────────────────────────────────
     /// Output property "ratio-xs".
+    /// property `ratio-xs`.
     out property <float> ratio-xs:  0.05;
     /// Output property "ratio-sm".
+    /// property `ratio-sm`.
     out property <float> ratio-sm:  0.1;
     /// Output property "ratio-md".
+    /// property `ratio-md`.
     out property <float> ratio-md:  0.4;
     /// Output property "ratio-lg".
+    /// property `ratio-lg`.
     out property <float> ratio-lg:  0.45;
 
     // ── Integer counts / indices ────────────────────────────────────────
     /// Output property "zero".
+    /// property `zero`.
     out property <int> zero: 0;
     /// Output property "one".
+    /// property `one`.
     out property <int> one:  1;
     /// Output property "two".
+    /// property `two`.
     out property <int> two:  2;
     /// Output property "three".
+    /// property `three`.
     out property <int> three: 3;
     /// Output property "four".
+    /// property `four`.
     out property <int> four:  4;
     /// Output property "five".
+    /// property `five`.
     out property <int> five:  5;
     /// Output property "six".
+    /// property `six`.
     out property <int> six:   6;
     /// Output property "ten".
+    /// property `ten`.
     out property <int> ten:  10;
     /// Output property "eleven".
+    /// property `eleven`.
     out property <int> eleven: 11;
     /// Output property "hundred".
+    /// property `hundred`.
     out property <int> hundred: 100;
 
     // ── Border / line widths ────────────────────────────────────────────
     /// Output property "border-w".
+    /// property `border-w`.
     out property <length> border-w:    1px;
     /// Output property "border-w-2".
+    /// property `border-w-2`.
     out property <length> border-w-2:  2px;
     /// Output property "border-w-3".
+    /// property `border-w-3`.
     out property <length> border-w-3:  3px;
     /// Output property "no-size".
+    /// property `no-size`.
     out property <length> no-size:     0px;
 
     // ── Window dimensions ─────────────────────────────────────────────
     /// Output property "docs-window-width".
+    /// property `docs-window-width`.
     out property <length> docs-window-width:      1100px;
     /// Output property "docs-window-height".
+    /// property `docs-window-height`.
     out property <length> docs-window-height:     720px;
     /// Output property "docs-window-min-width".
+    /// property `docs-window-min-width`.
     out property <length> docs-window-min-width:  400px;
     /// Output property "docs-window-min-height".
+    /// property `docs-window-min-height`.
     out property <length> docs-window-min-height: 300px;
     /// Output property "docs-content-min-width".
+    /// property `docs-content-min-width`.
     out property <length> docs-content-min-width: 144px;
     /// Output property "sidebar-toc-min-height".
+    /// property `sidebar-toc-min-height`.
     out property <length> sidebar-toc-min-height: 144px;
 
     // ── Desktop window presets ──────────────────────────────────────────
     /// Output property "win-width-xl".
+    /// property `win-width-xl`.
     out property <length> win-width-xl:    1280px;
     /// Output property "win-height-xl".
+    /// property `win-height-xl`.
     out property <length> win-height-xl:   800px;
     /// Output property "win-width-lg".
+    /// property `win-width-lg`.
     out property <length> win-width-lg:    1100px;
     /// Output property "win-height-lg".
+    /// property `win-height-lg`.
     out property <length> win-height-lg:   720px;
     /// Output property "win-width-md".
+    /// property `win-width-md`.
     out property <length> win-width-md:    1000px;
     /// Output property "win-height-md".
+    /// property `win-height-md`.
     out property <length> win-height-md:   700px;
     /// Output property "win-width-sm".
+    /// property `win-width-sm`.
     out property <length> win-width-sm:    900px;
     /// Output property "win-height-sm".
+    /// property `win-height-sm`.
     out property <length> win-height-sm:   600px;
 
     // ── Mobile window presets ───────────────────────────────────────────
     /// Output property "mobile-width".
+    /// property `mobile-width`.
     out property <length> mobile-width:    390px;
     /// Output property "mobile-height".
+    /// property `mobile-height`.
     out property <length> mobile-height:   844px;
 
     // ── Component sizes ─────────────────────────────────────────────────
     /// Output property "icon-sm".
+    /// property `icon-sm`.
     out property <length> icon-sm:     16px;
     /// Output property "icon-md".
+    /// property `icon-md`.
     out property <length> icon-md:     20px;
     /// Output property "icon-lg".
+    /// property `icon-lg`.
     out property <length> icon-lg:     24px;
     /// Output property "icon-xl".
+    /// property `icon-xl`.
     out property <length> icon-xl:     32px;
     /// Output property "icon-xxl".
+    /// property `icon-xxl`.
     out property <length> icon-xxl:    36px;
 
     /// Output property "thumb-sm".
+    /// property `thumb-sm`.
     out property <length> thumb-sm:    80px;
     /// Output property "thumb-md".
+    /// property `thumb-md`.
     out property <length> thumb-md:    100px;
     /// Output property "thumb-lg".
+    /// property `thumb-lg`.
     out property <length> thumb-lg:    120px;
 
     /// Output property "panel-xs".
+    /// property `panel-xs`.
     out property <length> panel-xs:    180px;
     /// Output property "panel-sm".
+    /// property `panel-sm`.
     out property <length> panel-sm:    200px;
     /// Output property "panel-md".
+    /// property `panel-md`.
     out property <length> panel-md:    220px;
     /// Output property "panel-lg".
+    /// property `panel-lg`.
     out property <length> panel-lg:    280px;
     /// Output property "panel-xl".
+    /// property `panel-xl`.
     out property <length> panel-xl:    300px;
     /// Output property "panel-xxl".
+    /// property `panel-xxl`.
     out property <length> panel-xxl:   320px;
     /// Output property "panel-xxxl".
+    /// property `panel-xxxl`.
     out property <length> panel-xxxl:  360px;
     /// Output property "panel-max".
+    /// property `panel-max`.
     out property <length> panel-max:   400px;
     /// Output property "panel-wide".
+    /// property `panel-wide`.
     out property <length> panel-wide:  500px;
 
     // ── Content max widths ──────────────────────────────────────────────
     /// Output property "content-md".
+    /// property `content-md`.
     out property <length> content-md:   600px;
     /// Output property "content-lg".
+    /// property `content-lg`.
     out property <length> content-lg:   700px;
     /// Output property "content-xl".
+    /// property `content-xl`.
     out property <length> content-xl:   800px;
 
     // ── Font sizes (icon glyphs) ────────────────────────────────────────
     /// Output property "glyph-sm".
+    /// property `glyph-sm`.
     out property <length> glyph-sm:    10px;
     /// Output property "glyph-md".
+    /// property `glyph-md`.
     out property <length> glyph-md:    14px;
     /// Output property "glyph-lg".
+    /// property `glyph-lg`.
     out property <length> glyph-lg:    16px;
     /// Output property "glyph-xl".
+    /// property `glyph-xl`.
     out property <length> glyph-xl:    20px;
 
     // ── Miscellaneous ───────────────────────────────────────────────────
     /// Output property "handle-w".
+    /// property `handle-w`.
     out property <length> handle-w:    9px;
     /// Output property "track-h".
+    /// property `track-h`.
     out property <length> track-h:     4px;
 
     // ── Additional component sizes ───────────────────────────────────────
     /// Output property "comp-6".
+    /// property `comp-6`.
     out property <length> comp-6:   6px;
     /// Output property "comp-9".
+    /// property `comp-9`.
     out property <length> comp-9:   9px;
     /// Output property "comp-12".
+    /// property `comp-12`.
     out property <length> comp-12: 12px;
     /// Output property "comp-36".
+    /// property `comp-36`.
     out property <length> comp-36: 36px;
     /// Output property "comp-60".
+    /// property `comp-60`.
     out property <length> comp-60: 60px;
     /// Output property "comp-64".
+    /// property `comp-64`.
     out property <length> comp-64: 64px;
     /// Output property "comp-72".
+    /// property `comp-72`.
     out property <length> comp-72: 72px;
     /// Output property "comp-140".
+    /// property `comp-140`.
     out property <length> comp-140: 140px;
     /// Output property "comp-160".
+    /// property `comp-160`.
     out property <length> comp-160: 160px;
     /// Output property "comp-240".
+    /// property `comp-240`.
     out property <length> comp-240: 240px;
     /// Output property "comp-260".
+    /// property `comp-260`.
     out property <length> comp-260: 260px;
     /// Output property "comp-380".
+    /// property `comp-380`.
     out property <length> comp-380: 380px;
     /// Output property "comp-120".
+    /// property `comp-120`.
     out property <length> comp-120: 120px;
     /// Output property "comp-130".
+    /// property `comp-130`.
     out property <length> comp-130: 130px;
     /// Output property "comp-340".
+    /// property `comp-340`.
     out property <length> comp-340: 340px;
     /// Output property "comp-420".
+    /// property `comp-420`.
     out property <length> comp-420: 420px;
     /// Output property "comp-480".
+    /// property `comp-480`.
     out property <length> comp-480: 480px;
     /// Output property "comp-40".
+    /// property `comp-40`.
     out property <length> comp-40:  40px;
 
     // ── Percentage sizes ─────────────────────────────────────────────────
     /// Output property "percent-80".
+    /// property `percent-80`.
     out property <float> percent-80: 0.80;
     /// Output property "percent-60".
+    /// property `percent-60`.
     out property <float> percent-60: 0.60;
 
     // ── Opacity / alpha values ─────────────────────────────────────────
     /// Output property "alpha-12".
+    /// property `alpha-12`.
     out property <float> alpha-12: 0.12;
     /// Output property "alpha-10".
+    /// property `alpha-10`.
     out property <float> alpha-10: 0.10;
     /// Output property "alpha-15".
+    /// property `alpha-15`.
     out property <float> alpha-15: 0.15;
     /// Output property "alpha-30".
+    /// property `alpha-30`.
     out property <float> alpha-30: 0.30;
 
     // ── Additional ratios ──────────────────────────────────────────────
     /// Output property "ratio-55".
+    /// property `ratio-55`.
     out property <float> ratio-55: 0.55;
 
     // ── Additional integer counts ────────────────────────────────────────
     /// Output property "seven".
+    /// property `seven`.
     out property <int> seven:   7;
     /// Output property "eight".
+    /// property `eight`.
     out property <int> eight:   8;
     /// Output property "nine".
+    /// property `nine`.
     out property <int> nine:    9;
     /// Output property "twelve".
+    /// property `twelve`.
     out property <int> twelve: 12;
     /// Output property "twenty".
+    /// property `twenty`.
     out property <int> twenty: 20;
     /// Output property "thirty".
+    /// property `thirty`.
     out property <int> thirty: 30;
     /// Output property "ninety-nine".
+    /// property `ninety-nine`.
     out property <int> ninety-nine: 99;
 }

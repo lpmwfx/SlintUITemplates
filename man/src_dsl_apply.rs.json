@@ -1,0 +1,12 @@
+{
+  "source": "src/dsl/apply.rs",
+  "items": [
+    {
+      "name": "apply",
+      "kind": "Fn",
+      "signature": "pub fn apply(ui: &AppWindow, dsl: &AppDsl)",
+      "line": 8,
+      "doc": "Apply a validated `AppDsl` to an `AppWindow`.\nAll composition rules already satisfied — this is pure wiring, no validation."
+    }
+  ]
+}

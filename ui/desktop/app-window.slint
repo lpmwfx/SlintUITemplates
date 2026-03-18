@@ -1,7 +1,7 @@
-import { Colors, Spacing, Type, Settings, FluentIcons } from "../tokens/theme.slint";
-import { Sizes }       from "../tokens/sizes.slint";
-import { Variants }    from "../globals/Variants.slint";
-import { NavId }       from "../globals/NavId.slint";
+import { Colors, Spacing, Type, Settings, FluentIcons } from "../globals/theme.slint";
+import { Sizes }       from "../state/sizes.slint";
+import { Variants }    from "../state/variants.slint";
+import { NavId }       from "../state/nav-id.slint";
 import { NavBar }      from "nav-bar.slint";
 import { NavItem }     from "types.slint";
 import { SideBar }     from "side-bar.slint";
@@ -16,8 +16,10 @@ export { Settings }
 export { NavItem }
 
 /// A pp wi nd ow component.
+/// component `AppWindow`.
 export component AppWindow inherits Window {
     /// Input property "window-title".
+    /// property `window-title`.
     in property <string> window-title: "SlintUI Templates";
     title: window-title;
     icon: @image-url("../../assets/rustui-icon.png");
@@ -31,10 +33,12 @@ export component AppWindow inherits Window {
 
     // State (mother owns all)
     /// Input property "active-view".
+    /// property `active-view`.
     in property <string>    active-view: NavId.home;
     property <bool>      sidebar-open: true;
     property <bool>      sidebar-collapsed: false;
     /// Input property "nav-items".
+    /// property `nav-items`.
     in property <[NavItem]> nav-items: [
         { id: NavId.home,     label: "Home",     icon: FluentIcons.home },
         { id: NavId.list,     label: "List",     icon: FluentIcons.list },
@@ -43,48 +47,66 @@ export component AppWindow inherits Window {
 
     // Toolbar
     /// Input property "show-toolbar".
+    /// property `show-toolbar`.
     in property <bool>               show-toolbar:  false;
     /// Input property "toolbar-items".
+    /// property `toolbar-items`.
     in property <[ShellToolbarItem]> toolbar-items: [];
 
     // Status bar text (Rhai / Rust override; empty = default "View: <active-view>")
     /// Input property "status-text".
+    /// property `status-text`.
     in property <string> status-text: "";
     /// Input property "status-prefix".
+    /// property `status-prefix`.
     in property <string> status-prefix: "View: ";
     /// Input property "right-panel-label".
+    /// property `right-panel-label`.
     in property <string> right-panel-label: "right";
 
     // Menu labels
     /// Input property "menu-file-label".
+    /// property `menu-file-label`.
     in property <string> menu-file-label: "File";
     /// Input property "menu-exit-label".
+    /// property `menu-exit-label`.
     in property <string> menu-exit-label: "Exit";
     /// Input property "menu-view-label".
+    /// property `menu-view-label`.
     in property <string> menu-view-label: "View";
     /// Input property "menu-home-label".
+    /// property `menu-home-label`.
     in property <string> menu-home-label: "Home";
     /// Input property "menu-list-label".
+    /// property `menu-list-label`.
     in property <string> menu-list-label: "List";
     /// Input property "menu-settings-label".
+    /// property `menu-settings-label`.
     in property <string> menu-settings-label: "Settings";
     /// Input property "menu-help-label".
+    /// property `menu-help-label`.
     in property <string> menu-help-label: "Help";
     /// Input property "menu-about-label".
+    /// property `menu-about-label`.
     in property <string> menu-about-label: "About";
 
     // Callbacks wired by DSL / Rust host
     /// Callback fired for m en u a ct io n.
+    /// callback `menu-action`.
     callback menu-action(string);
     /// Callback fired for t oo lb ar c li ck ed.
+    /// callback `toolbar-clicked`.
     callback toolbar-clicked(string);
 
     // Grid ratios (pushed from Rust grid engine)
     /// Input property "row-top-ratio".
+    /// property `row-top-ratio`.
     in property <float> row-top-ratio: Sizes.fill;
     /// Input property "row-main-ratio".
+    /// property `row-main-ratio`.
     in property <float> row-main-ratio: Sizes.ten;
     /// Input property "row-bottom-ratio".
+    /// property `row-bottom-ratio`.
     in property <float> row-bottom-ratio: Sizes.fill;
 
     // Column pixel widths — draggable (no literals — token expressions)
@@ -96,6 +118,7 @@ export component AppWindow inherits Window {
     property <length> sidebar-collapsed-width: Spacing.xl + Spacing.sm;
 
     /// Callback fired for n av ig at e.
+    /// callback `navigate`.
     callback navigate(string);
 
     // Native OS menu bar (muda-backed via Slint — must live in Window)

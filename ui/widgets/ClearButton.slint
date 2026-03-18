@@ -1,9 +1,11 @@
-import { Colors, Spacing, Type, FluentIcons } from "../tokens/theme.slint";
-import { Sizes } from "../tokens/sizes.slint";
+import { Colors, Spacing, Type, FluentIcons } from "../globals/theme.slint";
+import { Sizes } from "../state/sizes.slint";
 
 /// C le ar bu tt on component.
+/// component `ClearButton`.
 export component ClearButton inherits Rectangle {
     /// Callback fired for c le ar ed.
+    /// callback `cleared`.
     callback cleared();
 
     width: Spacing.lg;

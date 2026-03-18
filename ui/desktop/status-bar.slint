@@ -1,13 +1,17 @@
-import { Colors, Spacing, Type } from "../tokens/theme.slint";
-import { Sizes }               from "../tokens/sizes.slint";
+import { Colors, Spacing, Type } from "../globals/theme.slint";
+import { Sizes }               from "../state/sizes.slint";
 
 /// S ta tu sb ar component.
+/// component `StatusBar`.
 export component StatusBar inherits Rectangle {
     /// Input property "status-text".
+    /// property `status-text`.
     in property <string> status-text: "Ready";
     /// Input property "progress".
+    /// property `progress`.
     in property <float>  progress: Sizes.no-fill;
     /// Input property "show-progress".
+    /// property `show-progress`.
     in property <bool>   show-progress: false;
 
     // Remove preferred-width — let parent control layout

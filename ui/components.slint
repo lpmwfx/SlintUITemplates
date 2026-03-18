@@ -8,7 +8,7 @@
 // Internal helpers (ClearButton, SpinButton, etc.) are not part of the public API.
 
 // ── State globals ─────────────────────────────────────────────────────────────
-export { Theme }    from "state/Theme.slint";
+export { Theme }    from "globals/theme/controller.slint";
 export { Settings } from "state/settings.slint";
 
 // ── Design tokens ─────────────────────────────────────────────────────────────
@@ -17,14 +17,14 @@ export { Colors, Spacing, Type, FluentIcons,
          FluentElevation, FluentMotion, FluentType,
          MaterialColors, MaterialSpacing, MaterialRadius,
          MaterialType, MaterialElevation }
-    from "tokens/theme.slint";
+    from "globals/theme.slint";
 
-export { Sizes }    from "tokens/sizes.slint";
-export { Scale }    from "tokens/scale.slint";
+export { Sizes }    from "state/sizes.slint";
+export { Scale }    from "state/scale.slint";
 
 // ── Globals ───────────────────────────────────────────────────────────────────
-export { Variants } from "globals/Variants.slint";
-export { ThemeMode } from "globals/ThemeMode.slint";
+export { Variants } from "state/variants.slint";
+export { ThemeMode } from "state/theme-mode.slint";
 
 // ── Components ────────────────────────────────────────────────────────────────
 export { Accordion, AccordionItem } from "widgets/accordion.slint";

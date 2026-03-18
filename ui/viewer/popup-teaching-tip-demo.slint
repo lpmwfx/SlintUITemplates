@@ -1,12 +1,15 @@
-import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Colors, Spacing, Type } from "../globals/theme.slint";
 import { TeachingTip } from "../widgets/teaching-tip.slint";
 
 /// P op up te ac hi ng ti pd em o component.
+/// component `PopupTeachingTipDemo`.
 export component PopupTeachingTipDemo inherits Rectangle {
     /// Input property "window-height".
+    /// property `window-height`.
     in property <length> window-height;
 
     /// Private property "demo-w" used internally.
+    /// property `demo-w`.
     private property <length> demo-w: 160px;
 
     height: Spacing.control-lg;

@@ -1,0 +1,54 @@
+{
+  "source": "tools/docgen/src/main.rs",
+  "items": [
+    {
+      "name": "PropMode",
+      "kind": "Enum",
+      "signature": "pub(crate) enum PropMode { In, InOut, Out }",
+      "line": 11,
+      "doc": "Slint property access qualifier."
+    },
+    {
+      "name": "Prop",
+      "kind": "Struct",
+      "signature": "pub(crate) struct Prop { pub(crate) mode: PropMode, pub(crate) ty: String, pub(crate) name: String, pub(crate) default: String, pub(crate) desc: String }",
+      "line": 26,
+      "doc": "Parsed Slint property declaration."
+    },
+    {
+      "name": "Cb",
+      "kind": "Struct",
+      "signature": "pub(crate) struct Cb   { pub(crate) name: String, pub(crate) args: String, pub(crate) desc: String }",
+      "line": 28,
+      "doc": "Parsed Slint callback declaration."
+    },
+    {
+      "name": "Field",
+      "kind": "Struct",
+      "signature": "pub(crate) struct Field { pub(crate) name: String, pub(crate) ty: String }",
+      "line": 30,
+      "doc": "Parsed Slint struct field."
+    },
+    {
+      "name": "Item",
+      "kind": "Enum",
+      "signature": "pub(crate) enum Item",
+      "line": 33,
+      "doc": "Parsed Slint component or struct item."
+    },
+    {
+      "name": "COMMENT_PREFIX_LEN",
+      "kind": "Const",
+      "signature": "pub(crate) const COMMENT_PREFIX_LEN: usize = \"//\".len();",
+      "line": 39,
+      "doc": "Length of \"//\" comment prefix."
+    },
+    {
+      "name": "SLINT_EXT",
+      "kind": "Const",
+      "signature": "pub(crate) const SLINT_EXT: &str = \"slint\";",
+      "line": 41,
+      "doc": "File extension for Slint source files."
+    }
+  ]
+}

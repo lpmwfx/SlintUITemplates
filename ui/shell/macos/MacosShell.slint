@@ -2,22 +2,27 @@
 // Layout: TitleBar | (SideNav + Content).
 // Caller places view content via @children.
 
-import { Colors }           from "../../tokens/theme.slint";
-import { Sizes }            from "../../tokens/sizes.slint";
+import { Colors }           from "../../globals/theme.slint";
+import { Sizes }            from "../../state/sizes.slint";
 import { NavItem }          from "../types.slint";
 import { MacosTitleBar }    from "MacosTitleBar.slint";
 import { MacosSideNav }     from "MacosSideNav.slint";
 
 /// macOS app shell — title bar + sidebar navigation + content area.
+/// component `MacosShell`.
 export component MacosShell inherits VerticalLayout {
     /// Window or app title shown in the title bar.
+    /// property `title`.
     in property <string>    title;
     /// Navigation items shown in the sidebar.
+    /// property `nav-items`.
     in property <[NavItem]> nav-items;
     /// Id of the currently active view / slot.
+    /// property `active-slot`.
     in property <string>    active-slot;
 
     /// Fired when the user selects a nav destination.
+    /// callback `slot-changed`.
     callback slot-changed(string);
 
     spacing: Sizes.no-size;

@@ -1,0 +1,47 @@
+{
+  "source": "ui/viewer/popup-flyout-demo.slint",
+  "items": [
+    {
+      "name": "PopupFlyoutDemo",
+      "kind": "Component",
+      "signature": "export component PopupFlyoutDemo inherits Rectangle {",
+      "line": 6,
+      "doc": ""
+    },
+    {
+      "name": "window-height",
+      "kind": "Property",
+      "signature": "in property <length> window-height;",
+      "line": 9,
+      "doc": ""
+    },
+    {
+      "name": "demo-w",
+      "kind": "Property",
+      "signature": "private property <length> demo-w:   160px;",
+      "line": 13,
+      "doc": ""
+    },
+    {
+      "name": "fly-w",
+      "kind": "Property",
+      "signature": "private property <length> fly-w:    240px;",
+      "line": 16,
+      "doc": ""
+    },
+    {
+      "name": "fly-h",
+      "kind": "Property",
+      "signature": "private property <length> fly-h:    130px;",
+      "line": 19,
+      "doc": ""
+    },
+    {
+      "name": "border-px",
+      "kind": "Property",
+      "signature": "private property <length> border-px: 1px;",
+      "line": 22,
+      "doc": ""
+    }
+  ]
+}

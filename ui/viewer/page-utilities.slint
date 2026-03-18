@@ -1,7 +1,7 @@
 // page-utilities — Label, Toolbar, MessageBar, EmptyState, Segmented, FormField
 
-import { Colors, Spacing, Type, FluentIcons } from "../tokens/theme.slint";
-import { Sizes }       from "../tokens/sizes.slint";
+import { Colors, Spacing, Type, FluentIcons } from "../globals/theme.slint";
+import { Sizes }       from "../state/sizes.slint";
 import { Label }       from "../widgets/label.slint";
 import { Toolbar, ToolbarItem } from "../widgets/toolbar.slint";
 import { MessageBar }  from "../widgets/message-bar.slint";
@@ -12,30 +12,42 @@ import { TextInput }   from "../widgets/text-input.slint";
 import { ViewerSection } from "viewer-section.slint";
 
 /// Viewer page showcasing utility components such as tooltips, labels, skeletons, and empty states.
+/// component `PageUtilities`.
 export component PageUtilities inherits VerticalLayout {
     spacing: Spacing.md;
 
     /// Private property "tb-w" used internally.
+    /// property `tb-w`.
     private property <length> tb-w:     400px;
     /// Private property "mb-w" used internally.
+    /// property `mb-w`.
     private property <length> mb-w:     500px;
     /// Private property "es-w" used internally.
+    /// property `es-w`.
     private property <length> es-w:     340px;
     /// Private property "es-h" used internally.
+    /// property `es-h`.
     private property <length> es-h:     200px;
     /// Private property "seg1-w" used internally.
+    /// property `seg1-w`.
     private property <length> seg1-w:   240px;
     /// Private property "seg2-w" used internally.
+    /// property `seg2-w`.
     private property <length> seg2-w:   120px;
     /// Private property "ff-w" used internally.
+    /// property `ff-w`.
     private property <length> ff-w:     300px;
     /// Private property "border-px" used internally.
+    /// property `border-px`.
     private property <length> border-px: Sizes.border-w;
     /// Private property "seg-val" used internally.
+    /// property `seg-val`.
     private property <string> seg-val:   "day";
     /// Private property "seg2-val" used internally.
+    /// property `seg2-val`.
     private property <string> seg2-val:  "list";
     /// Private property "mb-info-msg" used internally.
+    /// property `mb-info-msg`.
     private property <string> mb-info-msg: "Your session will expire in 10 minutes.";
 
     ViewerSection { title: "Label";

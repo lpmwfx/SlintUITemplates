@@ -1,37 +1,49 @@
 // IconTile — Single icon tile with glyph + name label.
 // Reads Settings.icon-style ("filled" | "outlined") and Settings.icon-color ("theme" | "accent").
 
-import { Colors, Spacing, Type, Settings } from "../tokens/theme.slint";
-import { Sizes } from "../tokens/sizes.slint";
+import { Colors, Spacing, Type, Settings } from "../globals/theme.slint";
+import { Sizes } from "../state/sizes.slint";
 
 /// I co nt il e component.
+/// component `IconTile`.
 export component IconTile inherits Rectangle {
     /// Input property "icon-glyph".
+    /// property `icon-glyph`.
     in property <string> icon-glyph;
     /// Input property "icon-name".
+    /// property `icon-name`.
     in property <string> icon-name;
 
     // ── private variant strings ─────────────────────────────────────────
     /// Private property "var-outlined" used internally.
+    /// property `var-outlined`.
     private property <string> var-outlined: "outlined";
     /// Private property "var-accent" used internally.
+    /// property `var-accent`.
     private property <string> var-accent: "accent";
     /// Private property "icon-font" used internally.
+    /// property `icon-font`.
     private property <string> icon-font: "Segoe Fluent Icons";
 
     // ── private size tokens ─────────────────────────────────────────────
     /// Private property "outlined-opacity" used internally.
+    /// property `outlined-opacity`.
     private property <float> outlined-opacity: 0.7;
     /// Private property "alpha-half" used internally.
+    /// property `alpha-half`.
     private property <float> alpha-half: 0.5;
     /// Private property "name-font-size" used internally.
+    /// property `name-font-size`.
     private property <length> name-font-size: 9px;
     /// Private property "tile-h" used internally.
+    /// property `tile-h`.
     private property <length> tile-h: Sizes.comp-72;
 
     /// Private property "is-outlined" used internally.
+    /// property `is-outlined`.
     private property <bool>  is-outlined: Settings.icon-style == root.var-outlined;
     /// Private property "icon-color" used internally.
+    /// property `icon-color`.
     private property <color> icon-color:  Settings.icon-color == root.var-accent
                                               ? Colors.accent
                                               : Colors.text-primary;

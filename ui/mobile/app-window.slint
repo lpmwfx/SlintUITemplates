@@ -1,6 +1,6 @@
-import { Colors, Spacing } from "../tokens/theme.slint";
-import { Sizes }       from "../tokens/sizes.slint";
-import { NavId }       from "../globals/NavId.slint";
+import { Colors, Spacing } from "../globals/theme.slint";
+import { Sizes }       from "../state/sizes.slint";
+import { NavId }       from "../state/nav-id.slint";
 import { NavBar }      from "../desktop/nav-bar.slint";
 import { ContentArea } from "../desktop/content-area.slint";
 import { StatusBar }   from "../desktop/status-bar.slint";
@@ -10,6 +10,7 @@ import { MobileNavItem } from "MobileNavItem.slint";
 export { NavItem }
 
 /// A pp wi nd ow component.
+/// component `AppWindow`.
 export component AppWindow inherits Window {
     preferred-width: Sizes.mobile-width;
     preferred-height: Sizes.mobile-height;
@@ -17,18 +18,24 @@ export component AppWindow inherits Window {
     background: Colors.bg-primary;
 
     /// Input property "window-title".
+    /// property `window-title`.
     in property <string> window-title: "SlintUITemplates \u{2014} Mobile";
     /// Private property "icon-home" used internally.
+    /// property `icon-home`.
     private property <string> icon-home: "\u{1F3E0}";
     /// Private property "icon-list" used internally.
+    /// property `icon-list`.
     private property <string> icon-list: "\u{1F4CB}";
     /// Private property "icon-settings" used internally.
+    /// property `icon-settings`.
     private property <string> icon-settings: "\u{2699}";
     /// Private property "status-prefix" used internally.
+    /// property `status-prefix`.
     private property <string> status-prefix: "View: ";
 
     property <string>    active-view: NavId.home;
     /// Input property "nav-items".
+    /// property `nav-items`.
     in property <[NavItem]> nav-items: [
         { id: NavId.home,     label: "Home",     icon: root.icon-home },
         { id: NavId.list,     label: "List",     icon: root.icon-list },
@@ -36,6 +43,7 @@ export component AppWindow inherits Window {
     ];
 
     /// Callback fired for n av ig at e.
+    /// callback `navigate`.
     callback navigate(string);
     navigate(view) => { self.active-view = view; }
 

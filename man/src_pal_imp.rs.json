@@ -1,0 +1,12 @@
+{
+  "source": "src/pal/imp.rs",
+  "items": [
+    {
+      "name": "apply_backdrop",
+      "kind": "Fn",
+      "signature": "pub fn apply_backdrop(window: &slint::Window, style: BgStyle)",
+      "line": 16,
+      "doc": "Applies a Windows 11 DWM system backdrop (Mica, Acrylic, or Solid) to the given window."
+    }
+  ]
+}

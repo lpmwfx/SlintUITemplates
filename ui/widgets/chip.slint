@@ -1,24 +1,33 @@
-import { Colors, Spacing, Type, FluentIcons } from "../tokens/theme.slint";
-import { Sizes } from "../tokens/sizes.slint";
+import { Colors, Spacing, Type, FluentIcons } from "../globals/theme.slint";
+import { Sizes } from "../state/sizes.slint";
 
 /// C hi p component.
+/// component `Chip`.
 export component Chip inherits Rectangle {
     /// Input property "label".
+    /// property `label`.
     in property <string> label: "";
     /// Input property "closable".
+    /// property `closable`.
     in property <bool>   closable: true;
     /// Input property "icon".
+    /// property `icon`.
     in property <string> icon: "";
     /// Input property "selected".
+    /// property `selected`.
     in property <bool>   selected: false;
     /// Input property "enabled".
+    /// property `enabled`.
     in property <bool>   enabled: true;
     /// Callback fired for c lo se d.
+    /// callback `closed`.
     callback closed();
     /// Callback fired for c li ck ed.
+    /// callback `clicked`.
     callback clicked();
 
     /// Private property "close-icon-size" used internally.
+    /// property `close-icon-size`.
     private property <length> close-icon-size: 10px;
 
     height: Spacing.control-md;

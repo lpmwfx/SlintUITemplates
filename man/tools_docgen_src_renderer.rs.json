@@ -1,0 +1,33 @@
+{
+  "source": "tools/docgen/src/renderer.rs",
+  "items": [
+    {
+      "name": "render",
+      "kind": "Fn",
+      "signature": "pub(crate) fn render(all: &[Item]) -> String",
+      "line": 6,
+      "doc": "Render parsed items to a Markdown string."
+    },
+    {
+      "name": "update",
+      "kind": "Fn",
+      "signature": "pub(crate) fn update(existing: &str, generated: &str) -> String",
+      "line": 49,
+      "doc": "Splice generated content between AUTOGEN markers in existing text."
+    },
+    {
+      "name": "scan",
+      "kind": "Fn",
+      "signature": "pub(crate) fn scan(shared: &Path) -> Result<Vec<Item>, Err>",
+      "line": 58,
+      "doc": "Scan a directory for `.slint` files and parse all items."
+    },
+    {
+      "name": "generate",
+      "kind": "Fn",
+      "signature": "pub(crate) fn generate(all: &[Item], docs: &Path) -> Result<(usize, usize), Err>",
+      "line": 73,
+      "doc": "Write rendered Markdown to `docs` path. Returns (component_count, struct_count)."
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "source": "ui/widgets/MultiSelectChip.slint",
+  "items": [
+    {
+      "name": "MultiSelectChip",
+      "kind": "Component",
+      "signature": "export component MultiSelectChip inherits Rectangle {",
+      "line": 7,
+      "doc": ""
+    },
+    {
+      "name": "selected-count",
+      "kind": "Property",
+      "signature": "in property <int>    selected-count: Sizes.zero;",
+      "line": 10,
+      "doc": ""
+    },
+    {
+      "name": "first-selected",
+      "kind": "Property",
+      "signature": "in property <string> first-selected: \"\";",
+      "line": 13,
+      "doc": ""
+    },
+    {
+      "name": "placeholder",
+      "kind": "Property",
+      "signature": "in property <string> placeholder: \"Select...\";",
+      "line": 16,
+      "doc": ""
+    },
+    {
+      "name": "open",
+      "kind": "Property",
+      "signature": "in property <bool>   open: false;",
+      "line": 19,
+      "doc": ""
+    },
+    {
+      "name": "enabled",
+      "kind": "Property",
+      "signature": "in property <bool>   enabled: true;",
+      "line": 22,
+      "doc": ""
+    },
+    {
+      "name": "toggle-open",
+      "kind": "Callback",
+      "signature": "callback toggle-open();",
+      "line": 25,
+      "doc": ""
+    },
+    {
+      "name": "arrow-up",
+      "kind": "Property",
+      "signature": "private property <string> arrow-up:   \"\\u{25B2}\";",
+      "line": 29,
+      "doc": ""
+    },
+    {
+      "name": "arrow-down",
+      "kind": "Property",
+      "signature": "private property <string> arrow-down: \"\\u{25BC}\";",
+      "line": 32,
+      "doc": ""
+    },
+    {
+      "name": "selected-suffix",
+      "kind": "Property",
+      "signature": "private property <string> selected-suffix: \" selected\";",
+      "line": 35,
+      "doc": ""
+    }
+  ]
+}

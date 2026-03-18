@@ -1,0 +1,26 @@
+{
+  "source": "ui/globals/ThemeMode.slint",
+  "items": [
+    {
+      "name": "mica",
+      "kind": "Property",
+      "signature": "out property <string> mica:    \"mica\";",
+      "line": 5,
+      "doc": ""
+    },
+    {
+      "name": "acrylic",
+      "kind": "Property",
+      "signature": "out property <string> acrylic: \"acrylic\";",
+      "line": 8,
+      "doc": ""
+    },
+    {
+      "name": "solid",
+      "kind": "Property",
+      "signature": "out property <string> solid:   \"solid\";",
+      "line": 11,
+      "doc": ""
+    }
+  ]
+}

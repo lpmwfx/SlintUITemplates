@@ -1,27 +1,37 @@
-import { Colors, Spacing, Type } from "../tokens/theme.slint";
-import { Sizes } from "../tokens/sizes.slint";
+import { Colors, Spacing, Type } from "../globals/theme.slint";
+import { Sizes } from "../state/sizes.slint";
 
 /// Binary on/off switch with an optional text label.
+/// component `Toggle`.
 export component Toggle inherits Rectangle {
     /// Current checked state rendered by the switch.
+    /// property `checked`.
     in property <bool> checked: false;
     /// Optional label shown to the right of the switch.
+    /// property `label`.
     in property <string> label: "";
     /// Fired with the next checked state when the user toggles the control.
+    /// callback `toggled`.
     callback toggled(bool);
 
     // ── Toggle geometry constants ───────────────────────────────────────
     /// Private property "track-width" used internally.
+    /// property `track-width`.
     private property <length> track-width:  Spacing.control-lg;  // 40px
     /// Private property "track-height" used internally.
+    /// property `track-height`.
     private property <length> track-height: Sizes.icon-md;       // 20px
     /// Private property "knob-size" used internally.
+    /// property `knob-size`.
     private property <length> knob-size:    Sizes.icon-sm;       // 16px
     /// Private property "knob-radius" used internally.
+    /// property `knob-radius`.
     private property <length> knob-radius:  Spacing.sm;          // 8px
     /// Private property "knob-inset" used internally.
+    /// property `knob-inset`.
     private property <length> knob-inset:   Sizes.border-w-2;    // 2px
     /// Private property "slide-dur" used internally.
+    /// property `slide-dur`.
     private property <duration> slide-dur:  150ms;
 
     height: Spacing.xl;

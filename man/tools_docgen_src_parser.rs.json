@@ -1,0 +1,33 @@
+{
+  "source": "tools/docgen/src/parser.rs",
+  "items": [
+    {
+      "name": "split_comment",
+      "kind": "Fn",
+      "signature": "pub(crate) fn split_comment(s: &str) -> (&str, &str)",
+      "line": 4,
+      "doc": "Split a line into code and trailing `//` comment."
+    },
+    {
+      "name": "parse_prop",
+      "kind": "Fn",
+      "signature": "pub(crate) fn parse_prop(line: &str) -> Option<Prop>",
+      "line": 10,
+      "doc": "Parse a Slint property declaration line."
+    },
+    {
+      "name": "parse_cb",
+      "kind": "Fn",
+      "signature": "pub(crate) fn parse_cb(line: &str) -> Option<Cb>",
+      "line": 26,
+      "doc": "Parse a Slint callback declaration line."
+    },
+    {
+      "name": "parse_file",
+      "kind": "Fn",
+      "signature": "pub(crate) fn parse_file(src: &str, filename: &str) -> Vec<Item>",
+      "line": 42,
+      "doc": "Parse all exported components and structs from a Slint source file."
+    }
+  ]
+}

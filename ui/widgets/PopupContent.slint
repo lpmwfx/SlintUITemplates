@@ -1,18 +1,23 @@
-import { Colors, Spacing } from "../tokens/theme.slint";
-import { Sizes }           from "../tokens/sizes.slint";
+import { Colors, Spacing } from "../globals/theme.slint";
+import { Sizes }           from "../state/sizes.slint";
 import { DropdownEntry, DropdownMenuItem } from "dropdown-entry.slint";
 
 export { DropdownMenuItem }
 
 /// P op up co nt en t component.
+/// component `PopupContent`.
 export component PopupContent inherits Rectangle {
     /// Input property "items".
+    /// property `items`.
     in property <[DropdownMenuItem]> items;
     /// Input property "est-popup-h".
+    /// property `est-popup-h`.
     in property <length>             est-popup-h;
     /// Input property "border-px".
+    /// property `border-px`.
     in property <length>             border-px;
     /// Callback fired for i te m a ct iv at ed.
+    /// callback `item-activated`.
     callback item-activated(string);
 
     background: Colors.bg-elevated;

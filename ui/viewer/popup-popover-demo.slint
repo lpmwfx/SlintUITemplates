@@ -1,17 +1,23 @@
-import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Colors, Spacing, Type } from "../globals/theme.slint";
 import { Popover } from "../widgets/popover.slint";
 
 /// P op up po po ve rd em o component.
+/// component `PopupPopoverDemo`.
 export component PopupPopoverDemo inherits Rectangle {
     /// Private property "show-pop" used internally.
+    /// property `show-pop`.
     private property <bool>   show-pop:   false;
     /// Private property "demo-w" used internally.
+    /// property `demo-w`.
     private property <length> demo-w:     160px;
     /// Private property "pop-w" used internally.
+    /// property `pop-w`.
     private property <length> pop-w:      220px;
     /// Private property "pop-h" used internally.
+    /// property `pop-h`.
     private property <length> pop-h:      130px;
     /// Private property "border-px" used internally.
+    /// property `border-px`.
     private property <length> border-px:  1px;
 
     height: Spacing.control-lg;

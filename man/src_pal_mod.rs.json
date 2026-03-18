@@ -1,0 +1,19 @@
+{
+  "source": "src/pal/mod.rs",
+  "items": [
+    {
+      "name": "is_dark_mode",
+      "kind": "Fn",
+      "signature": "pub(crate) fn is_dark_mode() -> bool { false }",
+      "line": 23,
+      "doc": "Fallback dark-mode check for non-Windows platforms (always returns false)."
+    },
+    {
+      "name": "apply_backdrop",
+      "kind": "Fn",
+      "signature": "pub fn apply_backdrop(window: &slint::Window, style: BgStyle)",
+      "line": 27,
+      "doc": "Apply OS-level backdrop to a Slint window.\nNo-op when `style == BgStyle::Solid` or on non-Windows platforms."
+    }
+  ]
+}

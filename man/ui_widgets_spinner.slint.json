@@ -1,0 +1,89 @@
+{
+  "source": "ui/widgets/spinner.slint",
+  "items": [
+    {
+      "name": "Spinner",
+      "kind": "Component",
+      "signature": "export component Spinner inherits Rectangle {",
+      "line": 8,
+      "doc": ""
+    },
+    {
+      "name": "size",
+      "kind": "Property",
+      "signature": "in property <string> size:          Variants.md;",
+      "line": 11,
+      "doc": ""
+    },
+    {
+      "name": "spinner-color",
+      "kind": "Property",
+      "signature": "in property <color>  spinner-color: Colors.accent;",
+      "line": 14,
+      "doc": ""
+    },
+    {
+      "name": "active",
+      "kind": "Property",
+      "signature": "in property <bool>   active:        true;",
+      "line": 17,
+      "doc": ""
+    },
+    {
+      "name": "dim",
+      "kind": "Property",
+      "signature": "private property <length> dim:",
+      "line": 21,
+      "doc": ""
+    },
+    {
+      "name": "anim-phase",
+      "kind": "Property",
+      "signature": "private property <float>  anim-phase: 0.0;",
+      "line": 28,
+      "doc": ""
+    },
+    {
+      "name": "anim-speed",
+      "kind": "Property",
+      "signature": "private property <float>  anim-speed: 0.05;",
+      "line": 31,
+      "doc": ""
+    },
+    {
+      "name": "anim-next",
+      "kind": "Property",
+      "signature": "private property <float>  anim-next: Math.mod(root.anim-phase + root.anim-speed, Sizes.two);",
+      "line": 34,
+      "doc": ""
+    },
+    {
+      "name": "pulse-min",
+      "kind": "Property",
+      "signature": "private property <float>  pulse-min:  0.2;",
+      "line": 37,
+      "doc": ""
+    },
+    {
+      "name": "track-alpha",
+      "kind": "Property",
+      "signature": "private property <float>  track-alpha: 0.15;",
+      "line": 40,
+      "doc": ""
+    },
+    {
+      "name": "ring-width",
+      "kind": "Property",
+      "signature": "private property <length> ring-width: Sizes.border-w-2;",
+      "line": 43,
+      "doc": ""
+    },
+    {
+      "name": "pulse-val",
+      "kind": "Property",
+      "signature": "private property <float>  pulse-val: Math.abs(root.anim-phase - Sizes.fill) * (Sizes.fill - root.pulse-min) + root.pulse-min;",
+      "line": 47,
+      "doc": ""
+    }
+  ]
+}

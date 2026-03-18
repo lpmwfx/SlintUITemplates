@@ -1,0 +1,54 @@
+{
+  "source": "ui/shell/mobile/bottom-nav-bar.slint",
+  "items": [
+    {
+      "name": "BottomNavBar",
+      "kind": "Component",
+      "signature": "export component BottomNavBar inherits Rectangle {",
+      "line": 11,
+      "doc": ""
+    },
+    {
+      "name": "items",
+      "kind": "Property",
+      "signature": "in property <[NavItem]> items;",
+      "line": 14,
+      "doc": ""
+    },
+    {
+      "name": "active",
+      "kind": "Property",
+      "signature": "in property <string>    active: \"\";",
+      "line": 17,
+      "doc": ""
+    },
+    {
+      "name": "icon-font",
+      "kind": "Property",
+      "signature": "in property <string>    icon-font: \"Segoe Fluent Icons\";",
+      "line": 20,
+      "doc": ""
+    },
+    {
+      "name": "navigate",
+      "kind": "Callback",
+      "signature": "callback navigate(string);",
+      "line": 23,
+      "doc": ""
+    },
+    {
+      "name": "pad-top",
+      "kind": "Property",
+      "signature": "private property <length> pad-top: Sizes.comp-12;",
+      "line": 27,
+      "doc": ""
+    },
+    {
+      "name": "pill-w",
+      "kind": "Property",
+      "signature": "private property <length> pill-w:  Sizes.comp-64;",
+      "line": 30,
+      "doc": ""
+    }
+  ]
+}

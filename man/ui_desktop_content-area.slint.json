@@ -1,0 +1,26 @@
+{
+  "source": "ui/desktop/content-area.slint",
+  "items": [
+    {
+      "name": "ContentArea",
+      "kind": "Component",
+      "signature": "export component ContentArea inherits Rectangle {",
+      "line": 11,
+      "doc": ""
+    },
+    {
+      "name": "active-view",
+      "kind": "Property",
+      "signature": "in property <string> active-view: NavId.home;",
+      "line": 14,
+      "doc": ""
+    },
+    {
+      "name": "navigate",
+      "kind": "Callback",
+      "signature": "callback navigate(string);",
+      "line": 17,
+      "doc": ""
+    }
+  ]
+}

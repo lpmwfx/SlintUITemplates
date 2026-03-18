@@ -1,7 +1,8 @@
-import { Colors, Spacing, Type } from "../tokens/theme.slint";
-import { Sizes } from "../tokens/sizes.slint";
+import { Colors, Spacing, Type } from "../globals/theme.slint";
+import { Sizes } from "../state/sizes.slint";
 
 /// C on te xt me nu it em struct.
+/// struct `ContextMenuItem`.
 export struct ContextMenuItem {
     id:         string,
     label:      string,
@@ -13,12 +14,16 @@ export struct ContextMenuItem {
 
 // Private helper — keeps popup VerticalLayout at nesting depth ≤ 5.
 /// C on te xt me nu en tr y component.
+/// component `ContextMenuEntry`.
 export component ContextMenuEntry inherits Rectangle {
     /// Input property "item".
+    /// property `item`.
     in property <ContextMenuItem> item;
     /// Input property "icon-font".
+    /// property `icon-font`.
     in property <string> icon-font: "Segoe Fluent Icons";
     /// Callback fired for a ct iv at ed.
+    /// callback `activated`.
     callback activated(string);
 
     height: item.separator ? Spacing.xs : Spacing.xl;

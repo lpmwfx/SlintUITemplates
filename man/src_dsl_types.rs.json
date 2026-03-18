@@ -1,0 +1,47 @@
+{
+  "source": "src/dsl/types.rs",
+  "items": [
+    {
+      "name": "BgStyle",
+      "kind": "Enum",
+      "signature": "pub enum BgStyle",
+      "line": 8,
+      "doc": "Windows Composition API backdrop style.\nMica and Acrylic require Windows 11 (22H2+) — silently falls back to Solid\non older OS versions or non-Windows platforms.\nB gs ty le enum."
+    },
+    {
+      "name": "from_str",
+      "kind": "Fn",
+      "signature": "pub fn from_str(s: &str) -> Self",
+      "line": 20,
+      "doc": "Parse from string — unknown values default to `Solid`."
+    },
+    {
+      "name": "Nav",
+      "kind": "Struct",
+      "signature": "pub struct Nav",
+      "line": 34,
+      "doc": "A navigation destination — icon name resolved to codepoint at build().\nN av struct."
+    },
+    {
+      "name": "new",
+      "kind": "Fn",
+      "signature": "pub fn new( id:    impl Into<String>, label: impl Into<String>, icon:  impl Into<String>, ) -> Self",
+      "line": 45,
+      "doc": "Create a navigation item with the given id, display label, and icon name."
+    },
+    {
+      "name": "Toolbar",
+      "kind": "Struct",
+      "signature": "pub struct Toolbar",
+      "line": 57,
+      "doc": "A toolbar icon button — icon name resolved to codepoint at build().\nT oo lb ar struct."
+    },
+    {
+      "name": "new",
+      "kind": "Fn",
+      "signature": "pub fn new( id:      impl Into<String>, icon:    impl Into<String>, tooltip: impl Into<String>, ) -> Self",
+      "line": 68,
+      "doc": "Create a toolbar button with the given id, icon name, and tooltip text."
+    }
+  ]
+}

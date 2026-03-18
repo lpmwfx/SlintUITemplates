@@ -1,0 +1,19 @@
+{
+  "source": "ui/widgets/cbf-overflow-btn.slint",
+  "items": [
+    {
+      "name": "CbfOverflowBtn",
+      "kind": "Component",
+      "signature": "export component CbfOverflowBtn inherits Rectangle {",
+      "line": 5,
+      "doc": ""
+    },
+    {
+      "name": "show-secondary",
+      "kind": "Callback",
+      "signature": "callback show-secondary();",
+      "line": 8,
+      "doc": ""
+    }
+  ]
+}

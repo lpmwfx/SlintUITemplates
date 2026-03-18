@@ -1,0 +1,26 @@
+{
+  "source": "ui/widgets/avatar.slint",
+  "items": [
+    {
+      "name": "Avatar",
+      "kind": "Component",
+      "signature": "export component Avatar inherits Rectangle {",
+      "line": 6,
+      "doc": ""
+    },
+    {
+      "name": "initials",
+      "kind": "Property",
+      "signature": "in property <string> initials: \"\";",
+      "line": 9,
+      "doc": ""
+    },
+    {
+      "name": "size",
+      "kind": "Property",
+      "signature": "in property <string> size: \"md\";    // sm | md | lg",
+      "line": 12,
+      "doc": ""
+    }
+  ]
+}

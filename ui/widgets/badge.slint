@@ -1,11 +1,14 @@
-import { Colors, Spacing, Type } from "../tokens/theme.slint";
-import { Variants } from "../globals/Variants.slint";
+import { Colors, Spacing, Type } from "../globals/theme.slint";
+import { Variants } from "../state/variants.slint";
 
 /// B ad ge component.
+/// component `Badge`.
 export component Badge inherits Rectangle {
     /// Input property "text".
+    /// property `text`.
     in property <string> text: "";
     /// Input property "variant".
+    /// property `variant`.
     in property <string> variant: "info";   // info | success | warning | error
 
     height: Type.caption-size + Spacing.sm;

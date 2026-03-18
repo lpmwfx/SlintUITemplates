@@ -1,0 +1,33 @@
+{
+  "source": "ui/viewer/ContextMenuDemoArea.slint",
+  "items": [
+    {
+      "name": "ContextMenuDemoArea",
+      "kind": "Component",
+      "signature": "export component ContextMenuDemoArea inherits Rectangle {",
+      "line": 9,
+      "doc": ""
+    },
+    {
+      "name": "window-height",
+      "kind": "Property",
+      "signature": "in property <length> window-height;",
+      "line": 12,
+      "doc": ""
+    },
+    {
+      "name": "ctx-hint",
+      "kind": "Property",
+      "signature": "private property <string> ctx-hint: \"Right-click here for VS Code-style file context menu\";",
+      "line": 17,
+      "doc": ""
+    },
+    {
+      "name": "rc-x",
+      "kind": "Property",
+      "signature": "private property <length> rc-x: Sizes.no-size;",
+      "line": 21,
+      "doc": ""
+    }
+  ]
+}

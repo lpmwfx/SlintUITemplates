@@ -1,0 +1,47 @@
+{
+  "source": "ui/widgets/PrimaryBarContent.slint",
+  "items": [
+    {
+      "name": "PrimaryBarContent",
+      "kind": "Component",
+      "signature": "export component PrimaryBarContent inherits Rectangle {",
+      "line": 9,
+      "doc": ""
+    },
+    {
+      "name": "primary",
+      "kind": "Property",
+      "signature": "in property <[CbfAction]> primary;",
+      "line": 12,
+      "doc": ""
+    },
+    {
+      "name": "has-secondary",
+      "kind": "Property",
+      "signature": "in property <bool>        has-secondary;",
+      "line": 15,
+      "doc": ""
+    },
+    {
+      "name": "border-px",
+      "kind": "Property",
+      "signature": "in property <length>      border-px;",
+      "line": 18,
+      "doc": ""
+    },
+    {
+      "name": "item-activated",
+      "kind": "Callback",
+      "signature": "callback item-activated(string);",
+      "line": 21,
+      "doc": ""
+    },
+    {
+      "name": "show-secondary",
+      "kind": "Callback",
+      "signature": "callback show-secondary();",
+      "line": 24,
+      "doc": ""
+    }
+  ]
+}

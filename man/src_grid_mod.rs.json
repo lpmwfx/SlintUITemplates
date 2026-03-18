@@ -1,0 +1,26 @@
+{
+  "source": "src/grid/mod.rs",
+  "items": [
+    {
+      "name": "config",
+      "kind": "Mod",
+      "signature": "pub mod config;",
+      "line": 2,
+      "doc": "Grid configuration loading and deserialization from TOML target files."
+    },
+    {
+      "name": "zone",
+      "kind": "Mod",
+      "signature": "pub mod zone;",
+      "line": 4,
+      "doc": "Zone model representing the runtime layout grid with rows and columns."
+    },
+    {
+      "name": "load_target",
+      "kind": "Fn",
+      "signature": "pub fn load_target(path: &Path) -> Result<ZoneModel, Box<dyn std::error::Error>>",
+      "line": 12,
+      "doc": "Loads a target TOML file and converts its grid config into a `ZoneModel`."
+    }
+  ]
+}

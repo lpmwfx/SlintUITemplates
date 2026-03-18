@@ -1,0 +1,124 @@
+{
+  "source": "ui/viewer/page-app-shell.slint",
+  "items": [
+    {
+      "name": "PageAppShell",
+      "kind": "Component",
+      "signature": "export component PageAppShell inherits VerticalLayout {",
+      "line": 17,
+      "doc": ""
+    },
+    {
+      "name": "layout-mode",
+      "kind": "Property",
+      "signature": "private property <string>    layout-mode: Variants.windows;",
+      "line": 20,
+      "doc": ""
+    },
+    {
+      "name": "view-home",
+      "kind": "Property",
+      "signature": "private property <string> view-home: \"home\";",
+      "line": 24,
+      "doc": ""
+    },
+    {
+      "name": "view-list",
+      "kind": "Property",
+      "signature": "private property <string> view-list: \"list\";",
+      "line": 27,
+      "doc": ""
+    },
+    {
+      "name": "view-settings",
+      "kind": "Property",
+      "signature": "private property <string> view-settings: \"settings\";",
+      "line": 30,
+      "doc": ""
+    },
+    {
+      "name": "active-windows",
+      "kind": "Property",
+      "signature": "private property <string>    active-windows: root.view-home;",
+      "line": 35,
+      "doc": ""
+    },
+    {
+      "name": "active-android",
+      "kind": "Property",
+      "signature": "private property <string>    active-android: root.view-home;",
+      "line": 38,
+      "doc": ""
+    },
+    {
+      "name": "active-view",
+      "kind": "Property",
+      "signature": "private property <string>    active-view: root.layout-mode == Variants.windows ? root.active-windows : root.active-android;",
+      "line": 41,
+      "doc": ""
+    },
+    {
+      "name": "shell-label-win",
+      "kind": "Property",
+      "signature": "private property <string> shell-label-win: \"App Shell — Windows (Fluent 2)\";",
+      "line": 46,
+      "doc": ""
+    },
+    {
+      "name": "shell-label-android",
+      "kind": "Property",
+      "signature": "private property <string> shell-label-android: \"App Shell — Android (Material 3)\";",
+      "line": 49,
+      "doc": ""
+    },
+    {
+      "name": "btn-to-android",
+      "kind": "Property",
+      "signature": "private property <string> btn-to-android: \"→ Android\";",
+      "line": 52,
+      "doc": ""
+    },
+    {
+      "name": "btn-to-windows",
+      "kind": "Property",
+      "signature": "private property <string> btn-to-windows: \"→ Windows\";",
+      "line": 55,
+      "doc": ""
+    },
+    {
+      "name": "status-prefix",
+      "kind": "Property",
+      "signature": "private property <string> status-prefix: \"Active: \";",
+      "line": 58,
+      "doc": ""
+    },
+    {
+      "name": "mobile-title",
+      "kind": "Property",
+      "signature": "private property <string> mobile-title: \"App\";",
+      "line": 61,
+      "doc": ""
+    },
+    {
+      "name": "phone-w",
+      "kind": "Property",
+      "signature": "private property <length> phone-w: Sizes.comp-380;",
+      "line": 64,
+      "doc": ""
+    },
+    {
+      "name": "phone-border",
+      "kind": "Property",
+      "signature": "private property <length> phone-border: Sizes.border-w-2;",
+      "line": 67,
+      "doc": ""
+    },
+    {
+      "name": "nav-items",
+      "kind": "Property",
+      "signature": "private property <[NavItem]> nav-items: [",
+      "line": 71,
+      "doc": ""
+    }
+  ]
+}

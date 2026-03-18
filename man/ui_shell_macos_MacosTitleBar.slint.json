@@ -1,0 +1,19 @@
+{
+  "source": "ui/shell/macos/MacosTitleBar.slint",
+  "items": [
+    {
+      "name": "MacosTitleBar",
+      "kind": "Component",
+      "signature": "export component MacosTitleBar inherits Rectangle {",
+      "line": 10,
+      "doc": ""
+    },
+    {
+      "name": "title",
+      "kind": "Property",
+      "signature": "in property <string> title;",
+      "line": 13,
+      "doc": ""
+    }
+  ]
+}

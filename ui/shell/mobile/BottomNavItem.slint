@@ -1,23 +1,31 @@
-import { MaterialColors, MaterialType } from "../../tokens/material/mod.slint";
-import { Sizes }        from "../../tokens/sizes.slint";
-import { FluentMotion } from "../../tokens/fluent/motion.slint";
+import { MaterialColors, MaterialType } from "../../globals/theme/material/mod.slint";
+import { Sizes }        from "../../state/sizes.slint";
+import { FluentMotion } from "../../globals/theme/fluent/motion.slint";
 
 // BottomNavItem — a single item in the Material 3 bottom navigation bar.
 /// B ot to mn av it em component.
+/// component `BottomNavItem`.
 export component BottomNavItem inherits Rectangle {
     /// Input property "item-id".
+    /// property `item-id`.
     in property <string> item-id;
     /// Input property "icon".
+    /// property `icon`.
     in property <string> icon;
     /// Input property "label".
+    /// property `label`.
     in property <string> label;
     /// Input property "icon-font".
+    /// property `icon-font`.
     in property <string> icon-font;
     /// Input property "is-active".
+    /// property `is-active`.
     in property <bool>   is-active: false;
     /// Input property "pill-w".
+    /// property `pill-w`.
     in property <length> pill-w;
     /// Callback fired for c li ck ed.
+    /// callback `clicked`.
     callback clicked();
 
     horizontal-stretch: Sizes.one;

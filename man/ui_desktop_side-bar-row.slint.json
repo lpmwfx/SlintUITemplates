@@ -1,0 +1,47 @@
+{
+  "source": "ui/desktop/side-bar-row.slint",
+  "items": [
+    {
+      "name": "SideBarRow",
+      "kind": "Component",
+      "signature": "export component SideBarRow inherits Rectangle {",
+      "line": 8,
+      "doc": ""
+    },
+    {
+      "name": "item",
+      "kind": "Property",
+      "signature": "in property <NavItem> item;",
+      "line": 11,
+      "doc": ""
+    },
+    {
+      "name": "is-active",
+      "kind": "Property",
+      "signature": "in property <bool>    is-active;",
+      "line": 14,
+      "doc": ""
+    },
+    {
+      "name": "sidebar-collapsed",
+      "kind": "Property",
+      "signature": "in property <bool>    sidebar-collapsed;",
+      "line": 17,
+      "doc": ""
+    },
+    {
+      "name": "navigate",
+      "kind": "Callback",
+      "signature": "callback navigate(string);",
+      "line": 20,
+      "doc": ""
+    },
+    {
+      "name": "toggle-group",
+      "kind": "Callback",
+      "signature": "callback toggle-group(string);",
+      "line": 23,
+      "doc": ""
+    }
+  ]
+}

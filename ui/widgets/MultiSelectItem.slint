@@ -1,13 +1,17 @@
-import { Colors, Spacing, Type } from "../tokens/theme.slint";
-import { Sizes } from "../tokens/sizes.slint";
+import { Colors, Spacing, Type } from "../globals/theme.slint";
+import { Sizes } from "../state/sizes.slint";
 
 /// M ul ti se le ct it em component.
+/// component `MultiSelectItem`.
 export component MultiSelectItem inherits Rectangle {
     /// Input property "opt-label".
+    /// property `opt-label`.
     in property <string> opt-label;
     /// Input property "opt-value".
+    /// property `opt-value`.
     in property <string> opt-value;
     /// Callback fired for i te m s el ec te d.
+    /// callback `item-selected`.
     callback item-selected(string);
 
     height: Spacing.xl;

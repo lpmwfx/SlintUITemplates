@@ -1,0 +1,75 @@
+{
+  "source": "ui/widgets/data-table.slint",
+  "items": [
+    {
+      "name": "DataTable",
+      "kind": "Component",
+      "signature": "export component DataTable inherits Rectangle {",
+      "line": 11,
+      "doc": ""
+    },
+    {
+      "name": "columns",
+      "kind": "Property",
+      "signature": "in property <[TableColumn]> columns: [];",
+      "line": 14,
+      "doc": ""
+    },
+    {
+      "name": "rows",
+      "kind": "Property",
+      "signature": "in property <[TableRow]>    rows: [];",
+      "line": 17,
+      "doc": ""
+    },
+    {
+      "name": "sort-key",
+      "kind": "Property",
+      "signature": "in property <string>    sort-key: \"\";",
+      "line": 20,
+      "doc": ""
+    },
+    {
+      "name": "sort-asc",
+      "kind": "Property",
+      "signature": "in property <bool>      sort-asc: true;",
+      "line": 23,
+      "doc": ""
+    },
+    {
+      "name": "selected",
+      "kind": "Property",
+      "signature": "in property <string>    selected: \"\";",
+      "line": 26,
+      "doc": ""
+    },
+    {
+      "name": "sort-asc-indicator",
+      "kind": "Property",
+      "signature": "in property <string> sort-asc-indicator: \"\\u{25B2}\";",
+      "line": 29,
+      "doc": ""
+    },
+    {
+      "name": "sort-desc-indicator",
+      "kind": "Property",
+      "signature": "in property <string> sort-desc-indicator: \"\\u{25BC}\";",
+      "line": 32,
+      "doc": ""
+    },
+    {
+      "name": "sort-changed",
+      "kind": "Callback",
+      "signature": "callback sort-changed(string, bool);",
+      "line": 35,
+      "doc": ""
+    },
+    {
+      "name": "row-selected",
+      "kind": "Callback",
+      "signature": "callback row-selected(string);",
+      "line": 38,
+      "doc": ""
+    }
+  ]
+}

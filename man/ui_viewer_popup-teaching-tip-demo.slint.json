@@ -1,0 +1,26 @@
+{
+  "source": "ui/viewer/popup-teaching-tip-demo.slint",
+  "items": [
+    {
+      "name": "PopupTeachingTipDemo",
+      "kind": "Component",
+      "signature": "export component PopupTeachingTipDemo inherits Rectangle {",
+      "line": 6,
+      "doc": ""
+    },
+    {
+      "name": "window-height",
+      "kind": "Property",
+      "signature": "in property <length> window-height;",
+      "line": 9,
+      "doc": ""
+    },
+    {
+      "name": "demo-w",
+      "kind": "Property",
+      "signature": "private property <length> demo-w: 160px;",
+      "line": 13,
+      "doc": ""
+    }
+  ]
+}

@@ -1,8 +1,8 @@
 import { Palette }                           from "std-widgets.slint";
-import { Theme }                             from "../state/Theme.slint";
-import { Spacing }                           from "../tokens/theme.slint";
-import { Sizes }                             from "../tokens/sizes.slint";
-import { Variants }                          from "../globals/Variants.slint";
+import { Theme }                             from "../globals/theme/controller.slint";
+import { Spacing }                           from "../globals/theme.slint";
+import { Sizes }                             from "../state/sizes.slint";
+import { Variants }                          from "../state/variants.slint";
 import { PanelContainer, PanelItem }         from "../modules/PanelContainer.slint";
 
 // AppWindow — the ONLY state owner in the entire UI.
@@ -17,19 +17,24 @@ import { PanelContainer, PanelItem }         from "../modules/PanelContainer.sli
 //   light  → always light
 
 /// A pp wi nd ow component.
+/// component `AppWindow`.
 export component AppWindow inherits Window {
     preferred-width:  Sizes.win-width-xl;
     preferred-height: Sizes.win-height-xl;
     title: root.window-title;
     /// Input property "window-title".
+    /// property `window-title`.
     in property <string> window-title: "SlintUITemplates";
 
     // ── Theme state ────────────────────────────────────────────────────────
     /// Input property "theme-mode".
+    /// property `theme-mode`.
     in property <string> theme-mode: Variants.system;
     /// Input property "material".
+    /// property `material`.
     in property <string> material: Variants.solid;  // "solid" | "mica" | "acrylic"
     /// Input property "platform".
+    /// property `platform`.
     in property <string> platform: Variants.windows;
 
     // Reactive: recomputes whenever theme-mode or OS scheme changes
@@ -48,10 +53,12 @@ export component AppWindow inherits Window {
     // ── Panel layout state ──────────────────────────────────────────────────
     // Rust pushes [PanelItem] here after parsing DSL + solving geometry.
     /// Input property "panels".
+    /// property `panels`.
     in property <[PanelItem]> panels;
 
     // Drag event — Rust adapter recalculates ratios, re-pushes model
     /// Callback fired for p an el d ra gg ed.
+    /// callback `panel-dragged`.
     callback panel-dragged(int, float, float);   // id, dx, dy in logical px
 
     // ── Layout ──────────────────────────────────────────────────────────────

@@ -1,29 +1,39 @@
 // Material 3 FloatingActionButton — primary action, extended variant.
 // Reference: https://m3.material.io/components/floating-action-button
 
-import { MaterialColors, MaterialSpacing, MaterialType, MaterialRadius } from "../../tokens/material/mod.slint";
-import { Sizes } from "../../tokens/sizes.slint";
+import { MaterialColors, MaterialSpacing, MaterialType, MaterialRadius } from "../../globals/theme/material/mod.slint";
+import { Sizes } from "../../state/sizes.slint";
 
 /// F ab component.
+/// component `FAB`.
 export component FAB inherits Rectangle {
     /// Input property "icon".
+    /// property `icon`.
     in property <string> icon;
     /// Input property "label".
+    /// property `label`.
     in property <string> label: "";       // non-empty → extended FAB
     /// Input property "icon-font".
+    /// property `icon-font`.
     in property <string> icon-font: "Segoe Fluent Icons";
     /// Callback fired for c li ck ed.
+    /// callback `clicked`.
     callback clicked();
 
     /// Private property "extended" used internally.
+    /// property `extended`.
     private property <bool> extended: root.label != "";
     /// Private property "darken-amount" used internally.
+    /// property `darken-amount`.
     private property <float>  darken-amount: Sizes.ratio-xs;
     /// Private property "shadow-alpha" used internally.
+    /// property `shadow-alpha`.
     private property <float>  shadow-alpha: Sizes.alpha-30;
     /// Private property "shadow-blur" used internally.
+    /// property `shadow-blur`.
     private property <length> shadow-blur: Sizes.comp-6;
     /// Private property "shadow-y" used internally.
+    /// property `shadow-y`.
     private property <length> shadow-y: Sizes.border-w-3;
 
     // Extended FAB is wider; simple FAB is square

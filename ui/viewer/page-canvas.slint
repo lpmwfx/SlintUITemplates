@@ -1,18 +1,22 @@
 // page-canvas — Canvas widgets: path-based (pure Slint) + image-based (Rust/tiny-skia)
 
-import { Spacing } from "../tokens/theme.slint";
+import { Spacing } from "../globals/theme.slint";
 import { CanvasPath }  from "../widgets/canvas-path.slint";
 import { CanvasImage } from "../widgets/canvas-image.slint";
 import { ViewerSection } from "viewer-section.slint";
 
 /// Viewer page for canvas-based drawing and image primitives.
+/// component `PageCanvas`.
 export component PageCanvas inherits VerticalLayout {
     /// Demo image frame shown inside the canvas examples.
+    /// property `canvas-frame`.
     in property <image> canvas-frame;
 
     /// Private property "path-title" used internally.
+    /// property `path-title`.
     private property <string> path-title:  "Path Canvas (pure Slint)";
     /// Private property "image-title" used internally.
+    /// property `image-title`.
     private property <string> image-title: "Image Canvas (Rust-rendered frame)";
 
     spacing: Spacing.md;

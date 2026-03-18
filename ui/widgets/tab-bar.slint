@@ -1,7 +1,8 @@
-import { Colors, Spacing, Type, FluentIcons } from "../tokens/theme.slint";
-import { Sizes } from "../tokens/sizes.slint";
+import { Colors, Spacing, Type, FluentIcons } from "../globals/theme.slint";
+import { Sizes } from "../state/sizes.slint";
 
 /// T ab it em struct.
+/// struct `TabItem`.
 export struct TabItem {
     id: string,
     label: string,
@@ -9,15 +10,20 @@ export struct TabItem {
 }
 
 /// T ab ba r component.
+/// component `TabBar`.
 export component TabBar inherits Rectangle {
     /// Input property "tabs".
+    /// property `tabs`.
     in property <[TabItem]> tabs: [];
     /// Input property "active".
+    /// property `active`.
     in property <string> active: "";
     /// Callback fired for c ha ng ed.
+    /// callback `changed`.
     callback changed(string);
 
     /// Private property "indicator-h" used internally.
+    /// property `indicator-h`.
     private property <length> indicator-h: Sizes.border-w-2;
 
     height: Spacing.xl;

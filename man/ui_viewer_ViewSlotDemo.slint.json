@@ -1,0 +1,68 @@
+{
+  "source": "ui/viewer/ViewSlotDemo.slint",
+  "items": [
+    {
+      "name": "ViewSlotDemo",
+      "kind": "Component",
+      "signature": "export component ViewSlotDemo inherits VerticalLayout {",
+      "line": 10,
+      "doc": ""
+    },
+    {
+      "name": "active-slot",
+      "kind": "Property",
+      "signature": "private property <string> active-slot: Variants.alpha;",
+      "line": 13,
+      "doc": ""
+    },
+    {
+      "name": "alpha-subtle",
+      "kind": "Property",
+      "signature": "private property <float>  alpha-subtle: Sizes.alpha-10;",
+      "line": 16,
+      "doc": ""
+    },
+    {
+      "name": "lbl-alpha",
+      "kind": "Property",
+      "signature": "private property <string> lbl-alpha: \"Alpha\";",
+      "line": 20,
+      "doc": ""
+    },
+    {
+      "name": "lbl-beta",
+      "kind": "Property",
+      "signature": "private property <string> lbl-beta: \"Beta\";",
+      "line": 23,
+      "doc": ""
+    },
+    {
+      "name": "lbl-gamma",
+      "kind": "Property",
+      "signature": "private property <string> lbl-gamma: \"Gamma\";",
+      "line": 26,
+      "doc": ""
+    },
+    {
+      "name": "slot-alpha-text",
+      "kind": "Property",
+      "signature": "private property <string> slot-alpha-text: \"slot-id: \\\"alpha\\\" \\u{2014} visible when active == \\\"alpha\\\"\";",
+      "line": 29,
+      "doc": ""
+    },
+    {
+      "name": "slot-beta-text",
+      "kind": "Property",
+      "signature": "private property <string> slot-beta-text: \"slot-id: \\\"beta\\\"\";",
+      "line": 32,
+      "doc": ""
+    },
+    {
+      "name": "slot-gamma-text",
+      "kind": "Property",
+      "signature": "private property <string> slot-gamma-text: \"slot-id: \\\"gamma\\\"\";",
+      "line": 35,
+      "doc": ""
+    }
+  ]
+}

@@ -1,9 +1,11 @@
-import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Colors, Spacing, Type } from "../globals/theme.slint";
 
 // MdParagraph — renders a paragraph block.
 /// M dp ar ag ra ph component.
+/// component `MdParagraph`.
 export component MdParagraph inherits VerticalLayout {
     /// Input property "text".
+    /// property `text`.
     in property <string> text;
 
     padding-top: Spacing.xs;

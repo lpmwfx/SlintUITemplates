@@ -1,0 +1,229 @@
+{
+  "source": "ui/viewer/PageData.slint",
+  "items": [
+    {
+      "name": "PageData",
+      "kind": "Component",
+      "signature": "export component PageData inherits VerticalLayout {",
+      "line": 15,
+      "doc": ""
+    },
+    {
+      "name": "window-height",
+      "kind": "Property",
+      "signature": "in property <length> window-height;",
+      "line": 18,
+      "doc": ""
+    },
+    {
+      "name": "table-selected",
+      "kind": "Property",
+      "signature": "private property <string> table-selected: \"\";",
+      "line": 24,
+      "doc": ""
+    },
+    {
+      "name": "tree-selected",
+      "kind": "Property",
+      "signature": "private property <string> tree-selected: \"\";",
+      "line": 27,
+      "doc": ""
+    },
+    {
+      "name": "date-value",
+      "kind": "Property",
+      "signature": "private property <string> date-value: \"\";",
+      "line": 30,
+      "doc": ""
+    },
+    {
+      "name": "section-datatable",
+      "kind": "Property",
+      "signature": "private property <string> section-datatable: \"DataTable\";",
+      "line": 35,
+      "doc": ""
+    },
+    {
+      "name": "section-treeview",
+      "kind": "Property",
+      "signature": "private property <string> section-treeview: \"TreeView\";",
+      "line": 38,
+      "doc": ""
+    },
+    {
+      "name": "section-datepicker",
+      "kind": "Property",
+      "signature": "private property <string> section-datepicker: \"DatePicker\";",
+      "line": 41,
+      "doc": ""
+    },
+    {
+      "name": "section-multiselect",
+      "kind": "Property",
+      "signature": "private property <string> section-multiselect: \"MultiSelect\";",
+      "line": 44,
+      "doc": ""
+    },
+    {
+      "name": "section-chip",
+      "kind": "Property",
+      "signature": "private property <string> section-chip: \"Chip\";",
+      "line": 47,
+      "doc": ""
+    },
+    {
+      "name": "section-contextmenu",
+      "kind": "Property",
+      "signature": "private property <string> section-contextmenu: \"ContextMenu — File Explorer (right-click area)\";",
+      "line": 50,
+      "doc": ""
+    },
+    {
+      "name": "dp-label",
+      "kind": "Property",
+      "signature": "private property <string> dp-label: \"Select date\";",
+      "line": 53,
+      "doc": ""
+    },
+    {
+      "name": "dp-error-label",
+      "kind": "Property",
+      "signature": "private property <string> dp-error-label: \"With error\";",
+      "line": 56,
+      "doc": ""
+    },
+    {
+      "name": "dp-error-msg",
+      "kind": "Property",
+      "signature": "private property <string> dp-error-msg: \"Date is required\";",
+      "line": 59,
+      "doc": ""
+    },
+    {
+      "name": "ms-placeholder",
+      "kind": "Property",
+      "signature": "private property <string> ms-placeholder: \"Choose languages...\";",
+      "line": 62,
+      "doc": ""
+    },
+    {
+      "name": "chip-default",
+      "kind": "Property",
+      "signature": "private property <string> chip-default: \"Default\";",
+      "line": 65,
+      "doc": ""
+    },
+    {
+      "name": "chip-selected",
+      "kind": "Property",
+      "signature": "private property <string> chip-selected: \"Selected\";",
+      "line": 68,
+      "doc": ""
+    },
+    {
+      "name": "chip-noclose",
+      "kind": "Property",
+      "signature": "private property <string> chip-noclose: \"No close\";",
+      "line": 71,
+      "doc": ""
+    },
+    {
+      "name": "chip-disabled",
+      "kind": "Property",
+      "signature": "private property <string> chip-disabled: \"Disabled\";",
+      "line": 74,
+      "doc": ""
+    },
+    {
+      "name": "col-name-w",
+      "kind": "Property",
+      "signature": "private property <length> col-name-w: Sizes.comp-160;",
+      "line": 79,
+      "doc": ""
+    },
+    {
+      "name": "dp-w",
+      "kind": "Property",
+      "signature": "private property <length> dp-w: Sizes.comp-260;",
+      "line": 82,
+      "doc": ""
+    },
+    {
+      "name": "ms-w",
+      "kind": "Property",
+      "signature": "private property <length> ms-w: Sizes.comp-240;",
+      "line": 85,
+      "doc": ""
+    },
+    {
+      "name": "row-id-a",
+      "kind": "Property",
+      "signature": "private property <string> row-id-a: \"1\";",
+      "line": 90,
+      "doc": ""
+    },
+    {
+      "name": "row-id-b",
+      "kind": "Property",
+      "signature": "private property <string> row-id-b: \"2\";",
+      "line": 93,
+      "doc": ""
+    },
+    {
+      "name": "row-id-c",
+      "kind": "Property",
+      "signature": "private property <string> row-id-c: \"3\";",
+      "line": 96,
+      "doc": ""
+    },
+    {
+      "name": "row-id-d",
+      "kind": "Property",
+      "signature": "private property <string> row-id-d: \"4\";",
+      "line": 99,
+      "doc": ""
+    },
+    {
+      "name": "row-id-e",
+      "kind": "Property",
+      "signature": "private property <string> row-id-e: \"5\";",
+      "line": 102,
+      "doc": ""
+    },
+    {
+      "name": "date-a",
+      "kind": "Property",
+      "signature": "private property <string> date-a: \"2023-01\";",
+      "line": 105,
+      "doc": ""
+    },
+    {
+      "name": "date-b",
+      "kind": "Property",
+      "signature": "private property <string> date-b: \"2022-06\";",
+      "line": 108,
+      "doc": ""
+    },
+    {
+      "name": "date-c",
+      "kind": "Property",
+      "signature": "private property <string> date-c: \"2021-11\";",
+      "line": 111,
+      "doc": ""
+    },
+    {
+      "name": "date-d",
+      "kind": "Property",
+      "signature": "private property <string> date-d: \"2023-04\";",
+      "line": 114,
+      "doc": ""
+    },
+    {
+      "name": "date-e",
+      "kind": "Property",
+      "signature": "private property <string> date-e: \"2024-02\";",
+      "line": 117,
+      "doc": ""
+    }
+  ]
+}

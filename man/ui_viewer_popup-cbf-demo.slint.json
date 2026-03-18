@@ -1,0 +1,33 @@
+{
+  "source": "ui/viewer/popup-cbf-demo.slint",
+  "items": [
+    {
+      "name": "PopupCbfDemo",
+      "kind": "Component",
+      "signature": "export component PopupCbfDemo inherits Rectangle {",
+      "line": 6,
+      "doc": ""
+    },
+    {
+      "name": "window-height",
+      "kind": "Property",
+      "signature": "in property <length> window-height;",
+      "line": 9,
+      "doc": ""
+    },
+    {
+      "name": "cbf-w",
+      "kind": "Property",
+      "signature": "private property <length> cbf-w:     180px;",
+      "line": 13,
+      "doc": ""
+    },
+    {
+      "name": "border-px",
+      "kind": "Property",
+      "signature": "private property <length> border-px: 1px;",
+      "line": 16,
+      "doc": ""
+    }
+  ]
+}

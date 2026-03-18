@@ -1,23 +1,31 @@
-import { Colors, Spacing, Type } from "../tokens/theme.slint";
-import { Sizes } from "../tokens/sizes.slint";
+import { Colors, Spacing, Type } from "../globals/theme.slint";
+import { Sizes } from "../state/sizes.slint";
 
 // DialogButton — action button used in Dialog (cancel/confirm).
 /// D ia lo gb ut to n component.
+/// component `DialogButton`.
 export component DialogButton inherits Rectangle {
     /// Input property "label".
+    /// property `label`.
     in property <string>  label;
     /// Input property "bg-normal".
+    /// property `bg-normal`.
     in property <color>   bg-normal;
     /// Input property "bg-hover".
+    /// property `bg-hover`.
     in property <color>   bg-hover;
     /// Input property "text-color".
+    /// property `text-color`.
     in property <color>   text-color;
     /// Input property "text-weight".
+    /// property `text-weight`.
     in property <int>     text-weight: Type.weight-regular;
     /// Callback fired for c li ck ed.
+    /// callback `clicked`.
     callback clicked();
 
     /// Private property "btn-h" used internally.
+    /// property `btn-h`.
     private property <length> btn-h: Sizes.comp-36;
 
     width: Sizes.thumb-sm;

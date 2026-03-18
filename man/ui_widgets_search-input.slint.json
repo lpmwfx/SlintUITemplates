@@ -1,0 +1,54 @@
+{
+  "source": "ui/widgets/search-input.slint",
+  "items": [
+    {
+      "name": "SearchInput",
+      "kind": "Component",
+      "signature": "export component SearchInput inherits Rectangle {",
+      "line": 8,
+      "doc": ""
+    },
+    {
+      "name": "value",
+      "kind": "Property",
+      "signature": "in property <string> value: \"\";",
+      "line": 11,
+      "doc": ""
+    },
+    {
+      "name": "placeholder",
+      "kind": "Property",
+      "signature": "in property <string> placeholder: \"Search...\";",
+      "line": 14,
+      "doc": ""
+    },
+    {
+      "name": "enabled",
+      "kind": "Property",
+      "signature": "in property <bool>   enabled: true;",
+      "line": 17,
+      "doc": ""
+    },
+    {
+      "name": "changed",
+      "kind": "Callback",
+      "signature": "callback changed(string);",
+      "line": 20,
+      "doc": ""
+    },
+    {
+      "name": "submitted",
+      "kind": "Callback",
+      "signature": "callback submitted(string);",
+      "line": 23,
+      "doc": ""
+    },
+    {
+      "name": "cleared",
+      "kind": "Callback",
+      "signature": "callback cleared();",
+      "line": 26,
+      "doc": ""
+    }
+  ]
+}

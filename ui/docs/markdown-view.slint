@@ -1,6 +1,6 @@
-import { Spacing }      from "../tokens/theme.slint";
-import { Sizes }        from "../tokens/sizes.slint";
-import { Variants }     from "../globals/Variants.slint";
+import { Spacing }      from "../globals/theme.slint";
+import { Sizes }        from "../state/sizes.slint";
+import { Variants }     from "../state/variants.slint";
 import { DocBlock }     from "doc-block.slint";
 import { MdHeading }    from "MdHeading.slint";
 import { MdParagraph }  from "MdParagraph.slint";
@@ -18,14 +18,19 @@ import { MdBlockquote } from "MdBlockquote.slint";
 //   import { MarkdownView, DocBlock } from "docs/markdown-view.slint";
 //   MarkdownView { blocks: root.my-blocks; }
 /// M ar kd ow nv ie w component.
+/// component `MarkdownView`.
 export component MarkdownView inherits Rectangle {
     /// Input property "blocks".
+    /// property `blocks`.
     in property <[DocBlock]> blocks: [];
     /// Input property "bullet-char".
+    /// property `bullet-char`.
     in property <string> bullet-char: "\u{2022}";
     /// Input property "bullet-sub-char".
+    /// property `bullet-sub-char`.
     in property <string> bullet-sub-char: "\u{25E6}";
     /// Input property "mono-font".
+    /// property `mono-font`.
     in property <string> mono-font: "Consolas";
 
     clip: true;

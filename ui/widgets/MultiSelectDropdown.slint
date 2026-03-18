@@ -1,14 +1,17 @@
-import { Colors, Spacing, Type } from "../tokens/theme.slint";
-import { Sizes } from "../tokens/sizes.slint";
+import { Colors, Spacing, Type } from "../globals/theme.slint";
+import { Sizes } from "../state/sizes.slint";
 import { MultiSelectOption }  from "multi-select-types.slint";
 import { MultiSelectItem }    from "MultiSelectItem.slint";
 
 // MultiSelectDropdown — the dropdown list for multi-select options.
 /// M ul ti se le ct dr op do wn component.
+/// component `MultiSelectDropdown`.
 export component MultiSelectDropdown inherits Rectangle {
     /// Input property "options".
+    /// property `options`.
     in property <[MultiSelectOption]> options: [];
     /// Callback fired for i te m s el ec te d.
+    /// callback `item-selected`.
     callback item-selected(string);
 
     border-radius: Spacing.xs;

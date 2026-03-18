@@ -1,0 +1,26 @@
+{
+  "source": "src/adapter/config.rs",
+  "items": [
+    {
+      "name": "load_view_configs",
+      "kind": "Fn",
+      "signature": "pub fn load_view_configs(&self, dir: &std::path::Path) -> Result<(), crate::view_config::ViewConfigError>",
+      "line": 13,
+      "doc": "Load all `*.rhai` files from `dir` and register as per-view configs.\nAuto-applied by the navigate handler on every nav event."
+    },
+    {
+      "name": "set_window_size",
+      "kind": "Fn",
+      "signature": "pub fn set_window_size(&self, width: u32, height: u32)",
+      "line": 20,
+      "doc": "Resize the window (logical pixels)."
+    },
+    {
+      "name": "set_bg_style_str",
+      "kind": "Fn",
+      "signature": "pub fn set_bg_style_str(&mut self, style: &str)",
+      "line": 25,
+      "doc": "Set the OS-level backdrop style (\"mica\" | \"acrylic\" | anything else → solid)."
+    }
+  ]
+}

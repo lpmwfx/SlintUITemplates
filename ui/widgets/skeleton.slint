@@ -1,30 +1,40 @@
-import { Colors, Spacing } from "../tokens/theme.slint";
-import { Sizes } from "../tokens/sizes.slint";
-import { Variants } from "../globals/Variants.slint";
+import { Colors, Spacing } from "../globals/theme.slint";
+import { Sizes } from "../state/sizes.slint";
+import { Variants } from "../state/variants.slint";
 
 /// S ke le to n component.
+/// component `Skeleton`.
 export component Skeleton inherits Rectangle {
     /// Input property "variant".
+    /// property `variant`.
     in property <string> variant: root.variant-rect;   // text | circle | rect
     /// Input property "animate".
+    /// property `animate`.
     in property <bool>   animate: true;
 
     // ── Variant constant ────────────────────────────────────────────────
     /// Private property "variant-rect" used internally.
+    /// property `variant-rect`.
     private property <string> variant-rect: "rect";
 
     // ── Shimmer constants ───────────────────────────────────────────────
     /// Private property "shimmer-step" used internally.
+    /// property `shimmer-step`.
     private property <float>    shimmer-step:    0.01;
     /// Private property "shimmer-max" used internally.
+    /// property `shimmer-max`.
     private property <float>    shimmer-max:     1.33;
     /// Private property "shimmer-reset" used internally.
+    /// property `shimmer-reset`.
     private property <float>    shimmer-reset:  -0.33;
     /// Private property "shimmer-alpha" used internally.
+    /// property `shimmer-alpha`.
     private property <float>    shimmer-alpha:   0.4;
     /// Private property "frame-interval" used internally.
+    /// property `frame-interval`.
     private property <duration> frame-interval:  16ms;
     /// Private property "text-radius" used internally.
+    /// property `text-radius`.
     private property <length>   text-radius: Sizes.border-w-2;
 
     background: Colors.bg-elevated;
@@ -35,8 +45,10 @@ export component Skeleton inherits Rectangle {
         Spacing.xs;
 
     /// Private property "shimmer-pos" used internally.
+    /// property `shimmer-pos`.
     private property <float> shimmer-pos: Sizes.no-fill;
     /// Private property "shimmer-next" used internally.
+    /// property `shimmer-next`.
     private property <float> shimmer-next:
         Math.mod(root.shimmer-pos - root.shimmer-reset + root.shimmer-step,
                  root.shimmer-max - root.shimmer-reset) + root.shimmer-reset;

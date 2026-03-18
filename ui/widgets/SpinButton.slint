@@ -1,13 +1,17 @@
-import { Colors, Spacing, Type } from "../tokens/theme.slint";
+import { Colors, Spacing, Type } from "../globals/theme.slint";
 
 // SpinButton — reusable increment/decrement button for SpinBox.
 /// S pi nb ut to n component.
+/// component `SpinButton`.
 export component SpinButton inherits Rectangle {
     /// Input property "label".
+    /// property `label`.
     in property <string> label;
     /// Input property "btn-enabled".
+    /// property `btn-enabled`.
     in property <bool>   btn-enabled: true;
     /// Callback fired for c li ck ed.
+    /// callback `clicked`.
     callback clicked();
 
     width: Spacing.xl;

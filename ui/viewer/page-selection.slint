@@ -1,7 +1,7 @@
 // page-selection — Checkbox, RadioGroup, Slider, SpinBox, Rating
 
-import { Spacing } from "../tokens/theme.slint";
-import { Sizes } from "../tokens/sizes.slint";
+import { Spacing } from "../globals/theme.slint";
+import { Sizes } from "../state/sizes.slint";
 import { Checkbox }   from "../widgets/checkbox.slint";
 import { RadioGroup } from "../widgets/radio.slint";
 import { Slider }     from "../widgets/slider.slint";
@@ -10,58 +10,82 @@ import { Rating }     from "../widgets/rating.slint";
 import { ViewerSection } from "viewer-section.slint";
 
 /// Viewer page showcasing selection controls such as checkboxes, radio groups, sliders, and ratings.
+/// component `PageSelection`.
 export component PageSelection inherits VerticalLayout {
     spacing: Spacing.md;
 
     /// Private property "cb-checked" used internally.
+    /// property `cb-checked`.
     private property <bool>   cb-checked: false;
     /// Private property "cb-indet" used internally.
+    /// property `cb-indet`.
     private property <bool>   cb-indet: true;
     /// Private property "radio-val" used internally.
+    /// property `radio-val`.
     private property <string> radio-val: "Option B";
     /// Private property "slider-val" used internally.
+    /// property `slider-val`.
     private property <float>  slider-val: Sizes.ratio-md;
     /// Private property "spin-val" used internally.
+    /// property `spin-val`.
     private property <int>    spin-val: 42;
     /// Private property "rating-val" used internally.
+    /// property `rating-val`.
     private property <int>    rating-val: Sizes.three;
 
     // ── private integer tokens ──────────────────────────────────────────
     /// Private property "spinbox-max" used internally.
+    /// property `spinbox-max`.
     private property <int> spinbox-max: 999;
 
     // ── demo labels ─────────────────────────────────────────────────────
     /// Private property "section-checkbox" used internally.
+    /// property `section-checkbox`.
     private property <string> section-checkbox: "Checkbox";
     /// Private property "section-radiogroup" used internally.
+    /// property `section-radiogroup`.
     private property <string> section-radiogroup: "RadioGroup";
     /// Private property "section-slider" used internally.
+    /// property `section-slider`.
     private property <string> section-slider: "Slider";
     /// Private property "section-spinbox" used internally.
+    /// property `section-spinbox`.
     private property <string> section-spinbox: "SpinBox";
     /// Private property "section-rating" used internally.
+    /// property `section-rating`.
     private property <string> section-rating: "Rating";
     /// Private property "cb-unchecked-label" used internally.
+    /// property `cb-unchecked-label`.
     private property <string> cb-unchecked-label: "Unchecked";
     /// Private property "cb-checked-label" used internally.
+    /// property `cb-checked-label`.
     private property <string> cb-checked-label: "Checked";
     /// Private property "cb-indet-label" used internally.
+    /// property `cb-indet-label`.
     private property <string> cb-indet-label: "Indeterminate";
     /// Private property "cb-disabled-label" used internally.
+    /// property `cb-disabled-label`.
     private property <string> cb-disabled-label: "Disabled";
     /// Private property "cb-live-checked" used internally.
+    /// property `cb-live-checked`.
     private property <string> cb-live-checked: "Checked (live)";
     /// Private property "cb-live-unchecked" used internally.
+    /// property `cb-live-unchecked`.
     private property <string> cb-live-unchecked: "Unchecked (live)";
     /// Private property "slider-no-val" used internally.
+    /// property `slider-no-val`.
     private property <string> slider-no-val: "No value display";
     /// Private property "slider-live" used internally.
+    /// property `slider-live`.
     private property <string> slider-live: "Live slider";
     /// Private property "slider-disabled" used internally.
+    /// property `slider-disabled`.
     private property <string> slider-disabled: "Disabled";
     /// Private property "spinbox-label" used internally.
+    /// property `spinbox-label`.
     private property <string> spinbox-label: "Quantity";
     /// Private property "spinbox-disabled" used internally.
+    /// property `spinbox-disabled`.
     private property <string> spinbox-disabled: "Disabled";
 
     ViewerSection {

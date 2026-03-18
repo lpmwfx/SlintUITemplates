@@ -1,0 +1,40 @@
+{
+  "source": "ui/widgets/segment-tab.slint",
+  "items": [
+    {
+      "name": "SegmentItem",
+      "kind": "Struct",
+      "signature": "export struct SegmentItem {",
+      "line": 5,
+      "doc": ""
+    },
+    {
+      "name": "SegmentTab",
+      "kind": "Component",
+      "signature": "export component SegmentTab inherits Rectangle {",
+      "line": 13,
+      "doc": ""
+    },
+    {
+      "name": "item",
+      "kind": "Property",
+      "signature": "in property <SegmentItem> item;",
+      "line": 16,
+      "doc": ""
+    },
+    {
+      "name": "active",
+      "kind": "Property",
+      "signature": "in property <bool>        active: false;",
+      "line": 19,
+      "doc": ""
+    },
+    {
+      "name": "clicked",
+      "kind": "Callback",
+      "signature": "callback clicked(string);",
+      "line": 22,
+      "doc": ""
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "source": "ui/tokens/material/radius.slint",
+  "items": [
+    {
+      "name": "none",
+      "kind": "Property",
+      "signature": "out property <length> none:       0px;",
+      "line": 8,
+      "doc": ""
+    },
+    {
+      "name": "extra-small",
+      "kind": "Property",
+      "signature": "out property <length> extra-small: 4px;",
+      "line": 11,
+      "doc": ""
+    },
+    {
+      "name": "small",
+      "kind": "Property",
+      "signature": "out property <length> small:       8px;",
+      "line": 14,
+      "doc": ""
+    },
+    {
+      "name": "medium",
+      "kind": "Property",
+      "signature": "out property <length> medium:     12px;",
+      "line": 17,
+      "doc": ""
+    },
+    {
+      "name": "large",
+      "kind": "Property",
+      "signature": "out property <length> large:      16px;",
+      "line": 20,
+      "doc": ""
+    },
+    {
+      "name": "extra-large",
+      "kind": "Property",
+      "signature": "out property <length> extra-large: 28px;  // FAB, BottomSheet",
+      "line": 23,
+      "doc": ""
+    },
+    {
+      "name": "full",
+      "kind": "Property",
+      "signature": "out property <length> full:       9999px; // pills, avatars",
+      "line": 26,
+      "doc": ""
+    }
+  ]
+}

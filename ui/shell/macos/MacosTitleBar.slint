@@ -1,13 +1,15 @@
 // MacosTitleBar — macOS title bar with traffic light indicators and centred title.
 // Traffic light circles are visual only; native window controls overlay them on macOS.
 
-import { Colors }                                                  from "../../tokens/theme.slint";
-import { MacosColors, MacosRadius, MacosSpacing, MacosType }       from "../../tokens/macos/mod.slint";
-import { Sizes }                                                   from "../../tokens/sizes.slint";
+import { Colors }                                                  from "../../globals/theme.slint";
+import { MacosColors, MacosRadius, MacosSpacing, MacosType }       from "../../globals/theme/macos/mod.slint";
+import { Sizes }                                                   from "../../state/sizes.slint";
 
 /// macOS-style title bar — traffic lights (decorative) and centred window title.
+/// component `MacosTitleBar`.
 export component MacosTitleBar inherits Rectangle {
     /// Window or page title shown centred in the bar.
+    /// property `title`.
     in property <string> title;
 
     height:     MacosSpacing.titlebar-height;

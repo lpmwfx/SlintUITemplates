@@ -1,0 +1,75 @@
+{
+  "source": "ui/shell/desktop/side-nav.slint",
+  "items": [
+    {
+      "name": "ShellSideNav",
+      "kind": "Component",
+      "signature": "export component ShellSideNav inherits Rectangle {",
+      "line": 11,
+      "doc": ""
+    },
+    {
+      "name": "items",
+      "kind": "Property",
+      "signature": "in property <[NavItem]> items;",
+      "line": 14,
+      "doc": ""
+    },
+    {
+      "name": "active-item",
+      "kind": "Property",
+      "signature": "in property <string>    active-item: \"\";",
+      "line": 17,
+      "doc": ""
+    },
+    {
+      "name": "collapsed",
+      "kind": "Property",
+      "signature": "in property <bool>      collapsed: false;",
+      "line": 20,
+      "doc": ""
+    },
+    {
+      "name": "icon-font",
+      "kind": "Property",
+      "signature": "in property <string>    icon-font: \"Segoe Fluent Icons\";",
+      "line": 23,
+      "doc": ""
+    },
+    {
+      "name": "navigate",
+      "kind": "Callback",
+      "signature": "callback navigate(string);",
+      "line": 26,
+      "doc": ""
+    },
+    {
+      "name": "toggle-collapsed",
+      "kind": "Callback",
+      "signature": "callback toggle-collapsed();",
+      "line": 29,
+      "doc": ""
+    },
+    {
+      "name": "active-alpha",
+      "kind": "Property",
+      "signature": "private property <float>  active-alpha: Sizes.alpha-15;",
+      "line": 33,
+      "doc": ""
+    },
+    {
+      "name": "indicator-w",
+      "kind": "Property",
+      "signature": "private property <length> indicator-w: Sizes.border-w-3;",
+      "line": 36,
+      "doc": ""
+    },
+    {
+      "name": "indicator-radius",
+      "kind": "Property",
+      "signature": "private property <length> indicator-radius: Sizes.border-w-2;",
+      "line": 39,
+      "doc": ""
+    }
+  ]
+}

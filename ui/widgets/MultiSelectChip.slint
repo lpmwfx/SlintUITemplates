@@ -1,27 +1,37 @@
-import { Colors, Spacing, Type } from "../tokens/theme.slint";
-import { Sizes } from "../tokens/sizes.slint";
+import { Colors, Spacing, Type } from "../globals/theme.slint";
+import { Sizes } from "../state/sizes.slint";
 
 // MultiSelectChip — the trigger row for the multi-select dropdown.
 /// M ul ti se le ct ch ip component.
+/// component `MultiSelectChip`.
 export component MultiSelectChip inherits Rectangle {
     /// Input property "selected-count".
+    /// property `selected-count`.
     in property <int>    selected-count: Sizes.zero;
     /// Input property "first-selected".
+    /// property `first-selected`.
     in property <string> first-selected: "";
     /// Input property "placeholder".
+    /// property `placeholder`.
     in property <string> placeholder: "Select...";
     /// Input property "open".
+    /// property `open`.
     in property <bool>   open: false;
     /// Input property "enabled".
+    /// property `enabled`.
     in property <bool>   enabled: true;
     /// Callback fired for t og gl e o pe n.
+    /// callback `toggle-open`.
     callback toggle-open();
 
     /// Private property "arrow-up" used internally.
+    /// property `arrow-up`.
     private property <string> arrow-up:   "\u{25B2}";
     /// Private property "arrow-down" used internally.
+    /// property `arrow-down`.
     private property <string> arrow-down: "\u{25BC}";
     /// Private property "selected-suffix" used internally.
+    /// property `selected-suffix`.
     private property <string> selected-suffix: " selected";
 
     height: Spacing.xl;

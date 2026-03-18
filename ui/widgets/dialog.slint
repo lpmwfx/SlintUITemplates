@@ -1,25 +1,33 @@
-import { Colors, Spacing, Type, FluentColors } from "../tokens/theme.slint";
-import { Sizes } from "../tokens/sizes.slint";
+import { Colors, Spacing, Type, FluentColors } from "../globals/theme.slint";
+import { Sizes } from "../state/sizes.slint";
 import { DialogButton } from "DialogButton.slint";
 
 /// D ia lo g component.
+/// component `Dialog`.
 export component Dialog inherits Rectangle {
     /// Input property "title".
+    /// property `title`.
     in property <string> title: "Dialog";
     /// Input property "cancel-label".
+    /// property `cancel-label`.
     in property <string> cancel-label: "Cancel";
     /// Input property "confirm-label".
+    /// property `confirm-label`.
     in property <string> confirm-label: "OK";
     // visible is the built-in — caller sets visible: true/false directly
     /// Callback fired for c on fi rm ed.
+    /// callback `confirmed`.
     callback confirmed();
     /// Callback fired for c an ce ll ed.
+    /// callback `cancelled`.
     callback cancelled();
 
     // Overlay constants
     /// Private property "overlay-bg" used internally.
+    /// property `overlay-bg`.
     private property <color> overlay-bg:     FluentColors.overlay-medium;
     /// Private property "shadow-color" used internally.
+    /// property `shadow-color`.
     private property <color> shadow-color:   FluentColors.overlay-light;
 
     // Full overlay

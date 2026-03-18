@@ -1,0 +1,243 @@
+{
+  "source": "ui/viewer/viewer.slint",
+  "items": [
+    {
+      "name": "FrameworkViewer",
+      "kind": "Component",
+      "signature": "export component FrameworkViewer inherits Window {",
+      "line": 15,
+      "doc": ""
+    },
+    {
+      "name": "active-view",
+      "kind": "Property",
+      "signature": "in property <string> active-view: ViewId.buttons;",
+      "line": 23,
+      "doc": ""
+    },
+    {
+      "name": "canvas-frame",
+      "kind": "Property",
+      "signature": "in property <image> canvas-frame;",
+      "line": 26,
+      "doc": ""
+    },
+    {
+      "name": "navigate",
+      "kind": "Callback",
+      "signature": "callback navigate(string);",
+      "line": 30,
+      "doc": ""
+    },
+    {
+      "name": "win-w",
+      "kind": "Property",
+      "signature": "private property <length> win-w:     1100px;",
+      "line": 34,
+      "doc": ""
+    },
+    {
+      "name": "win-h",
+      "kind": "Property",
+      "signature": "private property <length> win-h:     720px;",
+      "line": 37,
+      "doc": ""
+    },
+    {
+      "name": "zoom-small",
+      "kind": "Property",
+      "signature": "private property <float>  zoom-small:   Sizes.three-quarter;",
+      "line": 40,
+      "doc": ""
+    },
+    {
+      "name": "zoom-normal",
+      "kind": "Property",
+      "signature": "private property <float>  zoom-normal:  Sizes.fill;",
+      "line": 43,
+      "doc": ""
+    },
+    {
+      "name": "zoom-large",
+      "kind": "Property",
+      "signature": "private property <float>  zoom-large:  1.25;",
+      "line": 46,
+      "doc": ""
+    },
+    {
+      "name": "zoom-xlarge",
+      "kind": "Property",
+      "signature": "private property <float>  zoom-xlarge:  1.5;",
+      "line": 49,
+      "doc": ""
+    },
+    {
+      "name": "menu-zoom-sm",
+      "kind": "Property",
+      "signature": "private property <string> menu-zoom-sm: \"Zoom 75%\";",
+      "line": 52,
+      "doc": ""
+    },
+    {
+      "name": "menu-zoom-md",
+      "kind": "Property",
+      "signature": "private property <string> menu-zoom-md: \"Zoom 100%\";",
+      "line": 55,
+      "doc": ""
+    },
+    {
+      "name": "menu-zoom-lg",
+      "kind": "Property",
+      "signature": "private property <string> menu-zoom-lg: \"Zoom 125%\";",
+      "line": 58,
+      "doc": ""
+    },
+    {
+      "name": "menu-zoom-xl",
+      "kind": "Property",
+      "signature": "private property <string> menu-zoom-xl: \"Zoom 150%\";",
+      "line": 61,
+      "doc": ""
+    },
+    {
+      "name": "v-stretch",
+      "kind": "Property",
+      "signature": "private property <int>    v-stretch: Sizes.one;",
+      "line": 64,
+      "doc": ""
+    },
+    {
+      "name": "h-sidebar",
+      "kind": "Property",
+      "signature": "private property <int>    h-sidebar: Sizes.zero;",
+      "line": 67,
+      "doc": ""
+    },
+    {
+      "name": "h-stretch",
+      "kind": "Property",
+      "signature": "private property <int>    h-stretch: Sizes.one;",
+      "line": 70,
+      "doc": ""
+    },
+    {
+      "name": "request-bg-style",
+      "kind": "Callback",
+      "signature": "callback request-bg-style(string);",
+      "line": 76,
+      "doc": ""
+    },
+    {
+      "name": "new-file",
+      "kind": "Callback",
+      "signature": "callback new-file();",
+      "line": 79,
+      "doc": ""
+    },
+    {
+      "name": "new-window",
+      "kind": "Callback",
+      "signature": "callback new-window();",
+      "line": 82,
+      "doc": ""
+    },
+    {
+      "name": "open-file",
+      "kind": "Callback",
+      "signature": "callback open-file();",
+      "line": 85,
+      "doc": ""
+    },
+    {
+      "name": "save",
+      "kind": "Callback",
+      "signature": "callback save();",
+      "line": 88,
+      "doc": ""
+    },
+    {
+      "name": "save-as",
+      "kind": "Callback",
+      "signature": "callback save-as();",
+      "line": 91,
+      "doc": ""
+    },
+    {
+      "name": "quit",
+      "kind": "Callback",
+      "signature": "callback quit();",
+      "line": 94,
+      "doc": ""
+    },
+    {
+      "name": "undo",
+      "kind": "Callback",
+      "signature": "callback undo();",
+      "line": 97,
+      "doc": ""
+    },
+    {
+      "name": "redo",
+      "kind": "Callback",
+      "signature": "callback redo();",
+      "line": 100,
+      "doc": ""
+    },
+    {
+      "name": "cut",
+      "kind": "Callback",
+      "signature": "callback cut();",
+      "line": 103,
+      "doc": ""
+    },
+    {
+      "name": "copy",
+      "kind": "Callback",
+      "signature": "callback copy();",
+      "line": 106,
+      "doc": ""
+    },
+    {
+      "name": "paste",
+      "kind": "Callback",
+      "signature": "callback paste();",
+      "line": 109,
+      "doc": ""
+    },
+    {
+      "name": "find",
+      "kind": "Callback",
+      "signature": "callback find();",
+      "line": 112,
+      "doc": ""
+    },
+    {
+      "name": "select-all",
+      "kind": "Callback",
+      "signature": "callback select-all();",
+      "line": 115,
+      "doc": ""
+    },
+    {
+      "name": "open-docs",
+      "kind": "Callback",
+      "signature": "callback open-docs();",
+      "line": 118,
+      "doc": ""
+    },
+    {
+      "name": "open-shortcuts",
+      "kind": "Callback",
+      "signature": "callback open-shortcuts();",
+      "line": 121,
+      "doc": ""
+    },
+    {
+      "name": "about",
+      "kind": "Callback",
+      "signature": "callback about();",
+      "line": 124,
+      "doc": ""
+    }
+  ]
+}

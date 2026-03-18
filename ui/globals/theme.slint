@@ -3,24 +3,24 @@
 //
 // Barrel alias: Theme as Colors — all 39 component files that use Colors.* need zero changes.
 
-import { Spacing } from "spacing.slint";
-import { Type } from "typography.slint";
-import { Scale } from "scale.slint";
-import { Sizes } from "sizes.slint";
+import { Spacing } from "theme/spacing.slint";
+import { Type } from "theme/typography.slint";
+import { Scale } from "../state/scale.slint";
+import { Sizes } from "../state/sizes.slint";
 
 export { Spacing, Type, Scale, Sizes }
-export { Theme }             from "../state/Theme.slint";
-export { Theme as Colors }   from "../state/Theme.slint";
+export { Theme }             from "theme/controller.slint";
+export { Theme as Colors }   from "theme/controller.slint";
 export { Settings }          from "../state/settings.slint";
 
 // Fluent 2 token layer — exact WinUI3 values + Segoe Fluent Icons
-export { FluentColors, FluentSpacing, FluentRadius, FluentElevation, FluentMotion, FluentType, FluentIcons } from "fluent/mod.slint";
+export { FluentColors, FluentSpacing, FluentRadius, FluentElevation, FluentMotion, FluentType, FluentIcons } from "theme/fluent/mod.slint";
 
 // Material 3 token layer — Android / Material Design 3
-export { MaterialColors, MaterialSpacing, MaterialRadius, MaterialType, MaterialElevation } from "material/mod.slint";
+export { MaterialColors, MaterialSpacing, MaterialRadius, MaterialType, MaterialElevation } from "theme/material/mod.slint";
 
 // Steam token layer — SteamOS GamepadUI / Steam Deck
-export { SteamColors, SteamSpacing, SteamRadius, SteamType } from "steam/mod.slint";
+export { SteamColors, SteamSpacing, SteamRadius, SteamType } from "theme/steam/mod.slint";
 
 // macOS token layer — Apple Human Interface Guidelines
-export { MacosColors, MacosRadius, MacosSpacing, MacosType } from "macos/mod.slint";
+export { MacosColors, MacosRadius, MacosSpacing, MacosType } from "theme/macos/mod.slint";

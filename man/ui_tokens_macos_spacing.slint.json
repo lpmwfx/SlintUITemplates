@@ -1,0 +1,103 @@
+{
+  "source": "ui/tokens/macos/spacing.slint",
+  "items": [
+    {
+      "name": "xs",
+      "kind": "Property",
+      "signature": "out property <length> xs:   4px;",
+      "line": 7,
+      "doc": ""
+    },
+    {
+      "name": "sm",
+      "kind": "Property",
+      "signature": "out property <length> sm:   8px;",
+      "line": 10,
+      "doc": ""
+    },
+    {
+      "name": "md",
+      "kind": "Property",
+      "signature": "out property <length> md:  12px;",
+      "line": 13,
+      "doc": ""
+    },
+    {
+      "name": "lg",
+      "kind": "Property",
+      "signature": "out property <length> lg:  16px;",
+      "line": 16,
+      "doc": ""
+    },
+    {
+      "name": "xl",
+      "kind": "Property",
+      "signature": "out property <length> xl:  20px;",
+      "line": 19,
+      "doc": ""
+    },
+    {
+      "name": "control-sm",
+      "kind": "Property",
+      "signature": "out property <length> control-sm:  18px;",
+      "line": 24,
+      "doc": ""
+    },
+    {
+      "name": "control-md",
+      "kind": "Property",
+      "signature": "out property <length> control-md:  22px;",
+      "line": 27,
+      "doc": ""
+    },
+    {
+      "name": "control-lg",
+      "kind": "Property",
+      "signature": "out property <length> control-lg:  28px;",
+      "line": 30,
+      "doc": ""
+    },
+    {
+      "name": "titlebar-height",
+      "kind": "Property",
+      "signature": "out property <length> titlebar-height:   28px;",
+      "line": 35,
+      "doc": ""
+    },
+    {
+      "name": "toolbar-height",
+      "kind": "Property",
+      "signature": "out property <length> toolbar-height:    40px;",
+      "line": 38,
+      "doc": ""
+    },
+    {
+      "name": "sidebar-width",
+      "kind": "Property",
+      "signature": "out property <length> sidebar-width:    200px;",
+      "line": 41,
+      "doc": ""
+    },
+    {
+      "name": "tab-bar-height",
+      "kind": "Property",
+      "signature": "out property <length> tab-bar-height:    28px;",
+      "line": 44,
+      "doc": ""
+    },
+    {
+      "name": "status-bar-height",
+      "kind": "Property",
+      "signature": "out property <length> status-bar-height: 22px;",
+      "line": 47,
+      "doc": ""
+    },
+    {
+      "name": "nav-rail-width",
+      "kind": "Property",
+      "signature": "out property <length> nav-rail-width:    52px;",
+      "line": 52,
+      "doc": ""
+    }
+  ]
+}

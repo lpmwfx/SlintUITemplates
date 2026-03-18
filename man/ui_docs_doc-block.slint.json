@@ -1,0 +1,12 @@
+{
+  "source": "ui/docs/doc-block.slint",
+  "items": [
+    {
+      "name": "DocBlock",
+      "kind": "Struct",
+      "signature": "export struct DocBlock {",
+      "line": 5,
+      "doc": ""
+    }
+  ]
+}

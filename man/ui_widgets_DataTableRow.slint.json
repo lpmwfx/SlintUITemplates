@@ -1,0 +1,54 @@
+{
+  "source": "ui/widgets/DataTableRow.slint",
+  "items": [
+    {
+      "name": "DataTableRow",
+      "kind": "Component",
+      "signature": "export component DataTableRow inherits Rectangle {",
+      "line": 8,
+      "doc": ""
+    },
+    {
+      "name": "cells",
+      "kind": "Property",
+      "signature": "in property <[string]>       cells;",
+      "line": 11,
+      "doc": ""
+    },
+    {
+      "name": "columns",
+      "kind": "Property",
+      "signature": "in property <[TableColumn]>  columns;",
+      "line": 14,
+      "doc": ""
+    },
+    {
+      "name": "is-selected",
+      "kind": "Property",
+      "signature": "in property <bool>           is-selected: false;",
+      "line": 17,
+      "doc": ""
+    },
+    {
+      "name": "is-alternate",
+      "kind": "Property",
+      "signature": "in property <bool>           is-alternate: false;",
+      "line": 20,
+      "doc": ""
+    },
+    {
+      "name": "clicked",
+      "kind": "Callback",
+      "signature": "callback clicked();",
+      "line": 23,
+      "doc": ""
+    },
+    {
+      "name": "fallback-col-width",
+      "kind": "Property",
+      "signature": "private property <length> fallback-col-width: 100px;",
+      "line": 27,
+      "doc": ""
+    }
+  ]
+}

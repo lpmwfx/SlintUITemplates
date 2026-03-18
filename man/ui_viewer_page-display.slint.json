@@ -1,0 +1,264 @@
+{
+  "source": "ui/viewer/page-display.slint",
+  "items": [
+    {
+      "name": "PageDisplay",
+      "kind": "Component",
+      "signature": "export component PageDisplay inherits VerticalLayout {",
+      "line": 17,
+      "doc": ""
+    },
+    {
+      "name": "var-info",
+      "kind": "Property",
+      "signature": "private property <string> var-info: \"info\";",
+      "line": 23,
+      "doc": ""
+    },
+    {
+      "name": "var-sm",
+      "kind": "Property",
+      "signature": "private property <string> var-sm: \"sm\";",
+      "line": 26,
+      "doc": ""
+    },
+    {
+      "name": "var-md",
+      "kind": "Property",
+      "signature": "private property <string> var-md: \"md\";",
+      "line": 29,
+      "doc": ""
+    },
+    {
+      "name": "var-lg",
+      "kind": "Property",
+      "signature": "private property <string> var-lg: \"lg\";",
+      "line": 32,
+      "doc": ""
+    },
+    {
+      "name": "var-rect",
+      "kind": "Property",
+      "signature": "private property <string> var-rect: \"rect\";",
+      "line": 35,
+      "doc": ""
+    },
+    {
+      "name": "skel-circle-size",
+      "kind": "Property",
+      "signature": "private property <length> skel-circle-size: 40px;",
+      "line": 40,
+      "doc": ""
+    },
+    {
+      "name": "progress-two-thirds",
+      "kind": "Property",
+      "signature": "private property <float> progress-two-thirds: 0.66;",
+      "line": 43,
+      "doc": ""
+    },
+    {
+      "name": "skel-full",
+      "kind": "Property",
+      "signature": "private property <float> skel-full: Sizes.full;",
+      "line": 46,
+      "doc": ""
+    },
+    {
+      "name": "skel-eighty",
+      "kind": "Property",
+      "signature": "private property <float> skel-eighty: Sizes.percent-80;",
+      "line": 49,
+      "doc": ""
+    },
+    {
+      "name": "skel-sixty",
+      "kind": "Property",
+      "signature": "private property <float> skel-sixty: Sizes.percent-60;",
+      "line": 52,
+      "doc": ""
+    },
+    {
+      "name": "section-badge",
+      "kind": "Property",
+      "signature": "private property <string> section-badge: \"Badge\";",
+      "line": 57,
+      "doc": ""
+    },
+    {
+      "name": "section-avatar",
+      "kind": "Property",
+      "signature": "private property <string> section-avatar: \"Avatar\";",
+      "line": 60,
+      "doc": ""
+    },
+    {
+      "name": "section-card",
+      "kind": "Property",
+      "signature": "private property <string> section-card: \"Card\";",
+      "line": 63,
+      "doc": ""
+    },
+    {
+      "name": "section-listitem",
+      "kind": "Property",
+      "signature": "private property <string> section-listitem: \"ListItem\";",
+      "line": 66,
+      "doc": ""
+    },
+    {
+      "name": "section-progress",
+      "kind": "Property",
+      "signature": "private property <string> section-progress: \"ProgressBar\";",
+      "line": 69,
+      "doc": ""
+    },
+    {
+      "name": "section-chip",
+      "kind": "Property",
+      "signature": "private property <string> section-chip: \"Chip\";",
+      "line": 72,
+      "doc": ""
+    },
+    {
+      "name": "section-skeleton",
+      "kind": "Property",
+      "signature": "private property <string> section-skeleton: \"Skeleton\";",
+      "line": 75,
+      "doc": ""
+    },
+    {
+      "name": "badge-info",
+      "kind": "Property",
+      "signature": "private property <string> badge-info: \"Info\";",
+      "line": 78,
+      "doc": ""
+    },
+    {
+      "name": "badge-success",
+      "kind": "Property",
+      "signature": "private property <string> badge-success: \"Success\";",
+      "line": 81,
+      "doc": ""
+    },
+    {
+      "name": "badge-warning",
+      "kind": "Property",
+      "signature": "private property <string> badge-warning: \"Warning\";",
+      "line": 84,
+      "doc": ""
+    },
+    {
+      "name": "badge-error",
+      "kind": "Property",
+      "signature": "private property <string> badge-error: \"Error\";",
+      "line": 87,
+      "doc": ""
+    },
+    {
+      "name": "card-title-only",
+      "kind": "Property",
+      "signature": "private property <string> card-title-only: \"Title only\";",
+      "line": 90,
+      "doc": ""
+    },
+    {
+      "name": "card-title",
+      "kind": "Property",
+      "signature": "private property <string> card-title: \"Card Title\";",
+      "line": 93,
+      "doc": ""
+    },
+    {
+      "name": "card-subtitle",
+      "kind": "Property",
+      "signature": "private property <string> card-subtitle: \"Supporting subtitle text\";",
+      "line": 96,
+      "doc": ""
+    },
+    {
+      "name": "li-normal",
+      "kind": "Property",
+      "signature": "private property <string> li-normal: \"Normal item\";",
+      "line": 99,
+      "doc": ""
+    },
+    {
+      "name": "li-selected",
+      "kind": "Property",
+      "signature": "private property <string> li-selected: \"Selected item\";",
+      "line": 102,
+      "doc": ""
+    },
+    {
+      "name": "li-subtitle-title",
+      "kind": "Property",
+      "signature": "private property <string> li-subtitle-title: \"With subtitle\";",
+      "line": 105,
+      "doc": ""
+    },
+    {
+      "name": "li-subtitle-text",
+      "kind": "Property",
+      "signature": "private property <string> li-subtitle-text: \"Subtitle text here\";",
+      "line": 108,
+      "doc": ""
+    },
+    {
+      "name": "chip-default",
+      "kind": "Property",
+      "signature": "private property <string> chip-default: \"Default\";",
+      "line": 111,
+      "doc": ""
+    },
+    {
+      "name": "chip-selected",
+      "kind": "Property",
+      "signature": "private property <string> chip-selected: \"Selected\";",
+      "line": 114,
+      "doc": ""
+    },
+    {
+      "name": "chip-noclose",
+      "kind": "Property",
+      "signature": "private property <string> chip-noclose: \"No close\";",
+      "line": 117,
+      "doc": ""
+    },
+    {
+      "name": "chip-disabled",
+      "kind": "Property",
+      "signature": "private property <string> chip-disabled: \"Disabled\";",
+      "line": 120,
+      "doc": ""
+    },
+    {
+      "name": "chip-version",
+      "kind": "Property",
+      "signature": "private property <string> chip-version: \"v1.0.0\";",
+      "line": 123,
+      "doc": ""
+    },
+    {
+      "name": "avatar-sm-initials",
+      "kind": "Property",
+      "signature": "private property <string> avatar-sm-initials: \"SM\";",
+      "line": 126,
+      "doc": ""
+    },
+    {
+      "name": "avatar-md-initials",
+      "kind": "Property",
+      "signature": "private property <string> avatar-md-initials: \"MD\";",
+      "line": 129,
+      "doc": ""
+    },
+    {
+      "name": "avatar-lg-initials",
+      "kind": "Property",
+      "signature": "private property <string> avatar-lg-initials: \"LG\";",
+      "line": 132,
+      "doc": ""
+    }
+  ]
+}

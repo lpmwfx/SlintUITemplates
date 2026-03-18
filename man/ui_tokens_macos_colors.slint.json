@@ -1,0 +1,222 @@
+{
+  "source": "ui/tokens/macos/colors.slint",
+  "items": [
+    {
+      "name": "bg-primary-light",
+      "kind": "Property",
+      "signature": "out property <color> bg-primary-light:    #ffffff;",
+      "line": 9,
+      "doc": ""
+    },
+    {
+      "name": "bg-primary-dark",
+      "kind": "Property",
+      "signature": "out property <color> bg-primary-dark:     #1e1e1e;",
+      "line": 12,
+      "doc": ""
+    },
+    {
+      "name": "bg-surface-light",
+      "kind": "Property",
+      "signature": "out property <color> bg-surface-light:    #f2f2f7;",
+      "line": 15,
+      "doc": ""
+    },
+    {
+      "name": "bg-surface-dark",
+      "kind": "Property",
+      "signature": "out property <color> bg-surface-dark:     #2c2c2e;",
+      "line": 18,
+      "doc": ""
+    },
+    {
+      "name": "bg-elevated-light",
+      "kind": "Property",
+      "signature": "out property <color> bg-elevated-light:   #ffffff;",
+      "line": 21,
+      "doc": ""
+    },
+    {
+      "name": "bg-elevated-dark",
+      "kind": "Property",
+      "signature": "out property <color> bg-elevated-dark:    #3a3a3c;",
+      "line": 24,
+      "doc": ""
+    },
+    {
+      "name": "bg-titlebar-light",
+      "kind": "Property",
+      "signature": "out property <color> bg-titlebar-light:   #ebebeb;",
+      "line": 27,
+      "doc": ""
+    },
+    {
+      "name": "bg-titlebar-dark",
+      "kind": "Property",
+      "signature": "out property <color> bg-titlebar-dark:    #323232;",
+      "line": 30,
+      "doc": ""
+    },
+    {
+      "name": "text-primary-light",
+      "kind": "Property",
+      "signature": "out property <color> text-primary-light:   #000000;",
+      "line": 35,
+      "doc": ""
+    },
+    {
+      "name": "text-primary-dark",
+      "kind": "Property",
+      "signature": "out property <color> text-primary-dark:    #ffffff;",
+      "line": 38,
+      "doc": ""
+    },
+    {
+      "name": "text-secondary-light",
+      "kind": "Property",
+      "signature": "out property <color> text-secondary-light: #3c3c4399;",
+      "line": 41,
+      "doc": ""
+    },
+    {
+      "name": "text-secondary-dark",
+      "kind": "Property",
+      "signature": "out property <color> text-secondary-dark:  #ebebf599;",
+      "line": 44,
+      "doc": ""
+    },
+    {
+      "name": "text-disabled-light",
+      "kind": "Property",
+      "signature": "out property <color> text-disabled-light:  #3c3c4340;",
+      "line": 47,
+      "doc": ""
+    },
+    {
+      "name": "text-disabled-dark",
+      "kind": "Property",
+      "signature": "out property <color> text-disabled-dark:   #ebebf540;",
+      "line": 50,
+      "doc": ""
+    },
+    {
+      "name": "accent-light",
+      "kind": "Property",
+      "signature": "out property <color> accent-light:         #007aff;",
+      "line": 55,
+      "doc": ""
+    },
+    {
+      "name": "accent-dark",
+      "kind": "Property",
+      "signature": "out property <color> accent-dark:          #0a84ff;",
+      "line": 58,
+      "doc": ""
+    },
+    {
+      "name": "accent-hover-light",
+      "kind": "Property",
+      "signature": "out property <color> accent-hover-light:   #0066d6;",
+      "line": 61,
+      "doc": ""
+    },
+    {
+      "name": "accent-hover-dark",
+      "kind": "Property",
+      "signature": "out property <color> accent-hover-dark:    #409cff;",
+      "line": 64,
+      "doc": ""
+    },
+    {
+      "name": "accent-text",
+      "kind": "Property",
+      "signature": "out property <color> accent-text:          #ffffff;",
+      "line": 67,
+      "doc": ""
+    },
+    {
+      "name": "border-light",
+      "kind": "Property",
+      "signature": "out property <color> border-light:         #c6c6c8;",
+      "line": 72,
+      "doc": ""
+    },
+    {
+      "name": "border-dark",
+      "kind": "Property",
+      "signature": "out property <color> border-dark:          #38383a;",
+      "line": 75,
+      "doc": ""
+    },
+    {
+      "name": "border-strong-light",
+      "kind": "Property",
+      "signature": "out property <color> border-strong-light:  #aeaeb2;",
+      "line": 78,
+      "doc": ""
+    },
+    {
+      "name": "border-strong-dark",
+      "kind": "Property",
+      "signature": "out property <color> border-strong-dark:   #545458;",
+      "line": 81,
+      "doc": ""
+    },
+    {
+      "name": "error",
+      "kind": "Property",
+      "signature": "out property <color> error:    #ff3b30;",
+      "line": 86,
+      "doc": ""
+    },
+    {
+      "name": "success",
+      "kind": "Property",
+      "signature": "out property <color> success:  #34c759;",
+      "line": 89,
+      "doc": ""
+    },
+    {
+      "name": "warning",
+      "kind": "Property",
+      "signature": "out property <color> warning:  #ff9500;",
+      "line": 92,
+      "doc": ""
+    },
+    {
+      "name": "shadow",
+      "kind": "Property",
+      "signature": "out property <color> shadow:   #00000033;",
+      "line": 97,
+      "doc": ""
+    },
+    {
+      "name": "overlay",
+      "kind": "Property",
+      "signature": "out property <color> overlay:  #00000040;",
+      "line": 100,
+      "doc": ""
+    },
+    {
+      "name": "traffic-close",
+      "kind": "Property",
+      "signature": "out property <color> traffic-close:    #ff5f57;",
+      "line": 105,
+      "doc": ""
+    },
+    {
+      "name": "traffic-min",
+      "kind": "Property",
+      "signature": "out property <color> traffic-min:      #febc2e;",
+      "line": 108,
+      "doc": ""
+    },
+    {
+      "name": "traffic-full",
+      "kind": "Property",
+      "signature": "out property <color> traffic-full:     #28c840;",
+      "line": 111,
+      "doc": ""
+    }
+  ]
+}

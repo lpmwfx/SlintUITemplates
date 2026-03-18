@@ -1,0 +1,47 @@
+{
+  "source": "ui/widgets/tab-bar.slint",
+  "items": [
+    {
+      "name": "TabItem",
+      "kind": "Struct",
+      "signature": "export struct TabItem {",
+      "line": 6,
+      "doc": ""
+    },
+    {
+      "name": "TabBar",
+      "kind": "Component",
+      "signature": "export component TabBar inherits Rectangle {",
+      "line": 14,
+      "doc": ""
+    },
+    {
+      "name": "tabs",
+      "kind": "Property",
+      "signature": "in property <[TabItem]> tabs: [];",
+      "line": 17,
+      "doc": ""
+    },
+    {
+      "name": "active",
+      "kind": "Property",
+      "signature": "in property <string> active: \"\";",
+      "line": 20,
+      "doc": ""
+    },
+    {
+      "name": "changed",
+      "kind": "Callback",
+      "signature": "callback changed(string);",
+      "line": 23,
+      "doc": ""
+    },
+    {
+      "name": "indicator-h",
+      "kind": "Property",
+      "signature": "private property <length> indicator-h: Sizes.border-w-2;",
+      "line": 27,
+      "doc": ""
+    }
+  ]
+}

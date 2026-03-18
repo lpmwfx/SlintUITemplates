@@ -1,0 +1,89 @@
+{
+  "source": "ui/viewer/page-utilities.slint",
+  "items": [
+    {
+      "name": "PageUtilities",
+      "kind": "Component",
+      "signature": "export component PageUtilities inherits VerticalLayout {",
+      "line": 16,
+      "doc": ""
+    },
+    {
+      "name": "tb-w",
+      "kind": "Property",
+      "signature": "private property <length> tb-w:     400px;",
+      "line": 21,
+      "doc": ""
+    },
+    {
+      "name": "mb-w",
+      "kind": "Property",
+      "signature": "private property <length> mb-w:     500px;",
+      "line": 24,
+      "doc": ""
+    },
+    {
+      "name": "es-w",
+      "kind": "Property",
+      "signature": "private property <length> es-w:     340px;",
+      "line": 27,
+      "doc": ""
+    },
+    {
+      "name": "es-h",
+      "kind": "Property",
+      "signature": "private property <length> es-h:     200px;",
+      "line": 30,
+      "doc": ""
+    },
+    {
+      "name": "seg1-w",
+      "kind": "Property",
+      "signature": "private property <length> seg1-w:   240px;",
+      "line": 33,
+      "doc": ""
+    },
+    {
+      "name": "seg2-w",
+      "kind": "Property",
+      "signature": "private property <length> seg2-w:   120px;",
+      "line": 36,
+      "doc": ""
+    },
+    {
+      "name": "ff-w",
+      "kind": "Property",
+      "signature": "private property <length> ff-w:     300px;",
+      "line": 39,
+      "doc": ""
+    },
+    {
+      "name": "border-px",
+      "kind": "Property",
+      "signature": "private property <length> border-px: Sizes.border-w;",
+      "line": 42,
+      "doc": ""
+    },
+    {
+      "name": "seg-val",
+      "kind": "Property",
+      "signature": "private property <string> seg-val:   \"day\";",
+      "line": 45,
+      "doc": ""
+    },
+    {
+      "name": "seg2-val",
+      "kind": "Property",
+      "signature": "private property <string> seg2-val:  \"list\";",
+      "line": 48,
+      "doc": ""
+    },
+    {
+      "name": "mb-info-msg",
+      "kind": "Property",
+      "signature": "private property <string> mb-info-msg: \"Your session will expire in 10 minutes.\";",
+      "line": 51,
+      "doc": ""
+    }
+  ]
+}

@@ -1,22 +1,29 @@
-import { Colors, Spacing, Type } from "../tokens/theme.slint";
-import { Sizes } from "../tokens/sizes.slint";
+import { Colors, Spacing, Type } from "../globals/theme.slint";
+import { Sizes } from "../state/sizes.slint";
 import { TableColumn } from "data-table-types.slint";
 
 // DataTableRow — a single data row with cells matching column widths.
 /// D at at ab le ro w component.
+/// component `DataTableRow`.
 export component DataTableRow inherits Rectangle {
     /// Input property "cells".
+    /// property `cells`.
     in property <[string]>       cells;
     /// Input property "columns".
+    /// property `columns`.
     in property <[TableColumn]>  columns;
     /// Input property "is-selected".
+    /// property `is-selected`.
     in property <bool>           is-selected: false;
     /// Input property "is-alternate".
+    /// property `is-alternate`.
     in property <bool>           is-alternate: false;
     /// Callback fired for c li ck ed.
+    /// callback `clicked`.
     callback clicked();
 
     /// Private property "fallback-col-width" used internally.
+    /// property `fallback-col-width`.
     private property <length> fallback-col-width: 100px;
 
     height: Spacing.xl;

@@ -1,0 +1,33 @@
+{
+  "source": "ui/viewer/viewer-content.slint",
+  "items": [
+    {
+      "name": "ViewerContent",
+      "kind": "Component",
+      "signature": "export component ViewerContent inherits Flickable {",
+      "line": 19,
+      "doc": ""
+    },
+    {
+      "name": "active-view",
+      "kind": "Property",
+      "signature": "in property <string> active-view: \"\";",
+      "line": 22,
+      "doc": ""
+    },
+    {
+      "name": "canvas-frame",
+      "kind": "Property",
+      "signature": "in property <image>  canvas-frame;",
+      "line": 25,
+      "doc": ""
+    },
+    {
+      "name": "window-height",
+      "kind": "Property",
+      "signature": "in property <length> window-height;",
+      "line": 28,
+      "doc": ""
+    }
+  ]
+}

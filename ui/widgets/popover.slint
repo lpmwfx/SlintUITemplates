@@ -11,22 +11,29 @@
 //       Button { clicked => { show-popover = !show-popover; } }
 //   }
 
-import { Spacing } from "../tokens/theme.slint";
+import { Spacing } from "../globals/theme.slint";
 import { PopoverInner } from "popover-inner.slint";
 
 /// P op ov er component.
+/// component `Popover`.
 export component Popover inherits Rectangle {
     /// Input property "open".
+    /// property `open`.
     in property <bool>   open: false;
     /// Input property "popup-width".
+    /// property `popup-width`.
     in property <length> popup-width:  220px;
     /// Input property "popup-height".
+    /// property `popup-height`.
     in property <length> popup-height: 140px;
     /// Input property "title".
+    /// property `title`.
     in property <string> title: "";
     /// Input property "body".
+    /// property `body`.
     in property <string> body: "";
     /// Callback fired for c lo se r eq ue st ed.
+    /// callback `close-requested`.
     callback close-requested();
 
     clip: false;

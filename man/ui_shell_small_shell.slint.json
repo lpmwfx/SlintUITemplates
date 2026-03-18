@@ -1,0 +1,68 @@
+{
+  "source": "ui/shell/small/shell.slint",
+  "items": [
+    {
+      "name": "CompactShell",
+      "kind": "Component",
+      "signature": "export component CompactShell inherits Rectangle {",
+      "line": 15,
+      "doc": ""
+    },
+    {
+      "name": "title",
+      "kind": "Property",
+      "signature": "in property <string> title;",
+      "line": 18,
+      "doc": ""
+    },
+    {
+      "name": "nav-items",
+      "kind": "Property",
+      "signature": "in property <[NavItem]> nav-items;",
+      "line": 21,
+      "doc": ""
+    },
+    {
+      "name": "active-view",
+      "kind": "Property",
+      "signature": "in property <string> active-view;",
+      "line": 24,
+      "doc": ""
+    },
+    {
+      "name": "show-topbar",
+      "kind": "Property",
+      "signature": "in property <bool> show-topbar: true;",
+      "line": 27,
+      "doc": ""
+    },
+    {
+      "name": "show-back",
+      "kind": "Property",
+      "signature": "in property <bool> show-back: false;",
+      "line": 30,
+      "doc": ""
+    },
+    {
+      "name": "nav-mode",
+      "kind": "Property",
+      "signature": "in property <string> nav-mode: Variants.nav-bottom;",
+      "line": 33,
+      "doc": ""
+    },
+    {
+      "name": "navigate",
+      "kind": "Callback",
+      "signature": "callback navigate(string);",
+      "line": 36,
+      "doc": ""
+    },
+    {
+      "name": "back",
+      "kind": "Callback",
+      "signature": "callback back();",
+      "line": 39,
+      "doc": ""
+    }
+  ]
+}

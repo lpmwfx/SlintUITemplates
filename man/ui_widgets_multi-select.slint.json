@@ -1,0 +1,54 @@
+{
+  "source": "ui/widgets/multi-select.slint",
+  "items": [
+    {
+      "name": "MultiSelect",
+      "kind": "Component",
+      "signature": "export component MultiSelect inherits Rectangle {",
+      "line": 11,
+      "doc": ""
+    },
+    {
+      "name": "options",
+      "kind": "Property",
+      "signature": "in property <[MultiSelectOption]> options: [];",
+      "line": 14,
+      "doc": ""
+    },
+    {
+      "name": "selected",
+      "kind": "Property",
+      "signature": "in property <[string]>        selected: [];",
+      "line": 17,
+      "doc": ""
+    },
+    {
+      "name": "placeholder",
+      "kind": "Property",
+      "signature": "in property <string>              placeholder: \"Select...\";",
+      "line": 20,
+      "doc": ""
+    },
+    {
+      "name": "enabled",
+      "kind": "Property",
+      "signature": "in property <bool>                enabled: true;",
+      "line": 23,
+      "doc": ""
+    },
+    {
+      "name": "changed",
+      "kind": "Callback",
+      "signature": "callback changed([string]);",
+      "line": 26,
+      "doc": ""
+    },
+    {
+      "name": "open",
+      "kind": "Property",
+      "signature": "private property <bool> open: false;",
+      "line": 30,
+      "doc": ""
+    }
+  ]
+}

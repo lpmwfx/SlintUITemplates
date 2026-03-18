@@ -1,7 +1,7 @@
 // page-navigation — TabBar, Breadcrumb, Pagination, Stepper
 
-import { Spacing } from "../tokens/theme.slint";
-import { Sizes } from "../tokens/sizes.slint";
+import { Spacing } from "../globals/theme.slint";
+import { Sizes } from "../state/sizes.slint";
 import { TabBar, TabItem }         from "../widgets/tab-bar.slint";
 import { Breadcrumb, BreadcrumbItem } from "../widgets/breadcrumb.slint";
 import { Pagination }              from "../widgets/pagination.slint";
@@ -9,24 +9,32 @@ import { Stepper, StepItem }       from "../widgets/stepper.slint";
 import { ViewerSection } from "viewer-section.slint";
 
 /// Viewer page showcasing navigation widgets such as tabs, breadcrumbs, pagination, and steppers.
+/// component `PageNavigation`.
 export component PageNavigation inherits VerticalLayout {
     spacing: Spacing.md;
 
     /// Private property "active-tab" used internally.
+    /// property `active-tab`.
     private property <string> active-tab: "one";
     /// Private property "page" used internally.
+    /// property `page`.
     private property <int>    page: Sizes.three;
     /// Private property "step-active" used internally.
+    /// property `step-active`.
     private property <int>    step-active: Sizes.one;
 
     // ── demo labels ─────────────────────────────────────────────────────
     /// Private property "section-tabbar" used internally.
+    /// property `section-tabbar`.
     private property <string> section-tabbar: "TabBar";
     /// Private property "section-breadcrumb" used internally.
+    /// property `section-breadcrumb`.
     private property <string> section-breadcrumb: "Breadcrumb";
     /// Private property "section-pagination" used internally.
+    /// property `section-pagination`.
     private property <string> section-pagination: "Pagination";
     /// Private property "section-stepper" used internally.
+    /// property `section-stepper`.
     private property <string> section-stepper: "Stepper";
 
     ViewerSection {

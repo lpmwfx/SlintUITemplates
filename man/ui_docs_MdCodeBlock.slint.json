@@ -1,0 +1,26 @@
+{
+  "source": "ui/docs/MdCodeBlock.slint",
+  "items": [
+    {
+      "name": "MdCodeBlock",
+      "kind": "Component",
+      "signature": "export component MdCodeBlock inherits VerticalLayout {",
+      "line": 7,
+      "doc": ""
+    },
+    {
+      "name": "text",
+      "kind": "Property",
+      "signature": "in property <string> text;",
+      "line": 10,
+      "doc": ""
+    },
+    {
+      "name": "mono-font",
+      "kind": "Property",
+      "signature": "in property <string> mono-font: \"Consolas\";",
+      "line": 13,
+      "doc": ""
+    }
+  ]
+}

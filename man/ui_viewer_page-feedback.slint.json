@@ -1,0 +1,208 @@
+{
+  "source": "ui/viewer/page-feedback.slint",
+  "items": [
+    {
+      "name": "PageFeedback",
+      "kind": "Component",
+      "signature": "export component PageFeedback inherits VerticalLayout {",
+      "line": 16,
+      "doc": ""
+    },
+    {
+      "name": "var-info",
+      "kind": "Property",
+      "signature": "private property <string> var-info: \"info\";",
+      "line": 22,
+      "doc": ""
+    },
+    {
+      "name": "var-sm",
+      "kind": "Property",
+      "signature": "private property <string> var-sm: \"sm\";",
+      "line": 25,
+      "doc": ""
+    },
+    {
+      "name": "var-md",
+      "kind": "Property",
+      "signature": "private property <string> var-md: \"md\";",
+      "line": 28,
+      "doc": ""
+    },
+    {
+      "name": "var-lg",
+      "kind": "Property",
+      "signature": "private property <string> var-lg: \"lg\";",
+      "line": 31,
+      "doc": ""
+    },
+    {
+      "name": "section-toast",
+      "kind": "Property",
+      "signature": "private property <string> section-toast: \"Toast\";",
+      "line": 36,
+      "doc": ""
+    },
+    {
+      "name": "section-dialog",
+      "kind": "Property",
+      "signature": "private property <string> section-dialog: \"Dialog\";",
+      "line": 39,
+      "doc": ""
+    },
+    {
+      "name": "section-spinner",
+      "kind": "Property",
+      "signature": "private property <string> section-spinner: \"Spinner\";",
+      "line": 42,
+      "doc": ""
+    },
+    {
+      "name": "section-alert",
+      "kind": "Property",
+      "signature": "private property <string> section-alert: \"Alert\";",
+      "line": 45,
+      "doc": ""
+    },
+    {
+      "name": "section-tooltip",
+      "kind": "Property",
+      "signature": "private property <string> section-tooltip: \"Tooltip\";",
+      "line": 48,
+      "doc": ""
+    },
+    {
+      "name": "toast-info-msg",
+      "kind": "Property",
+      "signature": "private property <string> toast-info-msg: \"Information message\";",
+      "line": 51,
+      "doc": ""
+    },
+    {
+      "name": "toast-success-msg",
+      "kind": "Property",
+      "signature": "private property <string> toast-success-msg: \"Success! Operation complete\";",
+      "line": 54,
+      "doc": ""
+    },
+    {
+      "name": "toast-warning-msg",
+      "kind": "Property",
+      "signature": "private property <string> toast-warning-msg: \"Warning: please check input\";",
+      "line": 57,
+      "doc": ""
+    },
+    {
+      "name": "toast-error-msg",
+      "kind": "Property",
+      "signature": "private property <string> toast-error-msg: \"Error: action failed\";",
+      "line": 60,
+      "doc": ""
+    },
+    {
+      "name": "dialog-title",
+      "kind": "Property",
+      "signature": "private property <string> dialog-title: \"Confirm Action\";",
+      "line": 63,
+      "doc": ""
+    },
+    {
+      "name": "alert-info-msg",
+      "kind": "Property",
+      "signature": "private property <string> alert-info-msg: \"This is an informational alert.\";",
+      "line": 66,
+      "doc": ""
+    },
+    {
+      "name": "alert-success-title",
+      "kind": "Property",
+      "signature": "private property <string> alert-success-title: \"Success!\";",
+      "line": 69,
+      "doc": ""
+    },
+    {
+      "name": "alert-success-msg",
+      "kind": "Property",
+      "signature": "private property <string> alert-success-msg: \"Your changes have been saved.\";",
+      "line": 72,
+      "doc": ""
+    },
+    {
+      "name": "alert-warning-title",
+      "kind": "Property",
+      "signature": "private property <string> alert-warning-title: \"Warning\";",
+      "line": 75,
+      "doc": ""
+    },
+    {
+      "name": "alert-warning-msg",
+      "kind": "Property",
+      "signature": "private property <string> alert-warning-msg: \"Please review before continuing.\";",
+      "line": 78,
+      "doc": ""
+    },
+    {
+      "name": "alert-error-title",
+      "kind": "Property",
+      "signature": "private property <string> alert-error-title: \"Error\";",
+      "line": 81,
+      "doc": ""
+    },
+    {
+      "name": "alert-error-msg",
+      "kind": "Property",
+      "signature": "private property <string> alert-error-msg: \"Something went wrong. Please try again.\";",
+      "line": 84,
+      "doc": ""
+    },
+    {
+      "name": "tooltip-top-text",
+      "kind": "Property",
+      "signature": "private property <string> tooltip-top-text: \"Top tooltip (default)\";",
+      "line": 87,
+      "doc": ""
+    },
+    {
+      "name": "tooltip-bottom-text",
+      "kind": "Property",
+      "signature": "private property <string> tooltip-bottom-text: \"Bottom tooltip\";",
+      "line": 90,
+      "doc": ""
+    },
+    {
+      "name": "tooltip-right-text",
+      "kind": "Property",
+      "signature": "private property <string> tooltip-right-text: \"Right tooltip\";",
+      "line": 93,
+      "doc": ""
+    },
+    {
+      "name": "btn-hover",
+      "kind": "Property",
+      "signature": "private property <string> btn-hover: \"Hover me\";",
+      "line": 96,
+      "doc": ""
+    },
+    {
+      "name": "btn-bottom",
+      "kind": "Property",
+      "signature": "private property <string> btn-bottom: \"Bottom\";",
+      "line": 99,
+      "doc": ""
+    },
+    {
+      "name": "btn-right",
+      "kind": "Property",
+      "signature": "private property <string> btn-right: \"Right\";",
+      "line": 102,
+      "doc": ""
+    },
+    {
+      "name": "dialog-w",
+      "kind": "Property",
+      "signature": "private property <length> dialog-w: Sizes.comp-480;",
+      "line": 105,
+      "doc": ""
+    }
+  ]
+}

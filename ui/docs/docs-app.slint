@@ -1,4 +1,4 @@
-import { Colors, Spacing, Type, Sizes, Settings } from "../tokens/theme.slint";
+import { Colors, Spacing, Type, Sizes, Settings } from "../globals/theme.slint";
 import { NavBar }           from "../desktop/nav-bar.slint";
 import { NavItem }          from "../desktop/types.slint";
 import { SideBar }          from "../desktop/side-bar.slint";
@@ -15,12 +15,16 @@ export { DocBlock }
 // Mother component: owns sidebar state + layout. Children receive in property.
 // Rust host sets doc-blocks on navigate and handles toggle-group for collapse.
 /// D oc sa pp component.
+/// component `DocsApp`.
 export component DocsApp inherits Window {
     /// Input property "window-title".
+    /// property `window-title`.
     in property <string>             window-title:     "SlintUITemplates — Docs";
     /// Input property "menu-file-label".
+    /// property `menu-file-label`.
     in property <string>             menu-file-label:  "File";
     /// Input property "menu-theme-label".
+    /// property `menu-theme-label`.
     in property <string>             menu-theme-label: "Theme";
     preferred-width:  Sizes.docs-window-width;
     preferred-height: Sizes.docs-window-height;
@@ -32,29 +36,39 @@ export component DocsApp inherits Window {
 
     // ── State ─────────────────────────────────────────────────────────────────
     /// Two-way property "active-view".
+    /// property `active-view`.
     in-out property <string>         active-view: "getting-started";
     /// Two-way property "nav-items".
+    /// property `nav-items`.
     in-out property <[NavItem]>      nav-items: [];
     /// Two-way property "doc-blocks".
+    /// property `doc-blocks`.
     in-out property <[DocBlock]>     doc-blocks: [];
     /// Two-way property "doc-title".
+    /// property `doc-title`.
     in-out property <string>         doc-title: "";
     /// Two-way property "status-text".
+    /// property `status-text`.
     in-out property <string>         status-text: "Ready";
     /// Input property "toolbar-items".
+    /// property `toolbar-items`.
     in property <[ShellToolbarItem]> toolbar-items: [];
     /// Input property "show-toolbar".
+    /// property `show-toolbar`.
     in property <bool>               show-toolbar: false;
 
     /// Two-way property "sidebar-collapsed".
+    /// property `sidebar-collapsed`.
     in-out property <bool>   sidebar-collapsed: false;
     /// Two-way property "col-left-width".
+    /// property `col-left-width`.
     in-out property <length> col-left-width: Spacing.xl * 4 + Spacing.md;
 
     property <length> sidebar-expanded-width:  Spacing.xl * 4 + Spacing.md;
     property <length> sidebar-collapsed-width: Spacing.xl + Spacing.sm;
     // Captures col-left-width at drag-start so drag-sidebar can use cumulative dx correctly.
     /// Private property "drag-base-width" used internally.
+    /// property `drag-base-width`.
     private property <length> drag-base-width: Spacing.xl * 4 + Spacing.md;
 
     // Keep col-left-width in sync when sidebar collapses/expands via toggle
@@ -66,16 +80,22 @@ export component DocsApp inherits Window {
 
     // ── Callbacks ─────────────────────────────────────────────────────────────
     /// Callback fired for n av ig at e.
+    /// callback `navigate`.
     callback navigate(string);
     /// Callback fired for t oo lb ar c li ck ed.
+    /// callback `toolbar-clicked`.
     callback toolbar-clicked(string);
     /// Callback fired for r eq ue st b g s ty le.
+    /// callback `request-bg-style`.
     callback request-bg-style(string);
     /// Callback fired for t og gl e g ro up.
+    /// callback `toggle-group`.
     callback toggle-group(string);   // Rust-siden håndterer hidden-toggle på nav-items
     /// Callback fired for d ra g s id eb ar.
+    /// callback `drag-sidebar`.
     callback drag-sidebar(dx: float);
     /// Callback fired for d ra g a nc ho r.
+    /// callback `drag-anchor`.
     callback drag-anchor();   // called by DragHandle on press+release to re-anchor drag-base-width
 
     // Anchor: capture current col-left-width as the drag baseline.

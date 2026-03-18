@@ -1,5 +1,5 @@
-import { Colors, Spacing, Type } from "../tokens/theme.slint";
-import { Variants } from "../globals/Variants.slint";
+import { Colors, Spacing, Type } from "../globals/theme.slint";
+import { Variants } from "../state/variants.slint";
 import { Card }   from "../widgets/card.slint";
 import { Badge }  from "../widgets/badge.slint";
 import { Button } from "../widgets/button.slint";
@@ -7,14 +7,18 @@ import { Button } from "../widgets/button.slint";
 /// Default starter view shown for the `home` navigation slot.
 ///
 /// Intended as a simple designer-editable page for app-specific content.
+/// component `HomeView`.
 export component HomeView inherits Rectangle {
     background: Colors.bg-primary;
 
     /// Private property "card-subtitle" used internally.
+    /// property `card-subtitle`.
     private property <string> card-subtitle: "Edit ui/views/home.slint to design this view";
     /// Private property "page-title" used internally.
+    /// property `page-title`.
     private property <string> page-title: "Home";
     /// Private property "card-title" used internally.
+    /// property `card-title`.
     private property <string> card-title: "Getting started";
 
     VerticalLayout {

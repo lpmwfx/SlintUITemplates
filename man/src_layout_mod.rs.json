@@ -1,0 +1,61 @@
+{
+  "source": "src/layout/mod.rs",
+  "items": [
+    {
+      "name": "constraints",
+      "kind": "Mod",
+      "signature": "pub mod constraints;",
+      "line": 2,
+      "doc": "Ratio-space min/max constraints for panel sizing."
+    },
+    {
+      "name": "dsl_v2",
+      "kind": "Mod",
+      "signature": "pub mod dsl_v2;",
+      "line": 4,
+      "doc": "DSL v2 parser with named slot declarations."
+    },
+    {
+      "name": "named_parser",
+      "kind": "Mod",
+      "signature": "pub mod named_parser;",
+      "line": 6,
+      "doc": "Named-slot parse_named implementation."
+    },
+    {
+      "name": "parser",
+      "kind": "Mod",
+      "signature": "pub mod parser;",
+      "line": 8,
+      "doc": "DSL v1 parser that converts layout strings into a `PanelNode` tree."
+    },
+    {
+      "name": "ratio_solver",
+      "kind": "Mod",
+      "signature": "pub mod ratio_solver;",
+      "line": 10,
+      "doc": "Bi-directional ratio solver for interactive panel resizing."
+    },
+    {
+      "name": "solver",
+      "kind": "Mod",
+      "signature": "pub mod solver;",
+      "line": 12,
+      "doc": "Flattens a `PanelNode` tree into positioned `SolvedItem` rectangles."
+    },
+    {
+      "name": "build",
+      "kind": "Fn",
+      "signature": "pub fn build(dsl: &str, win_w: f32, win_h: f32) -> Vec<SolvedItem>",
+      "line": 22,
+      "doc": "Parse a DSL string and solve layout for given window dimensions.\nReturns a flat Vec<SolvedItem> ready to push to Slint as [PanelItem]."
+    },
+    {
+      "name": "build_v2",
+      "kind": "Fn",
+      "signature": "pub fn build_v2(dsl: &str) -> Vec<Panel>",
+      "line": 29,
+      "doc": "Parse a DSL v2 named-slot string into resizable Panels.\nUse `drag()` on the returned panels to apply interactive resize."
+    }
+  ]
+}

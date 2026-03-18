@@ -1,0 +1,19 @@
+{
+  "source": "ui/views/settings.slint",
+  "items": [
+    {
+      "name": "SettingsView",
+      "kind": "Component",
+      "signature": "export component SettingsView inherits Rectangle {",
+      "line": 10,
+      "doc": ""
+    },
+    {
+      "name": "page-title",
+      "kind": "Property",
+      "signature": "private property <string> page-title: \"Settings\";",
+      "line": 14,
+      "doc": ""
+    }
+  ]
+}

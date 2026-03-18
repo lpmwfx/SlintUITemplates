@@ -1,34 +1,43 @@
 // MobileShell — Material 3 layout: TopAppBar + Content + BottomNavBar + FAB.
 // Parent provides content as @children.
 
-import { MaterialColors, MaterialSpacing } from "../../tokens/material/mod.slint";
-import { Sizes }           from "../../tokens/sizes.slint";
+import { MaterialColors, MaterialSpacing } from "../../globals/theme/material/mod.slint";
+import { Sizes }           from "../../state/sizes.slint";
 import { NavItem }      from "../types.slint";
 import { TopAppBar }    from "top-app-bar.slint";
 import { BottomNavBar } from "bottom-nav-bar.slint";
 import { FAB }          from "fab.slint";
-import { FluentIcons }  from "../../tokens/theme.slint";
+import { FluentIcons }  from "../../globals/theme.slint";
 
 /// M ob il es he ll component.
+/// component `MobileShell`.
 export component MobileShell inherits VerticalLayout {
     // Config
     /// Input property "title".
+    /// property `title`.
     in property <string>    title: "App";
     /// Input property "nav-items".
+    /// property `nav-items`.
     in property <[NavItem]> nav-items;
     /// Input property "active-view".
+    /// property `active-view`.
     in property <string>    active-view: "";
     /// Input property "fab-icon".
+    /// property `fab-icon`.
     in property <string>    fab-icon:    FluentIcons.add;
     /// Input property "fab-label".
+    /// property `fab-label`.
     in property <string>    fab-label:   "";
     /// Input property "show-fab".
+    /// property `show-fab`.
     in property <bool>      show-fab:    true;
 
     // Callbacks
     /// Callback fired for n av ig at e.
+    /// callback `navigate`.
     callback navigate(string);
     /// Callback fired for f ab c li ck ed.
+    /// callback `fab-clicked`.
     callback fab-clicked();
 
     spacing: Sizes.no-size;

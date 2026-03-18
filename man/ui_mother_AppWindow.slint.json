@@ -1,0 +1,54 @@
+{
+  "source": "ui/mother/AppWindow.slint",
+  "items": [
+    {
+      "name": "AppWindow",
+      "kind": "Component",
+      "signature": "export component AppWindow inherits Window {",
+      "line": 21,
+      "doc": ""
+    },
+    {
+      "name": "window-title",
+      "kind": "Property",
+      "signature": "in property <string> window-title: \"SlintUITemplates\";",
+      "line": 27,
+      "doc": ""
+    },
+    {
+      "name": "theme-mode",
+      "kind": "Property",
+      "signature": "in property <string> theme-mode: Variants.system;",
+      "line": 32,
+      "doc": ""
+    },
+    {
+      "name": "material",
+      "kind": "Property",
+      "signature": "in property <string> material: Variants.solid;  // \"solid\" | \"mica\" | \"acrylic\"",
+      "line": 35,
+      "doc": ""
+    },
+    {
+      "name": "platform",
+      "kind": "Property",
+      "signature": "in property <string> platform: Variants.windows;",
+      "line": 38,
+      "doc": ""
+    },
+    {
+      "name": "panels",
+      "kind": "Property",
+      "signature": "in property <[PanelItem]> panels;",
+      "line": 57,
+      "doc": ""
+    },
+    {
+      "name": "panel-dragged",
+      "kind": "Callback",
+      "signature": "callback panel-dragged(int, float, float);   // id, dx, dy in logical px",
+      "line": 62,
+      "doc": ""
+    }
+  ]
+}

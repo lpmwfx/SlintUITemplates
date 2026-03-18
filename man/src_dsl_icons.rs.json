@@ -1,0 +1,19 @@
+{
+  "source": "src/dsl/icons.rs",
+  "items": [
+    {
+      "name": "IconName",
+      "kind": "Enum",
+      "signature": "pub enum IconName",
+      "line": 9,
+      "doc": "Strongly-typed icon names from the Fluent icon set.\nI co nn am e enum."
+    },
+    {
+      "name": "fluent_icon",
+      "kind": "Fn",
+      "signature": "pub fn fluent_icon(name: &str) -> Option<&'static str>",
+      "line": 143,
+      "doc": "Look up the Segoe Fluent Icons codepoint for an icon name string.\nReturns `None` if the name is not recognized."
+    }
+  ]
+}

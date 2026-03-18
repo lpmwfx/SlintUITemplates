@@ -1,0 +1,26 @@
+{
+  "source": "src/layout/constraints.rs",
+  "items": [
+    {
+      "name": "Constraint",
+      "kind": "Struct",
+      "signature": "pub struct Constraint",
+      "line": 14,
+      "doc": "Ratio-space min/max constraint that bounds a panel's resizable range.\nC on st ra in t struct."
+    },
+    {
+      "name": "new",
+      "kind": "Fn",
+      "signature": "pub fn new(min: f32, max: f32) -> Self",
+      "line": 23,
+      "doc": "Create a constraint with the given min and max ratio bounds."
+    },
+    {
+      "name": "clamp",
+      "kind": "Fn",
+      "signature": "pub fn clamp(&self, ratio: f32) -> f32",
+      "line": 31,
+      "doc": "Clamp a ratio value to the `[min, max]` range."
+    }
+  ]
+}

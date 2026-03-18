@@ -1,18 +1,24 @@
-import { Colors, Spacing, Type } from "../tokens/theme.slint";
-import { Sizes } from "../tokens/sizes.slint";
+import { Colors, Spacing, Type } from "../globals/theme.slint";
+import { Sizes } from "../state/sizes.slint";
 
 /// Compact two-line list row with optional subtitle and selected state.
+/// component `ListItem`.
 export component ListItem inherits Rectangle {
     /// Primary text shown for the row.
+    /// property `title`.
     in property <string> title: "";
     /// Secondary text shown below the title when non-empty.
+    /// property `subtitle`.
     in property <string> subtitle: "";
     /// Highlights the row as the currently selected item.
+    /// property `selected`.
     in property <bool> selected: false;
     /// Fired when the row is clicked.
+    /// callback `clicked`.
     callback clicked();
 
     /// Private property "inner-gap" used internally.
+    /// property `inner-gap`.
     private property <length> inner-gap: Sizes.border-w-2;
 
     height: subtitle != "" ? Spacing.xl + Type.caption-size + Spacing.xs : Spacing.xl;

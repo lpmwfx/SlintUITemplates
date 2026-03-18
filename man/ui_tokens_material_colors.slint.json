@@ -1,0 +1,208 @@
+{
+  "source": "ui/tokens/material/colors.slint",
+  "items": [
+    {
+      "name": "primary",
+      "kind": "Property",
+      "signature": "out property <color> primary:           #6750A4;",
+      "line": 9,
+      "doc": ""
+    },
+    {
+      "name": "on-primary",
+      "kind": "Property",
+      "signature": "out property <color> on-primary:        #FFFFFF;",
+      "line": 12,
+      "doc": ""
+    },
+    {
+      "name": "primary-container",
+      "kind": "Property",
+      "signature": "out property <color> primary-container: #EADDFF;",
+      "line": 15,
+      "doc": ""
+    },
+    {
+      "name": "on-primary-container",
+      "kind": "Property",
+      "signature": "out property <color> on-primary-container: #21005D;",
+      "line": 18,
+      "doc": ""
+    },
+    {
+      "name": "secondary",
+      "kind": "Property",
+      "signature": "out property <color> secondary:           #625B71;",
+      "line": 23,
+      "doc": ""
+    },
+    {
+      "name": "on-secondary",
+      "kind": "Property",
+      "signature": "out property <color> on-secondary:        #FFFFFF;",
+      "line": 26,
+      "doc": ""
+    },
+    {
+      "name": "secondary-container",
+      "kind": "Property",
+      "signature": "out property <color> secondary-container: #E8DEF8;",
+      "line": 29,
+      "doc": ""
+    },
+    {
+      "name": "on-secondary-container",
+      "kind": "Property",
+      "signature": "out property <color> on-secondary-container: #1D192B;",
+      "line": 32,
+      "doc": ""
+    },
+    {
+      "name": "tertiary",
+      "kind": "Property",
+      "signature": "out property <color> tertiary:           #7D5260;",
+      "line": 37,
+      "doc": ""
+    },
+    {
+      "name": "on-tertiary",
+      "kind": "Property",
+      "signature": "out property <color> on-tertiary:        #FFFFFF;",
+      "line": 40,
+      "doc": ""
+    },
+    {
+      "name": "tertiary-container",
+      "kind": "Property",
+      "signature": "out property <color> tertiary-container: #FFD8E4;",
+      "line": 43,
+      "doc": ""
+    },
+    {
+      "name": "on-tertiary-container",
+      "kind": "Property",
+      "signature": "out property <color> on-tertiary-container: #31111D;",
+      "line": 46,
+      "doc": ""
+    },
+    {
+      "name": "error",
+      "kind": "Property",
+      "signature": "out property <color> error:            #B3261E;",
+      "line": 51,
+      "doc": ""
+    },
+    {
+      "name": "on-error",
+      "kind": "Property",
+      "signature": "out property <color> on-error:         #FFFFFF;",
+      "line": 54,
+      "doc": ""
+    },
+    {
+      "name": "error-container",
+      "kind": "Property",
+      "signature": "out property <color> error-container:  #F9DEDC;",
+      "line": 57,
+      "doc": ""
+    },
+    {
+      "name": "on-error-container",
+      "kind": "Property",
+      "signature": "out property <color> on-error-container: #410E0B;",
+      "line": 60,
+      "doc": ""
+    },
+    {
+      "name": "surface",
+      "kind": "Property",
+      "signature": "out property <color> surface:           #FFFBFE;",
+      "line": 65,
+      "doc": ""
+    },
+    {
+      "name": "on-surface",
+      "kind": "Property",
+      "signature": "out property <color> on-surface:        #1C1B1F;",
+      "line": 68,
+      "doc": ""
+    },
+    {
+      "name": "surface-variant",
+      "kind": "Property",
+      "signature": "out property <color> surface-variant:   #E7E0EC;",
+      "line": 71,
+      "doc": ""
+    },
+    {
+      "name": "on-surface-variant",
+      "kind": "Property",
+      "signature": "out property <color> on-surface-variant: #49454F;",
+      "line": 74,
+      "doc": ""
+    },
+    {
+      "name": "surface-container",
+      "kind": "Property",
+      "signature": "out property <color> surface-container: #F3EDF7;",
+      "line": 77,
+      "doc": ""
+    },
+    {
+      "name": "surface-container-high",
+      "kind": "Property",
+      "signature": "out property <color> surface-container-high: #ECE6F0;",
+      "line": 80,
+      "doc": ""
+    },
+    {
+      "name": "background",
+      "kind": "Property",
+      "signature": "out property <color> background:    #FFFBFE;",
+      "line": 85,
+      "doc": ""
+    },
+    {
+      "name": "on-background",
+      "kind": "Property",
+      "signature": "out property <color> on-background: #1C1B1F;",
+      "line": 88,
+      "doc": ""
+    },
+    {
+      "name": "outline",
+      "kind": "Property",
+      "signature": "out property <color> outline:         #79747E;",
+      "line": 93,
+      "doc": ""
+    },
+    {
+      "name": "outline-variant",
+      "kind": "Property",
+      "signature": "out property <color> outline-variant: #CAC4D0;",
+      "line": 96,
+      "doc": ""
+    },
+    {
+      "name": "inverse-surface",
+      "kind": "Property",
+      "signature": "out property <color> inverse-surface:    #313033;",
+      "line": 101,
+      "doc": ""
+    },
+    {
+      "name": "inverse-on-surface",
+      "kind": "Property",
+      "signature": "out property <color> inverse-on-surface: #F4EFF4;",
+      "line": 104,
+      "doc": ""
+    },
+    {
+      "name": "inverse-primary",
+      "kind": "Property",
+      "signature": "out property <color> inverse-primary:    #D0BCFF;",
+      "line": 107,
+      "doc": ""
+    }
+  ]
+}

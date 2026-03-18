@@ -1,16 +1,20 @@
-import { Colors, Type } from "../tokens/theme.slint";
-import { Sizes }        from "../tokens/sizes.slint";
+import { Colors, Type } from "../globals/theme.slint";
+import { Sizes }        from "../state/sizes.slint";
 
 // A single panel content area.
 // Positioned absolutely by PanelContainer — fills its assigned rect.
 /// P an el sl ot component.
+/// component `PanelSlot`.
 export component PanelSlot inherits Rectangle {
     /// Input property "panel-id".
+    /// property `panel-id`.
     in property <int>    panel-id;
     /// Input property "label".
+    /// property `label`.
     in property <string> label: "";       // debug / placeholder label
 
     /// Private property "empty-label" used internally.
+    /// property `empty-label`.
     private property <string> empty-label: "";
 
     // Width and height are set by parent (PanelContainer sets explicit dimensions)

@@ -1,0 +1,12 @@
+{
+  "source": "src/view_config/error.rs",
+  "items": [
+    {
+      "name": "ViewConfigError",
+      "kind": "Enum",
+      "signature": "pub enum ViewConfigError",
+      "line": 4,
+      "doc": "Typed error for view-config evaluation and loading.\nV ie wc on fi ge rr or enum."
+    }
+  ]
+}

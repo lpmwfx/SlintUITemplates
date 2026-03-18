@@ -1,0 +1,19 @@
+{
+  "source": "src/shell/models.rs",
+  "items": [
+    {
+      "name": "nav_model",
+      "kind": "Fn",
+      "signature": "pub fn nav_model(&self) -> Rc<VecModel<NavItem>>",
+      "line": 9,
+      "doc": "Convert nav items to a Slint VecModel ready for set_nav_items()."
+    },
+    {
+      "name": "toolbar_model",
+      "kind": "Fn",
+      "signature": "pub fn toolbar_model(&self) -> Rc<VecModel<ShellToolbarItem>>",
+      "line": 22,
+      "doc": "Convert toolbar items to a Slint VecModel ready for set_toolbar_items()."
+    }
+  ]
+}

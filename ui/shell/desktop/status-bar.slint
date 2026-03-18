@@ -1,18 +1,23 @@
 // ShellStatusBar — Fluent 2 status bar (bottom chrome).
 
-import { Colors, Spacing, Type } from "../../tokens/theme.slint";
-import { Sizes }                 from "../../tokens/sizes.slint";
+import { Colors, Spacing, Type } from "../../globals/theme.slint";
+import { Sizes }                 from "../../state/sizes.slint";
 
 /// Bottom status bar for the desktop shell with optional progress indicator.
+/// component `ShellStatusBar`.
 export component ShellStatusBar inherits Rectangle {
     /// Primary status message shown on the left.
+    /// property `status-text`.
     in property <string>  status-text: "Ready";
     /// Progress value in the range `0.0..=1.0`; negative hides the indicator.
+    /// property `progress`.
     in property <float>   progress: -1.0;   // -1 = hidden, 0.0..1.0 = shown
     /// Optional secondary message aligned to the right.
+    /// property `right-text`.
     in property <string>  right-text: "";
 
     /// Private property "bar-radius" used internally.
+    /// property `bar-radius`.
     private property <length> bar-radius: Sizes.border-w-2;
 
     height: Spacing.lg;

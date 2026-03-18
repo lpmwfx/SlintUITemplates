@@ -1,17 +1,21 @@
 // CompactNavItem — one item in the CompactNav bar.
 // Touch-target sized, icon + label, active highlight.
 
-import { SteamColors, SteamSpacing, SteamType, SteamRadius } from "../../tokens/steam/mod.slint";
-import { Sizes } from "../../tokens/sizes.slint";
+import { SteamColors, SteamSpacing, SteamType, SteamRadius } from "../../globals/theme/steam/mod.slint";
+import { Sizes } from "../../state/sizes.slint";
 import { NavItem } from "../types.slint";
 
 /// One item inside the compact nav bar — icon + label, touch-target sized.
+/// component `CompactNavItem`.
 export component CompactNavItem inherits Rectangle {
     /// The nav item data.
+    /// property `item`.
     in property <NavItem> item;
     /// Whether this item is currently active.
+    /// property `active`.
     in property <bool> active: false;
     /// Fired when this item is tapped.
+    /// callback `navigate`.
     callback navigate(string);
 
     min-width: SteamSpacing.control-lg;

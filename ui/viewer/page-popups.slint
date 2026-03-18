@@ -1,6 +1,6 @@
 // page-popups — Flyout, Popover, TeachingTip, DropdownMenu, CommandBarFlyout
 
-import { Spacing } from "../tokens/theme.slint";
+import { Spacing } from "../globals/theme.slint";
 import { PopupFlyoutDemo }       from "popup-flyout-demo.slint";
 import { PopupPopoverDemo }      from "popup-popover-demo.slint";
 import { PopupTeachingTipDemo }  from "popup-teaching-tip-demo.slint";
@@ -9,8 +9,10 @@ import { PopupCbfDemo }          from "popup-cbf-demo.slint";
 import { ViewerSection } from "viewer-section.slint";
 
 /// Viewer page for popup-oriented demos including flyouts, popovers, dropdowns, and teaching tips.
+/// component `PagePopups`.
 export component PagePopups inherits VerticalLayout {
     /// Available viewer height passed to popup demos that need placement context.
+    /// property `window-height`.
     in property <length> window-height;
 
     spacing: Spacing.md;

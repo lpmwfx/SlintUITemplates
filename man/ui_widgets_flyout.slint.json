@@ -1,0 +1,68 @@
+{
+  "source": "ui/widgets/flyout.slint",
+  "items": [
+    {
+      "name": "Flyout",
+      "kind": "Component",
+      "signature": "export component Flyout inherits Rectangle {",
+      "line": 16,
+      "doc": ""
+    },
+    {
+      "name": "window-height",
+      "kind": "Property",
+      "signature": "in property <length> window-height;",
+      "line": 19,
+      "doc": ""
+    },
+    {
+      "name": "popup-width",
+      "kind": "Property",
+      "signature": "in property <length> popup-width:  220px;",
+      "line": 22,
+      "doc": ""
+    },
+    {
+      "name": "popup-height",
+      "kind": "Property",
+      "signature": "in property <length> popup-height: 160px;",
+      "line": 25,
+      "doc": ""
+    },
+    {
+      "name": "title",
+      "kind": "Property",
+      "signature": "in property <string> title: \"\";",
+      "line": 28,
+      "doc": ""
+    },
+    {
+      "name": "body",
+      "kind": "Property",
+      "signature": "in property <string> body: \"\";",
+      "line": 31,
+      "doc": ""
+    },
+    {
+      "name": "closed",
+      "kind": "Callback",
+      "signature": "callback closed();",
+      "line": 34,
+      "doc": ""
+    },
+    {
+      "name": "pop-x",
+      "kind": "Property",
+      "signature": "private property <length> pop-x: 0px;",
+      "line": 38,
+      "doc": ""
+    },
+    {
+      "name": "pop-y",
+      "kind": "Property",
+      "signature": "private property <length> pop-y: 0px;",
+      "line": 41,
+      "doc": ""
+    }
+  ]
+}

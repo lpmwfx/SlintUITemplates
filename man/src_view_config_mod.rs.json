@@ -1,0 +1,33 @@
+{
+  "source": "src/view_config/mod.rs",
+  "items": [
+    {
+      "name": "error",
+      "kind": "Mod",
+      "signature": "pub mod error;",
+      "line": 9,
+      "doc": "Typed error for view-config evaluation and loading."
+    },
+    {
+      "name": "eval",
+      "kind": "Mod",
+      "signature": "pub mod eval;",
+      "line": 12,
+      "doc": "Rhai evaluation and file loading helpers."
+    },
+    {
+      "name": "ViewConfig",
+      "kind": "Struct",
+      "signature": "pub struct ViewConfig",
+      "line": 31,
+      "doc": "Per-view shell chrome configuration.\n`None` / empty = \"don't override the DSL value\".\nV ie wc on fi g struct."
+    },
+    {
+      "name": "apply",
+      "kind": "Fn",
+      "signature": "pub fn apply(ui: &AppWindow, cfg: &ViewConfig)",
+      "line": 41,
+      "doc": "Apply non-None / non-empty `ViewConfig` fields to the `AppWindow`.\nFields that are `None` or empty are left unchanged.\nA pp ly."
+    }
+  ]
+}

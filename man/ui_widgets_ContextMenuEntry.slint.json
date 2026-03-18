@@ -1,0 +1,40 @@
+{
+  "source": "ui/widgets/ContextMenuEntry.slint",
+  "items": [
+    {
+      "name": "ContextMenuItem",
+      "kind": "Struct",
+      "signature": "export struct ContextMenuItem {",
+      "line": 6,
+      "doc": ""
+    },
+    {
+      "name": "ContextMenuEntry",
+      "kind": "Component",
+      "signature": "export component ContextMenuEntry inherits Rectangle {",
+      "line": 18,
+      "doc": ""
+    },
+    {
+      "name": "item",
+      "kind": "Property",
+      "signature": "in property <ContextMenuItem> item;",
+      "line": 21,
+      "doc": ""
+    },
+    {
+      "name": "icon-font",
+      "kind": "Property",
+      "signature": "in property <string> icon-font: \"Segoe Fluent Icons\";",
+      "line": 24,
+      "doc": ""
+    },
+    {
+      "name": "activated",
+      "kind": "Callback",
+      "signature": "callback activated(string);",
+      "line": 27,
+      "doc": ""
+    }
+  ]
+}

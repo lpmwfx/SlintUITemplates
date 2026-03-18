@@ -1,0 +1,12 @@
+{
+  "source": "src/pal/dark_mode.rs",
+  "items": [
+    {
+      "name": "is_dark_mode",
+      "kind": "Fn",
+      "signature": "pub(crate) fn is_dark_mode() -> bool",
+      "line": 3,
+      "doc": "Check if Windows is in dark mode by querying the registry."
+    }
+  ]
+}

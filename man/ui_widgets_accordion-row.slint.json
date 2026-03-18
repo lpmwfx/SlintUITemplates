@@ -1,0 +1,68 @@
+{
+  "source": "ui/widgets/accordion-row.slint",
+  "items": [
+    {
+      "name": "AccordionItem",
+      "kind": "Struct",
+      "signature": "export struct AccordionItem {",
+      "line": 6,
+      "doc": ""
+    },
+    {
+      "name": "AccordionRow",
+      "kind": "Component",
+      "signature": "export component AccordionRow inherits Rectangle {",
+      "line": 14,
+      "doc": ""
+    },
+    {
+      "name": "item",
+      "kind": "Property",
+      "signature": "in property <AccordionItem> item;",
+      "line": 17,
+      "doc": ""
+    },
+    {
+      "name": "expanded",
+      "kind": "Property",
+      "signature": "in property <bool>          expanded: false;",
+      "line": 20,
+      "doc": ""
+    },
+    {
+      "name": "toggled",
+      "kind": "Callback",
+      "signature": "callback toggled(string);",
+      "line": 23,
+      "doc": ""
+    },
+    {
+      "name": "border-px",
+      "kind": "Property",
+      "signature": "private property <length>   border-px:    1px;",
+      "line": 27,
+      "doc": ""
+    },
+    {
+      "name": "content-h",
+      "kind": "Property",
+      "signature": "private property <length>   content-h:    Spacing.xl * Sizes.two;",
+      "line": 30,
+      "doc": ""
+    },
+    {
+      "name": "stretch-full",
+      "kind": "Property",
+      "signature": "private property <int>      stretch-full: 1;",
+      "line": 33,
+      "doc": ""
+    },
+    {
+      "name": "anim-dur",
+      "kind": "Property",
+      "signature": "private property <duration> anim-dur:     180ms;",
+      "line": 36,
+      "doc": ""
+    }
+  ]
+}

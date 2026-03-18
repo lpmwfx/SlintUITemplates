@@ -1,0 +1,19 @@
+{
+  "source": "ui/widgets/data-table-types.slint",
+  "items": [
+    {
+      "name": "TableColumn",
+      "kind": "Struct",
+      "signature": "export struct TableColumn {",
+      "line": 3,
+      "doc": ""
+    },
+    {
+      "name": "TableRow",
+      "kind": "Struct",
+      "signature": "export struct TableRow {",
+      "line": 11,
+      "doc": ""
+    }
+  ]
+}

@@ -1,5 +1,5 @@
-import { Colors, Spacing, Type } from "../tokens/theme.slint";
-import { Sizes }                   from "../tokens/sizes.slint";
+import { Colors, Spacing, Type } from "../globals/theme.slint";
+import { Sizes }                   from "../state/sizes.slint";
 import { DragHandle }              from "../modules/DragHandle.slint";
 
 // Bi-directional 3-panel demo — drag either handle, both neighbors update.
@@ -7,22 +7,30 @@ import { DragHandle }              from "../modules/DragHandle.slint";
 component BiDirDemo inherits Rectangle {
     // Panel ratios — normalized to sum 1.0.  Min per panel: 0.1
     /// Private property "ratio-a" used internally.
+    /// property `ratio-a`.
     private property <float> ratio-a: Sizes.quarter;
     /// Private property "ratio-c" used internally.
+    /// property `ratio-c`.
     private property <float> ratio-c: Sizes.quarter;
     // ratio-b is derived — always 1 - ratio-a - ratio-c (zero-sum flex)
     /// Private property "ratio-b" used internally.
+    /// property `ratio-b`.
     private property <float> ratio-b: Sizes.fill - root.ratio-a - root.ratio-c;
     /// Private property "panel-b-alpha" used internally.
+    /// property `panel-b-alpha`.
     private property <float> panel-b-alpha: Sizes.alpha-12;
 
     /// Private property "lbl-a" used internally.
+    /// property `lbl-a`.
     private property <string> lbl-a: "A ";
     /// Private property "lbl-b" used internally.
+    /// property `lbl-b`.
     private property <string> lbl-b: "B ";
     /// Private property "lbl-c" used internally.
+    /// property `lbl-c`.
     private property <string> lbl-c: "C ";
     /// Private property "pct-suffix" used internally.
+    /// property `pct-suffix`.
     private property <string> pct-suffix: "%";
 
     width: Sizes.panel-xxxl;

@@ -1,0 +1,89 @@
+{
+  "source": "ui/viewer/IconTile.slint",
+  "items": [
+    {
+      "name": "IconTile",
+      "kind": "Component",
+      "signature": "export component IconTile inherits Rectangle {",
+      "line": 9,
+      "doc": ""
+    },
+    {
+      "name": "icon-glyph",
+      "kind": "Property",
+      "signature": "in property <string> icon-glyph;",
+      "line": 12,
+      "doc": ""
+    },
+    {
+      "name": "icon-name",
+      "kind": "Property",
+      "signature": "in property <string> icon-name;",
+      "line": 15,
+      "doc": ""
+    },
+    {
+      "name": "var-outlined",
+      "kind": "Property",
+      "signature": "private property <string> var-outlined: \"outlined\";",
+      "line": 20,
+      "doc": ""
+    },
+    {
+      "name": "var-accent",
+      "kind": "Property",
+      "signature": "private property <string> var-accent: \"accent\";",
+      "line": 23,
+      "doc": ""
+    },
+    {
+      "name": "icon-font",
+      "kind": "Property",
+      "signature": "private property <string> icon-font: \"Segoe Fluent Icons\";",
+      "line": 26,
+      "doc": ""
+    },
+    {
+      "name": "outlined-opacity",
+      "kind": "Property",
+      "signature": "private property <float> outlined-opacity: 0.7;",
+      "line": 31,
+      "doc": ""
+    },
+    {
+      "name": "alpha-half",
+      "kind": "Property",
+      "signature": "private property <float> alpha-half: 0.5;",
+      "line": 34,
+      "doc": ""
+    },
+    {
+      "name": "name-font-size",
+      "kind": "Property",
+      "signature": "private property <length> name-font-size: 9px;",
+      "line": 37,
+      "doc": ""
+    },
+    {
+      "name": "tile-h",
+      "kind": "Property",
+      "signature": "private property <length> tile-h: Sizes.comp-72;",
+      "line": 40,
+      "doc": ""
+    },
+    {
+      "name": "is-outlined",
+      "kind": "Property",
+      "signature": "private property <bool>  is-outlined: Settings.icon-style == root.var-outlined;",
+      "line": 44,
+      "doc": ""
+    },
+    {
+      "name": "icon-color",
+      "kind": "Property",
+      "signature": "private property <color> icon-color:  Settings.icon-color == root.var-accent",
+      "line": 47,
+      "doc": ""
+    }
+  ]
+}

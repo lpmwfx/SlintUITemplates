@@ -1,0 +1,61 @@
+{
+  "source": "ui/widgets/dialog.slint",
+  "items": [
+    {
+      "name": "Dialog",
+      "kind": "Component",
+      "signature": "export component Dialog inherits Rectangle {",
+      "line": 7,
+      "doc": ""
+    },
+    {
+      "name": "title",
+      "kind": "Property",
+      "signature": "in property <string> title: \"Dialog\";",
+      "line": 10,
+      "doc": ""
+    },
+    {
+      "name": "cancel-label",
+      "kind": "Property",
+      "signature": "in property <string> cancel-label: \"Cancel\";",
+      "line": 13,
+      "doc": ""
+    },
+    {
+      "name": "confirm-label",
+      "kind": "Property",
+      "signature": "in property <string> confirm-label: \"OK\";",
+      "line": 16,
+      "doc": ""
+    },
+    {
+      "name": "confirmed",
+      "kind": "Callback",
+      "signature": "callback confirmed();",
+      "line": 20,
+      "doc": ""
+    },
+    {
+      "name": "cancelled",
+      "kind": "Callback",
+      "signature": "callback cancelled();",
+      "line": 23,
+      "doc": ""
+    },
+    {
+      "name": "overlay-bg",
+      "kind": "Property",
+      "signature": "private property <color> overlay-bg:     FluentColors.overlay-medium;",
+      "line": 28,
+      "doc": ""
+    },
+    {
+      "name": "shadow-color",
+      "kind": "Property",
+      "signature": "private property <color> shadow-color:   FluentColors.overlay-light;",
+      "line": 31,
+      "doc": ""
+    }
+  ]
+}

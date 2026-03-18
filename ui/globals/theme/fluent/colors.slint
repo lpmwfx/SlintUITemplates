@@ -7,67 +7,92 @@ import { Palette } from "std-widgets.slint";
 /// F lu en tc ol or s global values.
 export global FluentColors {
     /// Output property "dark".
+    /// property `dark`.
     out property <bool> dark: Palette.color-scheme == ColorScheme.dark;
 
     // ── Backgrounds ────────────────────────────────────────────────────────
     /// Output property "bg-primary".
+    /// property `bg-primary`.
     out property <color> bg-primary:   dark ? #202020 : #FFFFFF;
     /// Output property "bg-surface".
+    /// property `bg-surface`.
     out property <color> bg-surface:   dark ? #2C2C2C : #F3F3F3;
     /// Output property "bg-elevated".
+    /// property `bg-elevated`.
     out property <color> bg-elevated:  dark ? #383838 : #FFFFFF;
 
     // ── Text ───────────────────────────────────────────────────────────────
     /// Output property "text-primary".
+    /// property `text-primary`.
     out property <color> text-primary:   dark ? #FFFFFF : #1C1C1C;
     /// Output property "text-secondary".
+    /// property `text-secondary`.
     out property <color> text-secondary: dark ? #9D9D9D : #616161;
     /// Output property "text-disabled".
+    /// property `text-disabled`.
     out property <color> text-disabled:  dark ? #6B6B6B : #A0A0A0;
 
     // ── Accent (Windows default blue — can be overridden by system accent) ─
     /// Output property "accent".
+    /// property `accent`.
     out property <color> accent:         dark ? #60CDFF : #0078D4;
     /// Output property "accent-hover".
+    /// property `accent-hover`.
     out property <color> accent-hover:   dark ? #4CC2F1 : #106EBE;
     /// Output property "accent-pressed".
+    /// property `accent-pressed`.
     out property <color> accent-pressed: dark ? #38B5E6 : #005A9E;
     /// Output property "accent-text".
+    /// property `accent-text`.
     out property <color> accent-text:    dark ? #000000 : #FFFFFF;
 
     // ── Semantic ───────────────────────────────────────────────────────────
     /// Output property "error".
+    /// property `error`.
     out property <color> error:   #C42B1C;
     /// Output property "success".
+    /// property `success`.
     out property <color> success: #0F7B0F;
     /// Output property "warning".
+    /// property `warning`.
     out property <color> warning: #9D5D00;
 
     // ── Border ────────────────────────────────────────────────────────────
     /// Output property "border".
+    /// property `border`.
     out property <color> border:        dark ? #3D3D3D : #E0E0E0;
     /// Output property "border-strong".
+    /// property `border-strong`.
     out property <color> border-strong: dark ? #575757 : #C0C0C0;
     /// Output property "border-focus".
+    /// property `border-focus`.
     out property <color> border-focus:  accent;
 
     // ── Shadow ────────────────────────────────────────────────────────────
     /// Output property "shadow-2".
+    /// property `shadow-2`.
     out property <color> shadow-2:  dark ? #00000066 : #00000014;
     /// Output property "shadow-4".
+    /// property `shadow-4`.
     out property <color> shadow-4:  dark ? #00000080 : #0000001F;
     /// Output property "shadow-8".
+    /// property `shadow-8`.
     out property <color> shadow-8:  dark ? #00000099 : #00000029;
     /// Output property "shadow-16".
+    /// property `shadow-16`.
     out property <color> shadow-16: dark ? #000000B3 : #00000033;
     /// Output property "shadow-28".
+    /// property `shadow-28`.
     out property <color> shadow-28: dark ? #000000CC : #0000003D;
 
     // ── Overlay ──────────────────────────────────────────────────────────
     /// Output property "overlay-strong".
+    /// property `overlay-strong`.
     out property <color> overlay-strong:  #00000080;
     /// Output property "overlay-medium".
+    /// property `overlay-medium`.
     out property <color> overlay-medium:  #00000060;
     /// Output property "overlay-light".
+    /// property `overlay-light`.
     out property <color> overlay-light:   #00000040;
 }

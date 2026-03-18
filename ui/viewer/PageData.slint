@@ -1,7 +1,7 @@
 // PageData — DataTable, TreeView, DatePicker, MultiSelect, Chip, ContextMenu
 
-import { Colors, Spacing, Type } from "../tokens/theme.slint";
-import { Sizes } from "../tokens/sizes.slint";
+import { Colors, Spacing, Type } from "../globals/theme.slint";
+import { Sizes } from "../state/sizes.slint";
 import { DataTable, TableColumn, TableRow } from "../widgets/data-table.slint";
 import { TreeView, TreeNode }               from "../widgets/tree-view.slint";
 import { DatePicker }                       from "../widgets/date-picker.slint";
@@ -11,77 +11,109 @@ import { ViewerSection } from "viewer-section.slint";
 import { ContextMenuDemoArea } from "ContextMenuDemoArea.slint";
 
 /// Viewer page showcasing data-heavy widgets such as tables, trees, date pickers, and context menus.
+/// component `PageData`.
 export component PageData inherits VerticalLayout {
     /// Available viewer height passed down to popups and context-menu demos.
+    /// property `window-height`.
     in property <length> window-height;
 
     spacing: Spacing.md;
 
     /// Private property "table-selected" used internally.
+    /// property `table-selected`.
     private property <string> table-selected: "";
     /// Private property "tree-selected" used internally.
+    /// property `tree-selected`.
     private property <string> tree-selected: "";
     /// Private property "date-value" used internally.
+    /// property `date-value`.
     private property <string> date-value: "";
 
     // ── demo labels ──────────────────────────────────────────────────────
     /// Private property "section-datatable" used internally.
+    /// property `section-datatable`.
     private property <string> section-datatable: "DataTable";
     /// Private property "section-treeview" used internally.
+    /// property `section-treeview`.
     private property <string> section-treeview: "TreeView";
     /// Private property "section-datepicker" used internally.
+    /// property `section-datepicker`.
     private property <string> section-datepicker: "DatePicker";
     /// Private property "section-multiselect" used internally.
+    /// property `section-multiselect`.
     private property <string> section-multiselect: "MultiSelect";
     /// Private property "section-chip" used internally.
+    /// property `section-chip`.
     private property <string> section-chip: "Chip";
     /// Private property "section-contextmenu" used internally.
+    /// property `section-contextmenu`.
     private property <string> section-contextmenu: "ContextMenu — File Explorer (right-click area)";
     /// Private property "dp-label" used internally.
+    /// property `dp-label`.
     private property <string> dp-label: "Select date";
     /// Private property "dp-error-label" used internally.
+    /// property `dp-error-label`.
     private property <string> dp-error-label: "With error";
     /// Private property "dp-error-msg" used internally.
+    /// property `dp-error-msg`.
     private property <string> dp-error-msg: "Date is required";
     /// Private property "ms-placeholder" used internally.
+    /// property `ms-placeholder`.
     private property <string> ms-placeholder: "Choose languages...";
     /// Private property "chip-default" used internally.
+    /// property `chip-default`.
     private property <string> chip-default: "Default";
     /// Private property "chip-selected" used internally.
+    /// property `chip-selected`.
     private property <string> chip-selected: "Selected";
     /// Private property "chip-noclose" used internally.
+    /// property `chip-noclose`.
     private property <string> chip-noclose: "No close";
     /// Private property "chip-disabled" used internally.
+    /// property `chip-disabled`.
     private property <string> chip-disabled: "Disabled";
 
     // ── private size tokens ────────────────────────────────────────────
     /// Private property "col-name-w" used internally.
+    /// property `col-name-w`.
     private property <length> col-name-w: Sizes.comp-160;
     /// Private property "dp-w" used internally.
+    /// property `dp-w`.
     private property <length> dp-w: Sizes.comp-260;
     /// Private property "ms-w" used internally.
+    /// property `ms-w`.
     private property <length> ms-w: Sizes.comp-240;
 
     // ── demo row data ─────────────────────────────────────────────────
     /// Private property "row-id-a" used internally.
+    /// property `row-id-a`.
     private property <string> row-id-a: "1";
     /// Private property "row-id-b" used internally.
+    /// property `row-id-b`.
     private property <string> row-id-b: "2";
     /// Private property "row-id-c" used internally.
+    /// property `row-id-c`.
     private property <string> row-id-c: "3";
     /// Private property "row-id-d" used internally.
+    /// property `row-id-d`.
     private property <string> row-id-d: "4";
     /// Private property "row-id-e" used internally.
+    /// property `row-id-e`.
     private property <string> row-id-e: "5";
     /// Private property "date-a" used internally.
+    /// property `date-a`.
     private property <string> date-a: "2023-01";
     /// Private property "date-b" used internally.
+    /// property `date-b`.
     private property <string> date-b: "2022-06";
     /// Private property "date-c" used internally.
+    /// property `date-c`.
     private property <string> date-c: "2021-11";
     /// Private property "date-d" used internally.
+    /// property `date-d`.
     private property <string> date-d: "2023-04";
     /// Private property "date-e" used internally.
+    /// property `date-e`.
     private property <string> date-e: "2024-02";
 
     ViewerSection {

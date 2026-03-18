@@ -1,0 +1,61 @@
+{
+  "source": "ui/demo/demo.slint",
+  "items": [
+    {
+      "name": "DemoWindow",
+      "kind": "Component",
+      "signature": "export component DemoWindow inherits Window {",
+      "line": 20,
+      "doc": ""
+    },
+    {
+      "name": "window-title",
+      "kind": "Property",
+      "signature": "in property <string> window-title: \"SlintUITemplates \\u{2014} Phase 2 Demo\";",
+      "line": 25,
+      "doc": ""
+    },
+    {
+      "name": "nav-items",
+      "kind": "Property",
+      "signature": "in property <[NavItem]> nav-items: [",
+      "line": 34,
+      "doc": ""
+    },
+    {
+      "name": "control-bar-label",
+      "kind": "Property",
+      "signature": "in property <string> control-bar-label: \"SlintUI \\u{2014} Phase 2 Demo\";",
+      "line": 47,
+      "doc": ""
+    },
+    {
+      "name": "switch-to-mobile-label",
+      "kind": "Property",
+      "signature": "in property <string> switch-to-mobile-label: \"Switch to Mobile\";",
+      "line": 50,
+      "doc": ""
+    },
+    {
+      "name": "switch-to-desktop-label",
+      "kind": "Property",
+      "signature": "in property <string> switch-to-desktop-label: \"Switch to Desktop\";",
+      "line": 53,
+      "doc": ""
+    },
+    {
+      "name": "dark-label",
+      "kind": "Property",
+      "signature": "in property <string> dark-label: \"Dark\";",
+      "line": 56,
+      "doc": ""
+    },
+    {
+      "name": "status-prefix",
+      "kind": "Property",
+      "signature": "in property <string> status-prefix: \"View: \";",
+      "line": 59,
+      "doc": ""
+    }
+  ]
+}

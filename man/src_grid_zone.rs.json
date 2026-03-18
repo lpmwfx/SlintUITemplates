@@ -1,0 +1,75 @@
+{
+  "source": "src/grid/zone.rs",
+  "items": [
+    {
+      "name": "ZoneModel",
+      "kind": "Struct",
+      "signature": "pub struct ZoneModel",
+      "line": 6,
+      "doc": "Runtime grid model holding resolved rows and their proportional ratios.\nZ on em od el struct."
+    },
+    {
+      "name": "RowZone",
+      "kind": "Struct",
+      "signature": "pub struct RowZone",
+      "line": 15,
+      "doc": "A resolved grid row with its name, ratio weight, and content kind.\nR ow zo ne struct."
+    },
+    {
+      "name": "RowKind",
+      "kind": "Enum",
+      "signature": "pub enum RowKind",
+      "line": 27,
+      "doc": "Describes how a row's content is arranged: fixed element, column split, or empty.\nR ow ki nd enum."
+    },
+    {
+      "name": "ColumnZone",
+      "kind": "Struct",
+      "signature": "pub struct ColumnZone",
+      "line": 36,
+      "doc": "A resolved column within a row, with an optional module assignment.\nC ol um nz on e struct."
+    },
+    {
+      "name": "from_config",
+      "kind": "Fn",
+      "signature": "pub fn from_config(config: &GridConfig) -> Self",
+      "line": 47,
+      "doc": "Builds a `ZoneModel` from a parsed `GridConfig`."
+    },
+    {
+      "name": "total_row_ratio",
+      "kind": "Fn",
+      "signature": "pub fn total_row_ratio(&self) -> u32",
+      "line": 57,
+      "doc": "Returns the sum of all row ratio weights in the grid."
+    },
+    {
+      "name": "row",
+      "kind": "Fn",
+      "signature": "pub fn row(&self, name: &str) -> Option<&RowZone>",
+      "line": 62,
+      "doc": "Looks up a row by name, returning a reference if found."
+    },
+    {
+      "name": "column",
+      "kind": "Fn",
+      "signature": "pub fn column(&self, row_name: &str, col_name: &str) -> Option<&ColumnZone>",
+      "line": 67,
+      "doc": "Looks up a column by row and column name, returning a reference if found."
+    },
+    {
+      "name": "set_module",
+      "kind": "Fn",
+      "signature": "pub fn set_module(&mut self, row_name: &str, col_name: &str, module: &str)",
+      "line": 75,
+      "doc": "Assigns a module name to a specific column within a row."
+    },
+    {
+      "name": "total_column_ratio",
+      "kind": "Fn",
+      "signature": "pub fn total_column_ratio(&self) -> u32",
+      "line": 123,
+      "doc": "Returns the sum of all column ratio weights in this row, or 0 if not column-based."
+    }
+  ]
+}

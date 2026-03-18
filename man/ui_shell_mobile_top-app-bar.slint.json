@@ -1,0 +1,61 @@
+{
+  "source": "ui/shell/mobile/top-app-bar.slint",
+  "items": [
+    {
+      "name": "TopAppBar",
+      "kind": "Component",
+      "signature": "export component TopAppBar inherits Rectangle {",
+      "line": 10,
+      "doc": ""
+    },
+    {
+      "name": "title",
+      "kind": "Property",
+      "signature": "in property <string> title;",
+      "line": 13,
+      "doc": ""
+    },
+    {
+      "name": "nav-icon",
+      "kind": "Property",
+      "signature": "in property <string> nav-icon:    FluentIcons.back;",
+      "line": 16,
+      "doc": ""
+    },
+    {
+      "name": "show-nav",
+      "kind": "Property",
+      "signature": "in property <bool>   show-nav:    false;",
+      "line": 19,
+      "doc": ""
+    },
+    {
+      "name": "action-icon",
+      "kind": "Property",
+      "signature": "in property <string> action-icon: \"\";",
+      "line": 22,
+      "doc": ""
+    },
+    {
+      "name": "icon-font",
+      "kind": "Property",
+      "signature": "in property <string> icon-font:   \"Segoe Fluent Icons\";",
+      "line": 25,
+      "doc": ""
+    },
+    {
+      "name": "nav-clicked",
+      "kind": "Callback",
+      "signature": "callback nav-clicked();",
+      "line": 28,
+      "doc": ""
+    },
+    {
+      "name": "action-clicked",
+      "kind": "Callback",
+      "signature": "callback action-clicked();",
+      "line": 31,
+      "doc": ""
+    }
+  ]
+}

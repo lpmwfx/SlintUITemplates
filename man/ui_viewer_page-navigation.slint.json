@@ -1,0 +1,61 @@
+{
+  "source": "ui/viewer/page-navigation.slint",
+  "items": [
+    {
+      "name": "PageNavigation",
+      "kind": "Component",
+      "signature": "export component PageNavigation inherits VerticalLayout {",
+      "line": 13,
+      "doc": ""
+    },
+    {
+      "name": "active-tab",
+      "kind": "Property",
+      "signature": "private property <string> active-tab: \"one\";",
+      "line": 18,
+      "doc": ""
+    },
+    {
+      "name": "page",
+      "kind": "Property",
+      "signature": "private property <int>    page: Sizes.three;",
+      "line": 21,
+      "doc": ""
+    },
+    {
+      "name": "step-active",
+      "kind": "Property",
+      "signature": "private property <int>    step-active: Sizes.one;",
+      "line": 24,
+      "doc": ""
+    },
+    {
+      "name": "section-tabbar",
+      "kind": "Property",
+      "signature": "private property <string> section-tabbar: \"TabBar\";",
+      "line": 29,
+      "doc": ""
+    },
+    {
+      "name": "section-breadcrumb",
+      "kind": "Property",
+      "signature": "private property <string> section-breadcrumb: \"Breadcrumb\";",
+      "line": 32,
+      "doc": ""
+    },
+    {
+      "name": "section-pagination",
+      "kind": "Property",
+      "signature": "private property <string> section-pagination: \"Pagination\";",
+      "line": 35,
+      "doc": ""
+    },
+    {
+      "name": "section-stepper",
+      "kind": "Property",
+      "signature": "private property <string> section-stepper: \"Stepper\";",
+      "line": 38,
+      "doc": ""
+    }
+  ]
+}

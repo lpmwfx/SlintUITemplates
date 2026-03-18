@@ -1,0 +1,19 @@
+{
+  "source": "ui/viewer/RowHandleDemo.slint",
+  "items": [
+    {
+      "name": "split",
+      "kind": "Property",
+      "signature": "private property <length> split: Sizes.comp-40;",
+      "line": 9,
+      "doc": ""
+    },
+    {
+      "name": "split-max",
+      "kind": "Property",
+      "signature": "private property <length> split-max: Sizes.comp-60;",
+      "line": 12,
+      "doc": ""
+    }
+  ]
+}

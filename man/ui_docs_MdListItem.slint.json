@@ -1,0 +1,47 @@
+{
+  "source": "ui/docs/MdListItem.slint",
+  "items": [
+    {
+      "name": "MdListItem",
+      "kind": "Component",
+      "signature": "export component MdListItem inherits VerticalLayout {",
+      "line": 8,
+      "doc": ""
+    },
+    {
+      "name": "kind",
+      "kind": "Property",
+      "signature": "in property <string> kind;",
+      "line": 11,
+      "doc": ""
+    },
+    {
+      "name": "text",
+      "kind": "Property",
+      "signature": "in property <string> text;",
+      "line": 14,
+      "doc": ""
+    },
+    {
+      "name": "bullet-char",
+      "kind": "Property",
+      "signature": "in property <string> bullet-char: \"\\u{2022}\";",
+      "line": 17,
+      "doc": ""
+    },
+    {
+      "name": "bullet-sub-char",
+      "kind": "Property",
+      "signature": "in property <string> bullet-sub-char: \"\\u{25E6}\";",
+      "line": 20,
+      "doc": ""
+    },
+    {
+      "name": "gap-sm",
+      "kind": "Property",
+      "signature": "private property <length> gap-sm: Sizes.border-w-2;",
+      "line": 24,
+      "doc": ""
+    }
+  ]
+}

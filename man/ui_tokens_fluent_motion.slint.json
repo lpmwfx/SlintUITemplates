@@ -1,0 +1,75 @@
+{
+  "source": "ui/tokens/fluent/motion.slint",
+  "items": [
+    {
+      "name": "fast",
+      "kind": "Property",
+      "signature": "out property <duration> fast:   83ms;    // micro interactions (hover, press)",
+      "line": 9,
+      "doc": ""
+    },
+    {
+      "name": "normal",
+      "kind": "Property",
+      "signature": "out property <duration> normal: 167ms;   // standard transitions (open, close)",
+      "line": 12,
+      "doc": ""
+    },
+    {
+      "name": "slow",
+      "kind": "Property",
+      "signature": "out property <duration> slow:   250ms;   // larger transitions (page, panel)",
+      "line": 15,
+      "doc": ""
+    },
+    {
+      "name": "slower",
+      "kind": "Property",
+      "signature": "out property <duration> slower: 383ms;   // deliberate / emphasis transitions",
+      "line": 18,
+      "doc": ""
+    },
+    {
+      "name": "tick",
+      "kind": "Property",
+      "signature": "out property <duration> tick:   16ms;    // animation frame tick (~60fps)",
+      "line": 21,
+      "doc": ""
+    },
+    {
+      "name": "medium",
+      "kind": "Property",
+      "signature": "out property <duration> medium: 200ms;   // slides, progress bars",
+      "line": 24,
+      "doc": ""
+    },
+    {
+      "name": "quick",
+      "kind": "Property",
+      "signature": "out property <duration> quick:  150ms;   // toggles, micro-transitions",
+      "line": 27,
+      "doc": ""
+    },
+    {
+      "name": "entrance",
+      "kind": "Property",
+      "signature": "out property <easing> entrance: ease-in-out;",
+      "line": 35,
+      "doc": ""
+    },
+    {
+      "name": "exit",
+      "kind": "Property",
+      "signature": "out property <easing> exit:     ease-in;",
+      "line": 38,
+      "doc": ""
+    },
+    {
+      "name": "standard",
+      "kind": "Property",
+      "signature": "out property <easing> standard: ease-in-out;",
+      "line": 41,
+      "doc": ""
+    }
+  ]
+}

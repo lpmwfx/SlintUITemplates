@@ -1,0 +1,19 @@
+{
+  "source": "ui/viewer/page-popups.slint",
+  "items": [
+    {
+      "name": "PagePopups",
+      "kind": "Component",
+      "signature": "export component PagePopups inherits VerticalLayout {",
+      "line": 13,
+      "doc": ""
+    },
+    {
+      "name": "window-height",
+      "kind": "Property",
+      "signature": "in property <length> window-height;",
+      "line": 16,
+      "doc": ""
+    }
+  ]
+}

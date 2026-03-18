@@ -1,0 +1,47 @@
+{
+  "source": "ui/mobile/MobileNavItem.slint",
+  "items": [
+    {
+      "name": "MobileNavItem",
+      "kind": "Component",
+      "signature": "export component MobileNavItem inherits Rectangle {",
+      "line": 7,
+      "doc": ""
+    },
+    {
+      "name": "item-id",
+      "kind": "Property",
+      "signature": "in property <string> item-id;",
+      "line": 10,
+      "doc": ""
+    },
+    {
+      "name": "icon",
+      "kind": "Property",
+      "signature": "in property <string> icon;",
+      "line": 13,
+      "doc": ""
+    },
+    {
+      "name": "label",
+      "kind": "Property",
+      "signature": "in property <string> label;",
+      "line": 16,
+      "doc": ""
+    },
+    {
+      "name": "is-active",
+      "kind": "Property",
+      "signature": "in property <bool>   is-active: false;",
+      "line": 19,
+      "doc": ""
+    },
+    {
+      "name": "clicked",
+      "kind": "Callback",
+      "signature": "callback clicked();",
+      "line": 22,
+      "doc": ""
+    }
+  ]
+}

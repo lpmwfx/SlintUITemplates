@@ -1,31 +1,43 @@
-import { Colors, Spacing, Type } from "../tokens/theme.slint";
-import { Sizes } from "../tokens/sizes.slint";
+import { Colors, Spacing, Type } from "../globals/theme.slint";
+import { Sizes } from "../state/sizes.slint";
 import { SliderTrack } from "SliderTrack.slint";
 
 /// S li de r component.
+/// component `Slider`.
 export component Slider inherits Rectangle {
     /// Input property "value".
+    /// property `value`.
     in property <float> value: Sizes.no-fill;
     /// Input property "min".
+    /// property `min`.
     in property <float>  min: Sizes.no-fill;
     /// Input property "max".
+    /// property `max`.
     in property <float>  max: Sizes.fill;
     /// Input property "step".
+    /// property `step`.
     in property <float>  step: Sizes.no-fill;
     /// Input property "label".
+    /// property `label`.
     in property <string> label: "";
     /// Input property "show-value".
+    /// property `show-value`.
     in property <bool>   show-value: false;
     /// Input property "enabled".
+    /// property `enabled`.
     in property <bool>   enabled: true;
     /// Callback fired for c ha ng ed.
+    /// callback `changed`.
     callback changed(float);
 
     /// Private property "fill-ratio" used internally.
+    /// property `fill-ratio`.
     private property <float>  fill-ratio: (root.value - root.min) / (root.max - root.min);
     /// Private property "track-h" used internally.
+    /// property `track-h`.
     private property <length> track-h:    Spacing.xs;
     /// Private property "thumb-size" used internally.
+    /// property `thumb-size`.
     private property <length> thumb-size: Spacing.md;
 
     height: (root.label != "" || root.show-value)

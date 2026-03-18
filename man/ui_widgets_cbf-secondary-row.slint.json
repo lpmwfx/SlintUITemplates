@@ -1,0 +1,47 @@
+{
+  "source": "ui/widgets/cbf-secondary-row.slint",
+  "items": [
+    {
+      "name": "CbfSecondaryRow",
+      "kind": "Component",
+      "signature": "export component CbfSecondaryRow inherits Rectangle {",
+      "line": 6,
+      "doc": ""
+    },
+    {
+      "name": "item",
+      "kind": "Property",
+      "signature": "in property <CbfAction> item;",
+      "line": 9,
+      "doc": ""
+    },
+    {
+      "name": "activated",
+      "kind": "Callback",
+      "signature": "callback activated(string);",
+      "line": 12,
+      "doc": ""
+    },
+    {
+      "name": "stretch-full",
+      "kind": "Property",
+      "signature": "private property <int>   stretch-full: 1;",
+      "line": 16,
+      "doc": ""
+    },
+    {
+      "name": "op-enabled",
+      "kind": "Property",
+      "signature": "private property <float> op-enabled:   1.0;",
+      "line": 19,
+      "doc": ""
+    },
+    {
+      "name": "op-disabled",
+      "kind": "Property",
+      "signature": "private property <float> op-disabled:  0.5;",
+      "line": 22,
+      "doc": ""
+    }
+  ]
+}

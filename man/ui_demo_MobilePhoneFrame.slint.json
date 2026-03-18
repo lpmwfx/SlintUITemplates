@@ -1,0 +1,40 @@
+{
+  "source": "ui/demo/MobilePhoneFrame.slint",
+  "items": [
+    {
+      "name": "MobilePhoneFrame",
+      "kind": "Component",
+      "signature": "export component MobilePhoneFrame inherits Rectangle {",
+      "line": 14,
+      "doc": ""
+    },
+    {
+      "name": "active-view",
+      "kind": "Property",
+      "signature": "in property <string>    active-view;",
+      "line": 17,
+      "doc": ""
+    },
+    {
+      "name": "items",
+      "kind": "Property",
+      "signature": "in property <[NavItem]> items;",
+      "line": 20,
+      "doc": ""
+    },
+    {
+      "name": "status-prefix",
+      "kind": "Property",
+      "signature": "in property <string>    status-prefix;",
+      "line": 23,
+      "doc": ""
+    },
+    {
+      "name": "navigate",
+      "kind": "Callback",
+      "signature": "callback navigate(string);",
+      "line": 26,
+      "doc": ""
+    }
+  ]
+}

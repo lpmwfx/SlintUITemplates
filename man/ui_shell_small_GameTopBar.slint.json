@@ -1,0 +1,33 @@
+{
+  "source": "ui/shell/small/GameTopBar.slint",
+  "items": [
+    {
+      "name": "GameTopBar",
+      "kind": "Component",
+      "signature": "export component GameTopBar inherits Rectangle {",
+      "line": 11,
+      "doc": ""
+    },
+    {
+      "name": "title",
+      "kind": "Property",
+      "signature": "in property <string> title;",
+      "line": 14,
+      "doc": ""
+    },
+    {
+      "name": "show-back",
+      "kind": "Property",
+      "signature": "in property <bool> show-back: false;",
+      "line": 17,
+      "doc": ""
+    },
+    {
+      "name": "back",
+      "kind": "Callback",
+      "signature": "callback back();",
+      "line": 20,
+      "doc": ""
+    }
+  ]
+}

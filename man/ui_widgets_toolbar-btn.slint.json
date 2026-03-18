@@ -1,0 +1,33 @@
+{
+  "source": "ui/widgets/toolbar-btn.slint",
+  "items": [
+    {
+      "name": "ToolbarItem",
+      "kind": "Struct",
+      "signature": "export struct ToolbarItem {",
+      "line": 5,
+      "doc": ""
+    },
+    {
+      "name": "ToolbarBtn",
+      "kind": "Component",
+      "signature": "export component ToolbarBtn inherits Rectangle {",
+      "line": 14,
+      "doc": ""
+    },
+    {
+      "name": "item",
+      "kind": "Property",
+      "signature": "in property <ToolbarItem> item;",
+      "line": 17,
+      "doc": ""
+    },
+    {
+      "name": "clicked",
+      "kind": "Callback",
+      "signature": "callback clicked(string);",
+      "line": 20,
+      "doc": ""
+    }
+  ]
+}

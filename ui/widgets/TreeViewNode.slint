@@ -1,26 +1,36 @@
-import { Colors, Spacing, Type, FluentIcons } from "../tokens/theme.slint";
-import { Sizes } from "../tokens/sizes.slint";
+import { Colors, Spacing, Type, FluentIcons } from "../globals/theme.slint";
+import { Sizes } from "../state/sizes.slint";
 
 // TreeViewNode — a single tree node row with expand toggle, icon, and label.
 /// T re ev ie wn od e component.
+/// component `TreeViewNode`.
 export component TreeViewNode inherits Rectangle {
     /// Input property "node-id".
+    /// property `node-id`.
     in property <string> node-id;
     /// Input property "label".
+    /// property `label`.
     in property <string> label;
     /// Input property "icon".
+    /// property `icon`.
     in property <string> icon;
     /// Input property "level".
+    /// property `level`.
     in property <int>    level;
     /// Input property "expanded".
+    /// property `expanded`.
     in property <bool>   expanded;
     /// Input property "leaf".
+    /// property `leaf`.
     in property <bool>   leaf;
     /// Input property "is-selected".
+    /// property `is-selected`.
     in property <bool>   is-selected: false;
     /// Callback fired for s el ec te d.
+    /// callback `selected`.
     callback selected();
     /// Callback fired for t og gl e e xp an de d.
+    /// callback `toggle-expanded`.
     callback toggle-expanded();
 
     height: Spacing.xl;

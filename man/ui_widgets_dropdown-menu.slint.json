@@ -1,0 +1,82 @@
+{
+  "source": "ui/widgets/dropdown-menu.slint",
+  "items": [
+    {
+      "name": "DropdownMenu",
+      "kind": "Component",
+      "signature": "export component DropdownMenu inherits Rectangle {",
+      "line": 10,
+      "doc": ""
+    },
+    {
+      "name": "items",
+      "kind": "Property",
+      "signature": "in property <[DropdownMenuItem]> items: [];",
+      "line": 13,
+      "doc": ""
+    },
+    {
+      "name": "window-height",
+      "kind": "Property",
+      "signature": "in property <length>             window-height;",
+      "line": 16,
+      "doc": ""
+    },
+    {
+      "name": "separator-count",
+      "kind": "Property",
+      "signature": "in property <int>                separator-count: 0;",
+      "line": 19,
+      "doc": ""
+    },
+    {
+      "name": "activated",
+      "kind": "Callback",
+      "signature": "callback activated(string);",
+      "line": 22,
+      "doc": ""
+    },
+    {
+      "name": "pop-x",
+      "kind": "Property",
+      "signature": "private property <length> pop-x:     Sizes.no-size;",
+      "line": 26,
+      "doc": ""
+    },
+    {
+      "name": "pop-y",
+      "kind": "Property",
+      "signature": "private property <length> pop-y:     Sizes.no-size;",
+      "line": 29,
+      "doc": ""
+    },
+    {
+      "name": "border-px",
+      "kind": "Property",
+      "signature": "private property <length> border-px: 1px;",
+      "line": 32,
+      "doc": ""
+    },
+    {
+      "name": "popup-w",
+      "kind": "Property",
+      "signature": "private property <length> popup-w:   220px;",
+      "line": 35,
+      "doc": ""
+    },
+    {
+      "name": "est-popup-h",
+      "kind": "Property",
+      "signature": "private property <length> est-popup-h:",
+      "line": 38,
+      "doc": ""
+    },
+    {
+      "name": "popup-h",
+      "kind": "Property",
+      "signature": "private property <length> popup-h:",
+      "line": 44,
+      "doc": ""
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "source": "ui/widgets/divider.slint",
+  "items": [
+    {
+      "name": "Divider",
+      "kind": "Component",
+      "signature": "export component Divider inherits Rectangle {",
+      "line": 7,
+      "doc": ""
+    },
+    {
+      "name": "orientation",
+      "kind": "Property",
+      "signature": "in property <string> orientation: Variants.horizontal;   // horizontal | vertical",
+      "line": 10,
+      "doc": ""
+    },
+    {
+      "name": "label",
+      "kind": "Property",
+      "signature": "in property <string> label: \"\";",
+      "line": 13,
+      "doc": ""
+    },
+    {
+      "name": "line-color",
+      "kind": "Property",
+      "signature": "in property <color>  line-color: Colors.border;",
+      "line": 16,
+      "doc": ""
+    }
+  ]
+}

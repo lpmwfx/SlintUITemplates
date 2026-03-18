@@ -1,8 +1,8 @@
 // page-feedback — Toast, Dialog, Spinner (all sizes), Alert (all variants), Tooltip demo
 
-import { Colors, Spacing, Type } from "../tokens/theme.slint";
-import { Sizes } from "../tokens/sizes.slint";
-import { Variants } from "../globals/Variants.slint";
+import { Colors, Spacing, Type } from "../globals/theme.slint";
+import { Sizes } from "../state/sizes.slint";
+import { Variants } from "../state/variants.slint";
 import { Toast }    from "../widgets/toast.slint";
 import { Dialog }   from "../widgets/dialog.slint";
 import { Spinner }  from "../widgets/spinner.slint";
@@ -12,67 +12,96 @@ import { Button }   from "../widgets/button.slint";
 import { ViewerSection } from "viewer-section.slint";
 
 /// Viewer page showcasing transient feedback components such as alerts, toasts, and progress indicators.
+/// component `PageFeedback`.
 export component PageFeedback inherits VerticalLayout {
     spacing: Spacing.md;
 
     // ── private variant strings ─────────────────────────────────────────
     /// Private property "var-info" used internally.
+    /// property `var-info`.
     private property <string> var-info: "info";
     /// Private property "var-sm" used internally.
+    /// property `var-sm`.
     private property <string> var-sm: "sm";
     /// Private property "var-md" used internally.
+    /// property `var-md`.
     private property <string> var-md: "md";
     /// Private property "var-lg" used internally.
+    /// property `var-lg`.
     private property <string> var-lg: "lg";
 
     // ── demo labels ─────────────────────────────────────────────────────
     /// Private property "section-toast" used internally.
+    /// property `section-toast`.
     private property <string> section-toast: "Toast";
     /// Private property "section-dialog" used internally.
+    /// property `section-dialog`.
     private property <string> section-dialog: "Dialog";
     /// Private property "section-spinner" used internally.
+    /// property `section-spinner`.
     private property <string> section-spinner: "Spinner";
     /// Private property "section-alert" used internally.
+    /// property `section-alert`.
     private property <string> section-alert: "Alert";
     /// Private property "section-tooltip" used internally.
+    /// property `section-tooltip`.
     private property <string> section-tooltip: "Tooltip";
     /// Private property "toast-info-msg" used internally.
+    /// property `toast-info-msg`.
     private property <string> toast-info-msg: "Information message";
     /// Private property "toast-success-msg" used internally.
+    /// property `toast-success-msg`.
     private property <string> toast-success-msg: "Success! Operation complete";
     /// Private property "toast-warning-msg" used internally.
+    /// property `toast-warning-msg`.
     private property <string> toast-warning-msg: "Warning: please check input";
     /// Private property "toast-error-msg" used internally.
+    /// property `toast-error-msg`.
     private property <string> toast-error-msg: "Error: action failed";
     /// Private property "dialog-title" used internally.
+    /// property `dialog-title`.
     private property <string> dialog-title: "Confirm Action";
     /// Private property "alert-info-msg" used internally.
+    /// property `alert-info-msg`.
     private property <string> alert-info-msg: "This is an informational alert.";
     /// Private property "alert-success-title" used internally.
+    /// property `alert-success-title`.
     private property <string> alert-success-title: "Success!";
     /// Private property "alert-success-msg" used internally.
+    /// property `alert-success-msg`.
     private property <string> alert-success-msg: "Your changes have been saved.";
     /// Private property "alert-warning-title" used internally.
+    /// property `alert-warning-title`.
     private property <string> alert-warning-title: "Warning";
     /// Private property "alert-warning-msg" used internally.
+    /// property `alert-warning-msg`.
     private property <string> alert-warning-msg: "Please review before continuing.";
     /// Private property "alert-error-title" used internally.
+    /// property `alert-error-title`.
     private property <string> alert-error-title: "Error";
     /// Private property "alert-error-msg" used internally.
+    /// property `alert-error-msg`.
     private property <string> alert-error-msg: "Something went wrong. Please try again.";
     /// Private property "tooltip-top-text" used internally.
+    /// property `tooltip-top-text`.
     private property <string> tooltip-top-text: "Top tooltip (default)";
     /// Private property "tooltip-bottom-text" used internally.
+    /// property `tooltip-bottom-text`.
     private property <string> tooltip-bottom-text: "Bottom tooltip";
     /// Private property "tooltip-right-text" used internally.
+    /// property `tooltip-right-text`.
     private property <string> tooltip-right-text: "Right tooltip";
     /// Private property "btn-hover" used internally.
+    /// property `btn-hover`.
     private property <string> btn-hover: "Hover me";
     /// Private property "btn-bottom" used internally.
+    /// property `btn-bottom`.
     private property <string> btn-bottom: "Bottom";
     /// Private property "btn-right" used internally.
+    /// property `btn-right`.
     private property <string> btn-right: "Right";
     /// Private property "dialog-w" used internally.
+    /// property `dialog-w`.
     private property <length> dialog-w: Sizes.comp-480;
 
     ViewerSection {

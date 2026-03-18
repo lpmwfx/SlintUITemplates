@@ -1,28 +1,39 @@
-import { Colors, Spacing, Type } from "../../tokens/theme.slint";
-import { Sizes } from "../../tokens/sizes.slint";
+import { Colors, Spacing, Type } from "../../globals/theme.slint";
+import { Sizes } from "../../state/sizes.slint";
 
 // NavItemRow — a single row in the ShellSideNav navigation list.
 /// N av it em ro w component.
+/// component `NavItemRow`.
 export component NavItemRow inherits Rectangle {
     /// Input property "item-id".
+    /// property `item-id`.
     in property <string> item-id;
     /// Input property "icon".
+    /// property `icon`.
     in property <string> icon;
     /// Input property "label".
+    /// property `label`.
     in property <string> label;
     /// Input property "icon-font".
+    /// property `icon-font`.
     in property <string> icon-font;
     /// Input property "is-active".
+    /// property `is-active`.
     in property <bool>   is-active: false;
     /// Input property "collapsed".
+    /// property `collapsed`.
     in property <bool>   collapsed: false;
     /// Input property "active-alpha".
+    /// property `active-alpha`.
     in property <float>  active-alpha;
     /// Input property "indicator-w".
+    /// property `indicator-w`.
     in property <length> indicator-w;
     /// Input property "indicator-radius".
+    /// property `indicator-radius`.
     in property <length> indicator-radius;
     /// Callback fired for c li ck ed.
+    /// callback `clicked`.
     callback clicked();
 
     height: Spacing.xl;

@@ -1,0 +1,61 @@
+{
+  "source": "ui/mobile/app-window.slint",
+  "items": [
+    {
+      "name": "AppWindow",
+      "kind": "Component",
+      "signature": "export component AppWindow inherits Window {",
+      "line": 14,
+      "doc": ""
+    },
+    {
+      "name": "window-title",
+      "kind": "Property",
+      "signature": "in property <string> window-title: \"SlintUITemplates \\u{2014} Mobile\";",
+      "line": 22,
+      "doc": ""
+    },
+    {
+      "name": "icon-home",
+      "kind": "Property",
+      "signature": "private property <string> icon-home: \"\\u{1F3E0}\";",
+      "line": 25,
+      "doc": ""
+    },
+    {
+      "name": "icon-list",
+      "kind": "Property",
+      "signature": "private property <string> icon-list: \"\\u{1F4CB}\";",
+      "line": 28,
+      "doc": ""
+    },
+    {
+      "name": "icon-settings",
+      "kind": "Property",
+      "signature": "private property <string> icon-settings: \"\\u{2699}\";",
+      "line": 31,
+      "doc": ""
+    },
+    {
+      "name": "status-prefix",
+      "kind": "Property",
+      "signature": "private property <string> status-prefix: \"View: \";",
+      "line": 34,
+      "doc": ""
+    },
+    {
+      "name": "nav-items",
+      "kind": "Property",
+      "signature": "in property <[NavItem]> nav-items: [",
+      "line": 39,
+      "doc": ""
+    },
+    {
+      "name": "navigate",
+      "kind": "Callback",
+      "signature": "callback navigate(string);",
+      "line": 47,
+      "doc": ""
+    }
+  ]
+}

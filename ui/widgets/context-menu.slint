@@ -15,32 +15,41 @@
 //       }
 //   }
 
-import { Colors, Spacing } from "../tokens/theme.slint";
-import { Sizes } from "../tokens/sizes.slint";
+import { Colors, Spacing } from "../globals/theme.slint";
+import { Sizes } from "../state/sizes.slint";
 import { ContextMenuContent } from "./ContextMenuContent.slint";
 import { ContextMenuItem } from "./ContextMenuEntry.slint";
 
 export { ContextMenuItem }
 
 /// C on te xt me nu component.
+/// component `ContextMenu`.
 export component ContextMenu inherits Rectangle {
     /// Input property "items".
+    /// property `items`.
     in property <[ContextMenuItem]> items: [];
     /// Input property "separator-count".
+    /// property `separator-count`.
     in property <int>    separator-count;
     /// Input property "window-height".
+    /// property `window-height`.
     in property <length> window-height;
 
     /// Callback fired for a ct iv at ed.
+    /// callback `activated`.
     callback activated(string);
 
     /// Private property "pop-x" used internally.
+    /// property `pop-x`.
     private property <length> pop-x: Sizes.no-size;
     /// Private property "pop-y" used internally.
+    /// property `pop-y`.
     private property <length> pop-y: Sizes.no-size;
     /// Private property "popup-w" used internally.
+    /// property `popup-w`.
     private property <length> popup-w: Sizes.comp-260;
     /// Private property "est-popup-h" used internally.
+    /// property `est-popup-h`.
     private property <length> est-popup-h:
         (items.length - root.separator-count) * Spacing.xl
         + root.separator-count * Spacing.xs
@@ -48,6 +57,7 @@ export component ContextMenu inherits Rectangle {
     // Visible height: capped so the popup never exceeds the window.
     // Content scrolls inside via Flickable when est-popup-h > popup-h.
     /// Private property "popup-h" used internally.
+    /// property `popup-h`.
     private property <length> popup-h:
         root.window-height > Sizes.no-size && root.est-popup-h > root.window-height - Spacing.md * Sizes.two
             ? root.window-height - Spacing.md * Sizes.two

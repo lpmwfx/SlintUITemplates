@@ -1,0 +1,33 @@
+{
+  "source": "ui/shell/macos/MacosNavItem.slint",
+  "items": [
+    {
+      "name": "MacosNavItem",
+      "kind": "Component",
+      "signature": "export component MacosNavItem inherits Rectangle {",
+      "line": 11,
+      "doc": ""
+    },
+    {
+      "name": "item",
+      "kind": "Property",
+      "signature": "in property <NavItem> item;",
+      "line": 14,
+      "doc": ""
+    },
+    {
+      "name": "active",
+      "kind": "Property",
+      "signature": "in property <bool>    active: false;",
+      "line": 17,
+      "doc": ""
+    },
+    {
+      "name": "navigate",
+      "kind": "Callback",
+      "signature": "callback navigate(string);",
+      "line": 21,
+      "doc": ""
+    }
+  ]
+}

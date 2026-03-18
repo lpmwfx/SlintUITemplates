@@ -1,41 +1,55 @@
 // Fluent 2 type scale — exact sizes and weights from WinUI3.
 // Reference: https://learn.microsoft.com/en-us/windows/apps/design/style/typography
 
-import { Settings } from "../../state/settings.slint";
+import { Settings } from "../../../state/settings.slint";
 
 /// F lu en tt yp e global values.
 export global FluentType {
     // Base sizes scaled by zoom * font-scale (reactive to runtime settings)
     /// Output property "caption".
+    /// property `caption`.
     out property <length> caption:      Settings.zoom * Settings.font-scale * 12px;
     /// Output property "body".
+    /// property `body`.
     out property <length> body:         Settings.zoom * Settings.font-scale * 14px;
     /// Output property "body-strong".
+    /// property `body-strong`.
     out property <length> body-strong:  Settings.zoom * Settings.font-scale * 14px;
     /// Output property "subtitle".
+    /// property `subtitle`.
     out property <length> subtitle:     Settings.zoom * Settings.font-scale * 20px;
     /// Output property "title".
+    /// property `title`.
     out property <length> title:        Settings.zoom * Settings.font-scale * 28px;
     /// Output property "title-large".
+    /// property `title-large`.
     out property <length> title-large:  Settings.zoom * Settings.font-scale * 40px;
     /// Output property "display".
+    /// property `display`.
     out property <length> display:      Settings.zoom * Settings.font-scale * 68px;
 
     // Weights
     /// Output property "weight-regular".
+    /// property `weight-regular`.
     out property <int> weight-regular:  400;
     /// Output property "weight-medium".
+    /// property `weight-medium`.
     out property <int> weight-medium:   500;
     /// Output property "weight-semibold".
+    /// property `weight-semibold`.
     out property <int> weight-semibold: 600;
     /// Output property "weight-bold".
+    /// property `weight-bold`.
     out property <int> weight-bold:     700;
 
     // Font families (Windows 11 — always available)
     /// Output property "font-text".
+    /// property `font-text`.
     out property <string> font-text:   "Segoe UI";
     /// Output property "font-icons".
+    /// property `font-icons`.
     out property <string> font-icons:  "Segoe Fluent Icons";
     /// Output property "font-mono".
+    /// property `font-mono`.
     out property <string> font-mono:   "Cascadia Code";
 }

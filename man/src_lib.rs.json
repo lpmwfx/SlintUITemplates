@@ -1,0 +1,82 @@
+{
+  "source": "src/lib.rs",
+  "items": [
+    {
+      "name": "adapter",
+      "kind": "Mod",
+      "signature": "pub mod adapter;",
+      "line": 4,
+      "doc": "Adapter layer between the host app and the Slint UI grid/shell."
+    },
+    {
+      "name": "bindings",
+      "kind": "Mod",
+      "signature": "pub mod bindings;",
+      "line": 7,
+      "doc": "Script-engine bindings (Rhai) exposed to configuration scripts."
+    },
+    {
+      "name": "docs",
+      "kind": "Mod",
+      "signature": "pub mod docs;",
+      "line": 10,
+      "doc": "Markdown parser that converts CommonMark + GFM to `DocBlock` models."
+    },
+    {
+      "name": "dsl",
+      "kind": "Mod",
+      "signature": "pub mod dsl;",
+      "line": 12,
+      "doc": "Composition DSL — fluent builder API for shell and window configuration."
+    },
+    {
+      "name": "grid",
+      "kind": "Mod",
+      "signature": "pub mod grid;",
+      "line": 14,
+      "doc": "Grid zone model and target-config loader for responsive layouts."
+    },
+    {
+      "name": "layout",
+      "kind": "Mod",
+      "signature": "pub mod layout;",
+      "line": 16,
+      "doc": "Layout DSL parser, constraint solver, and ratio-based panel engine."
+    },
+    {
+      "name": "gateway",
+      "kind": "Mod",
+      "signature": "pub mod gateway;",
+      "line": 18,
+      "doc": "File I/O gateway — all `std::fs` calls are funnelled through this module."
+    },
+    {
+      "name": "pal",
+      "kind": "Mod",
+      "signature": "pub mod pal;",
+      "line": 20,
+      "doc": "OS-level window backdrop and composition effects (Mica, Acrylic)."
+    },
+    {
+      "name": "settings",
+      "kind": "Mod",
+      "signature": "pub mod settings;",
+      "line": 22,
+      "doc": "Persistent application settings (zoom, theme, icons, font)."
+    },
+    {
+      "name": "shell",
+      "kind": "Mod",
+      "signature": "pub mod shell;",
+      "line": 24,
+      "doc": "Platform-native window chrome, navigation models, and shell lifecycle."
+    },
+    {
+      "name": "view_config",
+      "kind": "Mod",
+      "signature": "pub mod view_config;",
+      "line": 26,
+      "doc": "Per-view Rhai configuration auto-applied on navigation changes."
+    }
+  ]
+}

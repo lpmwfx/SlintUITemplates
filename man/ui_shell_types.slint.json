@@ -1,0 +1,12 @@
+{
+  "source": "ui/shell/types.slint",
+  "items": [
+    {
+      "name": "ShellToolbarItem",
+      "kind": "Struct",
+      "signature": "export struct ShellToolbarItem {",
+      "line": 8,
+      "doc": ""
+    }
+  ]
+}

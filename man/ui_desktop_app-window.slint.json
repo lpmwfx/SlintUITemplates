@@ -1,0 +1,166 @@
+{
+  "source": "ui/desktop/app-window.slint",
+  "items": [
+    {
+      "name": "AppWindow",
+      "kind": "Component",
+      "signature": "export component AppWindow inherits Window {",
+      "line": 20,
+      "doc": ""
+    },
+    {
+      "name": "window-title",
+      "kind": "Property",
+      "signature": "in property <string> window-title: \"SlintUI Templates\";",
+      "line": 23,
+      "doc": ""
+    },
+    {
+      "name": "active-view",
+      "kind": "Property",
+      "signature": "in property <string>    active-view: NavId.home;",
+      "line": 37,
+      "doc": ""
+    },
+    {
+      "name": "nav-items",
+      "kind": "Property",
+      "signature": "in property <[NavItem]> nav-items: [",
+      "line": 42,
+      "doc": ""
+    },
+    {
+      "name": "show-toolbar",
+      "kind": "Property",
+      "signature": "in property <bool>               show-toolbar:  false;",
+      "line": 51,
+      "doc": ""
+    },
+    {
+      "name": "toolbar-items",
+      "kind": "Property",
+      "signature": "in property <[ShellToolbarItem]> toolbar-items: [];",
+      "line": 54,
+      "doc": ""
+    },
+    {
+      "name": "status-text",
+      "kind": "Property",
+      "signature": "in property <string> status-text: \"\";",
+      "line": 59,
+      "doc": ""
+    },
+    {
+      "name": "status-prefix",
+      "kind": "Property",
+      "signature": "in property <string> status-prefix: \"View: \";",
+      "line": 62,
+      "doc": ""
+    },
+    {
+      "name": "right-panel-label",
+      "kind": "Property",
+      "signature": "in property <string> right-panel-label: \"right\";",
+      "line": 65,
+      "doc": ""
+    },
+    {
+      "name": "menu-file-label",
+      "kind": "Property",
+      "signature": "in property <string> menu-file-label: \"File\";",
+      "line": 70,
+      "doc": ""
+    },
+    {
+      "name": "menu-exit-label",
+      "kind": "Property",
+      "signature": "in property <string> menu-exit-label: \"Exit\";",
+      "line": 73,
+      "doc": ""
+    },
+    {
+      "name": "menu-view-label",
+      "kind": "Property",
+      "signature": "in property <string> menu-view-label: \"View\";",
+      "line": 76,
+      "doc": ""
+    },
+    {
+      "name": "menu-home-label",
+      "kind": "Property",
+      "signature": "in property <string> menu-home-label: \"Home\";",
+      "line": 79,
+      "doc": ""
+    },
+    {
+      "name": "menu-list-label",
+      "kind": "Property",
+      "signature": "in property <string> menu-list-label: \"List\";",
+      "line": 82,
+      "doc": ""
+    },
+    {
+      "name": "menu-settings-label",
+      "kind": "Property",
+      "signature": "in property <string> menu-settings-label: \"Settings\";",
+      "line": 85,
+      "doc": ""
+    },
+    {
+      "name": "menu-help-label",
+      "kind": "Property",
+      "signature": "in property <string> menu-help-label: \"Help\";",
+      "line": 88,
+      "doc": ""
+    },
+    {
+      "name": "menu-about-label",
+      "kind": "Property",
+      "signature": "in property <string> menu-about-label: \"About\";",
+      "line": 91,
+      "doc": ""
+    },
+    {
+      "name": "menu-action",
+      "kind": "Callback",
+      "signature": "callback menu-action(string);",
+      "line": 96,
+      "doc": ""
+    },
+    {
+      "name": "toolbar-clicked",
+      "kind": "Callback",
+      "signature": "callback toolbar-clicked(string);",
+      "line": 99,
+      "doc": ""
+    },
+    {
+      "name": "row-top-ratio",
+      "kind": "Property",
+      "signature": "in property <float> row-top-ratio: Sizes.fill;",
+      "line": 104,
+      "doc": ""
+    },
+    {
+      "name": "row-main-ratio",
+      "kind": "Property",
+      "signature": "in property <float> row-main-ratio: Sizes.ten;",
+      "line": 107,
+      "doc": ""
+    },
+    {
+      "name": "row-bottom-ratio",
+      "kind": "Property",
+      "signature": "in property <float> row-bottom-ratio: Sizes.fill;",
+      "line": 110,
+      "doc": ""
+    },
+    {
+      "name": "navigate",
+      "kind": "Callback",
+      "signature": "callback navigate(string);",
+      "line": 122,
+      "doc": ""
+    }
+  ]
+}

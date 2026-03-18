@@ -1,0 +1,1280 @@
+{
+  "project": "SlintTemplateSystem",
+  "files": [
+    {
+      "source": "examples/docs/gateway/mod.rs",
+      "item_count": 1,
+      "undocumented": 0
+    },
+    {
+      "source": "examples/docs/pages.rs",
+      "item_count": 2,
+      "undocumented": 0
+    },
+    {
+      "source": "examples/viewer/demo_frame.rs",
+      "item_count": 3,
+      "undocumented": 0
+    },
+    {
+      "source": "src/adapter/apply.rs",
+      "item_count": 3,
+      "undocumented": 0
+    },
+    {
+      "source": "src/adapter/callbacks.rs",
+      "item_count": 3,
+      "undocumented": 0
+    },
+    {
+      "source": "src/adapter/config.rs",
+      "item_count": 3,
+      "undocumented": 0
+    },
+    {
+      "source": "src/adapter/mod.rs",
+      "item_count": 4,
+      "undocumented": 0
+    },
+    {
+      "source": "src/adapter/state.rs",
+      "item_count": 11,
+      "undocumented": 0
+    },
+    {
+      "source": "src/bindings/mod.rs",
+      "item_count": 1,
+      "undocumented": 0
+    },
+    {
+      "source": "src/bindings/rhai/api.rs",
+      "item_count": 1,
+      "undocumented": 0
+    },
+    {
+      "source": "src/bindings/rhai/dsl.rs",
+      "item_count": 1,
+      "undocumented": 0
+    },
+    {
+      "source": "src/bindings/rhai/mod.rs",
+      "item_count": 3,
+      "undocumented": 0
+    },
+    {
+      "source": "src/docs/mod.rs",
+      "item_count": 1,
+      "undocumented": 0
+    },
+    {
+      "source": "src/docs/parser.rs",
+      "item_count": 1,
+      "undocumented": 0
+    },
+    {
+      "source": "src/dsl/apply.rs",
+      "item_count": 1,
+      "undocumented": 0
+    },
+    {
+      "source": "src/dsl/builder.rs",
+      "item_count": 10,
+      "undocumented": 0
+    },
+    {
+      "source": "src/dsl/error.rs",
+      "item_count": 1,
+      "undocumented": 0
+    },
+    {
+      "source": "src/dsl/icons.rs",
+      "item_count": 2,
+      "undocumented": 0
+    },
+    {
+      "source": "src/dsl/mod.rs",
+      "item_count": 9,
+      "undocumented": 0
+    },
+    {
+      "source": "src/dsl/types.rs",
+      "item_count": 6,
+      "undocumented": 0
+    },
+    {
+      "source": "src/gateway/grid.rs",
+      "item_count": 1,
+      "undocumented": 0
+    },
+    {
+      "source": "src/gateway/mod.rs",
+      "item_count": 5,
+      "undocumented": 0
+    },
+    {
+      "source": "src/gateway/scaffold.rs",
+      "item_count": 1,
+      "undocumented": 0
+    },
+    {
+      "source": "src/gateway/scripts.rs",
+      "item_count": 1,
+      "undocumented": 0
+    },
+    {
+      "source": "src/gateway/settings.rs",
+      "item_count": 3,
+      "undocumented": 0
+    },
+    {
+      "source": "src/gateway/view_config.rs",
+      "item_count": 2,
+      "undocumented": 0
+    },
+    {
+      "source": "src/grid/config.rs",
+      "item_count": 6,
+      "undocumented": 0
+    },
+    {
+      "source": "src/grid/mod.rs",
+      "item_count": 3,
+      "undocumented": 0
+    },
+    {
+      "source": "src/grid/zone.rs",
+      "item_count": 10,
+      "undocumented": 0
+    },
+    {
+      "source": "src/layout/constraints.rs",
+      "item_count": 3,
+      "undocumented": 0
+    },
+    {
+      "source": "src/layout/dsl_v2.rs",
+      "item_count": 3,
+      "undocumented": 0
+    },
+    {
+      "source": "src/layout/mod.rs",
+      "item_count": 8,
+      "undocumented": 0
+    },
+    {
+      "source": "src/layout/named_parser.rs",
+      "item_count": 1,
+      "undocumented": 0
+    },
+    {
+      "source": "src/layout/parser.rs",
+      "item_count": 4,
+      "undocumented": 0
+    },
+    {
+      "source": "src/layout/ratio_solver.rs",
+      "item_count": 6,
+      "undocumented": 0
+    },
+    {
+      "source": "src/layout/solver.rs",
+      "item_count": 6,
+      "undocumented": 0
+    },
+    {
+      "source": "src/lib.rs",
+      "item_count": 11,
+      "undocumented": 0
+    },
+    {
+      "source": "src/pal/dark_mode.rs",
+      "item_count": 1,
+      "undocumented": 0
+    },
+    {
+      "source": "src/pal/imp.rs",
+      "item_count": 1,
+      "undocumented": 0
+    },
+    {
+      "source": "src/pal/mod.rs",
+      "item_count": 2,
+      "undocumented": 0
+    },
+    {
+      "source": "src/settings/apply.rs",
+      "item_count": 1,
+      "undocumented": 0
+    },
+    {
+      "source": "src/settings/defaults.rs",
+      "item_count": 2,
+      "undocumented": 0
+    },
+    {
+      "source": "src/settings/mod.rs",
+      "item_count": 11,
+      "undocumented": 0
+    },
+    {
+      "source": "src/shell/mod.rs",
+      "item_count": 8,
+      "undocumented": 0
+    },
+    {
+      "source": "src/shell/models.rs",
+      "item_count": 2,
+      "undocumented": 0
+    },
+    {
+      "source": "src/shell/platform.rs",
+      "item_count": 5,
+      "undocumented": 0
+    },
+    {
+      "source": "src/view_config/error.rs",
+      "item_count": 1,
+      "undocumented": 0
+    },
+    {
+      "source": "src/view_config/eval.rs",
+      "item_count": 3,
+      "undocumented": 0
+    },
+    {
+      "source": "src/view_config/mod.rs",
+      "item_count": 4,
+      "undocumented": 0
+    },
+    {
+      "source": "tools/docgen/src/main.rs",
+      "item_count": 7,
+      "undocumented": 0
+    },
+    {
+      "source": "tools/docgen/src/parser.rs",
+      "item_count": 4,
+      "undocumented": 0
+    },
+    {
+      "source": "tools/docgen/src/renderer.rs",
+      "item_count": 4,
+      "undocumented": 0
+    },
+    {
+      "source": "ui/demo/demo.slint",
+      "item_count": 8,
+      "undocumented": 8
+    },
+    {
+      "source": "ui/demo/DemoMobileNav.slint",
+      "item_count": 4,
+      "undocumented": 4
+    },
+    {
+      "source": "ui/demo/MobilePhoneFrame.slint",
+      "item_count": 5,
+      "undocumented": 5
+    },
+    {
+      "source": "ui/desktop/app-window.slint",
+      "item_count": 23,
+      "undocumented": 23
+    },
+    {
+      "source": "ui/desktop/content-area.slint",
+      "item_count": 3,
+      "undocumented": 3
+    },
+    {
+      "source": "ui/desktop/nav-bar.slint",
+      "item_count": 6,
+      "undocumented": 6
+    },
+    {
+      "source": "ui/desktop/side-bar-row.slint",
+      "item_count": 6,
+      "undocumented": 6
+    },
+    {
+      "source": "ui/desktop/side-bar.slint",
+      "item_count": 7,
+      "undocumented": 7
+    },
+    {
+      "source": "ui/desktop/status-bar.slint",
+      "item_count": 4,
+      "undocumented": 4
+    },
+    {
+      "source": "ui/desktop/types.slint",
+      "item_count": 1,
+      "undocumented": 1
+    },
+    {
+      "source": "ui/docs/doc-block.slint",
+      "item_count": 1,
+      "undocumented": 1
+    },
+    {
+      "source": "ui/docs/docs-app.slint",
+      "item_count": 20,
+      "undocumented": 20
+    },
+    {
+      "source": "ui/docs/markdown-view.slint",
+      "item_count": 5,
+      "undocumented": 5
+    },
+    {
+      "source": "ui/docs/MdBlockquote.slint",
+      "item_count": 5,
+      "undocumented": 5
+    },
+    {
+      "source": "ui/docs/MdCodeBlock.slint",
+      "item_count": 3,
+      "undocumented": 3
+    },
+    {
+      "source": "ui/docs/MdHeading.slint",
+      "item_count": 4,
+      "undocumented": 4
+    },
+    {
+      "source": "ui/docs/MdListItem.slint",
+      "item_count": 6,
+      "undocumented": 6
+    },
+    {
+      "source": "ui/docs/MdParagraph.slint",
+      "item_count": 2,
+      "undocumented": 2
+    },
+    {
+      "source": "ui/docs/MdTable.slint",
+      "item_count": 4,
+      "undocumented": 4
+    },
+    {
+      "source": "ui/globals/NavId.slint",
+      "item_count": 3,
+      "undocumented": 3
+    },
+    {
+      "source": "ui/globals/ThemeMode.slint",
+      "item_count": 3,
+      "undocumented": 3
+    },
+    {
+      "source": "ui/globals/Variants.slint",
+      "item_count": 61,
+      "undocumented": 61
+    },
+    {
+      "source": "ui/globals/ViewId.slint",
+      "item_count": 14,
+      "undocumented": 14
+    },
+    {
+      "source": "ui/mobile/app-window.slint",
+      "item_count": 8,
+      "undocumented": 8
+    },
+    {
+      "source": "ui/mobile/MobileNavItem.slint",
+      "item_count": 6,
+      "undocumented": 6
+    },
+    {
+      "source": "ui/modules/DragHandle.slint",
+      "item_count": 4,
+      "undocumented": 4
+    },
+    {
+      "source": "ui/modules/PanelContainer.slint",
+      "item_count": 4,
+      "undocumented": 4
+    },
+    {
+      "source": "ui/modules/PanelSlot.slint",
+      "item_count": 4,
+      "undocumented": 4
+    },
+    {
+      "source": "ui/modules/ViewSlot.slint",
+      "item_count": 3,
+      "undocumented": 3
+    },
+    {
+      "source": "ui/mother/AppWindow.slint",
+      "item_count": 7,
+      "undocumented": 7
+    },
+    {
+      "source": "ui/shell/app-shell.slint",
+      "item_count": 9,
+      "undocumented": 9
+    },
+    {
+      "source": "ui/shell/desktop/content-frame.slint",
+      "item_count": 1,
+      "undocumented": 1
+    },
+    {
+      "source": "ui/shell/desktop/NavItemRow.slint",
+      "item_count": 11,
+      "undocumented": 11
+    },
+    {
+      "source": "ui/shell/desktop/shell.slint",
+      "item_count": 11,
+      "undocumented": 11
+    },
+    {
+      "source": "ui/shell/desktop/side-nav.slint",
+      "item_count": 10,
+      "undocumented": 10
+    },
+    {
+      "source": "ui/shell/desktop/status-bar.slint",
+      "item_count": 5,
+      "undocumented": 5
+    },
+    {
+      "source": "ui/shell/desktop/tool-bar.slint",
+      "item_count": 4,
+      "undocumented": 4
+    },
+    {
+      "source": "ui/shell/macos/MacosNavItem.slint",
+      "item_count": 4,
+      "undocumented": 4
+    },
+    {
+      "source": "ui/shell/macos/MacosShell.slint",
+      "item_count": 5,
+      "undocumented": 5
+    },
+    {
+      "source": "ui/shell/macos/MacosSideNav.slint",
+      "item_count": 4,
+      "undocumented": 4
+    },
+    {
+      "source": "ui/shell/macos/MacosTitleBar.slint",
+      "item_count": 2,
+      "undocumented": 2
+    },
+    {
+      "source": "ui/shell/mobile/bottom-nav-bar.slint",
+      "item_count": 7,
+      "undocumented": 7
+    },
+    {
+      "source": "ui/shell/mobile/BottomNavItem.slint",
+      "item_count": 8,
+      "undocumented": 8
+    },
+    {
+      "source": "ui/shell/mobile/fab.slint",
+      "item_count": 10,
+      "undocumented": 10
+    },
+    {
+      "source": "ui/shell/mobile/shell.slint",
+      "item_count": 9,
+      "undocumented": 9
+    },
+    {
+      "source": "ui/shell/mobile/top-app-bar.slint",
+      "item_count": 8,
+      "undocumented": 8
+    },
+    {
+      "source": "ui/shell/small/BackButton.slint",
+      "item_count": 3,
+      "undocumented": 3
+    },
+    {
+      "source": "ui/shell/small/CompactNav.slint",
+      "item_count": 6,
+      "undocumented": 6
+    },
+    {
+      "source": "ui/shell/small/CompactNavItem.slint",
+      "item_count": 4,
+      "undocumented": 4
+    },
+    {
+      "source": "ui/shell/small/GameTopBar.slint",
+      "item_count": 4,
+      "undocumented": 4
+    },
+    {
+      "source": "ui/shell/small/shell.slint",
+      "item_count": 9,
+      "undocumented": 9
+    },
+    {
+      "source": "ui/shell/types.slint",
+      "item_count": 1,
+      "undocumented": 1
+    },
+    {
+      "source": "ui/state/settings.slint",
+      "item_count": 5,
+      "undocumented": 5
+    },
+    {
+      "source": "ui/state/theme/acrylic.slint",
+      "item_count": 24,
+      "undocumented": 24
+    },
+    {
+      "source": "ui/state/theme/mica.slint",
+      "item_count": 24,
+      "undocumented": 24
+    },
+    {
+      "source": "ui/state/theme/solid.slint",
+      "item_count": 24,
+      "undocumented": 24
+    },
+    {
+      "source": "ui/state/Theme.slint",
+      "item_count": 53,
+      "undocumented": 53
+    },
+    {
+      "source": "ui/tokens/fluent/colors.slint",
+      "item_count": 25,
+      "undocumented": 25
+    },
+    {
+      "source": "ui/tokens/fluent/elevation.slint",
+      "item_count": 10,
+      "undocumented": 10
+    },
+    {
+      "source": "ui/tokens/fluent/icons.slint",
+      "item_count": 71,
+      "undocumented": 71
+    },
+    {
+      "source": "ui/tokens/fluent/motion.slint",
+      "item_count": 10,
+      "undocumented": 10
+    },
+    {
+      "source": "ui/tokens/fluent/radius.slint",
+      "item_count": 6,
+      "undocumented": 6
+    },
+    {
+      "source": "ui/tokens/fluent/spacing.slint",
+      "item_count": 16,
+      "undocumented": 16
+    },
+    {
+      "source": "ui/tokens/fluent/typography.slint",
+      "item_count": 14,
+      "undocumented": 14
+    },
+    {
+      "source": "ui/tokens/macos/colors.slint",
+      "item_count": 31,
+      "undocumented": 31
+    },
+    {
+      "source": "ui/tokens/macos/radius.slint",
+      "item_count": 7,
+      "undocumented": 7
+    },
+    {
+      "source": "ui/tokens/macos/spacing.slint",
+      "item_count": 14,
+      "undocumented": 14
+    },
+    {
+      "source": "ui/tokens/macos/typography.slint",
+      "item_count": 15,
+      "undocumented": 15
+    },
+    {
+      "source": "ui/tokens/material/colors.slint",
+      "item_count": 29,
+      "undocumented": 29
+    },
+    {
+      "source": "ui/tokens/material/elevation.slint",
+      "item_count": 6,
+      "undocumented": 6
+    },
+    {
+      "source": "ui/tokens/material/radius.slint",
+      "item_count": 7,
+      "undocumented": 7
+    },
+    {
+      "source": "ui/tokens/material/spacing.slint",
+      "item_count": 15,
+      "undocumented": 15
+    },
+    {
+      "source": "ui/tokens/material/typography.slint",
+      "item_count": 18,
+      "undocumented": 18
+    },
+    {
+      "source": "ui/tokens/scale.slint",
+      "item_count": 4,
+      "undocumented": 4
+    },
+    {
+      "source": "ui/tokens/sizes.slint",
+      "item_count": 99,
+      "undocumented": 99
+    },
+    {
+      "source": "ui/tokens/spacing.slint",
+      "item_count": 12,
+      "undocumented": 12
+    },
+    {
+      "source": "ui/tokens/steam/colors.slint",
+      "item_count": 14,
+      "undocumented": 14
+    },
+    {
+      "source": "ui/tokens/steam/radius.slint",
+      "item_count": 6,
+      "undocumented": 6
+    },
+    {
+      "source": "ui/tokens/steam/spacing.slint",
+      "item_count": 11,
+      "undocumented": 11
+    },
+    {
+      "source": "ui/tokens/steam/typography.slint",
+      "item_count": 8,
+      "undocumented": 8
+    },
+    {
+      "source": "ui/tokens/typography.slint",
+      "item_count": 8,
+      "undocumented": 8
+    },
+    {
+      "source": "ui/viewer/BiDirDemo.slint",
+      "item_count": 8,
+      "undocumented": 8
+    },
+    {
+      "source": "ui/viewer/ColHandleDemo.slint",
+      "item_count": 1,
+      "undocumented": 1
+    },
+    {
+      "source": "ui/viewer/ContextMenuDemoArea.slint",
+      "item_count": 4,
+      "undocumented": 4
+    },
+    {
+      "source": "ui/viewer/IconRow.slint",
+      "item_count": 2,
+      "undocumented": 2
+    },
+    {
+      "source": "ui/viewer/IconTile.slint",
+      "item_count": 12,
+      "undocumented": 12
+    },
+    {
+      "source": "ui/viewer/page-app-shell.slint",
+      "item_count": 17,
+      "undocumented": 17
+    },
+    {
+      "source": "ui/viewer/page-buttons.slint",
+      "item_count": 6,
+      "undocumented": 6
+    },
+    {
+      "source": "ui/viewer/page-canvas.slint",
+      "item_count": 4,
+      "undocumented": 4
+    },
+    {
+      "source": "ui/viewer/page-display.slint",
+      "item_count": 37,
+      "undocumented": 37
+    },
+    {
+      "source": "ui/viewer/page-feedback.slint",
+      "item_count": 29,
+      "undocumented": 29
+    },
+    {
+      "source": "ui/viewer/page-inputs.slint",
+      "item_count": 31,
+      "undocumented": 31
+    },
+    {
+      "source": "ui/viewer/page-navigation.slint",
+      "item_count": 8,
+      "undocumented": 8
+    },
+    {
+      "source": "ui/viewer/page-panels.slint",
+      "item_count": 15,
+      "undocumented": 15
+    },
+    {
+      "source": "ui/viewer/page-popups.slint",
+      "item_count": 2,
+      "undocumented": 2
+    },
+    {
+      "source": "ui/viewer/page-selection.slint",
+      "item_count": 24,
+      "undocumented": 24
+    },
+    {
+      "source": "ui/viewer/page-utilities.slint",
+      "item_count": 12,
+      "undocumented": 12
+    },
+    {
+      "source": "ui/viewer/PageData.slint",
+      "item_count": 32,
+      "undocumented": 32
+    },
+    {
+      "source": "ui/viewer/PageIcons.slint",
+      "item_count": 9,
+      "undocumented": 9
+    },
+    {
+      "source": "ui/viewer/PageLayout.slint",
+      "item_count": 17,
+      "undocumented": 17
+    },
+    {
+      "source": "ui/viewer/popup-cbf-demo.slint",
+      "item_count": 4,
+      "undocumented": 4
+    },
+    {
+      "source": "ui/viewer/popup-dropdown-demo.slint",
+      "item_count": 5,
+      "undocumented": 5
+    },
+    {
+      "source": "ui/viewer/popup-flyout-demo.slint",
+      "item_count": 6,
+      "undocumented": 6
+    },
+    {
+      "source": "ui/viewer/popup-popover-demo.slint",
+      "item_count": 6,
+      "undocumented": 6
+    },
+    {
+      "source": "ui/viewer/popup-teaching-tip-demo.slint",
+      "item_count": 3,
+      "undocumented": 3
+    },
+    {
+      "source": "ui/viewer/RowHandleDemo.slint",
+      "item_count": 2,
+      "undocumented": 2
+    },
+    {
+      "source": "ui/viewer/ScrollDemoRow.slint",
+      "item_count": 3,
+      "undocumented": 3
+    },
+    {
+      "source": "ui/viewer/viewer-content.slint",
+      "item_count": 4,
+      "undocumented": 4
+    },
+    {
+      "source": "ui/viewer/viewer-section.slint",
+      "item_count": 2,
+      "undocumented": 2
+    },
+    {
+      "source": "ui/viewer/viewer-topbar.slint",
+      "item_count": 27,
+      "undocumented": 27
+    },
+    {
+      "source": "ui/viewer/viewer.slint",
+      "item_count": 34,
+      "undocumented": 34
+    },
+    {
+      "source": "ui/viewer/ViewSlotDemo.slint",
+      "item_count": 9,
+      "undocumented": 9
+    },
+    {
+      "source": "ui/views/home.slint",
+      "item_count": 4,
+      "undocumented": 4
+    },
+    {
+      "source": "ui/views/list.slint",
+      "item_count": 2,
+      "undocumented": 2
+    },
+    {
+      "source": "ui/views/settings.slint",
+      "item_count": 2,
+      "undocumented": 2
+    },
+    {
+      "source": "ui/widgets/accordion-row.slint",
+      "item_count": 9,
+      "undocumented": 9
+    },
+    {
+      "source": "ui/widgets/accordion.slint",
+      "item_count": 4,
+      "undocumented": 4
+    },
+    {
+      "source": "ui/widgets/alert.slint",
+      "item_count": 7,
+      "undocumented": 7
+    },
+    {
+      "source": "ui/widgets/avatar.slint",
+      "item_count": 3,
+      "undocumented": 3
+    },
+    {
+      "source": "ui/widgets/badge.slint",
+      "item_count": 3,
+      "undocumented": 3
+    },
+    {
+      "source": "ui/widgets/breadcrumb.slint",
+      "item_count": 5,
+      "undocumented": 5
+    },
+    {
+      "source": "ui/widgets/button.slint",
+      "item_count": 5,
+      "undocumented": 5
+    },
+    {
+      "source": "ui/widgets/canvas-image.slint",
+      "item_count": 4,
+      "undocumented": 4
+    },
+    {
+      "source": "ui/widgets/canvas-path.slint",
+      "item_count": 20,
+      "undocumented": 20
+    },
+    {
+      "source": "ui/widgets/card.slint",
+      "item_count": 4,
+      "undocumented": 4
+    },
+    {
+      "source": "ui/widgets/cbf-overflow-btn.slint",
+      "item_count": 2,
+      "undocumented": 2
+    },
+    {
+      "source": "ui/widgets/cbf-primary-btn.slint",
+      "item_count": 4,
+      "undocumented": 4
+    },
+    {
+      "source": "ui/widgets/cbf-secondary-row.slint",
+      "item_count": 6,
+      "undocumented": 6
+    },
+    {
+      "source": "ui/widgets/checkbox.slint",
+      "item_count": 9,
+      "undocumented": 9
+    },
+    {
+      "source": "ui/widgets/chip.slint",
+      "item_count": 9,
+      "undocumented": 9
+    },
+    {
+      "source": "ui/widgets/ClearButton.slint",
+      "item_count": 2,
+      "undocumented": 2
+    },
+    {
+      "source": "ui/widgets/command-bar-flyout.slint",
+      "item_count": 14,
+      "undocumented": 14
+    },
+    {
+      "source": "ui/widgets/context-menu.slint",
+      "item_count": 10,
+      "undocumented": 10
+    },
+    {
+      "source": "ui/widgets/ContextMenuContent.slint",
+      "item_count": 4,
+      "undocumented": 4
+    },
+    {
+      "source": "ui/widgets/ContextMenuEntry.slint",
+      "item_count": 5,
+      "undocumented": 5
+    },
+    {
+      "source": "ui/widgets/data-table-types.slint",
+      "item_count": 2,
+      "undocumented": 2
+    },
+    {
+      "source": "ui/widgets/data-table.slint",
+      "item_count": 10,
+      "undocumented": 10
+    },
+    {
+      "source": "ui/widgets/DataTableHeaderCell.slint",
+      "item_count": 8,
+      "undocumented": 8
+    },
+    {
+      "source": "ui/widgets/DataTableRow.slint",
+      "item_count": 7,
+      "undocumented": 7
+    },
+    {
+      "source": "ui/widgets/date-picker.slint",
+      "item_count": 19,
+      "undocumented": 19
+    },
+    {
+      "source": "ui/widgets/DatePickerCalendar.slint",
+      "item_count": 29,
+      "undocumented": 29
+    },
+    {
+      "source": "ui/widgets/DatePickerField.slint",
+      "item_count": 7,
+      "undocumented": 7
+    },
+    {
+      "source": "ui/widgets/DatePickerGrid.slint",
+      "item_count": 6,
+      "undocumented": 6
+    },
+    {
+      "source": "ui/widgets/dialog.slint",
+      "item_count": 8,
+      "undocumented": 8
+    },
+    {
+      "source": "ui/widgets/DialogButton.slint",
+      "item_count": 8,
+      "undocumented": 8
+    },
+    {
+      "source": "ui/widgets/divider.slint",
+      "item_count": 4,
+      "undocumented": 4
+    },
+    {
+      "source": "ui/widgets/drawer-header.slint",
+      "item_count": 5,
+      "undocumented": 5
+    },
+    {
+      "source": "ui/widgets/drawer.slint",
+      "item_count": 12,
+      "undocumented": 12
+    },
+    {
+      "source": "ui/widgets/dropdown-entry.slint",
+      "item_count": 9,
+      "undocumented": 9
+    },
+    {
+      "source": "ui/widgets/dropdown-menu.slint",
+      "item_count": 11,
+      "undocumented": 11
+    },
+    {
+      "source": "ui/widgets/empty-state.slint",
+      "item_count": 7,
+      "undocumented": 7
+    },
+    {
+      "source": "ui/widgets/flyout-inner.slint",
+      "item_count": 6,
+      "undocumented": 6
+    },
+    {
+      "source": "ui/widgets/flyout.slint",
+      "item_count": 9,
+      "undocumented": 9
+    },
+    {
+      "source": "ui/widgets/form-field.slint",
+      "item_count": 5,
+      "undocumented": 5
+    },
+    {
+      "source": "ui/widgets/label.slint",
+      "item_count": 6,
+      "undocumented": 6
+    },
+    {
+      "source": "ui/widgets/list-item.slint",
+      "item_count": 6,
+      "undocumented": 6
+    },
+    {
+      "source": "ui/widgets/message-bar.slint",
+      "item_count": 16,
+      "undocumented": 16
+    },
+    {
+      "source": "ui/widgets/multi-select-types.slint",
+      "item_count": 1,
+      "undocumented": 1
+    },
+    {
+      "source": "ui/widgets/multi-select.slint",
+      "item_count": 7,
+      "undocumented": 7
+    },
+    {
+      "source": "ui/widgets/MultiSelectChip.slint",
+      "item_count": 10,
+      "undocumented": 10
+    },
+    {
+      "source": "ui/widgets/MultiSelectDropdown.slint",
+      "item_count": 3,
+      "undocumented": 3
+    },
+    {
+      "source": "ui/widgets/MultiSelectItem.slint",
+      "item_count": 4,
+      "undocumented": 4
+    },
+    {
+      "source": "ui/widgets/pagination.slint",
+      "item_count": 9,
+      "undocumented": 9
+    },
+    {
+      "source": "ui/widgets/password-input.slint",
+      "item_count": 7,
+      "undocumented": 7
+    },
+    {
+      "source": "ui/widgets/PasswordToggle.slint",
+      "item_count": 3,
+      "undocumented": 3
+    },
+    {
+      "source": "ui/widgets/popover-inner.slint",
+      "item_count": 6,
+      "undocumented": 6
+    },
+    {
+      "source": "ui/widgets/popover.slint",
+      "item_count": 7,
+      "undocumented": 7
+    },
+    {
+      "source": "ui/widgets/PopupContent.slint",
+      "item_count": 5,
+      "undocumented": 5
+    },
+    {
+      "source": "ui/widgets/PrimaryBarContent.slint",
+      "item_count": 6,
+      "undocumented": 6
+    },
+    {
+      "source": "ui/widgets/progress-bar.slint",
+      "item_count": 4,
+      "undocumented": 4
+    },
+    {
+      "source": "ui/widgets/RadioButton.slint",
+      "item_count": 8,
+      "undocumented": 8
+    },
+    {
+      "source": "ui/widgets/RadioGroup.slint",
+      "item_count": 5,
+      "undocumented": 5
+    },
+    {
+      "source": "ui/widgets/rating.slint",
+      "item_count": 6,
+      "undocumented": 6
+    },
+    {
+      "source": "ui/widgets/RowsArea.slint",
+      "item_count": 5,
+      "undocumented": 5
+    },
+    {
+      "source": "ui/widgets/scroll-view.slint",
+      "item_count": 7,
+      "undocumented": 7
+    },
+    {
+      "source": "ui/widgets/search-input.slint",
+      "item_count": 7,
+      "undocumented": 7
+    },
+    {
+      "source": "ui/widgets/SearchIcon.slint",
+      "item_count": 3,
+      "undocumented": 3
+    },
+    {
+      "source": "ui/widgets/segment-tab.slint",
+      "item_count": 5,
+      "undocumented": 5
+    },
+    {
+      "source": "ui/widgets/segmented.slint",
+      "item_count": 8,
+      "undocumented": 8
+    },
+    {
+      "source": "ui/widgets/select-field.slint",
+      "item_count": 5,
+      "undocumented": 5
+    },
+    {
+      "source": "ui/widgets/SelectFieldItem.slint",
+      "item_count": 4,
+      "undocumented": 4
+    },
+    {
+      "source": "ui/widgets/skeleton.slint",
+      "item_count": 12,
+      "undocumented": 12
+    },
+    {
+      "source": "ui/widgets/slider.slint",
+      "item_count": 12,
+      "undocumented": 12
+    },
+    {
+      "source": "ui/widgets/SliderTrack.slint",
+      "item_count": 6,
+      "undocumented": 6
+    },
+    {
+      "source": "ui/widgets/spin-box.slint",
+      "item_count": 8,
+      "undocumented": 8
+    },
+    {
+      "source": "ui/widgets/SpinButton.slint",
+      "item_count": 4,
+      "undocumented": 4
+    },
+    {
+      "source": "ui/widgets/spinner.slint",
+      "item_count": 12,
+      "undocumented": 12
+    },
+    {
+      "source": "ui/widgets/SpinValueDisplay.slint",
+      "item_count": 2,
+      "undocumented": 2
+    },
+    {
+      "source": "ui/widgets/StarItem.slint",
+      "item_count": 6,
+      "undocumented": 6
+    },
+    {
+      "source": "ui/widgets/stepper.slint",
+      "item_count": 8,
+      "undocumented": 8
+    },
+    {
+      "source": "ui/widgets/StepperCircle.slint",
+      "item_count": 6,
+      "undocumented": 6
+    },
+    {
+      "source": "ui/widgets/tab-bar.slint",
+      "item_count": 6,
+      "undocumented": 6
+    },
+    {
+      "source": "ui/widgets/teaching-tip-inner.slint",
+      "item_count": 11,
+      "undocumented": 11
+    },
+    {
+      "source": "ui/widgets/teaching-tip.slint",
+      "item_count": 14,
+      "undocumented": 14
+    },
+    {
+      "source": "ui/widgets/text-area.slint",
+      "item_count": 9,
+      "undocumented": 9
+    },
+    {
+      "source": "ui/widgets/text-input.slint",
+      "item_count": 7,
+      "undocumented": 7
+    },
+    {
+      "source": "ui/widgets/toast.slint",
+      "item_count": 3,
+      "undocumented": 3
+    },
+    {
+      "source": "ui/widgets/toggle.slint",
+      "item_count": 10,
+      "undocumented": 10
+    },
+    {
+      "source": "ui/widgets/toolbar-btn.slint",
+      "item_count": 4,
+      "undocumented": 4
+    },
+    {
+      "source": "ui/widgets/toolbar.slint",
+      "item_count": 4,
+      "undocumented": 4
+    },
+    {
+      "source": "ui/widgets/tooltip.slint",
+      "item_count": 4,
+      "undocumented": 4
+    },
+    {
+      "source": "ui/widgets/tree-view.slint",
+      "item_count": 8,
+      "undocumented": 8
+    },
+    {
+      "source": "ui/widgets/TreeViewNode.slint",
+      "item_count": 10,
+      "undocumented": 10
+    }
+  ]
+}

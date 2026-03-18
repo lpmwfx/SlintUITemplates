@@ -3,26 +3,34 @@
 // All components import Type via theme.slint. Changing Settings.zoom or
 // Settings.font-scale at runtime automatically reflows all text — no component changes needed.
 
-import { Settings } from "../state/settings.slint";
+import { Settings } from "../../state/settings.slint";
 
 /// T yp e global values.
 export global Type {
     // Base px * zoom * font-scale — reactive to runtime settings
     /// Output property "caption-size".
+    /// property `caption-size`.
     out property <length> caption-size:  Settings.zoom * Settings.font-scale * 12px;
     /// Output property "body-size".
+    /// property `body-size`.
     out property <length> body-size:     Settings.zoom * Settings.font-scale * 14px;
     /// Output property "subtitle-size".
+    /// property `subtitle-size`.
     out property <length> subtitle-size: Settings.zoom * Settings.font-scale * 16px;
     /// Output property "heading-size".
+    /// property `heading-size`.
     out property <length> heading-size:  Settings.zoom * Settings.font-scale * 20px;
     /// Output property "title-size".
+    /// property `title-size`.
     out property <length> title-size:    Settings.zoom * Settings.font-scale * 28px;
 
     /// Output property "weight-regular".
+    /// property `weight-regular`.
     out property <int> weight-regular:   400;
     /// Output property "weight-semibold".
+    /// property `weight-semibold`.
     out property <int> weight-semibold:  600;
     /// Output property "weight-bold".
+    /// property `weight-bold`.
     out property <int> weight-bold:      700;
 }

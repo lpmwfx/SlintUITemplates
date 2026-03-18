@@ -1,0 +1,33 @@
+{
+  "source": "ui/views/home.slint",
+  "items": [
+    {
+      "name": "HomeView",
+      "kind": "Component",
+      "signature": "export component HomeView inherits Rectangle {",
+      "line": 11,
+      "doc": ""
+    },
+    {
+      "name": "card-subtitle",
+      "kind": "Property",
+      "signature": "private property <string> card-subtitle: \"Edit ui/views/home.slint to design this view\";",
+      "line": 16,
+      "doc": ""
+    },
+    {
+      "name": "page-title",
+      "kind": "Property",
+      "signature": "private property <string> page-title: \"Home\";",
+      "line": 19,
+      "doc": ""
+    },
+    {
+      "name": "card-title",
+      "kind": "Property",
+      "signature": "private property <string> card-title: \"Getting started\";",
+      "line": 22,
+      "doc": ""
+    }
+  ]
+}

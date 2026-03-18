@@ -1,0 +1,26 @@
+{
+  "source": "ui/shell/small/BackButton.slint",
+  "items": [
+    {
+      "name": "BackButton",
+      "kind": "Component",
+      "signature": "export component BackButton inherits Rectangle {",
+      "line": 8,
+      "doc": ""
+    },
+    {
+      "name": "clicked",
+      "kind": "Callback",
+      "signature": "callback clicked();",
+      "line": 11,
+      "doc": ""
+    },
+    {
+      "name": "icon",
+      "kind": "Property",
+      "signature": "in property <string> icon: \"\";",
+      "line": 14,
+      "doc": ""
+    }
+  ]
+}

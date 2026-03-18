@@ -1,21 +1,28 @@
-import { Colors, Spacing, Type, FluentIcons } from "../tokens/theme.slint";
-import { Sizes }       from "../tokens/sizes.slint";
+import { Colors, Spacing, Type, FluentIcons } from "../globals/theme.slint";
+import { Sizes }       from "../state/sizes.slint";
 import { SearchIcon }  from "SearchIcon.slint";
 import { ClearButton } from "ClearButton.slint";
 
 /// S ea rc hi np ut component.
+/// component `SearchInput`.
 export component SearchInput inherits Rectangle {
     /// Input property "value".
+    /// property `value`.
     in property <string> value: "";
     /// Input property "placeholder".
+    /// property `placeholder`.
     in property <string> placeholder: "Search...";
     /// Input property "enabled".
+    /// property `enabled`.
     in property <bool>   enabled: true;
     /// Callback fired for c ha ng ed.
+    /// callback `changed`.
     callback changed(string);
     /// Callback fired for s ub mi tt ed.
+    /// callback `submitted`.
     callback submitted(string);
     /// Callback fired for c le ar ed.
+    /// callback `cleared`.
     callback cleared();
 
     height: Spacing.xl;

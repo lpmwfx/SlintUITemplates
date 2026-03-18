@@ -1,20 +1,26 @@
-import { Colors, Spacing } from "../tokens/theme.slint";
+import { Colors, Spacing } from "../globals/theme.slint";
 import { CbfPrimaryBtn, CbfAction } from "cbf-primary-btn.slint";
 import { CbfOverflowBtn }           from "cbf-overflow-btn.slint";
 
 export { CbfAction }
 
 /// P ri ma ry ba rc on te nt component.
+/// component `PrimaryBarContent`.
 export component PrimaryBarContent inherits Rectangle {
     /// Input property "primary".
+    /// property `primary`.
     in property <[CbfAction]> primary;
     /// Input property "has-secondary".
+    /// property `has-secondary`.
     in property <bool>        has-secondary;
     /// Input property "border-px".
+    /// property `border-px`.
     in property <length>      border-px;
     /// Callback fired for i te m a ct iv at ed.
+    /// callback `item-activated`.
     callback item-activated(string);
     /// Callback fired for s ho w s ec on da ry.
+    /// callback `show-secondary`.
     callback show-secondary();
 
     background: Colors.bg-elevated;

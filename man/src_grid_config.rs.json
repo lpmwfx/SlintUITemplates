@@ -1,0 +1,47 @@
+{
+  "source": "src/grid/config.rs",
+  "items": [
+    {
+      "name": "TargetConfig",
+      "kind": "Struct",
+      "signature": "pub struct TargetConfig",
+      "line": 6,
+      "doc": "Top-level configuration for a deployment target (e.g. desktop, tablet).\nT ar ge tc on fi g struct."
+    },
+    {
+      "name": "TargetInfo",
+      "kind": "Struct",
+      "signature": "pub struct TargetInfo",
+      "line": 16,
+      "doc": "Metadata describing a target's name, screen class, and interaction model.\nT ar ge ti nf o struct."
+    },
+    {
+      "name": "GridConfig",
+      "kind": "Struct",
+      "signature": "pub struct GridConfig",
+      "line": 28,
+      "doc": "Grid layout definition containing the ordered list of row configurations.\nG ri dc on fi g struct."
+    },
+    {
+      "name": "RowConfig",
+      "kind": "Struct",
+      "signature": "pub struct RowConfig",
+      "line": 36,
+      "doc": "Configuration for a single grid row, optionally fixed or subdivided into columns.\nR ow co nf ig struct."
+    },
+    {
+      "name": "ColumnConfig",
+      "kind": "Struct",
+      "signature": "pub struct ColumnConfig",
+      "line": 51,
+      "doc": "Configuration for a single column within a grid row.\nC ol um nc on fi g struct."
+    },
+    {
+      "name": "load",
+      "kind": "Fn",
+      "signature": "pub fn load(path: &std::path::Path) -> Result<Self, Box<dyn std::error::Error>>",
+      "line": 60,
+      "doc": "Reads and deserializes a target configuration from a TOML file (delegated to gateway)."
+    }
+  ]
+}

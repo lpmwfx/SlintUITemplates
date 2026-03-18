@@ -1,0 +1,208 @@
+{
+  "source": "ui/widgets/DatePickerCalendar.slint",
+  "items": [
+    {
+      "name": "DatePickerCalendar",
+      "kind": "Component",
+      "signature": "export component DatePickerCalendar inherits Rectangle {",
+      "line": 9,
+      "doc": ""
+    },
+    {
+      "name": "month-offset",
+      "kind": "Property",
+      "signature": "in property <int> month-offset: Sizes.zero;",
+      "line": 12,
+      "doc": ""
+    },
+    {
+      "name": "initial-year",
+      "kind": "Property",
+      "signature": "in property <int> initial-year: 2026;",
+      "line": 15,
+      "doc": ""
+    },
+    {
+      "name": "prev-month",
+      "kind": "Callback",
+      "signature": "callback prev-month();",
+      "line": 18,
+      "doc": ""
+    },
+    {
+      "name": "next-month",
+      "kind": "Callback",
+      "signature": "callback next-month();",
+      "line": 21,
+      "doc": ""
+    },
+    {
+      "name": "day-selected",
+      "kind": "Callback",
+      "signature": "callback day-selected(int);",
+      "line": 24,
+      "doc": ""
+    },
+    {
+      "name": "months-per-year",
+      "kind": "Property",
+      "signature": "private property <int> months-per-year:  Sizes.twelve;",
+      "line": 29,
+      "doc": ""
+    },
+    {
+      "name": "zeller-shift",
+      "kind": "Property",
+      "signature": "private property <int> zeller-shift:     Sizes.five;",
+      "line": 32,
+      "doc": ""
+    },
+    {
+      "name": "zeller-factor",
+      "kind": "Property",
+      "signature": "private property <int> zeller-factor:    13;",
+      "line": 35,
+      "doc": ""
+    },
+    {
+      "name": "zeller-div",
+      "kind": "Property",
+      "signature": "private property <int> zeller-div:       Sizes.five;",
+      "line": 38,
+      "doc": ""
+    },
+    {
+      "name": "days-cols",
+      "kind": "Property",
+      "signature": "private property <int> days-cols:        Sizes.seven;",
+      "line": 41,
+      "doc": ""
+    },
+    {
+      "name": "leap-cycle",
+      "kind": "Property",
+      "signature": "private property <int> leap-cycle:       Sizes.four;",
+      "line": 44,
+      "doc": ""
+    },
+    {
+      "name": "century-cycle",
+      "kind": "Property",
+      "signature": "private property <int> century-cycle:    Sizes.hundred;",
+      "line": 47,
+      "doc": ""
+    },
+    {
+      "name": "grand-cycle",
+      "kind": "Property",
+      "signature": "private property <int> grand-cycle:      400;",
+      "line": 50,
+      "doc": ""
+    },
+    {
+      "name": "feb-normal",
+      "kind": "Property",
+      "signature": "private property <int> feb-normal:       28;",
+      "line": 53,
+      "doc": ""
+    },
+    {
+      "name": "feb-leap",
+      "kind": "Property",
+      "signature": "private property <int> feb-leap:         29;",
+      "line": 56,
+      "doc": ""
+    },
+    {
+      "name": "short-month-days",
+      "kind": "Property",
+      "signature": "private property <int> short-month-days: Sizes.thirty;",
+      "line": 59,
+      "doc": ""
+    },
+    {
+      "name": "long-month-days",
+      "kind": "Property",
+      "signature": "private property <int> long-month-days:  31;",
+      "line": 62,
+      "doc": ""
+    },
+    {
+      "name": "cell-size",
+      "kind": "Property",
+      "signature": "private property <length> cell-size:     Spacing.control-md + Spacing.xs;",
+      "line": 65,
+      "doc": ""
+    },
+    {
+      "name": "nav-prev",
+      "kind": "Property",
+      "signature": "private property <string> nav-prev:      \"‹\";",
+      "line": 68,
+      "doc": ""
+    },
+    {
+      "name": "nav-next",
+      "kind": "Property",
+      "signature": "private property <string> nav-next:      \"›\";",
+      "line": 71,
+      "doc": ""
+    },
+    {
+      "name": "display-month",
+      "kind": "Property",
+      "signature": "private property <int> display-month: Math.mod(root.month-offset, root.months-per-year) + Sizes.one;",
+      "line": 76,
+      "doc": ""
+    },
+    {
+      "name": "display-year",
+      "kind": "Property",
+      "signature": "private property <int> display-year:  root.initial-year + Math.floor(root.month-offset / root.months-per-year);",
+      "line": 79,
+      "doc": ""
+    },
+    {
+      "name": "month-names",
+      "kind": "Property",
+      "signature": "private property <[string]> month-names: [",
+      "line": 83,
+      "doc": ""
+    },
+    {
+      "name": "zy",
+      "kind": "Property",
+      "signature": "private property <int> zy: root.display-month <= Sizes.two ? root.display-year - Sizes.one : root.display-year;",
+      "line": 91,
+      "doc": ""
+    },
+    {
+      "name": "zm",
+      "kind": "Property",
+      "signature": "private property <int> zm: root.display-month <= Sizes.two ? root.display-month + root.months-per-year : root.display-month;",
+      "line": 94,
+      "doc": ""
+    },
+    {
+      "name": "zeller-h",
+      "kind": "Property",
+      "signature": "private property <int> zeller-h: Math.mod(Sizes.one + (root.zeller-factor * (root.zm + Sizes.one) / root.zeller-div) + root.zy + root.zy / root.leap-cycle - root.zy / root.century-cycle + root.zy / root.grand-cycle, root.days-cols);",
+      "line": 97,
+      "doc": ""
+    },
+    {
+      "name": "first-weekday",
+      "kind": "Property",
+      "signature": "private property <int> first-weekday: Math.mod(root.zeller-h + root.zeller-shift, root.days-cols);",
+      "line": 100,
+      "doc": ""
+    },
+    {
+      "name": "days-in-month",
+      "kind": "Property",
+      "signature": "private property <int> days-in-month:",
+      "line": 104,
+      "doc": ""
+    }
+  ]
+}

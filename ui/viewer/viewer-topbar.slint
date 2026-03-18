@@ -1,14 +1,16 @@
 // ViewerTopbar — extracted from viewer.slint to keep that file under the 200-line limit.
 
-import { Colors, Spacing, Type, Settings } from "../tokens/theme.slint";
-import { Sizes } from "../tokens/sizes.slint";
+import { Colors, Spacing, Type, Settings } from "../globals/theme.slint";
+import { Sizes } from "../state/sizes.slint";
 import { Button }      from "../widgets/button.slint";
 import { Toggle }      from "../widgets/toggle.slint";
 import { SelectField } from "../widgets/select-field.slint";
 
 /// V ie we rt op ba r component.
+/// component `ViewerTopbar`.
 export component ViewerTopbar inherits Rectangle {
     /// Callback fired for r eq ue st b g s ty le.
+    /// callback `request-bg-style`.
     callback request-bg-style(string);
 
     height: Spacing.xl;
@@ -16,58 +18,83 @@ export component ViewerTopbar inherits Rectangle {
 
     // ── private variant strings ─────────────────────────────────────────
     /// Private property "var-ghost" used internally.
+    /// property `var-ghost`.
     private property <string> var-ghost: "ghost";
     /// Private property "var-outlined" used internally.
+    /// property `var-outlined`.
     private property <string> var-outlined: "outlined";
     /// Private property "var-filled" used internally.
+    /// property `var-filled`.
     private property <string> var-filled: "filled";
     /// Private property "var-accent" used internally.
+    /// property `var-accent`.
     private property <string> var-accent: "accent";
     /// Private property "var-theme" used internally.
+    /// property `var-theme`.
     private property <string> var-theme: "theme";
 
     // ── private zoom values ─────────────────────────────────────────────
     /// Private property "zoom-small" used internally.
+    /// property `zoom-small`.
     private property <float> zoom-small: 0.75;
     /// Private property "zoom-large" used internally.
+    /// property `zoom-large`.
     private property <float> zoom-large: 1.25;
     /// Private property "zoom-xlarge" used internally.
+    /// property `zoom-xlarge`.
     private property <float> zoom-xlarge: 1.50;
 
     // ── demo labels ─────────────────────────────────────────────────────
     /// Private property "topbar-title" used internally.
+    /// property `topbar-title`.
     private property <string> topbar-title: "SlintUI Framework Viewer";
     /// Private property "toggle-dark" used internally.
+    /// property `toggle-dark`.
     private property <string> toggle-dark: "Dark";
     /// Private property "btn-zoom-small" used internally.
+    /// property `btn-zoom-small`.
     private property <string> btn-zoom-small: "0.75×";
     /// Private property "btn-zoom-normal" used internally.
+    /// property `btn-zoom-normal`.
     private property <string> btn-zoom-normal: "1×";
     /// Private property "btn-zoom-large" used internally.
+    /// property `btn-zoom-large`.
     private property <string> btn-zoom-large: "1.25×";
     /// Private property "btn-zoom-xlarge" used internally.
+    /// property `btn-zoom-xlarge`.
     private property <string> btn-zoom-xlarge: "1.5×";
     /// Private property "toggle-outlined" used internally.
+    /// property `toggle-outlined`.
     private property <string> toggle-outlined: "Outlined";
     /// Private property "toggle-accent" used internally.
+    /// property `toggle-accent`.
     private property <string> toggle-accent: "Accent icons";
     /// Private property "btn-solid" used internally.
+    /// property `btn-solid`.
     private property <string> btn-solid: "Solid";
     /// Private property "btn-mica" used internally.
+    /// property `btn-mica`.
     private property <string> btn-mica: "Mica";
     /// Private property "btn-acrylic" used internally.
+    /// property `btn-acrylic`.
     private property <string> btn-acrylic: "Acrylic";
     /// Private property "bg-solid" used internally.
+    /// property `bg-solid`.
     private property <string> bg-solid: "solid";
     /// Private property "bg-mica" used internally.
+    /// property `bg-mica`.
     private property <string> bg-mica: "mica";
     /// Private property "bg-acrylic" used internally.
+    /// property `bg-acrylic`.
     private property <string> bg-acrylic: "acrylic";
     /// Private property "sf-placeholder" used internally.
+    /// property `sf-placeholder`.
     private property <string> sf-placeholder: "Font...";
     /// Private property "sf-default" used internally.
+    /// property `sf-default`.
     private property <string> sf-default: "Default";
     /// Private property "sf-w" used internally.
+    /// property `sf-w`.
     private property <length> sf-w: Sizes.comp-140;
 
     HorizontalLayout {

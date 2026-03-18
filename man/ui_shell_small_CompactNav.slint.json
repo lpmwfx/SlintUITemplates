@@ -1,0 +1,47 @@
+{
+  "source": "ui/shell/small/CompactNav.slint",
+  "items": [
+    {
+      "name": "CompactNav",
+      "kind": "Component",
+      "signature": "export component CompactNav inherits Rectangle {",
+      "line": 13,
+      "doc": ""
+    },
+    {
+      "name": "mode",
+      "kind": "Property",
+      "signature": "in property <string> mode: Variants.nav-bottom;",
+      "line": 16,
+      "doc": ""
+    },
+    {
+      "name": "items",
+      "kind": "Property",
+      "signature": "in property <[NavItem]> items;",
+      "line": 19,
+      "doc": ""
+    },
+    {
+      "name": "active",
+      "kind": "Property",
+      "signature": "in property <string> active;",
+      "line": 22,
+      "doc": ""
+    },
+    {
+      "name": "navigate",
+      "kind": "Callback",
+      "signature": "callback navigate(string);",
+      "line": 25,
+      "doc": ""
+    },
+    {
+      "name": "is-rail",
+      "kind": "Property",
+      "signature": "private property <bool> is-rail: root.mode == Variants.nav-compact;",
+      "line": 29,
+      "doc": ""
+    }
+  ]
+}

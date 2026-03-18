@@ -1,8 +1,8 @@
 // page-display — Badge, Avatar, Card, ListItem, ProgressBar, Chip, Skeleton
 
-import { Spacing } from "../tokens/theme.slint";
-import { Sizes } from "../tokens/sizes.slint";
-import { Variants } from "../globals/Variants.slint";
+import { Spacing } from "../globals/theme.slint";
+import { Sizes } from "../state/sizes.slint";
+import { Variants } from "../state/variants.slint";
 import { Badge }       from "../widgets/badge.slint";
 import { Avatar }      from "../widgets/avatar.slint";
 import { Card }        from "../widgets/card.slint";
@@ -13,85 +13,122 @@ import { Skeleton }    from "../widgets/skeleton.slint";
 import { ViewerSection } from "viewer-section.slint";
 
 /// Viewer page showcasing passive display components such as cards, badges, and avatars.
+/// component `PageDisplay`.
 export component PageDisplay inherits VerticalLayout {
     spacing: Spacing.md;
 
     // ── private variant strings ─────────────────────────────────────────
     /// Private property "var-info" used internally.
+    /// property `var-info`.
     private property <string> var-info: "info";
     /// Private property "var-sm" used internally.
+    /// property `var-sm`.
     private property <string> var-sm: "sm";
     /// Private property "var-md" used internally.
+    /// property `var-md`.
     private property <string> var-md: "md";
     /// Private property "var-lg" used internally.
+    /// property `var-lg`.
     private property <string> var-lg: "lg";
     /// Private property "var-rect" used internally.
+    /// property `var-rect`.
     private property <string> var-rect: "rect";
 
     // ── private size tokens ─────────────────────────────────────────────
     /// Private property "skel-circle-size" used internally.
+    /// property `skel-circle-size`.
     private property <length> skel-circle-size: 40px;
     /// Private property "progress-two-thirds" used internally.
+    /// property `progress-two-thirds`.
     private property <float> progress-two-thirds: 0.66;
     /// Private property "skel-full" used internally.
+    /// property `skel-full`.
     private property <float> skel-full: Sizes.full;
     /// Private property "skel-eighty" used internally.
+    /// property `skel-eighty`.
     private property <float> skel-eighty: Sizes.percent-80;
     /// Private property "skel-sixty" used internally.
+    /// property `skel-sixty`.
     private property <float> skel-sixty: Sizes.percent-60;
 
     // ── demo labels ─────────────────────────────────────────────────────
     /// Private property "section-badge" used internally.
+    /// property `section-badge`.
     private property <string> section-badge: "Badge";
     /// Private property "section-avatar" used internally.
+    /// property `section-avatar`.
     private property <string> section-avatar: "Avatar";
     /// Private property "section-card" used internally.
+    /// property `section-card`.
     private property <string> section-card: "Card";
     /// Private property "section-listitem" used internally.
+    /// property `section-listitem`.
     private property <string> section-listitem: "ListItem";
     /// Private property "section-progress" used internally.
+    /// property `section-progress`.
     private property <string> section-progress: "ProgressBar";
     /// Private property "section-chip" used internally.
+    /// property `section-chip`.
     private property <string> section-chip: "Chip";
     /// Private property "section-skeleton" used internally.
+    /// property `section-skeleton`.
     private property <string> section-skeleton: "Skeleton";
     /// Private property "badge-info" used internally.
+    /// property `badge-info`.
     private property <string> badge-info: "Info";
     /// Private property "badge-success" used internally.
+    /// property `badge-success`.
     private property <string> badge-success: "Success";
     /// Private property "badge-warning" used internally.
+    /// property `badge-warning`.
     private property <string> badge-warning: "Warning";
     /// Private property "badge-error" used internally.
+    /// property `badge-error`.
     private property <string> badge-error: "Error";
     /// Private property "card-title-only" used internally.
+    /// property `card-title-only`.
     private property <string> card-title-only: "Title only";
     /// Private property "card-title" used internally.
+    /// property `card-title`.
     private property <string> card-title: "Card Title";
     /// Private property "card-subtitle" used internally.
+    /// property `card-subtitle`.
     private property <string> card-subtitle: "Supporting subtitle text";
     /// Private property "li-normal" used internally.
+    /// property `li-normal`.
     private property <string> li-normal: "Normal item";
     /// Private property "li-selected" used internally.
+    /// property `li-selected`.
     private property <string> li-selected: "Selected item";
     /// Private property "li-subtitle-title" used internally.
+    /// property `li-subtitle-title`.
     private property <string> li-subtitle-title: "With subtitle";
     /// Private property "li-subtitle-text" used internally.
+    /// property `li-subtitle-text`.
     private property <string> li-subtitle-text: "Subtitle text here";
     /// Private property "chip-default" used internally.
+    /// property `chip-default`.
     private property <string> chip-default: "Default";
     /// Private property "chip-selected" used internally.
+    /// property `chip-selected`.
     private property <string> chip-selected: "Selected";
     /// Private property "chip-noclose" used internally.
+    /// property `chip-noclose`.
     private property <string> chip-noclose: "No close";
     /// Private property "chip-disabled" used internally.
+    /// property `chip-disabled`.
     private property <string> chip-disabled: "Disabled";
     /// Private property "chip-version" used internally.
+    /// property `chip-version`.
     private property <string> chip-version: "v1.0.0";
     /// Private property "avatar-sm-initials" used internally.
+    /// property `avatar-sm-initials`.
     private property <string> avatar-sm-initials: "SM";
     /// Private property "avatar-md-initials" used internally.
+    /// property `avatar-md-initials`.
     private property <string> avatar-md-initials: "MD";
     /// Private property "avatar-lg-initials" used internally.
+    /// property `avatar-lg-initials`.
     private property <string> avatar-lg-initials: "LG";
 
     ViewerSection {

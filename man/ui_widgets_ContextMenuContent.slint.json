@@ -1,0 +1,33 @@
+{
+  "source": "ui/widgets/ContextMenuContent.slint",
+  "items": [
+    {
+      "name": "ContextMenuContent",
+      "kind": "Component",
+      "signature": "export component ContextMenuContent inherits Flickable {",
+      "line": 8,
+      "doc": ""
+    },
+    {
+      "name": "items",
+      "kind": "Property",
+      "signature": "in property <[ContextMenuItem]> items;",
+      "line": 11,
+      "doc": ""
+    },
+    {
+      "name": "content-height",
+      "kind": "Property",
+      "signature": "in property <length> content-height;",
+      "line": 14,
+      "doc": ""
+    },
+    {
+      "name": "activated",
+      "kind": "Callback",
+      "signature": "callback activated(string);",
+      "line": 17,
+      "doc": ""
+    }
+  ]
+}

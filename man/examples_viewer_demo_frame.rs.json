@@ -1,0 +1,26 @@
+{
+  "source": "examples/viewer/demo_frame.rs",
+  "items": [
+    {
+      "name": "DEMO_FRAME_WIDTH",
+      "kind": "Const",
+      "signature": "pub const DEMO_FRAME_WIDTH: u32 = 300;",
+      "line": 42,
+      "doc": "Width of the demo canvas frame in pixels."
+    },
+    {
+      "name": "DEMO_FRAME_HEIGHT",
+      "kind": "Const",
+      "signature": "pub const DEMO_FRAME_HEIGHT: u32 = 200;",
+      "line": 44,
+      "doc": "Height of the demo canvas frame in pixels."
+    },
+    {
+      "name": "render",
+      "kind": "Fn",
+      "signature": "pub fn render(width: u32, height: u32) -> Result<slint::Image, Box<dyn std::error::Error>>",
+      "line": 130,
+      "doc": "Render a demo canvas frame with a circle, stroked rectangle, and diagonal line."
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "source": "src/gateway/grid.rs",
+  "items": [
+    {
+      "name": "load",
+      "kind": "Fn",
+      "signature": "pub fn load(path: &Path) -> Result<TargetConfig, Box<dyn std::error::Error>>",
+      "line": 5,
+      "doc": "Reads and deserializes a target configuration from a TOML file."
+    }
+  ]
+}

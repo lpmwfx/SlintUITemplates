@@ -1,15 +1,19 @@
-import { Spacing } from "../tokens/theme.slint";
+import { Spacing } from "../globals/theme.slint";
 import { ContextMenuEntry } from "./ContextMenuEntry.slint";
 import { ContextMenuItem } from "./ContextMenuEntry.slint";
 
 // Scrollable content list — keeps Flickable + for-loop within nesting limits.
 /// C on te xt me nu co nt en t component.
+/// component `ContextMenuContent`.
 export component ContextMenuContent inherits Flickable {
     /// Input property "items".
+    /// property `items`.
     in property <[ContextMenuItem]> items;
     /// Input property "content-height".
+    /// property `content-height`.
     in property <length> content-height;
     /// Callback fired for a ct iv at ed.
+    /// callback `activated`.
     callback activated(string);
 
     viewport-width: self.width;

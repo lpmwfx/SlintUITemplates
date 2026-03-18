@@ -1,0 +1,82 @@
+{
+  "source": "ui/shell/desktop/shell.slint",
+  "items": [
+    {
+      "name": "DesktopShell",
+      "kind": "Component",
+      "signature": "export component DesktopShell inherits VerticalLayout {",
+      "line": 17,
+      "doc": ""
+    },
+    {
+      "name": "nav-items",
+      "kind": "Property",
+      "signature": "in property <[NavItem]>          nav-items;",
+      "line": 20,
+      "doc": ""
+    },
+    {
+      "name": "toolbar-items",
+      "kind": "Property",
+      "signature": "in property <[ShellToolbarItem]> toolbar-items;",
+      "line": 23,
+      "doc": ""
+    },
+    {
+      "name": "show-toolbar",
+      "kind": "Property",
+      "signature": "in property <bool>               show-toolbar: false;",
+      "line": 26,
+      "doc": ""
+    },
+    {
+      "name": "active-view",
+      "kind": "Property",
+      "signature": "in property <string>             active-view: \"\";",
+      "line": 29,
+      "doc": ""
+    },
+    {
+      "name": "status-text",
+      "kind": "Property",
+      "signature": "in property <string>             status-text: \"Ready\";",
+      "line": 32,
+      "doc": ""
+    },
+    {
+      "name": "progress",
+      "kind": "Property",
+      "signature": "in property <float>              progress: -1.0;",
+      "line": 35,
+      "doc": ""
+    },
+    {
+      "name": "nav-width",
+      "kind": "Property",
+      "signature": "private property <length> nav-width: Sizes.panel-sm;",
+      "line": 40,
+      "doc": ""
+    },
+    {
+      "name": "nav-collapsed",
+      "kind": "Property",
+      "signature": "private property <bool>   nav-collapsed: nav-width <= Spacing.xl + Spacing.sm + Spacing.xs;",
+      "line": 43,
+      "doc": ""
+    },
+    {
+      "name": "navigate",
+      "kind": "Callback",
+      "signature": "callback navigate(string);",
+      "line": 47,
+      "doc": ""
+    },
+    {
+      "name": "toolbar-clicked",
+      "kind": "Callback",
+      "signature": "callback toolbar-clicked(string);",
+      "line": 50,
+      "doc": ""
+    }
+  ]
+}

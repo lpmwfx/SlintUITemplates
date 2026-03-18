@@ -1,0 +1,33 @@
+{
+  "source": "ui/widgets/card.slint",
+  "items": [
+    {
+      "name": "Card",
+      "kind": "Component",
+      "signature": "export component Card inherits Rectangle {",
+      "line": 6,
+      "doc": ""
+    },
+    {
+      "name": "title",
+      "kind": "Property",
+      "signature": "in property <string> title: \"\";",
+      "line": 9,
+      "doc": ""
+    },
+    {
+      "name": "subtitle",
+      "kind": "Property",
+      "signature": "in property <string> subtitle: \"\";",
+      "line": 12,
+      "doc": ""
+    },
+    {
+      "name": "shadow-y",
+      "kind": "Property",
+      "signature": "private property <length> shadow-y: Sizes.border-w-2;",
+      "line": 16,
+      "doc": ""
+    }
+  ]
+}

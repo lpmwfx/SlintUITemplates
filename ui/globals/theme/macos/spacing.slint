@@ -3,37 +3,51 @@
 
 export global MacosSpacing {
     /// Extra small — icon padding, tight items.
+    /// property `xs`.
     out property <length> xs:   4px;
     /// Small — between sibling controls.
+    /// property `sm`.
     out property <length> sm:   8px;
     /// Medium — standard inset, label gaps.
+    /// property `md`.
     out property <length> md:  12px;
     /// Large — section spacing.
+    /// property `lg`.
     out property <length> lg:  16px;
     /// Extra large — major section gaps.
+    /// property `xl`.
     out property <length> xl:  20px;
 
     // ── Control heights ───────────────────────────────────────────────────
     /// Small — mini controls (NSMiniControlSize).
+    /// property `control-sm`.
     out property <length> control-sm:  18px;
     /// Standard — regular controls (NSRegularControlSize).
+    /// property `control-md`.
     out property <length> control-md:  22px;
     /// Large — prominent buttons, search fields.
+    /// property `control-lg`.
     out property <length> control-lg:  28px;
 
     // ── Chrome ────────────────────────────────────────────────────────────
     /// Title bar height (standard, with traffic lights).
+    /// property `titlebar-height`.
     out property <length> titlebar-height:   28px;
     /// Toolbar height (under title bar).
+    /// property `toolbar-height`.
     out property <length> toolbar-height:    40px;
     /// Sidebar width (narrow, icon + label).
+    /// property `sidebar-width`.
     out property <length> sidebar-width:    200px;
     /// Tab bar height.
+    /// property `tab-bar-height`.
     out property <length> tab-bar-height:    28px;
     /// Status bar height.
+    /// property `status-bar-height`.
     out property <length> status-bar-height: 22px;
 
     // ── Nav rail ─────────────────────────────────────────────────────────
     /// Navigation rail width (sidebar collapsed to icon-only).
+    /// property `nav-rail-width`.
     out property <length> nav-rail-width:    52px;
 }
