@@ -4307,7 +4307,7 @@ dependencies = [
 
 [[package]]
 name = "slint-ui-templates"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "i-slint-backend-testing",
  "i-slint-backend-winit",
