@@ -5,9 +5,8 @@ use crate::AppAdapter;
 
 /// Register all AppAdapter API functions into the Rhai engine.
 pub fn register_api(engine: &mut Engine, adapter: Rc<RefCell<AppAdapter>>) {
-    // why shared? each sub-registrar clones Rc for its own closures
-    register_core(engine, Rc::clone(&adapter));
-    register_settings(engine, Rc::clone(&adapter));
+    register_core(engine, Rc::clone(&adapter)); // why shared? Rhai closures capture shared state — each registrar needs access to same adapter
+    register_settings(engine, Rc::clone(&adapter)); // why shared? Rhai closures capture shared state — settings registrar needs adapter access
     super::dsl::register_dsl(engine, adapter);
 }
 

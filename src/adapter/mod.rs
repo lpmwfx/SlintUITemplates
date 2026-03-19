@@ -54,31 +54,24 @@ impl AppAdapter_adp {
     pub fn new() -> Result<Self, slint::PlatformError> {
         let ui = AppWindow::new()?;
         let menu_actions: Rc<RefCell<HashMap<String, Box<dyn Fn()>>>> =
-            // REASON: Multiple closures (menu handler + navigate handler) need shared access
-            Rc::new(RefCell::new(HashMap::new()));
+            Rc::new(RefCell::new(HashMap::new())); // why shared? Slint callbacks need shared ownership — multiple closures share action map
         let view_configs: Rc<RefCell<HashMap<String, crate::view_config::ViewConfig>>> =
-            // REASON: Navigate handler and on_navigate callback share config registry
-            Rc::new(RefCell::new(HashMap::new()));
+            Rc::new(RefCell::new(HashMap::new())); // why shared? Slint callbacks need shared ownership — navigate + on_navigate share config registry
         let navigate_cb: Rc<RefCell<Option<Box<dyn Fn(slint::SharedString)>>>> =
-            // REASON: Navigate handler can call user callback; on_navigate() replaces it
-            Rc::new(RefCell::new(None));
+            Rc::new(RefCell::new(None)); // why shared? Slint callbacks need shared ownership — navigate handler calls user callback, on_navigate replaces it
         let toolbar_cb: Rc<RefCell<Option<Box<dyn Fn(slint::SharedString)>>>> =
-            // REASON: Toolbar handler dispatches to user callback registered via on_toolbar_clicked
-            Rc::new(RefCell::new(None));
-        // REASON: Navigate handler closure updates status cache on view_config apply
-        let status_text: Rc<RefCell<String>> = Rc::new(RefCell::new(String::new()));
+            Rc::new(RefCell::new(None)); // why shared? Slint callbacks need shared ownership — toolbar handler dispatches to user callback
+        let status_text: Rc<RefCell<String>> = Rc::new(RefCell::new(String::new())); // why shared? Slint callbacks need shared ownership — navigate closure updates status cache
 
-        // why shared? on_menu_action closure dispatches by id from the shared action map
-        let actions = Rc::clone(&menu_actions);
+        let actions = Rc::clone(&menu_actions); // why shared? Slint callbacks need shared ref — on_menu_action dispatches by id
         ui.on_menu_action(move |id| {
             if let Some(f) = actions.borrow().get(id.as_str()) { f(); }
         });
 
-        // why shared? on_navigate closure applies view config, updates status, calls user callback
-        let vc     = Rc::clone(&view_configs);
-        let nav_cb = Rc::clone(&navigate_cb);
+        let vc     = Rc::clone(&view_configs); // why shared? Slint callbacks need shared ref — on_navigate reads view config
+        let nav_cb = Rc::clone(&navigate_cb); // why shared? Slint callbacks need shared ref — on_navigate calls user callback
         let ui_nav = ui.clone_strong();
-        let status = Rc::clone(&status_text);
+        let status = Rc::clone(&status_text); // why shared? Slint callbacks need shared ref — on_navigate updates status cache
         ui.on_navigate(move |id| {
             // active-view is `in property` — only Rust can set it
             ui_nav.set_active_view(id.clone());
