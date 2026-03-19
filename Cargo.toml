@@ -53,7 +53,8 @@ path = "examples/macos/main.rs"
 
 [features]
 default = ["rhai", "markdown"]
-rhai     = ["dep:rhai"]
+rhai      = ["dep:rhai"]
+rhai-sync = ["rhai", "rhai/sync"]
 markdown = ["dep:pulldown-cmark"]
 
 [dependencies]

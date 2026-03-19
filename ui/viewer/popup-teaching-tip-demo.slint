@@ -46,24 +46,24 @@ export component PopupTeachingTipDemo inherits Rectangle {
             Strings.demo-tip-dismiss;
         action    => { debug("tip: action"); }
         dismissed => { debug("tip: dismissed"); }
-    }
 
-    Rectangle {
-        width: Spacing.control-lg;
-        height: Spacing.control-lg;
-        border-radius: Spacing.xl;
-        background: ta.has-hover ? Colors.accent-hover : Colors.accent;
+        Rectangle {
+            width: Spacing.control-lg;
+            height: Spacing.control-lg;
+            border-radius: Spacing.xl;
+            background: ta.has-hover ? Colors.accent-hover : Colors.accent;
 
-        Text { text: Strings.demo-tip-btn;
-            font-size: Type.body-size;
-            font-weight: Type.weight-bold;
-            color: Colors.accent-text;
-            horizontal-alignment: center;
-            vertical-alignment: center;
-        }
+            Text { text: Strings.demo-tip-btn;
+                font-size: Type.body-size;
+                font-weight: Type.weight-bold;
+                color: Colors.accent-text;
+                horizontal-alignment: center;
+                vertical-alignment: center;
+            }
 
-        ta := TouchArea {
-            clicked => { tip.show-at(self.mouse-x, self.mouse-y); }
+            ta := TouchArea {
+                clicked => { tip.show-at(self.mouse-x, self.mouse-y); }
+            }
         }
     }
 }

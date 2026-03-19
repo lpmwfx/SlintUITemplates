@@ -67,25 +67,25 @@ export component PopupFlyoutDemo inherits Rectangle {
             Strings.demo-flyout-title;
         body:
             Strings.demo-flyout-body;
-    }
 
-    btn := Rectangle {
-        width: parent.width;
-        height: parent.height;
-        border-radius: Spacing.xs;
-        border-width: root.border-px;
-        border-color: Colors.border;
-        background: btn-ta.has-hover ? Colors.bg-elevated : Colors.bg-surface;
+        Rectangle {
+            width: root.demo-w;
+            height: Spacing.control-lg;
+            border-radius: Spacing.xs;
+            border-width: root.border-px;
+            border-color: Colors.border;
+            background: btn-ta.has-hover ? Colors.bg-elevated : Colors.bg-surface;
 
-        Text { text: Strings.demo-flyout-open;
-            font-size: Type.body-size;
-            color: Colors.text-primary;
-            horizontal-alignment: center;
-            vertical-alignment: center;
-        }
+            Text { text: Strings.demo-flyout-open;
+                font-size: Type.body-size;
+                color: Colors.text-primary;
+                horizontal-alignment: center;
+                vertical-alignment: center;
+            }
 
-        btn-ta := TouchArea {
-            clicked => { flyout.show-at(self.mouse-x, self.mouse-y); }
+            btn-ta := TouchArea {
+                clicked => { flyout.show-at(self.mouse-x, self.mouse-y); }
+            }
         }
     }
 }

@@ -52,7 +52,7 @@ export component ToolbarBtn inherits Rectangle {
     Text { text: item.icon;
         font-family: FluentIcons.icon-font;
         font-size: Type.subtitle-size;
-        color: ta.has-hover ? Colors.accent : (item.enabled ? Colors.text-primary : Colors.text-disabled);
+        color: ta.has-hover ? Colors.accent : (item.enabled ? Colors.text-primary : Colors.text-secondary);
         horizontal-alignment: center;
         vertical-alignment: center;
     }

@@ -1,4 +1,5 @@
 import { Colors, Spacing, Type } from "../globals/theme.slint";
+import { Sizes } from "../globals/theme/sizes.slint";
 import { Strings } from "../globals/strings.slint";
 
 /// L ab el component.
@@ -57,7 +58,7 @@ export component Label inherits HorizontalLayout {
     /// property `req-mark`.
     private property <string> req-mark: "*";
 
-    spacing: root.half-xs;
+    spacing: Sizes.no-size;
 
     Text {
         text: root.text;

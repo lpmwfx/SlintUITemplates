@@ -1,6 +1,16 @@
 // NOTE(mother-child): build_engine is the sole non-test fn; remaining fns are
 // #[cfg(test)] helpers — total logic is minimal, no extraction needed.
 
+// Guard: rhai's `sync` feature requires Send+Sync on all closures and captured
+// values, but Slint's AppWindow is !Send+!Sync.  The two are fundamentally
+// incompatible — even wrapping in Arc<Mutex<T>> would not help because the
+// inner Slint handle cannot cross thread boundaries.
+#[cfg(feature = "rhai-sync")]
+compile_error!(
+    "slint-ui-templates rhai bindings are not compatible with rhai's `sync` feature. \
+     Slint requires single-threaded access — use the `rhai` feature without `rhai-sync`."
+);
+
 /// Rhai-to-AppAdapter function bindings registered on the scripting engine.
 ///
 /// # Limitations

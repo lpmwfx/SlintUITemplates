@@ -1,4 +1,3 @@
-import { Spacing } from "../globals/theme.slint";
 import { Sizes } from "../globals/theme/sizes.slint";
 import { TableRow, TableColumn } from "data-table-types.slint";
 import { DataTableRow }          from "DataTableRow.slint";
@@ -9,10 +8,8 @@ export { TableRow, TableColumn }
 /// component `RowsArea`.
 ///
 /// ## Row Height Contract
-/// RowsArea assumes uniform row heights of Spacing.xl (48px). The Flickable's
-/// viewport-height is calculated as rows.length * Spacing.xl. If DataTableRow height
-/// changes, update this calculation to match. For variable-height rows, pre-compute
-/// the total height in the Rust adapter and pass it explicitly.
+/// RowsArea lets the Flickable auto-calculate viewport-height from the VerticalLayout
+/// content. Each DataTableRow has a fixed height of Spacing.xl.
 /// component `RowsArea`.
 /// component `RowsArea`.
 /// component `RowsArea`.
@@ -63,7 +60,6 @@ export component RowsArea inherits Rectangle {
     Flickable {
         width: parent.width;
         height: parent.height;
-        viewport-height: root.rows.length * Spacing.xl;
 
         VerticalLayout {
             for row[i] in root.rows: DataTableRow {

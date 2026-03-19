@@ -1,11 +1,10 @@
 // Flyout — base primitive for popup overlays.
 //
-// Declare flyout INSIDE the same element as the trigger TouchArea.
+// Place the trigger element as a child of the Flyout via @children.
 // PopupWindow always renders at window z-level regardless of nesting depth.
 //
-//   trigger := Rectangle {
-//       flyout := Flyout { window-height: root.window-height; title: "Hello"; body: "World"; }
-//       TouchArea { clicked => { flyout.show-at(self.mouse-x, self.mouse-y); } }
+//   flyout := Flyout { window-height: root.window-height; title: "Hello"; body: "World";
+//       Rectangle { TouchArea { clicked => { flyout.show-at(self.mouse-x, self.mouse-y); } } }
 //   }
 
 import { Spacing } from "../globals/theme.slint";
@@ -95,9 +94,9 @@ export component Flyout inherits Rectangle {
     /// property `pop-y`.
     private property <length> pop-y: Sizes.no-size;
 
-    width: root.pop-x - root.pop-x;
-    height: root.pop-y - root.pop-y;
     background: transparent;
+
+    @children
 
     popup := PopupWindow {
         x: root.pop-x;

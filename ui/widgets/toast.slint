@@ -31,6 +31,8 @@ export component Toast inherits Rectangle {
     // visible is the built-in — caller sets visible: true/false directly
 
     // Position at bottom center
+    horizontal-stretch: Sizes.no-fill;
+    width: self.preferred-width;
     height: Spacing.xl;
     border-radius: Spacing.xs;
     clip: true;

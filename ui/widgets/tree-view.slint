@@ -96,7 +96,6 @@ export component TreeView inherits Rectangle {
     Flickable {
         width: parent.width;
         height: parent.height;
-        viewport-height: root.nodes.length * Spacing.xl;
 
         VerticalLayout {
             for node in root.nodes: TreeViewNode {
