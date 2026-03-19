@@ -2,7 +2,7 @@
 
 ## `export struct PanelItem {`
 
-*Line 10 · struct*
+*Line 16 · struct*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `export component PanelContainer inherits Rectangle {`
 
-*Line 23 · component*
+*Line 35 · component*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <[PanelItem]> panels;`
 
-*Line 26 · property*
+*Line 44 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `callback panel-dragged(int, float, float);   // id, dx, dy in logical px`
 
-*Line 30 · callback*
+*Line 54 · callback*
 
 **undocumented**
 

@@ -5,49 +5,49 @@
       "name": "Popover",
       "kind": "Component",
       "signature": "export component Popover inherits Rectangle {",
-      "line": 19,
+      "line": 26,
       "doc": ""
     },
     {
       "name": "open",
       "kind": "Property",
       "signature": "in property <bool>   open: false;",
-      "line": 22,
+      "line": 35,
       "doc": ""
     },
     {
       "name": "popup-width",
       "kind": "Property",
-      "signature": "in property <length> popup-width:  220px;",
-      "line": 25,
+      "signature": "in property <length> popup-width:  Sizes.panel-md;",
+      "line": 44,
       "doc": ""
     },
     {
       "name": "popup-height",
       "kind": "Property",
-      "signature": "in property <length> popup-height: 140px;",
-      "line": 28,
+      "signature": "in property <length> popup-height: Sizes.comp-140;",
+      "line": 53,
       "doc": ""
     },
     {
       "name": "title",
       "kind": "Property",
       "signature": "in property <string> title: \"\";",
-      "line": 31,
+      "line": 62,
       "doc": ""
     },
     {
       "name": "body",
       "kind": "Property",
       "signature": "in property <string> body: \"\";",
-      "line": 34,
+      "line": 71,
       "doc": ""
     },
     {
       "name": "close-requested",
       "kind": "Callback",
       "signature": "callback close-requested();",
-      "line": 37,
+      "line": 80,
       "doc": ""
     }
   ]

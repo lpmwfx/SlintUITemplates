@@ -2,7 +2,7 @@
 
 ## `export struct DropdownMenuItem {`
 
-*Line 5 · struct*
+*Line 12 · struct*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `export component DropdownEntry inherits Rectangle {`
 
-*Line 15 · component*
+*Line 28 · component*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <DropdownMenuItem> item;`
 
-*Line 18 · property*
+*Line 37 · property*
 
 **undocumented**
 
@@ -26,15 +26,15 @@
 
 ## `callback activated(string);`
 
-*Line 21 · callback*
+*Line 46 · callback*
 
 **undocumented**
 
 ---
 
-## `private property <length> border-px:    1px;`
+## `private property <length> border-px:    Sizes.border-w;`
 
-*Line 25 · property*
+*Line 56 · property*
 
 **undocumented**
 
@@ -42,7 +42,7 @@
 
 ## `private property <length> half-xs:     Spacing.xs / 2;`
 
-*Line 28 · property*
+*Line 65 · property*
 
 **undocumented**
 
@@ -50,7 +50,7 @@
 
 ## `private property <int>    stretch-full: 1;`
 
-*Line 31 · property*
+*Line 74 · property*
 
 **undocumented**
 
@@ -58,7 +58,7 @@
 
 ## `private property <float>  op-enabled:   1.0;`
 
-*Line 34 · property*
+*Line 83 · property*
 
 **undocumented**
 
@@ -66,7 +66,7 @@
 
 ## `private property <float>  op-disabled:  0.5;`
 
-*Line 37 · property*
+*Line 92 · property*
 
 **undocumented**
 

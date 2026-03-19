@@ -5,56 +5,56 @@
       "name": "ratio-a",
       "kind": "Property",
       "signature": "private property <float> ratio-a: Sizes.quarter;",
-      "line": 11,
+      "line": 17,
       "doc": ""
     },
     {
       "name": "ratio-c",
       "kind": "Property",
       "signature": "private property <float> ratio-c: Sizes.quarter;",
-      "line": 14,
+      "line": 26,
       "doc": ""
     },
     {
       "name": "ratio-b",
       "kind": "Property",
       "signature": "private property <float> ratio-b: Sizes.fill - root.ratio-a - root.ratio-c;",
-      "line": 18,
+      "line": 36,
       "doc": ""
     },
     {
       "name": "panel-b-alpha",
       "kind": "Property",
       "signature": "private property <float> panel-b-alpha: Sizes.alpha-12;",
-      "line": 21,
+      "line": 45,
       "doc": ""
     },
     {
       "name": "lbl-a",
       "kind": "Property",
       "signature": "private property <string> lbl-a: \"A \";",
-      "line": 25,
+      "line": 55,
       "doc": ""
     },
     {
       "name": "lbl-b",
       "kind": "Property",
       "signature": "private property <string> lbl-b: \"B \";",
-      "line": 28,
+      "line": 64,
       "doc": ""
     },
     {
       "name": "lbl-c",
       "kind": "Property",
       "signature": "private property <string> lbl-c: \"C \";",
-      "line": 31,
+      "line": 73,
       "doc": ""
     },
     {
       "name": "pct-suffix",
       "kind": "Property",
       "signature": "private property <string> pct-suffix: \"%\";",
-      "line": 34,
+      "line": 82,
       "doc": ""
     }
   ]

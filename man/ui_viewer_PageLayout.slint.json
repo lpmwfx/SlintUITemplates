@@ -5,119 +5,119 @@
       "name": "PageLayout",
       "kind": "Component",
       "signature": "export component PageLayout inherits VerticalLayout {",
-      "line": 17,
+      "line": 23,
       "doc": ""
     },
     {
       "name": "panel-c-y",
       "kind": "Property",
       "signature": "private property <float>  panel-c-y: Sizes.ratio-55;",
-      "line": 21,
+      "line": 33,
       "doc": ""
     },
     {
       "name": "title-draghandle",
       "kind": "Property",
       "signature": "private property <string> title-draghandle: \"DragHandle\";",
-      "line": 25,
+      "line": 43,
       "doc": ""
     },
     {
       "name": "title-bidir",
       "kind": "Property",
       "signature": "private property <string> title-bidir: \"Bi-directional 3-panel (drag either handle \\u{2014} both neighbors update)\";",
-      "line": 28,
+      "line": 52,
       "doc": ""
     },
     {
       "name": "title-panel-container",
       "kind": "Property",
       "signature": "private property <string> title-panel-container: \"PanelContainer (3 panels)\";",
-      "line": 31,
+      "line": 61,
       "doc": ""
     },
     {
       "name": "title-panel-slot",
       "kind": "Property",
       "signature": "private property <string> title-panel-slot: \"PanelSlot (standalone)\";",
-      "line": 34,
+      "line": 70,
       "doc": ""
     },
     {
       "name": "title-viewslot",
       "kind": "Property",
       "signature": "private property <string> title-viewslot: \"ViewSlot \\u{2014} slot-id routing (click nav to switch view)\";",
-      "line": 37,
+      "line": 79,
       "doc": ""
     },
     {
       "name": "title-divider",
       "kind": "Property",
       "signature": "private property <string> title-divider: \"Divider\";",
-      "line": 40,
+      "line": 88,
       "doc": ""
     },
     {
       "name": "title-scrollview",
       "kind": "Property",
       "signature": "private property <string> title-scrollview: \"ScrollView\";",
-      "line": 43,
+      "line": 97,
       "doc": ""
     },
     {
       "name": "lbl-panel-a",
       "kind": "Property",
       "signature": "private property <string> lbl-panel-a: \"Panel A\";",
-      "line": 47,
+      "line": 107,
       "doc": ""
     },
     {
       "name": "lbl-panel-b",
       "kind": "Property",
       "signature": "private property <string> lbl-panel-b: \"Panel B\";",
-      "line": 50,
+      "line": 116,
       "doc": ""
     },
     {
       "name": "lbl-panel-c",
       "kind": "Property",
       "signature": "private property <string> lbl-panel-c: \"Panel C\";",
-      "line": 53,
+      "line": 125,
       "doc": ""
     },
     {
       "name": "lbl-standalone",
       "kind": "Property",
       "signature": "private property <string> lbl-standalone: \"Standalone slot\";",
-      "line": 56,
+      "line": 134,
       "doc": ""
     },
     {
       "name": "lbl-section",
       "kind": "Property",
       "signature": "private property <string> lbl-section: \"Section\";",
-      "line": 59,
+      "line": 143,
       "doc": ""
     },
     {
       "name": "lbl-left",
       "kind": "Property",
       "signature": "private property <string> lbl-left: \"Left\";",
-      "line": 62,
+      "line": 152,
       "doc": ""
     },
     {
       "name": "lbl-right",
       "kind": "Property",
       "signature": "private property <string> lbl-right: \"Right\";",
-      "line": 65,
+      "line": 161,
       "doc": ""
     },
     {
       "name": "lbl-row-prefix",
       "kind": "Property",
       "signature": "private property <string> lbl-row-prefix: \"Row \";",
-      "line": 68,
+      "line": 170,
       "doc": ""
     }
   ]

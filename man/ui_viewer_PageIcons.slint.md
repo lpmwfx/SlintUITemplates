@@ -2,7 +2,7 @@
 
 ## `export component PageIcons inherits VerticalLayout {`
 
-*Line 11 · component*
+*Line 17 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `private property <string> cat-nav: "Navigation";`
 
-*Line 17 · property*
+*Line 29 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `private property <string> cat-actions: "Actions";`
 
-*Line 20 · property*
+*Line 38 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `private property <string> cat-chrome: "Window Chrome";`
 
-*Line 23 · property*
+*Line 47 · property*
 
 **undocumented**
 
@@ -34,7 +34,7 @@
 
 ## `private property <string> cat-files: "Files & Data";`
 
-*Line 26 · property*
+*Line 56 · property*
 
 **undocumented**
 
@@ -42,7 +42,7 @@
 
 ## `private property <string> cat-media: "Media";`
 
-*Line 29 · property*
+*Line 65 · property*
 
 **undocumented**
 
@@ -50,7 +50,7 @@
 
 ## `private property <string> cat-ui: "UI / Layout";`
 
-*Line 32 · property*
+*Line 74 · property*
 
 **undocumented**
 
@@ -58,7 +58,7 @@
 
 ## `private property <string> cat-people: "People & Communication";`
 
-*Line 35 · property*
+*Line 83 · property*
 
 **undocumented**
 
@@ -66,7 +66,7 @@
 
 ## `private property <string> cat-device: "Device";`
 
-*Line 38 · property*
+*Line 92 · property*
 
 **undocumented**
 

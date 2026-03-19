@@ -2,7 +2,7 @@
 
 ## `export component PageCanvas inherits VerticalLayout {`
 
-*Line 10 · component*
+*Line 16 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <image> canvas-frame;`
 
-*Line 13 · property*
+*Line 25 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `private property <string> path-title:  "Path Canvas (pure Slint)";`
 
-*Line 17 · property*
+*Line 35 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `private property <string> image-title: "Image Canvas (Rust-rendered frame)";`
 
-*Line 20 · property*
+*Line 44 · property*
 
 **undocumented**
 

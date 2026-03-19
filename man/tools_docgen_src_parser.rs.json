@@ -26,7 +26,7 @@
       "name": "parse_file",
       "kind": "Fn",
       "signature": "pub(crate) fn parse_file(src: &str, filename: &str) -> Vec<Item>",
-      "line": 42,
+      "line": 79,
       "doc": "Parse all exported components and structs from a Slint source file."
     }
   ]

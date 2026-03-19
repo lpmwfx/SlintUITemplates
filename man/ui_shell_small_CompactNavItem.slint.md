@@ -2,7 +2,7 @@
 
 ## `export component CompactNavItem inherits Rectangle {`
 
-*Line 10 · component*
+*Line 16 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <NavItem> item;`
 
-*Line 13 · property*
+*Line 25 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <bool> active: false;`
 
-*Line 16 · property*
+*Line 34 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `callback navigate(string);`
 
-*Line 19 · callback*
+*Line 43 · callback*
 
 **undocumented**
 

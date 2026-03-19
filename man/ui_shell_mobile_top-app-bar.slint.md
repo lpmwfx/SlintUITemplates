@@ -2,7 +2,7 @@
 
 ## `export component TopAppBar inherits Rectangle {`
 
-*Line 10 · component*
+*Line 16 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <string> title;`
 
-*Line 13 · property*
+*Line 25 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <string> nav-icon:    FluentIcons.back;`
 
-*Line 16 · property*
+*Line 34 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `in property <bool>   show-nav:    false;`
 
-*Line 19 · property*
+*Line 43 · property*
 
 **undocumented**
 
@@ -34,7 +34,7 @@
 
 ## `in property <string> action-icon: "";`
 
-*Line 22 · property*
+*Line 52 · property*
 
 **undocumented**
 
@@ -42,7 +42,7 @@
 
 ## `in property <string> icon-font:   "Segoe Fluent Icons";`
 
-*Line 25 · property*
+*Line 61 · property*
 
 **undocumented**
 
@@ -50,7 +50,7 @@
 
 ## `callback nav-clicked();`
 
-*Line 28 · callback*
+*Line 70 · callback*
 
 **undocumented**
 
@@ -58,7 +58,7 @@
 
 ## `callback action-clicked();`
 
-*Line 31 · callback*
+*Line 79 · callback*
 
 **undocumented**
 

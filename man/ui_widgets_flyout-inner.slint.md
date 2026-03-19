@@ -2,7 +2,7 @@
 
 ## `export component FlyoutInner inherits Rectangle {`
 
-*Line 5 · component*
+*Line 13 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <string> title: "";`
 
-*Line 8 · property*
+*Line 22 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <string> body: "";`
 
-*Line 11 · property*
+*Line 31 · property*
 
 **undocumented**
 
@@ -26,15 +26,15 @@
 
 ## `callback closed();`
 
-*Line 14 · callback*
+*Line 40 · callback*
 
 **undocumented**
 
 ---
 
-## `private property <length> border-px: 1px;`
+## `private property <length> border-px: Sizes.border-w;`
 
-*Line 18 · property*
+*Line 50 · property*
 
 **undocumented**
 
@@ -42,7 +42,7 @@
 
 ## `private property <int>    h-stretch: 1;`
 
-*Line 21 · property*
+*Line 59 · property*
 
 **undocumented**
 

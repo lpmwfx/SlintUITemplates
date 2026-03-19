@@ -5,35 +5,35 @@
       "name": "PopupDropdownDemo",
       "kind": "Component",
       "signature": "export component PopupDropdownDemo inherits Rectangle {",
-      "line": 6,
+      "line": 14,
       "doc": ""
     },
     {
       "name": "window-height",
       "kind": "Property",
       "signature": "in property <length> window-height;",
-      "line": 9,
+      "line": 23,
       "doc": ""
     },
     {
       "name": "demo-w",
       "kind": "Property",
-      "signature": "private property <length> demo-w:    160px;",
-      "line": 13,
+      "signature": "private property <length> demo-w:    Sizes.comp-160;",
+      "line": 33,
       "doc": ""
     },
     {
       "name": "border-px",
       "kind": "Property",
-      "signature": "private property <length> border-px: 1px;",
-      "line": 16,
+      "signature": "private property <length> border-px: Sizes.border-w;",
+      "line": 42,
       "doc": ""
     },
     {
       "name": "h-stretch",
       "kind": "Property",
       "signature": "private property <int>    h-stretch: 1;",
-      "line": 19,
+      "line": 51,
       "doc": ""
     }
   ]

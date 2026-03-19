@@ -5,49 +5,49 @@
       "name": "ScrollView",
       "kind": "Component",
       "signature": "export component ScrollView inherits Rectangle {",
-      "line": 6,
+      "line": 12,
       "doc": ""
     },
     {
       "name": "interactive",
       "kind": "Property",
       "signature": "in property <bool>  interactive:    true;",
-      "line": 9,
+      "line": 21,
       "doc": ""
     },
     {
       "name": "show-scrollbar",
       "kind": "Property",
       "signature": "in property <bool>  show-scrollbar: true;",
-      "line": 12,
+      "line": 30,
       "doc": ""
     },
     {
       "name": "viewport-width",
       "kind": "Property",
       "signature": "out property <length> viewport-width  <=> fl.viewport-width;",
-      "line": 15,
+      "line": 39,
       "doc": ""
     },
     {
       "name": "viewport-height",
       "kind": "Property",
       "signature": "out property <length> viewport-height <=> fl.viewport-height;",
-      "line": 18,
+      "line": 48,
       "doc": ""
     },
     {
       "name": "scrollbar-inset",
       "kind": "Property",
       "signature": "private property <length> scrollbar-inset: Sizes.border-w-2;",
-      "line": 22,
+      "line": 58,
       "doc": ""
     },
     {
       "name": "scrollbar-w",
       "kind": "Property",
       "signature": "private property <length> scrollbar-w: Sizes.border-w-3;",
-      "line": 25,
+      "line": 67,
       "doc": ""
     }
   ]

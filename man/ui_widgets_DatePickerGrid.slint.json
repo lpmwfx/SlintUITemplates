@@ -5,42 +5,42 @@
       "name": "DatePickerGrid",
       "kind": "Component",
       "signature": "export component DatePickerGrid inherits VerticalLayout {",
-      "line": 7,
+      "line": 13,
       "doc": ""
     },
     {
       "name": "first-weekday",
       "kind": "Property",
       "signature": "in property <int>    first-weekday;    // 0=Mon … 6=Sun",
-      "line": 10,
+      "line": 22,
       "doc": ""
     },
     {
       "name": "days-in-month",
       "kind": "Property",
       "signature": "in property <int>    days-in-month;",
-      "line": 13,
+      "line": 31,
       "doc": ""
     },
     {
       "name": "cell-size",
       "kind": "Property",
       "signature": "in property <length> cell-size;",
-      "line": 16,
+      "line": 40,
       "doc": ""
     },
     {
       "name": "days-cols",
       "kind": "Property",
       "signature": "in property <int>    days-cols: Sizes.seven;",
-      "line": 19,
+      "line": 49,
       "doc": ""
     },
     {
       "name": "day-clicked",
       "kind": "Callback",
       "signature": "callback day-clicked(int);",
-      "line": 22,
+      "line": 58,
       "doc": ""
     }
   ]

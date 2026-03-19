@@ -5,28 +5,28 @@
       "name": "ProgressBar",
       "kind": "Component",
       "signature": "export component ProgressBar inherits Rectangle {",
-      "line": 7,
+      "line": 13,
       "doc": ""
     },
     {
       "name": "value",
       "kind": "Property",
       "signature": "in property <float> value: Sizes.no-fill;      // 0.0..1.0",
-      "line": 10,
+      "line": 22,
       "doc": ""
     },
     {
       "name": "show-label",
       "kind": "Property",
       "signature": "in property <bool>  show-label: false;",
-      "line": 13,
+      "line": 31,
       "doc": ""
     },
     {
       "name": "label-suffix",
       "kind": "Property",
       "signature": "in property <string> label-suffix: \"%\";",
-      "line": 16,
+      "line": 40,
       "doc": ""
     }
   ]

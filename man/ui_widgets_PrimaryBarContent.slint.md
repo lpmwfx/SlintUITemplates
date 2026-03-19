@@ -2,7 +2,7 @@
 
 ## `export component PrimaryBarContent inherits Rectangle {`
 
-*Line 9 · component*
+*Line 15 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <[CbfAction]> primary;`
 
-*Line 12 · property*
+*Line 24 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <bool>        has-secondary;`
 
-*Line 15 · property*
+*Line 33 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `in property <length>      border-px;`
 
-*Line 18 · property*
+*Line 42 · property*
 
 **undocumented**
 
@@ -34,7 +34,7 @@
 
 ## `callback item-activated(string);`
 
-*Line 21 · callback*
+*Line 51 · callback*
 
 **undocumented**
 
@@ -42,7 +42,7 @@
 
 ## `callback show-secondary();`
 
-*Line 24 · callback*
+*Line 60 · callback*
 
 **undocumented**
 

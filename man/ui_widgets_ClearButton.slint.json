@@ -5,14 +5,14 @@
       "name": "ClearButton",
       "kind": "Component",
       "signature": "export component ClearButton inherits Rectangle {",
-      "line": 6,
+      "line": 12,
       "doc": ""
     },
     {
       "name": "cleared",
       "kind": "Callback",
       "signature": "callback cleared();",
-      "line": 9,
+      "line": 21,
       "doc": ""
     }
   ]

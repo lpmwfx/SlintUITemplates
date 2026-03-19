@@ -2,7 +2,7 @@
 
 ## `export component DataTable inherits Rectangle {`
 
-*Line 11 · component*
+*Line 17 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <[TableColumn]> columns: [];`
 
-*Line 14 · property*
+*Line 26 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <[TableRow]>    rows: [];`
 
-*Line 17 · property*
+*Line 35 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `in property <string>    sort-key: "";`
 
-*Line 20 · property*
+*Line 44 · property*
 
 **undocumented**
 
@@ -34,7 +34,7 @@
 
 ## `in property <bool>      sort-asc: true;`
 
-*Line 23 · property*
+*Line 53 · property*
 
 **undocumented**
 
@@ -42,7 +42,7 @@
 
 ## `in property <string>    selected: "";`
 
-*Line 26 · property*
+*Line 62 · property*
 
 **undocumented**
 
@@ -50,7 +50,7 @@
 
 ## `in property <string> sort-asc-indicator: "\u{25B2}";`
 
-*Line 29 · property*
+*Line 71 · property*
 
 **undocumented**
 
@@ -58,7 +58,7 @@
 
 ## `in property <string> sort-desc-indicator: "\u{25BC}";`
 
-*Line 32 · property*
+*Line 80 · property*
 
 **undocumented**
 
@@ -66,7 +66,7 @@
 
 ## `callback sort-changed(string, bool);`
 
-*Line 35 · callback*
+*Line 89 · callback*
 
 **undocumented**
 
@@ -74,7 +74,7 @@
 
 ## `callback row-selected(string);`
 
-*Line 38 · callback*
+*Line 98 · callback*
 
 **undocumented**
 

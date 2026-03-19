@@ -5,70 +5,70 @@
       "name": "TreeViewNode",
       "kind": "Component",
       "signature": "export component TreeViewNode inherits Rectangle {",
-      "line": 7,
+      "line": 13,
       "doc": ""
     },
     {
       "name": "node-id",
       "kind": "Property",
       "signature": "in property <string> node-id;",
-      "line": 10,
+      "line": 22,
       "doc": ""
     },
     {
       "name": "label",
       "kind": "Property",
       "signature": "in property <string> label;",
-      "line": 13,
+      "line": 31,
       "doc": ""
     },
     {
       "name": "icon",
       "kind": "Property",
       "signature": "in property <string> icon;",
-      "line": 16,
+      "line": 40,
       "doc": ""
     },
     {
       "name": "level",
       "kind": "Property",
       "signature": "in property <int>    level;",
-      "line": 19,
+      "line": 49,
       "doc": ""
     },
     {
       "name": "expanded",
       "kind": "Property",
       "signature": "in property <bool>   expanded;",
-      "line": 22,
+      "line": 58,
       "doc": ""
     },
     {
       "name": "leaf",
       "kind": "Property",
       "signature": "in property <bool>   leaf;",
-      "line": 25,
+      "line": 67,
       "doc": ""
     },
     {
       "name": "is-selected",
       "kind": "Property",
       "signature": "in property <bool>   is-selected: false;",
-      "line": 28,
+      "line": 76,
       "doc": ""
     },
     {
       "name": "selected",
       "kind": "Callback",
       "signature": "callback selected();",
-      "line": 31,
+      "line": 85,
       "doc": ""
     },
     {
       "name": "toggle-expanded",
       "kind": "Callback",
       "signature": "callback toggle-expanded();",
-      "line": 34,
+      "line": 94,
       "doc": ""
     }
   ]

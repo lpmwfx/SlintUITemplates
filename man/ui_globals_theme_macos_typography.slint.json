@@ -1,0 +1,110 @@
+{
+  "source": "ui/globals/theme/macos/typography.slint",
+  "items": [
+    {
+      "name": "caption",
+      "kind": "Property",
+      "signature": "out property <length> caption:   Settings.zoom * Settings.font-scale * 11px;",
+      "line": 16,
+      "doc": ""
+    },
+    {
+      "name": "subhead",
+      "kind": "Property",
+      "signature": "out property <length> subhead:   Settings.zoom * Settings.font-scale * 12px;",
+      "line": 25,
+      "doc": ""
+    },
+    {
+      "name": "body",
+      "kind": "Property",
+      "signature": "out property <length> body:      Settings.zoom * Settings.font-scale * 13px;",
+      "line": 34,
+      "doc": ""
+    },
+    {
+      "name": "callout",
+      "kind": "Property",
+      "signature": "out property <length> callout:   Settings.zoom * Settings.font-scale * 14px;",
+      "line": 43,
+      "doc": ""
+    },
+    {
+      "name": "headline",
+      "kind": "Property",
+      "signature": "out property <length> headline:  Settings.zoom * Settings.font-scale * 15px;",
+      "line": 52,
+      "doc": ""
+    },
+    {
+      "name": "title3",
+      "kind": "Property",
+      "signature": "out property <length> title3:    Settings.zoom * Settings.font-scale * 17px;",
+      "line": 61,
+      "doc": ""
+    },
+    {
+      "name": "title2",
+      "kind": "Property",
+      "signature": "out property <length> title2:    Settings.zoom * Settings.font-scale * 20px;",
+      "line": 70,
+      "doc": ""
+    },
+    {
+      "name": "title1",
+      "kind": "Property",
+      "signature": "out property <length> title1:    Settings.zoom * Settings.font-scale * 26px;",
+      "line": 79,
+      "doc": ""
+    },
+    {
+      "name": "title",
+      "kind": "Property",
+      "signature": "out property <length> title:     Settings.zoom * Settings.font-scale * 34px;",
+      "line": 88,
+      "doc": ""
+    },
+    {
+      "name": "weight-regular",
+      "kind": "Property",
+      "signature": "out property <int> weight-regular:  400;",
+      "line": 99,
+      "doc": ""
+    },
+    {
+      "name": "weight-medium",
+      "kind": "Property",
+      "signature": "out property <int> weight-medium:   500;",
+      "line": 108,
+      "doc": ""
+    },
+    {
+      "name": "weight-semibold",
+      "kind": "Property",
+      "signature": "out property <int> weight-semibold: 600;",
+      "line": 117,
+      "doc": ""
+    },
+    {
+      "name": "weight-bold",
+      "kind": "Property",
+      "signature": "out property <int> weight-bold:     700;",
+      "line": 126,
+      "doc": ""
+    },
+    {
+      "name": "font-system",
+      "kind": "Property",
+      "signature": "out property <string> font-system: \"SF Pro Text\";",
+      "line": 137,
+      "doc": ""
+    },
+    {
+      "name": "font-mono",
+      "kind": "Property",
+      "signature": "out property <string> font-mono:   \"SF Mono\";",
+      "line": 146,
+      "doc": ""
+    }
+  ]
+}

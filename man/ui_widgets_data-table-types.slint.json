@@ -5,14 +5,14 @@
       "name": "TableColumn",
       "kind": "Struct",
       "signature": "export struct TableColumn {",
-      "line": 3,
+      "line": 9,
       "doc": ""
     },
     {
       "name": "TableRow",
       "kind": "Struct",
       "signature": "export struct TableRow {",
-      "line": 11,
+      "line": 23,
       "doc": ""
     }
   ]

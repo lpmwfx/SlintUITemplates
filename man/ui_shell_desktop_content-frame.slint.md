@@ -2,7 +2,7 @@
 
 ## `export component ShellContentFrame inherits Rectangle {`
 
-*Line 8 · component*
+*Line 14 · component*
 
 **undocumented**
 

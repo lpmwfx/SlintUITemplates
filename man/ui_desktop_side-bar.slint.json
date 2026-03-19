@@ -5,49 +5,49 @@
       "name": "SideBar",
       "kind": "Component",
       "signature": "export component SideBar inherits Rectangle {",
-      "line": 9,
+      "line": 15,
       "doc": ""
     },
     {
       "name": "items",
       "kind": "Property",
       "signature": "in property <[NavItem]> items: [];",
-      "line": 12,
+      "line": 24,
       "doc": ""
     },
     {
       "name": "active-item",
       "kind": "Property",
       "signature": "in property <string>    active-item: \"\";",
-      "line": 15,
+      "line": 33,
       "doc": ""
     },
     {
       "name": "collapsed",
       "kind": "Property",
       "signature": "in property <bool>      collapsed: false;",
-      "line": 18,
+      "line": 42,
       "doc": ""
     },
     {
       "name": "navigate",
       "kind": "Callback",
       "signature": "callback navigate(string);",
-      "line": 21,
+      "line": 51,
       "doc": ""
     },
     {
       "name": "toggle-collapsed",
       "kind": "Callback",
       "signature": "callback toggle-collapsed();",
-      "line": 24,
+      "line": 60,
       "doc": ""
     },
     {
       "name": "toggle-group",
       "kind": "Callback",
       "signature": "callback toggle-group(string);",
-      "line": 27,
+      "line": 69,
       "doc": ""
     }
   ]

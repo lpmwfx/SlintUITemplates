@@ -2,7 +2,7 @@
 
 ## `export component SpinValueDisplay inherits Rectangle {`
 
-*Line 6 · component*
+*Line 12 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <int> display-value;`
 
-*Line 9 · property*
+*Line 21 · property*
 
 **undocumented**
 

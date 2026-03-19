@@ -5,28 +5,28 @@
       "name": "CbfAction",
       "kind": "Struct",
       "signature": "export struct CbfAction {",
-      "line": 5,
+      "line": 11,
       "doc": ""
     },
     {
       "name": "CbfPrimaryBtn",
       "kind": "Component",
       "signature": "export component CbfPrimaryBtn inherits Rectangle {",
-      "line": 14,
+      "line": 26,
       "doc": ""
     },
     {
       "name": "item",
       "kind": "Property",
       "signature": "in property <CbfAction> item;",
-      "line": 17,
+      "line": 35,
       "doc": ""
     },
     {
       "name": "activated",
       "kind": "Callback",
       "signature": "callback activated(string);",
-      "line": 20,
+      "line": 44,
       "doc": ""
     }
   ]

@@ -5,42 +5,42 @@
       "name": "PopupFlyoutDemo",
       "kind": "Component",
       "signature": "export component PopupFlyoutDemo inherits Rectangle {",
-      "line": 6,
+      "line": 14,
       "doc": ""
     },
     {
       "name": "window-height",
       "kind": "Property",
       "signature": "in property <length> window-height;",
-      "line": 9,
+      "line": 23,
       "doc": ""
     },
     {
       "name": "demo-w",
       "kind": "Property",
-      "signature": "private property <length> demo-w:   160px;",
-      "line": 13,
+      "signature": "private property <length> demo-w:   Sizes.comp-160;",
+      "line": 33,
       "doc": ""
     },
     {
       "name": "fly-w",
       "kind": "Property",
-      "signature": "private property <length> fly-w:    240px;",
-      "line": 16,
+      "signature": "private property <length> fly-w:    Sizes.comp-240;",
+      "line": 42,
       "doc": ""
     },
     {
       "name": "fly-h",
       "kind": "Property",
-      "signature": "private property <length> fly-h:    130px;",
-      "line": 19,
+      "signature": "private property <length> fly-h:    Sizes.comp-130;",
+      "line": 51,
       "doc": ""
     },
     {
       "name": "border-px",
       "kind": "Property",
-      "signature": "private property <length> border-px: 1px;",
-      "line": 22,
+      "signature": "private property <length> border-px: Sizes.border-w;",
+      "line": 60,
       "doc": ""
     }
   ]

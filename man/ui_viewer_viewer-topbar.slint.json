@@ -5,189 +5,189 @@
       "name": "ViewerTopbar",
       "kind": "Component",
       "signature": "export component ViewerTopbar inherits Rectangle {",
-      "line": 11,
+      "line": 17,
       "doc": ""
     },
     {
       "name": "request-bg-style",
       "kind": "Callback",
       "signature": "callback request-bg-style(string);",
-      "line": 14,
+      "line": 26,
       "doc": ""
     },
     {
       "name": "var-ghost",
       "kind": "Property",
       "signature": "private property <string> var-ghost: \"ghost\";",
-      "line": 22,
+      "line": 40,
       "doc": ""
     },
     {
       "name": "var-outlined",
       "kind": "Property",
       "signature": "private property <string> var-outlined: \"outlined\";",
-      "line": 25,
+      "line": 49,
       "doc": ""
     },
     {
       "name": "var-filled",
       "kind": "Property",
       "signature": "private property <string> var-filled: \"filled\";",
-      "line": 28,
+      "line": 58,
       "doc": ""
     },
     {
       "name": "var-accent",
       "kind": "Property",
       "signature": "private property <string> var-accent: \"accent\";",
-      "line": 31,
+      "line": 67,
       "doc": ""
     },
     {
       "name": "var-theme",
       "kind": "Property",
       "signature": "private property <string> var-theme: \"theme\";",
-      "line": 34,
+      "line": 76,
       "doc": ""
     },
     {
       "name": "zoom-small",
       "kind": "Property",
       "signature": "private property <float> zoom-small: 0.75;",
-      "line": 39,
+      "line": 87,
       "doc": ""
     },
     {
       "name": "zoom-large",
       "kind": "Property",
       "signature": "private property <float> zoom-large: 1.25;",
-      "line": 42,
+      "line": 96,
       "doc": ""
     },
     {
       "name": "zoom-xlarge",
       "kind": "Property",
       "signature": "private property <float> zoom-xlarge: 1.50;",
-      "line": 45,
+      "line": 105,
       "doc": ""
     },
     {
       "name": "topbar-title",
       "kind": "Property",
       "signature": "private property <string> topbar-title: \"SlintUI Framework Viewer\";",
-      "line": 50,
+      "line": 116,
       "doc": ""
     },
     {
       "name": "toggle-dark",
       "kind": "Property",
       "signature": "private property <string> toggle-dark: \"Dark\";",
-      "line": 53,
+      "line": 125,
       "doc": ""
     },
     {
       "name": "btn-zoom-small",
       "kind": "Property",
       "signature": "private property <string> btn-zoom-small: \"0.75×\";",
-      "line": 56,
+      "line": 134,
       "doc": ""
     },
     {
       "name": "btn-zoom-normal",
       "kind": "Property",
       "signature": "private property <string> btn-zoom-normal: \"1×\";",
-      "line": 59,
+      "line": 143,
       "doc": ""
     },
     {
       "name": "btn-zoom-large",
       "kind": "Property",
       "signature": "private property <string> btn-zoom-large: \"1.25×\";",
-      "line": 62,
+      "line": 152,
       "doc": ""
     },
     {
       "name": "btn-zoom-xlarge",
       "kind": "Property",
       "signature": "private property <string> btn-zoom-xlarge: \"1.5×\";",
-      "line": 65,
+      "line": 161,
       "doc": ""
     },
     {
       "name": "toggle-outlined",
       "kind": "Property",
       "signature": "private property <string> toggle-outlined: \"Outlined\";",
-      "line": 68,
+      "line": 170,
       "doc": ""
     },
     {
       "name": "toggle-accent",
       "kind": "Property",
       "signature": "private property <string> toggle-accent: \"Accent icons\";",
-      "line": 71,
+      "line": 179,
       "doc": ""
     },
     {
       "name": "btn-solid",
       "kind": "Property",
       "signature": "private property <string> btn-solid: \"Solid\";",
-      "line": 74,
+      "line": 188,
       "doc": ""
     },
     {
       "name": "btn-mica",
       "kind": "Property",
       "signature": "private property <string> btn-mica: \"Mica\";",
-      "line": 77,
+      "line": 197,
       "doc": ""
     },
     {
       "name": "btn-acrylic",
       "kind": "Property",
       "signature": "private property <string> btn-acrylic: \"Acrylic\";",
-      "line": 80,
+      "line": 206,
       "doc": ""
     },
     {
       "name": "bg-solid",
       "kind": "Property",
       "signature": "private property <string> bg-solid: \"solid\";",
-      "line": 83,
+      "line": 215,
       "doc": ""
     },
     {
       "name": "bg-mica",
       "kind": "Property",
       "signature": "private property <string> bg-mica: \"mica\";",
-      "line": 86,
+      "line": 224,
       "doc": ""
     },
     {
       "name": "bg-acrylic",
       "kind": "Property",
       "signature": "private property <string> bg-acrylic: \"acrylic\";",
-      "line": 89,
+      "line": 233,
       "doc": ""
     },
     {
       "name": "sf-placeholder",
       "kind": "Property",
       "signature": "private property <string> sf-placeholder: \"Font...\";",
-      "line": 92,
+      "line": 242,
       "doc": ""
     },
     {
       "name": "sf-default",
       "kind": "Property",
       "signature": "private property <string> sf-default: \"Default\";",
-      "line": 95,
+      "line": 251,
       "doc": ""
     },
     {
       "name": "sf-w",
       "kind": "Property",
       "signature": "private property <length> sf-w: Sizes.comp-140;",
-      "line": 98,
+      "line": 260,
       "doc": ""
     }
   ]

@@ -1,6 +1,6 @@
 # src/bindings/rhai/api.rs
 
-## `pub fn register(engine: &mut Engine, adapter: Rc<RefCell<AppAdapter>>)`
+## `pub fn register_api(engine: &mut Engine, adapter: Rc<RefCell<AppAdapter>>)`
 
 *Line 7 · fn*
 

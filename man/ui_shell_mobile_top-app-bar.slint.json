@@ -5,56 +5,56 @@
       "name": "TopAppBar",
       "kind": "Component",
       "signature": "export component TopAppBar inherits Rectangle {",
-      "line": 10,
+      "line": 16,
       "doc": ""
     },
     {
       "name": "title",
       "kind": "Property",
       "signature": "in property <string> title;",
-      "line": 13,
+      "line": 25,
       "doc": ""
     },
     {
       "name": "nav-icon",
       "kind": "Property",
       "signature": "in property <string> nav-icon:    FluentIcons.back;",
-      "line": 16,
+      "line": 34,
       "doc": ""
     },
     {
       "name": "show-nav",
       "kind": "Property",
       "signature": "in property <bool>   show-nav:    false;",
-      "line": 19,
+      "line": 43,
       "doc": ""
     },
     {
       "name": "action-icon",
       "kind": "Property",
       "signature": "in property <string> action-icon: \"\";",
-      "line": 22,
+      "line": 52,
       "doc": ""
     },
     {
       "name": "icon-font",
       "kind": "Property",
       "signature": "in property <string> icon-font:   \"Segoe Fluent Icons\";",
-      "line": 25,
+      "line": 61,
       "doc": ""
     },
     {
       "name": "nav-clicked",
       "kind": "Callback",
       "signature": "callback nav-clicked();",
-      "line": 28,
+      "line": 70,
       "doc": ""
     },
     {
       "name": "action-clicked",
       "kind": "Callback",
       "signature": "callback action-clicked();",
-      "line": 31,
+      "line": 79,
       "doc": ""
     }
   ]

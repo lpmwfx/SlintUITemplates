@@ -19,14 +19,14 @@
       "name": "apply_dsl",
       "kind": "Fn",
       "signature": "pub fn apply_dsl(&mut self, dsl: &AppDsl)",
-      "line": 115,
+      "line": 118,
       "doc": "Apply a validated `AppDsl` — composition rules already enforced."
     },
     {
       "name": "run",
       "kind": "Fn",
       "signature": "pub fn run(self) -> Result<(), slint::PlatformError>",
-      "line": 122,
+      "line": 125,
       "doc": "Show window and apply OS-level backdrop effects, then enter event loop."
     }
   ]

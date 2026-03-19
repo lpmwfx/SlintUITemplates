@@ -2,7 +2,7 @@
 
 ## `export component Slider inherits Rectangle {`
 
-*Line 7 · component*
+*Line 13 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <float> value: Sizes.no-fill;`
 
-*Line 10 · property*
+*Line 22 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <float>  min: Sizes.no-fill;`
 
-*Line 13 · property*
+*Line 31 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `in property <float>  max: Sizes.fill;`
 
-*Line 16 · property*
+*Line 40 · property*
 
 **undocumented**
 
@@ -34,7 +34,7 @@
 
 ## `in property <float>  step: Sizes.no-fill;`
 
-*Line 19 · property*
+*Line 49 · property*
 
 **undocumented**
 
@@ -42,7 +42,7 @@
 
 ## `in property <string> label: "";`
 
-*Line 22 · property*
+*Line 58 · property*
 
 **undocumented**
 
@@ -50,7 +50,7 @@
 
 ## `in property <bool>   show-value: false;`
 
-*Line 25 · property*
+*Line 67 · property*
 
 **undocumented**
 
@@ -58,7 +58,7 @@
 
 ## `in property <bool>   enabled: true;`
 
-*Line 28 · property*
+*Line 76 · property*
 
 **undocumented**
 
@@ -66,7 +66,7 @@
 
 ## `callback changed(float);`
 
-*Line 31 · callback*
+*Line 85 · callback*
 
 **undocumented**
 
@@ -74,7 +74,7 @@
 
 ## `private property <float>  fill-ratio: (root.value - root.min) / (root.max - root.min);`
 
-*Line 35 · property*
+*Line 95 · property*
 
 **undocumented**
 
@@ -82,7 +82,7 @@
 
 ## `private property <length> track-h:    Spacing.xs;`
 
-*Line 38 · property*
+*Line 104 · property*
 
 **undocumented**
 
@@ -90,7 +90,7 @@
 
 ## `private property <length> thumb-size: Spacing.md;`
 
-*Line 41 · property*
+*Line 113 · property*
 
 **undocumented**
 

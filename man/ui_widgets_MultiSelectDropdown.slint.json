@@ -5,21 +5,21 @@
       "name": "MultiSelectDropdown",
       "kind": "Component",
       "signature": "export component MultiSelectDropdown inherits Rectangle {",
-      "line": 9,
+      "line": 15,
       "doc": ""
     },
     {
       "name": "options",
       "kind": "Property",
       "signature": "in property <[MultiSelectOption]> options: [];",
-      "line": 12,
+      "line": 24,
       "doc": ""
     },
     {
       "name": "item-selected",
       "kind": "Callback",
       "signature": "callback item-selected(string);",
-      "line": 15,
+      "line": 33,
       "doc": ""
     }
   ]

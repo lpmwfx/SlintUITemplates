@@ -2,7 +2,7 @@
 
 ## `export component ViewSlot inherits Rectangle {`
 
-*Line 17 · component*
+*Line 23 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <string> slot-id;`
 
-*Line 20 · property*
+*Line 32 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <string> active;`
 
-*Line 23 · property*
+*Line 41 · property*
 
 **undocumented**
 

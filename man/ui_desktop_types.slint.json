@@ -5,7 +5,7 @@
       "name": "NavItem",
       "kind": "Struct",
       "signature": "export struct NavItem {",
-      "line": 3,
+      "line": 9,
       "doc": ""
     }
   ]

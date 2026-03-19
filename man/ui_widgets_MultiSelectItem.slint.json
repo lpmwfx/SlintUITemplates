@@ -5,28 +5,28 @@
       "name": "MultiSelectItem",
       "kind": "Component",
       "signature": "export component MultiSelectItem inherits Rectangle {",
-      "line": 6,
+      "line": 12,
       "doc": ""
     },
     {
       "name": "opt-label",
       "kind": "Property",
       "signature": "in property <string> opt-label;",
-      "line": 9,
+      "line": 21,
       "doc": ""
     },
     {
       "name": "opt-value",
       "kind": "Property",
       "signature": "in property <string> opt-value;",
-      "line": 12,
+      "line": 30,
       "doc": ""
     },
     {
       "name": "item-selected",
       "kind": "Callback",
       "signature": "callback item-selected(string);",
-      "line": 15,
+      "line": 39,
       "doc": ""
     }
   ]

@@ -2,7 +2,7 @@
 
 ## `export component Alert inherits Rectangle {`
 
-*Line 7 · component*
+*Line 13 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <string> message: "";`
 
-*Line 10 · property*
+*Line 22 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <string> title: "";`
 
-*Line 13 · property*
+*Line 31 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `in property <string> variant: "info";   // info | success | warning | error`
 
-*Line 16 · property*
+*Line 40 · property*
 
 **undocumented**
 
@@ -34,7 +34,7 @@
 
 ## `in property <bool>   closable: false;`
 
-*Line 19 · property*
+*Line 49 · property*
 
 **undocumented**
 
@@ -42,7 +42,7 @@
 
 ## `in property <bool>   show: true;`
 
-*Line 22 · property*
+*Line 58 · property*
 
 **undocumented**
 
@@ -50,7 +50,7 @@
 
 ## `callback closed();`
 
-*Line 25 · callback*
+*Line 67 · callback*
 
 **undocumented**
 

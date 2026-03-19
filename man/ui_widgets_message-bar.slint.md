@@ -2,7 +2,7 @@
 
 ## `export component MessageBar inherits Rectangle {`
 
-*Line 6 · component*
+*Line 13 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <string> message: "";`
 
-*Line 9 · property*
+*Line 22 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <string> variant: "info";   // info | warning | error | success`
 
-*Line 12 · property*
+*Line 31 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `in property <string> action-label: "";`
 
-*Line 15 · property*
+*Line 40 · property*
 
 **undocumented**
 
@@ -34,7 +34,7 @@
 
 ## `in property <bool>   closable: true;`
 
-*Line 18 · property*
+*Line 49 · property*
 
 **undocumented**
 
@@ -42,7 +42,7 @@
 
 ## `callback action();`
 
-*Line 21 · callback*
+*Line 58 · callback*
 
 **undocumented**
 
@@ -50,7 +50,7 @@
 
 ## `callback closed();`
 
-*Line 24 · callback*
+*Line 67 · callback*
 
 **undocumented**
 
@@ -58,7 +58,7 @@
 
 ## `private property <string> v-error:   "error";`
 
-*Line 28 · property*
+*Line 77 · property*
 
 **undocumented**
 
@@ -66,7 +66,7 @@
 
 ## `private property <string> v-warning: "warning";`
 
-*Line 31 · property*
+*Line 86 · property*
 
 **undocumented**
 
@@ -74,23 +74,23 @@
 
 ## `private property <string> v-success: "success";`
 
-*Line 34 · property*
+*Line 95 · property*
 
 **undocumented**
 
 ---
 
-## `private property <length> border-px: 1px;`
+## `private property <length> border-px: Sizes.border-w;`
 
-*Line 37 · property*
+*Line 104 · property*
 
 **undocumented**
 
 ---
 
-## `private property <length> bar-w:     3px;`
+## `private property <length> bar-w:     Sizes.border-w-3;`
 
-*Line 40 · property*
+*Line 113 · property*
 
 **undocumented**
 
@@ -98,7 +98,7 @@
 
 ## `private property <int>    btn-shrink: 0;`
 
-*Line 43 · property*
+*Line 122 · property*
 
 **undocumented**
 
@@ -106,7 +106,7 @@
 
 ## `private property <int>    text-grow:  1;`
 
-*Line 46 · property*
+*Line 131 · property*
 
 **undocumented**
 
@@ -114,7 +114,7 @@
 
 ## `private property <color> accent-color:`
 
-*Line 49 · property*
+*Line 140 · property*
 
 **undocumented**
 
@@ -122,7 +122,7 @@
 
 ## `private property <string> icon-glyph:`
 
-*Line 56 · property*
+*Line 153 · property*
 
 **undocumented**
 

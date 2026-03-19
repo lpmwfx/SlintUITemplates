@@ -5,63 +5,63 @@
       "name": "TextArea",
       "kind": "Component",
       "signature": "export component TextArea inherits Rectangle {",
-      "line": 7,
+      "line": 13,
       "doc": ""
     },
     {
       "name": "label",
       "kind": "Property",
       "signature": "in property <string> label: \"\";",
-      "line": 10,
+      "line": 22,
       "doc": ""
     },
     {
       "name": "value",
       "kind": "Property",
       "signature": "in property <string> value: \"\";",
-      "line": 13,
+      "line": 31,
       "doc": ""
     },
     {
       "name": "placeholder",
       "kind": "Property",
       "signature": "in property <string> placeholder: \"\";",
-      "line": 16,
+      "line": 40,
       "doc": ""
     },
     {
       "name": "error",
       "kind": "Property",
       "signature": "in property <string> error: \"\";",
-      "line": 19,
+      "line": 49,
       "doc": ""
     },
     {
       "name": "rows",
       "kind": "Property",
       "signature": "in property <int>    rows: Sizes.four;",
-      "line": 22,
+      "line": 58,
       "doc": ""
     },
     {
       "name": "enabled",
       "kind": "Property",
       "signature": "in property <bool>   enabled: true;",
-      "line": 25,
+      "line": 67,
       "doc": ""
     },
     {
       "name": "changed",
       "kind": "Callback",
       "signature": "callback changed(string);",
-      "line": 28,
+      "line": 76,
       "doc": ""
     },
     {
       "name": "area-height",
       "kind": "Property",
       "signature": "private property <length> area-height: root.rows * (Type.body-size + Spacing.xs) + Spacing.sm * Sizes.two;",
-      "line": 32,
+      "line": 86,
       "doc": ""
     }
   ]

@@ -2,7 +2,7 @@
 
 ## `export component RadioGroup inherits VerticalLayout {`
 
-*Line 6 · component*
+*Line 12 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <[string]> options: [];`
 
-*Line 9 · property*
+*Line 21 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <string> value: "";`
 
-*Line 12 · property*
+*Line 30 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `in property <bool> enabled: true;`
 
-*Line 15 · property*
+*Line 39 · property*
 
 **undocumented**
 
@@ -34,7 +34,7 @@
 
 ## `callback changed(string);`
 
-*Line 18 · callback*
+*Line 48 · callback*
 
 **undocumented**
 

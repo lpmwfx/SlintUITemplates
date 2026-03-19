@@ -5,28 +5,28 @@
       "name": "CompactNavItem",
       "kind": "Component",
       "signature": "export component CompactNavItem inherits Rectangle {",
-      "line": 10,
+      "line": 16,
       "doc": ""
     },
     {
       "name": "item",
       "kind": "Property",
       "signature": "in property <NavItem> item;",
-      "line": 13,
+      "line": 25,
       "doc": ""
     },
     {
       "name": "active",
       "kind": "Property",
       "signature": "in property <bool> active: false;",
-      "line": 16,
+      "line": 34,
       "doc": ""
     },
     {
       "name": "navigate",
       "kind": "Callback",
       "signature": "callback navigate(string);",
-      "line": 19,
+      "line": 43,
       "doc": ""
     }
   ]

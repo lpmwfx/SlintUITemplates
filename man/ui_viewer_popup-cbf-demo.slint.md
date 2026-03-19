@@ -2,7 +2,7 @@
 
 ## `export component PopupCbfDemo inherits Rectangle {`
 
-*Line 6 · component*
+*Line 14 · component*
 
 **undocumented**
 
@@ -10,23 +10,23 @@
 
 ## `in property <length> window-height;`
 
-*Line 9 · property*
+*Line 23 · property*
 
 **undocumented**
 
 ---
 
-## `private property <length> cbf-w:     180px;`
+## `private property <length> cbf-w:     Sizes.panel-xs;`
 
-*Line 13 · property*
+*Line 33 · property*
 
 **undocumented**
 
 ---
 
-## `private property <length> border-px: 1px;`
+## `private property <length> border-px: Sizes.border-w;`
 
-*Line 16 · property*
+*Line 42 · property*
 
 **undocumented**
 

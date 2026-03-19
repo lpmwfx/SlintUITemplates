@@ -5,217 +5,217 @@
       "name": "PageInputs",
       "kind": "Component",
       "signature": "export component PageInputs inherits VerticalLayout {",
-      "line": 15,
+      "line": 21,
       "doc": ""
     },
     {
       "name": "spinbox-default-val",
       "kind": "Property",
       "signature": "private property <int> spinbox-default-val: 42;",
-      "line": 21,
+      "line": 33,
       "doc": ""
     },
     {
       "name": "section-textinput",
       "kind": "Property",
       "signature": "private property <string> section-textinput: \"TextInput\";",
-      "line": 26,
+      "line": 44,
       "doc": ""
     },
     {
       "name": "section-selectfield",
       "kind": "Property",
       "signature": "private property <string> section-selectfield: \"SelectField\";",
-      "line": 29,
+      "line": 53,
       "doc": ""
     },
     {
       "name": "section-searchinput",
       "kind": "Property",
       "signature": "private property <string> section-searchinput: \"SearchInput\";",
-      "line": 32,
+      "line": 62,
       "doc": ""
     },
     {
       "name": "section-passwordinput",
       "kind": "Property",
       "signature": "private property <string> section-passwordinput: \"PasswordInput\";",
-      "line": 35,
+      "line": 71,
       "doc": ""
     },
     {
       "name": "section-textarea",
       "kind": "Property",
       "signature": "private property <string> section-textarea: \"TextArea\";",
-      "line": 38,
+      "line": 80,
       "doc": ""
     },
     {
       "name": "section-spinbox",
       "kind": "Property",
       "signature": "private property <string> section-spinbox: \"SpinBox\";",
-      "line": 41,
+      "line": 89,
       "doc": ""
     },
     {
       "name": "ti-placeholder",
       "kind": "Property",
       "signature": "private property <string> ti-placeholder: \"Plain input...\";",
-      "line": 44,
+      "line": 98,
       "doc": ""
     },
     {
       "name": "ti-label",
       "kind": "Property",
       "signature": "private property <string> ti-label: \"With label\";",
-      "line": 47,
+      "line": 107,
       "doc": ""
     },
     {
       "name": "ti-placeholder2",
       "kind": "Property",
       "signature": "private property <string> ti-placeholder2: \"Enter text...\";",
-      "line": 50,
+      "line": 116,
       "doc": ""
     },
     {
       "name": "ti-value",
       "kind": "Property",
       "signature": "private property <string> ti-value: \"Hello\";",
-      "line": 53,
+      "line": 125,
       "doc": ""
     },
     {
       "name": "ti-err-label",
       "kind": "Property",
       "signature": "private property <string> ti-err-label: \"With error\";",
-      "line": 56,
+      "line": 134,
       "doc": ""
     },
     {
       "name": "ti-err-value",
       "kind": "Property",
       "signature": "private property <string> ti-err-value: \"bad-value\";",
-      "line": 59,
+      "line": 143,
       "doc": ""
     },
     {
       "name": "ti-err-msg",
       "kind": "Property",
       "signature": "private property <string> ti-err-msg: \"This field is required\";",
-      "line": 62,
+      "line": 152,
       "doc": ""
     },
     {
       "name": "sf-placeholder",
       "kind": "Property",
       "signature": "private property <string> sf-placeholder: \"Choose one...\";",
-      "line": 65,
+      "line": 161,
       "doc": ""
     },
     {
       "name": "si-placeholder",
       "kind": "Property",
       "signature": "private property <string> si-placeholder: \"Search...\";",
-      "line": 68,
+      "line": 170,
       "doc": ""
     },
     {
       "name": "si-value",
       "kind": "Property",
       "signature": "private property <string> si-value: \"hello world\";",
-      "line": 71,
+      "line": 179,
       "doc": ""
     },
     {
       "name": "si-placeholder2",
       "kind": "Property",
       "signature": "private property <string> si-placeholder2: \"With value + clear...\";",
-      "line": 74,
+      "line": 188,
       "doc": ""
     },
     {
       "name": "pi-placeholder",
       "kind": "Property",
       "signature": "private property <string> pi-placeholder: \"Enter password...\";",
-      "line": 77,
+      "line": 197,
       "doc": ""
     },
     {
       "name": "pi-label",
       "kind": "Property",
       "signature": "private property <string> pi-label: \"With label\";",
-      "line": 80,
+      "line": 206,
       "doc": ""
     },
     {
       "name": "pi-placeholder2",
       "kind": "Property",
       "signature": "private property <string> pi-placeholder2: \"Password\";",
-      "line": 83,
+      "line": 215,
       "doc": ""
     },
     {
       "name": "pi-err-label",
       "kind": "Property",
       "signature": "private property <string> pi-err-label: \"With error\";",
-      "line": 86,
+      "line": 224,
       "doc": ""
     },
     {
       "name": "pi-err-msg",
       "kind": "Property",
       "signature": "private property <string> pi-err-msg: \"Password too short\";",
-      "line": 89,
+      "line": 233,
       "doc": ""
     },
     {
       "name": "ta-placeholder",
       "kind": "Property",
       "signature": "private property <string> ta-placeholder: \"Enter multi-line text...\";",
-      "line": 92,
+      "line": 242,
       "doc": ""
     },
     {
       "name": "ta-label",
       "kind": "Property",
       "signature": "private property <string> ta-label: \"With label\";",
-      "line": 95,
+      "line": 251,
       "doc": ""
     },
     {
       "name": "ta-placeholder2",
       "kind": "Property",
       "signature": "private property <string> ta-placeholder2: \"Notes...\";",
-      "line": 98,
+      "line": 260,
       "doc": ""
     },
     {
       "name": "ta-err-label",
       "kind": "Property",
       "signature": "private property <string> ta-err-label: \"With error\";",
-      "line": 101,
+      "line": 269,
       "doc": ""
     },
     {
       "name": "ta-err-msg",
       "kind": "Property",
       "signature": "private property <string> ta-err-msg: \"This field is required\";",
-      "line": 104,
+      "line": 278,
       "doc": ""
     },
     {
       "name": "sb-label",
       "kind": "Property",
       "signature": "private property <string> sb-label: \"With label\";",
-      "line": 107,
+      "line": 287,
       "doc": ""
     },
     {
       "name": "sb-disabled-label",
       "kind": "Property",
       "signature": "private property <string> sb-disabled-label: \"Disabled\";",
-      "line": 110,
+      "line": 296,
       "doc": ""
     }
   ]

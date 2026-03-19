@@ -5,7 +5,7 @@
       "name": "DslError",
       "kind": "Enum",
       "signature": "pub enum DslError",
-      "line": 6,
+      "line": 8,
       "doc": "Rule violations detected at `build()` time — never silent visual failures.\nD sl er ro r enum."
     }
   ]

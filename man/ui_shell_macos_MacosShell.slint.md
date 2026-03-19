@@ -2,7 +2,7 @@
 
 ## `export component MacosShell inherits VerticalLayout {`
 
-*Line 13 · component*
+*Line 19 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <string>    title;`
 
-*Line 16 · property*
+*Line 28 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <[NavItem]> nav-items;`
 
-*Line 19 · property*
+*Line 37 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `in property <string>    active-slot;`
 
-*Line 22 · property*
+*Line 46 · property*
 
 **undocumented**
 
@@ -34,7 +34,7 @@
 
 ## `callback slot-changed(string);`
 
-*Line 26 · callback*
+*Line 56 · callback*
 
 **undocumented**
 

@@ -5,63 +5,63 @@
       "name": "AppShell",
       "kind": "Component",
       "signature": "export component AppShell inherits Rectangle {",
-      "line": 17,
+      "line": 24,
       "doc": ""
     },
     {
       "name": "nav-items",
       "kind": "Property",
       "signature": "in property <[NavItem]>          nav-items;",
-      "line": 20,
+      "line": 33,
       "doc": ""
     },
     {
       "name": "active-slot",
       "kind": "Property",
       "signature": "in property <string>             active-slot;",
-      "line": 23,
+      "line": 42,
       "doc": ""
     },
     {
       "name": "show-toolbar",
       "kind": "Property",
       "signature": "in property <bool>               show-toolbar:  false;",
-      "line": 26,
+      "line": 51,
       "doc": ""
     },
     {
       "name": "toolbar-items",
       "kind": "Property",
       "signature": "in property <[ShellToolbarItem]> toolbar-items;",
-      "line": 29,
+      "line": 60,
       "doc": ""
     },
     {
       "name": "status-text",
       "kind": "Property",
-      "signature": "in property <string>             status-text:   \"Ready\";",
-      "line": 32,
+      "signature": "in property <string>             status-text:   Strings.app-status-ready;",
+      "line": 69,
       "doc": ""
     },
     {
       "name": "progress",
       "kind": "Property",
       "signature": "in property <float>              progress:      -1.0;",
-      "line": 35,
+      "line": 78,
       "doc": ""
     },
     {
       "name": "slot-changed",
       "kind": "Callback",
       "signature": "callback slot-changed(string);",
-      "line": 39,
+      "line": 88,
       "doc": ""
     },
     {
       "name": "toolbar-clicked",
       "kind": "Callback",
       "signature": "callback toolbar-clicked(string);",
-      "line": 42,
+      "line": 97,
       "doc": ""
     }
   ]

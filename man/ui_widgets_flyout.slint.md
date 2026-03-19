@@ -2,7 +2,7 @@
 
 ## `export component Flyout inherits Rectangle {`
 
-*Line 16 · component*
+*Line 23 · component*
 
 **undocumented**
 
@@ -10,23 +10,23 @@
 
 ## `in property <length> window-height;`
 
-*Line 19 · property*
+*Line 32 · property*
 
 **undocumented**
 
 ---
 
-## `in property <length> popup-width:  220px;`
+## `in property <length> popup-width:  Sizes.panel-md;`
 
-*Line 22 · property*
+*Line 41 · property*
 
 **undocumented**
 
 ---
 
-## `in property <length> popup-height: 160px;`
+## `in property <length> popup-height: Sizes.comp-160;`
 
-*Line 25 · property*
+*Line 50 · property*
 
 **undocumented**
 
@@ -34,7 +34,7 @@
 
 ## `in property <string> title: "";`
 
-*Line 28 · property*
+*Line 59 · property*
 
 **undocumented**
 
@@ -42,7 +42,7 @@
 
 ## `in property <string> body: "";`
 
-*Line 31 · property*
+*Line 68 · property*
 
 **undocumented**
 
@@ -50,23 +50,23 @@
 
 ## `callback closed();`
 
-*Line 34 · callback*
+*Line 77 · callback*
 
 **undocumented**
 
 ---
 
-## `private property <length> pop-x: 0px;`
+## `private property <length> pop-x: Sizes.no-size;`
 
-*Line 38 · property*
+*Line 87 · property*
 
 **undocumented**
 
 ---
 
-## `private property <length> pop-y: 0px;`
+## `private property <length> pop-y: Sizes.no-size;`
 
-*Line 41 · property*
+*Line 96 · property*
 
 **undocumented**
 

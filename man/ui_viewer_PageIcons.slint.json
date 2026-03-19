@@ -5,63 +5,63 @@
       "name": "PageIcons",
       "kind": "Component",
       "signature": "export component PageIcons inherits VerticalLayout {",
-      "line": 11,
+      "line": 17,
       "doc": ""
     },
     {
       "name": "cat-nav",
       "kind": "Property",
       "signature": "private property <string> cat-nav: \"Navigation\";",
-      "line": 17,
+      "line": 29,
       "doc": ""
     },
     {
       "name": "cat-actions",
       "kind": "Property",
       "signature": "private property <string> cat-actions: \"Actions\";",
-      "line": 20,
+      "line": 38,
       "doc": ""
     },
     {
       "name": "cat-chrome",
       "kind": "Property",
       "signature": "private property <string> cat-chrome: \"Window Chrome\";",
-      "line": 23,
+      "line": 47,
       "doc": ""
     },
     {
       "name": "cat-files",
       "kind": "Property",
       "signature": "private property <string> cat-files: \"Files & Data\";",
-      "line": 26,
+      "line": 56,
       "doc": ""
     },
     {
       "name": "cat-media",
       "kind": "Property",
       "signature": "private property <string> cat-media: \"Media\";",
-      "line": 29,
+      "line": 65,
       "doc": ""
     },
     {
       "name": "cat-ui",
       "kind": "Property",
       "signature": "private property <string> cat-ui: \"UI / Layout\";",
-      "line": 32,
+      "line": 74,
       "doc": ""
     },
     {
       "name": "cat-people",
       "kind": "Property",
       "signature": "private property <string> cat-people: \"People & Communication\";",
-      "line": 35,
+      "line": 83,
       "doc": ""
     },
     {
       "name": "cat-device",
       "kind": "Property",
       "signature": "private property <string> cat-device: \"Device\";",
-      "line": 38,
+      "line": 92,
       "doc": ""
     }
   ]

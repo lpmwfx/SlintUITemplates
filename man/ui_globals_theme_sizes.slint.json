@@ -1,0 +1,705 @@
+{
+  "source": "ui/globals/theme/sizes.slint",
+  "items": [
+    {
+      "name": "fill",
+      "kind": "Property",
+      "signature": "out property <float> fill:    1.0;   // fill remaining space",
+      "line": 17,
+      "doc": ""
+    },
+    {
+      "name": "no-fill",
+      "kind": "Property",
+      "signature": "out property <float> no-fill: 0.0;   // fixed / no stretch",
+      "line": 26,
+      "doc": ""
+    },
+    {
+      "name": "full",
+      "kind": "Property",
+      "signature": "out property <float> full: 1.0;      // 100%",
+      "line": 37,
+      "doc": ""
+    },
+    {
+      "name": "half",
+      "kind": "Property",
+      "signature": "out property <float> half: 0.5;      // 50%",
+      "line": 46,
+      "doc": ""
+    },
+    {
+      "name": "third",
+      "kind": "Property",
+      "signature": "out property <float> third: 0.33;    // 33%",
+      "line": 55,
+      "doc": ""
+    },
+    {
+      "name": "quarter",
+      "kind": "Property",
+      "signature": "out property <float> quarter: 0.25;  // 25%",
+      "line": 64,
+      "doc": ""
+    },
+    {
+      "name": "three-quarter",
+      "kind": "Property",
+      "signature": "out property <float> three-quarter: 0.75;",
+      "line": 73,
+      "doc": ""
+    },
+    {
+      "name": "ratio-xs",
+      "kind": "Property",
+      "signature": "out property <float> ratio-xs:  0.05;",
+      "line": 84,
+      "doc": ""
+    },
+    {
+      "name": "ratio-sm",
+      "kind": "Property",
+      "signature": "out property <float> ratio-sm:  0.1;",
+      "line": 93,
+      "doc": ""
+    },
+    {
+      "name": "ratio-md",
+      "kind": "Property",
+      "signature": "out property <float> ratio-md:  0.4;",
+      "line": 102,
+      "doc": ""
+    },
+    {
+      "name": "ratio-lg",
+      "kind": "Property",
+      "signature": "out property <float> ratio-lg:  0.45;",
+      "line": 111,
+      "doc": ""
+    },
+    {
+      "name": "zero",
+      "kind": "Property",
+      "signature": "out property <int> zero: 0;",
+      "line": 122,
+      "doc": ""
+    },
+    {
+      "name": "one",
+      "kind": "Property",
+      "signature": "out property <int> one:  1;",
+      "line": 131,
+      "doc": ""
+    },
+    {
+      "name": "two",
+      "kind": "Property",
+      "signature": "out property <int> two:  2;",
+      "line": 140,
+      "doc": ""
+    },
+    {
+      "name": "three",
+      "kind": "Property",
+      "signature": "out property <int> three: 3;",
+      "line": 149,
+      "doc": ""
+    },
+    {
+      "name": "four",
+      "kind": "Property",
+      "signature": "out property <int> four:  4;",
+      "line": 158,
+      "doc": ""
+    },
+    {
+      "name": "five",
+      "kind": "Property",
+      "signature": "out property <int> five:  5;",
+      "line": 167,
+      "doc": ""
+    },
+    {
+      "name": "six",
+      "kind": "Property",
+      "signature": "out property <int> six:   6;",
+      "line": 176,
+      "doc": ""
+    },
+    {
+      "name": "ten",
+      "kind": "Property",
+      "signature": "out property <int> ten:  10;",
+      "line": 185,
+      "doc": ""
+    },
+    {
+      "name": "eleven",
+      "kind": "Property",
+      "signature": "out property <int> eleven: 11;",
+      "line": 194,
+      "doc": ""
+    },
+    {
+      "name": "hundred",
+      "kind": "Property",
+      "signature": "out property <int> hundred: 100;",
+      "line": 203,
+      "doc": ""
+    },
+    {
+      "name": "border-w",
+      "kind": "Property",
+      "signature": "out property <length> border-w:    1px;",
+      "line": 214,
+      "doc": ""
+    },
+    {
+      "name": "border-w-2",
+      "kind": "Property",
+      "signature": "out property <length> border-w-2:  2px;",
+      "line": 223,
+      "doc": ""
+    },
+    {
+      "name": "border-w-3",
+      "kind": "Property",
+      "signature": "out property <length> border-w-3:  3px;",
+      "line": 232,
+      "doc": ""
+    },
+    {
+      "name": "no-size",
+      "kind": "Property",
+      "signature": "out property <length> no-size:     0px;",
+      "line": 241,
+      "doc": ""
+    },
+    {
+      "name": "docs-window-width",
+      "kind": "Property",
+      "signature": "out property <length> docs-window-width:      1100px;",
+      "line": 252,
+      "doc": ""
+    },
+    {
+      "name": "docs-window-height",
+      "kind": "Property",
+      "signature": "out property <length> docs-window-height:     720px;",
+      "line": 261,
+      "doc": ""
+    },
+    {
+      "name": "docs-window-min-width",
+      "kind": "Property",
+      "signature": "out property <length> docs-window-min-width:  400px;",
+      "line": 270,
+      "doc": ""
+    },
+    {
+      "name": "docs-window-min-height",
+      "kind": "Property",
+      "signature": "out property <length> docs-window-min-height: 300px;",
+      "line": 279,
+      "doc": ""
+    },
+    {
+      "name": "docs-content-min-width",
+      "kind": "Property",
+      "signature": "out property <length> docs-content-min-width: 144px;",
+      "line": 288,
+      "doc": ""
+    },
+    {
+      "name": "sidebar-toc-min-height",
+      "kind": "Property",
+      "signature": "out property <length> sidebar-toc-min-height: 144px;",
+      "line": 297,
+      "doc": ""
+    },
+    {
+      "name": "win-width-xl",
+      "kind": "Property",
+      "signature": "out property <length> win-width-xl:    1280px;",
+      "line": 308,
+      "doc": ""
+    },
+    {
+      "name": "win-height-xl",
+      "kind": "Property",
+      "signature": "out property <length> win-height-xl:   800px;",
+      "line": 317,
+      "doc": ""
+    },
+    {
+      "name": "win-width-lg",
+      "kind": "Property",
+      "signature": "out property <length> win-width-lg:    1100px;",
+      "line": 326,
+      "doc": ""
+    },
+    {
+      "name": "win-height-lg",
+      "kind": "Property",
+      "signature": "out property <length> win-height-lg:   720px;",
+      "line": 335,
+      "doc": ""
+    },
+    {
+      "name": "win-width-md",
+      "kind": "Property",
+      "signature": "out property <length> win-width-md:    1000px;",
+      "line": 344,
+      "doc": ""
+    },
+    {
+      "name": "win-height-md",
+      "kind": "Property",
+      "signature": "out property <length> win-height-md:   700px;",
+      "line": 353,
+      "doc": ""
+    },
+    {
+      "name": "win-width-sm",
+      "kind": "Property",
+      "signature": "out property <length> win-width-sm:    900px;",
+      "line": 362,
+      "doc": ""
+    },
+    {
+      "name": "win-height-sm",
+      "kind": "Property",
+      "signature": "out property <length> win-height-sm:   600px;",
+      "line": 371,
+      "doc": ""
+    },
+    {
+      "name": "mobile-width",
+      "kind": "Property",
+      "signature": "out property <length> mobile-width:    390px;",
+      "line": 382,
+      "doc": ""
+    },
+    {
+      "name": "mobile-height",
+      "kind": "Property",
+      "signature": "out property <length> mobile-height:   844px;",
+      "line": 391,
+      "doc": ""
+    },
+    {
+      "name": "icon-sm",
+      "kind": "Property",
+      "signature": "out property <length> icon-sm:     16px;",
+      "line": 402,
+      "doc": ""
+    },
+    {
+      "name": "icon-md",
+      "kind": "Property",
+      "signature": "out property <length> icon-md:     20px;",
+      "line": 411,
+      "doc": ""
+    },
+    {
+      "name": "icon-lg",
+      "kind": "Property",
+      "signature": "out property <length> icon-lg:     24px;",
+      "line": 420,
+      "doc": ""
+    },
+    {
+      "name": "icon-xl",
+      "kind": "Property",
+      "signature": "out property <length> icon-xl:     32px;",
+      "line": 429,
+      "doc": ""
+    },
+    {
+      "name": "icon-xxl",
+      "kind": "Property",
+      "signature": "out property <length> icon-xxl:    36px;",
+      "line": 438,
+      "doc": ""
+    },
+    {
+      "name": "thumb-sm",
+      "kind": "Property",
+      "signature": "out property <length> thumb-sm:    80px;",
+      "line": 448,
+      "doc": ""
+    },
+    {
+      "name": "thumb-md",
+      "kind": "Property",
+      "signature": "out property <length> thumb-md:    100px;",
+      "line": 457,
+      "doc": ""
+    },
+    {
+      "name": "thumb-lg",
+      "kind": "Property",
+      "signature": "out property <length> thumb-lg:    120px;",
+      "line": 466,
+      "doc": ""
+    },
+    {
+      "name": "panel-xs",
+      "kind": "Property",
+      "signature": "out property <length> panel-xs:    180px;",
+      "line": 476,
+      "doc": ""
+    },
+    {
+      "name": "panel-sm",
+      "kind": "Property",
+      "signature": "out property <length> panel-sm:    200px;",
+      "line": 485,
+      "doc": ""
+    },
+    {
+      "name": "panel-md",
+      "kind": "Property",
+      "signature": "out property <length> panel-md:    220px;",
+      "line": 494,
+      "doc": ""
+    },
+    {
+      "name": "panel-lg",
+      "kind": "Property",
+      "signature": "out property <length> panel-lg:    280px;",
+      "line": 503,
+      "doc": ""
+    },
+    {
+      "name": "panel-xl",
+      "kind": "Property",
+      "signature": "out property <length> panel-xl:    300px;",
+      "line": 512,
+      "doc": ""
+    },
+    {
+      "name": "panel-xxl",
+      "kind": "Property",
+      "signature": "out property <length> panel-xxl:   320px;",
+      "line": 521,
+      "doc": ""
+    },
+    {
+      "name": "panel-xxxl",
+      "kind": "Property",
+      "signature": "out property <length> panel-xxxl:  360px;",
+      "line": 530,
+      "doc": ""
+    },
+    {
+      "name": "panel-max",
+      "kind": "Property",
+      "signature": "out property <length> panel-max:   400px;",
+      "line": 539,
+      "doc": ""
+    },
+    {
+      "name": "panel-wide",
+      "kind": "Property",
+      "signature": "out property <length> panel-wide:  500px;",
+      "line": 548,
+      "doc": ""
+    },
+    {
+      "name": "content-md",
+      "kind": "Property",
+      "signature": "out property <length> content-md:   600px;",
+      "line": 559,
+      "doc": ""
+    },
+    {
+      "name": "content-lg",
+      "kind": "Property",
+      "signature": "out property <length> content-lg:   700px;",
+      "line": 568,
+      "doc": ""
+    },
+    {
+      "name": "content-xl",
+      "kind": "Property",
+      "signature": "out property <length> content-xl:   800px;",
+      "line": 577,
+      "doc": ""
+    },
+    {
+      "name": "glyph-sm",
+      "kind": "Property",
+      "signature": "out property <length> glyph-sm:    10px;",
+      "line": 588,
+      "doc": ""
+    },
+    {
+      "name": "glyph-md",
+      "kind": "Property",
+      "signature": "out property <length> glyph-md:    14px;",
+      "line": 597,
+      "doc": ""
+    },
+    {
+      "name": "glyph-lg",
+      "kind": "Property",
+      "signature": "out property <length> glyph-lg:    16px;",
+      "line": 606,
+      "doc": ""
+    },
+    {
+      "name": "glyph-xl",
+      "kind": "Property",
+      "signature": "out property <length> glyph-xl:    20px;",
+      "line": 615,
+      "doc": ""
+    },
+    {
+      "name": "handle-w",
+      "kind": "Property",
+      "signature": "out property <length> handle-w:    9px;",
+      "line": 626,
+      "doc": ""
+    },
+    {
+      "name": "track-h",
+      "kind": "Property",
+      "signature": "out property <length> track-h:     4px;",
+      "line": 635,
+      "doc": ""
+    },
+    {
+      "name": "comp-6",
+      "kind": "Property",
+      "signature": "out property <length> comp-6:   6px;",
+      "line": 646,
+      "doc": ""
+    },
+    {
+      "name": "comp-9",
+      "kind": "Property",
+      "signature": "out property <length> comp-9:   9px;",
+      "line": 655,
+      "doc": ""
+    },
+    {
+      "name": "comp-12",
+      "kind": "Property",
+      "signature": "out property <length> comp-12: 12px;",
+      "line": 664,
+      "doc": ""
+    },
+    {
+      "name": "comp-36",
+      "kind": "Property",
+      "signature": "out property <length> comp-36: 36px;",
+      "line": 673,
+      "doc": ""
+    },
+    {
+      "name": "comp-60",
+      "kind": "Property",
+      "signature": "out property <length> comp-60: 60px;",
+      "line": 682,
+      "doc": ""
+    },
+    {
+      "name": "comp-64",
+      "kind": "Property",
+      "signature": "out property <length> comp-64: 64px;",
+      "line": 691,
+      "doc": ""
+    },
+    {
+      "name": "comp-72",
+      "kind": "Property",
+      "signature": "out property <length> comp-72: 72px;",
+      "line": 700,
+      "doc": ""
+    },
+    {
+      "name": "comp-140",
+      "kind": "Property",
+      "signature": "out property <length> comp-140: 140px;",
+      "line": 709,
+      "doc": ""
+    },
+    {
+      "name": "comp-160",
+      "kind": "Property",
+      "signature": "out property <length> comp-160: 160px;",
+      "line": 718,
+      "doc": ""
+    },
+    {
+      "name": "comp-180",
+      "kind": "Property",
+      "signature": "out property <length> comp-180: 180px;",
+      "line": 727,
+      "doc": ""
+    },
+    {
+      "name": "comp-240",
+      "kind": "Property",
+      "signature": "out property <length> comp-240: 240px;",
+      "line": 736,
+      "doc": ""
+    },
+    {
+      "name": "comp-260",
+      "kind": "Property",
+      "signature": "out property <length> comp-260: 260px;",
+      "line": 745,
+      "doc": ""
+    },
+    {
+      "name": "comp-380",
+      "kind": "Property",
+      "signature": "out property <length> comp-380: 380px;",
+      "line": 754,
+      "doc": ""
+    },
+    {
+      "name": "comp-120",
+      "kind": "Property",
+      "signature": "out property <length> comp-120: 120px;",
+      "line": 763,
+      "doc": ""
+    },
+    {
+      "name": "comp-130",
+      "kind": "Property",
+      "signature": "out property <length> comp-130: 130px;",
+      "line": 772,
+      "doc": ""
+    },
+    {
+      "name": "comp-340",
+      "kind": "Property",
+      "signature": "out property <length> comp-340: 340px;",
+      "line": 781,
+      "doc": ""
+    },
+    {
+      "name": "comp-420",
+      "kind": "Property",
+      "signature": "out property <length> comp-420: 420px;",
+      "line": 790,
+      "doc": ""
+    },
+    {
+      "name": "comp-480",
+      "kind": "Property",
+      "signature": "out property <length> comp-480: 480px;",
+      "line": 799,
+      "doc": ""
+    },
+    {
+      "name": "comp-40",
+      "kind": "Property",
+      "signature": "out property <length> comp-40:  40px;",
+      "line": 808,
+      "doc": ""
+    },
+    {
+      "name": "percent-80",
+      "kind": "Property",
+      "signature": "out property <float> percent-80: 0.80;",
+      "line": 819,
+      "doc": ""
+    },
+    {
+      "name": "percent-60",
+      "kind": "Property",
+      "signature": "out property <float> percent-60: 0.60;",
+      "line": 828,
+      "doc": ""
+    },
+    {
+      "name": "alpha-12",
+      "kind": "Property",
+      "signature": "out property <float> alpha-12: 0.12;",
+      "line": 839,
+      "doc": ""
+    },
+    {
+      "name": "alpha-10",
+      "kind": "Property",
+      "signature": "out property <float> alpha-10: 0.10;",
+      "line": 848,
+      "doc": ""
+    },
+    {
+      "name": "alpha-15",
+      "kind": "Property",
+      "signature": "out property <float> alpha-15: 0.15;",
+      "line": 857,
+      "doc": ""
+    },
+    {
+      "name": "alpha-30",
+      "kind": "Property",
+      "signature": "out property <float> alpha-30: 0.30;",
+      "line": 866,
+      "doc": ""
+    },
+    {
+      "name": "ratio-55",
+      "kind": "Property",
+      "signature": "out property <float> ratio-55: 0.55;",
+      "line": 877,
+      "doc": ""
+    },
+    {
+      "name": "seven",
+      "kind": "Property",
+      "signature": "out property <int> seven:   7;",
+      "line": 888,
+      "doc": ""
+    },
+    {
+      "name": "eight",
+      "kind": "Property",
+      "signature": "out property <int> eight:   8;",
+      "line": 897,
+      "doc": ""
+    },
+    {
+      "name": "nine",
+      "kind": "Property",
+      "signature": "out property <int> nine:    9;",
+      "line": 906,
+      "doc": ""
+    },
+    {
+      "name": "twelve",
+      "kind": "Property",
+      "signature": "out property <int> twelve: 12;",
+      "line": 915,
+      "doc": ""
+    },
+    {
+      "name": "twenty",
+      "kind": "Property",
+      "signature": "out property <int> twenty: 20;",
+      "line": 924,
+      "doc": ""
+    },
+    {
+      "name": "thirty",
+      "kind": "Property",
+      "signature": "out property <int> thirty: 30;",
+      "line": 933,
+      "doc": ""
+    },
+    {
+      "name": "ninety-nine",
+      "kind": "Property",
+      "signature": "out property <int> ninety-nine: 99;",
+      "line": 942,
+      "doc": ""
+    }
+  ]
+}

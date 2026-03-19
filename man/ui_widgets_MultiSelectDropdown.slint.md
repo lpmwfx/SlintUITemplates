@@ -2,7 +2,7 @@
 
 ## `export component MultiSelectDropdown inherits Rectangle {`
 
-*Line 9 · component*
+*Line 15 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <[MultiSelectOption]> options: [];`
 
-*Line 12 · property*
+*Line 24 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `callback item-selected(string);`
 
-*Line 15 · callback*
+*Line 33 · callback*
 
 **undocumented**
 

@@ -2,7 +2,7 @@
 
 ## `export component TeachingTip inherits Rectangle {`
 
-*Line 19 · component*
+*Line 26 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <length> window-height;`
 
-*Line 22 · property*
+*Line 35 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <string> title: "";`
 
-*Line 25 · property*
+*Line 44 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `in property <string> body: "";`
 
-*Line 28 · property*
+*Line 53 · property*
 
 **undocumented**
 
@@ -34,7 +34,7 @@
 
 ## `in property <string> action-label: "Got it";`
 
-*Line 31 · property*
+*Line 62 · property*
 
 **undocumented**
 
@@ -42,7 +42,7 @@
 
 ## `in property <string> dismiss-label: "";`
 
-*Line 34 · property*
+*Line 71 · property*
 
 **undocumented**
 
@@ -50,7 +50,7 @@
 
 ## `callback action();`
 
-*Line 37 · callback*
+*Line 80 · callback*
 
 **undocumented**
 
@@ -58,47 +58,47 @@
 
 ## `callback dismissed();`
 
-*Line 40 · callback*
+*Line 89 · callback*
 
 **undocumented**
 
 ---
 
-## `private property <length> pop-x:    0px;`
+## `private property <length> pop-x:    Sizes.no-size;`
 
-*Line 44 · property*
-
-**undocumented**
-
----
-
-## `private property <length> pop-y:    0px;`
-
-*Line 47 · property*
+*Line 99 · property*
 
 **undocumented**
 
 ---
 
-## `private property <length> popup-w:  260px;`
+## `private property <length> pop-y:    Sizes.no-size;`
 
-*Line 50 · property*
-
-**undocumented**
-
----
-
-## `private property <length> popup-h:  180px;`
-
-*Line 53 · property*
+*Line 108 · property*
 
 **undocumented**
 
 ---
 
-## `private property <length> arrow-sz: 10px;`
+## `private property <length> popup-w:  Sizes.comp-260;`
 
-*Line 56 · property*
+*Line 117 · property*
+
+**undocumented**
+
+---
+
+## `private property <length> popup-h:  Sizes.comp-180;`
+
+*Line 126 · property*
+
+**undocumented**
+
+---
+
+## `private property <length> arrow-sz: Sizes.glyph-sm;`
+
+*Line 135 · property*
 
 **undocumented**
 
@@ -106,7 +106,7 @@
 
 ## `private property <bool>   flip-up:  false;`
 
-*Line 59 · property*
+*Line 144 · property*
 
 **undocumented**
 

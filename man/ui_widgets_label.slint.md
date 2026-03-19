@@ -2,15 +2,15 @@
 
 ## `export component Label inherits HorizontalLayout {`
 
-*Line 5 · component*
+*Line 12 · component*
 
 **undocumented**
 
 ---
 
-## `in property <string> text: "";`
+## `in property <string> text: Strings.label-default;`
 
-*Line 8 · property*
+*Line 21 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <bool>   required: false;`
 
-*Line 11 · property*
+*Line 30 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `in property <bool>   disabled: false;`
 
-*Line 14 · property*
+*Line 39 · property*
 
 **undocumented**
 
@@ -34,15 +34,15 @@
 
 ## `private property <length> half-xs:  Spacing.xs / 2;`
 
-*Line 18 · property*
+*Line 49 · property*
 
 **undocumented**
 
 ---
 
-## `private property <string> req-mark: " *";`
+## `private property <string> req-mark: "*";`
 
-*Line 21 · property*
+*Line 58 · property*
 
 **undocumented**
 

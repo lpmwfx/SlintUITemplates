@@ -5,28 +5,28 @@
       "name": "PopupCbfDemo",
       "kind": "Component",
       "signature": "export component PopupCbfDemo inherits Rectangle {",
-      "line": 6,
+      "line": 14,
       "doc": ""
     },
     {
       "name": "window-height",
       "kind": "Property",
       "signature": "in property <length> window-height;",
-      "line": 9,
+      "line": 23,
       "doc": ""
     },
     {
       "name": "cbf-w",
       "kind": "Property",
-      "signature": "private property <length> cbf-w:     180px;",
-      "line": 13,
+      "signature": "private property <length> cbf-w:     Sizes.panel-xs;",
+      "line": 33,
       "doc": ""
     },
     {
       "name": "border-px",
       "kind": "Property",
-      "signature": "private property <length> border-px: 1px;",
-      "line": 16,
+      "signature": "private property <length> border-px: Sizes.border-w;",
+      "line": 42,
       "doc": ""
     }
   ]

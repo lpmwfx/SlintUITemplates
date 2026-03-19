@@ -2,15 +2,15 @@
 
 ## `export component StatusBar inherits Rectangle {`
 
-*Line 6 · component*
+*Line 13 · component*
 
 **undocumented**
 
 ---
 
-## `in property <string> status-text: "Ready";`
+## `in property <string> status-text: Strings.app-status-ready;`
 
-*Line 9 · property*
+*Line 22 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <float>  progress: Sizes.no-fill;`
 
-*Line 12 · property*
+*Line 31 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `in property <bool>   show-progress: false;`
 
-*Line 15 · property*
+*Line 40 · property*
 
 **undocumented**
 

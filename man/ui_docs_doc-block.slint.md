@@ -2,7 +2,7 @@
 
 ## `export struct DocBlock {`
 
-*Line 5 · struct*
+*Line 11 · struct*
 
 **undocumented**
 

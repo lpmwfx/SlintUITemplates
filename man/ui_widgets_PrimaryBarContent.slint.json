@@ -5,42 +5,42 @@
       "name": "PrimaryBarContent",
       "kind": "Component",
       "signature": "export component PrimaryBarContent inherits Rectangle {",
-      "line": 9,
+      "line": 15,
       "doc": ""
     },
     {
       "name": "primary",
       "kind": "Property",
       "signature": "in property <[CbfAction]> primary;",
-      "line": 12,
+      "line": 24,
       "doc": ""
     },
     {
       "name": "has-secondary",
       "kind": "Property",
       "signature": "in property <bool>        has-secondary;",
-      "line": 15,
+      "line": 33,
       "doc": ""
     },
     {
       "name": "border-px",
       "kind": "Property",
       "signature": "in property <length>      border-px;",
-      "line": 18,
+      "line": 42,
       "doc": ""
     },
     {
       "name": "item-activated",
       "kind": "Callback",
       "signature": "callback item-activated(string);",
-      "line": 21,
+      "line": 51,
       "doc": ""
     },
     {
       "name": "show-secondary",
       "kind": "Callback",
       "signature": "callback show-secondary();",
-      "line": 24,
+      "line": 60,
       "doc": ""
     }
   ]

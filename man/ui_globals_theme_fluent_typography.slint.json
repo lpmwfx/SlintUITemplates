@@ -1,0 +1,103 @@
+{
+  "source": "ui/globals/theme/fluent/typography.slint",
+  "items": [
+    {
+      "name": "caption",
+      "kind": "Property",
+      "signature": "out property <length> caption:      Settings.zoom * Settings.font-scale * 12px;",
+      "line": 17,
+      "doc": ""
+    },
+    {
+      "name": "body",
+      "kind": "Property",
+      "signature": "out property <length> body:         Settings.zoom * Settings.font-scale * 14px;",
+      "line": 26,
+      "doc": ""
+    },
+    {
+      "name": "body-strong",
+      "kind": "Property",
+      "signature": "out property <length> body-strong:  Settings.zoom * Settings.font-scale * 14px;",
+      "line": 35,
+      "doc": ""
+    },
+    {
+      "name": "subtitle",
+      "kind": "Property",
+      "signature": "out property <length> subtitle:     Settings.zoom * Settings.font-scale * 20px;",
+      "line": 44,
+      "doc": ""
+    },
+    {
+      "name": "title",
+      "kind": "Property",
+      "signature": "out property <length> title:        Settings.zoom * Settings.font-scale * 28px;",
+      "line": 53,
+      "doc": ""
+    },
+    {
+      "name": "title-large",
+      "kind": "Property",
+      "signature": "out property <length> title-large:  Settings.zoom * Settings.font-scale * 40px;",
+      "line": 62,
+      "doc": ""
+    },
+    {
+      "name": "display",
+      "kind": "Property",
+      "signature": "out property <length> display:      Settings.zoom * Settings.font-scale * 68px;",
+      "line": 71,
+      "doc": ""
+    },
+    {
+      "name": "weight-regular",
+      "kind": "Property",
+      "signature": "out property <int> weight-regular:  400;",
+      "line": 82,
+      "doc": ""
+    },
+    {
+      "name": "weight-medium",
+      "kind": "Property",
+      "signature": "out property <int> weight-medium:   500;",
+      "line": 91,
+      "doc": ""
+    },
+    {
+      "name": "weight-semibold",
+      "kind": "Property",
+      "signature": "out property <int> weight-semibold: 600;",
+      "line": 100,
+      "doc": ""
+    },
+    {
+      "name": "weight-bold",
+      "kind": "Property",
+      "signature": "out property <int> weight-bold:     700;",
+      "line": 109,
+      "doc": ""
+    },
+    {
+      "name": "font-text",
+      "kind": "Property",
+      "signature": "out property <string> font-text:   \"Segoe UI\";",
+      "line": 120,
+      "doc": ""
+    },
+    {
+      "name": "font-icons",
+      "kind": "Property",
+      "signature": "out property <string> font-icons:  \"Segoe Fluent Icons\";",
+      "line": 129,
+      "doc": ""
+    },
+    {
+      "name": "font-mono",
+      "kind": "Property",
+      "signature": "out property <string> font-mono:   \"Cascadia Code\";",
+      "line": 138,
+      "doc": ""
+    }
+  ]
+}

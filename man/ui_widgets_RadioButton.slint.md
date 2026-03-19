@@ -2,7 +2,7 @@
 
 ## `export component RadioButton inherits Rectangle {`
 
-*Line 6 · component*
+*Line 12 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <bool>   checked: false;`
 
-*Line 9 · property*
+*Line 21 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <string> label: "";`
 
-*Line 12 · property*
+*Line 30 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `in property <bool>   enabled: true;`
 
-*Line 15 · property*
+*Line 39 · property*
 
 **undocumented**
 
@@ -34,23 +34,23 @@
 
 ## `callback clicked();`
 
-*Line 18 · callback*
+*Line 48 · callback*
 
 **undocumented**
 
 ---
 
-## `private property <length> circle-size: Spacing.md + Spacing.xs;   // 20px`
+## `private property <length> circle-size: Spacing.md + Spacing.xs;`
 
-*Line 22 · property*
+*Line 58 · property*
 
 **undocumented**
 
 ---
 
-## `private property <length> dot-size:    Spacing.sm + Spacing.xs;   // 10px`
+## `private property <length> dot-size:    Spacing.sm + Spacing.xs;`
 
-*Line 25 · property*
+*Line 67 · property*
 
 **undocumented**
 
@@ -58,7 +58,7 @@
 
 ## `private property <length> ring-border: Sizes.border-w-2;`
 
-*Line 28 · property*
+*Line 76 · property*
 
 **undocumented**
 

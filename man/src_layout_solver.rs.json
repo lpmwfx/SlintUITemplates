@@ -5,42 +5,42 @@
       "name": "SolvedItem",
       "kind": "Struct",
       "signature": "pub struct SolvedItem",
-      "line": 14,
+      "line": 15,
       "doc": "A positioned layout element with normalized coordinates ready for rendering.\nS ol ve di te m struct."
     },
     {
       "name": "ItemKind",
       "kind": "Enum",
       "signature": "pub enum ItemKind { Panel, HandleH, HandleV }",
-      "line": 34,
+      "line": 35,
       "doc": "Discriminates between content panels and drag handles in a solved layout.\nI te mk in d enum."
     },
     {
       "name": "as_str",
       "kind": "Fn",
       "signature": "pub fn as_str(&self) -> &'static str",
-      "line": 38,
+      "line": 39,
       "doc": "Return a stable string identifier for this item kind."
     },
     {
       "name": "Solver",
       "kind": "Struct",
       "signature": "pub struct Solver",
-      "line": 48,
+      "line": 49,
       "doc": "Walks a `PanelNode` tree and emits flat `SolvedItem` rectangles with normalized coordinates."
     },
     {
       "name": "new",
       "kind": "Fn",
       "signature": "pub fn new(win_w: f32, win_h: f32) -> Self",
-      "line": 58,
+      "line": 59,
       "doc": "Create a solver targeting the given window pixel dimensions."
     },
     {
       "name": "solve",
       "kind": "Fn",
       "signature": "pub fn solve(mut self, root: &PanelNode) -> Vec<SolvedItem>",
-      "line": 63,
+      "line": 64,
       "doc": "Consume the solver, recursively visit the tree, and return all solved items."
     }
   ]

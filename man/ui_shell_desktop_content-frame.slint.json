@@ -5,7 +5,7 @@
       "name": "ShellContentFrame",
       "kind": "Component",
       "signature": "export component ShellContentFrame inherits Rectangle {",
-      "line": 8,
+      "line": 14,
       "doc": ""
     }
   ]

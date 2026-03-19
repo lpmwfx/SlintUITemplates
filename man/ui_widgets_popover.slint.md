@@ -2,7 +2,7 @@
 
 ## `export component Popover inherits Rectangle {`
 
-*Line 19 · component*
+*Line 26 · component*
 
 **undocumented**
 
@@ -10,23 +10,23 @@
 
 ## `in property <bool>   open: false;`
 
-*Line 22 · property*
+*Line 35 · property*
 
 **undocumented**
 
 ---
 
-## `in property <length> popup-width:  220px;`
+## `in property <length> popup-width:  Sizes.panel-md;`
 
-*Line 25 · property*
+*Line 44 · property*
 
 **undocumented**
 
 ---
 
-## `in property <length> popup-height: 140px;`
+## `in property <length> popup-height: Sizes.comp-140;`
 
-*Line 28 · property*
+*Line 53 · property*
 
 **undocumented**
 
@@ -34,7 +34,7 @@
 
 ## `in property <string> title: "";`
 
-*Line 31 · property*
+*Line 62 · property*
 
 **undocumented**
 
@@ -42,7 +42,7 @@
 
 ## `in property <string> body: "";`
 
-*Line 34 · property*
+*Line 71 · property*
 
 **undocumented**
 
@@ -50,7 +50,7 @@
 
 ## `callback close-requested();`
 
-*Line 37 · callback*
+*Line 80 · callback*
 
 **undocumented**
 

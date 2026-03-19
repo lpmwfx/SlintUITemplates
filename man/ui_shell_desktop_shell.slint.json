@@ -5,77 +5,77 @@
       "name": "DesktopShell",
       "kind": "Component",
       "signature": "export component DesktopShell inherits VerticalLayout {",
-      "line": 17,
+      "line": 24,
       "doc": ""
     },
     {
       "name": "nav-items",
       "kind": "Property",
       "signature": "in property <[NavItem]>          nav-items;",
-      "line": 20,
+      "line": 33,
       "doc": ""
     },
     {
       "name": "toolbar-items",
       "kind": "Property",
       "signature": "in property <[ShellToolbarItem]> toolbar-items;",
-      "line": 23,
+      "line": 42,
       "doc": ""
     },
     {
       "name": "show-toolbar",
       "kind": "Property",
       "signature": "in property <bool>               show-toolbar: false;",
-      "line": 26,
+      "line": 51,
       "doc": ""
     },
     {
       "name": "active-view",
       "kind": "Property",
       "signature": "in property <string>             active-view: \"\";",
-      "line": 29,
+      "line": 60,
       "doc": ""
     },
     {
       "name": "status-text",
       "kind": "Property",
-      "signature": "in property <string>             status-text: \"Ready\";",
-      "line": 32,
+      "signature": "in property <string>             status-text: Strings.app-status-ready;",
+      "line": 69,
       "doc": ""
     },
     {
       "name": "progress",
       "kind": "Property",
       "signature": "in property <float>              progress: -1.0;",
-      "line": 35,
+      "line": 78,
       "doc": ""
     },
     {
       "name": "nav-width",
       "kind": "Property",
       "signature": "private property <length> nav-width: Sizes.panel-sm;",
-      "line": 40,
+      "line": 89,
       "doc": ""
     },
     {
       "name": "nav-collapsed",
       "kind": "Property",
       "signature": "private property <bool>   nav-collapsed: nav-width <= Spacing.xl + Spacing.sm + Spacing.xs;",
-      "line": 43,
+      "line": 98,
       "doc": ""
     },
     {
       "name": "navigate",
       "kind": "Callback",
       "signature": "callback navigate(string);",
-      "line": 47,
+      "line": 108,
       "doc": ""
     },
     {
       "name": "toolbar-clicked",
       "kind": "Callback",
       "signature": "callback toolbar-clicked(string);",
-      "line": 50,
+      "line": 117,
       "doc": ""
     }
   ]

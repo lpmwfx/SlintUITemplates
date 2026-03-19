@@ -5,28 +5,28 @@
       "name": "SpinButton",
       "kind": "Component",
       "signature": "export component SpinButton inherits Rectangle {",
-      "line": 6,
+      "line": 12,
       "doc": ""
     },
     {
       "name": "label",
       "kind": "Property",
       "signature": "in property <string> label;",
-      "line": 9,
+      "line": 21,
       "doc": ""
     },
     {
       "name": "btn-enabled",
       "kind": "Property",
       "signature": "in property <bool>   btn-enabled: true;",
-      "line": 12,
+      "line": 30,
       "doc": ""
     },
     {
       "name": "clicked",
       "kind": "Callback",
       "signature": "callback clicked();",
-      "line": 15,
+      "line": 39,
       "doc": ""
     }
   ]

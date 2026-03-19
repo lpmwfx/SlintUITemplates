@@ -2,7 +2,7 @@
 
 ## `export component NavItemRow inherits Rectangle {`
 
-*Line 7 · component*
+*Line 13 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <string> item-id;`
 
-*Line 10 · property*
+*Line 22 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <string> icon;`
 
-*Line 13 · property*
+*Line 31 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `in property <string> label;`
 
-*Line 16 · property*
+*Line 40 · property*
 
 **undocumented**
 
@@ -34,7 +34,7 @@
 
 ## `in property <string> icon-font;`
 
-*Line 19 · property*
+*Line 49 · property*
 
 **undocumented**
 
@@ -42,7 +42,7 @@
 
 ## `in property <bool>   is-active: false;`
 
-*Line 22 · property*
+*Line 58 · property*
 
 **undocumented**
 
@@ -50,7 +50,7 @@
 
 ## `in property <bool>   collapsed: false;`
 
-*Line 25 · property*
+*Line 67 · property*
 
 **undocumented**
 
@@ -58,7 +58,7 @@
 
 ## `in property <float>  active-alpha;`
 
-*Line 28 · property*
+*Line 76 · property*
 
 **undocumented**
 
@@ -66,7 +66,7 @@
 
 ## `in property <length> indicator-w;`
 
-*Line 31 · property*
+*Line 85 · property*
 
 **undocumented**
 
@@ -74,7 +74,7 @@
 
 ## `in property <length> indicator-radius;`
 
-*Line 34 · property*
+*Line 94 · property*
 
 **undocumented**
 
@@ -82,7 +82,7 @@
 
 ## `callback clicked();`
 
-*Line 37 · callback*
+*Line 103 · callback*
 
 **undocumented**
 

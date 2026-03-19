@@ -1,0 +1,33 @@
+{
+  "source": "ui/state/scale.slint",
+  "items": [
+    {
+      "name": "icon-sm",
+      "kind": "Property",
+      "signature": "out property <length> icon-sm: Settings.zoom * 16px;",
+      "line": 14,
+      "doc": ""
+    },
+    {
+      "name": "icon-md",
+      "kind": "Property",
+      "signature": "out property <length> icon-md: Settings.zoom * 24px;",
+      "line": 19,
+      "doc": ""
+    },
+    {
+      "name": "icon-lg",
+      "kind": "Property",
+      "signature": "out property <length> icon-lg: Settings.zoom * 32px;",
+      "line": 24,
+      "doc": ""
+    },
+    {
+      "name": "icon-xl",
+      "kind": "Property",
+      "signature": "out property <length> icon-xl: Settings.zoom * 48px;",
+      "line": 29,
+      "doc": ""
+    }
+  ]
+}

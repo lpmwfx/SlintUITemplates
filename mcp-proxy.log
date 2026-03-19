@@ -1,0 +1,7 @@
+[2m2026-03-19T19:49:51.234267Z[0m [32m INFO[0m [2mmcp_proxy[0m[2m:[0m starting mcp-proxy
+[2m2026-03-19T19:49:51.234280Z[0m [32m INFO[0m [2mmcp_proxy[0m[2m:[0m using config file [3mconfig[0m[2m=[0m"C:/Users/mathi/.mcp/mcp-servers.json"
+[2m2026-03-19T19:49:51.234509Z[0m [32m INFO[0m [2mmcp_proxy::adapter[0m[2m:[0m loading servers from config [3mcount[0m[2m=[0m4
+[2m2026-03-19T19:49:51.248732Z[0m [32m INFO[0m [2mmcp_proxy::adapter[0m[2m:[0m loaded [3mserver[0m[2m=[0mgui-mcp
+[2m2026-03-19T19:49:51.571775Z[0m [32m INFO[0m [2mmcp_proxy::adapter[0m[2m:[0m loaded [3mserver[0m[2m=[0mrules
+[2m2026-03-19T19:49:51.582805Z[0m [32m INFO[0m [2mmcp_proxy::adapter[0m[2m:[0m loaded [3mserver[0m[2m=[0mrulestools
+[2m2026-03-19T19:49:51.594108Z[0m [32m INFO[0m [2mmcp_proxy::adapter[0m[2m:[0m loaded [3mserver[0m[2m=[0missuesmcp

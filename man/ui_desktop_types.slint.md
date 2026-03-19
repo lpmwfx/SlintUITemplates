@@ -2,7 +2,7 @@
 
 ## `export struct NavItem {`
 
-*Line 3 · struct*
+*Line 9 · struct*
 
 **undocumented**
 

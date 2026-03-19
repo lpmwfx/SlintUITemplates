@@ -5,63 +5,63 @@
       "name": "Chip",
       "kind": "Component",
       "signature": "export component Chip inherits Rectangle {",
-      "line": 6,
+      "line": 12,
       "doc": ""
     },
     {
       "name": "label",
       "kind": "Property",
       "signature": "in property <string> label: \"\";",
-      "line": 9,
+      "line": 21,
       "doc": ""
     },
     {
       "name": "closable",
       "kind": "Property",
       "signature": "in property <bool>   closable: true;",
-      "line": 12,
+      "line": 30,
       "doc": ""
     },
     {
       "name": "icon",
       "kind": "Property",
       "signature": "in property <string> icon: \"\";",
-      "line": 15,
+      "line": 39,
       "doc": ""
     },
     {
       "name": "selected",
       "kind": "Property",
       "signature": "in property <bool>   selected: false;",
-      "line": 18,
+      "line": 48,
       "doc": ""
     },
     {
       "name": "enabled",
       "kind": "Property",
       "signature": "in property <bool>   enabled: true;",
-      "line": 21,
+      "line": 57,
       "doc": ""
     },
     {
       "name": "closed",
       "kind": "Callback",
       "signature": "callback closed();",
-      "line": 24,
+      "line": 66,
       "doc": ""
     },
     {
       "name": "clicked",
       "kind": "Callback",
       "signature": "callback clicked();",
-      "line": 27,
+      "line": 75,
       "doc": ""
     },
     {
       "name": "close-icon-size",
       "kind": "Property",
-      "signature": "private property <length> close-icon-size: 10px;",
-      "line": 31,
+      "signature": "private property <length> close-icon-size: Sizes.glyph-sm;",
+      "line": 85,
       "doc": ""
     }
   ]

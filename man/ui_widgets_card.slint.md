@@ -2,7 +2,7 @@
 
 ## `export component Card inherits Rectangle {`
 
-*Line 6 · component*
+*Line 12 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <string> title: "";`
 
-*Line 9 · property*
+*Line 21 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <string> subtitle: "";`
 
-*Line 12 · property*
+*Line 30 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `private property <length> shadow-y: Sizes.border-w-2;`
 
-*Line 16 · property*
+*Line 40 · property*
 
 **undocumented**
 

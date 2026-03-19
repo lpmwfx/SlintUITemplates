@@ -5,21 +5,21 @@
       "name": "MdCodeBlock",
       "kind": "Component",
       "signature": "export component MdCodeBlock inherits VerticalLayout {",
-      "line": 7,
+      "line": 13,
       "doc": ""
     },
     {
       "name": "text",
       "kind": "Property",
       "signature": "in property <string> text;",
-      "line": 10,
+      "line": 22,
       "doc": ""
     },
     {
       "name": "mono-font",
       "kind": "Property",
       "signature": "in property <string> mono-font: \"Consolas\";",
-      "line": 13,
+      "line": 31,
       "doc": ""
     }
   ]

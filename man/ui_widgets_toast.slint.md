@@ -2,7 +2,7 @@
 
 ## `export component Toast inherits Rectangle {`
 
-*Line 6 · component*
+*Line 12 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <string> message: "";`
 
-*Line 9 · property*
+*Line 21 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <string> variant: "info";   // info | success | warning | error`
 
-*Line 12 · property*
+*Line 30 · property*
 
 **undocumented**
 

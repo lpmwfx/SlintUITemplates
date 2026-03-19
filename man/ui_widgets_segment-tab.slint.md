@@ -2,7 +2,7 @@
 
 ## `export struct SegmentItem {`
 
-*Line 5 · struct*
+*Line 11 · struct*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `export component SegmentTab inherits Rectangle {`
 
-*Line 13 · component*
+*Line 25 · component*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <SegmentItem> item;`
 
-*Line 16 · property*
+*Line 34 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `in property <bool>        active: false;`
 
-*Line 19 · property*
+*Line 43 · property*
 
 **undocumented**
 
@@ -34,7 +34,7 @@
 
 ## `callback clicked(string);`
 
-*Line 22 · callback*
+*Line 52 · callback*
 
 **undocumented**
 

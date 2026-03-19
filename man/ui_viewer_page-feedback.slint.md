@@ -2,223 +2,223 @@
 
 ## `export component PageFeedback inherits VerticalLayout {`
 
-*Line 16 · component*
+*Line 17 · component*
 
 **undocumented**
 
 ---
 
-## `private property <string> var-info: "info";`
+## `private property <string> var-info: Variants.info;`
 
-*Line 22 · property*
-
-**undocumented**
-
----
-
-## `private property <string> var-sm: "sm";`
-
-*Line 25 · property*
+*Line 23 · property*
 
 **undocumented**
 
 ---
 
-## `private property <string> var-md: "md";`
+## `private property <string> var-sm: Variants.sm;`
 
-*Line 28 · property*
-
-**undocumented**
-
----
-
-## `private property <string> var-lg: "lg";`
-
-*Line 31 · property*
+*Line 26 · property*
 
 **undocumented**
 
 ---
 
-## `private property <string> section-toast: "Toast";`
+## `private property <string> var-md: Variants.md;`
 
-*Line 36 · property*
-
-**undocumented**
-
----
-
-## `private property <string> section-dialog: "Dialog";`
-
-*Line 39 · property*
+*Line 29 · property*
 
 **undocumented**
 
 ---
 
-## `private property <string> section-spinner: "Spinner";`
+## `private property <string> var-lg: Variants.lg;`
 
-*Line 42 · property*
-
-**undocumented**
-
----
-
-## `private property <string> section-alert: "Alert";`
-
-*Line 45 · property*
+*Line 32 · property*
 
 **undocumented**
 
 ---
 
-## `private property <string> section-tooltip: "Tooltip";`
+## `private property <string> section-toast: Strings.demo-section-toast;`
 
-*Line 48 · property*
-
-**undocumented**
-
----
-
-## `private property <string> toast-info-msg: "Information message";`
-
-*Line 51 · property*
+*Line 37 · property*
 
 **undocumented**
 
 ---
 
-## `private property <string> toast-success-msg: "Success! Operation complete";`
+## `private property <string> section-dialog: Strings.demo-section-dialog;`
 
-*Line 54 · property*
-
-**undocumented**
-
----
-
-## `private property <string> toast-warning-msg: "Warning: please check input";`
-
-*Line 57 · property*
+*Line 40 · property*
 
 **undocumented**
 
 ---
 
-## `private property <string> toast-error-msg: "Error: action failed";`
+## `private property <string> section-spinner: Strings.demo-section-spinner;`
 
-*Line 60 · property*
-
-**undocumented**
-
----
-
-## `private property <string> dialog-title: "Confirm Action";`
-
-*Line 63 · property*
+*Line 43 · property*
 
 **undocumented**
 
 ---
 
-## `private property <string> alert-info-msg: "This is an informational alert.";`
+## `private property <string> section-alert: Strings.demo-section-alert;`
 
-*Line 66 · property*
-
-**undocumented**
-
----
-
-## `private property <string> alert-success-title: "Success!";`
-
-*Line 69 · property*
+*Line 46 · property*
 
 **undocumented**
 
 ---
 
-## `private property <string> alert-success-msg: "Your changes have been saved.";`
+## `private property <string> section-tooltip: Strings.demo-section-tooltip;`
 
-*Line 72 · property*
-
-**undocumented**
-
----
-
-## `private property <string> alert-warning-title: "Warning";`
-
-*Line 75 · property*
+*Line 49 · property*
 
 **undocumented**
 
 ---
 
-## `private property <string> alert-warning-msg: "Please review before continuing.";`
+## `private property <string> toast-info-msg: Strings.demo-toast-info;`
 
-*Line 78 · property*
-
-**undocumented**
-
----
-
-## `private property <string> alert-error-title: "Error";`
-
-*Line 81 · property*
+*Line 52 · property*
 
 **undocumented**
 
 ---
 
-## `private property <string> alert-error-msg: "Something went wrong. Please try again.";`
+## `private property <string> toast-success-msg: Strings.demo-toast-success;`
 
-*Line 84 · property*
-
-**undocumented**
-
----
-
-## `private property <string> tooltip-top-text: "Top tooltip (default)";`
-
-*Line 87 · property*
+*Line 55 · property*
 
 **undocumented**
 
 ---
 
-## `private property <string> tooltip-bottom-text: "Bottom tooltip";`
+## `private property <string> toast-warning-msg: Strings.demo-toast-warning;`
 
-*Line 90 · property*
-
-**undocumented**
-
----
-
-## `private property <string> tooltip-right-text: "Right tooltip";`
-
-*Line 93 · property*
+*Line 58 · property*
 
 **undocumented**
 
 ---
 
-## `private property <string> btn-hover: "Hover me";`
+## `private property <string> toast-error-msg: Strings.demo-toast-error;`
 
-*Line 96 · property*
-
-**undocumented**
-
----
-
-## `private property <string> btn-bottom: "Bottom";`
-
-*Line 99 · property*
+*Line 61 · property*
 
 **undocumented**
 
 ---
 
-## `private property <string> btn-right: "Right";`
+## `private property <string> dialog-title: Strings.demo-dialog-title;`
 
-*Line 102 · property*
+*Line 64 · property*
+
+**undocumented**
+
+---
+
+## `private property <string> alert-info-msg: Strings.demo-alert-info-msg;`
+
+*Line 67 · property*
+
+**undocumented**
+
+---
+
+## `private property <string> alert-success-title: Strings.demo-alert-success-title;`
+
+*Line 70 · property*
+
+**undocumented**
+
+---
+
+## `private property <string> alert-success-msg: Strings.demo-alert-success-msg;`
+
+*Line 73 · property*
+
+**undocumented**
+
+---
+
+## `private property <string> alert-warning-title: Strings.demo-alert-warning-title;`
+
+*Line 76 · property*
+
+**undocumented**
+
+---
+
+## `private property <string> alert-warning-msg: Strings.demo-alert-warning-msg;`
+
+*Line 79 · property*
+
+**undocumented**
+
+---
+
+## `private property <string> alert-error-title: Strings.demo-alert-error-title;`
+
+*Line 82 · property*
+
+**undocumented**
+
+---
+
+## `private property <string> alert-error-msg: Strings.demo-alert-error-msg;`
+
+*Line 85 · property*
+
+**undocumented**
+
+---
+
+## `private property <string> tooltip-top-text: Strings.demo-tooltip-top;`
+
+*Line 88 · property*
+
+**undocumented**
+
+---
+
+## `private property <string> tooltip-bottom-text: Strings.demo-tooltip-bottom;`
+
+*Line 91 · property*
+
+**undocumented**
+
+---
+
+## `private property <string> tooltip-right-text: Strings.demo-tooltip-right;`
+
+*Line 94 · property*
+
+**undocumented**
+
+---
+
+## `private property <string> btn-hover: Strings.demo-btn-hover;`
+
+*Line 97 · property*
+
+**undocumented**
+
+---
+
+## `private property <string> btn-bottom: Strings.demo-btn-bottom;`
+
+*Line 100 · property*
+
+**undocumented**
+
+---
+
+## `private property <string> btn-right: Strings.demo-btn-right;`
+
+*Line 103 · property*
 
 **undocumented**
 
@@ -226,7 +226,7 @@
 
 ## `private property <length> dialog-w: Sizes.comp-480;`
 
-*Line 105 · property*
+*Line 106 · property*
 
 **undocumented**
 

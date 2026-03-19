@@ -2,7 +2,7 @@
 
 ## `export component DemoWindow inherits Window {`
 
-*Line 20 · component*
+*Line 26 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <string> window-title: "SlintUITemplates \u{2014} Phase 2 Demo";`
 
-*Line 25 · property*
+*Line 37 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <[NavItem]> nav-items: [`
 
-*Line 34 · property*
+*Line 52 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `in property <string> control-bar-label: "SlintUI \u{2014} Phase 2 Demo";`
 
-*Line 47 · property*
+*Line 71 · property*
 
 **undocumented**
 
@@ -34,7 +34,7 @@
 
 ## `in property <string> switch-to-mobile-label: "Switch to Mobile";`
 
-*Line 50 · property*
+*Line 80 · property*
 
 **undocumented**
 
@@ -42,7 +42,7 @@
 
 ## `in property <string> switch-to-desktop-label: "Switch to Desktop";`
 
-*Line 53 · property*
+*Line 89 · property*
 
 **undocumented**
 
@@ -50,7 +50,7 @@
 
 ## `in property <string> dark-label: "Dark";`
 
-*Line 56 · property*
+*Line 98 · property*
 
 **undocumented**
 
@@ -58,7 +58,7 @@
 
 ## `in property <string> status-prefix: "View: ";`
 
-*Line 59 · property*
+*Line 107 · property*
 
 **undocumented**
 

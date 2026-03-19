@@ -2,7 +2,7 @@
 
 ## `export component MdBlockquote inherits VerticalLayout {`
 
-*Line 8 · component*
+*Line 14 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <string> kind;`
 
-*Line 11 · property*
+*Line 23 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <string> text;`
 
-*Line 14 · property*
+*Line 32 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `private property <length> bar-w: Sizes.border-w-3;`
 
-*Line 18 · property*
+*Line 42 · property*
 
 **undocumented**
 
@@ -34,7 +34,7 @@
 
 ## `private property <length> bar-radius: Sizes.border-w-2;`
 
-*Line 21 · property*
+*Line 51 · property*
 
 **undocumented**
 

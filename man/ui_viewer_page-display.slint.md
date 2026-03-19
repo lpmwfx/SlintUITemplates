@@ -2,39 +2,39 @@
 
 ## `export component PageDisplay inherits VerticalLayout {`
 
-*Line 17 · component*
+*Line 18 · component*
 
 **undocumented**
 
 ---
 
-## `private property <string> var-info: "info";`
+## `private property <string> var-info: Variants.info;`
 
-*Line 23 · property*
-
-**undocumented**
-
----
-
-## `private property <string> var-sm: "sm";`
-
-*Line 26 · property*
+*Line 24 · property*
 
 **undocumented**
 
 ---
 
-## `private property <string> var-md: "md";`
+## `private property <string> var-sm: Variants.sm;`
 
-*Line 29 · property*
+*Line 27 · property*
 
 **undocumented**
 
 ---
 
-## `private property <string> var-lg: "lg";`
+## `private property <string> var-md: Variants.md;`
 
-*Line 32 · property*
+*Line 30 · property*
+
+**undocumented**
+
+---
+
+## `private property <string> var-lg: Variants.lg;`
+
+*Line 33 · property*
 
 **undocumented**
 
@@ -42,15 +42,15 @@
 
 ## `private property <string> var-rect: "rect";`
 
-*Line 35 · property*
+*Line 36 · property*
 
 **undocumented**
 
 ---
 
-## `private property <length> skel-circle-size: 40px;`
+## `private property <length> skel-circle-size: Sizes.comp-40;`
 
-*Line 40 · property*
+*Line 41 · property*
 
 **undocumented**
 
@@ -58,7 +58,7 @@
 
 ## `private property <float> progress-two-thirds: 0.66;`
 
-*Line 43 · property*
+*Line 44 · property*
 
 **undocumented**
 
@@ -66,7 +66,7 @@
 
 ## `private property <float> skel-full: Sizes.full;`
 
-*Line 46 · property*
+*Line 47 · property*
 
 **undocumented**
 
@@ -74,7 +74,7 @@
 
 ## `private property <float> skel-eighty: Sizes.percent-80;`
 
-*Line 49 · property*
+*Line 50 · property*
 
 **undocumented**
 
@@ -82,215 +82,215 @@
 
 ## `private property <float> skel-sixty: Sizes.percent-60;`
 
-*Line 52 · property*
+*Line 53 · property*
 
 **undocumented**
 
 ---
 
-## `private property <string> section-badge: "Badge";`
+## `private property <string> section-badge: Strings.demo-section-badge;`
 
-*Line 57 · property*
-
-**undocumented**
-
----
-
-## `private property <string> section-avatar: "Avatar";`
-
-*Line 60 · property*
+*Line 58 · property*
 
 **undocumented**
 
 ---
 
-## `private property <string> section-card: "Card";`
+## `private property <string> section-avatar: Strings.demo-section-avatar;`
 
-*Line 63 · property*
-
-**undocumented**
-
----
-
-## `private property <string> section-listitem: "ListItem";`
-
-*Line 66 · property*
+*Line 61 · property*
 
 **undocumented**
 
 ---
 
-## `private property <string> section-progress: "ProgressBar";`
+## `private property <string> section-card: Strings.demo-section-card;`
 
-*Line 69 · property*
-
-**undocumented**
-
----
-
-## `private property <string> section-chip: "Chip";`
-
-*Line 72 · property*
+*Line 64 · property*
 
 **undocumented**
 
 ---
 
-## `private property <string> section-skeleton: "Skeleton";`
+## `private property <string> section-listitem: Strings.demo-section-listitem;`
 
-*Line 75 · property*
-
-**undocumented**
-
----
-
-## `private property <string> badge-info: "Info";`
-
-*Line 78 · property*
+*Line 67 · property*
 
 **undocumented**
 
 ---
 
-## `private property <string> badge-success: "Success";`
+## `private property <string> section-progress: Strings.demo-section-progress;`
 
-*Line 81 · property*
-
-**undocumented**
-
----
-
-## `private property <string> badge-warning: "Warning";`
-
-*Line 84 · property*
+*Line 70 · property*
 
 **undocumented**
 
 ---
 
-## `private property <string> badge-error: "Error";`
+## `private property <string> section-chip: Strings.demo-section-chip;`
 
-*Line 87 · property*
-
-**undocumented**
-
----
-
-## `private property <string> card-title-only: "Title only";`
-
-*Line 90 · property*
+*Line 73 · property*
 
 **undocumented**
 
 ---
 
-## `private property <string> card-title: "Card Title";`
+## `private property <string> section-skeleton: Strings.demo-section-skeleton;`
 
-*Line 93 · property*
-
-**undocumented**
-
----
-
-## `private property <string> card-subtitle: "Supporting subtitle text";`
-
-*Line 96 · property*
+*Line 76 · property*
 
 **undocumented**
 
 ---
 
-## `private property <string> li-normal: "Normal item";`
+## `private property <string> badge-info: Strings.demo-badge-info;`
 
-*Line 99 · property*
-
-**undocumented**
-
----
-
-## `private property <string> li-selected: "Selected item";`
-
-*Line 102 · property*
+*Line 79 · property*
 
 **undocumented**
 
 ---
 
-## `private property <string> li-subtitle-title: "With subtitle";`
+## `private property <string> badge-success: Strings.demo-badge-success;`
 
-*Line 105 · property*
-
-**undocumented**
-
----
-
-## `private property <string> li-subtitle-text: "Subtitle text here";`
-
-*Line 108 · property*
+*Line 82 · property*
 
 **undocumented**
 
 ---
 
-## `private property <string> chip-default: "Default";`
+## `private property <string> badge-warning: Strings.demo-badge-warning;`
 
-*Line 111 · property*
-
-**undocumented**
-
----
-
-## `private property <string> chip-selected: "Selected";`
-
-*Line 114 · property*
+*Line 85 · property*
 
 **undocumented**
 
 ---
 
-## `private property <string> chip-noclose: "No close";`
+## `private property <string> badge-error: Strings.demo-badge-error;`
 
-*Line 117 · property*
-
-**undocumented**
-
----
-
-## `private property <string> chip-disabled: "Disabled";`
-
-*Line 120 · property*
+*Line 88 · property*
 
 **undocumented**
 
 ---
 
-## `private property <string> chip-version: "v1.0.0";`
+## `private property <string> card-title-only: Strings.demo-card-title-only;`
 
-*Line 123 · property*
-
-**undocumented**
-
----
-
-## `private property <string> avatar-sm-initials: "SM";`
-
-*Line 126 · property*
+*Line 91 · property*
 
 **undocumented**
 
 ---
 
-## `private property <string> avatar-md-initials: "MD";`
+## `private property <string> card-title: Strings.demo-card-title;`
 
-*Line 129 · property*
+*Line 94 · property*
 
 **undocumented**
 
 ---
 
-## `private property <string> avatar-lg-initials: "LG";`
+## `private property <string> card-subtitle: Strings.demo-card-subtitle;`
 
-*Line 132 · property*
+*Line 97 · property*
+
+**undocumented**
+
+---
+
+## `private property <string> li-normal: Strings.demo-li-normal;`
+
+*Line 100 · property*
+
+**undocumented**
+
+---
+
+## `private property <string> li-selected: Strings.demo-li-selected;`
+
+*Line 103 · property*
+
+**undocumented**
+
+---
+
+## `private property <string> li-subtitle-title: Strings.demo-li-subtitle-title;`
+
+*Line 106 · property*
+
+**undocumented**
+
+---
+
+## `private property <string> li-subtitle-text: Strings.demo-li-subtitle-text;`
+
+*Line 109 · property*
+
+**undocumented**
+
+---
+
+## `private property <string> chip-default: Strings.demo-chip-default;`
+
+*Line 112 · property*
+
+**undocumented**
+
+---
+
+## `private property <string> chip-selected: Strings.demo-chip-selected;`
+
+*Line 115 · property*
+
+**undocumented**
+
+---
+
+## `private property <string> chip-noclose: Strings.demo-chip-noclose;`
+
+*Line 118 · property*
+
+**undocumented**
+
+---
+
+## `private property <string> chip-disabled: Strings.demo-chip-disabled;`
+
+*Line 121 · property*
+
+**undocumented**
+
+---
+
+## `private property <string> chip-version: Strings.demo-chip-version;`
+
+*Line 124 · property*
+
+**undocumented**
+
+---
+
+## `private property <string> avatar-sm-initials: Strings.demo-avatar-sm;`
+
+*Line 127 · property*
+
+**undocumented**
+
+---
+
+## `private property <string> avatar-md-initials: Strings.demo-avatar-md;`
+
+*Line 130 · property*
+
+**undocumented**
+
+---
+
+## `private property <string> avatar-lg-initials: Strings.demo-avatar-lg;`
+
+*Line 133 · property*
 
 **undocumented**
 

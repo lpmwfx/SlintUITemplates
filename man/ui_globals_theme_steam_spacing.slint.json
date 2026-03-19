@@ -1,0 +1,82 @@
+{
+  "source": "ui/globals/theme/steam/spacing.slint",
+  "items": [
+    {
+      "name": "xs",
+      "kind": "Property",
+      "signature": "out property <length> xs:   4px;",
+      "line": 12,
+      "doc": ""
+    },
+    {
+      "name": "sm",
+      "kind": "Property",
+      "signature": "out property <length> sm:   8px;",
+      "line": 21,
+      "doc": ""
+    },
+    {
+      "name": "md",
+      "kind": "Property",
+      "signature": "out property <length> md:   16px;",
+      "line": 30,
+      "doc": ""
+    },
+    {
+      "name": "lg",
+      "kind": "Property",
+      "signature": "out property <length> lg:   24px;",
+      "line": 39,
+      "doc": ""
+    },
+    {
+      "name": "xl",
+      "kind": "Property",
+      "signature": "out property <length> xl:   40px;",
+      "line": 48,
+      "doc": ""
+    },
+    {
+      "name": "control-sm",
+      "kind": "Property",
+      "signature": "out property <length> control-sm:  32px;",
+      "line": 59,
+      "doc": ""
+    },
+    {
+      "name": "control-md",
+      "kind": "Property",
+      "signature": "out property <length> control-md:  48px;",
+      "line": 68,
+      "doc": ""
+    },
+    {
+      "name": "control-lg",
+      "kind": "Property",
+      "signature": "out property <length> control-lg:  56px;",
+      "line": 77,
+      "doc": ""
+    },
+    {
+      "name": "top-bar-height",
+      "kind": "Property",
+      "signature": "out property <length> top-bar-height:       48px;",
+      "line": 88,
+      "doc": ""
+    },
+    {
+      "name": "bottom-rail-height",
+      "kind": "Property",
+      "signature": "out property <length> bottom-rail-height:   56px;",
+      "line": 97,
+      "doc": ""
+    },
+    {
+      "name": "nav-rail-width",
+      "kind": "Property",
+      "signature": "out property <length> nav-rail-width:        64px;",
+      "line": 106,
+      "doc": ""
+    }
+  ]
+}

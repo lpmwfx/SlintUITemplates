@@ -1,0 +1,131 @@
+{
+  "source": "ui/globals/theme/material/typography.slint",
+  "items": [
+    {
+      "name": "display-large",
+      "kind": "Property",
+      "signature": "out property <length> display-large:  Settings.zoom * Settings.font-scale * 57px;",
+      "line": 17,
+      "doc": ""
+    },
+    {
+      "name": "display-medium",
+      "kind": "Property",
+      "signature": "out property <length> display-medium: Settings.zoom * Settings.font-scale * 45px;",
+      "line": 26,
+      "doc": ""
+    },
+    {
+      "name": "display-small",
+      "kind": "Property",
+      "signature": "out property <length> display-small:  Settings.zoom * Settings.font-scale * 36px;",
+      "line": 35,
+      "doc": ""
+    },
+    {
+      "name": "headline-large",
+      "kind": "Property",
+      "signature": "out property <length> headline-large:  Settings.zoom * Settings.font-scale * 32px;",
+      "line": 46,
+      "doc": ""
+    },
+    {
+      "name": "headline-medium",
+      "kind": "Property",
+      "signature": "out property <length> headline-medium: Settings.zoom * Settings.font-scale * 28px;",
+      "line": 55,
+      "doc": ""
+    },
+    {
+      "name": "headline-small",
+      "kind": "Property",
+      "signature": "out property <length> headline-small:  Settings.zoom * Settings.font-scale * 24px;",
+      "line": 64,
+      "doc": ""
+    },
+    {
+      "name": "title-large",
+      "kind": "Property",
+      "signature": "out property <length> title-large:  Settings.zoom * Settings.font-scale * 22px;",
+      "line": 75,
+      "doc": ""
+    },
+    {
+      "name": "title-medium",
+      "kind": "Property",
+      "signature": "out property <length> title-medium: Settings.zoom * Settings.font-scale * 16px;",
+      "line": 84,
+      "doc": ""
+    },
+    {
+      "name": "title-small",
+      "kind": "Property",
+      "signature": "out property <length> title-small:  Settings.zoom * Settings.font-scale * 14px;",
+      "line": 93,
+      "doc": ""
+    },
+    {
+      "name": "body-large",
+      "kind": "Property",
+      "signature": "out property <length> body-large:  Settings.zoom * Settings.font-scale * 16px;",
+      "line": 104,
+      "doc": ""
+    },
+    {
+      "name": "body-medium",
+      "kind": "Property",
+      "signature": "out property <length> body-medium: Settings.zoom * Settings.font-scale * 14px;",
+      "line": 113,
+      "doc": ""
+    },
+    {
+      "name": "body-small",
+      "kind": "Property",
+      "signature": "out property <length> body-small:  Settings.zoom * Settings.font-scale * 12px;",
+      "line": 122,
+      "doc": ""
+    },
+    {
+      "name": "label-large",
+      "kind": "Property",
+      "signature": "out property <length> label-large:  Settings.zoom * Settings.font-scale * 14px;",
+      "line": 133,
+      "doc": ""
+    },
+    {
+      "name": "label-medium",
+      "kind": "Property",
+      "signature": "out property <length> label-medium: Settings.zoom * Settings.font-scale * 12px;",
+      "line": 142,
+      "doc": ""
+    },
+    {
+      "name": "label-small",
+      "kind": "Property",
+      "signature": "out property <length> label-small:  Settings.zoom * Settings.font-scale * 11px;",
+      "line": 151,
+      "doc": ""
+    },
+    {
+      "name": "weight-regular",
+      "kind": "Property",
+      "signature": "out property <int> weight-regular: 400;",
+      "line": 162,
+      "doc": ""
+    },
+    {
+      "name": "weight-medium",
+      "kind": "Property",
+      "signature": "out property <int> weight-medium:  500;",
+      "line": 171,
+      "doc": ""
+    },
+    {
+      "name": "weight-bold",
+      "kind": "Property",
+      "signature": "out property <int> weight-bold:    700;",
+      "line": 180,
+      "doc": ""
+    }
+  ]
+}

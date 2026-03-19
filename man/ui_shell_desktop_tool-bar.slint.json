@@ -5,28 +5,28 @@
       "name": "ShellToolbar",
       "kind": "Component",
       "signature": "export component ShellToolbar inherits Rectangle {",
-      "line": 9,
+      "line": 15,
       "doc": ""
     },
     {
       "name": "items",
       "kind": "Property",
       "signature": "in property <[ShellToolbarItem]> items;",
-      "line": 12,
+      "line": 24,
       "doc": ""
     },
     {
       "name": "item-clicked",
       "kind": "Callback",
       "signature": "callback item-clicked(string);",
-      "line": 15,
+      "line": 33,
       "doc": ""
     },
     {
       "name": "icon-font",
       "kind": "Property",
       "signature": "private property <string> icon-font: \"Segoe Fluent Icons\";",
-      "line": 19,
+      "line": 43,
       "doc": ""
     }
   ]

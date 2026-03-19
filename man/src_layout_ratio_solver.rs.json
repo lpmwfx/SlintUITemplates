@@ -37,9 +37,9 @@
       "doc": "Normalize panel ratios so they sum to exactly 1.0.\nCall this after constructing panels to ensure invariant holds."
     },
     {
-      "name": "check_sum",
+      "name": "is_valid_sum",
       "kind": "Fn",
-      "signature": "pub fn check_sum(panels: &[Panel]) -> bool",
+      "signature": "pub fn is_valid_sum(panels: &[Panel]) -> bool",
       "line": 80,
       "doc": "Verify that panel ratios sum to approximately 1.0."
     }

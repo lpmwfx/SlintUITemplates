@@ -2,7 +2,7 @@
 
 ## `export component CbfSecondaryRow inherits Rectangle {`
 
-*Line 6 · component*
+*Line 12 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <CbfAction> item;`
 
-*Line 9 · property*
+*Line 21 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `callback activated(string);`
 
-*Line 12 · callback*
+*Line 30 · callback*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `private property <int>   stretch-full: 1;`
 
-*Line 16 · property*
+*Line 40 · property*
 
 **undocumented**
 
@@ -34,7 +34,7 @@
 
 ## `private property <float> op-enabled:   1.0;`
 
-*Line 19 · property*
+*Line 49 · property*
 
 **undocumented**
 
@@ -42,7 +42,7 @@
 
 ## `private property <float> op-disabled:  0.5;`
 
-*Line 22 · property*
+*Line 58 · property*
 
 **undocumented**
 

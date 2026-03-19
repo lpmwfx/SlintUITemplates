@@ -2,7 +2,7 @@
 
 ## `pub mod error;`
 
-*Line 9 · mod*
+*Line 12 · mod*
 
 Typed error for view-config evaluation and loading.
 
@@ -10,7 +10,7 @@ Typed error for view-config evaluation and loading.
 
 ## `pub mod eval;`
 
-*Line 12 · mod*
+*Line 15 · mod*
 
 Rhai evaluation and file loading helpers.
 
@@ -18,7 +18,7 @@ Rhai evaluation and file loading helpers.
 
 ## `pub struct ViewConfig`
 
-*Line 31 · struct*
+*Line 34 · struct*
 
 Per-view shell chrome configuration.
 `None` / empty = "don't override the DSL value".
@@ -28,7 +28,7 @@ V ie wc on fi g struct.
 
 ## `pub fn apply(ui: &AppWindow, cfg: &ViewConfig)`
 
-*Line 41 · fn*
+*Line 44 · fn*
 
 Apply non-None / non-empty `ViewConfig` fields to the `AppWindow`.
 Fields that are `None` or empty are left unchanged.

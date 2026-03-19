@@ -2,7 +2,7 @@
 
 ## `export component CompactNav inherits Rectangle {`
 
-*Line 13 · component*
+*Line 19 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <string> mode: Variants.nav-bottom;`
 
-*Line 16 · property*
+*Line 28 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <[NavItem]> items;`
 
-*Line 19 · property*
+*Line 37 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `in property <string> active;`
 
-*Line 22 · property*
+*Line 46 · property*
 
 **undocumented**
 
@@ -34,7 +34,7 @@
 
 ## `callback navigate(string);`
 
-*Line 25 · callback*
+*Line 55 · callback*
 
 **undocumented**
 
@@ -42,7 +42,7 @@
 
 ## `private property <bool> is-rail: root.mode == Variants.nav-compact;`
 
-*Line 29 · property*
+*Line 65 · property*
 
 **undocumented**
 

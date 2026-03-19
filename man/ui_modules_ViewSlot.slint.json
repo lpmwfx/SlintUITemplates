@@ -5,21 +5,21 @@
       "name": "ViewSlot",
       "kind": "Component",
       "signature": "export component ViewSlot inherits Rectangle {",
-      "line": 17,
+      "line": 23,
       "doc": ""
     },
     {
       "name": "slot-id",
       "kind": "Property",
       "signature": "in property <string> slot-id;",
-      "line": 20,
+      "line": 32,
       "doc": ""
     },
     {
       "name": "active",
       "kind": "Property",
       "signature": "in property <string> active;",
-      "line": 23,
+      "line": 41,
       "doc": ""
     }
   ]

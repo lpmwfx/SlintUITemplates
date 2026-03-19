@@ -5,35 +5,35 @@
       "name": "MacosShell",
       "kind": "Component",
       "signature": "export component MacosShell inherits VerticalLayout {",
-      "line": 13,
+      "line": 19,
       "doc": ""
     },
     {
       "name": "title",
       "kind": "Property",
       "signature": "in property <string>    title;",
-      "line": 16,
+      "line": 28,
       "doc": ""
     },
     {
       "name": "nav-items",
       "kind": "Property",
       "signature": "in property <[NavItem]> nav-items;",
-      "line": 19,
+      "line": 37,
       "doc": ""
     },
     {
       "name": "active-slot",
       "kind": "Property",
       "signature": "in property <string>    active-slot;",
-      "line": 22,
+      "line": 46,
       "doc": ""
     },
     {
       "name": "slot-changed",
       "kind": "Callback",
       "signature": "callback slot-changed(string);",
-      "line": 26,
+      "line": 56,
       "doc": ""
     }
   ]

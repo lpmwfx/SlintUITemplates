@@ -5,35 +5,35 @@
       "name": "FormField",
       "kind": "Component",
       "signature": "export component FormField inherits VerticalLayout {",
-      "line": 6,
+      "line": 12,
       "doc": ""
     },
     {
       "name": "label",
       "kind": "Property",
       "signature": "in property <string> label: \"\";",
-      "line": 9,
+      "line": 21,
       "doc": ""
     },
     {
       "name": "required",
       "kind": "Property",
       "signature": "in property <bool>   required: false;",
-      "line": 12,
+      "line": 30,
       "doc": ""
     },
     {
       "name": "error",
       "kind": "Property",
       "signature": "in property <string> error: \"\";",
-      "line": 15,
+      "line": 39,
       "doc": ""
     },
     {
       "name": "hint",
       "kind": "Property",
       "signature": "in property <string> hint: \"\";",
-      "line": 18,
+      "line": 48,
       "doc": ""
     }
   ]

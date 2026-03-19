@@ -5,28 +5,28 @@
       "name": "Divider",
       "kind": "Component",
       "signature": "export component Divider inherits Rectangle {",
-      "line": 7,
+      "line": 13,
       "doc": ""
     },
     {
       "name": "orientation",
       "kind": "Property",
       "signature": "in property <string> orientation: Variants.horizontal;   // horizontal | vertical",
-      "line": 10,
+      "line": 22,
       "doc": ""
     },
     {
       "name": "label",
       "kind": "Property",
       "signature": "in property <string> label: \"\";",
-      "line": 13,
+      "line": 31,
       "doc": ""
     },
     {
       "name": "line-color",
       "kind": "Property",
       "signature": "in property <color>  line-color: Colors.border;",
-      "line": 16,
+      "line": 40,
       "doc": ""
     }
   ]

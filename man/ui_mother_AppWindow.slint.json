@@ -5,49 +5,49 @@
       "name": "AppWindow",
       "kind": "Component",
       "signature": "export component AppWindow inherits Window {",
-      "line": 21,
+      "line": 27,
       "doc": ""
     },
     {
       "name": "window-title",
       "kind": "Property",
       "signature": "in property <string> window-title: \"SlintUITemplates\";",
-      "line": 27,
+      "line": 39,
       "doc": ""
     },
     {
       "name": "theme-mode",
       "kind": "Property",
       "signature": "in property <string> theme-mode: Variants.system;",
-      "line": 32,
+      "line": 50,
       "doc": ""
     },
     {
       "name": "material",
       "kind": "Property",
       "signature": "in property <string> material: Variants.solid;  // \"solid\" | \"mica\" | \"acrylic\"",
-      "line": 35,
+      "line": 59,
       "doc": ""
     },
     {
       "name": "platform",
       "kind": "Property",
       "signature": "in property <string> platform: Variants.windows;",
-      "line": 38,
+      "line": 68,
       "doc": ""
     },
     {
       "name": "panels",
       "kind": "Property",
       "signature": "in property <[PanelItem]> panels;",
-      "line": 57,
+      "line": 93,
       "doc": ""
     },
     {
       "name": "panel-dragged",
       "kind": "Callback",
       "signature": "callback panel-dragged(int, float, float);   // id, dx, dy in logical px",
-      "line": 62,
+      "line": 104,
       "doc": ""
     }
   ]

@@ -1,0 +1,61 @@
+{
+  "source": "ui/globals/theme/typography.slint",
+  "items": [
+    {
+      "name": "caption-size",
+      "kind": "Property",
+      "signature": "out property <length> caption-size:  Settings.zoom * Settings.font-scale * 12px;",
+      "line": 19,
+      "doc": ""
+    },
+    {
+      "name": "body-size",
+      "kind": "Property",
+      "signature": "out property <length> body-size:     Settings.zoom * Settings.font-scale * 14px;",
+      "line": 28,
+      "doc": ""
+    },
+    {
+      "name": "subtitle-size",
+      "kind": "Property",
+      "signature": "out property <length> subtitle-size: Settings.zoom * Settings.font-scale * 16px;",
+      "line": 37,
+      "doc": ""
+    },
+    {
+      "name": "heading-size",
+      "kind": "Property",
+      "signature": "out property <length> heading-size:  Settings.zoom * Settings.font-scale * 20px;",
+      "line": 46,
+      "doc": ""
+    },
+    {
+      "name": "title-size",
+      "kind": "Property",
+      "signature": "out property <length> title-size:    Settings.zoom * Settings.font-scale * 28px;",
+      "line": 55,
+      "doc": ""
+    },
+    {
+      "name": "weight-regular",
+      "kind": "Property",
+      "signature": "out property <int> weight-regular:   400;",
+      "line": 65,
+      "doc": ""
+    },
+    {
+      "name": "weight-semibold",
+      "kind": "Property",
+      "signature": "out property <int> weight-semibold:  600;",
+      "line": 74,
+      "doc": ""
+    },
+    {
+      "name": "weight-bold",
+      "kind": "Property",
+      "signature": "out property <int> weight-bold:      700;",
+      "line": 83,
+      "doc": ""
+    }
+  ]
+}

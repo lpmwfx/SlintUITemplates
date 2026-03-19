@@ -5,203 +5,203 @@
       "name": "PageFeedback",
       "kind": "Component",
       "signature": "export component PageFeedback inherits VerticalLayout {",
-      "line": 16,
+      "line": 17,
       "doc": ""
     },
     {
       "name": "var-info",
       "kind": "Property",
-      "signature": "private property <string> var-info: \"info\";",
-      "line": 22,
+      "signature": "private property <string> var-info: Variants.info;",
+      "line": 23,
       "doc": ""
     },
     {
       "name": "var-sm",
       "kind": "Property",
-      "signature": "private property <string> var-sm: \"sm\";",
-      "line": 25,
+      "signature": "private property <string> var-sm: Variants.sm;",
+      "line": 26,
       "doc": ""
     },
     {
       "name": "var-md",
       "kind": "Property",
-      "signature": "private property <string> var-md: \"md\";",
-      "line": 28,
+      "signature": "private property <string> var-md: Variants.md;",
+      "line": 29,
       "doc": ""
     },
     {
       "name": "var-lg",
       "kind": "Property",
-      "signature": "private property <string> var-lg: \"lg\";",
-      "line": 31,
+      "signature": "private property <string> var-lg: Variants.lg;",
+      "line": 32,
       "doc": ""
     },
     {
       "name": "section-toast",
       "kind": "Property",
-      "signature": "private property <string> section-toast: \"Toast\";",
-      "line": 36,
+      "signature": "private property <string> section-toast: Strings.demo-section-toast;",
+      "line": 37,
       "doc": ""
     },
     {
       "name": "section-dialog",
       "kind": "Property",
-      "signature": "private property <string> section-dialog: \"Dialog\";",
-      "line": 39,
+      "signature": "private property <string> section-dialog: Strings.demo-section-dialog;",
+      "line": 40,
       "doc": ""
     },
     {
       "name": "section-spinner",
       "kind": "Property",
-      "signature": "private property <string> section-spinner: \"Spinner\";",
-      "line": 42,
+      "signature": "private property <string> section-spinner: Strings.demo-section-spinner;",
+      "line": 43,
       "doc": ""
     },
     {
       "name": "section-alert",
       "kind": "Property",
-      "signature": "private property <string> section-alert: \"Alert\";",
-      "line": 45,
+      "signature": "private property <string> section-alert: Strings.demo-section-alert;",
+      "line": 46,
       "doc": ""
     },
     {
       "name": "section-tooltip",
       "kind": "Property",
-      "signature": "private property <string> section-tooltip: \"Tooltip\";",
-      "line": 48,
+      "signature": "private property <string> section-tooltip: Strings.demo-section-tooltip;",
+      "line": 49,
       "doc": ""
     },
     {
       "name": "toast-info-msg",
       "kind": "Property",
-      "signature": "private property <string> toast-info-msg: \"Information message\";",
-      "line": 51,
+      "signature": "private property <string> toast-info-msg: Strings.demo-toast-info;",
+      "line": 52,
       "doc": ""
     },
     {
       "name": "toast-success-msg",
       "kind": "Property",
-      "signature": "private property <string> toast-success-msg: \"Success! Operation complete\";",
-      "line": 54,
+      "signature": "private property <string> toast-success-msg: Strings.demo-toast-success;",
+      "line": 55,
       "doc": ""
     },
     {
       "name": "toast-warning-msg",
       "kind": "Property",
-      "signature": "private property <string> toast-warning-msg: \"Warning: please check input\";",
-      "line": 57,
+      "signature": "private property <string> toast-warning-msg: Strings.demo-toast-warning;",
+      "line": 58,
       "doc": ""
     },
     {
       "name": "toast-error-msg",
       "kind": "Property",
-      "signature": "private property <string> toast-error-msg: \"Error: action failed\";",
-      "line": 60,
+      "signature": "private property <string> toast-error-msg: Strings.demo-toast-error;",
+      "line": 61,
       "doc": ""
     },
     {
       "name": "dialog-title",
       "kind": "Property",
-      "signature": "private property <string> dialog-title: \"Confirm Action\";",
-      "line": 63,
+      "signature": "private property <string> dialog-title: Strings.demo-dialog-title;",
+      "line": 64,
       "doc": ""
     },
     {
       "name": "alert-info-msg",
       "kind": "Property",
-      "signature": "private property <string> alert-info-msg: \"This is an informational alert.\";",
-      "line": 66,
+      "signature": "private property <string> alert-info-msg: Strings.demo-alert-info-msg;",
+      "line": 67,
       "doc": ""
     },
     {
       "name": "alert-success-title",
       "kind": "Property",
-      "signature": "private property <string> alert-success-title: \"Success!\";",
-      "line": 69,
+      "signature": "private property <string> alert-success-title: Strings.demo-alert-success-title;",
+      "line": 70,
       "doc": ""
     },
     {
       "name": "alert-success-msg",
       "kind": "Property",
-      "signature": "private property <string> alert-success-msg: \"Your changes have been saved.\";",
-      "line": 72,
+      "signature": "private property <string> alert-success-msg: Strings.demo-alert-success-msg;",
+      "line": 73,
       "doc": ""
     },
     {
       "name": "alert-warning-title",
       "kind": "Property",
-      "signature": "private property <string> alert-warning-title: \"Warning\";",
-      "line": 75,
+      "signature": "private property <string> alert-warning-title: Strings.demo-alert-warning-title;",
+      "line": 76,
       "doc": ""
     },
     {
       "name": "alert-warning-msg",
       "kind": "Property",
-      "signature": "private property <string> alert-warning-msg: \"Please review before continuing.\";",
-      "line": 78,
+      "signature": "private property <string> alert-warning-msg: Strings.demo-alert-warning-msg;",
+      "line": 79,
       "doc": ""
     },
     {
       "name": "alert-error-title",
       "kind": "Property",
-      "signature": "private property <string> alert-error-title: \"Error\";",
-      "line": 81,
+      "signature": "private property <string> alert-error-title: Strings.demo-alert-error-title;",
+      "line": 82,
       "doc": ""
     },
     {
       "name": "alert-error-msg",
       "kind": "Property",
-      "signature": "private property <string> alert-error-msg: \"Something went wrong. Please try again.\";",
-      "line": 84,
+      "signature": "private property <string> alert-error-msg: Strings.demo-alert-error-msg;",
+      "line": 85,
       "doc": ""
     },
     {
       "name": "tooltip-top-text",
       "kind": "Property",
-      "signature": "private property <string> tooltip-top-text: \"Top tooltip (default)\";",
-      "line": 87,
+      "signature": "private property <string> tooltip-top-text: Strings.demo-tooltip-top;",
+      "line": 88,
       "doc": ""
     },
     {
       "name": "tooltip-bottom-text",
       "kind": "Property",
-      "signature": "private property <string> tooltip-bottom-text: \"Bottom tooltip\";",
-      "line": 90,
+      "signature": "private property <string> tooltip-bottom-text: Strings.demo-tooltip-bottom;",
+      "line": 91,
       "doc": ""
     },
     {
       "name": "tooltip-right-text",
       "kind": "Property",
-      "signature": "private property <string> tooltip-right-text: \"Right tooltip\";",
-      "line": 93,
+      "signature": "private property <string> tooltip-right-text: Strings.demo-tooltip-right;",
+      "line": 94,
       "doc": ""
     },
     {
       "name": "btn-hover",
       "kind": "Property",
-      "signature": "private property <string> btn-hover: \"Hover me\";",
-      "line": 96,
+      "signature": "private property <string> btn-hover: Strings.demo-btn-hover;",
+      "line": 97,
       "doc": ""
     },
     {
       "name": "btn-bottom",
       "kind": "Property",
-      "signature": "private property <string> btn-bottom: \"Bottom\";",
-      "line": 99,
+      "signature": "private property <string> btn-bottom: Strings.demo-btn-bottom;",
+      "line": 100,
       "doc": ""
     },
     {
       "name": "btn-right",
       "kind": "Property",
-      "signature": "private property <string> btn-right: \"Right\";",
-      "line": 102,
+      "signature": "private property <string> btn-right: Strings.demo-btn-right;",
+      "line": 103,
       "doc": ""
     },
     {
       "name": "dialog-w",
       "kind": "Property",
       "signature": "private property <length> dialog-w: Sizes.comp-480;",
-      "line": 105,
+      "line": 106,
       "doc": ""
     }
   ]

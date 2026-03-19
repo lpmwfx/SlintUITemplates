@@ -2,7 +2,7 @@
 
 ## `export struct BreadcrumbItem {`
 
-*Line 6 · struct*
+*Line 12 · struct*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `export component Breadcrumb inherits Rectangle {`
 
-*Line 13 · component*
+*Line 25 · component*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <[BreadcrumbItem]> items: [];`
 
-*Line 16 · property*
+*Line 34 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `in property <string>           separator: "›";`
 
-*Line 19 · property*
+*Line 43 · property*
 
 **undocumented**
 
@@ -34,7 +34,7 @@
 
 ## `callback navigate(string);`
 
-*Line 22 · callback*
+*Line 52 · callback*
 
 **undocumented**
 

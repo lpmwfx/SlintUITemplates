@@ -5,49 +5,49 @@
       "name": "EmptyState",
       "kind": "Component",
       "signature": "export component EmptyState inherits Rectangle {",
-      "line": 6,
+      "line": 12,
       "doc": ""
     },
     {
       "name": "icon",
       "kind": "Property",
       "signature": "in property <string> icon: \"\\u{E8FD}\";",
-      "line": 9,
+      "line": 21,
       "doc": ""
     },
     {
       "name": "title",
       "kind": "Property",
       "signature": "in property <string> title: \"No items\";",
-      "line": 12,
+      "line": 30,
       "doc": ""
     },
     {
       "name": "description",
       "kind": "Property",
       "signature": "in property <string> description: \"\";",
-      "line": 15,
+      "line": 39,
       "doc": ""
     },
     {
       "name": "action-label",
       "kind": "Property",
       "signature": "in property <string> action-label: \"\";",
-      "line": 18,
+      "line": 48,
       "doc": ""
     },
     {
       "name": "action",
       "kind": "Callback",
       "signature": "callback action();",
-      "line": 21,
+      "line": 57,
       "doc": ""
     },
     {
       "name": "icon-sz",
       "kind": "Property",
       "signature": "private property <length> icon-sz: Type.heading-size * 2;",
-      "line": 25,
+      "line": 67,
       "doc": ""
     }
   ]

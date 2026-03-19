@@ -5,84 +5,84 @@
       "name": "PageUtilities",
       "kind": "Component",
       "signature": "export component PageUtilities inherits VerticalLayout {",
-      "line": 16,
+      "line": 17,
       "doc": ""
     },
     {
       "name": "tb-w",
       "kind": "Property",
-      "signature": "private property <length> tb-w:     400px;",
-      "line": 21,
+      "signature": "private property <length> tb-w:     Sizes.panel-max;",
+      "line": 22,
       "doc": ""
     },
     {
       "name": "mb-w",
       "kind": "Property",
-      "signature": "private property <length> mb-w:     500px;",
-      "line": 24,
+      "signature": "private property <length> mb-w:     Sizes.panel-wide;",
+      "line": 25,
       "doc": ""
     },
     {
       "name": "es-w",
       "kind": "Property",
-      "signature": "private property <length> es-w:     340px;",
-      "line": 27,
+      "signature": "private property <length> es-w:     Sizes.comp-340;",
+      "line": 28,
       "doc": ""
     },
     {
       "name": "es-h",
       "kind": "Property",
-      "signature": "private property <length> es-h:     200px;",
-      "line": 30,
+      "signature": "private property <length> es-h:     Sizes.panel-sm;",
+      "line": 31,
       "doc": ""
     },
     {
       "name": "seg1-w",
       "kind": "Property",
-      "signature": "private property <length> seg1-w:   240px;",
-      "line": 33,
+      "signature": "private property <length> seg1-w:   Sizes.comp-240;",
+      "line": 34,
       "doc": ""
     },
     {
       "name": "seg2-w",
       "kind": "Property",
-      "signature": "private property <length> seg2-w:   120px;",
-      "line": 36,
+      "signature": "private property <length> seg2-w:   Sizes.comp-120;",
+      "line": 37,
       "doc": ""
     },
     {
       "name": "ff-w",
       "kind": "Property",
-      "signature": "private property <length> ff-w:     300px;",
-      "line": 39,
+      "signature": "private property <length> ff-w:     Sizes.panel-xl;",
+      "line": 40,
       "doc": ""
     },
     {
       "name": "border-px",
       "kind": "Property",
       "signature": "private property <length> border-px: Sizes.border-w;",
-      "line": 42,
+      "line": 43,
       "doc": ""
     },
     {
       "name": "seg-val",
       "kind": "Property",
       "signature": "private property <string> seg-val:   \"day\";",
-      "line": 45,
+      "line": 46,
       "doc": ""
     },
     {
       "name": "seg2-val",
       "kind": "Property",
       "signature": "private property <string> seg2-val:  \"list\";",
-      "line": 48,
+      "line": 49,
       "doc": ""
     },
     {
       "name": "mb-info-msg",
       "kind": "Property",
-      "signature": "private property <string> mb-info-msg: \"Your session will expire in 10 minutes.\";",
-      "line": 51,
+      "signature": "private property <string> mb-info-msg: Strings.demo-messagebar-info;",
+      "line": 52,
       "doc": ""
     }
   ]

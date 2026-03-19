@@ -2,7 +2,7 @@
 
 ## `export component DemoMobileNav inherits Rectangle {`
 
-*Line 8 · component*
+*Line 14 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <[NavItem]> items;`
 
-*Line 11 · property*
+*Line 23 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <string>    active-view;`
 
-*Line 14 · property*
+*Line 32 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `callback navigate(string);`
 
-*Line 17 · callback*
+*Line 41 · callback*
 
 **undocumented**
 

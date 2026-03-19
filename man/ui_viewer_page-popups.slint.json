@@ -5,14 +5,14 @@
       "name": "PagePopups",
       "kind": "Component",
       "signature": "export component PagePopups inherits VerticalLayout {",
-      "line": 13,
+      "line": 19,
       "doc": ""
     },
     {
       "name": "window-height",
       "kind": "Property",
       "signature": "in property <length> window-height;",
-      "line": 16,
+      "line": 28,
       "doc": ""
     }
   ]

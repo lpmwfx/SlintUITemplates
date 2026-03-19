@@ -2,7 +2,7 @@
 
 ## `export component SpinBox inherits Rectangle {`
 
-*Line 8 · component*
+*Line 14 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <int> value: 0;`
 
-*Line 11 · property*
+*Line 23 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <int>    min: 0;`
 
-*Line 14 · property*
+*Line 32 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `in property <int>    max: 100;`
 
-*Line 17 · property*
+*Line 41 · property*
 
 **undocumented**
 
@@ -34,7 +34,7 @@
 
 ## `in property <int>    step: 1;`
 
-*Line 20 · property*
+*Line 50 · property*
 
 **undocumented**
 
@@ -42,7 +42,7 @@
 
 ## `in property <string> label: "";`
 
-*Line 23 · property*
+*Line 59 · property*
 
 **undocumented**
 
@@ -50,7 +50,7 @@
 
 ## `in property <bool>   enabled: true;`
 
-*Line 26 · property*
+*Line 68 · property*
 
 **undocumented**
 
@@ -58,7 +58,7 @@
 
 ## `callback changed(int);`
 
-*Line 29 · callback*
+*Line 77 · callback*
 
 **undocumented**
 

@@ -1,0 +1,432 @@
+{
+  "source": "ui/state/variants.slint",
+  "items": [
+    {
+      "name": "primary",
+      "kind": "Property",
+      "signature": "out property <string> primary:   \"primary\";",
+      "line": 9,
+      "doc": ""
+    },
+    {
+      "name": "secondary",
+      "kind": "Property",
+      "signature": "out property <string> secondary: \"secondary\";",
+      "line": 12,
+      "doc": ""
+    },
+    {
+      "name": "accent",
+      "kind": "Property",
+      "signature": "out property <string> accent:    \"accent\";",
+      "line": 15,
+      "doc": ""
+    },
+    {
+      "name": "danger",
+      "kind": "Property",
+      "signature": "out property <string> danger:    \"danger\";",
+      "line": 18,
+      "doc": ""
+    },
+    {
+      "name": "outlined",
+      "kind": "Property",
+      "signature": "out property <string> outlined:  \"outlined\";",
+      "line": 21,
+      "doc": ""
+    },
+    {
+      "name": "ghost",
+      "kind": "Property",
+      "signature": "out property <string> ghost:     \"ghost\";",
+      "line": 24,
+      "doc": ""
+    },
+    {
+      "name": "text",
+      "kind": "Property",
+      "signature": "out property <string> text:      \"text\";",
+      "line": 27,
+      "doc": ""
+    },
+    {
+      "name": "info",
+      "kind": "Property",
+      "signature": "out property <string> info:    \"info\";",
+      "line": 32,
+      "doc": ""
+    },
+    {
+      "name": "success",
+      "kind": "Property",
+      "signature": "out property <string> success: \"success\";",
+      "line": 35,
+      "doc": ""
+    },
+    {
+      "name": "warning",
+      "kind": "Property",
+      "signature": "out property <string> warning: \"warning\";",
+      "line": 38,
+      "doc": ""
+    },
+    {
+      "name": "error",
+      "kind": "Property",
+      "signature": "out property <string> error:   \"error\";",
+      "line": 41,
+      "doc": ""
+    },
+    {
+      "name": "desktop",
+      "kind": "Property",
+      "signature": "out property <string> desktop:     \"desktop\";",
+      "line": 46,
+      "doc": ""
+    },
+    {
+      "name": "mobile",
+      "kind": "Property",
+      "signature": "out property <string> mobile:      \"mobile\";",
+      "line": 49,
+      "doc": ""
+    },
+    {
+      "name": "windows",
+      "kind": "Property",
+      "signature": "out property <string> windows:     \"windows\";",
+      "line": 52,
+      "doc": ""
+    },
+    {
+      "name": "android",
+      "kind": "Property",
+      "signature": "out property <string> android:     \"android\";",
+      "line": 55,
+      "doc": ""
+    },
+    {
+      "name": "ios",
+      "kind": "Property",
+      "signature": "out property <string> ios:         \"ios\";",
+      "line": 58,
+      "doc": ""
+    },
+    {
+      "name": "macos",
+      "kind": "Property",
+      "signature": "out property <string> macos:       \"macos\";",
+      "line": 61,
+      "doc": ""
+    },
+    {
+      "name": "linux",
+      "kind": "Property",
+      "signature": "out property <string> linux:       \"linux\";",
+      "line": 64,
+      "doc": ""
+    },
+    {
+      "name": "steam-linux",
+      "kind": "Property",
+      "signature": "out property <string> steam-linux: \"steam-linux\";",
+      "line": 67,
+      "doc": ""
+    },
+    {
+      "name": "steam-deck",
+      "kind": "Property",
+      "signature": "out property <string> steam-deck:  \"steam-deck\";",
+      "line": 70,
+      "doc": ""
+    },
+    {
+      "name": "tablet",
+      "kind": "Property",
+      "signature": "out property <string> tablet:      \"tablet\";",
+      "line": 73,
+      "doc": ""
+    },
+    {
+      "name": "handheld",
+      "kind": "Property",
+      "signature": "out property <string> handheld:    \"handheld\";",
+      "line": 76,
+      "doc": ""
+    },
+    {
+      "name": "gnome",
+      "kind": "Property",
+      "signature": "out property <string> gnome:       \"gnome\";",
+      "line": 79,
+      "doc": ""
+    },
+    {
+      "name": "kde",
+      "kind": "Property",
+      "signature": "out property <string> kde:         \"kde\";",
+      "line": 82,
+      "doc": ""
+    },
+    {
+      "name": "nav-sidebar",
+      "kind": "Property",
+      "signature": "out property <string> nav-sidebar: \"nav-sidebar\";",
+      "line": 87,
+      "doc": ""
+    },
+    {
+      "name": "nav-bottom",
+      "kind": "Property",
+      "signature": "out property <string> nav-bottom:  \"nav-bottom\";",
+      "line": 90,
+      "doc": ""
+    },
+    {
+      "name": "nav-compact",
+      "kind": "Property",
+      "signature": "out property <string> nav-compact: \"nav-compact\";",
+      "line": 93,
+      "doc": ""
+    },
+    {
+      "name": "nav-gamepad",
+      "kind": "Property",
+      "signature": "out property <string> nav-gamepad: \"nav-gamepad\";",
+      "line": 96,
+      "doc": ""
+    },
+    {
+      "name": "system",
+      "kind": "Property",
+      "signature": "out property <string> system: \"system\";",
+      "line": 101,
+      "doc": ""
+    },
+    {
+      "name": "dark",
+      "kind": "Property",
+      "signature": "out property <string> dark:   \"dark\";",
+      "line": 104,
+      "doc": ""
+    },
+    {
+      "name": "light",
+      "kind": "Property",
+      "signature": "out property <string> light:  \"light\";",
+      "line": 107,
+      "doc": ""
+    },
+    {
+      "name": "solid",
+      "kind": "Property",
+      "signature": "out property <string> solid:   \"solid\";",
+      "line": 112,
+      "doc": ""
+    },
+    {
+      "name": "mica",
+      "kind": "Property",
+      "signature": "out property <string> mica:    \"mica\";",
+      "line": 115,
+      "doc": ""
+    },
+    {
+      "name": "acrylic",
+      "kind": "Property",
+      "signature": "out property <string> acrylic: \"acrylic\";",
+      "line": 118,
+      "doc": ""
+    },
+    {
+      "name": "horizontal",
+      "kind": "Property",
+      "signature": "out property <string> horizontal: \"horizontal\";",
+      "line": 123,
+      "doc": ""
+    },
+    {
+      "name": "vertical",
+      "kind": "Property",
+      "signature": "out property <string> vertical:   \"vertical\";",
+      "line": 126,
+      "doc": ""
+    },
+    {
+      "name": "left",
+      "kind": "Property",
+      "signature": "out property <string> left:   \"left\";",
+      "line": 129,
+      "doc": ""
+    },
+    {
+      "name": "right",
+      "kind": "Property",
+      "signature": "out property <string> right:  \"right\";",
+      "line": 132,
+      "doc": ""
+    },
+    {
+      "name": "top",
+      "kind": "Property",
+      "signature": "out property <string> top:    \"top\";",
+      "line": 135,
+      "doc": ""
+    },
+    {
+      "name": "bottom",
+      "kind": "Property",
+      "signature": "out property <string> bottom: \"bottom\";",
+      "line": 138,
+      "doc": ""
+    },
+    {
+      "name": "sm",
+      "kind": "Property",
+      "signature": "out property <string> sm: \"sm\";",
+      "line": 143,
+      "doc": ""
+    },
+    {
+      "name": "md",
+      "kind": "Property",
+      "signature": "out property <string> md: \"md\";",
+      "line": 146,
+      "doc": ""
+    },
+    {
+      "name": "lg",
+      "kind": "Property",
+      "signature": "out property <string> lg: \"lg\";",
+      "line": 149,
+      "doc": ""
+    },
+    {
+      "name": "circle",
+      "kind": "Property",
+      "signature": "out property <string> circle: \"circle\";",
+      "line": 154,
+      "doc": ""
+    },
+    {
+      "name": "panel",
+      "kind": "Property",
+      "signature": "out property <string> panel:  \"panel\";",
+      "line": 157,
+      "doc": ""
+    },
+    {
+      "name": "handle-h",
+      "kind": "Property",
+      "signature": "out property <string> handle-h: \"handle-h\";",
+      "line": 162,
+      "doc": ""
+    },
+    {
+      "name": "handle-v",
+      "kind": "Property",
+      "signature": "out property <string> handle-v: \"handle-v\";",
+      "line": 165,
+      "doc": ""
+    },
+    {
+      "name": "h1",
+      "kind": "Property",
+      "signature": "out property <string> h1:   \"h1\";",
+      "line": 170,
+      "doc": ""
+    },
+    {
+      "name": "h2",
+      "kind": "Property",
+      "signature": "out property <string> h2:   \"h2\";",
+      "line": 173,
+      "doc": ""
+    },
+    {
+      "name": "h3",
+      "kind": "Property",
+      "signature": "out property <string> h3:   \"h3\";",
+      "line": 176,
+      "doc": ""
+    },
+    {
+      "name": "p",
+      "kind": "Property",
+      "signature": "out property <string> p:    \"p\";",
+      "line": 179,
+      "doc": ""
+    },
+    {
+      "name": "code",
+      "kind": "Property",
+      "signature": "out property <string> code: \"code\";",
+      "line": 182,
+      "doc": ""
+    },
+    {
+      "name": "li",
+      "kind": "Property",
+      "signature": "out property <string> li:   \"li\";",
+      "line": 185,
+      "doc": ""
+    },
+    {
+      "name": "li2",
+      "kind": "Property",
+      "signature": "out property <string> li2:  \"li2\";",
+      "line": 188,
+      "doc": ""
+    },
+    {
+      "name": "th",
+      "kind": "Property",
+      "signature": "out property <string> th:   \"th\";",
+      "line": 191,
+      "doc": ""
+    },
+    {
+      "name": "tr",
+      "kind": "Property",
+      "signature": "out property <string> tr:   \"tr\";",
+      "line": 194,
+      "doc": ""
+    },
+    {
+      "name": "hr",
+      "kind": "Property",
+      "signature": "out property <string> hr:   \"hr\";",
+      "line": 197,
+      "doc": ""
+    },
+    {
+      "name": "bq",
+      "kind": "Property",
+      "signature": "out property <string> bq:   \"bq\";",
+      "line": 200,
+      "doc": ""
+    },
+    {
+      "name": "alpha",
+      "kind": "Property",
+      "signature": "out property <string> alpha: \"alpha\";",
+      "line": 205,
+      "doc": ""
+    },
+    {
+      "name": "beta",
+      "kind": "Property",
+      "signature": "out property <string> beta:  \"beta\";",
+      "line": 208,
+      "doc": ""
+    },
+    {
+      "name": "gamma",
+      "kind": "Property",
+      "signature": "out property <string> gamma: \"gamma\";",
+      "line": 211,
+      "doc": ""
+    }
+  ]
+}

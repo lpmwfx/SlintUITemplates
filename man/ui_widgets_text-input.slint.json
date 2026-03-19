@@ -5,49 +5,49 @@
       "name": "TextInput",
       "kind": "Component",
       "signature": "export component TextInput inherits Rectangle {",
-      "line": 6,
+      "line": 12,
       "doc": ""
     },
     {
       "name": "label",
       "kind": "Property",
       "signature": "in property <string> label: \"\";",
-      "line": 9,
+      "line": 21,
       "doc": ""
     },
     {
       "name": "value",
       "kind": "Property",
       "signature": "in property <string> value: \"\";",
-      "line": 12,
+      "line": 30,
       "doc": ""
     },
     {
       "name": "placeholder",
       "kind": "Property",
       "signature": "in property <string> placeholder: \"\";",
-      "line": 15,
+      "line": 39,
       "doc": ""
     },
     {
       "name": "error",
       "kind": "Property",
       "signature": "in property <string> error: \"\";",
-      "line": 18,
+      "line": 48,
       "doc": ""
     },
     {
       "name": "changed",
       "kind": "Callback",
       "signature": "callback changed(string);",
-      "line": 21,
+      "line": 57,
       "doc": ""
     },
     {
       "name": "submitted",
       "kind": "Callback",
       "signature": "callback submitted(string);",
-      "line": 24,
+      "line": 66,
       "doc": ""
     }
   ]

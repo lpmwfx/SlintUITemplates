@@ -2,7 +2,7 @@
 
 ## `export component ViewerContent inherits Flickable {`
 
-*Line 19 · component*
+*Line 25 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <string> active-view: "";`
 
-*Line 22 · property*
+*Line 34 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <image>  canvas-frame;`
 
-*Line 25 · property*
+*Line 43 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `in property <length> window-height;`
 
-*Line 28 · property*
+*Line 52 · property*
 
 **undocumented**
 

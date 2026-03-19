@@ -2,7 +2,7 @@
 
 ## `private property <float> ratio-a: Sizes.quarter;`
 
-*Line 11 · property*
+*Line 17 · property*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `private property <float> ratio-c: Sizes.quarter;`
 
-*Line 14 · property*
+*Line 26 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `private property <float> ratio-b: Sizes.fill - root.ratio-a - root.ratio-c;`
 
-*Line 18 · property*
+*Line 36 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `private property <float> panel-b-alpha: Sizes.alpha-12;`
 
-*Line 21 · property*
+*Line 45 · property*
 
 **undocumented**
 
@@ -34,7 +34,7 @@
 
 ## `private property <string> lbl-a: "A ";`
 
-*Line 25 · property*
+*Line 55 · property*
 
 **undocumented**
 
@@ -42,7 +42,7 @@
 
 ## `private property <string> lbl-b: "B ";`
 
-*Line 28 · property*
+*Line 64 · property*
 
 **undocumented**
 
@@ -50,7 +50,7 @@
 
 ## `private property <string> lbl-c: "C ";`
 
-*Line 31 · property*
+*Line 73 · property*
 
 **undocumented**
 
@@ -58,7 +58,7 @@
 
 ## `private property <string> pct-suffix: "%";`
 
-*Line 34 · property*
+*Line 82 · property*
 
 **undocumented**
 

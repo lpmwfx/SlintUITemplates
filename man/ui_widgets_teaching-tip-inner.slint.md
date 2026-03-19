@@ -2,7 +2,7 @@
 
 ## `export component TeachingTipInner inherits Rectangle {`
 
-*Line 6 · component*
+*Line 12 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <string> title: "";`
 
-*Line 9 · property*
+*Line 21 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <string> body: "";`
 
-*Line 12 · property*
+*Line 30 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `in property <string> action-label: "";`
 
-*Line 15 · property*
+*Line 39 · property*
 
 **undocumented**
 
@@ -34,7 +34,7 @@
 
 ## `in property <string> dismiss-label: "";`
 
-*Line 18 · property*
+*Line 48 · property*
 
 **undocumented**
 
@@ -42,7 +42,7 @@
 
 ## `callback popup-close();`
 
-*Line 21 · callback*
+*Line 57 · callback*
 
 **undocumented**
 
@@ -50,7 +50,7 @@
 
 ## `callback action();`
 
-*Line 24 · callback*
+*Line 66 · callback*
 
 **undocumented**
 
@@ -58,15 +58,15 @@
 
 ## `callback dismissed();`
 
-*Line 27 · callback*
+*Line 75 · callback*
 
 **undocumented**
 
 ---
 
-## `private property <length> border-px: 1px;`
+## `private property <length> border-px: Sizes.border-w;`
 
-*Line 31 · property*
+*Line 85 · property*
 
 **undocumented**
 
@@ -74,7 +74,7 @@
 
 ## `private property <int>    h-stretch: 1;`
 
-*Line 34 · property*
+*Line 94 · property*
 
 **undocumented**
 
@@ -82,7 +82,7 @@
 
 ## `private property <int>    v-stretch: 1;`
 
-*Line 37 · property*
+*Line 103 · property*
 
 **undocumented**
 

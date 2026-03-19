@@ -2,7 +2,7 @@
 
 ## `export component AppShell inherits Rectangle {`
 
-*Line 17 · component*
+*Line 24 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <[NavItem]>          nav-items;`
 
-*Line 20 · property*
+*Line 33 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <string>             active-slot;`
 
-*Line 23 · property*
+*Line 42 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `in property <bool>               show-toolbar:  false;`
 
-*Line 26 · property*
+*Line 51 · property*
 
 **undocumented**
 
@@ -34,15 +34,15 @@
 
 ## `in property <[ShellToolbarItem]> toolbar-items;`
 
-*Line 29 · property*
+*Line 60 · property*
 
 **undocumented**
 
 ---
 
-## `in property <string>             status-text:   "Ready";`
+## `in property <string>             status-text:   Strings.app-status-ready;`
 
-*Line 32 · property*
+*Line 69 · property*
 
 **undocumented**
 
@@ -50,7 +50,7 @@
 
 ## `in property <float>              progress:      -1.0;`
 
-*Line 35 · property*
+*Line 78 · property*
 
 **undocumented**
 
@@ -58,7 +58,7 @@
 
 ## `callback slot-changed(string);`
 
-*Line 39 · callback*
+*Line 88 · callback*
 
 **undocumented**
 
@@ -66,7 +66,7 @@
 
 ## `callback toolbar-clicked(string);`
 
-*Line 42 · callback*
+*Line 97 · callback*
 
 **undocumented**
 

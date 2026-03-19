@@ -5,28 +5,28 @@
       "name": "SelectFieldItem",
       "kind": "Component",
       "signature": "export component SelectFieldItem inherits Rectangle {",
-      "line": 6,
+      "line": 12,
       "doc": ""
     },
     {
       "name": "label",
       "kind": "Property",
       "signature": "in property <string> label;",
-      "line": 9,
+      "line": 21,
       "doc": ""
     },
     {
       "name": "is-selected",
       "kind": "Property",
       "signature": "in property <bool>   is-selected: false;",
-      "line": 12,
+      "line": 30,
       "doc": ""
     },
     {
       "name": "picked",
       "kind": "Callback",
       "signature": "callback picked(string);",
-      "line": 15,
+      "line": 39,
       "doc": ""
     }
   ]

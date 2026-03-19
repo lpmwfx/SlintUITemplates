@@ -2,7 +2,7 @@
 
 ## `export component PopupPopoverDemo inherits Rectangle {`
 
-*Line 6 · component*
+*Line 14 · component*
 
 **undocumented**
 
@@ -10,39 +10,39 @@
 
 ## `private property <bool>   show-pop:   false;`
 
-*Line 9 · property*
+*Line 23 · property*
 
 **undocumented**
 
 ---
 
-## `private property <length> demo-w:     160px;`
+## `private property <length> demo-w:     Sizes.comp-160;`
 
-*Line 12 · property*
-
-**undocumented**
-
----
-
-## `private property <length> pop-w:      220px;`
-
-*Line 15 · property*
+*Line 32 · property*
 
 **undocumented**
 
 ---
 
-## `private property <length> pop-h:      130px;`
+## `private property <length> pop-w:      Sizes.panel-md;`
 
-*Line 18 · property*
+*Line 41 · property*
 
 **undocumented**
 
 ---
 
-## `private property <length> border-px:  1px;`
+## `private property <length> pop-h:      Sizes.comp-130;`
 
-*Line 21 · property*
+*Line 50 · property*
+
+**undocumented**
+
+---
+
+## `private property <length> border-px:  Sizes.border-w;`
+
+*Line 59 · property*
 
 **undocumented**
 

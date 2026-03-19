@@ -5,49 +5,49 @@
       "name": "Alert",
       "kind": "Component",
       "signature": "export component Alert inherits Rectangle {",
-      "line": 7,
+      "line": 13,
       "doc": ""
     },
     {
       "name": "message",
       "kind": "Property",
       "signature": "in property <string> message: \"\";",
-      "line": 10,
+      "line": 22,
       "doc": ""
     },
     {
       "name": "title",
       "kind": "Property",
       "signature": "in property <string> title: \"\";",
-      "line": 13,
+      "line": 31,
       "doc": ""
     },
     {
       "name": "variant",
       "kind": "Property",
       "signature": "in property <string> variant: \"info\";   // info | success | warning | error",
-      "line": 16,
+      "line": 40,
       "doc": ""
     },
     {
       "name": "closable",
       "kind": "Property",
       "signature": "in property <bool>   closable: false;",
-      "line": 19,
+      "line": 49,
       "doc": ""
     },
     {
       "name": "show",
       "kind": "Property",
       "signature": "in property <bool>   show: true;",
-      "line": 22,
+      "line": 58,
       "doc": ""
     },
     {
       "name": "closed",
       "kind": "Callback",
       "signature": "callback closed();",
-      "line": 25,
+      "line": 67,
       "doc": ""
     }
   ]

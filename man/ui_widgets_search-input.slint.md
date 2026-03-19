@@ -2,7 +2,7 @@
 
 ## `export component SearchInput inherits Rectangle {`
 
-*Line 8 · component*
+*Line 14 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <string> value: "";`
 
-*Line 11 · property*
+*Line 23 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <string> placeholder: "Search...";`
 
-*Line 14 · property*
+*Line 32 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `in property <bool>   enabled: true;`
 
-*Line 17 · property*
+*Line 41 · property*
 
 **undocumented**
 
@@ -34,7 +34,7 @@
 
 ## `callback changed(string);`
 
-*Line 20 · callback*
+*Line 50 · callback*
 
 **undocumented**
 
@@ -42,7 +42,7 @@
 
 ## `callback submitted(string);`
 
-*Line 23 · callback*
+*Line 59 · callback*
 
 **undocumented**
 
@@ -50,7 +50,7 @@
 
 ## `callback cleared();`
 
-*Line 26 · callback*
+*Line 68 · callback*
 
 **undocumented**
 

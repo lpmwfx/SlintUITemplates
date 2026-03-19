@@ -5,7 +5,7 @@
       "name": "DocBlock",
       "kind": "Struct",
       "signature": "export struct DocBlock {",
-      "line": 5,
+      "line": 11,
       "doc": ""
     }
   ]

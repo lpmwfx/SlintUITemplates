@@ -2,7 +2,7 @@
 
 ## `export component ViewSlotDemo inherits VerticalLayout {`
 
-*Line 10 · component*
+*Line 17 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `private property <string> active-slot: Variants.alpha;`
 
-*Line 13 · property*
+*Line 26 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `private property <float>  alpha-subtle: Sizes.alpha-10;`
 
-*Line 16 · property*
+*Line 35 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `private property <string> lbl-alpha: "Alpha";`
 
-*Line 20 · property*
+*Line 45 · property*
 
 **undocumented**
 
@@ -34,39 +34,39 @@
 
 ## `private property <string> lbl-beta: "Beta";`
 
-*Line 23 · property*
+*Line 54 · property*
 
 **undocumented**
 
 ---
 
-## `private property <string> lbl-gamma: "Gamma";`
+## `private property <string> lbl-gamma: Strings.demo-viewslot-label-gamma;`
 
-*Line 26 · property*
-
-**undocumented**
-
----
-
-## `private property <string> slot-alpha-text: "slot-id: \"alpha\" \u{2014} visible when active == \"alpha\"";`
-
-*Line 29 · property*
+*Line 63 · property*
 
 **undocumented**
 
 ---
 
-## `private property <string> slot-beta-text: "slot-id: \"beta\"";`
+## `private property <string> slot-alpha-text: Strings.demo-viewslot-alpha-text;`
 
-*Line 32 · property*
+*Line 72 · property*
 
 **undocumented**
 
 ---
 
-## `private property <string> slot-gamma-text: "slot-id: \"gamma\"";`
+## `private property <string> slot-beta-text: Strings.demo-viewslot-beta-text;`
 
-*Line 35 · property*
+*Line 81 · property*
+
+**undocumented**
+
+---
+
+## `private property <string> slot-gamma-text: Strings.demo-viewslot-gamma-text;`
+
+*Line 90 · property*
 
 **undocumented**
 

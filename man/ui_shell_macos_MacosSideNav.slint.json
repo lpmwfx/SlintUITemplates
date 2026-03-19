@@ -5,28 +5,28 @@
       "name": "MacosSideNav",
       "kind": "Component",
       "signature": "export component MacosSideNav inherits Rectangle {",
-      "line": 12,
+      "line": 18,
       "doc": ""
     },
     {
       "name": "items",
       "kind": "Property",
       "signature": "in property <[NavItem]> items;",
-      "line": 15,
+      "line": 27,
       "doc": ""
     },
     {
       "name": "active-item",
       "kind": "Property",
       "signature": "in property <string>    active-item;",
-      "line": 18,
+      "line": 36,
       "doc": ""
     },
     {
       "name": "navigate",
       "kind": "Callback",
       "signature": "callback navigate(string);",
-      "line": 22,
+      "line": 46,
       "doc": ""
     }
   ]

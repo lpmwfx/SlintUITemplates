@@ -5,28 +5,28 @@
       "name": "ContextMenuDemoArea",
       "kind": "Component",
       "signature": "export component ContextMenuDemoArea inherits Rectangle {",
-      "line": 9,
+      "line": 15,
       "doc": ""
     },
     {
       "name": "window-height",
       "kind": "Property",
       "signature": "in property <length> window-height;",
-      "line": 12,
+      "line": 24,
       "doc": ""
     },
     {
       "name": "ctx-hint",
       "kind": "Property",
       "signature": "private property <string> ctx-hint: \"Right-click here for VS Code-style file context menu\";",
-      "line": 17,
+      "line": 35,
       "doc": ""
     },
     {
       "name": "rc-x",
       "kind": "Property",
       "signature": "private property <length> rc-x: Sizes.no-size;",
-      "line": 21,
+      "line": 45,
       "doc": ""
     }
   ]

@@ -2,7 +2,7 @@
 
 ## `export component SelectFieldItem inherits Rectangle {`
 
-*Line 6 · component*
+*Line 12 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <string> label;`
 
-*Line 9 · property*
+*Line 21 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <bool>   is-selected: false;`
 
-*Line 12 · property*
+*Line 30 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `callback picked(string);`
 
-*Line 15 · callback*
+*Line 39 · callback*
 
 **undocumented**
 

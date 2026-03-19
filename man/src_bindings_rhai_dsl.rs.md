@@ -1,6 +1,6 @@
 # src/bindings/rhai/dsl.rs
 
-## `pub fn register(engine: &mut Engine, adapter: Rc<RefCell<AppAdapter>>)`
+## `pub fn register_dsl(engine: &mut Engine, adapter: Rc<RefCell<AppAdapter>>)`
 
 *Line 11 · fn*
 

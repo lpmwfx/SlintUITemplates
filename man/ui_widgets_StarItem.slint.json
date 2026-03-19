@@ -5,42 +5,42 @@
       "name": "StarItem",
       "kind": "Component",
       "signature": "export component StarItem inherits Rectangle {",
-      "line": 7,
+      "line": 13,
       "doc": ""
     },
     {
       "name": "index",
       "kind": "Property",
       "signature": "in property <int>  index;",
-      "line": 10,
+      "line": 22,
       "doc": ""
     },
     {
       "name": "display-val",
       "kind": "Property",
       "signature": "in property <int>  display-val;",
-      "line": 13,
+      "line": 31,
       "doc": ""
     },
     {
       "name": "readonly",
       "kind": "Property",
       "signature": "in property <bool> readonly: false;",
-      "line": 16,
+      "line": 40,
       "doc": ""
     },
     {
       "name": "clicked",
       "kind": "Callback",
       "signature": "callback clicked();",
-      "line": 19,
+      "line": 49,
       "doc": ""
     },
     {
       "name": "hover-changed",
       "kind": "Callback",
       "signature": "callback hover-changed(int);",
-      "line": 22,
+      "line": 58,
       "doc": ""
     }
   ]

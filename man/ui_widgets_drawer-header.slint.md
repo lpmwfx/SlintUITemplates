@@ -2,7 +2,7 @@
 
 ## `export component DrawerHeader inherits Rectangle {`
 
-*Line 5 · component*
+*Line 13 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <string> title: "";`
 
-*Line 8 · property*
+*Line 22 · property*
 
 **undocumented**
 
@@ -18,15 +18,15 @@
 
 ## `callback close-requested();`
 
-*Line 11 · callback*
+*Line 31 · callback*
 
 **undocumented**
 
 ---
 
-## `private property <length> border-px:  1px;`
+## `private property <length> border-px:  Sizes.border-w;`
 
-*Line 15 · property*
+*Line 41 · property*
 
 **undocumented**
 
@@ -34,7 +34,7 @@
 
 ## `private property <int>    h-stretch:  1;`
 
-*Line 18 · property*
+*Line 50 · property*
 
 **undocumented**
 

@@ -2,7 +2,7 @@
 
 ## `export component ListView inherits Rectangle {`
 
-*Line 9 · component*
+*Line 15 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `private property <string> header-title: "List";`
 
-*Line 14 · property*
+*Line 26 · property*
 
 **undocumented**
 

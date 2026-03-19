@@ -2,7 +2,7 @@
 
 ## `export component TreeViewNode inherits Rectangle {`
 
-*Line 7 · component*
+*Line 13 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <string> node-id;`
 
-*Line 10 · property*
+*Line 22 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <string> label;`
 
-*Line 13 · property*
+*Line 31 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `in property <string> icon;`
 
-*Line 16 · property*
+*Line 40 · property*
 
 **undocumented**
 
@@ -34,7 +34,7 @@
 
 ## `in property <int>    level;`
 
-*Line 19 · property*
+*Line 49 · property*
 
 **undocumented**
 
@@ -42,7 +42,7 @@
 
 ## `in property <bool>   expanded;`
 
-*Line 22 · property*
+*Line 58 · property*
 
 **undocumented**
 
@@ -50,7 +50,7 @@
 
 ## `in property <bool>   leaf;`
 
-*Line 25 · property*
+*Line 67 · property*
 
 **undocumented**
 
@@ -58,7 +58,7 @@
 
 ## `in property <bool>   is-selected: false;`
 
-*Line 28 · property*
+*Line 76 · property*
 
 **undocumented**
 
@@ -66,7 +66,7 @@
 
 ## `callback selected();`
 
-*Line 31 · callback*
+*Line 85 · callback*
 
 **undocumented**
 
@@ -74,7 +74,7 @@
 
 ## `callback toggle-expanded();`
 
-*Line 34 · callback*
+*Line 94 · callback*
 
 **undocumented**
 

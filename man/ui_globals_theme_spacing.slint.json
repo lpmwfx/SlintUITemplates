@@ -1,0 +1,89 @@
+{
+  "source": "ui/globals/theme/spacing.slint",
+  "items": [
+    {
+      "name": "xs",
+      "kind": "Property",
+      "signature": "out property <length> xs:  4px;",
+      "line": 12,
+      "doc": ""
+    },
+    {
+      "name": "sm",
+      "kind": "Property",
+      "signature": "out property <length> sm:  8px;",
+      "line": 21,
+      "doc": ""
+    },
+    {
+      "name": "md",
+      "kind": "Property",
+      "signature": "out property <length> md:  16px;",
+      "line": 30,
+      "doc": ""
+    },
+    {
+      "name": "lg",
+      "kind": "Property",
+      "signature": "out property <length> lg:  24px;",
+      "line": 39,
+      "doc": ""
+    },
+    {
+      "name": "xl",
+      "kind": "Property",
+      "signature": "out property <length> xl:  48px;   // component container height (nav rows, toolbar)",
+      "line": 48,
+      "doc": ""
+    },
+    {
+      "name": "control-sm",
+      "kind": "Property",
+      "signature": "out property <length> control-sm: 24px;",
+      "line": 59,
+      "doc": ""
+    },
+    {
+      "name": "control-md",
+      "kind": "Property",
+      "signature": "out property <length> control-md: 32px;",
+      "line": 68,
+      "doc": ""
+    },
+    {
+      "name": "control-lg",
+      "kind": "Property",
+      "signature": "out property <length> control-lg: 40px;",
+      "line": 77,
+      "doc": ""
+    },
+    {
+      "name": "handle-thickness",
+      "kind": "Property",
+      "signature": "out property <length> handle-thickness: 5px;",
+      "line": 88,
+      "doc": ""
+    },
+    {
+      "name": "handle-hit",
+      "kind": "Property",
+      "signature": "out property <length> handle-hit:       12px;",
+      "line": 97,
+      "doc": ""
+    },
+    {
+      "name": "border",
+      "kind": "Property",
+      "signature": "out property <length> border: 1px;   // standard 1px divider / border",
+      "line": 108,
+      "doc": ""
+    },
+    {
+      "name": "none",
+      "kind": "Property",
+      "signature": "out property <length> none:   0px;   // zero-length (collapsed state)",
+      "line": 117,
+      "doc": ""
+    }
+  ]
+}

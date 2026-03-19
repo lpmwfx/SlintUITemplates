@@ -2,15 +2,15 @@
 
 ## `export component Badge inherits Rectangle {`
 
-*Line 6 · component*
+*Line 13 · component*
 
 **undocumented**
 
 ---
 
-## `in property <string> text: "";`
+## `in property <string> text: Strings.badge-default;`
 
-*Line 9 · property*
+*Line 22 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <string> variant: "info";   // info | success | warning | error`
 
-*Line 12 · property*
+*Line 31 · property*
 
 **undocumented**
 

@@ -5,63 +5,63 @@
       "name": "CompactShell",
       "kind": "Component",
       "signature": "export component CompactShell inherits Rectangle {",
-      "line": 15,
+      "line": 21,
       "doc": ""
     },
     {
       "name": "title",
       "kind": "Property",
       "signature": "in property <string> title;",
-      "line": 18,
+      "line": 30,
       "doc": ""
     },
     {
       "name": "nav-items",
       "kind": "Property",
       "signature": "in property <[NavItem]> nav-items;",
-      "line": 21,
+      "line": 39,
       "doc": ""
     },
     {
       "name": "active-view",
       "kind": "Property",
       "signature": "in property <string> active-view;",
-      "line": 24,
+      "line": 48,
       "doc": ""
     },
     {
       "name": "show-topbar",
       "kind": "Property",
       "signature": "in property <bool> show-topbar: true;",
-      "line": 27,
+      "line": 57,
       "doc": ""
     },
     {
       "name": "show-back",
       "kind": "Property",
       "signature": "in property <bool> show-back: false;",
-      "line": 30,
+      "line": 66,
       "doc": ""
     },
     {
       "name": "nav-mode",
       "kind": "Property",
       "signature": "in property <string> nav-mode: Variants.nav-bottom;",
-      "line": 33,
+      "line": 75,
       "doc": ""
     },
     {
       "name": "navigate",
       "kind": "Callback",
       "signature": "callback navigate(string);",
-      "line": 36,
+      "line": 84,
       "doc": ""
     },
     {
       "name": "back",
       "kind": "Callback",
       "signature": "callback back();",
-      "line": 39,
+      "line": 93,
       "doc": ""
     }
   ]

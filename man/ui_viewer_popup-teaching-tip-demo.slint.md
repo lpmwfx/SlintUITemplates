@@ -2,7 +2,7 @@
 
 ## `export component PopupTeachingTipDemo inherits Rectangle {`
 
-*Line 6 · component*
+*Line 14 · component*
 
 **undocumented**
 
@@ -10,15 +10,15 @@
 
 ## `in property <length> window-height;`
 
-*Line 9 · property*
+*Line 23 · property*
 
 **undocumented**
 
 ---
 
-## `private property <length> demo-w: 160px;`
+## `private property <length> demo-w: Sizes.comp-160;`
 
-*Line 13 · property*
+*Line 33 · property*
 
 **undocumented**
 

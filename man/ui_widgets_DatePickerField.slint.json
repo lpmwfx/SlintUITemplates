@@ -5,49 +5,49 @@
       "name": "DatePickerField",
       "kind": "Component",
       "signature": "export component DatePickerField inherits Rectangle {",
-      "line": 7,
+      "line": 13,
       "doc": ""
     },
     {
       "name": "value",
       "kind": "Property",
       "signature": "in property <string> value;",
-      "line": 10,
+      "line": 22,
       "doc": ""
     },
     {
       "name": "placeholder",
       "kind": "Property",
       "signature": "in property <string> placeholder;",
-      "line": 13,
+      "line": 31,
       "doc": ""
     },
     {
       "name": "error",
       "kind": "Property",
       "signature": "in property <string> error;",
-      "line": 16,
+      "line": 40,
       "doc": ""
     },
     {
       "name": "enabled",
       "kind": "Property",
       "signature": "in property <bool>   enabled: true;",
-      "line": 19,
+      "line": 49,
       "doc": ""
     },
     {
       "name": "icon-font",
       "kind": "Property",
       "signature": "in property <string> icon-font: \"Segoe Fluent Icons\";",
-      "line": 22,
+      "line": 58,
       "doc": ""
     },
     {
       "name": "open-picker",
       "kind": "Callback",
       "signature": "callback open-picker();",
-      "line": 25,
+      "line": 67,
       "doc": ""
     }
   ]

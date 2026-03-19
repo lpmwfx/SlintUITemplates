@@ -11,7 +11,7 @@ I co nn am e enum.
 
 ## `pub fn fluent_icon(name: &str) -> Option<&'static str>`
 
-*Line 143 · fn*
+*Line 145 · fn*
 
 Look up the Segoe Fluent Icons codepoint for an icon name string.
 Returns `None` if the name is not recognized.

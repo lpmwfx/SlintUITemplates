@@ -5,42 +5,42 @@
       "name": "SideBarRow",
       "kind": "Component",
       "signature": "export component SideBarRow inherits Rectangle {",
-      "line": 8,
+      "line": 15,
       "doc": ""
     },
     {
       "name": "item",
       "kind": "Property",
       "signature": "in property <NavItem> item;",
-      "line": 11,
+      "line": 24,
       "doc": ""
     },
     {
       "name": "is-active",
       "kind": "Property",
       "signature": "in property <bool>    is-active;",
-      "line": 14,
+      "line": 33,
       "doc": ""
     },
     {
       "name": "sidebar-collapsed",
       "kind": "Property",
       "signature": "in property <bool>    sidebar-collapsed;",
-      "line": 17,
+      "line": 42,
       "doc": ""
     },
     {
       "name": "navigate",
       "kind": "Callback",
       "signature": "callback navigate(string);",
-      "line": 20,
+      "line": 51,
       "doc": ""
     },
     {
       "name": "toggle-group",
       "kind": "Callback",
       "signature": "callback toggle-group(string);",
-      "line": 23,
+      "line": 60,
       "doc": ""
     }
   ]

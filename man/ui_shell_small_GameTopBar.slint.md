@@ -2,7 +2,7 @@
 
 ## `export component GameTopBar inherits Rectangle {`
 
-*Line 11 · component*
+*Line 17 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <string> title;`
 
-*Line 14 · property*
+*Line 26 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <bool> show-back: false;`
 
-*Line 17 · property*
+*Line 35 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `callback back();`
 
-*Line 20 · callback*
+*Line 44 · callback*
 
 **undocumented**
 

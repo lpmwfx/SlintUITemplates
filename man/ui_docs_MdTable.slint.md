@@ -2,7 +2,7 @@
 
 ## `export component MdTable inherits VerticalLayout {`
 
-*Line 8 · component*
+*Line 14 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <string> kind;`
 
-*Line 11 · property*
+*Line 23 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <string> text;`
 
-*Line 14 · property*
+*Line 32 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `in property <string> mono-font: "Consolas";`
 
-*Line 17 · property*
+*Line 41 · property*
 
 **undocumented**
 

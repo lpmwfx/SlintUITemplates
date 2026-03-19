@@ -2,7 +2,7 @@
 
 ## `export component PageData inherits VerticalLayout {`
 
-*Line 15 · component*
+*Line 21 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <length> window-height;`
 
-*Line 18 · property*
+*Line 30 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `private property <string> table-selected: "";`
 
-*Line 24 · property*
+*Line 42 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `private property <string> tree-selected: "";`
 
-*Line 27 · property*
+*Line 51 · property*
 
 **undocumented**
 
@@ -34,7 +34,7 @@
 
 ## `private property <string> date-value: "";`
 
-*Line 30 · property*
+*Line 60 · property*
 
 **undocumented**
 
@@ -42,7 +42,7 @@
 
 ## `private property <string> section-datatable: "DataTable";`
 
-*Line 35 · property*
+*Line 71 · property*
 
 **undocumented**
 
@@ -50,7 +50,7 @@
 
 ## `private property <string> section-treeview: "TreeView";`
 
-*Line 38 · property*
+*Line 80 · property*
 
 **undocumented**
 
@@ -58,7 +58,7 @@
 
 ## `private property <string> section-datepicker: "DatePicker";`
 
-*Line 41 · property*
+*Line 89 · property*
 
 **undocumented**
 
@@ -66,7 +66,7 @@
 
 ## `private property <string> section-multiselect: "MultiSelect";`
 
-*Line 44 · property*
+*Line 98 · property*
 
 **undocumented**
 
@@ -74,7 +74,7 @@
 
 ## `private property <string> section-chip: "Chip";`
 
-*Line 47 · property*
+*Line 107 · property*
 
 **undocumented**
 
@@ -82,7 +82,7 @@
 
 ## `private property <string> section-contextmenu: "ContextMenu — File Explorer (right-click area)";`
 
-*Line 50 · property*
+*Line 116 · property*
 
 **undocumented**
 
@@ -90,7 +90,7 @@
 
 ## `private property <string> dp-label: "Select date";`
 
-*Line 53 · property*
+*Line 125 · property*
 
 **undocumented**
 
@@ -98,7 +98,7 @@
 
 ## `private property <string> dp-error-label: "With error";`
 
-*Line 56 · property*
+*Line 134 · property*
 
 **undocumented**
 
@@ -106,7 +106,7 @@
 
 ## `private property <string> dp-error-msg: "Date is required";`
 
-*Line 59 · property*
+*Line 143 · property*
 
 **undocumented**
 
@@ -114,7 +114,7 @@
 
 ## `private property <string> ms-placeholder: "Choose languages...";`
 
-*Line 62 · property*
+*Line 152 · property*
 
 **undocumented**
 
@@ -122,7 +122,7 @@
 
 ## `private property <string> chip-default: "Default";`
 
-*Line 65 · property*
+*Line 161 · property*
 
 **undocumented**
 
@@ -130,7 +130,7 @@
 
 ## `private property <string> chip-selected: "Selected";`
 
-*Line 68 · property*
+*Line 170 · property*
 
 **undocumented**
 
@@ -138,7 +138,7 @@
 
 ## `private property <string> chip-noclose: "No close";`
 
-*Line 71 · property*
+*Line 179 · property*
 
 **undocumented**
 
@@ -146,7 +146,7 @@
 
 ## `private property <string> chip-disabled: "Disabled";`
 
-*Line 74 · property*
+*Line 188 · property*
 
 **undocumented**
 
@@ -154,7 +154,7 @@
 
 ## `private property <length> col-name-w: Sizes.comp-160;`
 
-*Line 79 · property*
+*Line 199 · property*
 
 **undocumented**
 
@@ -162,7 +162,7 @@
 
 ## `private property <length> dp-w: Sizes.comp-260;`
 
-*Line 82 · property*
+*Line 208 · property*
 
 **undocumented**
 
@@ -170,7 +170,7 @@
 
 ## `private property <length> ms-w: Sizes.comp-240;`
 
-*Line 85 · property*
+*Line 217 · property*
 
 **undocumented**
 
@@ -178,7 +178,7 @@
 
 ## `private property <string> row-id-a: "1";`
 
-*Line 90 · property*
+*Line 228 · property*
 
 **undocumented**
 
@@ -186,7 +186,7 @@
 
 ## `private property <string> row-id-b: "2";`
 
-*Line 93 · property*
+*Line 237 · property*
 
 **undocumented**
 
@@ -194,7 +194,7 @@
 
 ## `private property <string> row-id-c: "3";`
 
-*Line 96 · property*
+*Line 246 · property*
 
 **undocumented**
 
@@ -202,7 +202,7 @@
 
 ## `private property <string> row-id-d: "4";`
 
-*Line 99 · property*
+*Line 255 · property*
 
 **undocumented**
 
@@ -210,7 +210,7 @@
 
 ## `private property <string> row-id-e: "5";`
 
-*Line 102 · property*
+*Line 264 · property*
 
 **undocumented**
 
@@ -218,7 +218,7 @@
 
 ## `private property <string> date-a: "2023-01";`
 
-*Line 105 · property*
+*Line 273 · property*
 
 **undocumented**
 
@@ -226,7 +226,7 @@
 
 ## `private property <string> date-b: "2022-06";`
 
-*Line 108 · property*
+*Line 282 · property*
 
 **undocumented**
 
@@ -234,7 +234,7 @@
 
 ## `private property <string> date-c: "2021-11";`
 
-*Line 111 · property*
+*Line 291 · property*
 
 **undocumented**
 
@@ -242,7 +242,7 @@
 
 ## `private property <string> date-d: "2023-04";`
 
-*Line 114 · property*
+*Line 300 · property*
 
 **undocumented**
 
@@ -250,7 +250,7 @@
 
 ## `private property <string> date-e: "2024-02";`
 
-*Line 117 · property*
+*Line 309 · property*
 
 **undocumented**
 

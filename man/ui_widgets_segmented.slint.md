@@ -2,7 +2,7 @@
 
 ## `export component Segmented inherits Rectangle {`
 
-*Line 8 · component*
+*Line 15 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <[SegmentItem]> items: [];`
 
-*Line 11 · property*
+*Line 24 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <string>        selected: "";`
 
-*Line 14 · property*
+*Line 33 · property*
 
 **undocumented**
 
@@ -26,23 +26,23 @@
 
 ## `callback changed(string);`
 
-*Line 17 · callback*
+*Line 42 · callback*
 
 **undocumented**
 
 ---
 
-## `private property <length> border-px: 1px;`
+## `private property <length> border-px: Sizes.border-w;`
 
-*Line 21 · property*
+*Line 52 · property*
 
 **undocumented**
 
 ---
 
-## `private property <length> pad-px:    2px;`
+## `private property <length> pad-px:    Sizes.border-w-2;`
 
-*Line 24 · property*
+*Line 61 · property*
 
 **undocumented**
 
@@ -50,7 +50,7 @@
 
 ## `private property <int>    v-stretch: 1;`
 
-*Line 27 · property*
+*Line 70 · property*
 
 **undocumented**
 
@@ -58,7 +58,7 @@
 
 ## `private property <int>    h-stretch: 1;`
 
-*Line 30 · property*
+*Line 79 · property*
 
 **undocumented**
 

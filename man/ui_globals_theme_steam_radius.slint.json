@@ -1,0 +1,47 @@
+{
+  "source": "ui/globals/theme/steam/radius.slint",
+  "items": [
+    {
+      "name": "none",
+      "kind": "Property",
+      "signature": "out property <length> none:   0px;",
+      "line": 12,
+      "doc": ""
+    },
+    {
+      "name": "sm",
+      "kind": "Property",
+      "signature": "out property <length> sm:     2px;",
+      "line": 21,
+      "doc": ""
+    },
+    {
+      "name": "md",
+      "kind": "Property",
+      "signature": "out property <length> md:     4px;",
+      "line": 30,
+      "doc": ""
+    },
+    {
+      "name": "lg",
+      "kind": "Property",
+      "signature": "out property <length> lg:     8px;",
+      "line": 39,
+      "doc": ""
+    },
+    {
+      "name": "xl",
+      "kind": "Property",
+      "signature": "out property <length> xl:     12px;",
+      "line": 48,
+      "doc": ""
+    },
+    {
+      "name": "circle",
+      "kind": "Property",
+      "signature": "out property <length> circle: 9999px;",
+      "line": 57,
+      "doc": ""
+    }
+  ]
+}

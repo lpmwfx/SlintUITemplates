@@ -5,28 +5,28 @@
       "name": "Toolbar",
       "kind": "Component",
       "signature": "export component Toolbar inherits Rectangle {",
-      "line": 8,
+      "line": 15,
       "doc": ""
     },
     {
       "name": "items",
       "kind": "Property",
       "signature": "in property <[ToolbarItem]> items: [];",
-      "line": 11,
+      "line": 24,
       "doc": ""
     },
     {
       "name": "clicked",
       "kind": "Callback",
       "signature": "callback clicked(string);",
-      "line": 14,
+      "line": 33,
       "doc": ""
     },
     {
       "name": "border-px",
       "kind": "Property",
-      "signature": "private property <length> border-px: 1px;",
-      "line": 18,
+      "signature": "private property <length> border-px: Sizes.border-w;",
+      "line": 43,
       "doc": ""
     }
   ]

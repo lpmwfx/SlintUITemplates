@@ -5,14 +5,14 @@
       "name": "MdParagraph",
       "kind": "Component",
       "signature": "export component MdParagraph inherits VerticalLayout {",
-      "line": 6,
+      "line": 12,
       "doc": ""
     },
     {
       "name": "text",
       "kind": "Property",
       "signature": "in property <string> text;",
-      "line": 9,
+      "line": 21,
       "doc": ""
     }
   ]

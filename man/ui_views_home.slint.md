@@ -2,31 +2,31 @@
 
 ## `export component HomeView inherits Rectangle {`
 
-*Line 11 · component*
+*Line 18 · component*
 
 **undocumented**
 
 ---
 
-## `private property <string> card-subtitle: "Edit ui/views/home.slint to design this view";`
+## `private property <string> card-subtitle: Strings.home-getting-started-subtitle;`
 
-*Line 16 · property*
-
-**undocumented**
-
----
-
-## `private property <string> page-title: "Home";`
-
-*Line 19 · property*
+*Line 29 · property*
 
 **undocumented**
 
 ---
 
-## `private property <string> card-title: "Getting started";`
+## `private property <string> page-title: Strings.home-page-title;`
 
-*Line 22 · property*
+*Line 38 · property*
+
+**undocumented**
+
+---
+
+## `private property <string> card-title: Strings.home-getting-started-title;`
+
+*Line 47 · property*
 
 **undocumented**
 

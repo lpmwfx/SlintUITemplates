@@ -2,7 +2,7 @@
 
 ## `export struct ContextMenuItem {`
 
-*Line 6 · struct*
+*Line 12 · struct*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `export component ContextMenuEntry inherits Rectangle {`
 
-*Line 18 · component*
+*Line 30 · component*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <ContextMenuItem> item;`
 
-*Line 21 · property*
+*Line 39 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `in property <string> icon-font: "Segoe Fluent Icons";`
 
-*Line 24 · property*
+*Line 48 · property*
 
 **undocumented**
 
@@ -34,7 +34,7 @@
 
 ## `callback activated(string);`
 
-*Line 27 · callback*
+*Line 57 · callback*
 
 **undocumented**
 

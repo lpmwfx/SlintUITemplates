@@ -5,21 +5,21 @@
       "name": "BackButton",
       "kind": "Component",
       "signature": "export component BackButton inherits Rectangle {",
-      "line": 8,
+      "line": 14,
       "doc": ""
     },
     {
       "name": "clicked",
       "kind": "Callback",
       "signature": "callback clicked();",
-      "line": 11,
+      "line": 23,
       "doc": ""
     },
     {
       "name": "icon",
       "kind": "Property",
       "signature": "in property <string> icon: \"\";",
-      "line": 14,
+      "line": 32,
       "doc": ""
     }
   ]

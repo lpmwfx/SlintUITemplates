@@ -2,7 +2,7 @@
 
 ## `export component ContextMenu inherits Rectangle {`
 
-*Line 27 · component*
+*Line 33 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <[ContextMenuItem]> items: [];`
 
-*Line 30 · property*
+*Line 42 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <int>    separator-count;`
 
-*Line 33 · property*
+*Line 51 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `in property <length> window-height;`
 
-*Line 36 · property*
+*Line 60 · property*
 
 **undocumented**
 
@@ -34,7 +34,7 @@
 
 ## `callback activated(string);`
 
-*Line 40 · callback*
+*Line 70 · callback*
 
 **undocumented**
 
@@ -42,7 +42,7 @@
 
 ## `private property <length> pop-x: Sizes.no-size;`
 
-*Line 44 · property*
+*Line 80 · property*
 
 **undocumented**
 
@@ -50,7 +50,7 @@
 
 ## `private property <length> pop-y: Sizes.no-size;`
 
-*Line 47 · property*
+*Line 89 · property*
 
 **undocumented**
 
@@ -58,7 +58,7 @@
 
 ## `private property <length> popup-w: Sizes.comp-260;`
 
-*Line 50 · property*
+*Line 98 · property*
 
 **undocumented**
 
@@ -66,7 +66,7 @@
 
 ## `private property <length> est-popup-h:`
 
-*Line 53 · property*
+*Line 107 · property*
 
 **undocumented**
 
@@ -74,7 +74,7 @@
 
 ## `private property <length> popup-h:`
 
-*Line 61 · property*
+*Line 121 · property*
 
 **undocumented**
 

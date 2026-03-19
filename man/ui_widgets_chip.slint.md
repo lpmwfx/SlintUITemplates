@@ -2,7 +2,7 @@
 
 ## `export component Chip inherits Rectangle {`
 
-*Line 6 · component*
+*Line 12 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <string> label: "";`
 
-*Line 9 · property*
+*Line 21 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <bool>   closable: true;`
 
-*Line 12 · property*
+*Line 30 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `in property <string> icon: "";`
 
-*Line 15 · property*
+*Line 39 · property*
 
 **undocumented**
 
@@ -34,7 +34,7 @@
 
 ## `in property <bool>   selected: false;`
 
-*Line 18 · property*
+*Line 48 · property*
 
 **undocumented**
 
@@ -42,7 +42,7 @@
 
 ## `in property <bool>   enabled: true;`
 
-*Line 21 · property*
+*Line 57 · property*
 
 **undocumented**
 
@@ -50,7 +50,7 @@
 
 ## `callback closed();`
 
-*Line 24 · callback*
+*Line 66 · callback*
 
 **undocumented**
 
@@ -58,15 +58,15 @@
 
 ## `callback clicked();`
 
-*Line 27 · callback*
+*Line 75 · callback*
 
 **undocumented**
 
 ---
 
-## `private property <length> close-icon-size: 10px;`
+## `private property <length> close-icon-size: Sizes.glyph-sm;`
 
-*Line 31 · property*
+*Line 85 · property*
 
 **undocumented**
 

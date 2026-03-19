@@ -2,7 +2,7 @@
 
 ## `export component PagePopups inherits VerticalLayout {`
 
-*Line 13 · component*
+*Line 19 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <length> window-height;`
 
-*Line 16 · property*
+*Line 28 · property*
 
 **undocumented**
 

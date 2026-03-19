@@ -5,14 +5,14 @@
       "name": "ListView",
       "kind": "Component",
       "signature": "export component ListView inherits Rectangle {",
-      "line": 9,
+      "line": 15,
       "doc": ""
     },
     {
       "name": "header-title",
       "kind": "Property",
       "signature": "private property <string> header-title: \"List\";",
-      "line": 14,
+      "line": 26,
       "doc": ""
     }
   ]

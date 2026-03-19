@@ -2,7 +2,7 @@
 
 ## `export component IconRow inherits Flickable {`
 
-*Line 9 · component*
+*Line 15 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <[{glyph: string, name: string}]> icons;`
 
-*Line 12 · property*
+*Line 24 · property*
 
 **undocumented**
 

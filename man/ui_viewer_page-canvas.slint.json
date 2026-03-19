@@ -5,28 +5,28 @@
       "name": "PageCanvas",
       "kind": "Component",
       "signature": "export component PageCanvas inherits VerticalLayout {",
-      "line": 10,
+      "line": 16,
       "doc": ""
     },
     {
       "name": "canvas-frame",
       "kind": "Property",
       "signature": "in property <image> canvas-frame;",
-      "line": 13,
+      "line": 25,
       "doc": ""
     },
     {
       "name": "path-title",
       "kind": "Property",
       "signature": "private property <string> path-title:  \"Path Canvas (pure Slint)\";",
-      "line": 17,
+      "line": 35,
       "doc": ""
     },
     {
       "name": "image-title",
       "kind": "Property",
       "signature": "private property <string> image-title: \"Image Canvas (Rust-rendered frame)\";",
-      "line": 20,
+      "line": 44,
       "doc": ""
     }
   ]

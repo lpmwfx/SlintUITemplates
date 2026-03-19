@@ -5,14 +5,14 @@
       "name": "split",
       "kind": "Property",
       "signature": "private property <length> split: Sizes.comp-40;",
-      "line": 9,
+      "line": 15,
       "doc": ""
     },
     {
       "name": "split-max",
       "kind": "Property",
       "signature": "private property <length> split-max: Sizes.comp-60;",
-      "line": 12,
+      "line": 24,
       "doc": ""
     }
   ]

@@ -5,35 +5,35 @@
       "name": "RowsArea",
       "kind": "Component",
       "signature": "export component RowsArea inherits Rectangle {",
-      "line": 10,
+      "line": 22,
       "doc": ""
     },
     {
       "name": "rows",
       "kind": "Property",
       "signature": "in property <[TableRow]>    rows;",
-      "line": 13,
+      "line": 31,
       "doc": ""
     },
     {
       "name": "columns",
       "kind": "Property",
       "signature": "in property <[TableColumn]> columns;",
-      "line": 16,
+      "line": 40,
       "doc": ""
     },
     {
       "name": "selected",
       "kind": "Property",
       "signature": "in property <string>        selected;",
-      "line": 19,
+      "line": 49,
       "doc": ""
     },
     {
       "name": "row-selected",
       "kind": "Callback",
       "signature": "callback row-selected(string);",
-      "line": 22,
+      "line": 58,
       "doc": ""
     }
   ]

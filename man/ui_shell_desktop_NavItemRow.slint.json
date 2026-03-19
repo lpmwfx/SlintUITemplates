@@ -5,77 +5,77 @@
       "name": "NavItemRow",
       "kind": "Component",
       "signature": "export component NavItemRow inherits Rectangle {",
-      "line": 7,
+      "line": 13,
       "doc": ""
     },
     {
       "name": "item-id",
       "kind": "Property",
       "signature": "in property <string> item-id;",
-      "line": 10,
+      "line": 22,
       "doc": ""
     },
     {
       "name": "icon",
       "kind": "Property",
       "signature": "in property <string> icon;",
-      "line": 13,
+      "line": 31,
       "doc": ""
     },
     {
       "name": "label",
       "kind": "Property",
       "signature": "in property <string> label;",
-      "line": 16,
+      "line": 40,
       "doc": ""
     },
     {
       "name": "icon-font",
       "kind": "Property",
       "signature": "in property <string> icon-font;",
-      "line": 19,
+      "line": 49,
       "doc": ""
     },
     {
       "name": "is-active",
       "kind": "Property",
       "signature": "in property <bool>   is-active: false;",
-      "line": 22,
+      "line": 58,
       "doc": ""
     },
     {
       "name": "collapsed",
       "kind": "Property",
       "signature": "in property <bool>   collapsed: false;",
-      "line": 25,
+      "line": 67,
       "doc": ""
     },
     {
       "name": "active-alpha",
       "kind": "Property",
       "signature": "in property <float>  active-alpha;",
-      "line": 28,
+      "line": 76,
       "doc": ""
     },
     {
       "name": "indicator-w",
       "kind": "Property",
       "signature": "in property <length> indicator-w;",
-      "line": 31,
+      "line": 85,
       "doc": ""
     },
     {
       "name": "indicator-radius",
       "kind": "Property",
       "signature": "in property <length> indicator-radius;",
-      "line": 34,
+      "line": 94,
       "doc": ""
     },
     {
       "name": "clicked",
       "kind": "Callback",
       "signature": "callback clicked();",
-      "line": 37,
+      "line": 103,
       "doc": ""
     }
   ]

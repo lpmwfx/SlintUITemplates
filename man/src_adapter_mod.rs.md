@@ -33,7 +33,7 @@ Create a new adapter, initializing the Slint window and wiring event dispatch.
 
 ## `pub fn apply_dsl(&mut self, dsl: &AppDsl)`
 
-*Line 115 · fn*
+*Line 118 · fn*
 
 Apply a validated `AppDsl` — composition rules already enforced.
 
@@ -41,7 +41,7 @@ Apply a validated `AppDsl` — composition rules already enforced.
 
 ## `pub fn run(self) -> Result<(), slint::PlatformError>`
 
-*Line 122 · fn*
+*Line 125 · fn*
 
 Show window and apply OS-level backdrop effects, then enter event loop.
 

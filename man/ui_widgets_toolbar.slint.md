@@ -2,7 +2,7 @@
 
 ## `export component Toolbar inherits Rectangle {`
 
-*Line 8 · component*
+*Line 15 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <[ToolbarItem]> items: [];`
 
-*Line 11 · property*
+*Line 24 · property*
 
 **undocumented**
 
@@ -18,15 +18,15 @@
 
 ## `callback clicked(string);`
 
-*Line 14 · callback*
+*Line 33 · callback*
 
 **undocumented**
 
 ---
 
-## `private property <length> border-px: 1px;`
+## `private property <length> border-px: Sizes.border-w;`
 
-*Line 18 · property*
+*Line 43 · property*
 
 **undocumented**
 

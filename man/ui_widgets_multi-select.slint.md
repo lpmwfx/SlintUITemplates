@@ -2,7 +2,7 @@
 
 ## `export component MultiSelect inherits Rectangle {`
 
-*Line 11 · component*
+*Line 17 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <[MultiSelectOption]> options: [];`
 
-*Line 14 · property*
+*Line 26 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <[string]>        selected: [];`
 
-*Line 17 · property*
+*Line 35 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `in property <string>              placeholder: "Select...";`
 
-*Line 20 · property*
+*Line 44 · property*
 
 **undocumented**
 
@@ -34,7 +34,7 @@
 
 ## `in property <bool>                enabled: true;`
 
-*Line 23 · property*
+*Line 53 · property*
 
 **undocumented**
 
@@ -42,7 +42,7 @@
 
 ## `callback changed([string]);`
 
-*Line 26 · callback*
+*Line 62 · callback*
 
 **undocumented**
 
@@ -50,7 +50,7 @@
 
 ## `private property <bool> open: false;`
 
-*Line 30 · property*
+*Line 72 · property*
 
 **undocumented**
 

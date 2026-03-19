@@ -5,98 +5,98 @@
       "name": "TeachingTip",
       "kind": "Component",
       "signature": "export component TeachingTip inherits Rectangle {",
-      "line": 19,
+      "line": 26,
       "doc": ""
     },
     {
       "name": "window-height",
       "kind": "Property",
       "signature": "in property <length> window-height;",
-      "line": 22,
+      "line": 35,
       "doc": ""
     },
     {
       "name": "title",
       "kind": "Property",
       "signature": "in property <string> title: \"\";",
-      "line": 25,
+      "line": 44,
       "doc": ""
     },
     {
       "name": "body",
       "kind": "Property",
       "signature": "in property <string> body: \"\";",
-      "line": 28,
+      "line": 53,
       "doc": ""
     },
     {
       "name": "action-label",
       "kind": "Property",
       "signature": "in property <string> action-label: \"Got it\";",
-      "line": 31,
+      "line": 62,
       "doc": ""
     },
     {
       "name": "dismiss-label",
       "kind": "Property",
       "signature": "in property <string> dismiss-label: \"\";",
-      "line": 34,
+      "line": 71,
       "doc": ""
     },
     {
       "name": "action",
       "kind": "Callback",
       "signature": "callback action();",
-      "line": 37,
+      "line": 80,
       "doc": ""
     },
     {
       "name": "dismissed",
       "kind": "Callback",
       "signature": "callback dismissed();",
-      "line": 40,
+      "line": 89,
       "doc": ""
     },
     {
       "name": "pop-x",
       "kind": "Property",
-      "signature": "private property <length> pop-x:    0px;",
-      "line": 44,
+      "signature": "private property <length> pop-x:    Sizes.no-size;",
+      "line": 99,
       "doc": ""
     },
     {
       "name": "pop-y",
       "kind": "Property",
-      "signature": "private property <length> pop-y:    0px;",
-      "line": 47,
+      "signature": "private property <length> pop-y:    Sizes.no-size;",
+      "line": 108,
       "doc": ""
     },
     {
       "name": "popup-w",
       "kind": "Property",
-      "signature": "private property <length> popup-w:  260px;",
-      "line": 50,
+      "signature": "private property <length> popup-w:  Sizes.comp-260;",
+      "line": 117,
       "doc": ""
     },
     {
       "name": "popup-h",
       "kind": "Property",
-      "signature": "private property <length> popup-h:  180px;",
-      "line": 53,
+      "signature": "private property <length> popup-h:  Sizes.comp-180;",
+      "line": 126,
       "doc": ""
     },
     {
       "name": "arrow-sz",
       "kind": "Property",
-      "signature": "private property <length> arrow-sz: 10px;",
-      "line": 56,
+      "signature": "private property <length> arrow-sz: Sizes.glyph-sm;",
+      "line": 135,
       "doc": ""
     },
     {
       "name": "flip-up",
       "kind": "Property",
       "signature": "private property <bool>   flip-up:  false;",
-      "line": 59,
+      "line": 144,
       "doc": ""
     }
   ]

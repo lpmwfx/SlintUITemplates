@@ -5,14 +5,14 @@
       "name": "CbfOverflowBtn",
       "kind": "Component",
       "signature": "export component CbfOverflowBtn inherits Rectangle {",
-      "line": 5,
+      "line": 12,
       "doc": ""
     },
     {
       "name": "show-secondary",
       "kind": "Callback",
       "signature": "callback show-secondary();",
-      "line": 8,
+      "line": 21,
       "doc": ""
     }
   ]

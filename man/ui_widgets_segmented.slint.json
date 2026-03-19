@@ -5,56 +5,56 @@
       "name": "Segmented",
       "kind": "Component",
       "signature": "export component Segmented inherits Rectangle {",
-      "line": 8,
+      "line": 15,
       "doc": ""
     },
     {
       "name": "items",
       "kind": "Property",
       "signature": "in property <[SegmentItem]> items: [];",
-      "line": 11,
+      "line": 24,
       "doc": ""
     },
     {
       "name": "selected",
       "kind": "Property",
       "signature": "in property <string>        selected: \"\";",
-      "line": 14,
+      "line": 33,
       "doc": ""
     },
     {
       "name": "changed",
       "kind": "Callback",
       "signature": "callback changed(string);",
-      "line": 17,
+      "line": 42,
       "doc": ""
     },
     {
       "name": "border-px",
       "kind": "Property",
-      "signature": "private property <length> border-px: 1px;",
-      "line": 21,
+      "signature": "private property <length> border-px: Sizes.border-w;",
+      "line": 52,
       "doc": ""
     },
     {
       "name": "pad-px",
       "kind": "Property",
-      "signature": "private property <length> pad-px:    2px;",
-      "line": 24,
+      "signature": "private property <length> pad-px:    Sizes.border-w-2;",
+      "line": 61,
       "doc": ""
     },
     {
       "name": "v-stretch",
       "kind": "Property",
       "signature": "private property <int>    v-stretch: 1;",
-      "line": 27,
+      "line": 70,
       "doc": ""
     },
     {
       "name": "h-stretch",
       "kind": "Property",
       "signature": "private property <int>    h-stretch: 1;",
-      "line": 30,
+      "line": 79,
       "doc": ""
     }
   ]

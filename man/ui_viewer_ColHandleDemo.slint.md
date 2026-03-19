@@ -2,7 +2,7 @@
 
 ## `private property <length> split: Sizes.thumb-md;`
 
-*Line 9 · property*
+*Line 15 · property*
 
 **undocumented**
 

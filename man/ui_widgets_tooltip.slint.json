@@ -5,28 +5,28 @@
       "name": "Tooltip",
       "kind": "Component",
       "signature": "export component Tooltip inherits Rectangle {",
-      "line": 7,
+      "line": 14,
       "doc": ""
     },
     {
       "name": "text",
       "kind": "Property",
-      "signature": "in property <string> text: \"\";",
-      "line": 10,
+      "signature": "in property <string> text: Strings.label-default;",
+      "line": 23,
       "doc": ""
     },
     {
       "name": "placement",
       "kind": "Property",
       "signature": "in property <string> placement: Variants.top;   // top | bottom | left | right",
-      "line": 13,
+      "line": 32,
       "doc": ""
     },
     {
       "name": "enabled",
       "kind": "Property",
       "signature": "in property <bool>   enabled: true;",
-      "line": 16,
+      "line": 41,
       "doc": ""
     }
   ]

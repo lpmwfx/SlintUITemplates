@@ -5,28 +5,28 @@
       "name": "StatusBar",
       "kind": "Component",
       "signature": "export component StatusBar inherits Rectangle {",
-      "line": 6,
+      "line": 13,
       "doc": ""
     },
     {
       "name": "status-text",
       "kind": "Property",
-      "signature": "in property <string> status-text: \"Ready\";",
-      "line": 9,
+      "signature": "in property <string> status-text: Strings.app-status-ready;",
+      "line": 22,
       "doc": ""
     },
     {
       "name": "progress",
       "kind": "Property",
       "signature": "in property <float>  progress: Sizes.no-fill;",
-      "line": 12,
+      "line": 31,
       "doc": ""
     },
     {
       "name": "show-progress",
       "kind": "Property",
       "signature": "in property <bool>   show-progress: false;",
-      "line": 15,
+      "line": 40,
       "doc": ""
     }
   ]

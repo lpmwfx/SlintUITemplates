@@ -2,7 +2,7 @@
 
 ## `export component BottomNavBar inherits Rectangle {`
 
-*Line 11 · component*
+*Line 17 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <[NavItem]> items;`
 
-*Line 14 · property*
+*Line 26 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <string>    active: "";`
 
-*Line 17 · property*
+*Line 35 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `in property <string>    icon-font: "Segoe Fluent Icons";`
 
-*Line 20 · property*
+*Line 44 · property*
 
 **undocumented**
 
@@ -34,7 +34,7 @@
 
 ## `callback navigate(string);`
 
-*Line 23 · callback*
+*Line 53 · callback*
 
 **undocumented**
 
@@ -42,7 +42,7 @@
 
 ## `private property <length> pad-top: Sizes.comp-12;`
 
-*Line 27 · property*
+*Line 63 · property*
 
 **undocumented**
 
@@ -50,7 +50,7 @@
 
 ## `private property <length> pill-w:  Sizes.comp-64;`
 
-*Line 30 · property*
+*Line 72 · property*
 
 **undocumented**
 

@@ -2,7 +2,7 @@
 
 ## `export component SideBarRow inherits Rectangle {`
 
-*Line 8 · component*
+*Line 15 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <NavItem> item;`
 
-*Line 11 · property*
+*Line 24 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <bool>    is-active;`
 
-*Line 14 · property*
+*Line 33 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `in property <bool>    sidebar-collapsed;`
 
-*Line 17 · property*
+*Line 42 · property*
 
 **undocumented**
 
@@ -34,7 +34,7 @@
 
 ## `callback navigate(string);`
 
-*Line 20 · callback*
+*Line 51 · callback*
 
 **undocumented**
 
@@ -42,7 +42,7 @@
 
 ## `callback toggle-group(string);`
 
-*Line 23 · callback*
+*Line 60 · callback*
 
 **undocumented**
 

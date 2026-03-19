@@ -5,21 +5,21 @@
       "name": "Badge",
       "kind": "Component",
       "signature": "export component Badge inherits Rectangle {",
-      "line": 6,
+      "line": 13,
       "doc": ""
     },
     {
       "name": "text",
       "kind": "Property",
-      "signature": "in property <string> text: \"\";",
-      "line": 9,
+      "signature": "in property <string> text: Strings.badge-default;",
+      "line": 22,
       "doc": ""
     },
     {
       "name": "variant",
       "kind": "Property",
       "signature": "in property <string> variant: \"info\";   // info | success | warning | error",
-      "line": 12,
+      "line": 31,
       "doc": ""
     }
   ]

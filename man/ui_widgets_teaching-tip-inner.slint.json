@@ -5,77 +5,77 @@
       "name": "TeachingTipInner",
       "kind": "Component",
       "signature": "export component TeachingTipInner inherits Rectangle {",
-      "line": 6,
+      "line": 12,
       "doc": ""
     },
     {
       "name": "title",
       "kind": "Property",
       "signature": "in property <string> title: \"\";",
-      "line": 9,
+      "line": 21,
       "doc": ""
     },
     {
       "name": "body",
       "kind": "Property",
       "signature": "in property <string> body: \"\";",
-      "line": 12,
+      "line": 30,
       "doc": ""
     },
     {
       "name": "action-label",
       "kind": "Property",
       "signature": "in property <string> action-label: \"\";",
-      "line": 15,
+      "line": 39,
       "doc": ""
     },
     {
       "name": "dismiss-label",
       "kind": "Property",
       "signature": "in property <string> dismiss-label: \"\";",
-      "line": 18,
+      "line": 48,
       "doc": ""
     },
     {
       "name": "popup-close",
       "kind": "Callback",
       "signature": "callback popup-close();",
-      "line": 21,
+      "line": 57,
       "doc": ""
     },
     {
       "name": "action",
       "kind": "Callback",
       "signature": "callback action();",
-      "line": 24,
+      "line": 66,
       "doc": ""
     },
     {
       "name": "dismissed",
       "kind": "Callback",
       "signature": "callback dismissed();",
-      "line": 27,
+      "line": 75,
       "doc": ""
     },
     {
       "name": "border-px",
       "kind": "Property",
-      "signature": "private property <length> border-px: 1px;",
-      "line": 31,
+      "signature": "private property <length> border-px: Sizes.border-w;",
+      "line": 85,
       "doc": ""
     },
     {
       "name": "h-stretch",
       "kind": "Property",
       "signature": "private property <int>    h-stretch: 1;",
-      "line": 34,
+      "line": 94,
       "doc": ""
     },
     {
       "name": "v-stretch",
       "kind": "Property",
       "signature": "private property <int>    v-stretch: 1;",
-      "line": 37,
+      "line": 103,
       "doc": ""
     }
   ]

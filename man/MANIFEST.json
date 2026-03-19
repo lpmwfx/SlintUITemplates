@@ -357,24 +357,149 @@
       "undocumented": 4
     },
     {
-      "source": "ui/globals/NavId.slint",
-      "item_count": 3,
-      "undocumented": 3
+      "source": "ui/globals/strings.slint",
+      "item_count": 155,
+      "undocumented": 155
     },
     {
-      "source": "ui/globals/ThemeMode.slint",
-      "item_count": 3,
-      "undocumented": 3
+      "source": "ui/globals/theme/acrylic.slint",
+      "item_count": 24,
+      "undocumented": 24
     },
     {
-      "source": "ui/globals/Variants.slint",
-      "item_count": 61,
-      "undocumented": 61
+      "source": "ui/globals/theme/controller.slint",
+      "item_count": 53,
+      "undocumented": 53
     },
     {
-      "source": "ui/globals/ViewId.slint",
+      "source": "ui/globals/theme/fluent/colors.slint",
+      "item_count": 25,
+      "undocumented": 25
+    },
+    {
+      "source": "ui/globals/theme/fluent/elevation.slint",
+      "item_count": 10,
+      "undocumented": 10
+    },
+    {
+      "source": "ui/globals/theme/fluent/icons.slint",
+      "item_count": 71,
+      "undocumented": 71
+    },
+    {
+      "source": "ui/globals/theme/fluent/motion.slint",
+      "item_count": 10,
+      "undocumented": 10
+    },
+    {
+      "source": "ui/globals/theme/fluent/radius.slint",
+      "item_count": 6,
+      "undocumented": 6
+    },
+    {
+      "source": "ui/globals/theme/fluent/spacing.slint",
+      "item_count": 16,
+      "undocumented": 16
+    },
+    {
+      "source": "ui/globals/theme/fluent/typography.slint",
       "item_count": 14,
       "undocumented": 14
+    },
+    {
+      "source": "ui/globals/theme/macos/colors.slint",
+      "item_count": 31,
+      "undocumented": 31
+    },
+    {
+      "source": "ui/globals/theme/macos/radius.slint",
+      "item_count": 7,
+      "undocumented": 7
+    },
+    {
+      "source": "ui/globals/theme/macos/spacing.slint",
+      "item_count": 14,
+      "undocumented": 14
+    },
+    {
+      "source": "ui/globals/theme/macos/typography.slint",
+      "item_count": 15,
+      "undocumented": 15
+    },
+    {
+      "source": "ui/globals/theme/material/colors.slint",
+      "item_count": 29,
+      "undocumented": 29
+    },
+    {
+      "source": "ui/globals/theme/material/elevation.slint",
+      "item_count": 6,
+      "undocumented": 6
+    },
+    {
+      "source": "ui/globals/theme/material/radius.slint",
+      "item_count": 7,
+      "undocumented": 7
+    },
+    {
+      "source": "ui/globals/theme/material/spacing.slint",
+      "item_count": 15,
+      "undocumented": 15
+    },
+    {
+      "source": "ui/globals/theme/material/typography.slint",
+      "item_count": 18,
+      "undocumented": 18
+    },
+    {
+      "source": "ui/globals/theme/mica.slint",
+      "item_count": 24,
+      "undocumented": 24
+    },
+    {
+      "source": "ui/globals/theme/scale.slint",
+      "item_count": 4,
+      "undocumented": 4
+    },
+    {
+      "source": "ui/globals/theme/sizes.slint",
+      "item_count": 100,
+      "undocumented": 100
+    },
+    {
+      "source": "ui/globals/theme/solid.slint",
+      "item_count": 24,
+      "undocumented": 24
+    },
+    {
+      "source": "ui/globals/theme/spacing.slint",
+      "item_count": 12,
+      "undocumented": 12
+    },
+    {
+      "source": "ui/globals/theme/steam/colors.slint",
+      "item_count": 14,
+      "undocumented": 14
+    },
+    {
+      "source": "ui/globals/theme/steam/radius.slint",
+      "item_count": 6,
+      "undocumented": 6
+    },
+    {
+      "source": "ui/globals/theme/steam/spacing.slint",
+      "item_count": 11,
+      "undocumented": 11
+    },
+    {
+      "source": "ui/globals/theme/steam/typography.slint",
+      "item_count": 8,
+      "undocumented": 8
+    },
+    {
+      "source": "ui/globals/theme/typography.slint",
+      "item_count": 8,
+      "undocumented": 8
     },
     {
       "source": "ui/mobile/app-window.slint",
@@ -522,149 +647,39 @@
       "undocumented": 1
     },
     {
+      "source": "ui/state/desktop-types.slint",
+      "item_count": 1,
+      "undocumented": 1
+    },
+    {
+      "source": "ui/state/durations.slint",
+      "item_count": 4,
+      "undocumented": 4
+    },
+    {
+      "source": "ui/state/nav-id.slint",
+      "item_count": 3,
+      "undocumented": 3
+    },
+    {
       "source": "ui/state/settings.slint",
       "item_count": 5,
       "undocumented": 5
     },
     {
-      "source": "ui/state/theme/acrylic.slint",
-      "item_count": 24,
-      "undocumented": 24
+      "source": "ui/state/theme-mode.slint",
+      "item_count": 3,
+      "undocumented": 3
     },
     {
-      "source": "ui/state/theme/mica.slint",
-      "item_count": 24,
-      "undocumented": 24
+      "source": "ui/state/variants.slint",
+      "item_count": 61,
+      "undocumented": 61
     },
     {
-      "source": "ui/state/theme/solid.slint",
-      "item_count": 24,
-      "undocumented": 24
-    },
-    {
-      "source": "ui/state/Theme.slint",
-      "item_count": 53,
-      "undocumented": 53
-    },
-    {
-      "source": "ui/tokens/fluent/colors.slint",
-      "item_count": 25,
-      "undocumented": 25
-    },
-    {
-      "source": "ui/tokens/fluent/elevation.slint",
-      "item_count": 10,
-      "undocumented": 10
-    },
-    {
-      "source": "ui/tokens/fluent/icons.slint",
-      "item_count": 71,
-      "undocumented": 71
-    },
-    {
-      "source": "ui/tokens/fluent/motion.slint",
-      "item_count": 10,
-      "undocumented": 10
-    },
-    {
-      "source": "ui/tokens/fluent/radius.slint",
-      "item_count": 6,
-      "undocumented": 6
-    },
-    {
-      "source": "ui/tokens/fluent/spacing.slint",
-      "item_count": 16,
-      "undocumented": 16
-    },
-    {
-      "source": "ui/tokens/fluent/typography.slint",
+      "source": "ui/state/view-id.slint",
       "item_count": 14,
       "undocumented": 14
-    },
-    {
-      "source": "ui/tokens/macos/colors.slint",
-      "item_count": 31,
-      "undocumented": 31
-    },
-    {
-      "source": "ui/tokens/macos/radius.slint",
-      "item_count": 7,
-      "undocumented": 7
-    },
-    {
-      "source": "ui/tokens/macos/spacing.slint",
-      "item_count": 14,
-      "undocumented": 14
-    },
-    {
-      "source": "ui/tokens/macos/typography.slint",
-      "item_count": 15,
-      "undocumented": 15
-    },
-    {
-      "source": "ui/tokens/material/colors.slint",
-      "item_count": 29,
-      "undocumented": 29
-    },
-    {
-      "source": "ui/tokens/material/elevation.slint",
-      "item_count": 6,
-      "undocumented": 6
-    },
-    {
-      "source": "ui/tokens/material/radius.slint",
-      "item_count": 7,
-      "undocumented": 7
-    },
-    {
-      "source": "ui/tokens/material/spacing.slint",
-      "item_count": 15,
-      "undocumented": 15
-    },
-    {
-      "source": "ui/tokens/material/typography.slint",
-      "item_count": 18,
-      "undocumented": 18
-    },
-    {
-      "source": "ui/tokens/scale.slint",
-      "item_count": 4,
-      "undocumented": 4
-    },
-    {
-      "source": "ui/tokens/sizes.slint",
-      "item_count": 99,
-      "undocumented": 99
-    },
-    {
-      "source": "ui/tokens/spacing.slint",
-      "item_count": 12,
-      "undocumented": 12
-    },
-    {
-      "source": "ui/tokens/steam/colors.slint",
-      "item_count": 14,
-      "undocumented": 14
-    },
-    {
-      "source": "ui/tokens/steam/radius.slint",
-      "item_count": 6,
-      "undocumented": 6
-    },
-    {
-      "source": "ui/tokens/steam/spacing.slint",
-      "item_count": 11,
-      "undocumented": 11
-    },
-    {
-      "source": "ui/tokens/steam/typography.slint",
-      "item_count": 8,
-      "undocumented": 8
-    },
-    {
-      "source": "ui/tokens/typography.slint",
-      "item_count": 8,
-      "undocumented": 8
     },
     {
       "source": "ui/viewer/BiDirDemo.slint",

@@ -5,7 +5,7 @@
       "name": "split",
       "kind": "Property",
       "signature": "private property <length> split: Sizes.thumb-md;",
-      "line": 9,
+      "line": 15,
       "doc": ""
     }
   ]

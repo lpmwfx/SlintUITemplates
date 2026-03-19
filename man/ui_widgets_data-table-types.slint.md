@@ -2,7 +2,7 @@
 
 ## `export struct TableColumn {`
 
-*Line 3 · struct*
+*Line 9 · struct*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `export struct TableRow {`
 
-*Line 11 · struct*
+*Line 23 · struct*
 
 **undocumented**
 

@@ -1,0 +1,54 @@
+{
+  "source": "ui/globals/theme/macos/radius.slint",
+  "items": [
+    {
+      "name": "none",
+      "kind": "Property",
+      "signature": "out property <length> none:   0px;",
+      "line": 13,
+      "doc": ""
+    },
+    {
+      "name": "sm",
+      "kind": "Property",
+      "signature": "out property <length> sm:     4px;",
+      "line": 22,
+      "doc": ""
+    },
+    {
+      "name": "md",
+      "kind": "Property",
+      "signature": "out property <length> md:     6px;",
+      "line": 31,
+      "doc": ""
+    },
+    {
+      "name": "lg",
+      "kind": "Property",
+      "signature": "out property <length> lg:     8px;",
+      "line": 40,
+      "doc": ""
+    },
+    {
+      "name": "xl",
+      "kind": "Property",
+      "signature": "out property <length> xl:    12px;",
+      "line": 49,
+      "doc": ""
+    },
+    {
+      "name": "window",
+      "kind": "Property",
+      "signature": "out property <length> window: 10px;",
+      "line": 58,
+      "doc": ""
+    },
+    {
+      "name": "circle",
+      "kind": "Property",
+      "signature": "out property <length> circle: 9999px;",
+      "line": 67,
+      "doc": ""
+    }
+  ]
+}

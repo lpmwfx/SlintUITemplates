@@ -5,28 +5,28 @@
       "name": "ViewerContent",
       "kind": "Component",
       "signature": "export component ViewerContent inherits Flickable {",
-      "line": 19,
+      "line": 25,
       "doc": ""
     },
     {
       "name": "active-view",
       "kind": "Property",
       "signature": "in property <string> active-view: \"\";",
-      "line": 22,
+      "line": 34,
       "doc": ""
     },
     {
       "name": "canvas-frame",
       "kind": "Property",
       "signature": "in property <image>  canvas-frame;",
-      "line": 25,
+      "line": 43,
       "doc": ""
     },
     {
       "name": "window-height",
       "kind": "Property",
       "signature": "in property <length> window-height;",
-      "line": 28,
+      "line": 52,
       "doc": ""
     }
   ]

@@ -5,63 +5,63 @@
       "name": "MobileShell",
       "kind": "Component",
       "signature": "export component MobileShell inherits VerticalLayout {",
-      "line": 14,
+      "line": 20,
       "doc": ""
     },
     {
       "name": "title",
       "kind": "Property",
       "signature": "in property <string>    title: \"App\";",
-      "line": 18,
+      "line": 30,
       "doc": ""
     },
     {
       "name": "nav-items",
       "kind": "Property",
       "signature": "in property <[NavItem]> nav-items;",
-      "line": 21,
+      "line": 39,
       "doc": ""
     },
     {
       "name": "active-view",
       "kind": "Property",
       "signature": "in property <string>    active-view: \"\";",
-      "line": 24,
+      "line": 48,
       "doc": ""
     },
     {
       "name": "fab-icon",
       "kind": "Property",
       "signature": "in property <string>    fab-icon:    FluentIcons.add;",
-      "line": 27,
+      "line": 57,
       "doc": ""
     },
     {
       "name": "fab-label",
       "kind": "Property",
       "signature": "in property <string>    fab-label:   \"\";",
-      "line": 30,
+      "line": 66,
       "doc": ""
     },
     {
       "name": "show-fab",
       "kind": "Property",
       "signature": "in property <bool>      show-fab:    true;",
-      "line": 33,
+      "line": 75,
       "doc": ""
     },
     {
       "name": "navigate",
       "kind": "Callback",
       "signature": "callback navigate(string);",
-      "line": 38,
+      "line": 86,
       "doc": ""
     },
     {
       "name": "fab-clicked",
       "kind": "Callback",
       "signature": "callback fab-clicked();",
-      "line": 41,
+      "line": 95,
       "doc": ""
     }
   ]

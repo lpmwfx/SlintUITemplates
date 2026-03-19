@@ -2,7 +2,7 @@
 
 ## `export component BackButton inherits Rectangle {`
 
-*Line 8 · component*
+*Line 14 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `callback clicked();`
 
-*Line 11 · callback*
+*Line 23 · callback*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <string> icon: "";`
 
-*Line 14 · property*
+*Line 32 · property*
 
 **undocumented**
 

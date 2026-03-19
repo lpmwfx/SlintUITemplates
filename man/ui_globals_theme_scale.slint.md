@@ -1,0 +1,34 @@
+# ui/globals/theme/scale.slint
+
+## `out property <length> icon-sm: Settings.zoom * 16px;`
+
+*Line 18 · property*
+
+**undocumented**
+
+---
+
+## `out property <length> icon-md: Settings.zoom * 24px;`
+
+*Line 27 · property*
+
+**undocumented**
+
+---
+
+## `out property <length> icon-lg: Settings.zoom * 32px;`
+
+*Line 36 · property*
+
+**undocumented**
+
+---
+
+## `out property <length> icon-xl: Settings.zoom * 48px;`
+
+*Line 45 · property*
+
+**undocumented**
+
+---
+

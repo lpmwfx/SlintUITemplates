@@ -7,3 +7,4 @@ max_nesting = 5
 [slintscanners]
 enabled = true
 max_nesting = 8
+token_paths = ["ui/globals/theme", "ui/globals/strings.slint", "ui/state"]

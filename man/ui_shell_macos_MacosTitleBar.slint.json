@@ -5,14 +5,14 @@
       "name": "MacosTitleBar",
       "kind": "Component",
       "signature": "export component MacosTitleBar inherits Rectangle {",
-      "line": 10,
+      "line": 16,
       "doc": ""
     },
     {
       "name": "title",
       "kind": "Property",
       "signature": "in property <string> title;",
-      "line": 13,
+      "line": 25,
       "doc": ""
     }
   ]

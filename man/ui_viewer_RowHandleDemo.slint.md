@@ -2,7 +2,7 @@
 
 ## `private property <length> split: Sizes.comp-40;`
 
-*Line 9 · property*
+*Line 15 · property*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `private property <length> split-max: Sizes.comp-60;`
 
-*Line 12 · property*
+*Line 24 · property*
 
 **undocumented**
 

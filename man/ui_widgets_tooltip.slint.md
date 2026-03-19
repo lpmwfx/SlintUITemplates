@@ -2,15 +2,15 @@
 
 ## `export component Tooltip inherits Rectangle {`
 
-*Line 7 · component*
+*Line 14 · component*
 
 **undocumented**
 
 ---
 
-## `in property <string> text: "";`
+## `in property <string> text: Strings.label-default;`
 
-*Line 10 · property*
+*Line 23 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <string> placement: Variants.top;   // top | bottom | left | right`
 
-*Line 13 · property*
+*Line 32 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `in property <bool>   enabled: true;`
 
-*Line 16 · property*
+*Line 41 · property*
 
 **undocumented**
 

@@ -2,7 +2,7 @@
 
 ## `export component MacosNavItem inherits Rectangle {`
 
-*Line 11 · component*
+*Line 17 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <NavItem> item;`
 
-*Line 14 · property*
+*Line 26 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <bool>    active: false;`
 
-*Line 17 · property*
+*Line 35 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `callback navigate(string);`
 
-*Line 21 · callback*
+*Line 45 · callback*
 
 **undocumented**
 

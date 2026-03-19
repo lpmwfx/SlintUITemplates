@@ -2,7 +2,7 @@
 
 ## `export component TextArea inherits Rectangle {`
 
-*Line 7 · component*
+*Line 13 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <string> label: "";`
 
-*Line 10 · property*
+*Line 22 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <string> value: "";`
 
-*Line 13 · property*
+*Line 31 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `in property <string> placeholder: "";`
 
-*Line 16 · property*
+*Line 40 · property*
 
 **undocumented**
 
@@ -34,7 +34,7 @@
 
 ## `in property <string> error: "";`
 
-*Line 19 · property*
+*Line 49 · property*
 
 **undocumented**
 
@@ -42,7 +42,7 @@
 
 ## `in property <int>    rows: Sizes.four;`
 
-*Line 22 · property*
+*Line 58 · property*
 
 **undocumented**
 
@@ -50,7 +50,7 @@
 
 ## `in property <bool>   enabled: true;`
 
-*Line 25 · property*
+*Line 67 · property*
 
 **undocumented**
 
@@ -58,7 +58,7 @@
 
 ## `callback changed(string);`
 
-*Line 28 · callback*
+*Line 76 · callback*
 
 **undocumented**
 
@@ -66,7 +66,7 @@
 
 ## `private property <length> area-height: root.rows * (Type.body-size + Spacing.xs) + Spacing.sm * Sizes.two;`
 
-*Line 32 · property*
+*Line 86 · property*
 
 **undocumented**
 

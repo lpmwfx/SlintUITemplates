@@ -5,42 +5,42 @@
       "name": "MobileNavItem",
       "kind": "Component",
       "signature": "export component MobileNavItem inherits Rectangle {",
-      "line": 7,
+      "line": 13,
       "doc": ""
     },
     {
       "name": "item-id",
       "kind": "Property",
       "signature": "in property <string> item-id;",
-      "line": 10,
+      "line": 22,
       "doc": ""
     },
     {
       "name": "icon",
       "kind": "Property",
       "signature": "in property <string> icon;",
-      "line": 13,
+      "line": 31,
       "doc": ""
     },
     {
       "name": "label",
       "kind": "Property",
       "signature": "in property <string> label;",
-      "line": 16,
+      "line": 40,
       "doc": ""
     },
     {
       "name": "is-active",
       "kind": "Property",
       "signature": "in property <bool>   is-active: false;",
-      "line": 19,
+      "line": 49,
       "doc": ""
     },
     {
       "name": "clicked",
       "kind": "Callback",
       "signature": "callback clicked();",
-      "line": 22,
+      "line": 58,
       "doc": ""
     }
   ]

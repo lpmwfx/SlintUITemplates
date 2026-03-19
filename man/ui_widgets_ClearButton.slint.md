@@ -2,7 +2,7 @@
 
 ## `export component ClearButton inherits Rectangle {`
 
-*Line 6 · component*
+*Line 12 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `callback cleared();`
 
-*Line 9 · callback*
+*Line 21 · callback*
 
 **undocumented**
 

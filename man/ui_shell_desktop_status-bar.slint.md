@@ -2,15 +2,15 @@
 
 ## `export component ShellStatusBar inherits Rectangle {`
 
-*Line 8 · component*
+*Line 9 · component*
 
 **undocumented**
 
 ---
 
-## `in property <string>  status-text: "Ready";`
+## `in property <string>  status-text: Strings.app-status-ready;`
 
-*Line 11 · property*
+*Line 12 · property*
 
 **undocumented**
 
@@ -18,15 +18,15 @@
 
 ## `in property <float>   progress: -1.0;   // -1 = hidden, 0.0..1.0 = shown`
 
-*Line 14 · property*
+*Line 15 · property*
 
 **undocumented**
 
 ---
 
-## `in property <string>  right-text: "";`
+## `in property <string>  right-text: Strings.label-default;`
 
-*Line 17 · property*
+*Line 18 · property*
 
 **undocumented**
 
@@ -34,7 +34,7 @@
 
 ## `private property <length> bar-radius: Sizes.border-w-2;`
 
-*Line 21 · property*
+*Line 22 · property*
 
 **undocumented**
 

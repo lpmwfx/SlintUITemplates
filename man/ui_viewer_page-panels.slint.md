@@ -2,7 +2,7 @@
 
 ## `export component PagePanels inherits VerticalLayout {`
 
-*Line 11 · component*
+*Line 18 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `private property <bool>   left-open:   false;`
 
-*Line 16 · property*
+*Line 29 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `private property <bool>   right-open:  false;`
 
-*Line 19 · property*
+*Line 38 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `private property <length> acc-w:       Sizes.comp-420;`
 
-*Line 22 · property*
+*Line 47 · property*
 
 **undocumented**
 
@@ -34,7 +34,7 @@
 
 ## `private property <length> btn-w:       Sizes.comp-130;`
 
-*Line 25 · property*
+*Line 56 · property*
 
 **undocumented**
 
@@ -42,7 +42,7 @@
 
 ## `private property <length> demo-w:      Sizes.panel-wide;`
 
-*Line 28 · property*
+*Line 65 · property*
 
 **undocumented**
 
@@ -50,7 +50,7 @@
 
 ## `private property <length> demo-h:      Sizes.panel-sm;`
 
-*Line 31 · property*
+*Line 74 · property*
 
 **undocumented**
 
@@ -58,7 +58,7 @@
 
 ## `private property <length> drw-w:       Sizes.panel-sm;`
 
-*Line 34 · property*
+*Line 83 · property*
 
 **undocumented**
 
@@ -66,7 +66,7 @@
 
 ## `private property <length> border-px:   Sizes.border-w;`
 
-*Line 37 · property*
+*Line 92 · property*
 
 **undocumented**
 
@@ -74,7 +74,7 @@
 
 ## `private property <string> acc-init:     "whatis";`
 
-*Line 40 · property*
+*Line 101 · property*
 
 **undocumented**
 
@@ -82,7 +82,7 @@
 
 ## `private property <string> place-left:  "left";`
 
-*Line 43 · property*
+*Line 110 · property*
 
 **undocumented**
 
@@ -90,7 +90,7 @@
 
 ## `private property <string> place-right: "right";`
 
-*Line 46 · property*
+*Line 119 · property*
 
 **undocumented**
 
@@ -98,7 +98,7 @@
 
 ## `private property <string> acc-platform: "Windows 11 with Fluent 2 is the primary target. Android with Material Design 3 is planned. macOS and Linux are future targets.";`
 
-*Line 49 · property*
+*Line 128 · property*
 
 **undocumented**
 
@@ -106,7 +106,7 @@
 
 ## `private property <string> left-title:  "Left Panel";`
 
-*Line 52 · property*
+*Line 137 · property*
 
 **undocumented**
 
@@ -114,7 +114,7 @@
 
 ## `private property <string> right-title: "Right Panel";`
 
-*Line 55 · property*
+*Line 146 · property*
 
 **undocumented**
 

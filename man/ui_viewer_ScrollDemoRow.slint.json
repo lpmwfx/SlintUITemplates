@@ -5,21 +5,21 @@
       "name": "ScrollDemoRow",
       "kind": "Component",
       "signature": "export component ScrollDemoRow inherits Rectangle {",
-      "line": 6,
+      "line": 12,
       "doc": ""
     },
     {
       "name": "row-index",
       "kind": "Property",
       "signature": "in property <int>    row-index;",
-      "line": 9,
+      "line": 21,
       "doc": ""
     },
     {
       "name": "row-prefix",
       "kind": "Property",
       "signature": "in property <string> row-prefix;",
-      "line": 12,
+      "line": 30,
       "doc": ""
     }
   ]

@@ -2,7 +2,7 @@
 
 ## `export component IconTile inherits Rectangle {`
 
-*Line 9 · component*
+*Line 15 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <string> icon-glyph;`
 
-*Line 12 · property*
+*Line 24 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <string> icon-name;`
 
-*Line 15 · property*
+*Line 33 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `private property <string> var-outlined: "outlined";`
 
-*Line 20 · property*
+*Line 44 · property*
 
 **undocumented**
 
@@ -34,7 +34,7 @@
 
 ## `private property <string> var-accent: "accent";`
 
-*Line 23 · property*
+*Line 53 · property*
 
 **undocumented**
 
@@ -42,7 +42,7 @@
 
 ## `private property <string> icon-font: "Segoe Fluent Icons";`
 
-*Line 26 · property*
+*Line 62 · property*
 
 **undocumented**
 
@@ -50,7 +50,7 @@
 
 ## `private property <float> outlined-opacity: 0.7;`
 
-*Line 31 · property*
+*Line 73 · property*
 
 **undocumented**
 
@@ -58,15 +58,15 @@
 
 ## `private property <float> alpha-half: 0.5;`
 
-*Line 34 · property*
+*Line 82 · property*
 
 **undocumented**
 
 ---
 
-## `private property <length> name-font-size: 9px;`
+## `private property <length> name-font-size: Sizes.comp-9;`
 
-*Line 37 · property*
+*Line 91 · property*
 
 **undocumented**
 
@@ -74,7 +74,7 @@
 
 ## `private property <length> tile-h: Sizes.comp-72;`
 
-*Line 40 · property*
+*Line 100 · property*
 
 **undocumented**
 
@@ -82,7 +82,7 @@
 
 ## `private property <bool>  is-outlined: Settings.icon-style == root.var-outlined;`
 
-*Line 44 · property*
+*Line 110 · property*
 
 **undocumented**
 
@@ -90,7 +90,7 @@
 
 ## `private property <color> icon-color:  Settings.icon-color == root.var-accent`
 
-*Line 47 · property*
+*Line 119 · property*
 
 **undocumented**
 

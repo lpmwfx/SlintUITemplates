@@ -2,7 +2,7 @@
 
 ## `export component Drawer inherits Rectangle {`
 
-*Line 6 · component*
+*Line 12 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <bool>   open: false;`
 
-*Line 9 · property*
+*Line 21 · property*
 
 **undocumented**
 
@@ -18,15 +18,15 @@
 
 ## `in property <string> placement: "left";    // left | right`
 
-*Line 12 · property*
+*Line 30 · property*
 
 **undocumented**
 
 ---
 
-## `in property <length> drawer-width: 280px;`
+## `in property <length> drawer-width: Sizes.panel-lg;`
 
-*Line 15 · property*
+*Line 39 · property*
 
 **undocumented**
 
@@ -34,7 +34,7 @@
 
 ## `in property <string> title: "";`
 
-*Line 18 · property*
+*Line 48 · property*
 
 **undocumented**
 
@@ -42,7 +42,7 @@
 
 ## `callback close-requested();`
 
-*Line 21 · callback*
+*Line 57 · callback*
 
 **undocumented**
 
@@ -50,39 +50,39 @@
 
 ## `private property <string> place-right: "right";`
 
-*Line 25 · property*
+*Line 67 · property*
 
 **undocumented**
 
 ---
 
-## `private property <length> border-px:   1px;`
+## `private property <length> border-px:   Sizes.border-w;`
 
-*Line 28 · property*
-
-**undocumented**
-
----
-
-## `private property <length> zero-len:    0px;`
-
-*Line 31 · property*
+*Line 76 · property*
 
 **undocumented**
 
 ---
 
-## `private property <length> no-gap:      0px;`
+## `private property <length> zero-len:    Sizes.no-size;`
 
-*Line 34 · property*
+*Line 85 · property*
 
 **undocumented**
 
 ---
 
-## `private property <duration> anim-dur:  200ms;`
+## `private property <length> no-gap:      Sizes.no-size;`
 
-*Line 37 · property*
+*Line 94 · property*
+
+**undocumented**
+
+---
+
+## `private property <duration> anim-dur:  Durations.medium;`
+
+*Line 103 · property*
 
 **undocumented**
 
@@ -90,7 +90,7 @@
 
 ## `private property <length> panel-x:`
 
-*Line 40 · property*
+*Line 112 · property*
 
 **undocumented**
 

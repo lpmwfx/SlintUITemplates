@@ -2,7 +2,7 @@
 
 ## `export component ListItem inherits Rectangle {`
 
-*Line 6 · component*
+*Line 12 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <string> title: "";`
 
-*Line 9 · property*
+*Line 21 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <string> subtitle: "";`
 
-*Line 12 · property*
+*Line 30 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `in property <bool> selected: false;`
 
-*Line 15 · property*
+*Line 39 · property*
 
 **undocumented**
 
@@ -34,7 +34,7 @@
 
 ## `callback clicked();`
 
-*Line 18 · callback*
+*Line 48 · callback*
 
 **undocumented**
 
@@ -42,7 +42,7 @@
 
 ## `private property <length> inner-gap: Sizes.border-w-2;`
 
-*Line 22 · property*
+*Line 58 · property*
 
 **undocumented**
 

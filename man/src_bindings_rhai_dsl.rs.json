@@ -2,9 +2,9 @@
   "source": "src/bindings/rhai/dsl.rs",
   "items": [
     {
-      "name": "register",
+      "name": "register_dsl",
       "kind": "Fn",
-      "signature": "pub fn register(engine: &mut Engine, adapter: Rc<RefCell<AppAdapter>>)",
+      "signature": "pub fn register_dsl(engine: &mut Engine, adapter: Rc<RefCell<AppAdapter>>)",
       "line": 11,
       "doc": "Register DSL API functions into the Rhai engine: nav, toolbar, window size, bg style."
     }

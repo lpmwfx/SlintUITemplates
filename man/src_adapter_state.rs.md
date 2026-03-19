@@ -24,7 +24,7 @@ Set dark mode on/off — updates cache and UI Theme global.
 
 ---
 
-## `pub fn get_dark_mode(&self) -> bool`
+## `pub fn is_dark_mode(&self) -> bool`
 
 *Line 32 · fn*
 

@@ -5,168 +5,168 @@
       "name": "PageSelection",
       "kind": "Component",
       "signature": "export component PageSelection inherits VerticalLayout {",
-      "line": 14,
+      "line": 20,
       "doc": ""
     },
     {
       "name": "cb-checked",
       "kind": "Property",
       "signature": "private property <bool>   cb-checked: false;",
-      "line": 19,
+      "line": 31,
       "doc": ""
     },
     {
       "name": "cb-indet",
       "kind": "Property",
       "signature": "private property <bool>   cb-indet: true;",
-      "line": 22,
+      "line": 40,
       "doc": ""
     },
     {
       "name": "radio-val",
       "kind": "Property",
       "signature": "private property <string> radio-val: \"Option B\";",
-      "line": 25,
+      "line": 49,
       "doc": ""
     },
     {
       "name": "slider-val",
       "kind": "Property",
       "signature": "private property <float>  slider-val: Sizes.ratio-md;",
-      "line": 28,
+      "line": 58,
       "doc": ""
     },
     {
       "name": "spin-val",
       "kind": "Property",
       "signature": "private property <int>    spin-val: 42;",
-      "line": 31,
+      "line": 67,
       "doc": ""
     },
     {
       "name": "rating-val",
       "kind": "Property",
       "signature": "private property <int>    rating-val: Sizes.three;",
-      "line": 34,
+      "line": 76,
       "doc": ""
     },
     {
       "name": "spinbox-max",
       "kind": "Property",
       "signature": "private property <int> spinbox-max: 999;",
-      "line": 39,
+      "line": 87,
       "doc": ""
     },
     {
       "name": "section-checkbox",
       "kind": "Property",
       "signature": "private property <string> section-checkbox: \"Checkbox\";",
-      "line": 44,
+      "line": 98,
       "doc": ""
     },
     {
       "name": "section-radiogroup",
       "kind": "Property",
       "signature": "private property <string> section-radiogroup: \"RadioGroup\";",
-      "line": 47,
+      "line": 107,
       "doc": ""
     },
     {
       "name": "section-slider",
       "kind": "Property",
       "signature": "private property <string> section-slider: \"Slider\";",
-      "line": 50,
+      "line": 116,
       "doc": ""
     },
     {
       "name": "section-spinbox",
       "kind": "Property",
       "signature": "private property <string> section-spinbox: \"SpinBox\";",
-      "line": 53,
+      "line": 125,
       "doc": ""
     },
     {
       "name": "section-rating",
       "kind": "Property",
       "signature": "private property <string> section-rating: \"Rating\";",
-      "line": 56,
+      "line": 134,
       "doc": ""
     },
     {
       "name": "cb-unchecked-label",
       "kind": "Property",
       "signature": "private property <string> cb-unchecked-label: \"Unchecked\";",
-      "line": 59,
+      "line": 143,
       "doc": ""
     },
     {
       "name": "cb-checked-label",
       "kind": "Property",
       "signature": "private property <string> cb-checked-label: \"Checked\";",
-      "line": 62,
+      "line": 152,
       "doc": ""
     },
     {
       "name": "cb-indet-label",
       "kind": "Property",
       "signature": "private property <string> cb-indet-label: \"Indeterminate\";",
-      "line": 65,
+      "line": 161,
       "doc": ""
     },
     {
       "name": "cb-disabled-label",
       "kind": "Property",
       "signature": "private property <string> cb-disabled-label: \"Disabled\";",
-      "line": 68,
+      "line": 170,
       "doc": ""
     },
     {
       "name": "cb-live-checked",
       "kind": "Property",
       "signature": "private property <string> cb-live-checked: \"Checked (live)\";",
-      "line": 71,
+      "line": 179,
       "doc": ""
     },
     {
       "name": "cb-live-unchecked",
       "kind": "Property",
       "signature": "private property <string> cb-live-unchecked: \"Unchecked (live)\";",
-      "line": 74,
+      "line": 188,
       "doc": ""
     },
     {
       "name": "slider-no-val",
       "kind": "Property",
       "signature": "private property <string> slider-no-val: \"No value display\";",
-      "line": 77,
+      "line": 197,
       "doc": ""
     },
     {
       "name": "slider-live",
       "kind": "Property",
       "signature": "private property <string> slider-live: \"Live slider\";",
-      "line": 80,
+      "line": 206,
       "doc": ""
     },
     {
       "name": "slider-disabled",
       "kind": "Property",
       "signature": "private property <string> slider-disabled: \"Disabled\";",
-      "line": 83,
+      "line": 215,
       "doc": ""
     },
     {
       "name": "spinbox-label",
       "kind": "Property",
       "signature": "private property <string> spinbox-label: \"Quantity\";",
-      "line": 86,
+      "line": 224,
       "doc": ""
     },
     {
       "name": "spinbox-disabled",
       "kind": "Property",
       "signature": "private property <string> spinbox-disabled: \"Disabled\";",
-      "line": 89,
+      "line": 233,
       "doc": ""
     }
   ]

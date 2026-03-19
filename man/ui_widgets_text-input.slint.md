@@ -2,7 +2,7 @@
 
 ## `export component TextInput inherits Rectangle {`
 
-*Line 6 · component*
+*Line 12 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <string> label: "";`
 
-*Line 9 · property*
+*Line 21 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <string> value: "";`
 
-*Line 12 · property*
+*Line 30 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `in property <string> placeholder: "";`
 
-*Line 15 · property*
+*Line 39 · property*
 
 **undocumented**
 
@@ -34,7 +34,7 @@
 
 ## `in property <string> error: "";`
 
-*Line 18 · property*
+*Line 48 · property*
 
 **undocumented**
 
@@ -42,7 +42,7 @@
 
 ## `callback changed(string);`
 
-*Line 21 · callback*
+*Line 57 · callback*
 
 **undocumented**
 
@@ -50,7 +50,7 @@
 
 ## `callback submitted(string);`
 
-*Line 24 · callback*
+*Line 66 · callback*
 
 **undocumented**
 

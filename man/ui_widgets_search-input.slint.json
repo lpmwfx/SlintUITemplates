@@ -5,49 +5,49 @@
       "name": "SearchInput",
       "kind": "Component",
       "signature": "export component SearchInput inherits Rectangle {",
-      "line": 8,
+      "line": 14,
       "doc": ""
     },
     {
       "name": "value",
       "kind": "Property",
       "signature": "in property <string> value: \"\";",
-      "line": 11,
+      "line": 23,
       "doc": ""
     },
     {
       "name": "placeholder",
       "kind": "Property",
       "signature": "in property <string> placeholder: \"Search...\";",
-      "line": 14,
+      "line": 32,
       "doc": ""
     },
     {
       "name": "enabled",
       "kind": "Property",
       "signature": "in property <bool>   enabled: true;",
-      "line": 17,
+      "line": 41,
       "doc": ""
     },
     {
       "name": "changed",
       "kind": "Callback",
       "signature": "callback changed(string);",
-      "line": 20,
+      "line": 50,
       "doc": ""
     },
     {
       "name": "submitted",
       "kind": "Callback",
       "signature": "callback submitted(string);",
-      "line": 23,
+      "line": 59,
       "doc": ""
     },
     {
       "name": "cleared",
       "kind": "Callback",
       "signature": "callback cleared();",
-      "line": 26,
+      "line": 68,
       "doc": ""
     }
   ]

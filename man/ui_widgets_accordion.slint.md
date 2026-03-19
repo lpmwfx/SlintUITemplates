@@ -2,7 +2,7 @@
 
 ## `export component Accordion inherits VerticalLayout {`
 
-*Line 8 · component*
+*Line 14 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <[AccordionItem]> items: [];`
 
-*Line 11 · property*
+*Line 23 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <string>          expanded-id: "";`
 
-*Line 14 · property*
+*Line 32 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `callback toggled(string);`
 
-*Line 17 · callback*
+*Line 41 · callback*
 
 **undocumented**
 

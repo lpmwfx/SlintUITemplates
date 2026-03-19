@@ -5,56 +5,56 @@
       "name": "RadioButton",
       "kind": "Component",
       "signature": "export component RadioButton inherits Rectangle {",
-      "line": 6,
+      "line": 12,
       "doc": ""
     },
     {
       "name": "checked",
       "kind": "Property",
       "signature": "in property <bool>   checked: false;",
-      "line": 9,
+      "line": 21,
       "doc": ""
     },
     {
       "name": "label",
       "kind": "Property",
       "signature": "in property <string> label: \"\";",
-      "line": 12,
+      "line": 30,
       "doc": ""
     },
     {
       "name": "enabled",
       "kind": "Property",
       "signature": "in property <bool>   enabled: true;",
-      "line": 15,
+      "line": 39,
       "doc": ""
     },
     {
       "name": "clicked",
       "kind": "Callback",
       "signature": "callback clicked();",
-      "line": 18,
+      "line": 48,
       "doc": ""
     },
     {
       "name": "circle-size",
       "kind": "Property",
-      "signature": "private property <length> circle-size: Spacing.md + Spacing.xs;   // 20px",
-      "line": 22,
+      "signature": "private property <length> circle-size: Spacing.md + Spacing.xs;",
+      "line": 58,
       "doc": ""
     },
     {
       "name": "dot-size",
       "kind": "Property",
-      "signature": "private property <length> dot-size:    Spacing.sm + Spacing.xs;   // 10px",
-      "line": 25,
+      "signature": "private property <length> dot-size:    Spacing.sm + Spacing.xs;",
+      "line": 67,
       "doc": ""
     },
     {
       "name": "ring-border",
       "kind": "Property",
       "signature": "private property <length> ring-border: Sizes.border-w-2;",
-      "line": 28,
+      "line": 76,
       "doc": ""
     }
   ]

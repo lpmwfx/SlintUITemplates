@@ -2,7 +2,7 @@
 
 ## `export component DataTableRow inherits Rectangle {`
 
-*Line 8 · component*
+*Line 14 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <[string]>       cells;`
 
-*Line 11 · property*
+*Line 23 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <[TableColumn]>  columns;`
 
-*Line 14 · property*
+*Line 32 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `in property <bool>           is-selected: false;`
 
-*Line 17 · property*
+*Line 41 · property*
 
 **undocumented**
 
@@ -34,7 +34,7 @@
 
 ## `in property <bool>           is-alternate: false;`
 
-*Line 20 · property*
+*Line 50 · property*
 
 **undocumented**
 
@@ -42,15 +42,15 @@
 
 ## `callback clicked();`
 
-*Line 23 · callback*
+*Line 59 · callback*
 
 **undocumented**
 
 ---
 
-## `private property <length> fallback-col-width: 100px;`
+## `private property <length> fallback-col-width: Sizes.thumb-md;`
 
-*Line 27 · property*
+*Line 69 · property*
 
 **undocumented**
 

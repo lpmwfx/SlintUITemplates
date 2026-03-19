@@ -5,35 +5,35 @@
       "name": "RadioGroup",
       "kind": "Component",
       "signature": "export component RadioGroup inherits VerticalLayout {",
-      "line": 6,
+      "line": 12,
       "doc": ""
     },
     {
       "name": "options",
       "kind": "Property",
       "signature": "in property <[string]> options: [];",
-      "line": 9,
+      "line": 21,
       "doc": ""
     },
     {
       "name": "value",
       "kind": "Property",
       "signature": "in property <string> value: \"\";",
-      "line": 12,
+      "line": 30,
       "doc": ""
     },
     {
       "name": "enabled",
       "kind": "Property",
       "signature": "in property <bool> enabled: true;",
-      "line": 15,
+      "line": 39,
       "doc": ""
     },
     {
       "name": "changed",
       "kind": "Callback",
       "signature": "callback changed(string);",
-      "line": 18,
+      "line": 48,
       "doc": ""
     }
   ]

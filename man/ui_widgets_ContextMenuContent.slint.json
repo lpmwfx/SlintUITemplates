@@ -5,28 +5,28 @@
       "name": "ContextMenuContent",
       "kind": "Component",
       "signature": "export component ContextMenuContent inherits Flickable {",
-      "line": 8,
+      "line": 14,
       "doc": ""
     },
     {
       "name": "items",
       "kind": "Property",
       "signature": "in property <[ContextMenuItem]> items;",
-      "line": 11,
+      "line": 23,
       "doc": ""
     },
     {
       "name": "content-height",
       "kind": "Property",
       "signature": "in property <length> content-height;",
-      "line": 14,
+      "line": 32,
       "doc": ""
     },
     {
       "name": "activated",
       "kind": "Callback",
       "signature": "callback activated(string);",
-      "line": 17,
+      "line": 41,
       "doc": ""
     }
   ]

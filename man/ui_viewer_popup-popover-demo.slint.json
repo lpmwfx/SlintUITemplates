@@ -5,42 +5,42 @@
       "name": "PopupPopoverDemo",
       "kind": "Component",
       "signature": "export component PopupPopoverDemo inherits Rectangle {",
-      "line": 6,
+      "line": 14,
       "doc": ""
     },
     {
       "name": "show-pop",
       "kind": "Property",
       "signature": "private property <bool>   show-pop:   false;",
-      "line": 9,
+      "line": 23,
       "doc": ""
     },
     {
       "name": "demo-w",
       "kind": "Property",
-      "signature": "private property <length> demo-w:     160px;",
-      "line": 12,
+      "signature": "private property <length> demo-w:     Sizes.comp-160;",
+      "line": 32,
       "doc": ""
     },
     {
       "name": "pop-w",
       "kind": "Property",
-      "signature": "private property <length> pop-w:      220px;",
-      "line": 15,
+      "signature": "private property <length> pop-w:      Sizes.panel-md;",
+      "line": 41,
       "doc": ""
     },
     {
       "name": "pop-h",
       "kind": "Property",
-      "signature": "private property <length> pop-h:      130px;",
-      "line": 18,
+      "signature": "private property <length> pop-h:      Sizes.comp-130;",
+      "line": 50,
       "doc": ""
     },
     {
       "name": "border-px",
       "kind": "Property",
-      "signature": "private property <length> border-px:  1px;",
-      "line": 21,
+      "signature": "private property <length> border-px:  Sizes.border-w;",
+      "line": 59,
       "doc": ""
     }
   ]

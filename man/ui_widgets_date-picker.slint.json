@@ -5,133 +5,133 @@
       "name": "DatePicker",
       "kind": "Component",
       "signature": "export component DatePicker inherits Rectangle {",
-      "line": 8,
+      "line": 14,
       "doc": ""
     },
     {
       "name": "value",
       "kind": "Property",
       "signature": "in property <string> value: \"\";",
-      "line": 11,
+      "line": 23,
       "doc": ""
     },
     {
       "name": "label",
       "kind": "Property",
       "signature": "in property <string> label: \"\";",
-      "line": 14,
+      "line": 32,
       "doc": ""
     },
     {
       "name": "placeholder",
       "kind": "Property",
       "signature": "in property <string> placeholder: \"Select date\";",
-      "line": 17,
+      "line": 41,
       "doc": ""
     },
     {
       "name": "error",
       "kind": "Property",
       "signature": "in property <string> error: \"\";",
-      "line": 20,
+      "line": 50,
       "doc": ""
     },
     {
       "name": "enabled",
       "kind": "Property",
       "signature": "in property <bool>   enabled: true;",
-      "line": 23,
+      "line": 59,
       "doc": ""
     },
     {
       "name": "icon-font",
       "kind": "Property",
       "signature": "in property <string> icon-font: \"Segoe Fluent Icons\";",
-      "line": 26,
+      "line": 68,
       "doc": ""
     },
     {
       "name": "changed",
       "kind": "Callback",
       "signature": "callback changed(string);",
-      "line": 29,
+      "line": 77,
       "doc": ""
     },
     {
       "name": "initial-year",
       "kind": "Property",
       "signature": "private property <int>    initial-year:    2026;",
-      "line": 34,
+      "line": 88,
       "doc": ""
     },
     {
       "name": "month-offset",
       "kind": "Property",
       "signature": "private property <int>    month-offset:    Sizes.zero;",
-      "line": 37,
+      "line": 97,
       "doc": ""
     },
     {
       "name": "months-per-year",
       "kind": "Property",
       "signature": "private property <int>    months-per-year: Sizes.twelve;",
-      "line": 40,
+      "line": 106,
       "doc": ""
     },
     {
       "name": "date-sep",
       "kind": "Property",
       "signature": "private property <string> date-sep:  \"-\";",
-      "line": 45,
+      "line": 117,
       "doc": ""
     },
     {
       "name": "zero-pad",
       "kind": "Property",
       "signature": "private property <string> zero-pad:  \"0\";",
-      "line": 48,
+      "line": 126,
       "doc": ""
     },
     {
       "name": "display-month",
       "kind": "Property",
       "signature": "private property <int>    display-month: Math.mod(root.month-offset, root.months-per-year) + Sizes.one;",
-      "line": 51,
+      "line": 135,
       "doc": ""
     },
     {
       "name": "display-year",
       "kind": "Property",
       "signature": "private property <int>    display-year:  root.initial-year + Math.floor(root.month-offset / root.months-per-year);",
-      "line": 54,
+      "line": 144,
       "doc": ""
     },
     {
       "name": "ym-prefix",
       "kind": "Property",
       "signature": "private property <string> ym-prefix:",
-      "line": 60,
+      "line": 156,
       "doc": ""
     },
     {
       "name": "cell-size",
       "kind": "Property",
       "signature": "private property <length> cell-size:  Spacing.control-md + Spacing.xs;",
-      "line": 66,
+      "line": 168,
       "doc": ""
     },
     {
       "name": "popup-w",
       "kind": "Property",
       "signature": "private property <length> popup-w:    cell-size * Sizes.seven + Spacing.sm * Sizes.two + Spacing.xs * Sizes.six;",
-      "line": 69,
+      "line": 177,
       "doc": ""
     },
     {
       "name": "popup-h",
       "kind": "Property",
       "signature": "private property <length> popup-h:    Spacing.xl + Spacing.xl + cell-size * Sizes.six + Spacing.sm * Sizes.five + Spacing.md * Sizes.two;",
-      "line": 72,
+      "line": 186,
       "doc": ""
     }
   ]

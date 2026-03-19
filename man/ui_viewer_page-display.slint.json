@@ -5,259 +5,259 @@
       "name": "PageDisplay",
       "kind": "Component",
       "signature": "export component PageDisplay inherits VerticalLayout {",
-      "line": 17,
+      "line": 18,
       "doc": ""
     },
     {
       "name": "var-info",
       "kind": "Property",
-      "signature": "private property <string> var-info: \"info\";",
-      "line": 23,
+      "signature": "private property <string> var-info: Variants.info;",
+      "line": 24,
       "doc": ""
     },
     {
       "name": "var-sm",
       "kind": "Property",
-      "signature": "private property <string> var-sm: \"sm\";",
-      "line": 26,
+      "signature": "private property <string> var-sm: Variants.sm;",
+      "line": 27,
       "doc": ""
     },
     {
       "name": "var-md",
       "kind": "Property",
-      "signature": "private property <string> var-md: \"md\";",
-      "line": 29,
+      "signature": "private property <string> var-md: Variants.md;",
+      "line": 30,
       "doc": ""
     },
     {
       "name": "var-lg",
       "kind": "Property",
-      "signature": "private property <string> var-lg: \"lg\";",
-      "line": 32,
+      "signature": "private property <string> var-lg: Variants.lg;",
+      "line": 33,
       "doc": ""
     },
     {
       "name": "var-rect",
       "kind": "Property",
       "signature": "private property <string> var-rect: \"rect\";",
-      "line": 35,
+      "line": 36,
       "doc": ""
     },
     {
       "name": "skel-circle-size",
       "kind": "Property",
-      "signature": "private property <length> skel-circle-size: 40px;",
-      "line": 40,
+      "signature": "private property <length> skel-circle-size: Sizes.comp-40;",
+      "line": 41,
       "doc": ""
     },
     {
       "name": "progress-two-thirds",
       "kind": "Property",
       "signature": "private property <float> progress-two-thirds: 0.66;",
-      "line": 43,
+      "line": 44,
       "doc": ""
     },
     {
       "name": "skel-full",
       "kind": "Property",
       "signature": "private property <float> skel-full: Sizes.full;",
-      "line": 46,
+      "line": 47,
       "doc": ""
     },
     {
       "name": "skel-eighty",
       "kind": "Property",
       "signature": "private property <float> skel-eighty: Sizes.percent-80;",
-      "line": 49,
+      "line": 50,
       "doc": ""
     },
     {
       "name": "skel-sixty",
       "kind": "Property",
       "signature": "private property <float> skel-sixty: Sizes.percent-60;",
-      "line": 52,
+      "line": 53,
       "doc": ""
     },
     {
       "name": "section-badge",
       "kind": "Property",
-      "signature": "private property <string> section-badge: \"Badge\";",
-      "line": 57,
+      "signature": "private property <string> section-badge: Strings.demo-section-badge;",
+      "line": 58,
       "doc": ""
     },
     {
       "name": "section-avatar",
       "kind": "Property",
-      "signature": "private property <string> section-avatar: \"Avatar\";",
-      "line": 60,
+      "signature": "private property <string> section-avatar: Strings.demo-section-avatar;",
+      "line": 61,
       "doc": ""
     },
     {
       "name": "section-card",
       "kind": "Property",
-      "signature": "private property <string> section-card: \"Card\";",
-      "line": 63,
+      "signature": "private property <string> section-card: Strings.demo-section-card;",
+      "line": 64,
       "doc": ""
     },
     {
       "name": "section-listitem",
       "kind": "Property",
-      "signature": "private property <string> section-listitem: \"ListItem\";",
-      "line": 66,
+      "signature": "private property <string> section-listitem: Strings.demo-section-listitem;",
+      "line": 67,
       "doc": ""
     },
     {
       "name": "section-progress",
       "kind": "Property",
-      "signature": "private property <string> section-progress: \"ProgressBar\";",
-      "line": 69,
+      "signature": "private property <string> section-progress: Strings.demo-section-progress;",
+      "line": 70,
       "doc": ""
     },
     {
       "name": "section-chip",
       "kind": "Property",
-      "signature": "private property <string> section-chip: \"Chip\";",
-      "line": 72,
+      "signature": "private property <string> section-chip: Strings.demo-section-chip;",
+      "line": 73,
       "doc": ""
     },
     {
       "name": "section-skeleton",
       "kind": "Property",
-      "signature": "private property <string> section-skeleton: \"Skeleton\";",
-      "line": 75,
+      "signature": "private property <string> section-skeleton: Strings.demo-section-skeleton;",
+      "line": 76,
       "doc": ""
     },
     {
       "name": "badge-info",
       "kind": "Property",
-      "signature": "private property <string> badge-info: \"Info\";",
-      "line": 78,
+      "signature": "private property <string> badge-info: Strings.demo-badge-info;",
+      "line": 79,
       "doc": ""
     },
     {
       "name": "badge-success",
       "kind": "Property",
-      "signature": "private property <string> badge-success: \"Success\";",
-      "line": 81,
+      "signature": "private property <string> badge-success: Strings.demo-badge-success;",
+      "line": 82,
       "doc": ""
     },
     {
       "name": "badge-warning",
       "kind": "Property",
-      "signature": "private property <string> badge-warning: \"Warning\";",
-      "line": 84,
+      "signature": "private property <string> badge-warning: Strings.demo-badge-warning;",
+      "line": 85,
       "doc": ""
     },
     {
       "name": "badge-error",
       "kind": "Property",
-      "signature": "private property <string> badge-error: \"Error\";",
-      "line": 87,
+      "signature": "private property <string> badge-error: Strings.demo-badge-error;",
+      "line": 88,
       "doc": ""
     },
     {
       "name": "card-title-only",
       "kind": "Property",
-      "signature": "private property <string> card-title-only: \"Title only\";",
-      "line": 90,
+      "signature": "private property <string> card-title-only: Strings.demo-card-title-only;",
+      "line": 91,
       "doc": ""
     },
     {
       "name": "card-title",
       "kind": "Property",
-      "signature": "private property <string> card-title: \"Card Title\";",
-      "line": 93,
+      "signature": "private property <string> card-title: Strings.demo-card-title;",
+      "line": 94,
       "doc": ""
     },
     {
       "name": "card-subtitle",
       "kind": "Property",
-      "signature": "private property <string> card-subtitle: \"Supporting subtitle text\";",
-      "line": 96,
+      "signature": "private property <string> card-subtitle: Strings.demo-card-subtitle;",
+      "line": 97,
       "doc": ""
     },
     {
       "name": "li-normal",
       "kind": "Property",
-      "signature": "private property <string> li-normal: \"Normal item\";",
-      "line": 99,
+      "signature": "private property <string> li-normal: Strings.demo-li-normal;",
+      "line": 100,
       "doc": ""
     },
     {
       "name": "li-selected",
       "kind": "Property",
-      "signature": "private property <string> li-selected: \"Selected item\";",
-      "line": 102,
+      "signature": "private property <string> li-selected: Strings.demo-li-selected;",
+      "line": 103,
       "doc": ""
     },
     {
       "name": "li-subtitle-title",
       "kind": "Property",
-      "signature": "private property <string> li-subtitle-title: \"With subtitle\";",
-      "line": 105,
+      "signature": "private property <string> li-subtitle-title: Strings.demo-li-subtitle-title;",
+      "line": 106,
       "doc": ""
     },
     {
       "name": "li-subtitle-text",
       "kind": "Property",
-      "signature": "private property <string> li-subtitle-text: \"Subtitle text here\";",
-      "line": 108,
+      "signature": "private property <string> li-subtitle-text: Strings.demo-li-subtitle-text;",
+      "line": 109,
       "doc": ""
     },
     {
       "name": "chip-default",
       "kind": "Property",
-      "signature": "private property <string> chip-default: \"Default\";",
-      "line": 111,
+      "signature": "private property <string> chip-default: Strings.demo-chip-default;",
+      "line": 112,
       "doc": ""
     },
     {
       "name": "chip-selected",
       "kind": "Property",
-      "signature": "private property <string> chip-selected: \"Selected\";",
-      "line": 114,
+      "signature": "private property <string> chip-selected: Strings.demo-chip-selected;",
+      "line": 115,
       "doc": ""
     },
     {
       "name": "chip-noclose",
       "kind": "Property",
-      "signature": "private property <string> chip-noclose: \"No close\";",
-      "line": 117,
+      "signature": "private property <string> chip-noclose: Strings.demo-chip-noclose;",
+      "line": 118,
       "doc": ""
     },
     {
       "name": "chip-disabled",
       "kind": "Property",
-      "signature": "private property <string> chip-disabled: \"Disabled\";",
-      "line": 120,
+      "signature": "private property <string> chip-disabled: Strings.demo-chip-disabled;",
+      "line": 121,
       "doc": ""
     },
     {
       "name": "chip-version",
       "kind": "Property",
-      "signature": "private property <string> chip-version: \"v1.0.0\";",
-      "line": 123,
+      "signature": "private property <string> chip-version: Strings.demo-chip-version;",
+      "line": 124,
       "doc": ""
     },
     {
       "name": "avatar-sm-initials",
       "kind": "Property",
-      "signature": "private property <string> avatar-sm-initials: \"SM\";",
-      "line": 126,
+      "signature": "private property <string> avatar-sm-initials: Strings.demo-avatar-sm;",
+      "line": 127,
       "doc": ""
     },
     {
       "name": "avatar-md-initials",
       "kind": "Property",
-      "signature": "private property <string> avatar-md-initials: \"MD\";",
-      "line": 129,
+      "signature": "private property <string> avatar-md-initials: Strings.demo-avatar-md;",
+      "line": 130,
       "doc": ""
     },
     {
       "name": "avatar-lg-initials",
       "kind": "Property",
-      "signature": "private property <string> avatar-lg-initials: \"LG\";",
-      "line": 132,
+      "signature": "private property <string> avatar-lg-initials: Strings.demo-avatar-lg;",
+      "line": 133,
       "doc": ""
     }
   ]

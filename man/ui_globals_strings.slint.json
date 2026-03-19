@@ -1,0 +1,1090 @@
+{
+  "source": "ui/globals/strings.slint",
+  "items": [
+    {
+      "name": "app-title",
+      "kind": "Property",
+      "signature": "out property <string> app-title: \"SlintUI Templates\";",
+      "line": 11,
+      "doc": ""
+    },
+    {
+      "name": "app-status-ready",
+      "kind": "Property",
+      "signature": "out property <string> app-status-ready: \"Ready\";",
+      "line": 15,
+      "doc": ""
+    },
+    {
+      "name": "action-close",
+      "kind": "Property",
+      "signature": "out property <string> action-close: \"Close\";",
+      "line": 19,
+      "doc": ""
+    },
+    {
+      "name": "action-ok",
+      "kind": "Property",
+      "signature": "out property <string> action-ok: \"OK\";",
+      "line": 23,
+      "doc": ""
+    },
+    {
+      "name": "action-cancel",
+      "kind": "Property",
+      "signature": "out property <string> action-cancel: \"Cancel\";",
+      "line": 27,
+      "doc": ""
+    },
+    {
+      "name": "action-save",
+      "kind": "Property",
+      "signature": "out property <string> action-save: \"Save\";",
+      "line": 31,
+      "doc": ""
+    },
+    {
+      "name": "action-delete",
+      "kind": "Property",
+      "signature": "out property <string> action-delete: \"Delete\";",
+      "line": 35,
+      "doc": ""
+    },
+    {
+      "name": "badge-default",
+      "kind": "Property",
+      "signature": "out property <string> badge-default: \"\";",
+      "line": 39,
+      "doc": ""
+    },
+    {
+      "name": "label-default",
+      "kind": "Property",
+      "signature": "out property <string> label-default: \"\";",
+      "line": 43,
+      "doc": ""
+    },
+    {
+      "name": "tooltip-copy",
+      "kind": "Property",
+      "signature": "out property <string> tooltip-copy: \"Copy\";",
+      "line": 47,
+      "doc": ""
+    },
+    {
+      "name": "tooltip-paste",
+      "kind": "Property",
+      "signature": "out property <string> tooltip-paste: \"Paste\";",
+      "line": 51,
+      "doc": ""
+    },
+    {
+      "name": "home-page-title",
+      "kind": "Property",
+      "signature": "out property <string> home-page-title: \"Home\";",
+      "line": 55,
+      "doc": ""
+    },
+    {
+      "name": "home-getting-started-title",
+      "kind": "Property",
+      "signature": "out property <string> home-getting-started-title: \"Getting started\";",
+      "line": 59,
+      "doc": ""
+    },
+    {
+      "name": "home-getting-started-subtitle",
+      "kind": "Property",
+      "signature": "out property <string> home-getting-started-subtitle: \"Edit ui/views/home.slint to design this view\";",
+      "line": 63,
+      "doc": ""
+    },
+    {
+      "name": "demo-badge-text",
+      "kind": "Property",
+      "signature": "out property <string> demo-badge-text: \"New\";",
+      "line": 67,
+      "doc": ""
+    },
+    {
+      "name": "demo-button-primary",
+      "kind": "Property",
+      "signature": "out property <string> demo-button-primary: \"Primary action\";",
+      "line": 71,
+      "doc": ""
+    },
+    {
+      "name": "demo-button-secondary",
+      "kind": "Property",
+      "signature": "out property <string> demo-button-secondary: \"Secondary\";",
+      "line": 75,
+      "doc": ""
+    },
+    {
+      "name": "demo-select-placeholder",
+      "kind": "Property",
+      "signature": "out property <string> demo-select-placeholder: \"Select an option\";",
+      "line": 79,
+      "doc": ""
+    },
+    {
+      "name": "demo-dropdown-option-1",
+      "kind": "Property",
+      "signature": "out property <string> demo-dropdown-option-1: \"Option 1\";",
+      "line": 83,
+      "doc": ""
+    },
+    {
+      "name": "demo-dropdown-option-2",
+      "kind": "Property",
+      "signature": "out property <string> demo-dropdown-option-2: \"Option 2\";",
+      "line": 87,
+      "doc": ""
+    },
+    {
+      "name": "demo-dropdown-option-3",
+      "kind": "Property",
+      "signature": "out property <string> demo-dropdown-option-3: \"Option 3\";",
+      "line": 91,
+      "doc": ""
+    },
+    {
+      "name": "demo-accordion-title-1",
+      "kind": "Property",
+      "signature": "out property <string> demo-accordion-title-1: \"Section 1\";",
+      "line": 95,
+      "doc": ""
+    },
+    {
+      "name": "demo-accordion-content-1",
+      "kind": "Property",
+      "signature": "out property <string> demo-accordion-content-1: \"Content for section 1\";",
+      "line": 99,
+      "doc": ""
+    },
+    {
+      "name": "demo-accordion-title-2",
+      "kind": "Property",
+      "signature": "out property <string> demo-accordion-title-2: \"Section 2\";",
+      "line": 103,
+      "doc": ""
+    },
+    {
+      "name": "demo-accordion-content-2",
+      "kind": "Property",
+      "signature": "out property <string> demo-accordion-content-2: \"Content for section 2\";",
+      "line": 107,
+      "doc": ""
+    },
+    {
+      "name": "demo-viewslot-alpha-text",
+      "kind": "Property",
+      "signature": "out property <string> demo-viewslot-alpha-text: \"slot-id: \\\"alpha\\\" \\u{2014} visible when active == \\\"alpha\\\"\";",
+      "line": 113,
+      "doc": ""
+    },
+    {
+      "name": "demo-viewslot-beta-text",
+      "kind": "Property",
+      "signature": "out property <string> demo-viewslot-beta-text: \"slot-id: \\\"beta\\\"\";",
+      "line": 116,
+      "doc": ""
+    },
+    {
+      "name": "demo-viewslot-gamma-text",
+      "kind": "Property",
+      "signature": "out property <string> demo-viewslot-gamma-text: \"slot-id: \\\"gamma\\\"\";",
+      "line": 119,
+      "doc": ""
+    },
+    {
+      "name": "demo-card-subtitle",
+      "kind": "Property",
+      "signature": "out property <string> demo-card-subtitle: \"Supporting subtitle text\";",
+      "line": 123,
+      "doc": ""
+    },
+    {
+      "name": "demo-alert-warning-msg",
+      "kind": "Property",
+      "signature": "out property <string> demo-alert-warning-msg: \"Please review before continuing.\";",
+      "line": 127,
+      "doc": ""
+    },
+    {
+      "name": "demo-alert-error-title",
+      "kind": "Property",
+      "signature": "out property <string> demo-alert-error-title: \"Error\";",
+      "line": 130,
+      "doc": ""
+    },
+    {
+      "name": "demo-alert-error-msg",
+      "kind": "Property",
+      "signature": "out property <string> demo-alert-error-msg: \"Something went wrong. Please try again.\";",
+      "line": 133,
+      "doc": ""
+    },
+    {
+      "name": "demo-acc-whatis-title",
+      "kind": "Property",
+      "signature": "out property <string> demo-acc-whatis-title: \"What is Slint?\";",
+      "line": 137,
+      "doc": ""
+    },
+    {
+      "name": "demo-acc-whatis-content",
+      "kind": "Property",
+      "signature": "out property <string> demo-acc-whatis-content: \"Slint is a declarative GUI toolkit for Rust, C++, and JavaScript. It compiles .slint files to native code for maximum performance.\";",
+      "line": 140,
+      "doc": ""
+    },
+    {
+      "name": "demo-acc-tokens-title",
+      "kind": "Property",
+      "signature": "out property <string> demo-acc-tokens-title: \"Design Tokens\";",
+      "line": 143,
+      "doc": ""
+    },
+    {
+      "name": "demo-acc-tokens-content",
+      "kind": "Property",
+      "signature": "out property <string> demo-acc-tokens-content: \"All visual values (colors, spacing, typography, radius) are defined in ui/tokens/ and never hardcoded in components. This enables runtime theming.\";",
+      "line": 146,
+      "doc": ""
+    },
+    {
+      "name": "demo-acc-mother-title",
+      "kind": "Property",
+      "signature": "out property <string> demo-acc-mother-title: \"Mother-Child Pattern\";",
+      "line": 149,
+      "doc": ""
+    },
+    {
+      "name": "demo-acc-mother-content",
+      "kind": "Property",
+      "signature": "out property <string> demo-acc-mother-content: \"AppWindow (the mother) owns all state. Child components receive data via in property and emit events via callback. No child owns state.\";",
+      "line": 152,
+      "doc": ""
+    },
+    {
+      "name": "demo-acc-platform-title",
+      "kind": "Property",
+      "signature": "out property <string> demo-acc-platform-title: \"Platform Support\";",
+      "line": 156,
+      "doc": ""
+    },
+    {
+      "name": "demo-drawer-open-left",
+      "kind": "Property",
+      "signature": "out property <string> demo-drawer-open-left: \"Open Left\";",
+      "line": 160,
+      "doc": ""
+    },
+    {
+      "name": "demo-drawer-open-right",
+      "kind": "Property",
+      "signature": "out property <string> demo-drawer-open-right: \"Open Right\";",
+      "line": 163,
+      "doc": ""
+    },
+    {
+      "name": "demo-drawer-hint",
+      "kind": "Property",
+      "signature": "out property <string> demo-drawer-hint: \"Click overlay or X to close\";",
+      "line": 166,
+      "doc": ""
+    },
+    {
+      "name": "demo-drawer-area-text",
+      "kind": "Property",
+      "signature": "out property <string> demo-drawer-area-text: \"Drawer demo area\";",
+      "line": 169,
+      "doc": ""
+    },
+    {
+      "name": "demo-drawer-nav",
+      "kind": "Property",
+      "signature": "out property <string> demo-drawer-nav: \"Navigation\";",
+      "line": 172,
+      "doc": ""
+    },
+    {
+      "name": "demo-drawer-item-one",
+      "kind": "Property",
+      "signature": "out property <string> demo-drawer-item-one: \"Item one\";",
+      "line": 175,
+      "doc": ""
+    },
+    {
+      "name": "demo-drawer-item-two",
+      "kind": "Property",
+      "signature": "out property <string> demo-drawer-item-two: \"Item two\";",
+      "line": 178,
+      "doc": ""
+    },
+    {
+      "name": "demo-drawer-item-three",
+      "kind": "Property",
+      "signature": "out property <string> demo-drawer-item-three: \"Item three\";",
+      "line": 181,
+      "doc": ""
+    },
+    {
+      "name": "demo-drawer-properties",
+      "kind": "Property",
+      "signature": "out property <string> demo-drawer-properties: \"Properties\";",
+      "line": 184,
+      "doc": ""
+    },
+    {
+      "name": "demo-drawer-color-accent",
+      "kind": "Property",
+      "signature": "out property <string> demo-drawer-color-accent: \"Color: accent\";",
+      "line": 187,
+      "doc": ""
+    },
+    {
+      "name": "demo-drawer-border-none",
+      "kind": "Property",
+      "signature": "out property <string> demo-drawer-border-none: \"Border: none\";",
+      "line": 190,
+      "doc": ""
+    },
+    {
+      "name": "demo-toolbar-new",
+      "kind": "Property",
+      "signature": "out property <string> demo-toolbar-new: \"New file\";",
+      "line": 194,
+      "doc": ""
+    },
+    {
+      "name": "demo-toolbar-open",
+      "kind": "Property",
+      "signature": "out property <string> demo-toolbar-open: \"Open\";",
+      "line": 197,
+      "doc": ""
+    },
+    {
+      "name": "demo-toolbar-cut",
+      "kind": "Property",
+      "signature": "out property <string> demo-toolbar-cut: \"Cut\";",
+      "line": 200,
+      "doc": ""
+    },
+    {
+      "name": "demo-messagebar-info",
+      "kind": "Property",
+      "signature": "out property <string> demo-messagebar-info: \"Your session will expire in 10 minutes.\";",
+      "line": 204,
+      "doc": ""
+    },
+    {
+      "name": "demo-messagebar-renew",
+      "kind": "Property",
+      "signature": "out property <string> demo-messagebar-renew: \"Renew\";",
+      "line": 207,
+      "doc": ""
+    },
+    {
+      "name": "demo-messagebar-warning",
+      "kind": "Property",
+      "signature": "out property <string> demo-messagebar-warning: \"Unsaved changes — remember to save your work.\";",
+      "line": 210,
+      "doc": ""
+    },
+    {
+      "name": "demo-messagebar-error",
+      "kind": "Property",
+      "signature": "out property <string> demo-messagebar-error: \"Failed to connect to server.\";",
+      "line": 213,
+      "doc": ""
+    },
+    {
+      "name": "demo-messagebar-retry",
+      "kind": "Property",
+      "signature": "out property <string> demo-messagebar-retry: \"Retry\";",
+      "line": 216,
+      "doc": ""
+    },
+    {
+      "name": "demo-messagebar-success",
+      "kind": "Property",
+      "signature": "out property <string> demo-messagebar-success: \"File saved successfully.\";",
+      "line": 219,
+      "doc": ""
+    },
+    {
+      "name": "demo-empty-title",
+      "kind": "Property",
+      "signature": "out property <string> demo-empty-title: \"No files found\";",
+      "line": 223,
+      "doc": ""
+    },
+    {
+      "name": "demo-empty-desc",
+      "kind": "Property",
+      "signature": "out property <string> demo-empty-desc: \"Upload a file or create a new one to get started.\";",
+      "line": 226,
+      "doc": ""
+    },
+    {
+      "name": "demo-empty-action",
+      "kind": "Property",
+      "signature": "out property <string> demo-empty-action: \"Upload file\";",
+      "line": 229,
+      "doc": ""
+    },
+    {
+      "name": "demo-segment-day",
+      "kind": "Property",
+      "signature": "out property <string> demo-segment-day: \"Day\";",
+      "line": 233,
+      "doc": ""
+    },
+    {
+      "name": "demo-segment-week",
+      "kind": "Property",
+      "signature": "out property <string> demo-segment-week: \"Week\";",
+      "line": 236,
+      "doc": ""
+    },
+    {
+      "name": "demo-segment-month",
+      "kind": "Property",
+      "signature": "out property <string> demo-segment-month: \"Month\";",
+      "line": 239,
+      "doc": ""
+    },
+    {
+      "name": "demo-cbf-btn-text",
+      "kind": "Property",
+      "signature": "out property <string> demo-cbf-btn-text: \"Right-click actions\";",
+      "line": 243,
+      "doc": ""
+    },
+    {
+      "name": "demo-dropdown-file-menu",
+      "kind": "Property",
+      "signature": "out property <string> demo-dropdown-file-menu: \"File menu\";",
+      "line": 246,
+      "doc": ""
+    },
+    {
+      "name": "demo-dropdown-arrow",
+      "kind": "Property",
+      "signature": "out property <string> demo-dropdown-arrow: \"▼\";",
+      "line": 249,
+      "doc": ""
+    },
+    {
+      "name": "demo-flyout-open",
+      "kind": "Property",
+      "signature": "out property <string> demo-flyout-open: \"Open Flyout\";",
+      "line": 252,
+      "doc": ""
+    },
+    {
+      "name": "demo-flyout-title",
+      "kind": "Property",
+      "signature": "out property <string> demo-flyout-title: \"Flyout title\";",
+      "line": 255,
+      "doc": ""
+    },
+    {
+      "name": "demo-flyout-body",
+      "kind": "Property",
+      "signature": "out property <string> demo-flyout-body: \"This is a flyout. It can contain any descriptive content you need.\";",
+      "line": 258,
+      "doc": ""
+    },
+    {
+      "name": "demo-popover-title",
+      "kind": "Property",
+      "signature": "out property <string> demo-popover-title: \"Popover\";",
+      "line": 261,
+      "doc": ""
+    },
+    {
+      "name": "demo-popover-body",
+      "kind": "Property",
+      "signature": "out property <string> demo-popover-body: \"Inline overlay — appears directly below the trigger without a popup window.\";",
+      "line": 264,
+      "doc": ""
+    },
+    {
+      "name": "demo-popover-open",
+      "kind": "Property",
+      "signature": "out property <string> demo-popover-open: \"Open Popover\";",
+      "line": 267,
+      "doc": ""
+    },
+    {
+      "name": "demo-popover-close",
+      "kind": "Property",
+      "signature": "out property <string> demo-popover-close: \"Close Popover\";",
+      "line": 270,
+      "doc": ""
+    },
+    {
+      "name": "demo-tip-btn",
+      "kind": "Property",
+      "signature": "out property <string> demo-tip-btn: \"?\";",
+      "line": 273,
+      "doc": ""
+    },
+    {
+      "name": "demo-tip-title",
+      "kind": "Property",
+      "signature": "out property <string> demo-tip-title: \"Did you know?\";",
+      "line": 276,
+      "doc": ""
+    },
+    {
+      "name": "demo-tip-body",
+      "kind": "Property",
+      "signature": "out property <string> demo-tip-body: \"You can right-click any item for a context menu with more options.\";",
+      "line": 279,
+      "doc": ""
+    },
+    {
+      "name": "demo-tip-action",
+      "kind": "Property",
+      "signature": "out property <string> demo-tip-action: \"Got it\";",
+      "line": 282,
+      "doc": ""
+    },
+    {
+      "name": "demo-tip-dismiss",
+      "kind": "Property",
+      "signature": "out property <string> demo-tip-dismiss: \"Skip\";",
+      "line": 285,
+      "doc": ""
+    },
+    {
+      "name": "demo-toolbar-hint",
+      "kind": "Property",
+      "signature": "out property <string> demo-toolbar-hint: \"Click toolbar buttons — IDs logged to console\";",
+      "line": 288,
+      "doc": ""
+    },
+    {
+      "name": "demo-viewslot-label-gamma",
+      "kind": "Property",
+      "signature": "out property <string> demo-viewslot-label-gamma: \"Gamma\";",
+      "line": 292,
+      "doc": ""
+    },
+    {
+      "name": "canvas-image-placeholder",
+      "kind": "Property",
+      "signature": "out property <string> canvas-image-placeholder: \"No frame — wire canvas-frame from Rust\";",
+      "line": 297,
+      "doc": ""
+    },
+    {
+      "name": "icon-close",
+      "kind": "Property",
+      "signature": "out property <string> icon-close: \"\\u{E711}\";",
+      "line": 300,
+      "doc": ""
+    },
+    {
+      "name": "icon-more",
+      "kind": "Property",
+      "signature": "out property <string> icon-more: \"\\u{E712}\";",
+      "line": 303,
+      "doc": ""
+    },
+    {
+      "name": "icon-image",
+      "kind": "Property",
+      "signature": "out property <string> icon-image: \"\\u{E91B}\";",
+      "line": 306,
+      "doc": ""
+    },
+    {
+      "name": "arrow-up",
+      "kind": "Property",
+      "signature": "out property <string> arrow-up: \"▲\";",
+      "line": 309,
+      "doc": ""
+    },
+    {
+      "name": "arrow-down",
+      "kind": "Property",
+      "signature": "out property <string> arrow-down: \"▼\";",
+      "line": 312,
+      "doc": ""
+    },
+    {
+      "name": "status-view-prefix",
+      "kind": "Property",
+      "signature": "out property <string> status-view-prefix: \"View: \";",
+      "line": 317,
+      "doc": ""
+    },
+    {
+      "name": "sidebar-header-icon",
+      "kind": "Property",
+      "signature": "out property <string> sidebar-header-icon: \"\\u{E76C}\";",
+      "line": 320,
+      "doc": ""
+    },
+    {
+      "name": "demo-badge-info",
+      "kind": "Property",
+      "signature": "out property <string> demo-badge-info: \"Info\";",
+      "line": 325,
+      "doc": ""
+    },
+    {
+      "name": "demo-badge-success",
+      "kind": "Property",
+      "signature": "out property <string> demo-badge-success: \"Success\";",
+      "line": 328,
+      "doc": ""
+    },
+    {
+      "name": "demo-badge-warning",
+      "kind": "Property",
+      "signature": "out property <string> demo-badge-warning: \"Warning\";",
+      "line": 331,
+      "doc": ""
+    },
+    {
+      "name": "demo-badge-error",
+      "kind": "Property",
+      "signature": "out property <string> demo-badge-error: \"Error\";",
+      "line": 334,
+      "doc": ""
+    },
+    {
+      "name": "demo-card-title-only",
+      "kind": "Property",
+      "signature": "out property <string> demo-card-title-only: \"Title only\";",
+      "line": 337,
+      "doc": ""
+    },
+    {
+      "name": "demo-card-title",
+      "kind": "Property",
+      "signature": "out property <string> demo-card-title: \"Card Title\";",
+      "line": 340,
+      "doc": ""
+    },
+    {
+      "name": "demo-li-normal",
+      "kind": "Property",
+      "signature": "out property <string> demo-li-normal: \"Normal item\";",
+      "line": 343,
+      "doc": ""
+    },
+    {
+      "name": "demo-li-selected",
+      "kind": "Property",
+      "signature": "out property <string> demo-li-selected: \"Selected item\";",
+      "line": 346,
+      "doc": ""
+    },
+    {
+      "name": "demo-li-subtitle-title",
+      "kind": "Property",
+      "signature": "out property <string> demo-li-subtitle-title: \"With subtitle\";",
+      "line": 349,
+      "doc": ""
+    },
+    {
+      "name": "demo-li-subtitle-text",
+      "kind": "Property",
+      "signature": "out property <string> demo-li-subtitle-text: \"Subtitle text here\";",
+      "line": 352,
+      "doc": ""
+    },
+    {
+      "name": "demo-chip-default",
+      "kind": "Property",
+      "signature": "out property <string> demo-chip-default: \"Default\";",
+      "line": 355,
+      "doc": ""
+    },
+    {
+      "name": "demo-chip-selected",
+      "kind": "Property",
+      "signature": "out property <string> demo-chip-selected: \"Selected\";",
+      "line": 358,
+      "doc": ""
+    },
+    {
+      "name": "demo-chip-noclose",
+      "kind": "Property",
+      "signature": "out property <string> demo-chip-noclose: \"No close\";",
+      "line": 361,
+      "doc": ""
+    },
+    {
+      "name": "demo-chip-disabled",
+      "kind": "Property",
+      "signature": "out property <string> demo-chip-disabled: \"Disabled\";",
+      "line": 364,
+      "doc": ""
+    },
+    {
+      "name": "demo-chip-version",
+      "kind": "Property",
+      "signature": "out property <string> demo-chip-version: \"v1.0.0\";",
+      "line": 367,
+      "doc": ""
+    },
+    {
+      "name": "demo-avatar-sm",
+      "kind": "Property",
+      "signature": "out property <string> demo-avatar-sm: \"SM\";",
+      "line": 370,
+      "doc": ""
+    },
+    {
+      "name": "demo-avatar-md",
+      "kind": "Property",
+      "signature": "out property <string> demo-avatar-md: \"MD\";",
+      "line": 373,
+      "doc": ""
+    },
+    {
+      "name": "demo-avatar-lg",
+      "kind": "Property",
+      "signature": "out property <string> demo-avatar-lg: \"LG\";",
+      "line": 376,
+      "doc": ""
+    },
+    {
+      "name": "demo-toast-info",
+      "kind": "Property",
+      "signature": "out property <string> demo-toast-info: \"Information message\";",
+      "line": 381,
+      "doc": ""
+    },
+    {
+      "name": "demo-toast-success",
+      "kind": "Property",
+      "signature": "out property <string> demo-toast-success: \"Success! Operation complete\";",
+      "line": 384,
+      "doc": ""
+    },
+    {
+      "name": "demo-toast-warning",
+      "kind": "Property",
+      "signature": "out property <string> demo-toast-warning: \"Warning: please check input\";",
+      "line": 387,
+      "doc": ""
+    },
+    {
+      "name": "demo-toast-error",
+      "kind": "Property",
+      "signature": "out property <string> demo-toast-error: \"Error: action failed\";",
+      "line": 390,
+      "doc": ""
+    },
+    {
+      "name": "demo-dialog-title",
+      "kind": "Property",
+      "signature": "out property <string> demo-dialog-title: \"Confirm Action\";",
+      "line": 393,
+      "doc": ""
+    },
+    {
+      "name": "demo-alert-info-msg",
+      "kind": "Property",
+      "signature": "out property <string> demo-alert-info-msg: \"This is an informational alert.\";",
+      "line": 396,
+      "doc": ""
+    },
+    {
+      "name": "demo-alert-success-title",
+      "kind": "Property",
+      "signature": "out property <string> demo-alert-success-title: \"Success!\";",
+      "line": 399,
+      "doc": ""
+    },
+    {
+      "name": "demo-alert-success-msg",
+      "kind": "Property",
+      "signature": "out property <string> demo-alert-success-msg: \"Your changes have been saved.\";",
+      "line": 402,
+      "doc": ""
+    },
+    {
+      "name": "demo-alert-warning-title",
+      "kind": "Property",
+      "signature": "out property <string> demo-alert-warning-title: \"Warning\";",
+      "line": 405,
+      "doc": ""
+    },
+    {
+      "name": "demo-tooltip-top",
+      "kind": "Property",
+      "signature": "out property <string> demo-tooltip-top: \"Top tooltip (default)\";",
+      "line": 408,
+      "doc": ""
+    },
+    {
+      "name": "demo-tooltip-bottom",
+      "kind": "Property",
+      "signature": "out property <string> demo-tooltip-bottom: \"Bottom tooltip\";",
+      "line": 411,
+      "doc": ""
+    },
+    {
+      "name": "demo-tooltip-right",
+      "kind": "Property",
+      "signature": "out property <string> demo-tooltip-right: \"Right tooltip\";",
+      "line": 414,
+      "doc": ""
+    },
+    {
+      "name": "demo-btn-hover",
+      "kind": "Property",
+      "signature": "out property <string> demo-btn-hover: \"Hover me\";",
+      "line": 417,
+      "doc": ""
+    },
+    {
+      "name": "demo-btn-bottom",
+      "kind": "Property",
+      "signature": "out property <string> demo-btn-bottom: \"Bottom\";",
+      "line": 420,
+      "doc": ""
+    },
+    {
+      "name": "demo-btn-right",
+      "kind": "Property",
+      "signature": "out property <string> demo-btn-right: \"Right\";",
+      "line": 423,
+      "doc": ""
+    },
+    {
+      "name": "demo-section-toast",
+      "kind": "Property",
+      "signature": "out property <string> demo-section-toast: \"Toast\";",
+      "line": 428,
+      "doc": ""
+    },
+    {
+      "name": "demo-section-dialog",
+      "kind": "Property",
+      "signature": "out property <string> demo-section-dialog: \"Dialog\";",
+      "line": 431,
+      "doc": ""
+    },
+    {
+      "name": "demo-section-spinner",
+      "kind": "Property",
+      "signature": "out property <string> demo-section-spinner: \"Spinner\";",
+      "line": 434,
+      "doc": ""
+    },
+    {
+      "name": "demo-section-alert",
+      "kind": "Property",
+      "signature": "out property <string> demo-section-alert: \"Alert\";",
+      "line": 437,
+      "doc": ""
+    },
+    {
+      "name": "demo-section-tooltip",
+      "kind": "Property",
+      "signature": "out property <string> demo-section-tooltip: \"Tooltip\";",
+      "line": 440,
+      "doc": ""
+    },
+    {
+      "name": "demo-section-badge",
+      "kind": "Property",
+      "signature": "out property <string> demo-section-badge: \"Badge\";",
+      "line": 445,
+      "doc": ""
+    },
+    {
+      "name": "demo-section-avatar",
+      "kind": "Property",
+      "signature": "out property <string> demo-section-avatar: \"Avatar\";",
+      "line": 448,
+      "doc": ""
+    },
+    {
+      "name": "demo-section-card",
+      "kind": "Property",
+      "signature": "out property <string> demo-section-card: \"Card\";",
+      "line": 451,
+      "doc": ""
+    },
+    {
+      "name": "demo-section-listitem",
+      "kind": "Property",
+      "signature": "out property <string> demo-section-listitem: \"ListItem\";",
+      "line": 454,
+      "doc": ""
+    },
+    {
+      "name": "demo-section-progress",
+      "kind": "Property",
+      "signature": "out property <string> demo-section-progress: \"ProgressBar\";",
+      "line": 457,
+      "doc": ""
+    },
+    {
+      "name": "demo-section-chip",
+      "kind": "Property",
+      "signature": "out property <string> demo-section-chip: \"Chip\";",
+      "line": 460,
+      "doc": ""
+    },
+    {
+      "name": "demo-section-skeleton",
+      "kind": "Property",
+      "signature": "out property <string> demo-section-skeleton: \"Skeleton\";",
+      "line": 463,
+      "doc": ""
+    },
+    {
+      "name": "demo-section-label",
+      "kind": "Property",
+      "signature": "out property <string> demo-section-label: \"Label\";",
+      "line": 468,
+      "doc": ""
+    },
+    {
+      "name": "demo-section-toolbar",
+      "kind": "Property",
+      "signature": "out property <string> demo-section-toolbar: \"Toolbar\";",
+      "line": 471,
+      "doc": ""
+    },
+    {
+      "name": "demo-section-messagebar",
+      "kind": "Property",
+      "signature": "out property <string> demo-section-messagebar: \"MessageBar\";",
+      "line": 474,
+      "doc": ""
+    },
+    {
+      "name": "demo-section-emptystate",
+      "kind": "Property",
+      "signature": "out property <string> demo-section-emptystate: \"EmptyState\";",
+      "line": 477,
+      "doc": ""
+    },
+    {
+      "name": "demo-section-segmented",
+      "kind": "Property",
+      "signature": "out property <string> demo-section-segmented: \"Segmented\";",
+      "line": 480,
+      "doc": ""
+    },
+    {
+      "name": "demo-section-formfield",
+      "kind": "Property",
+      "signature": "out property <string> demo-section-formfield: \"FormField\";",
+      "line": 483,
+      "doc": ""
+    },
+    {
+      "name": "demo-label-normal",
+      "kind": "Property",
+      "signature": "out property <string> demo-label-normal: \"Normal label\";",
+      "line": 486,
+      "doc": ""
+    },
+    {
+      "name": "demo-label-required",
+      "kind": "Property",
+      "signature": "out property <string> demo-label-required: \"Required field\";",
+      "line": 489,
+      "doc": ""
+    },
+    {
+      "name": "demo-label-disabled",
+      "kind": "Property",
+      "signature": "out property <string> demo-label-disabled: \"Disabled label\";",
+      "line": 492,
+      "doc": ""
+    },
+    {
+      "name": "demo-seg-selected-prefix",
+      "kind": "Property",
+      "signature": "out property <string> demo-seg-selected-prefix: \"Selected: \";",
+      "line": 495,
+      "doc": ""
+    },
+    {
+      "name": "demo-seg-separator",
+      "kind": "Property",
+      "signature": "out property <string> demo-seg-separator: \" / \";",
+      "line": 498,
+      "doc": ""
+    },
+    {
+      "name": "demo-ff-username-label",
+      "kind": "Property",
+      "signature": "out property <string> demo-ff-username-label: \"Username\";",
+      "line": 501,
+      "doc": ""
+    },
+    {
+      "name": "demo-ff-username-hint",
+      "kind": "Property",
+      "signature": "out property <string> demo-ff-username-hint: \"Letters and numbers only\";",
+      "line": 504,
+      "doc": ""
+    },
+    {
+      "name": "demo-ff-username-placeholder",
+      "kind": "Property",
+      "signature": "out property <string> demo-ff-username-placeholder: \"Enter username\";",
+      "line": 507,
+      "doc": ""
+    },
+    {
+      "name": "demo-ff-email-label",
+      "kind": "Property",
+      "signature": "out property <string> demo-ff-email-label: \"Email\";",
+      "line": 510,
+      "doc": ""
+    },
+    {
+      "name": "demo-ff-email-error",
+      "kind": "Property",
+      "signature": "out property <string> demo-ff-email-error: \"Invalid email address\";",
+      "line": 513,
+      "doc": ""
+    },
+    {
+      "name": "demo-ff-email-placeholder",
+      "kind": "Property",
+      "signature": "out property <string> demo-ff-email-placeholder: \"Enter email\";",
+      "line": 516,
+      "doc": ""
+    },
+    {
+      "name": "demo-ff-optional-label",
+      "kind": "Property",
+      "signature": "out property <string> demo-ff-optional-label: \"Optional field\";",
+      "line": 519,
+      "doc": ""
+    },
+    {
+      "name": "demo-ff-optional-hint",
+      "kind": "Property",
+      "signature": "out property <string> demo-ff-optional-hint: \"Leave blank to skip\";",
+      "line": 522,
+      "doc": ""
+    },
+    {
+      "name": "demo-ff-optional-placeholder",
+      "kind": "Property",
+      "signature": "out property <string> demo-ff-optional-placeholder: \"Optional...\";",
+      "line": 525,
+      "doc": ""
+    }
+  ]
+}

@@ -23,9 +23,9 @@
       "doc": "Set dark mode on/off — updates cache and UI Theme global."
     },
     {
-      "name": "get_dark_mode",
+      "name": "is_dark_mode",
       "kind": "Fn",
-      "signature": "pub fn get_dark_mode(&self) -> bool",
+      "signature": "pub fn is_dark_mode(&self) -> bool",
       "line": 32,
       "doc": "Check if dark mode is currently active (reads from cache)."
     },

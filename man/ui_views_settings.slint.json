@@ -5,14 +5,14 @@
       "name": "SettingsView",
       "kind": "Component",
       "signature": "export component SettingsView inherits Rectangle {",
-      "line": 10,
+      "line": 16,
       "doc": ""
     },
     {
       "name": "page-title",
       "kind": "Property",
       "signature": "private property <string> page-title: \"Settings\";",
-      "line": 14,
+      "line": 26,
       "doc": ""
     }
   ]

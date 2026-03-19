@@ -5,28 +5,28 @@
       "name": "ToolbarItem",
       "kind": "Struct",
       "signature": "export struct ToolbarItem {",
-      "line": 5,
+      "line": 11,
       "doc": ""
     },
     {
       "name": "ToolbarBtn",
       "kind": "Component",
       "signature": "export component ToolbarBtn inherits Rectangle {",
-      "line": 14,
+      "line": 26,
       "doc": ""
     },
     {
       "name": "item",
       "kind": "Property",
       "signature": "in property <ToolbarItem> item;",
-      "line": 17,
+      "line": 35,
       "doc": ""
     },
     {
       "name": "clicked",
       "kind": "Callback",
       "signature": "callback clicked(string);",
-      "line": 20,
+      "line": 44,
       "doc": ""
     }
   ]

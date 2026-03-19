@@ -5,7 +5,7 @@
       "name": "ShellToolbarItem",
       "kind": "Struct",
       "signature": "export struct ShellToolbarItem {",
-      "line": 8,
+      "line": 14,
       "doc": ""
     }
   ]

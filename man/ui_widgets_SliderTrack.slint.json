@@ -5,42 +5,42 @@
       "name": "SliderTrack",
       "kind": "Component",
       "signature": "export component SliderTrack inherits Rectangle {",
-      "line": 7,
+      "line": 13,
       "doc": ""
     },
     {
       "name": "fill-ratio",
       "kind": "Property",
       "signature": "in property <float>  fill-ratio;",
-      "line": 10,
+      "line": 22,
       "doc": ""
     },
     {
       "name": "track-h",
       "kind": "Property",
       "signature": "in property <length> track-h;",
-      "line": 13,
+      "line": 31,
       "doc": ""
     },
     {
       "name": "thumb-size",
       "kind": "Property",
       "signature": "in property <length> thumb-size;",
-      "line": 16,
+      "line": 40,
       "doc": ""
     },
     {
       "name": "enabled",
       "kind": "Property",
       "signature": "in property <bool>   enabled: true;",
-      "line": 19,
+      "line": 49,
       "doc": ""
     },
     {
       "name": "value-changed",
       "kind": "Callback",
       "signature": "callback value-changed(float);",
-      "line": 22,
+      "line": 58,
       "doc": ""
     }
   ]

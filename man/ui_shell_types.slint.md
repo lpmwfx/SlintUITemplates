@@ -2,7 +2,7 @@
 
 ## `export struct ShellToolbarItem {`
 
-*Line 8 · struct*
+*Line 14 · struct*
 
 **undocumented**
 

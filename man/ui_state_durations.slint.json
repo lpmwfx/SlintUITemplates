@@ -1,0 +1,33 @@
+{
+  "source": "ui/state/durations.slint",
+  "items": [
+    {
+      "name": "tick",
+      "kind": "Property",
+      "signature": "out property <duration> tick:    FluentMotion.tick;     // 16ms — animation frame tick (~60fps)",
+      "line": 18,
+      "doc": ""
+    },
+    {
+      "name": "quick",
+      "kind": "Property",
+      "signature": "out property <duration> quick:   FluentMotion.quick;    // 150ms — toggles, micro-transitions",
+      "line": 27,
+      "doc": ""
+    },
+    {
+      "name": "medium",
+      "kind": "Property",
+      "signature": "out property <duration> medium:  FluentMotion.medium;   // 200ms — slides, progress bars",
+      "line": 36,
+      "doc": ""
+    },
+    {
+      "name": "normal",
+      "kind": "Property",
+      "signature": "out property <duration> normal:  FluentMotion.normal;   // 167ms — standard transitions",
+      "line": 45,
+      "doc": ""
+    }
+  ]
+}

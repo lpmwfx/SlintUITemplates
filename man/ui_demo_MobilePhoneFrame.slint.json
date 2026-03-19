@@ -5,35 +5,35 @@
       "name": "MobilePhoneFrame",
       "kind": "Component",
       "signature": "export component MobilePhoneFrame inherits Rectangle {",
-      "line": 14,
+      "line": 20,
       "doc": ""
     },
     {
       "name": "active-view",
       "kind": "Property",
       "signature": "in property <string>    active-view;",
-      "line": 17,
+      "line": 29,
       "doc": ""
     },
     {
       "name": "items",
       "kind": "Property",
       "signature": "in property <[NavItem]> items;",
-      "line": 20,
+      "line": 38,
       "doc": ""
     },
     {
       "name": "status-prefix",
       "kind": "Property",
       "signature": "in property <string>    status-prefix;",
-      "line": 23,
+      "line": 47,
       "doc": ""
     },
     {
       "name": "navigate",
       "kind": "Callback",
       "signature": "callback navigate(string);",
-      "line": 26,
+      "line": 56,
       "doc": ""
     }
   ]

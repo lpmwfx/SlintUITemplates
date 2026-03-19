@@ -1,6 +1,6 @@
 # SlintTemplateSystem — Documentation Manifest
 
-**Coverage:** 9% (197 / 2165 items documented)
+**Coverage:** 8% (197 / 2326 items documented)
 
 | Source | Items | Undocumented |
 |---|---|---|
@@ -75,10 +75,35 @@
 | ui/docs/MdListItem.slint | 6 | 6 missing |
 | ui/docs/MdParagraph.slint | 2 | 2 missing |
 | ui/docs/MdTable.slint | 4 | 4 missing |
-| ui/globals/NavId.slint | 3 | 3 missing |
-| ui/globals/ThemeMode.slint | 3 | 3 missing |
-| ui/globals/Variants.slint | 61 | 61 missing |
-| ui/globals/ViewId.slint | 14 | 14 missing |
+| ui/globals/strings.slint | 155 | 155 missing |
+| ui/globals/theme/acrylic.slint | 24 | 24 missing |
+| ui/globals/theme/controller.slint | 53 | 53 missing |
+| ui/globals/theme/fluent/colors.slint | 25 | 25 missing |
+| ui/globals/theme/fluent/elevation.slint | 10 | 10 missing |
+| ui/globals/theme/fluent/icons.slint | 71 | 71 missing |
+| ui/globals/theme/fluent/motion.slint | 10 | 10 missing |
+| ui/globals/theme/fluent/radius.slint | 6 | 6 missing |
+| ui/globals/theme/fluent/spacing.slint | 16 | 16 missing |
+| ui/globals/theme/fluent/typography.slint | 14 | 14 missing |
+| ui/globals/theme/macos/colors.slint | 31 | 31 missing |
+| ui/globals/theme/macos/radius.slint | 7 | 7 missing |
+| ui/globals/theme/macos/spacing.slint | 14 | 14 missing |
+| ui/globals/theme/macos/typography.slint | 15 | 15 missing |
+| ui/globals/theme/material/colors.slint | 29 | 29 missing |
+| ui/globals/theme/material/elevation.slint | 6 | 6 missing |
+| ui/globals/theme/material/radius.slint | 7 | 7 missing |
+| ui/globals/theme/material/spacing.slint | 15 | 15 missing |
+| ui/globals/theme/material/typography.slint | 18 | 18 missing |
+| ui/globals/theme/mica.slint | 24 | 24 missing |
+| ui/globals/theme/scale.slint | 4 | 4 missing |
+| ui/globals/theme/sizes.slint | 100 | 100 missing |
+| ui/globals/theme/solid.slint | 24 | 24 missing |
+| ui/globals/theme/spacing.slint | 12 | 12 missing |
+| ui/globals/theme/steam/colors.slint | 14 | 14 missing |
+| ui/globals/theme/steam/radius.slint | 6 | 6 missing |
+| ui/globals/theme/steam/spacing.slint | 11 | 11 missing |
+| ui/globals/theme/steam/typography.slint | 8 | 8 missing |
+| ui/globals/theme/typography.slint | 8 | 8 missing |
 | ui/mobile/app-window.slint | 8 | 8 missing |
 | ui/mobile/MobileNavItem.slint | 6 | 6 missing |
 | ui/modules/DragHandle.slint | 4 | 4 missing |
@@ -108,35 +133,13 @@
 | ui/shell/small/GameTopBar.slint | 4 | 4 missing |
 | ui/shell/small/shell.slint | 9 | 9 missing |
 | ui/shell/types.slint | 1 | 1 missing |
+| ui/state/desktop-types.slint | 1 | 1 missing |
+| ui/state/durations.slint | 4 | 4 missing |
+| ui/state/nav-id.slint | 3 | 3 missing |
 | ui/state/settings.slint | 5 | 5 missing |
-| ui/state/theme/acrylic.slint | 24 | 24 missing |
-| ui/state/theme/mica.slint | 24 | 24 missing |
-| ui/state/theme/solid.slint | 24 | 24 missing |
-| ui/state/Theme.slint | 53 | 53 missing |
-| ui/tokens/fluent/colors.slint | 25 | 25 missing |
-| ui/tokens/fluent/elevation.slint | 10 | 10 missing |
-| ui/tokens/fluent/icons.slint | 71 | 71 missing |
-| ui/tokens/fluent/motion.slint | 10 | 10 missing |
-| ui/tokens/fluent/radius.slint | 6 | 6 missing |
-| ui/tokens/fluent/spacing.slint | 16 | 16 missing |
-| ui/tokens/fluent/typography.slint | 14 | 14 missing |
-| ui/tokens/macos/colors.slint | 31 | 31 missing |
-| ui/tokens/macos/radius.slint | 7 | 7 missing |
-| ui/tokens/macos/spacing.slint | 14 | 14 missing |
-| ui/tokens/macos/typography.slint | 15 | 15 missing |
-| ui/tokens/material/colors.slint | 29 | 29 missing |
-| ui/tokens/material/elevation.slint | 6 | 6 missing |
-| ui/tokens/material/radius.slint | 7 | 7 missing |
-| ui/tokens/material/spacing.slint | 15 | 15 missing |
-| ui/tokens/material/typography.slint | 18 | 18 missing |
-| ui/tokens/scale.slint | 4 | 4 missing |
-| ui/tokens/sizes.slint | 99 | 99 missing |
-| ui/tokens/spacing.slint | 12 | 12 missing |
-| ui/tokens/steam/colors.slint | 14 | 14 missing |
-| ui/tokens/steam/radius.slint | 6 | 6 missing |
-| ui/tokens/steam/spacing.slint | 11 | 11 missing |
-| ui/tokens/steam/typography.slint | 8 | 8 missing |
-| ui/tokens/typography.slint | 8 | 8 missing |
+| ui/state/theme-mode.slint | 3 | 3 missing |
+| ui/state/variants.slint | 61 | 61 missing |
+| ui/state/view-id.slint | 14 | 14 missing |
 | ui/viewer/BiDirDemo.slint | 8 | 8 missing |
 | ui/viewer/ColHandleDemo.slint | 1 | 1 missing |
 | ui/viewer/ContextMenuDemoArea.slint | 4 | 4 missing |

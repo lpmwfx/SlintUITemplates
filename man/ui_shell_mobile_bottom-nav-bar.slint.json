@@ -5,49 +5,49 @@
       "name": "BottomNavBar",
       "kind": "Component",
       "signature": "export component BottomNavBar inherits Rectangle {",
-      "line": 11,
+      "line": 17,
       "doc": ""
     },
     {
       "name": "items",
       "kind": "Property",
       "signature": "in property <[NavItem]> items;",
-      "line": 14,
+      "line": 26,
       "doc": ""
     },
     {
       "name": "active",
       "kind": "Property",
       "signature": "in property <string>    active: \"\";",
-      "line": 17,
+      "line": 35,
       "doc": ""
     },
     {
       "name": "icon-font",
       "kind": "Property",
       "signature": "in property <string>    icon-font: \"Segoe Fluent Icons\";",
-      "line": 20,
+      "line": 44,
       "doc": ""
     },
     {
       "name": "navigate",
       "kind": "Callback",
       "signature": "callback navigate(string);",
-      "line": 23,
+      "line": 53,
       "doc": ""
     },
     {
       "name": "pad-top",
       "kind": "Property",
       "signature": "private property <length> pad-top: Sizes.comp-12;",
-      "line": 27,
+      "line": 63,
       "doc": ""
     },
     {
       "name": "pill-w",
       "kind": "Property",
       "signature": "private property <length> pill-w:  Sizes.comp-64;",
-      "line": 30,
+      "line": 72,
       "doc": ""
     }
   ]

@@ -5,98 +5,98 @@
       "name": "CommandBarFlyout",
       "kind": "Component",
       "signature": "export component CommandBarFlyout inherits Rectangle {",
-      "line": 9,
+      "line": 16,
       "doc": ""
     },
     {
       "name": "primary",
       "kind": "Property",
       "signature": "in property <[CbfAction]> primary: [];",
-      "line": 12,
+      "line": 25,
       "doc": ""
     },
     {
       "name": "secondary",
       "kind": "Property",
       "signature": "in property <[CbfAction]> secondary: [];",
-      "line": 15,
+      "line": 34,
       "doc": ""
     },
     {
       "name": "window-height",
       "kind": "Property",
       "signature": "in property <length>      window-height;",
-      "line": 18,
+      "line": 43,
       "doc": ""
     },
     {
       "name": "action",
       "kind": "Callback",
       "signature": "callback action(string);",
-      "line": 21,
+      "line": 52,
       "doc": ""
     },
     {
       "name": "pop-x",
       "kind": "Property",
-      "signature": "private property <length> pop-x:        0px;",
-      "line": 25,
+      "signature": "private property <length> pop-x:        Sizes.no-size;",
+      "line": 62,
       "doc": ""
     },
     {
       "name": "pop-y",
       "kind": "Property",
-      "signature": "private property <length> pop-y:        0px;",
-      "line": 28,
+      "signature": "private property <length> pop-y:        Sizes.no-size;",
+      "line": 71,
       "doc": ""
     },
     {
       "name": "border-px",
       "kind": "Property",
-      "signature": "private property <length> border-px:    1px;",
-      "line": 31,
+      "signature": "private property <length> border-px:    Sizes.border-w;",
+      "line": 80,
       "doc": ""
     },
     {
       "name": "has-secondary",
       "kind": "Property",
       "signature": "private property <bool>   has-secondary: root.secondary.length > 0;",
-      "line": 34,
+      "line": 89,
       "doc": ""
     },
     {
       "name": "sec-add",
       "kind": "Property",
-      "signature": "private property <length> sec-add:      root.has-secondary ? Spacing.xl : 0px;",
-      "line": 37,
+      "signature": "private property <length> sec-add:      root.has-secondary ? Spacing.xl : Sizes.no-size;",
+      "line": 98,
       "doc": ""
     },
     {
       "name": "primary-w",
       "kind": "Property",
       "signature": "private property <length> primary-w:    root.primary.length * Spacing.xl + root.sec-add + Spacing.sm * 2;",
-      "line": 40,
+      "line": 107,
       "doc": ""
     },
     {
       "name": "primary-h",
       "kind": "Property",
       "signature": "private property <length> primary-h:    Spacing.xl + Spacing.sm * 2;",
-      "line": 43,
+      "line": 116,
       "doc": ""
     },
     {
       "name": "secondary-w",
       "kind": "Property",
-      "signature": "private property <length> secondary-w:  200px;",
-      "line": 46,
+      "signature": "private property <length> secondary-w:  Sizes.panel-sm;",
+      "line": 125,
       "doc": ""
     },
     {
       "name": "secondary-h",
       "kind": "Property",
       "signature": "private property <length> secondary-h:  root.secondary.length * Spacing.xl + Spacing.sm * 2;",
-      "line": 49,
+      "line": 134,
       "doc": ""
     }
   ]

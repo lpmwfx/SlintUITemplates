@@ -5,70 +5,70 @@
       "name": "FAB",
       "kind": "Component",
       "signature": "export component FAB inherits Rectangle {",
-      "line": 9,
+      "line": 15,
       "doc": ""
     },
     {
       "name": "icon",
       "kind": "Property",
       "signature": "in property <string> icon;",
-      "line": 12,
+      "line": 24,
       "doc": ""
     },
     {
       "name": "label",
       "kind": "Property",
       "signature": "in property <string> label: \"\";       // non-empty → extended FAB",
-      "line": 15,
+      "line": 33,
       "doc": ""
     },
     {
       "name": "icon-font",
       "kind": "Property",
       "signature": "in property <string> icon-font: \"Segoe Fluent Icons\";",
-      "line": 18,
+      "line": 42,
       "doc": ""
     },
     {
       "name": "clicked",
       "kind": "Callback",
       "signature": "callback clicked();",
-      "line": 21,
+      "line": 51,
       "doc": ""
     },
     {
       "name": "extended",
       "kind": "Property",
       "signature": "private property <bool> extended: root.label != \"\";",
-      "line": 25,
+      "line": 61,
       "doc": ""
     },
     {
       "name": "darken-amount",
       "kind": "Property",
       "signature": "private property <float>  darken-amount: Sizes.ratio-xs;",
-      "line": 28,
+      "line": 70,
       "doc": ""
     },
     {
       "name": "shadow-alpha",
       "kind": "Property",
       "signature": "private property <float>  shadow-alpha: Sizes.alpha-30;",
-      "line": 31,
+      "line": 79,
       "doc": ""
     },
     {
       "name": "shadow-blur",
       "kind": "Property",
       "signature": "private property <length> shadow-blur: Sizes.comp-6;",
-      "line": 34,
+      "line": 88,
       "doc": ""
     },
     {
       "name": "shadow-y",
       "kind": "Property",
       "signature": "private property <length> shadow-y: Sizes.border-w-3;",
-      "line": 37,
+      "line": 97,
       "doc": ""
     }
   ]

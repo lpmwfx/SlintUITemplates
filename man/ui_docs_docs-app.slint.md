@@ -2,7 +2,7 @@
 
 ## `export component DocsApp inherits Window {`
 
-*Line 19 · component*
+*Line 25 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <string>             window-title:     "SlintUITemplates — Docs";`
 
-*Line 22 · property*
+*Line 34 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <string>             menu-file-label:  "File";`
 
-*Line 25 · property*
+*Line 43 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `in property <string>             menu-theme-label: "Theme";`
 
-*Line 28 · property*
+*Line 52 · property*
 
 **undocumented**
 
@@ -34,7 +34,7 @@
 
 ## `in-out property <string>         active-view: "getting-started";`
 
-*Line 40 · property*
+*Line 70 · property*
 
 **undocumented**
 
@@ -42,7 +42,7 @@
 
 ## `in-out property <[NavItem]>      nav-items: [];`
 
-*Line 43 · property*
+*Line 79 · property*
 
 **undocumented**
 
@@ -50,7 +50,7 @@
 
 ## `in-out property <[DocBlock]>     doc-blocks: [];`
 
-*Line 46 · property*
+*Line 88 · property*
 
 **undocumented**
 
@@ -58,7 +58,7 @@
 
 ## `in-out property <string>         doc-title: "";`
 
-*Line 49 · property*
+*Line 97 · property*
 
 **undocumented**
 
@@ -66,7 +66,7 @@
 
 ## `in-out property <string>         status-text: "Ready";`
 
-*Line 52 · property*
+*Line 106 · property*
 
 **undocumented**
 
@@ -74,7 +74,7 @@
 
 ## `in property <[ShellToolbarItem]> toolbar-items: [];`
 
-*Line 55 · property*
+*Line 115 · property*
 
 **undocumented**
 
@@ -82,7 +82,7 @@
 
 ## `in property <bool>               show-toolbar: false;`
 
-*Line 58 · property*
+*Line 124 · property*
 
 **undocumented**
 
@@ -90,7 +90,7 @@
 
 ## `in-out property <bool>   sidebar-collapsed: false;`
 
-*Line 62 · property*
+*Line 134 · property*
 
 **undocumented**
 
@@ -98,7 +98,7 @@
 
 ## `in-out property <length> col-left-width: Spacing.xl * 4 + Spacing.md;`
 
-*Line 65 · property*
+*Line 143 · property*
 
 **undocumented**
 
@@ -106,7 +106,7 @@
 
 ## `private property <length> drag-base-width: Spacing.xl * 4 + Spacing.md;`
 
-*Line 72 · property*
+*Line 156 · property*
 
 **undocumented**
 
@@ -114,7 +114,7 @@
 
 ## `callback navigate(string);`
 
-*Line 84 · callback*
+*Line 174 · callback*
 
 **undocumented**
 
@@ -122,7 +122,7 @@
 
 ## `callback toolbar-clicked(string);`
 
-*Line 87 · callback*
+*Line 183 · callback*
 
 **undocumented**
 
@@ -130,7 +130,7 @@
 
 ## `callback request-bg-style(string);`
 
-*Line 90 · callback*
+*Line 192 · callback*
 
 **undocumented**
 
@@ -138,7 +138,7 @@
 
 ## `callback toggle-group(string);   // Rust-siden håndterer hidden-toggle på nav-items`
 
-*Line 93 · callback*
+*Line 201 · callback*
 
 **undocumented**
 
@@ -146,7 +146,7 @@
 
 ## `callback drag-sidebar(dx: float);`
 
-*Line 96 · callback*
+*Line 210 · callback*
 
 **undocumented**
 
@@ -154,7 +154,7 @@
 
 ## `callback drag-anchor();   // called by DragHandle on press+release to re-anchor drag-base-width`
 
-*Line 99 · callback*
+*Line 219 · callback*
 
 **undocumented**
 

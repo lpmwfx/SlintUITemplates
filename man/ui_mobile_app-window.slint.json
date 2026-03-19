@@ -5,56 +5,56 @@
       "name": "AppWindow",
       "kind": "Component",
       "signature": "export component AppWindow inherits Window {",
-      "line": 14,
+      "line": 20,
       "doc": ""
     },
     {
       "name": "window-title",
       "kind": "Property",
       "signature": "in property <string> window-title: \"SlintUITemplates \\u{2014} Mobile\";",
-      "line": 22,
+      "line": 34,
       "doc": ""
     },
     {
       "name": "icon-home",
       "kind": "Property",
       "signature": "private property <string> icon-home: \"\\u{1F3E0}\";",
-      "line": 25,
+      "line": 43,
       "doc": ""
     },
     {
       "name": "icon-list",
       "kind": "Property",
       "signature": "private property <string> icon-list: \"\\u{1F4CB}\";",
-      "line": 28,
+      "line": 52,
       "doc": ""
     },
     {
       "name": "icon-settings",
       "kind": "Property",
       "signature": "private property <string> icon-settings: \"\\u{2699}\";",
-      "line": 31,
+      "line": 61,
       "doc": ""
     },
     {
       "name": "status-prefix",
       "kind": "Property",
       "signature": "private property <string> status-prefix: \"View: \";",
-      "line": 34,
+      "line": 70,
       "doc": ""
     },
     {
       "name": "nav-items",
       "kind": "Property",
       "signature": "in property <[NavItem]> nav-items: [",
-      "line": 39,
+      "line": 81,
       "doc": ""
     },
     {
       "name": "navigate",
       "kind": "Callback",
       "signature": "callback navigate(string);",
-      "line": 47,
+      "line": 95,
       "doc": ""
     }
   ]

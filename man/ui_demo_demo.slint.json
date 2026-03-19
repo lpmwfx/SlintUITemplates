@@ -5,56 +5,56 @@
       "name": "DemoWindow",
       "kind": "Component",
       "signature": "export component DemoWindow inherits Window {",
-      "line": 20,
+      "line": 26,
       "doc": ""
     },
     {
       "name": "window-title",
       "kind": "Property",
       "signature": "in property <string> window-title: \"SlintUITemplates \\u{2014} Phase 2 Demo\";",
-      "line": 25,
+      "line": 37,
       "doc": ""
     },
     {
       "name": "nav-items",
       "kind": "Property",
       "signature": "in property <[NavItem]> nav-items: [",
-      "line": 34,
+      "line": 52,
       "doc": ""
     },
     {
       "name": "control-bar-label",
       "kind": "Property",
       "signature": "in property <string> control-bar-label: \"SlintUI \\u{2014} Phase 2 Demo\";",
-      "line": 47,
+      "line": 71,
       "doc": ""
     },
     {
       "name": "switch-to-mobile-label",
       "kind": "Property",
       "signature": "in property <string> switch-to-mobile-label: \"Switch to Mobile\";",
-      "line": 50,
+      "line": 80,
       "doc": ""
     },
     {
       "name": "switch-to-desktop-label",
       "kind": "Property",
       "signature": "in property <string> switch-to-desktop-label: \"Switch to Desktop\";",
-      "line": 53,
+      "line": 89,
       "doc": ""
     },
     {
       "name": "dark-label",
       "kind": "Property",
       "signature": "in property <string> dark-label: \"Dark\";",
-      "line": 56,
+      "line": 98,
       "doc": ""
     },
     {
       "name": "status-prefix",
       "kind": "Property",
       "signature": "in property <string> status-prefix: \"View: \";",
-      "line": 59,
+      "line": 107,
       "doc": ""
     }
   ]

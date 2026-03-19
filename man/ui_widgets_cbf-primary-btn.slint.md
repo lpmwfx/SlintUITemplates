@@ -2,7 +2,7 @@
 
 ## `export struct CbfAction {`
 
-*Line 5 · struct*
+*Line 11 · struct*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `export component CbfPrimaryBtn inherits Rectangle {`
 
-*Line 14 · component*
+*Line 26 · component*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <CbfAction> item;`
 
-*Line 17 · property*
+*Line 35 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `callback activated(string);`
 
-*Line 20 · callback*
+*Line 44 · callback*
 
 **undocumented**
 

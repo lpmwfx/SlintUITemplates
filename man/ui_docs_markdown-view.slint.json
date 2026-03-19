@@ -5,35 +5,35 @@
       "name": "MarkdownView",
       "kind": "Component",
       "signature": "export component MarkdownView inherits Rectangle {",
-      "line": 22,
+      "line": 28,
       "doc": ""
     },
     {
       "name": "blocks",
       "kind": "Property",
       "signature": "in property <[DocBlock]> blocks: [];",
-      "line": 25,
+      "line": 37,
       "doc": ""
     },
     {
       "name": "bullet-char",
       "kind": "Property",
       "signature": "in property <string> bullet-char: \"\\u{2022}\";",
-      "line": 28,
+      "line": 46,
       "doc": ""
     },
     {
       "name": "bullet-sub-char",
       "kind": "Property",
       "signature": "in property <string> bullet-sub-char: \"\\u{25E6}\";",
-      "line": 31,
+      "line": 55,
       "doc": ""
     },
     {
       "name": "mono-font",
       "kind": "Property",
       "signature": "in property <string> mono-font: \"Consolas\";",
-      "line": 34,
+      "line": 64,
       "doc": ""
     }
   ]

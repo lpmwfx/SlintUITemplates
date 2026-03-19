@@ -5,28 +5,28 @@
       "name": "GameTopBar",
       "kind": "Component",
       "signature": "export component GameTopBar inherits Rectangle {",
-      "line": 11,
+      "line": 17,
       "doc": ""
     },
     {
       "name": "title",
       "kind": "Property",
       "signature": "in property <string> title;",
-      "line": 14,
+      "line": 26,
       "doc": ""
     },
     {
       "name": "show-back",
       "kind": "Property",
       "signature": "in property <bool> show-back: false;",
-      "line": 17,
+      "line": 35,
       "doc": ""
     },
     {
       "name": "back",
       "kind": "Callback",
       "signature": "callback back();",
-      "line": 20,
+      "line": 44,
       "doc": ""
     }
   ]

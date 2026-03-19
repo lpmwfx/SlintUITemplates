@@ -2,7 +2,7 @@
 
 ## `export component Pagination inherits Rectangle {`
 
-*Line 6 · component*
+*Line 12 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <int>   current: Sizes.one;`
 
-*Line 9 · property*
+*Line 21 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <int>   total: Sizes.one;`
 
-*Line 12 · property*
+*Line 30 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `in property <[int]> pages: [];`
 
-*Line 15 · property*
+*Line 39 · property*
 
 **undocumented**
 
@@ -34,7 +34,7 @@
 
 ## `callback changed(int);`
 
-*Line 18 · callback*
+*Line 48 · callback*
 
 **undocumented**
 
@@ -42,7 +42,7 @@
 
 ## `private property <string> nav-prev: "‹";`
 
-*Line 23 · property*
+*Line 59 · property*
 
 **undocumented**
 
@@ -50,7 +50,7 @@
 
 ## `private property <string> nav-next: "›";`
 
-*Line 26 · property*
+*Line 68 · property*
 
 **undocumented**
 
@@ -58,7 +58,7 @@
 
 ## `private property <string> page-sep: " / ";`
 
-*Line 29 · property*
+*Line 77 · property*
 
 **undocumented**
 
@@ -66,7 +66,7 @@
 
 ## `private property <float> disabled-alpha: 0.4;`
 
-*Line 34 · property*
+*Line 88 · property*
 
 **undocumented**
 

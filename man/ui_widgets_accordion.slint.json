@@ -5,28 +5,28 @@
       "name": "Accordion",
       "kind": "Component",
       "signature": "export component Accordion inherits VerticalLayout {",
-      "line": 8,
+      "line": 14,
       "doc": ""
     },
     {
       "name": "items",
       "kind": "Property",
       "signature": "in property <[AccordionItem]> items: [];",
-      "line": 11,
+      "line": 23,
       "doc": ""
     },
     {
       "name": "expanded-id",
       "kind": "Property",
       "signature": "in property <string>          expanded-id: \"\";",
-      "line": 14,
+      "line": 32,
       "doc": ""
     },
     {
       "name": "toggled",
       "kind": "Callback",
       "signature": "callback toggled(string);",
-      "line": 17,
+      "line": 41,
       "doc": ""
     }
   ]

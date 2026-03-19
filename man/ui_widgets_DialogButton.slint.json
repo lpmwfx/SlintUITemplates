@@ -5,56 +5,56 @@
       "name": "DialogButton",
       "kind": "Component",
       "signature": "export component DialogButton inherits Rectangle {",
-      "line": 7,
+      "line": 13,
       "doc": ""
     },
     {
       "name": "label",
       "kind": "Property",
       "signature": "in property <string>  label;",
-      "line": 10,
+      "line": 22,
       "doc": ""
     },
     {
       "name": "bg-normal",
       "kind": "Property",
       "signature": "in property <color>   bg-normal;",
-      "line": 13,
+      "line": 31,
       "doc": ""
     },
     {
       "name": "bg-hover",
       "kind": "Property",
       "signature": "in property <color>   bg-hover;",
-      "line": 16,
+      "line": 40,
       "doc": ""
     },
     {
       "name": "text-color",
       "kind": "Property",
       "signature": "in property <color>   text-color;",
-      "line": 19,
+      "line": 49,
       "doc": ""
     },
     {
       "name": "text-weight",
       "kind": "Property",
       "signature": "in property <int>     text-weight: Type.weight-regular;",
-      "line": 22,
+      "line": 58,
       "doc": ""
     },
     {
       "name": "clicked",
       "kind": "Callback",
       "signature": "callback clicked();",
-      "line": 25,
+      "line": 67,
       "doc": ""
     },
     {
       "name": "btn-h",
       "kind": "Property",
       "signature": "private property <length> btn-h: Sizes.comp-36;",
-      "line": 29,
+      "line": 77,
       "doc": ""
     }
   ]

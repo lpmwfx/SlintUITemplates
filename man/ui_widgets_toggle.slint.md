@@ -2,7 +2,7 @@
 
 ## `export component Toggle inherits Rectangle {`
 
-*Line 6 · component*
+*Line 12 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <bool> checked: false;`
 
-*Line 9 · property*
+*Line 21 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <string> label: "";`
 
-*Line 12 · property*
+*Line 30 · property*
 
 **undocumented**
 
@@ -26,55 +26,55 @@
 
 ## `callback toggled(bool);`
 
-*Line 15 · callback*
+*Line 39 · callback*
 
 **undocumented**
 
 ---
 
-## `private property <length> track-width:  Spacing.control-lg;  // 40px`
+## `private property <length> track-width:  Spacing.control-lg;`
 
-*Line 20 · property*
-
-**undocumented**
-
----
-
-## `private property <length> track-height: Sizes.icon-md;       // 20px`
-
-*Line 23 · property*
+*Line 50 · property*
 
 **undocumented**
 
 ---
 
-## `private property <length> knob-size:    Sizes.icon-sm;       // 16px`
+## `private property <length> track-height: Sizes.icon-md;`
 
-*Line 26 · property*
-
-**undocumented**
-
----
-
-## `private property <length> knob-radius:  Spacing.sm;          // 8px`
-
-*Line 29 · property*
+*Line 59 · property*
 
 **undocumented**
 
 ---
 
-## `private property <length> knob-inset:   Sizes.border-w-2;    // 2px`
+## `private property <length> knob-size:    Sizes.icon-sm;`
 
-*Line 32 · property*
+*Line 68 · property*
 
 **undocumented**
 
 ---
 
-## `private property <duration> slide-dur:  150ms;`
+## `private property <length> knob-radius:  Spacing.sm;`
 
-*Line 35 · property*
+*Line 77 · property*
+
+**undocumented**
+
+---
+
+## `private property <length> knob-inset:   Sizes.border-w-2;`
+
+*Line 86 · property*
+
+**undocumented**
+
+---
+
+## `private property <duration> slide-dur:  Durations.quick;`
+
+*Line 95 · property*
 
 **undocumented**
 

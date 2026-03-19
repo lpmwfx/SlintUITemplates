@@ -2,7 +2,7 @@
 
 ## `export component SettingsView inherits Rectangle {`
 
-*Line 10 · component*
+*Line 16 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `private property <string> page-title: "Settings";`
 
-*Line 14 · property*
+*Line 26 · property*
 
 **undocumented**
 

@@ -2,7 +2,7 @@
 
 ## `export component FrameworkViewer inherits Window {`
 
-*Line 15 · component*
+*Line 21 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <string> active-view: ViewId.buttons;`
 
-*Line 23 · property*
+*Line 35 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <image> canvas-frame;`
 
-*Line 26 · property*
+*Line 44 · property*
 
 **undocumented**
 
@@ -26,93 +26,13 @@
 
 ## `callback navigate(string);`
 
-*Line 30 · callback*
+*Line 54 · callback*
 
 **undocumented**
 
 ---
 
-## `private property <length> win-w:     1100px;`
-
-*Line 34 · property*
-
-**undocumented**
-
----
-
-## `private property <length> win-h:     720px;`
-
-*Line 37 · property*
-
-**undocumented**
-
----
-
-## `private property <float>  zoom-small:   Sizes.three-quarter;`
-
-*Line 40 · property*
-
-**undocumented**
-
----
-
-## `private property <float>  zoom-normal:  Sizes.fill;`
-
-*Line 43 · property*
-
-**undocumented**
-
----
-
-## `private property <float>  zoom-large:  1.25;`
-
-*Line 46 · property*
-
-**undocumented**
-
----
-
-## `private property <float>  zoom-xlarge:  1.5;`
-
-*Line 49 · property*
-
-**undocumented**
-
----
-
-## `private property <string> menu-zoom-sm: "Zoom 75%";`
-
-*Line 52 · property*
-
-**undocumented**
-
----
-
-## `private property <string> menu-zoom-md: "Zoom 100%";`
-
-*Line 55 · property*
-
-**undocumented**
-
----
-
-## `private property <string> menu-zoom-lg: "Zoom 125%";`
-
-*Line 58 · property*
-
-**undocumented**
-
----
-
-## `private property <string> menu-zoom-xl: "Zoom 150%";`
-
-*Line 61 · property*
-
-**undocumented**
-
----
-
-## `private property <int>    v-stretch: Sizes.one;`
+## `private property <length> win-w:     Sizes.win-width-lg;`
 
 *Line 64 · property*
 
@@ -120,9 +40,89 @@
 
 ---
 
+## `private property <length> win-h:     Sizes.win-height-lg;`
+
+*Line 73 · property*
+
+**undocumented**
+
+---
+
+## `private property <float>  zoom-small:   Sizes.three-quarter;`
+
+*Line 82 · property*
+
+**undocumented**
+
+---
+
+## `private property <float>  zoom-normal:  Sizes.fill;`
+
+*Line 91 · property*
+
+**undocumented**
+
+---
+
+## `private property <float>  zoom-large:  1.25;`
+
+*Line 100 · property*
+
+**undocumented**
+
+---
+
+## `private property <float>  zoom-xlarge:  1.5;`
+
+*Line 109 · property*
+
+**undocumented**
+
+---
+
+## `private property <string> menu-zoom-sm: "Zoom 75%";`
+
+*Line 118 · property*
+
+**undocumented**
+
+---
+
+## `private property <string> menu-zoom-md: "Zoom 100%";`
+
+*Line 127 · property*
+
+**undocumented**
+
+---
+
+## `private property <string> menu-zoom-lg: "Zoom 125%";`
+
+*Line 136 · property*
+
+**undocumented**
+
+---
+
+## `private property <string> menu-zoom-xl: "Zoom 150%";`
+
+*Line 145 · property*
+
+**undocumented**
+
+---
+
+## `private property <int>    v-stretch: Sizes.one;`
+
+*Line 154 · property*
+
+**undocumented**
+
+---
+
 ## `private property <int>    h-sidebar: Sizes.zero;`
 
-*Line 67 · property*
+*Line 163 · property*
 
 **undocumented**
 
@@ -130,7 +130,7 @@
 
 ## `private property <int>    h-stretch: Sizes.one;`
 
-*Line 70 · property*
+*Line 172 · property*
 
 **undocumented**
 
@@ -138,7 +138,7 @@
 
 ## `callback request-bg-style(string);`
 
-*Line 76 · callback*
+*Line 184 · callback*
 
 **undocumented**
 
@@ -146,7 +146,7 @@
 
 ## `callback new-file();`
 
-*Line 79 · callback*
+*Line 193 · callback*
 
 **undocumented**
 
@@ -154,7 +154,7 @@
 
 ## `callback new-window();`
 
-*Line 82 · callback*
+*Line 202 · callback*
 
 **undocumented**
 
@@ -162,7 +162,7 @@
 
 ## `callback open-file();`
 
-*Line 85 · callback*
+*Line 211 · callback*
 
 **undocumented**
 
@@ -170,7 +170,7 @@
 
 ## `callback save();`
 
-*Line 88 · callback*
+*Line 220 · callback*
 
 **undocumented**
 
@@ -178,7 +178,7 @@
 
 ## `callback save-as();`
 
-*Line 91 · callback*
+*Line 229 · callback*
 
 **undocumented**
 
@@ -186,7 +186,7 @@
 
 ## `callback quit();`
 
-*Line 94 · callback*
+*Line 238 · callback*
 
 **undocumented**
 
@@ -194,7 +194,7 @@
 
 ## `callback undo();`
 
-*Line 97 · callback*
+*Line 247 · callback*
 
 **undocumented**
 
@@ -202,7 +202,7 @@
 
 ## `callback redo();`
 
-*Line 100 · callback*
+*Line 256 · callback*
 
 **undocumented**
 
@@ -210,7 +210,7 @@
 
 ## `callback cut();`
 
-*Line 103 · callback*
+*Line 265 · callback*
 
 **undocumented**
 
@@ -218,7 +218,7 @@
 
 ## `callback copy();`
 
-*Line 106 · callback*
+*Line 274 · callback*
 
 **undocumented**
 
@@ -226,7 +226,7 @@
 
 ## `callback paste();`
 
-*Line 109 · callback*
+*Line 283 · callback*
 
 **undocumented**
 
@@ -234,7 +234,7 @@
 
 ## `callback find();`
 
-*Line 112 · callback*
+*Line 292 · callback*
 
 **undocumented**
 
@@ -242,7 +242,7 @@
 
 ## `callback select-all();`
 
-*Line 115 · callback*
+*Line 301 · callback*
 
 **undocumented**
 
@@ -250,7 +250,7 @@
 
 ## `callback open-docs();`
 
-*Line 118 · callback*
+*Line 310 · callback*
 
 **undocumented**
 
@@ -258,7 +258,7 @@
 
 ## `callback open-shortcuts();`
 
-*Line 121 · callback*
+*Line 319 · callback*
 
 **undocumented**
 
@@ -266,7 +266,7 @@
 
 ## `callback about();`
 
-*Line 124 · callback*
+*Line 328 · callback*
 
 **undocumented**
 

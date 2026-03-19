@@ -5,35 +5,35 @@
       "name": "SelectField",
       "kind": "Component",
       "signature": "export component SelectField inherits Rectangle {",
-      "line": 7,
+      "line": 14,
       "doc": ""
     },
     {
       "name": "options",
       "kind": "Property",
       "signature": "in property <[string]> options: [];",
-      "line": 10,
+      "line": 23,
       "doc": ""
     },
     {
       "name": "selected",
       "kind": "Property",
       "signature": "in property <string>   selected: \"\";",
-      "line": 13,
+      "line": 32,
       "doc": ""
     },
     {
       "name": "placeholder",
       "kind": "Property",
       "signature": "in property <string>   placeholder: \"Select...\";",
-      "line": 16,
+      "line": 41,
       "doc": ""
     },
     {
       "name": "changed",
       "kind": "Callback",
       "signature": "callback changed(string);",
-      "line": 19,
+      "line": 50,
       "doc": ""
     }
   ]

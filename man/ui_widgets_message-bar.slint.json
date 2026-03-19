@@ -5,112 +5,112 @@
       "name": "MessageBar",
       "kind": "Component",
       "signature": "export component MessageBar inherits Rectangle {",
-      "line": 6,
+      "line": 13,
       "doc": ""
     },
     {
       "name": "message",
       "kind": "Property",
       "signature": "in property <string> message: \"\";",
-      "line": 9,
+      "line": 22,
       "doc": ""
     },
     {
       "name": "variant",
       "kind": "Property",
       "signature": "in property <string> variant: \"info\";   // info | warning | error | success",
-      "line": 12,
+      "line": 31,
       "doc": ""
     },
     {
       "name": "action-label",
       "kind": "Property",
       "signature": "in property <string> action-label: \"\";",
-      "line": 15,
+      "line": 40,
       "doc": ""
     },
     {
       "name": "closable",
       "kind": "Property",
       "signature": "in property <bool>   closable: true;",
-      "line": 18,
+      "line": 49,
       "doc": ""
     },
     {
       "name": "action",
       "kind": "Callback",
       "signature": "callback action();",
-      "line": 21,
+      "line": 58,
       "doc": ""
     },
     {
       "name": "closed",
       "kind": "Callback",
       "signature": "callback closed();",
-      "line": 24,
+      "line": 67,
       "doc": ""
     },
     {
       "name": "v-error",
       "kind": "Property",
       "signature": "private property <string> v-error:   \"error\";",
-      "line": 28,
+      "line": 77,
       "doc": ""
     },
     {
       "name": "v-warning",
       "kind": "Property",
       "signature": "private property <string> v-warning: \"warning\";",
-      "line": 31,
+      "line": 86,
       "doc": ""
     },
     {
       "name": "v-success",
       "kind": "Property",
       "signature": "private property <string> v-success: \"success\";",
-      "line": 34,
+      "line": 95,
       "doc": ""
     },
     {
       "name": "border-px",
       "kind": "Property",
-      "signature": "private property <length> border-px: 1px;",
-      "line": 37,
+      "signature": "private property <length> border-px: Sizes.border-w;",
+      "line": 104,
       "doc": ""
     },
     {
       "name": "bar-w",
       "kind": "Property",
-      "signature": "private property <length> bar-w:     3px;",
-      "line": 40,
+      "signature": "private property <length> bar-w:     Sizes.border-w-3;",
+      "line": 113,
       "doc": ""
     },
     {
       "name": "btn-shrink",
       "kind": "Property",
       "signature": "private property <int>    btn-shrink: 0;",
-      "line": 43,
+      "line": 122,
       "doc": ""
     },
     {
       "name": "text-grow",
       "kind": "Property",
       "signature": "private property <int>    text-grow:  1;",
-      "line": 46,
+      "line": 131,
       "doc": ""
     },
     {
       "name": "accent-color",
       "kind": "Property",
       "signature": "private property <color> accent-color:",
-      "line": 49,
+      "line": 140,
       "doc": ""
     },
     {
       "name": "icon-glyph",
       "kind": "Property",
       "signature": "private property <string> icon-glyph:",
-      "line": 56,
+      "line": 153,
       "doc": ""
     }
   ]

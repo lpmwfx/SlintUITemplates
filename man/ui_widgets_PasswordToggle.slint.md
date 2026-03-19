@@ -2,7 +2,7 @@
 
 ## `export component PasswordToggle inherits Rectangle {`
 
-*Line 6 · component*
+*Line 12 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <bool> show-password: false;`
 
-*Line 9 · property*
+*Line 21 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `callback toggled();`
 
-*Line 12 · callback*
+*Line 30 · callback*
 
 **undocumented**
 

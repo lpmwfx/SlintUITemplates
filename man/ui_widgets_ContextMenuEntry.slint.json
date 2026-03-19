@@ -5,35 +5,35 @@
       "name": "ContextMenuItem",
       "kind": "Struct",
       "signature": "export struct ContextMenuItem {",
-      "line": 6,
+      "line": 12,
       "doc": ""
     },
     {
       "name": "ContextMenuEntry",
       "kind": "Component",
       "signature": "export component ContextMenuEntry inherits Rectangle {",
-      "line": 18,
+      "line": 30,
       "doc": ""
     },
     {
       "name": "item",
       "kind": "Property",
       "signature": "in property <ContextMenuItem> item;",
-      "line": 21,
+      "line": 39,
       "doc": ""
     },
     {
       "name": "icon-font",
       "kind": "Property",
       "signature": "in property <string> icon-font: \"Segoe Fluent Icons\";",
-      "line": 24,
+      "line": 48,
       "doc": ""
     },
     {
       "name": "activated",
       "kind": "Callback",
       "signature": "callback activated(string);",
-      "line": 27,
+      "line": 57,
       "doc": ""
     }
   ]

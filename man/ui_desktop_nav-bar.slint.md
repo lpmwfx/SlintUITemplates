@@ -2,7 +2,7 @@
 
 ## `export component NavBar inherits Rectangle {`
 
-*Line 6 · component*
+*Line 12 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <string> breadcrumb: "";`
 
-*Line 9 · property*
+*Line 21 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <bool> can-go-back: false;`
 
-*Line 12 · property*
+*Line 30 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `callback go-back();`
 
-*Line 15 · callback*
+*Line 39 · callback*
 
 **undocumented**
 
@@ -34,7 +34,7 @@
 
 ## `callback navigate(string);`
 
-*Line 18 · callback*
+*Line 48 · callback*
 
 **undocumented**
 
@@ -42,7 +42,7 @@
 
 ## `private property <string> back-icon: "\u{2190}";`
 
-*Line 22 · property*
+*Line 58 · property*
 
 **undocumented**
 

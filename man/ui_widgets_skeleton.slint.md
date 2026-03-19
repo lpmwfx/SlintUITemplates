@@ -2,7 +2,7 @@
 
 ## `export component Skeleton inherits Rectangle {`
 
-*Line 7 · component*
+*Line 13 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <string> variant: root.variant-rect;   // text | circle | rect`
 
-*Line 10 · property*
+*Line 22 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <bool>   animate: true;`
 
-*Line 13 · property*
+*Line 31 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `private property <string> variant-rect: "rect";`
 
-*Line 18 · property*
+*Line 42 · property*
 
 **undocumented**
 
@@ -34,7 +34,7 @@
 
 ## `private property <float>    shimmer-step:    0.01;`
 
-*Line 23 · property*
+*Line 53 · property*
 
 **undocumented**
 
@@ -42,7 +42,7 @@
 
 ## `private property <float>    shimmer-max:     1.33;`
 
-*Line 26 · property*
+*Line 62 · property*
 
 **undocumented**
 
@@ -50,7 +50,7 @@
 
 ## `private property <float>    shimmer-reset:  -0.33;`
 
-*Line 29 · property*
+*Line 71 · property*
 
 **undocumented**
 
@@ -58,15 +58,15 @@
 
 ## `private property <float>    shimmer-alpha:   0.4;`
 
-*Line 32 · property*
+*Line 80 · property*
 
 **undocumented**
 
 ---
 
-## `private property <duration> frame-interval:  16ms;`
+## `private property <duration> frame-interval:  Durations.tick;`
 
-*Line 35 · property*
+*Line 89 · property*
 
 **undocumented**
 
@@ -74,7 +74,7 @@
 
 ## `private property <length>   text-radius: Sizes.border-w-2;`
 
-*Line 38 · property*
+*Line 98 · property*
 
 **undocumented**
 
@@ -82,7 +82,7 @@
 
 ## `private property <float> shimmer-pos: Sizes.no-fill;`
 
-*Line 49 · property*
+*Line 115 · property*
 
 **undocumented**
 
@@ -90,7 +90,7 @@
 
 ## `private property <float> shimmer-next:`
 
-*Line 52 · property*
+*Line 124 · property*
 
 **undocumented**
 

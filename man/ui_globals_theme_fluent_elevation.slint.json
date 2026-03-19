@@ -1,0 +1,75 @@
+{
+  "source": "ui/globals/theme/fluent/elevation.slint",
+  "items": [
+    {
+      "name": "level-2",
+      "kind": "Property",
+      "signature": "out property <color> level-2:  FluentColors.shadow-2;",
+      "line": 18,
+      "doc": ""
+    },
+    {
+      "name": "level-4",
+      "kind": "Property",
+      "signature": "out property <color> level-4:  FluentColors.shadow-4;",
+      "line": 27,
+      "doc": ""
+    },
+    {
+      "name": "level-8",
+      "kind": "Property",
+      "signature": "out property <color> level-8:  FluentColors.shadow-8;",
+      "line": 36,
+      "doc": ""
+    },
+    {
+      "name": "level-16",
+      "kind": "Property",
+      "signature": "out property <color> level-16: FluentColors.shadow-16;",
+      "line": 45,
+      "doc": ""
+    },
+    {
+      "name": "level-28",
+      "kind": "Property",
+      "signature": "out property <color> level-28: FluentColors.shadow-28;",
+      "line": 54,
+      "doc": ""
+    },
+    {
+      "name": "blur-2",
+      "kind": "Property",
+      "signature": "out property <length> blur-2:  2px;",
+      "line": 65,
+      "doc": ""
+    },
+    {
+      "name": "blur-4",
+      "kind": "Property",
+      "signature": "out property <length> blur-4:  4px;",
+      "line": 74,
+      "doc": ""
+    },
+    {
+      "name": "blur-8",
+      "kind": "Property",
+      "signature": "out property <length> blur-8:  8px;",
+      "line": 83,
+      "doc": ""
+    },
+    {
+      "name": "blur-16",
+      "kind": "Property",
+      "signature": "out property <length> blur-16: 16px;",
+      "line": 92,
+      "doc": ""
+    },
+    {
+      "name": "blur-28",
+      "kind": "Property",
+      "signature": "out property <length> blur-28: 28px;",
+      "line": 101,
+      "doc": ""
+    }
+  ]
+}

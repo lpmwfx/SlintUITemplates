@@ -5,63 +5,63 @@
       "name": "ViewSlotDemo",
       "kind": "Component",
       "signature": "export component ViewSlotDemo inherits VerticalLayout {",
-      "line": 10,
+      "line": 17,
       "doc": ""
     },
     {
       "name": "active-slot",
       "kind": "Property",
       "signature": "private property <string> active-slot: Variants.alpha;",
-      "line": 13,
+      "line": 26,
       "doc": ""
     },
     {
       "name": "alpha-subtle",
       "kind": "Property",
       "signature": "private property <float>  alpha-subtle: Sizes.alpha-10;",
-      "line": 16,
+      "line": 35,
       "doc": ""
     },
     {
       "name": "lbl-alpha",
       "kind": "Property",
       "signature": "private property <string> lbl-alpha: \"Alpha\";",
-      "line": 20,
+      "line": 45,
       "doc": ""
     },
     {
       "name": "lbl-beta",
       "kind": "Property",
       "signature": "private property <string> lbl-beta: \"Beta\";",
-      "line": 23,
+      "line": 54,
       "doc": ""
     },
     {
       "name": "lbl-gamma",
       "kind": "Property",
-      "signature": "private property <string> lbl-gamma: \"Gamma\";",
-      "line": 26,
+      "signature": "private property <string> lbl-gamma: Strings.demo-viewslot-label-gamma;",
+      "line": 63,
       "doc": ""
     },
     {
       "name": "slot-alpha-text",
       "kind": "Property",
-      "signature": "private property <string> slot-alpha-text: \"slot-id: \\\"alpha\\\" \\u{2014} visible when active == \\\"alpha\\\"\";",
-      "line": 29,
+      "signature": "private property <string> slot-alpha-text: Strings.demo-viewslot-alpha-text;",
+      "line": 72,
       "doc": ""
     },
     {
       "name": "slot-beta-text",
       "kind": "Property",
-      "signature": "private property <string> slot-beta-text: \"slot-id: \\\"beta\\\"\";",
-      "line": 32,
+      "signature": "private property <string> slot-beta-text: Strings.demo-viewslot-beta-text;",
+      "line": 81,
       "doc": ""
     },
     {
       "name": "slot-gamma-text",
       "kind": "Property",
-      "signature": "private property <string> slot-gamma-text: \"slot-id: \\\"gamma\\\"\";",
-      "line": 35,
+      "signature": "private property <string> slot-gamma-text: Strings.demo-viewslot-gamma-text;",
+      "line": 90,
       "doc": ""
     }
   ]

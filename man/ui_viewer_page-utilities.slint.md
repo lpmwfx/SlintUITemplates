@@ -2,63 +2,63 @@
 
 ## `export component PageUtilities inherits VerticalLayout {`
 
-*Line 16 · component*
+*Line 17 · component*
 
 **undocumented**
 
 ---
 
-## `private property <length> tb-w:     400px;`
+## `private property <length> tb-w:     Sizes.panel-max;`
 
-*Line 21 · property*
-
-**undocumented**
-
----
-
-## `private property <length> mb-w:     500px;`
-
-*Line 24 · property*
+*Line 22 · property*
 
 **undocumented**
 
 ---
 
-## `private property <length> es-w:     340px;`
+## `private property <length> mb-w:     Sizes.panel-wide;`
 
-*Line 27 · property*
-
-**undocumented**
-
----
-
-## `private property <length> es-h:     200px;`
-
-*Line 30 · property*
+*Line 25 · property*
 
 **undocumented**
 
 ---
 
-## `private property <length> seg1-w:   240px;`
+## `private property <length> es-w:     Sizes.comp-340;`
 
-*Line 33 · property*
-
-**undocumented**
-
----
-
-## `private property <length> seg2-w:   120px;`
-
-*Line 36 · property*
+*Line 28 · property*
 
 **undocumented**
 
 ---
 
-## `private property <length> ff-w:     300px;`
+## `private property <length> es-h:     Sizes.panel-sm;`
 
-*Line 39 · property*
+*Line 31 · property*
+
+**undocumented**
+
+---
+
+## `private property <length> seg1-w:   Sizes.comp-240;`
+
+*Line 34 · property*
+
+**undocumented**
+
+---
+
+## `private property <length> seg2-w:   Sizes.comp-120;`
+
+*Line 37 · property*
+
+**undocumented**
+
+---
+
+## `private property <length> ff-w:     Sizes.panel-xl;`
+
+*Line 40 · property*
 
 **undocumented**
 
@@ -66,7 +66,7 @@
 
 ## `private property <length> border-px: Sizes.border-w;`
 
-*Line 42 · property*
+*Line 43 · property*
 
 **undocumented**
 
@@ -74,7 +74,7 @@
 
 ## `private property <string> seg-val:   "day";`
 
-*Line 45 · property*
+*Line 46 · property*
 
 **undocumented**
 
@@ -82,15 +82,15 @@
 
 ## `private property <string> seg2-val:  "list";`
 
-*Line 48 · property*
+*Line 49 · property*
 
 **undocumented**
 
 ---
 
-## `private property <string> mb-info-msg: "Your session will expire in 10 minutes.";`
+## `private property <string> mb-info-msg: Strings.demo-messagebar-info;`
 
-*Line 51 · property*
+*Line 52 · property*
 
 **undocumented**
 

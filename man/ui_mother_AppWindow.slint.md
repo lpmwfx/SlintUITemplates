@@ -2,7 +2,7 @@
 
 ## `export component AppWindow inherits Window {`
 
-*Line 21 · component*
+*Line 27 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <string> window-title: "SlintUITemplates";`
 
-*Line 27 · property*
+*Line 39 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <string> theme-mode: Variants.system;`
 
-*Line 32 · property*
+*Line 50 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `in property <string> material: Variants.solid;  // "solid" | "mica" | "acrylic"`
 
-*Line 35 · property*
+*Line 59 · property*
 
 **undocumented**
 
@@ -34,7 +34,7 @@
 
 ## `in property <string> platform: Variants.windows;`
 
-*Line 38 · property*
+*Line 68 · property*
 
 **undocumented**
 
@@ -42,7 +42,7 @@
 
 ## `in property <[PanelItem]> panels;`
 
-*Line 57 · property*
+*Line 93 · property*
 
 **undocumented**
 
@@ -50,7 +50,7 @@
 
 ## `callback panel-dragged(int, float, float);   // id, dx, dy in logical px`
 
-*Line 62 · callback*
+*Line 104 · callback*
 
 **undocumented**
 

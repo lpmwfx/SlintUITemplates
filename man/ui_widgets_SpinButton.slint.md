@@ -2,7 +2,7 @@
 
 ## `export component SpinButton inherits Rectangle {`
 
-*Line 6 · component*
+*Line 12 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <string> label;`
 
-*Line 9 · property*
+*Line 21 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <bool>   btn-enabled: true;`
 
-*Line 12 · property*
+*Line 30 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `callback clicked();`
 
-*Line 15 · callback*
+*Line 39 · callback*
 
 **undocumented**
 

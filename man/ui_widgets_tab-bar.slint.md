@@ -2,7 +2,7 @@
 
 ## `export struct TabItem {`
 
-*Line 6 · struct*
+*Line 12 · struct*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `export component TabBar inherits Rectangle {`
 
-*Line 14 · component*
+*Line 26 · component*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <[TabItem]> tabs: [];`
 
-*Line 17 · property*
+*Line 35 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `in property <string> active: "";`
 
-*Line 20 · property*
+*Line 44 · property*
 
 **undocumented**
 
@@ -34,7 +34,7 @@
 
 ## `callback changed(string);`
 
-*Line 23 · callback*
+*Line 53 · callback*
 
 **undocumented**
 
@@ -42,7 +42,7 @@
 
 ## `private property <length> indicator-h: Sizes.border-w-2;`
 
-*Line 27 · property*
+*Line 63 · property*
 
 **undocumented**
 

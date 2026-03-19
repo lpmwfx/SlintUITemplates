@@ -26,7 +26,7 @@ Parse a Slint callback declaration line.
 
 ## `pub(crate) fn parse_file(src: &str, filename: &str) -> Vec<Item>`
 
-*Line 42 · fn*
+*Line 79 · fn*
 
 Parse all exported components and structs from a Slint source file.
 

@@ -2,7 +2,7 @@
 
 ## `export component MobileShell inherits VerticalLayout {`
 
-*Line 14 · component*
+*Line 20 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <string>    title: "App";`
 
-*Line 18 · property*
+*Line 30 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <[NavItem]> nav-items;`
 
-*Line 21 · property*
+*Line 39 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `in property <string>    active-view: "";`
 
-*Line 24 · property*
+*Line 48 · property*
 
 **undocumented**
 
@@ -34,7 +34,7 @@
 
 ## `in property <string>    fab-icon:    FluentIcons.add;`
 
-*Line 27 · property*
+*Line 57 · property*
 
 **undocumented**
 
@@ -42,7 +42,7 @@
 
 ## `in property <string>    fab-label:   "";`
 
-*Line 30 · property*
+*Line 66 · property*
 
 **undocumented**
 
@@ -50,7 +50,7 @@
 
 ## `in property <bool>      show-fab:    true;`
 
-*Line 33 · property*
+*Line 75 · property*
 
 **undocumented**
 
@@ -58,7 +58,7 @@
 
 ## `callback navigate(string);`
 
-*Line 38 · callback*
+*Line 86 · callback*
 
 **undocumented**
 
@@ -66,7 +66,7 @@
 
 ## `callback fab-clicked();`
 
-*Line 41 · callback*
+*Line 95 · callback*
 
 **undocumented**
 

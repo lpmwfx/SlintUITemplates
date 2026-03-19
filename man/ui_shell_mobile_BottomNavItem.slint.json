@@ -5,56 +5,56 @@
       "name": "BottomNavItem",
       "kind": "Component",
       "signature": "export component BottomNavItem inherits Rectangle {",
-      "line": 8,
+      "line": 14,
       "doc": ""
     },
     {
       "name": "item-id",
       "kind": "Property",
       "signature": "in property <string> item-id;",
-      "line": 11,
+      "line": 23,
       "doc": ""
     },
     {
       "name": "icon",
       "kind": "Property",
       "signature": "in property <string> icon;",
-      "line": 14,
+      "line": 32,
       "doc": ""
     },
     {
       "name": "label",
       "kind": "Property",
       "signature": "in property <string> label;",
-      "line": 17,
+      "line": 41,
       "doc": ""
     },
     {
       "name": "icon-font",
       "kind": "Property",
       "signature": "in property <string> icon-font;",
-      "line": 20,
+      "line": 50,
       "doc": ""
     },
     {
       "name": "is-active",
       "kind": "Property",
       "signature": "in property <bool>   is-active: false;",
-      "line": 23,
+      "line": 59,
       "doc": ""
     },
     {
       "name": "pill-w",
       "kind": "Property",
       "signature": "in property <length> pill-w;",
-      "line": 26,
+      "line": 68,
       "doc": ""
     },
     {
       "name": "clicked",
       "kind": "Callback",
       "signature": "callback clicked();",
-      "line": 29,
+      "line": 77,
       "doc": ""
     }
   ]

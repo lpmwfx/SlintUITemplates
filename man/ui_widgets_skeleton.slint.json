@@ -5,84 +5,84 @@
       "name": "Skeleton",
       "kind": "Component",
       "signature": "export component Skeleton inherits Rectangle {",
-      "line": 7,
+      "line": 13,
       "doc": ""
     },
     {
       "name": "variant",
       "kind": "Property",
       "signature": "in property <string> variant: root.variant-rect;   // text | circle | rect",
-      "line": 10,
+      "line": 22,
       "doc": ""
     },
     {
       "name": "animate",
       "kind": "Property",
       "signature": "in property <bool>   animate: true;",
-      "line": 13,
+      "line": 31,
       "doc": ""
     },
     {
       "name": "variant-rect",
       "kind": "Property",
       "signature": "private property <string> variant-rect: \"rect\";",
-      "line": 18,
+      "line": 42,
       "doc": ""
     },
     {
       "name": "shimmer-step",
       "kind": "Property",
       "signature": "private property <float>    shimmer-step:    0.01;",
-      "line": 23,
+      "line": 53,
       "doc": ""
     },
     {
       "name": "shimmer-max",
       "kind": "Property",
       "signature": "private property <float>    shimmer-max:     1.33;",
-      "line": 26,
+      "line": 62,
       "doc": ""
     },
     {
       "name": "shimmer-reset",
       "kind": "Property",
       "signature": "private property <float>    shimmer-reset:  -0.33;",
-      "line": 29,
+      "line": 71,
       "doc": ""
     },
     {
       "name": "shimmer-alpha",
       "kind": "Property",
       "signature": "private property <float>    shimmer-alpha:   0.4;",
-      "line": 32,
+      "line": 80,
       "doc": ""
     },
     {
       "name": "frame-interval",
       "kind": "Property",
-      "signature": "private property <duration> frame-interval:  16ms;",
-      "line": 35,
+      "signature": "private property <duration> frame-interval:  Durations.tick;",
+      "line": 89,
       "doc": ""
     },
     {
       "name": "text-radius",
       "kind": "Property",
       "signature": "private property <length>   text-radius: Sizes.border-w-2;",
-      "line": 38,
+      "line": 98,
       "doc": ""
     },
     {
       "name": "shimmer-pos",
       "kind": "Property",
       "signature": "private property <float> shimmer-pos: Sizes.no-fill;",
-      "line": 49,
+      "line": 115,
       "doc": ""
     },
     {
       "name": "shimmer-next",
       "kind": "Property",
       "signature": "private property <float> shimmer-next:",
-      "line": 52,
+      "line": 124,
       "doc": ""
     }
   ]

@@ -2,7 +2,7 @@
 
 ## `export struct StepItem {`
 
-*Line 7 · struct*
+*Line 13 · struct*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `export component Stepper inherits Rectangle {`
 
-*Line 14 · component*
+*Line 26 · component*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <[StepItem]> steps: [];`
 
-*Line 17 · property*
+*Line 35 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `in property <int>    active: Sizes.zero;`
 
-*Line 20 · property*
+*Line 44 · property*
 
 **undocumented**
 
@@ -34,7 +34,7 @@
 
 ## `callback step-changed(int);`
 
-*Line 23 · callback*
+*Line 53 · callback*
 
 **undocumented**
 
@@ -42,7 +42,7 @@
 
 ## `private property <length> circle-size:    Spacing.control-md - Spacing.xs;`
 
-*Line 28 · property*
+*Line 64 · property*
 
 **undocumented**
 
@@ -50,7 +50,7 @@
 
 ## `private property <length> connector-w:    Spacing.xl;`
 
-*Line 31 · property*
+*Line 73 · property*
 
 **undocumented**
 
@@ -58,7 +58,7 @@
 
 ## `private property <length> connector-h:    Sizes.border-w-2;`
 
-*Line 34 · property*
+*Line 82 · property*
 
 **undocumented**
 

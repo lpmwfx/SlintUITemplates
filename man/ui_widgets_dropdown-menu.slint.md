@@ -2,7 +2,7 @@
 
 ## `export component DropdownMenu inherits Rectangle {`
 
-*Line 10 · component*
+*Line 16 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <[DropdownMenuItem]> items: [];`
 
-*Line 13 · property*
+*Line 25 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <length>             window-height;`
 
-*Line 16 · property*
+*Line 34 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `in property <int>                separator-count: 0;`
 
-*Line 19 · property*
+*Line 43 · property*
 
 **undocumented**
 
@@ -34,7 +34,7 @@
 
 ## `callback activated(string);`
 
-*Line 22 · callback*
+*Line 52 · callback*
 
 **undocumented**
 
@@ -42,7 +42,7 @@
 
 ## `private property <length> pop-x:     Sizes.no-size;`
 
-*Line 26 · property*
+*Line 62 · property*
 
 **undocumented**
 
@@ -50,23 +50,23 @@
 
 ## `private property <length> pop-y:     Sizes.no-size;`
 
-*Line 29 · property*
+*Line 71 · property*
 
 **undocumented**
 
 ---
 
-## `private property <length> border-px: 1px;`
+## `private property <length> border-px: Sizes.border-w;`
 
-*Line 32 · property*
+*Line 80 · property*
 
 **undocumented**
 
 ---
 
-## `private property <length> popup-w:   220px;`
+## `private property <length> popup-w:   Sizes.panel-md;`
 
-*Line 35 · property*
+*Line 89 · property*
 
 **undocumented**
 
@@ -74,7 +74,7 @@
 
 ## `private property <length> est-popup-h:`
 
-*Line 38 · property*
+*Line 98 · property*
 
 **undocumented**
 
@@ -82,7 +82,7 @@
 
 ## `private property <length> popup-h:`
 
-*Line 44 · property*
+*Line 110 · property*
 
 **undocumented**
 

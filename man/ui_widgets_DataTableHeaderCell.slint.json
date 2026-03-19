@@ -5,56 +5,56 @@
       "name": "DataTableHeaderCell",
       "kind": "Component",
       "signature": "export component DataTableHeaderCell inherits Rectangle {",
-      "line": 7,
+      "line": 13,
       "doc": ""
     },
     {
       "name": "label",
       "kind": "Property",
       "signature": "in property <string> label;",
-      "line": 10,
+      "line": 22,
       "doc": ""
     },
     {
       "name": "col-width",
       "kind": "Property",
       "signature": "in property <length> col-width;",
-      "line": 13,
+      "line": 31,
       "doc": ""
     },
     {
       "name": "is-sorted",
       "kind": "Property",
       "signature": "in property <bool>   is-sorted: false;",
-      "line": 16,
+      "line": 40,
       "doc": ""
     },
     {
       "name": "sort-asc",
       "kind": "Property",
       "signature": "in property <bool>   sort-asc: true;",
-      "line": 19,
+      "line": 49,
       "doc": ""
     },
     {
       "name": "sort-asc-indicator",
       "kind": "Property",
       "signature": "in property <string> sort-asc-indicator: \"\\u{25B2}\";",
-      "line": 22,
+      "line": 58,
       "doc": ""
     },
     {
       "name": "sort-desc-indicator",
       "kind": "Property",
       "signature": "in property <string> sort-desc-indicator: \"\\u{25BC}\";",
-      "line": 25,
+      "line": 67,
       "doc": ""
     },
     {
       "name": "clicked",
       "kind": "Callback",
       "signature": "callback clicked();",
-      "line": 28,
+      "line": 76,
       "doc": ""
     }
   ]

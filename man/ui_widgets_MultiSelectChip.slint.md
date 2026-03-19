@@ -2,7 +2,7 @@
 
 ## `export component MultiSelectChip inherits Rectangle {`
 
-*Line 7 · component*
+*Line 13 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <int>    selected-count: Sizes.zero;`
 
-*Line 10 · property*
+*Line 22 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <string> first-selected: "";`
 
-*Line 13 · property*
+*Line 31 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `in property <string> placeholder: "Select...";`
 
-*Line 16 · property*
+*Line 40 · property*
 
 **undocumented**
 
@@ -34,7 +34,7 @@
 
 ## `in property <bool>   open: false;`
 
-*Line 19 · property*
+*Line 49 · property*
 
 **undocumented**
 
@@ -42,7 +42,7 @@
 
 ## `in property <bool>   enabled: true;`
 
-*Line 22 · property*
+*Line 58 · property*
 
 **undocumented**
 
@@ -50,7 +50,7 @@
 
 ## `callback toggle-open();`
 
-*Line 25 · callback*
+*Line 67 · callback*
 
 **undocumented**
 
@@ -58,7 +58,7 @@
 
 ## `private property <string> arrow-up:   "\u{25B2}";`
 
-*Line 29 · property*
+*Line 77 · property*
 
 **undocumented**
 
@@ -66,7 +66,7 @@
 
 ## `private property <string> arrow-down: "\u{25BC}";`
 
-*Line 32 · property*
+*Line 86 · property*
 
 **undocumented**
 
@@ -74,7 +74,7 @@
 
 ## `private property <string> selected-suffix: " selected";`
 
-*Line 35 · property*
+*Line 95 · property*
 
 **undocumented**
 

@@ -5,42 +5,42 @@
       "name": "Label",
       "kind": "Component",
       "signature": "export component Label inherits HorizontalLayout {",
-      "line": 5,
+      "line": 12,
       "doc": ""
     },
     {
       "name": "text",
       "kind": "Property",
-      "signature": "in property <string> text: \"\";",
-      "line": 8,
+      "signature": "in property <string> text: Strings.label-default;",
+      "line": 21,
       "doc": ""
     },
     {
       "name": "required",
       "kind": "Property",
       "signature": "in property <bool>   required: false;",
-      "line": 11,
+      "line": 30,
       "doc": ""
     },
     {
       "name": "disabled",
       "kind": "Property",
       "signature": "in property <bool>   disabled: false;",
-      "line": 14,
+      "line": 39,
       "doc": ""
     },
     {
       "name": "half-xs",
       "kind": "Property",
       "signature": "private property <length> half-xs:  Spacing.xs / 2;",
-      "line": 18,
+      "line": 49,
       "doc": ""
     },
     {
       "name": "req-mark",
       "kind": "Property",
-      "signature": "private property <string> req-mark: \" *\";",
-      "line": 21,
+      "signature": "private property <string> req-mark: \"*\";",
+      "line": 58,
       "doc": ""
     }
   ]

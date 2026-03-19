@@ -2,7 +2,7 @@
 
 ## `export component DragHandle inherits Rectangle {`
 
-*Line 13 · component*
+*Line 19 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <bool> vertical: false;`
 
-*Line 16 · property*
+*Line 28 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `callback dragged(float, float);  // cumulative dx, dy from press point (logical px)`
 
-*Line 19 · callback*
+*Line 37 · callback*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `callback drag-started();         // fires on press and on release`
 
-*Line 22 · callback*
+*Line 46 · callback*
 
 **undocumented**
 

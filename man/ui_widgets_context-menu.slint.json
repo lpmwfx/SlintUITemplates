@@ -5,70 +5,70 @@
       "name": "ContextMenu",
       "kind": "Component",
       "signature": "export component ContextMenu inherits Rectangle {",
-      "line": 27,
+      "line": 33,
       "doc": ""
     },
     {
       "name": "items",
       "kind": "Property",
       "signature": "in property <[ContextMenuItem]> items: [];",
-      "line": 30,
+      "line": 42,
       "doc": ""
     },
     {
       "name": "separator-count",
       "kind": "Property",
       "signature": "in property <int>    separator-count;",
-      "line": 33,
+      "line": 51,
       "doc": ""
     },
     {
       "name": "window-height",
       "kind": "Property",
       "signature": "in property <length> window-height;",
-      "line": 36,
+      "line": 60,
       "doc": ""
     },
     {
       "name": "activated",
       "kind": "Callback",
       "signature": "callback activated(string);",
-      "line": 40,
+      "line": 70,
       "doc": ""
     },
     {
       "name": "pop-x",
       "kind": "Property",
       "signature": "private property <length> pop-x: Sizes.no-size;",
-      "line": 44,
+      "line": 80,
       "doc": ""
     },
     {
       "name": "pop-y",
       "kind": "Property",
       "signature": "private property <length> pop-y: Sizes.no-size;",
-      "line": 47,
+      "line": 89,
       "doc": ""
     },
     {
       "name": "popup-w",
       "kind": "Property",
       "signature": "private property <length> popup-w: Sizes.comp-260;",
-      "line": 50,
+      "line": 98,
       "doc": ""
     },
     {
       "name": "est-popup-h",
       "kind": "Property",
       "signature": "private property <length> est-popup-h:",
-      "line": 53,
+      "line": 107,
       "doc": ""
     },
     {
       "name": "popup-h",
       "kind": "Property",
       "signature": "private property <length> popup-h:",
-      "line": 61,
+      "line": 121,
       "doc": ""
     }
   ]

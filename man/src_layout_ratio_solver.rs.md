@@ -47,7 +47,7 @@ Call this after constructing panels to ensure invariant holds.
 
 ---
 
-## `pub fn check_sum(panels: &[Panel]) -> bool`
+## `pub fn is_valid_sum(panels: &[Panel]) -> bool`
 
 *Line 80 · fn*
 

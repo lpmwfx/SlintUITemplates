@@ -1,0 +1,110 @@
+{
+  "source": "ui/globals/theme/material/spacing.slint",
+  "items": [
+    {
+      "name": "xs",
+      "kind": "Property",
+      "signature": "out property <length> xs:   4px;",
+      "line": 14,
+      "doc": ""
+    },
+    {
+      "name": "sm",
+      "kind": "Property",
+      "signature": "out property <length> sm:   8px;",
+      "line": 23,
+      "doc": ""
+    },
+    {
+      "name": "md",
+      "kind": "Property",
+      "signature": "out property <length> md:  16px;",
+      "line": 32,
+      "doc": ""
+    },
+    {
+      "name": "lg",
+      "kind": "Property",
+      "signature": "out property <length> lg:  24px;",
+      "line": 41,
+      "doc": ""
+    },
+    {
+      "name": "xl",
+      "kind": "Property",
+      "signature": "out property <length> xl:  32px;",
+      "line": 50,
+      "doc": ""
+    },
+    {
+      "name": "top-app-bar-height",
+      "kind": "Property",
+      "signature": "out property <length> top-app-bar-height:    64px;",
+      "line": 61,
+      "doc": ""
+    },
+    {
+      "name": "bottom-nav-bar-height",
+      "kind": "Property",
+      "signature": "out property <length> bottom-nav-bar-height: 80px;",
+      "line": 70,
+      "doc": ""
+    },
+    {
+      "name": "nav-item-height",
+      "kind": "Property",
+      "signature": "out property <length> nav-item-height:       64px;",
+      "line": 79,
+      "doc": ""
+    },
+    {
+      "name": "fab-size",
+      "kind": "Property",
+      "signature": "out property <length> fab-size:              56px;",
+      "line": 88,
+      "doc": ""
+    },
+    {
+      "name": "fab-extended-height",
+      "kind": "Property",
+      "signature": "out property <length> fab-extended-height:   56px;",
+      "line": 97,
+      "doc": ""
+    },
+    {
+      "name": "icon-button-size",
+      "kind": "Property",
+      "signature": "out property <length> icon-button-size:      48px;",
+      "line": 106,
+      "doc": ""
+    },
+    {
+      "name": "control-sm",
+      "kind": "Property",
+      "signature": "out property <length> control-sm:  40px;   // compact touch target",
+      "line": 117,
+      "doc": ""
+    },
+    {
+      "name": "control-md",
+      "kind": "Property",
+      "signature": "out property <length> control-md:  48px;   // standard M3 minimum touch target",
+      "line": 126,
+      "doc": ""
+    },
+    {
+      "name": "control-lg",
+      "kind": "Property",
+      "signature": "out property <length> control-lg:  56px;   // large / primary (FAB height)",
+      "line": 135,
+      "doc": ""
+    },
+    {
+      "name": "nav-rail-width",
+      "kind": "Property",
+      "signature": "out property <length> nav-rail-width: 80px;  // M3 Navigation Rail width",
+      "line": 146,
+      "doc": ""
+    }
+  ]
+}

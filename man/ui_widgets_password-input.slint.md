@@ -2,7 +2,7 @@
 
 ## `export component PasswordInput inherits Rectangle {`
 
-*Line 7 · component*
+*Line 14 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <string> label: "";`
 
-*Line 10 · property*
+*Line 23 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <string> placeholder: "";`
 
-*Line 13 · property*
+*Line 32 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `in property <string> error: "";`
 
-*Line 16 · property*
+*Line 41 · property*
 
 **undocumented**
 
@@ -34,7 +34,7 @@
 
 ## `in property <bool>   enabled: true;`
 
-*Line 19 · property*
+*Line 50 · property*
 
 **undocumented**
 
@@ -42,7 +42,7 @@
 
 ## `callback changed(string);`
 
-*Line 22 · callback*
+*Line 59 · callback*
 
 **undocumented**
 
@@ -50,7 +50,7 @@
 
 ## `private property <bool> show-password: false;`
 
-*Line 26 · property*
+*Line 69 · property*
 
 **undocumented**
 

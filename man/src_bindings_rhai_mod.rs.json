@@ -5,21 +5,21 @@
       "name": "api",
       "kind": "Mod",
       "signature": "pub mod api;",
-      "line": 2,
-      "doc": "Rhai-to-AppAdapter function bindings registered on the scripting engine."
+      "line": 18,
+      "doc": "Rhai-to-AppAdapter function bindings registered on the scripting engine.\n\n# Limitations\n\n**Thread-Safety**: The Slint UI framework is single-threaded (`!Send + !Sync`). Rhai's default\n`Engine` has a `sync` feature that requires all closures and captured values to be `Send + Sync`.\nThis creates a fundamental incompatibility: the AppAdapter holds an `AppWindow` which is not\n`Send`, yet Rhai's closures capture the adapter to register callbacks.\n\n**Workaround**: This module disables Rhai's `sync` feature. Rhai engine instances remain\nthread-local and must not be shared across threads. Use this engine only from the main UI thread.\n\n**Implication**: Applications using Rhai scripting cannot spawn background threads that\ninteract with the UI. All Rhai scripts execute on the main UI thread."
     },
     {
       "name": "dsl",
       "kind": "Mod",
       "signature": "pub mod dsl;",
-      "line": 4,
+      "line": 20,
       "doc": "DSL API — nav, toolbar, window, bg style registration."
     },
     {
       "name": "build_engine",
       "kind": "Fn",
       "signature": "pub fn build_engine(adapter: Rc<RefCell<AppAdapter>>) -> Engine",
-      "line": 13,
+      "line": 29,
       "doc": "Build a Rhai Engine with all AppAdapter API functions registered."
     }
   ]

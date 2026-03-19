@@ -2,7 +2,7 @@
 
 ## `export component ScrollDemoRow inherits Rectangle {`
 
-*Line 6 · component*
+*Line 12 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <int>    row-index;`
 
-*Line 9 · property*
+*Line 21 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <string> row-prefix;`
 
-*Line 12 · property*
+*Line 30 · property*
 
 **undocumented**
 

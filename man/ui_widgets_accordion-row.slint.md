@@ -2,7 +2,7 @@
 
 ## `export struct AccordionItem {`
 
-*Line 6 · struct*
+*Line 12 · struct*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `export component AccordionRow inherits Rectangle {`
 
-*Line 14 · component*
+*Line 26 · component*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <AccordionItem> item;`
 
-*Line 17 · property*
+*Line 35 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `in property <bool>          expanded: false;`
 
-*Line 20 · property*
+*Line 44 · property*
 
 **undocumented**
 
@@ -34,15 +34,15 @@
 
 ## `callback toggled(string);`
 
-*Line 23 · callback*
+*Line 53 · callback*
 
 **undocumented**
 
 ---
 
-## `private property <length>   border-px:    1px;`
+## `private property <length>   border-px:    Sizes.border-w;`
 
-*Line 27 · property*
+*Line 63 · property*
 
 **undocumented**
 
@@ -50,7 +50,7 @@
 
 ## `private property <length>   content-h:    Spacing.xl * Sizes.two;`
 
-*Line 30 · property*
+*Line 72 · property*
 
 **undocumented**
 
@@ -58,15 +58,15 @@
 
 ## `private property <int>      stretch-full: 1;`
 
-*Line 33 · property*
+*Line 81 · property*
 
 **undocumented**
 
 ---
 
-## `private property <duration> anim-dur:     180ms;`
+## `private property <duration> anim-dur:     Durations.normal;`
 
-*Line 36 · property*
+*Line 90 · property*
 
 **undocumented**
 

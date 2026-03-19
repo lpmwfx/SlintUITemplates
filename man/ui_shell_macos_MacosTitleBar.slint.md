@@ -2,7 +2,7 @@
 
 ## `export component MacosTitleBar inherits Rectangle {`
 
-*Line 10 · component*
+*Line 16 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <string> title;`
 
-*Line 13 · property*
+*Line 25 · property*
 
 **undocumented**
 

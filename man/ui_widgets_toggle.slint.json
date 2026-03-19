@@ -5,70 +5,70 @@
       "name": "Toggle",
       "kind": "Component",
       "signature": "export component Toggle inherits Rectangle {",
-      "line": 6,
+      "line": 12,
       "doc": ""
     },
     {
       "name": "checked",
       "kind": "Property",
       "signature": "in property <bool> checked: false;",
-      "line": 9,
+      "line": 21,
       "doc": ""
     },
     {
       "name": "label",
       "kind": "Property",
       "signature": "in property <string> label: \"\";",
-      "line": 12,
+      "line": 30,
       "doc": ""
     },
     {
       "name": "toggled",
       "kind": "Callback",
       "signature": "callback toggled(bool);",
-      "line": 15,
+      "line": 39,
       "doc": ""
     },
     {
       "name": "track-width",
       "kind": "Property",
-      "signature": "private property <length> track-width:  Spacing.control-lg;  // 40px",
-      "line": 20,
+      "signature": "private property <length> track-width:  Spacing.control-lg;",
+      "line": 50,
       "doc": ""
     },
     {
       "name": "track-height",
       "kind": "Property",
-      "signature": "private property <length> track-height: Sizes.icon-md;       // 20px",
-      "line": 23,
+      "signature": "private property <length> track-height: Sizes.icon-md;",
+      "line": 59,
       "doc": ""
     },
     {
       "name": "knob-size",
       "kind": "Property",
-      "signature": "private property <length> knob-size:    Sizes.icon-sm;       // 16px",
-      "line": 26,
+      "signature": "private property <length> knob-size:    Sizes.icon-sm;",
+      "line": 68,
       "doc": ""
     },
     {
       "name": "knob-radius",
       "kind": "Property",
-      "signature": "private property <length> knob-radius:  Spacing.sm;          // 8px",
-      "line": 29,
+      "signature": "private property <length> knob-radius:  Spacing.sm;",
+      "line": 77,
       "doc": ""
     },
     {
       "name": "knob-inset",
       "kind": "Property",
-      "signature": "private property <length> knob-inset:   Sizes.border-w-2;    // 2px",
-      "line": 32,
+      "signature": "private property <length> knob-inset:   Sizes.border-w-2;",
+      "line": 86,
       "doc": ""
     },
     {
       "name": "slide-dur",
       "kind": "Property",
-      "signature": "private property <duration> slide-dur:  150ms;",
-      "line": 35,
+      "signature": "private property <duration> slide-dur:  Durations.quick;",
+      "line": 95,
       "doc": ""
     }
   ]

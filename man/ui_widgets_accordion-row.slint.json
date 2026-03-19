@@ -5,63 +5,63 @@
       "name": "AccordionItem",
       "kind": "Struct",
       "signature": "export struct AccordionItem {",
-      "line": 6,
+      "line": 12,
       "doc": ""
     },
     {
       "name": "AccordionRow",
       "kind": "Component",
       "signature": "export component AccordionRow inherits Rectangle {",
-      "line": 14,
+      "line": 26,
       "doc": ""
     },
     {
       "name": "item",
       "kind": "Property",
       "signature": "in property <AccordionItem> item;",
-      "line": 17,
+      "line": 35,
       "doc": ""
     },
     {
       "name": "expanded",
       "kind": "Property",
       "signature": "in property <bool>          expanded: false;",
-      "line": 20,
+      "line": 44,
       "doc": ""
     },
     {
       "name": "toggled",
       "kind": "Callback",
       "signature": "callback toggled(string);",
-      "line": 23,
+      "line": 53,
       "doc": ""
     },
     {
       "name": "border-px",
       "kind": "Property",
-      "signature": "private property <length>   border-px:    1px;",
-      "line": 27,
+      "signature": "private property <length>   border-px:    Sizes.border-w;",
+      "line": 63,
       "doc": ""
     },
     {
       "name": "content-h",
       "kind": "Property",
       "signature": "private property <length>   content-h:    Spacing.xl * Sizes.two;",
-      "line": 30,
+      "line": 72,
       "doc": ""
     },
     {
       "name": "stretch-full",
       "kind": "Property",
       "signature": "private property <int>      stretch-full: 1;",
-      "line": 33,
+      "line": 81,
       "doc": ""
     },
     {
       "name": "anim-dur",
       "kind": "Property",
-      "signature": "private property <duration> anim-dur:     180ms;",
-      "line": 36,
+      "signature": "private property <duration> anim-dur:     Durations.normal;",
+      "line": 90,
       "doc": ""
     }
   ]

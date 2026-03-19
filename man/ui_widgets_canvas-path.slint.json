@@ -5,140 +5,140 @@
       "name": "CanvasPath",
       "kind": "Component",
       "signature": "export component CanvasPath inherits Rectangle {",
-      "line": 10,
+      "line": 16,
       "doc": ""
     },
     {
       "name": "stroke-color",
       "kind": "Property",
       "signature": "in property <color> stroke-color: Colors.accent;",
-      "line": 13,
+      "line": 25,
       "doc": ""
     },
     {
       "name": "fill-color",
       "kind": "Property",
       "signature": "in property <color> fill-color:   Colors.accent.with-alpha(root.fill-alpha);",
-      "line": 16,
+      "line": 34,
       "doc": ""
     },
     {
       "name": "stroke-w",
       "kind": "Property",
       "signature": "in property <length> stroke-w:    Sizes.border-w-2;",
-      "line": 19,
+      "line": 43,
       "doc": ""
     },
     {
       "name": "fill-alpha",
       "kind": "Property",
       "signature": "private property <float> fill-alpha:    0.15;",
-      "line": 24,
+      "line": 54,
       "doc": ""
     },
     {
       "name": "overlay-alpha",
       "kind": "Property",
       "signature": "private property <float> overlay-alpha: 0.6;",
-      "line": 27,
+      "line": 63,
       "doc": ""
     },
     {
       "name": "canvas-w",
       "kind": "Property",
-      "signature": "private property <length> canvas-w: Sizes.panel-xl;   // 300px",
-      "line": 30,
+      "signature": "private property <length> canvas-w: Sizes.panel-xl;",
+      "line": 72,
       "doc": ""
     },
     {
       "name": "canvas-h",
       "kind": "Property",
-      "signature": "private property <length> canvas-h: Sizes.panel-sm;   // 200px",
-      "line": 33,
+      "signature": "private property <length> canvas-h: Sizes.panel-sm;",
+      "line": 81,
       "doc": ""
     },
     {
       "name": "tri-x1",
       "kind": "Property",
       "signature": "private property <float> tri-x1:  50;",
-      "line": 38,
+      "line": 92,
       "doc": ""
     },
     {
       "name": "tri-y1",
       "kind": "Property",
       "signature": "private property <float> tri-y1:  160;",
-      "line": 41,
+      "line": 101,
       "doc": ""
     },
     {
       "name": "tri-x2",
       "kind": "Property",
       "signature": "private property <float> tri-x2:  150;",
-      "line": 44,
+      "line": 110,
       "doc": ""
     },
     {
       "name": "tri-y2",
       "kind": "Property",
       "signature": "private property <float> tri-y2:  30;",
-      "line": 47,
+      "line": 119,
       "doc": ""
     },
     {
       "name": "tri-x3",
       "kind": "Property",
       "signature": "private property <float> tri-x3:  250;",
-      "line": 50,
+      "line": 128,
       "doc": ""
     },
     {
       "name": "tri-y3",
       "kind": "Property",
       "signature": "private property <float> tri-y3:  160;",
-      "line": 53,
+      "line": 137,
       "doc": ""
     },
     {
       "name": "curve-start-x",
       "kind": "Property",
       "signature": "private property <float> curve-start-x: 50;",
-      "line": 58,
+      "line": 148,
       "doc": ""
     },
     {
       "name": "curve-start-y",
       "kind": "Property",
       "signature": "private property <float> curve-start-y: 100;",
-      "line": 61,
+      "line": 157,
       "doc": ""
     },
     {
       "name": "curve-ctrl-x",
       "kind": "Property",
       "signature": "private property <float> curve-ctrl-x:  150;",
-      "line": 64,
+      "line": 166,
       "doc": ""
     },
     {
       "name": "curve-ctrl-y",
       "kind": "Property",
       "signature": "private property <float> curve-ctrl-y:  20;",
-      "line": 67,
+      "line": 175,
       "doc": ""
     },
     {
       "name": "curve-end-x",
       "kind": "Property",
       "signature": "private property <float> curve-end-x:   250;",
-      "line": 70,
+      "line": 184,
       "doc": ""
     },
     {
       "name": "curve-end-y",
       "kind": "Property",
       "signature": "private property <float> curve-end-y:   160;",
-      "line": 73,
+      "line": 193,
       "doc": ""
     }
   ]

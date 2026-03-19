@@ -1,0 +1,26 @@
+{
+  "source": "ui/state/nav-id.slint",
+  "items": [
+    {
+      "name": "home",
+      "kind": "Property",
+      "signature": "out property <string> home:     \"home\";",
+      "line": 14,
+      "doc": ""
+    },
+    {
+      "name": "list",
+      "kind": "Property",
+      "signature": "out property <string> list:     \"list\";",
+      "line": 23,
+      "doc": ""
+    },
+    {
+      "name": "settings",
+      "kind": "Property",
+      "signature": "out property <string> settings: \"settings\";",
+      "line": 32,
+      "doc": ""
+    }
+  ]
+}

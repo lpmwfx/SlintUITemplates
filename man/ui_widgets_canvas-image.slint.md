@@ -2,7 +2,7 @@
 
 ## `export component CanvasImage inherits Rectangle {`
 
-*Line 9 · component*
+*Line 16 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <image>  frame;`
 
-*Line 12 · property*
+*Line 25 · property*
 
 **undocumented**
 
@@ -18,15 +18,15 @@
 
 ## `in property <bool>   show-placeholder: true;`
 
-*Line 15 · property*
+*Line 34 · property*
 
 **undocumented**
 
 ---
 
-## `in property <string> placeholder-text: "No frame — wire canvas-frame from Rust";`
+## `in property <string> placeholder-text: Strings.canvas-image-placeholder;`
 
-*Line 18 · property*
+*Line 43 · property*
 
 **undocumented**
 

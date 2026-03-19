@@ -2,7 +2,7 @@
 
 ## `export component AppWindow inherits Window {`
 
-*Line 20 · component*
+*Line 21 · component*
 
 **undocumented**
 
@@ -10,7 +10,7 @@
 
 ## `in property <string> window-title: "SlintUI Templates";`
 
-*Line 23 · property*
+*Line 24 · property*
 
 **undocumented**
 
@@ -18,7 +18,7 @@
 
 ## `in property <string>    active-view: NavId.home;`
 
-*Line 37 · property*
+*Line 38 · property*
 
 **undocumented**
 
@@ -26,7 +26,7 @@
 
 ## `in property <[NavItem]> nav-items: [`
 
-*Line 42 · property*
+*Line 43 · property*
 
 **undocumented**
 
@@ -34,7 +34,7 @@
 
 ## `in property <bool>               show-toolbar:  false;`
 
-*Line 51 · property*
+*Line 52 · property*
 
 **undocumented**
 
@@ -42,23 +42,23 @@
 
 ## `in property <[ShellToolbarItem]> toolbar-items: [];`
 
-*Line 54 · property*
+*Line 55 · property*
 
 **undocumented**
 
 ---
 
-## `in property <string> status-text: "";`
+## `in property <string> status-text: Strings.label-default;`
 
-*Line 59 · property*
+*Line 60 · property*
 
 **undocumented**
 
 ---
 
-## `in property <string> status-prefix: "View: ";`
+## `in property <string> status-prefix: Strings.status-view-prefix;`
 
-*Line 62 · property*
+*Line 63 · property*
 
 **undocumented**
 
@@ -66,7 +66,7 @@
 
 ## `in property <string> right-panel-label: "right";`
 
-*Line 65 · property*
+*Line 66 · property*
 
 **undocumented**
 
@@ -74,7 +74,7 @@
 
 ## `in property <string> menu-file-label: "File";`
 
-*Line 70 · property*
+*Line 71 · property*
 
 **undocumented**
 
@@ -82,7 +82,7 @@
 
 ## `in property <string> menu-exit-label: "Exit";`
 
-*Line 73 · property*
+*Line 74 · property*
 
 **undocumented**
 
@@ -90,7 +90,7 @@
 
 ## `in property <string> menu-view-label: "View";`
 
-*Line 76 · property*
+*Line 77 · property*
 
 **undocumented**
 
@@ -98,7 +98,7 @@
 
 ## `in property <string> menu-home-label: "Home";`
 
-*Line 79 · property*
+*Line 80 · property*
 
 **undocumented**
 
@@ -106,7 +106,7 @@
 
 ## `in property <string> menu-list-label: "List";`
 
-*Line 82 · property*
+*Line 83 · property*
 
 **undocumented**
 
@@ -114,7 +114,7 @@
 
 ## `in property <string> menu-settings-label: "Settings";`
 
-*Line 85 · property*
+*Line 86 · property*
 
 **undocumented**
 
@@ -122,7 +122,7 @@
 
 ## `in property <string> menu-help-label: "Help";`
 
-*Line 88 · property*
+*Line 89 · property*
 
 **undocumented**
 
@@ -130,7 +130,7 @@
 
 ## `in property <string> menu-about-label: "About";`
 
-*Line 91 · property*
+*Line 92 · property*
 
 **undocumented**
 
@@ -138,7 +138,7 @@
 
 ## `callback menu-action(string);`
 
-*Line 96 · callback*
+*Line 97 · callback*
 
 **undocumented**
 
@@ -146,7 +146,7 @@
 
 ## `callback toolbar-clicked(string);`
 
-*Line 99 · callback*
+*Line 100 · callback*
 
 **undocumented**
 
@@ -154,7 +154,7 @@
 
 ## `in property <float> row-top-ratio: Sizes.fill;`
 
-*Line 104 · property*
+*Line 105 · property*
 
 **undocumented**
 
@@ -162,7 +162,7 @@
 
 ## `in property <float> row-main-ratio: Sizes.ten;`
 
-*Line 107 · property*
+*Line 108 · property*
 
 **undocumented**
 
@@ -170,7 +170,7 @@
 
 ## `in property <float> row-bottom-ratio: Sizes.fill;`
 
-*Line 110 · property*
+*Line 111 · property*
 
 **undocumented**
 
@@ -178,7 +178,7 @@
 
 ## `callback navigate(string);`
 
-*Line 122 · callback*
+*Line 123 · callback*
 
 **undocumented**
 
