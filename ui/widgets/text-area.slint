@@ -1,33 +1,87 @@
 import { Colors, Spacing, Type } from "../globals/theme.slint";
 import { TextEdit } from "std-widgets.slint";
-import { Sizes } from "../state/sizes.slint";
+import { Sizes } from "../globals/theme/sizes.slint";
 
 /// T ex ta re a component.
+/// component `TextArea`.
+/// component `TextArea`.
+/// component `TextArea`.
+/// component `TextArea`.
+/// component `TextArea`.
+/// component `TextArea`.
 /// component `TextArea`.
 export component TextArea inherits Rectangle {
     /// Input property "label".
     /// property `label`.
+    /// property `label`.
+    /// property `label`.
+    /// property `label`.
+    /// property `label`.
+    /// property `label`.
+    /// property `label`.
     in property <string> label: "";
     /// Input property "value".
+    /// property `value`.
+    /// property `value`.
+    /// property `value`.
+    /// property `value`.
+    /// property `value`.
+    /// property `value`.
     /// property `value`.
     in property <string> value: "";
     /// Input property "placeholder".
     /// property `placeholder`.
+    /// property `placeholder`.
+    /// property `placeholder`.
+    /// property `placeholder`.
+    /// property `placeholder`.
+    /// property `placeholder`.
+    /// property `placeholder`.
     in property <string> placeholder: "";
     /// Input property "error".
+    /// property `error`.
+    /// property `error`.
+    /// property `error`.
+    /// property `error`.
+    /// property `error`.
+    /// property `error`.
     /// property `error`.
     in property <string> error: "";
     /// Input property "rows".
     /// property `rows`.
+    /// property `rows`.
+    /// property `rows`.
+    /// property `rows`.
+    /// property `rows`.
+    /// property `rows`.
+    /// property `rows`.
     in property <int>    rows: Sizes.four;
     /// Input property "enabled".
+    /// property `enabled`.
+    /// property `enabled`.
+    /// property `enabled`.
+    /// property `enabled`.
+    /// property `enabled`.
+    /// property `enabled`.
     /// property `enabled`.
     in property <bool>   enabled: true;
     /// Callback fired for c ha ng ed.
     /// callback `changed`.
+    /// callback `changed`.
+    /// callback `changed`.
+    /// callback `changed`.
+    /// callback `changed`.
+    /// callback `changed`.
+    /// callback `changed`.
     callback changed(string);
 
     /// Private property "area-height" used internally.
+    /// property `area-height`.
+    /// property `area-height`.
+    /// property `area-height`.
+    /// property `area-height`.
+    /// property `area-height`.
+    /// property `area-height`.
     /// property `area-height`.
     private property <length> area-height: root.rows * (Type.body-size + Spacing.xs) + Spacing.sm * Sizes.two;
 

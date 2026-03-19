@@ -1,212 +1,212 @@
 // Variants — named constants for component variant/style discriminators.
 // Prevents stringly-typed state comparisons.
 
-/// V ar ia nt s global values.
+/// Variants global values.
 export global Variants {
     // ── Button / component variants ─────────────────────────────────────
-    /// Output property "primary".
+    /// Primary button variant.
     /// property `primary`.
     out property <string> primary:   "primary";
-    /// Output property "secondary".
+    /// Secondary button variant.
     /// property `secondary`.
     out property <string> secondary: "secondary";
-    /// Output property "accent".
+    /// Accent button variant.
     /// property `accent`.
     out property <string> accent:    "accent";
-    /// Output property "danger".
+    /// Danger button variant.
     /// property `danger`.
     out property <string> danger:    "danger";
-    /// Output property "outlined".
+    /// Outlined button variant.
     /// property `outlined`.
     out property <string> outlined:  "outlined";
-    /// Output property "ghost".
+    /// Ghost button variant.
     /// property `ghost`.
     out property <string> ghost:     "ghost";
-    /// Output property "text".
+    /// Text button variant.
     /// property `text`.
     out property <string> text:      "text";
 
     // ── Severity / status ───────────────────────────────────────────────
-    /// Output property "info".
+    /// Info severity variant.
     /// property `info`.
     out property <string> info:    "info";
-    /// Output property "success".
+    /// Success severity variant.
     /// property `success`.
     out property <string> success: "success";
-    /// Output property "warning".
+    /// Warning severity variant.
     /// property `warning`.
     out property <string> warning: "warning";
-    /// Output property "error".
+    /// Error severity variant.
     /// property `error`.
     out property <string> error:   "error";
 
     // ── Platform ────────────────────────────────────────────────────────
-    /// Output property "desktop".
+    /// Desktop platform variant.
     /// property `desktop`.
     out property <string> desktop:     "desktop";
-    /// Output property "mobile".
+    /// Mobile platform variant.
     /// property `mobile`.
     out property <string> mobile:      "mobile";
-    /// Output property "windows".
+    /// Windows platform variant.
     /// property `windows`.
     out property <string> windows:     "windows";
-    /// Output property "android".
+    /// Android platform variant.
     /// property `android`.
     out property <string> android:     "android";
-    /// Output property "ios".
+    /// iOS platform variant.
     /// property `ios`.
     out property <string> ios:         "ios";
-    /// Output property "macos".
+    /// macOS platform variant.
     /// property `macos`.
     out property <string> macos:       "macos";
-    /// Output property "linux".
+    /// Linux platform variant.
     /// property `linux`.
     out property <string> linux:       "linux";
-    /// Output property "steam-linux".
+    /// Steam Linux platform variant.
     /// property `steam-linux`.
     out property <string> steam-linux: "steam-linux";
-    /// Output property "steam-deck".
+    /// Steam Deck platform variant.
     /// property `steam-deck`.
     out property <string> steam-deck:  "steam-deck";
-    /// Output property "tablet".
+    /// Tablet platform variant.
     /// property `tablet`.
     out property <string> tablet:      "tablet";
-    /// Output property "handheld".
+    /// Handheld platform variant.
     /// property `handheld`.
     out property <string> handheld:    "handheld";
-    /// Output property "gnome".
+    /// GNOME platform variant.
     /// property `gnome`.
     out property <string> gnome:       "gnome";
-    /// Output property "kde".
+    /// KDE platform variant.
     /// property `kde`.
     out property <string> kde:         "kde";
 
     // ── Nav style ─────────────────────────────────────────────────────────
-    /// Output property "nav-sidebar".
+    /// Sidebar navigation variant.
     /// property `nav-sidebar`.
     out property <string> nav-sidebar: "nav-sidebar";
-    /// Output property "nav-bottom".
+    /// Bottom navigation variant.
     /// property `nav-bottom`.
     out property <string> nav-bottom:  "nav-bottom";
-    /// Output property "nav-compact".
+    /// Compact navigation variant.
     /// property `nav-compact`.
     out property <string> nav-compact: "nav-compact";
-    /// Output property "nav-gamepad".
+    /// Gamepad navigation variant.
     /// property `nav-gamepad`.
     out property <string> nav-gamepad: "nav-gamepad";
 
     // ── Theme ───────────────────────────────────────────────────────────
-    /// Output property "system".
+    /// System theme variant.
     /// property `system`.
     out property <string> system: "system";
-    /// Output property "dark".
+    /// Dark theme variant.
     /// property `dark`.
     out property <string> dark:   "dark";
-    /// Output property "light".
+    /// Light theme variant.
     /// property `light`.
     out property <string> light:  "light";
 
     // ── Material / backdrop ───────────────────────────────────────────
-    /// Output property "solid".
+    /// Solid backdrop variant.
     /// property `solid`.
     out property <string> solid:   "solid";
-    /// Output property "mica".
+    /// Mica backdrop variant.
     /// property `mica`.
     out property <string> mica:    "mica";
-    /// Output property "acrylic".
+    /// Acrylic backdrop variant.
     /// property `acrylic`.
     out property <string> acrylic: "acrylic";
 
     // ── Orientation / position ──────────────────────────────────────────
-    /// Output property "horizontal".
+    /// Horizontal orientation variant.
     /// property `horizontal`.
     out property <string> horizontal: "horizontal";
-    /// Output property "vertical".
+    /// Vertical orientation variant.
     /// property `vertical`.
     out property <string> vertical:   "vertical";
-    /// Output property "left".
+    /// Left position variant.
     /// property `left`.
     out property <string> left:   "left";
-    /// Output property "right".
+    /// Right position variant.
     /// property `right`.
     out property <string> right:  "right";
-    /// Output property "top".
+    /// Top position variant.
     /// property `top`.
     out property <string> top:    "top";
-    /// Output property "bottom".
+    /// Bottom position variant.
     /// property `bottom`.
     out property <string> bottom: "bottom";
 
     // ── Size ──────────────────────────────────────────────────────────
-    /// Output property "sm".
+    /// Small size variant.
     /// property `sm`.
     out property <string> sm: "sm";
-    /// Output property "md".
+    /// Medium size variant.
     /// property `md`.
     out property <string> md: "md";
-    /// Output property "lg".
+    /// Large size variant.
     /// property `lg`.
     out property <string> lg: "lg";
 
     // ── Shape ───────────────────────────────────────────────────────────
-    /// Output property "circle".
+    /// Circle shape variant.
     /// property `circle`.
     out property <string> circle: "circle";
-    /// Output property "panel".
+    /// Panel shape variant.
     /// property `panel`.
     out property <string> panel:  "panel";
 
     // ── Handle types ────────────────────────────────────────────────────
-    /// Output property "handle-h".
+    /// Horizontal handle variant.
     /// property `handle-h`.
     out property <string> handle-h: "handle-h";
-    /// Output property "handle-v".
+    /// Vertical handle variant.
     /// property `handle-v`.
     out property <string> handle-v: "handle-v";
 
     // ── Doc block kinds ─────────────────────────────────────────────────
-    /// Output property "h1".
+    /// Heading level 1 block kind.
     /// property `h1`.
     out property <string> h1:   "h1";
-    /// Output property "h2".
+    /// Heading level 2 block kind.
     /// property `h2`.
     out property <string> h2:   "h2";
-    /// Output property "h3".
+    /// Heading level 3 block kind.
     /// property `h3`.
     out property <string> h3:   "h3";
-    /// Output property "p".
+    /// Paragraph block kind.
     /// property `p`.
     out property <string> p:    "p";
-    /// Output property "code".
+    /// Code block kind.
     /// property `code`.
     out property <string> code: "code";
-    /// Output property "li".
+    /// List item block kind.
     /// property `li`.
     out property <string> li:   "li";
-    /// Output property "li2".
+    /// Nested list item block kind.
     /// property `li2`.
     out property <string> li2:  "li2";
-    /// Output property "th".
+    /// Table header block kind.
     /// property `th`.
     out property <string> th:   "th";
-    /// Output property "tr".
+    /// Table row block kind.
     /// property `tr`.
     out property <string> tr:   "tr";
-    /// Output property "hr".
+    /// Horizontal rule block kind.
     /// property `hr`.
     out property <string> hr:   "hr";
-    /// Output property "bq".
+    /// Blockquote block kind.
     /// property `bq`.
     out property <string> bq:   "bq";
 
     // ── Test IDs ────────────────────────────────────────────────────────
-    /// Output property "alpha".
+    /// Alpha test ID.
     /// property `alpha`.
     out property <string> alpha: "alpha";
-    /// Output property "beta".
+    /// Beta test ID.
     /// property `beta`.
     out property <string> beta:  "beta";
-    /// Output property "gamma".
+    /// Gamma test ID.
     /// property `gamma`.
     out property <string> gamma: "gamma";
 }

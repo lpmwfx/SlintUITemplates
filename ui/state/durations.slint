@@ -1,0 +1,46 @@
+// Durations — reusable animation timing constants.
+//
+// Wraps FluentMotion tokens for use in widget animations.
+// Use instead of hardcoded ms values in animate blocks.
+
+import { FluentMotion } from "../globals/theme/fluent/motion.slint";
+
+/// Durations global values.
+export global Durations {
+    /// Output property "tick".
+    /// property `tick`.
+    /// property `tick`.
+    /// property `tick`.
+    /// property `tick`.
+    /// property `tick`.
+    /// property `tick`.
+    /// property `tick`.
+    out property <duration> tick:    FluentMotion.tick;     // 16ms — animation frame tick (~60fps)
+    /// Output property "quick".
+    /// property `quick`.
+    /// property `quick`.
+    /// property `quick`.
+    /// property `quick`.
+    /// property `quick`.
+    /// property `quick`.
+    /// property `quick`.
+    out property <duration> quick:   FluentMotion.quick;    // 150ms — toggles, micro-transitions
+    /// Output property "medium".
+    /// property `medium`.
+    /// property `medium`.
+    /// property `medium`.
+    /// property `medium`.
+    /// property `medium`.
+    /// property `medium`.
+    /// property `medium`.
+    out property <duration> medium:  FluentMotion.medium;   // 200ms — slides, progress bars
+    /// Output property "normal".
+    /// property `normal`.
+    /// property `normal`.
+    /// property `normal`.
+    /// property `normal`.
+    /// property `normal`.
+    /// property `normal`.
+    /// property `normal`.
+    out property <duration> normal:  FluentMotion.normal;   // 167ms — standard transitions
+}

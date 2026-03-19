@@ -1,26 +1,68 @@
 import { Colors, Spacing } from "../globals/theme.slint";
-import { Sizes } from "../state/sizes.slint";
+import { Sizes } from "../globals/theme/sizes.slint";
 
 /// S cr ol lv ie w component.
+/// component `ScrollView`.
+/// component `ScrollView`.
+/// component `ScrollView`.
+/// component `ScrollView`.
+/// component `ScrollView`.
+/// component `ScrollView`.
 /// component `ScrollView`.
 export component ScrollView inherits Rectangle {
     /// Input property "interactive".
     /// property `interactive`.
+    /// property `interactive`.
+    /// property `interactive`.
+    /// property `interactive`.
+    /// property `interactive`.
+    /// property `interactive`.
+    /// property `interactive`.
     in property <bool>  interactive:    true;
     /// Input property "show-scrollbar".
+    /// property `show-scrollbar`.
+    /// property `show-scrollbar`.
+    /// property `show-scrollbar`.
+    /// property `show-scrollbar`.
+    /// property `show-scrollbar`.
+    /// property `show-scrollbar`.
     /// property `show-scrollbar`.
     in property <bool>  show-scrollbar: true;
     /// Output property "viewport-width".
     /// property `viewport-width`.
+    /// property `viewport-width`.
+    /// property `viewport-width`.
+    /// property `viewport-width`.
+    /// property `viewport-width`.
+    /// property `viewport-width`.
+    /// property `viewport-width`.
     out property <length> viewport-width  <=> fl.viewport-width;
     /// Output property "viewport-height".
+    /// property `viewport-height`.
+    /// property `viewport-height`.
+    /// property `viewport-height`.
+    /// property `viewport-height`.
+    /// property `viewport-height`.
+    /// property `viewport-height`.
     /// property `viewport-height`.
     out property <length> viewport-height <=> fl.viewport-height;
 
     /// Private property "scrollbar-inset" used internally.
     /// property `scrollbar-inset`.
+    /// property `scrollbar-inset`.
+    /// property `scrollbar-inset`.
+    /// property `scrollbar-inset`.
+    /// property `scrollbar-inset`.
+    /// property `scrollbar-inset`.
+    /// property `scrollbar-inset`.
     private property <length> scrollbar-inset: Sizes.border-w-2;
     /// Private property "scrollbar-w" used internally.
+    /// property `scrollbar-w`.
+    /// property `scrollbar-w`.
+    /// property `scrollbar-w`.
+    /// property `scrollbar-w`.
+    /// property `scrollbar-w`.
+    /// property `scrollbar-w`.
     /// property `scrollbar-w`.
     private property <length> scrollbar-w: Sizes.border-w-3;
 

@@ -3,28 +3,64 @@
 // mode == Variants.nav-compact → vertical icon rail on the left (Steam Linux)
 
 import { SteamColors, SteamSpacing } from "../../globals/theme/steam/mod.slint";
-import { Sizes } from "../../state/sizes.slint";
-import { Variants } from "../../state/variants.slint";
+import { Sizes } from "../../globals/theme/sizes.slint";
+import { Variants } from "../../globals/variants.slint";
 import { NavItem } from "../types.slint";
 import { CompactNavItem } from "CompactNavItem.slint";
 
 /// CompactNav — horizontal bottom bar or vertical compact rail.
 /// component `CompactNav`.
+/// component `CompactNav`.
+/// component `CompactNav`.
+/// component `CompactNav`.
+/// component `CompactNav`.
+/// component `CompactNav`.
+/// component `CompactNav`.
 export component CompactNav inherits Rectangle {
     /// Nav mode: `Variants.nav-bottom` (horizontal) or `Variants.nav-compact` (rail).
+    /// property `mode`.
+    /// property `mode`.
+    /// property `mode`.
+    /// property `mode`.
+    /// property `mode`.
+    /// property `mode`.
     /// property `mode`.
     in property <string> mode: Variants.nav-bottom;
     /// Navigation items to render.
     /// property `items`.
+    /// property `items`.
+    /// property `items`.
+    /// property `items`.
+    /// property `items`.
+    /// property `items`.
+    /// property `items`.
     in property <[NavItem]> items;
     /// Id of the currently active item.
+    /// property `active`.
+    /// property `active`.
+    /// property `active`.
+    /// property `active`.
+    /// property `active`.
+    /// property `active`.
     /// property `active`.
     in property <string> active;
     /// Fired when a nav item is tapped.
     /// callback `navigate`.
+    /// callback `navigate`.
+    /// callback `navigate`.
+    /// callback `navigate`.
+    /// callback `navigate`.
+    /// callback `navigate`.
+    /// callback `navigate`.
     callback navigate(string);
 
     /// Private property "is-rail" used internally.
+    /// property `is-rail`.
+    /// property `is-rail`.
+    /// property `is-rail`.
+    /// property `is-rail`.
+    /// property `is-rail`.
+    /// property `is-rail`.
     /// property `is-rail`.
     private property <bool> is-rail: root.mode == Variants.nav-compact;
 

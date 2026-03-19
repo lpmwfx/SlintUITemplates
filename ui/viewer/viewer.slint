@@ -2,7 +2,7 @@
 // Dog-foods our own components; topbar writes to Colors/Settings globals live.
 
 import { Colors, Spacing, FluentIcons, Settings } from "../globals/theme.slint";
-import { Sizes } from "../state/sizes.slint";
+import { Sizes } from "../globals/theme/sizes.slint";
 import { ViewId }        from "../state/view-id.slint";
 import { SideBar }       from "../desktop/side-bar.slint";
 import { NavItem }       from "../desktop/types.slint";
@@ -12,6 +12,12 @@ import { ViewerContent } from "viewer-content.slint";
 
 /// F ra me wo rk vi ew er component.
 /// component `FrameworkViewer`.
+/// component `FrameworkViewer`.
+/// component `FrameworkViewer`.
+/// component `FrameworkViewer`.
+/// component `FrameworkViewer`.
+/// component `FrameworkViewer`.
+/// component `FrameworkViewer`.
 export component FrameworkViewer inherits Window {
     preferred-width:  root.win-w;
     preferred-height: root.win-h;
@@ -20,52 +26,148 @@ export component FrameworkViewer inherits Window {
 
     /// Input property "active-view".
     /// property `active-view`.
+    /// property `active-view`.
+    /// property `active-view`.
+    /// property `active-view`.
+    /// property `active-view`.
+    /// property `active-view`.
+    /// property `active-view`.
     in property <string> active-view: ViewId.buttons;
     /// Input property "canvas-frame".
+    /// property `canvas-frame`.
+    /// property `canvas-frame`.
+    /// property `canvas-frame`.
+    /// property `canvas-frame`.
+    /// property `canvas-frame`.
+    /// property `canvas-frame`.
     /// property `canvas-frame`.
     in property <image> canvas-frame;
 
     /// Callback fired for n av ig at e.
     /// callback `navigate`.
+    /// callback `navigate`.
+    /// callback `navigate`.
+    /// callback `navigate`.
+    /// callback `navigate`.
+    /// callback `navigate`.
+    /// callback `navigate`.
     callback navigate(string);
 
     /// Private property "win-w" used internally.
     /// property `win-w`.
-    private property <length> win-w:     1100px;
+    /// property `win-w`.
+    /// property `win-w`.
+    /// property `win-w`.
+    /// property `win-w`.
+    /// property `win-w`.
+    /// property `win-w`.
+    private property <length> win-w:     Sizes.win-width-lg;
     /// Private property "win-h" used internally.
     /// property `win-h`.
-    private property <length> win-h:     720px;
+    /// property `win-h`.
+    /// property `win-h`.
+    /// property `win-h`.
+    /// property `win-h`.
+    /// property `win-h`.
+    /// property `win-h`.
+    private property <length> win-h:     Sizes.win-height-lg;
     /// Private property "zoom-small" used internally.
+    /// property `zoom-small`.
+    /// property `zoom-small`.
+    /// property `zoom-small`.
+    /// property `zoom-small`.
+    /// property `zoom-small`.
+    /// property `zoom-small`.
     /// property `zoom-small`.
     private property <float>  zoom-small:   Sizes.three-quarter;
     /// Private property "zoom-normal" used internally.
     /// property `zoom-normal`.
+    /// property `zoom-normal`.
+    /// property `zoom-normal`.
+    /// property `zoom-normal`.
+    /// property `zoom-normal`.
+    /// property `zoom-normal`.
+    /// property `zoom-normal`.
     private property <float>  zoom-normal:  Sizes.fill;
     /// Private property "zoom-large" used internally.
+    /// property `zoom-large`.
+    /// property `zoom-large`.
+    /// property `zoom-large`.
+    /// property `zoom-large`.
+    /// property `zoom-large`.
+    /// property `zoom-large`.
     /// property `zoom-large`.
     private property <float>  zoom-large:  1.25;
     /// Private property "zoom-xlarge" used internally.
     /// property `zoom-xlarge`.
+    /// property `zoom-xlarge`.
+    /// property `zoom-xlarge`.
+    /// property `zoom-xlarge`.
+    /// property `zoom-xlarge`.
+    /// property `zoom-xlarge`.
+    /// property `zoom-xlarge`.
     private property <float>  zoom-xlarge:  1.5;
     /// Private property "menu-zoom-sm" used internally.
+    /// property `menu-zoom-sm`.
+    /// property `menu-zoom-sm`.
+    /// property `menu-zoom-sm`.
+    /// property `menu-zoom-sm`.
+    /// property `menu-zoom-sm`.
+    /// property `menu-zoom-sm`.
     /// property `menu-zoom-sm`.
     private property <string> menu-zoom-sm: "Zoom 75%";
     /// Private property "menu-zoom-md" used internally.
     /// property `menu-zoom-md`.
+    /// property `menu-zoom-md`.
+    /// property `menu-zoom-md`.
+    /// property `menu-zoom-md`.
+    /// property `menu-zoom-md`.
+    /// property `menu-zoom-md`.
+    /// property `menu-zoom-md`.
     private property <string> menu-zoom-md: "Zoom 100%";
     /// Private property "menu-zoom-lg" used internally.
+    /// property `menu-zoom-lg`.
+    /// property `menu-zoom-lg`.
+    /// property `menu-zoom-lg`.
+    /// property `menu-zoom-lg`.
+    /// property `menu-zoom-lg`.
+    /// property `menu-zoom-lg`.
     /// property `menu-zoom-lg`.
     private property <string> menu-zoom-lg: "Zoom 125%";
     /// Private property "menu-zoom-xl" used internally.
     /// property `menu-zoom-xl`.
+    /// property `menu-zoom-xl`.
+    /// property `menu-zoom-xl`.
+    /// property `menu-zoom-xl`.
+    /// property `menu-zoom-xl`.
+    /// property `menu-zoom-xl`.
+    /// property `menu-zoom-xl`.
     private property <string> menu-zoom-xl: "Zoom 150%";
     /// Private property "v-stretch" used internally.
+    /// property `v-stretch`.
+    /// property `v-stretch`.
+    /// property `v-stretch`.
+    /// property `v-stretch`.
+    /// property `v-stretch`.
+    /// property `v-stretch`.
     /// property `v-stretch`.
     private property <int>    v-stretch: Sizes.one;
     /// Private property "h-sidebar" used internally.
     /// property `h-sidebar`.
+    /// property `h-sidebar`.
+    /// property `h-sidebar`.
+    /// property `h-sidebar`.
+    /// property `h-sidebar`.
+    /// property `h-sidebar`.
+    /// property `h-sidebar`.
     private property <int>    h-sidebar: Sizes.zero;
     /// Private property "h-stretch" used internally.
+    /// property `h-stretch`.
+    /// property `h-stretch`.
+    /// property `h-stretch`.
+    /// property `h-stretch`.
+    /// property `h-stretch`.
+    /// property `h-stretch`.
     /// property `h-stretch`.
     private property <int>    h-stretch: Sizes.one;
 
@@ -73,53 +175,155 @@ export component FrameworkViewer inherits Window {
 
     /// Callback fired for r eq ue st b g s ty le.
     /// callback `request-bg-style`.
+    /// callback `request-bg-style`.
+    /// callback `request-bg-style`.
+    /// callback `request-bg-style`.
+    /// callback `request-bg-style`.
+    /// callback `request-bg-style`.
+    /// callback `request-bg-style`.
     callback request-bg-style(string);
     /// Callback fired for n ew f il e.
+    /// callback `new-file`.
+    /// callback `new-file`.
+    /// callback `new-file`.
+    /// callback `new-file`.
+    /// callback `new-file`.
+    /// callback `new-file`.
     /// callback `new-file`.
     callback new-file();
     /// Callback fired for n ew w in do w.
     /// callback `new-window`.
+    /// callback `new-window`.
+    /// callback `new-window`.
+    /// callback `new-window`.
+    /// callback `new-window`.
+    /// callback `new-window`.
+    /// callback `new-window`.
     callback new-window();
     /// Callback fired for o pe n f il e.
+    /// callback `open-file`.
+    /// callback `open-file`.
+    /// callback `open-file`.
+    /// callback `open-file`.
+    /// callback `open-file`.
+    /// callback `open-file`.
     /// callback `open-file`.
     callback open-file();
     /// Callback fired for s av e.
     /// callback `save`.
+    /// callback `save`.
+    /// callback `save`.
+    /// callback `save`.
+    /// callback `save`.
+    /// callback `save`.
+    /// callback `save`.
     callback save();
     /// Callback fired for s av e a s.
+    /// callback `save-as`.
+    /// callback `save-as`.
+    /// callback `save-as`.
+    /// callback `save-as`.
+    /// callback `save-as`.
+    /// callback `save-as`.
     /// callback `save-as`.
     callback save-as();
     /// Callback fired for q ui t.
     /// callback `quit`.
+    /// callback `quit`.
+    /// callback `quit`.
+    /// callback `quit`.
+    /// callback `quit`.
+    /// callback `quit`.
+    /// callback `quit`.
     callback quit();
     /// Callback fired for u nd o.
+    /// callback `undo`.
+    /// callback `undo`.
+    /// callback `undo`.
+    /// callback `undo`.
+    /// callback `undo`.
+    /// callback `undo`.
     /// callback `undo`.
     callback undo();
     /// Callback fired for r ed o.
     /// callback `redo`.
+    /// callback `redo`.
+    /// callback `redo`.
+    /// callback `redo`.
+    /// callback `redo`.
+    /// callback `redo`.
+    /// callback `redo`.
     callback redo();
     /// Callback fired for c ut.
+    /// callback `cut`.
+    /// callback `cut`.
+    /// callback `cut`.
+    /// callback `cut`.
+    /// callback `cut`.
+    /// callback `cut`.
     /// callback `cut`.
     callback cut();
     /// Callback fired for c op y.
     /// callback `copy`.
+    /// callback `copy`.
+    /// callback `copy`.
+    /// callback `copy`.
+    /// callback `copy`.
+    /// callback `copy`.
+    /// callback `copy`.
     callback copy();
     /// Callback fired for p as te.
+    /// callback `paste`.
+    /// callback `paste`.
+    /// callback `paste`.
+    /// callback `paste`.
+    /// callback `paste`.
+    /// callback `paste`.
     /// callback `paste`.
     callback paste();
     /// Callback fired for f in d.
     /// callback `find`.
+    /// callback `find`.
+    /// callback `find`.
+    /// callback `find`.
+    /// callback `find`.
+    /// callback `find`.
+    /// callback `find`.
     callback find();
     /// Callback fired for s el ec t a ll.
+    /// callback `select-all`.
+    /// callback `select-all`.
+    /// callback `select-all`.
+    /// callback `select-all`.
+    /// callback `select-all`.
+    /// callback `select-all`.
     /// callback `select-all`.
     callback select-all();
     /// Callback fired for o pe n d oc s.
     /// callback `open-docs`.
+    /// callback `open-docs`.
+    /// callback `open-docs`.
+    /// callback `open-docs`.
+    /// callback `open-docs`.
+    /// callback `open-docs`.
+    /// callback `open-docs`.
     callback open-docs();
     /// Callback fired for o pe n s ho rt cu ts.
     /// callback `open-shortcuts`.
+    /// callback `open-shortcuts`.
+    /// callback `open-shortcuts`.
+    /// callback `open-shortcuts`.
+    /// callback `open-shortcuts`.
+    /// callback `open-shortcuts`.
+    /// callback `open-shortcuts`.
     callback open-shortcuts();
     /// Callback fired for a bo ut.
+    /// callback `about`.
+    /// callback `about`.
+    /// callback `about`.
+    /// callback `about`.
+    /// callback `about`.
+    /// callback `about`.
     /// callback `about`.
     callback about();
 

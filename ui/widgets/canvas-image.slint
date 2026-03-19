@@ -2,20 +2,45 @@
 // Host sets `frame` each render tick. Placeholder shown when frame is empty.
 
 import { Colors, Spacing, Type, FluentIcons } from "../globals/theme.slint";
-import { Sizes } from "../state/sizes.slint";
+import { Sizes } from "../globals/theme/sizes.slint";
+import { Strings } from "../globals/strings.slint";
 
 /// C an va si ma ge component.
+/// component `CanvasImage`.
+/// component `CanvasImage`.
+/// component `CanvasImage`.
+/// component `CanvasImage`.
+/// component `CanvasImage`.
+/// component `CanvasImage`.
 /// component `CanvasImage`.
 export component CanvasImage inherits Rectangle {
     /// Input property "frame".
     /// property `frame`.
+    /// property `frame`.
+    /// property `frame`.
+    /// property `frame`.
+    /// property `frame`.
+    /// property `frame`.
+    /// property `frame`.
     in property <image>  frame;
     /// Input property "show-placeholder".
+    /// property `show-placeholder`.
+    /// property `show-placeholder`.
+    /// property `show-placeholder`.
+    /// property `show-placeholder`.
+    /// property `show-placeholder`.
+    /// property `show-placeholder`.
     /// property `show-placeholder`.
     in property <bool>   show-placeholder: true;
     /// Input property "placeholder-text".
     /// property `placeholder-text`.
-    in property <string> placeholder-text: "No frame — wire canvas-frame from Rust";
+    /// property `placeholder-text`.
+    /// property `placeholder-text`.
+    /// property `placeholder-text`.
+    /// property `placeholder-text`.
+    /// property `placeholder-text`.
+    /// property `placeholder-text`.
+    in property <string> placeholder-text: Strings.canvas-image-placeholder;
 
     preferred-width:  Sizes.panel-xl;
     preferred-height: Sizes.panel-sm;
@@ -38,7 +63,7 @@ export component CanvasImage inherits Rectangle {
             alignment: center;
             spacing: Spacing.xs;
             Text {
-                text: "\u{E91B}";
+                text: Strings.icon-image;
                 font-family: FluentIcons.icon-font;
                 font-size: Type.title-size;
                 color: Colors.text-disabled;

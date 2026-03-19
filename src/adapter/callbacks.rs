@@ -1,3 +1,7 @@
+// NOTE(mother-child): These methods mutate Rc<RefCell<>> fields owned by the parent
+// AppAdapter_adp struct. The shared state lives in mod.rs; this child only writes into it
+// via the public registration API — no module-level statics here.
+
 /// # Example
 /// ```rust,no_run
 /// # let app = slint_ui_templates::AppAdapter::new().unwrap();

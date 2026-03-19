@@ -1,8 +1,9 @@
 // page-display — Badge, Avatar, Card, ListItem, ProgressBar, Chip, Skeleton
 
 import { Spacing } from "../globals/theme.slint";
-import { Sizes } from "../state/sizes.slint";
-import { Variants } from "../state/variants.slint";
+import { Sizes } from "../globals/theme/sizes.slint";
+import { Strings } from "../globals/strings.slint";
+import { Variants } from "../globals/variants.slint";
 import { Badge }       from "../widgets/badge.slint";
 import { Avatar }      from "../widgets/avatar.slint";
 import { Card }        from "../widgets/card.slint";
@@ -18,118 +19,118 @@ export component PageDisplay inherits VerticalLayout {
     spacing: Spacing.md;
 
     // ── private variant strings ─────────────────────────────────────────
-    /// Private property "var-info" used internally.
+    /// Info variant discriminator.
     /// property `var-info`.
-    private property <string> var-info: "info";
-    /// Private property "var-sm" used internally.
+    private property <string> var-info: Variants.info;
+    /// Small size variant.
     /// property `var-sm`.
-    private property <string> var-sm: "sm";
-    /// Private property "var-md" used internally.
+    private property <string> var-sm: Variants.sm;
+    /// Medium size variant.
     /// property `var-md`.
-    private property <string> var-md: "md";
-    /// Private property "var-lg" used internally.
+    private property <string> var-md: Variants.md;
+    /// Large size variant.
     /// property `var-lg`.
-    private property <string> var-lg: "lg";
-    /// Private property "var-rect" used internally.
+    private property <string> var-lg: Variants.lg;
+    /// Rectangle shape variant.
     /// property `var-rect`.
     private property <string> var-rect: "rect";
 
     // ── private size tokens ─────────────────────────────────────────────
-    /// Private property "skel-circle-size" used internally.
+    /// Skeleton circle size.
     /// property `skel-circle-size`.
-    private property <length> skel-circle-size: 40px;
-    /// Private property "progress-two-thirds" used internally.
+    private property <length> skel-circle-size: Sizes.comp-40;
+    /// Progress two-thirds value.
     /// property `progress-two-thirds`.
     private property <float> progress-two-thirds: 0.66;
-    /// Private property "skel-full" used internally.
+    /// Skeleton full width ratio.
     /// property `skel-full`.
     private property <float> skel-full: Sizes.full;
-    /// Private property "skel-eighty" used internally.
+    /// Skeleton eighty percent ratio.
     /// property `skel-eighty`.
     private property <float> skel-eighty: Sizes.percent-80;
-    /// Private property "skel-sixty" used internally.
+    /// Skeleton sixty percent ratio.
     /// property `skel-sixty`.
     private property <float> skel-sixty: Sizes.percent-60;
 
     // ── demo labels ─────────────────────────────────────────────────────
-    /// Private property "section-badge" used internally.
+    /// Badge section title.
     /// property `section-badge`.
-    private property <string> section-badge: "Badge";
-    /// Private property "section-avatar" used internally.
+    private property <string> section-badge: Strings.demo-section-badge;
+    /// Avatar section title.
     /// property `section-avatar`.
-    private property <string> section-avatar: "Avatar";
-    /// Private property "section-card" used internally.
+    private property <string> section-avatar: Strings.demo-section-avatar;
+    /// Card section title.
     /// property `section-card`.
-    private property <string> section-card: "Card";
-    /// Private property "section-listitem" used internally.
+    private property <string> section-card: Strings.demo-section-card;
+    /// ListItem section title.
     /// property `section-listitem`.
-    private property <string> section-listitem: "ListItem";
-    /// Private property "section-progress" used internally.
+    private property <string> section-listitem: Strings.demo-section-listitem;
+    /// ProgressBar section title.
     /// property `section-progress`.
-    private property <string> section-progress: "ProgressBar";
-    /// Private property "section-chip" used internally.
+    private property <string> section-progress: Strings.demo-section-progress;
+    /// Chip section title.
     /// property `section-chip`.
-    private property <string> section-chip: "Chip";
-    /// Private property "section-skeleton" used internally.
+    private property <string> section-chip: Strings.demo-section-chip;
+    /// Skeleton section title.
     /// property `section-skeleton`.
-    private property <string> section-skeleton: "Skeleton";
-    /// Private property "badge-info" used internally.
+    private property <string> section-skeleton: Strings.demo-section-skeleton;
+    /// Badge info label.
     /// property `badge-info`.
-    private property <string> badge-info: "Info";
-    /// Private property "badge-success" used internally.
+    private property <string> badge-info: Strings.demo-badge-info;
+    /// Badge success label.
     /// property `badge-success`.
-    private property <string> badge-success: "Success";
-    /// Private property "badge-warning" used internally.
+    private property <string> badge-success: Strings.demo-badge-success;
+    /// Badge warning label.
     /// property `badge-warning`.
-    private property <string> badge-warning: "Warning";
-    /// Private property "badge-error" used internally.
+    private property <string> badge-warning: Strings.demo-badge-warning;
+    /// Badge error label.
     /// property `badge-error`.
-    private property <string> badge-error: "Error";
-    /// Private property "card-title-only" used internally.
+    private property <string> badge-error: Strings.demo-badge-error;
+    /// Card title-only label.
     /// property `card-title-only`.
-    private property <string> card-title-only: "Title only";
-    /// Private property "card-title" used internally.
+    private property <string> card-title-only: Strings.demo-card-title-only;
+    /// Card title label.
     /// property `card-title`.
-    private property <string> card-title: "Card Title";
-    /// Private property "card-subtitle" used internally.
+    private property <string> card-title: Strings.demo-card-title;
+    /// Card subtitle text.
     /// property `card-subtitle`.
-    private property <string> card-subtitle: "Supporting subtitle text";
-    /// Private property "li-normal" used internally.
+    private property <string> card-subtitle: Strings.demo-card-subtitle;
+    /// Normal list item label.
     /// property `li-normal`.
-    private property <string> li-normal: "Normal item";
-    /// Private property "li-selected" used internally.
+    private property <string> li-normal: Strings.demo-li-normal;
+    /// Selected list item label.
     /// property `li-selected`.
-    private property <string> li-selected: "Selected item";
-    /// Private property "li-subtitle-title" used internally.
+    private property <string> li-selected: Strings.demo-li-selected;
+    /// List item with subtitle title.
     /// property `li-subtitle-title`.
-    private property <string> li-subtitle-title: "With subtitle";
-    /// Private property "li-subtitle-text" used internally.
+    private property <string> li-subtitle-title: Strings.demo-li-subtitle-title;
+    /// List item subtitle text.
     /// property `li-subtitle-text`.
-    private property <string> li-subtitle-text: "Subtitle text here";
-    /// Private property "chip-default" used internally.
+    private property <string> li-subtitle-text: Strings.demo-li-subtitle-text;
+    /// Default chip label.
     /// property `chip-default`.
-    private property <string> chip-default: "Default";
-    /// Private property "chip-selected" used internally.
+    private property <string> chip-default: Strings.demo-chip-default;
+    /// Selected chip label.
     /// property `chip-selected`.
-    private property <string> chip-selected: "Selected";
-    /// Private property "chip-noclose" used internally.
+    private property <string> chip-selected: Strings.demo-chip-selected;
+    /// No-close chip label.
     /// property `chip-noclose`.
-    private property <string> chip-noclose: "No close";
-    /// Private property "chip-disabled" used internally.
+    private property <string> chip-noclose: Strings.demo-chip-noclose;
+    /// Disabled chip label.
     /// property `chip-disabled`.
-    private property <string> chip-disabled: "Disabled";
-    /// Private property "chip-version" used internally.
+    private property <string> chip-disabled: Strings.demo-chip-disabled;
+    /// Version chip label.
     /// property `chip-version`.
-    private property <string> chip-version: "v1.0.0";
-    /// Private property "avatar-sm-initials" used internally.
+    private property <string> chip-version: Strings.demo-chip-version;
+    /// Small avatar initials.
     /// property `avatar-sm-initials`.
-    private property <string> avatar-sm-initials: "SM";
-    /// Private property "avatar-md-initials" used internally.
+    private property <string> avatar-sm-initials: Strings.demo-avatar-sm;
+    /// Medium avatar initials.
     /// property `avatar-md-initials`.
-    private property <string> avatar-md-initials: "MD";
-    /// Private property "avatar-lg-initials" used internally.
+    private property <string> avatar-md-initials: Strings.demo-avatar-md;
+    /// Large avatar initials.
     /// property `avatar-lg-initials`.
-    private property <string> avatar-lg-initials: "LG";
+    private property <string> avatar-lg-initials: Strings.demo-avatar-lg;
 
     ViewerSection {
         title: root.section-badge;

@@ -1,13 +1,31 @@
-import { Colors, Spacing, Type } from "../globals/theme.slint";
-import { Variants } from "../state/variants.slint";
+import { Colors, Spacing, Type, Sizes } from "../globals/theme.slint";
+import { Variants } from "../globals/variants.slint";
 
 /// T oa st component.
+/// component `Toast`.
+/// component `Toast`.
+/// component `Toast`.
+/// component `Toast`.
+/// component `Toast`.
+/// component `Toast`.
 /// component `Toast`.
 export component Toast inherits Rectangle {
     /// Input property "message".
     /// property `message`.
+    /// property `message`.
+    /// property `message`.
+    /// property `message`.
+    /// property `message`.
+    /// property `message`.
+    /// property `message`.
     in property <string> message: "";
     /// Input property "variant".
+    /// property `variant`.
+    /// property `variant`.
+    /// property `variant`.
+    /// property `variant`.
+    /// property `variant`.
+    /// property `variant`.
     /// property `variant`.
     in property <string> variant: "info";   // info | success | warning | error
     // visible is the built-in — caller sets visible: true/false directly
@@ -27,6 +45,7 @@ export component Toast inherits Rectangle {
         alignment: center;
         padding-left: Spacing.md;
         padding-right: Spacing.md;
+        horizontal-stretch: Sizes.no-fill;
 
         Text {
             text: root.message;

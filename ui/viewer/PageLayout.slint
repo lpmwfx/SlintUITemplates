@@ -1,6 +1,6 @@
 import { Colors, Spacing, Type } from "../globals/theme.slint";
-import { Sizes }                   from "../state/sizes.slint";
-import { Variants }                from "../state/variants.slint";
+import { Sizes } from "../globals/theme/sizes.slint";
+import { Variants }                from "../globals/variants.slint";
 import { PanelContainer, PanelItem } from "../modules/PanelContainer.slint";
 import { PanelSlot }               from "../modules/PanelSlot.slint";
 import { Divider }                 from "../widgets/divider.slint";
@@ -14,56 +14,158 @@ import { ScrollDemoRow }    from "ScrollDemoRow.slint";
 
 /// Viewer page for layout primitives, drag handles, slots, and scrolling containers.
 /// component `PageLayout`.
+/// component `PageLayout`.
+/// component `PageLayout`.
+/// component `PageLayout`.
+/// component `PageLayout`.
+/// component `PageLayout`.
+/// component `PageLayout`.
 export component PageLayout inherits VerticalLayout {
     spacing: Spacing.md;
     /// Private property "panel-c-y" used internally.
+    /// property `panel-c-y`.
+    /// property `panel-c-y`.
+    /// property `panel-c-y`.
+    /// property `panel-c-y`.
+    /// property `panel-c-y`.
+    /// property `panel-c-y`.
     /// property `panel-c-y`.
     private property <float>  panel-c-y: Sizes.ratio-55;
 
     /// Private property "title-draghandle" used internally.
     /// property `title-draghandle`.
+    /// property `title-draghandle`.
+    /// property `title-draghandle`.
+    /// property `title-draghandle`.
+    /// property `title-draghandle`.
+    /// property `title-draghandle`.
+    /// property `title-draghandle`.
     private property <string> title-draghandle: "DragHandle";
     /// Private property "title-bidir" used internally.
+    /// property `title-bidir`.
+    /// property `title-bidir`.
+    /// property `title-bidir`.
+    /// property `title-bidir`.
+    /// property `title-bidir`.
+    /// property `title-bidir`.
     /// property `title-bidir`.
     private property <string> title-bidir: "Bi-directional 3-panel (drag either handle \u{2014} both neighbors update)";
     /// Private property "title-panel-container" used internally.
     /// property `title-panel-container`.
+    /// property `title-panel-container`.
+    /// property `title-panel-container`.
+    /// property `title-panel-container`.
+    /// property `title-panel-container`.
+    /// property `title-panel-container`.
+    /// property `title-panel-container`.
     private property <string> title-panel-container: "PanelContainer (3 panels)";
     /// Private property "title-panel-slot" used internally.
+    /// property `title-panel-slot`.
+    /// property `title-panel-slot`.
+    /// property `title-panel-slot`.
+    /// property `title-panel-slot`.
+    /// property `title-panel-slot`.
+    /// property `title-panel-slot`.
     /// property `title-panel-slot`.
     private property <string> title-panel-slot: "PanelSlot (standalone)";
     /// Private property "title-viewslot" used internally.
     /// property `title-viewslot`.
+    /// property `title-viewslot`.
+    /// property `title-viewslot`.
+    /// property `title-viewslot`.
+    /// property `title-viewslot`.
+    /// property `title-viewslot`.
+    /// property `title-viewslot`.
     private property <string> title-viewslot: "ViewSlot \u{2014} slot-id routing (click nav to switch view)";
     /// Private property "title-divider" used internally.
     /// property `title-divider`.
+    /// property `title-divider`.
+    /// property `title-divider`.
+    /// property `title-divider`.
+    /// property `title-divider`.
+    /// property `title-divider`.
+    /// property `title-divider`.
     private property <string> title-divider: "Divider";
     /// Private property "title-scrollview" used internally.
+    /// property `title-scrollview`.
+    /// property `title-scrollview`.
+    /// property `title-scrollview`.
+    /// property `title-scrollview`.
+    /// property `title-scrollview`.
+    /// property `title-scrollview`.
     /// property `title-scrollview`.
     private property <string> title-scrollview: "ScrollView";
 
     /// Private property "lbl-panel-a" used internally.
     /// property `lbl-panel-a`.
+    /// property `lbl-panel-a`.
+    /// property `lbl-panel-a`.
+    /// property `lbl-panel-a`.
+    /// property `lbl-panel-a`.
+    /// property `lbl-panel-a`.
+    /// property `lbl-panel-a`.
     private property <string> lbl-panel-a: "Panel A";
     /// Private property "lbl-panel-b" used internally.
+    /// property `lbl-panel-b`.
+    /// property `lbl-panel-b`.
+    /// property `lbl-panel-b`.
+    /// property `lbl-panel-b`.
+    /// property `lbl-panel-b`.
+    /// property `lbl-panel-b`.
     /// property `lbl-panel-b`.
     private property <string> lbl-panel-b: "Panel B";
     /// Private property "lbl-panel-c" used internally.
     /// property `lbl-panel-c`.
+    /// property `lbl-panel-c`.
+    /// property `lbl-panel-c`.
+    /// property `lbl-panel-c`.
+    /// property `lbl-panel-c`.
+    /// property `lbl-panel-c`.
+    /// property `lbl-panel-c`.
     private property <string> lbl-panel-c: "Panel C";
     /// Private property "lbl-standalone" used internally.
+    /// property `lbl-standalone`.
+    /// property `lbl-standalone`.
+    /// property `lbl-standalone`.
+    /// property `lbl-standalone`.
+    /// property `lbl-standalone`.
+    /// property `lbl-standalone`.
     /// property `lbl-standalone`.
     private property <string> lbl-standalone: "Standalone slot";
     /// Private property "lbl-section" used internally.
     /// property `lbl-section`.
+    /// property `lbl-section`.
+    /// property `lbl-section`.
+    /// property `lbl-section`.
+    /// property `lbl-section`.
+    /// property `lbl-section`.
+    /// property `lbl-section`.
     private property <string> lbl-section: "Section";
     /// Private property "lbl-left" used internally.
+    /// property `lbl-left`.
+    /// property `lbl-left`.
+    /// property `lbl-left`.
+    /// property `lbl-left`.
+    /// property `lbl-left`.
+    /// property `lbl-left`.
     /// property `lbl-left`.
     private property <string> lbl-left: "Left";
     /// Private property "lbl-right" used internally.
     /// property `lbl-right`.
+    /// property `lbl-right`.
+    /// property `lbl-right`.
+    /// property `lbl-right`.
+    /// property `lbl-right`.
+    /// property `lbl-right`.
+    /// property `lbl-right`.
     private property <string> lbl-right: "Right";
     /// Private property "lbl-row-prefix" used internally.
+    /// property `lbl-row-prefix`.
+    /// property `lbl-row-prefix`.
+    /// property `lbl-row-prefix`.
+    /// property `lbl-row-prefix`.
+    /// property `lbl-row-prefix`.
+    /// property `lbl-row-prefix`.
     /// property `lbl-row-prefix`.
     private property <string> lbl-row-prefix: "Row ";
 

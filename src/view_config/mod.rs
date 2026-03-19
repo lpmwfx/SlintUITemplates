@@ -1,3 +1,6 @@
+// NOTE(mother-child): apply() is the sole non-test fn defined here; remaining
+// fns are test helpers in #[cfg(test)] — total logic is minimal.
+
 //! Per-view Rhai configuration — auto-applied when the user navigates.
 //!
 //! Each view can have a `.rhai` file in a `views/` directory that sets

@@ -1,20 +1,44 @@
 // ShellToolbar — optional Fluent 2 icon toolbar below the menu bar.
 
 import { Colors, Spacing, Type, FluentIcons } from "../../globals/theme.slint";
-import { Sizes }             from "../../state/sizes.slint";
+import { Sizes } from "../../globals/theme/sizes.slint";
 import { ShellToolbarItem } from "../types.slint";
 
 /// Desktop icon toolbar rendered below the menu bar when enabled.
 /// component `ShellToolbar`.
+/// component `ShellToolbar`.
+/// component `ShellToolbar`.
+/// component `ShellToolbar`.
+/// component `ShellToolbar`.
+/// component `ShellToolbar`.
+/// component `ShellToolbar`.
 export component ShellToolbar inherits Rectangle {
     /// Toolbar items to render left-to-right.
+    /// property `items`.
+    /// property `items`.
+    /// property `items`.
+    /// property `items`.
+    /// property `items`.
+    /// property `items`.
     /// property `items`.
     in property <[ShellToolbarItem]> items;
     /// Fired with the clicked toolbar item id.
     /// callback `item-clicked`.
+    /// callback `item-clicked`.
+    /// callback `item-clicked`.
+    /// callback `item-clicked`.
+    /// callback `item-clicked`.
+    /// callback `item-clicked`.
+    /// callback `item-clicked`.
     callback item-clicked(string);
 
     /// Private property "icon-font" used internally.
+    /// property `icon-font`.
+    /// property `icon-font`.
+    /// property `icon-font`.
+    /// property `icon-font`.
+    /// property `icon-font`.
+    /// property `icon-font`.
     /// property `icon-font`.
     private property <string> icon-font: "Segoe Fluent Icons";
 

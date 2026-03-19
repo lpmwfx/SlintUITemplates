@@ -29,7 +29,7 @@ impl super::AppAdapter_adp {
     }
 
     /// Check if dark mode is currently active (reads from cache).
-    pub fn get_dark_mode(&self) -> bool {
+    pub fn is_dark_mode(&self) -> bool {
         *self.dark_mode.borrow()
     }
 

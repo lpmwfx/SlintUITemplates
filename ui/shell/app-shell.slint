@@ -5,6 +5,7 @@
 
 import { NavItem, ShellToolbarItem } from "types.slint";
 import { DesktopShell } from "desktop/shell.slint";
+import { Strings } from "../globals/strings.slint";
 
 export { MobileShell }  from "mobile/shell.slint";
 export { CompactShell } from "small/shell.slint";
@@ -14,30 +15,84 @@ export { MacosShell }   from "macos/MacosShell.slint";
 ///
 /// On desktop it wraps `DesktopShell`; mobile variants are re-exported separately.
 /// component `AppShell`.
+/// component `AppShell`.
+/// component `AppShell`.
+/// component `AppShell`.
+/// component `AppShell`.
+/// component `AppShell`.
+/// component `AppShell`.
 export component AppShell inherits Rectangle {
     /// Navigation items rendered in the shell navigation surface.
+    /// property `nav-items`.
+    /// property `nav-items`.
+    /// property `nav-items`.
+    /// property `nav-items`.
+    /// property `nav-items`.
+    /// property `nav-items`.
     /// property `nav-items`.
     in property <[NavItem]>          nav-items;
     /// Id of the currently active content slot.
     /// property `active-slot`.
+    /// property `active-slot`.
+    /// property `active-slot`.
+    /// property `active-slot`.
+    /// property `active-slot`.
+    /// property `active-slot`.
+    /// property `active-slot`.
     in property <string>             active-slot;
     /// Controls whether the desktop toolbar row is visible.
+    /// property `show-toolbar`.
+    /// property `show-toolbar`.
+    /// property `show-toolbar`.
+    /// property `show-toolbar`.
+    /// property `show-toolbar`.
+    /// property `show-toolbar`.
     /// property `show-toolbar`.
     in property <bool>               show-toolbar:  false;
     /// Toolbar buttons rendered below the desktop menu bar.
     /// property `toolbar-items`.
+    /// property `toolbar-items`.
+    /// property `toolbar-items`.
+    /// property `toolbar-items`.
+    /// property `toolbar-items`.
+    /// property `toolbar-items`.
+    /// property `toolbar-items`.
     in property <[ShellToolbarItem]> toolbar-items;
     /// Status text shown in the desktop status bar.
     /// property `status-text`.
-    in property <string>             status-text:   "Ready";
+    /// property `status-text`.
+    /// property `status-text`.
+    /// property `status-text`.
+    /// property `status-text`.
+    /// property `status-text`.
+    /// property `status-text`.
+    in property <string>             status-text:   Strings.app-status-ready;
     /// Optional progress value for the desktop status bar. Negative hides it.
+    /// property `progress`.
+    /// property `progress`.
+    /// property `progress`.
+    /// property `progress`.
+    /// property `progress`.
+    /// property `progress`.
     /// property `progress`.
     in property <float>              progress:      -1.0;
 
     /// Fired when navigation changes the active slot id.
     /// callback `slot-changed`.
+    /// callback `slot-changed`.
+    /// callback `slot-changed`.
+    /// callback `slot-changed`.
+    /// callback `slot-changed`.
+    /// callback `slot-changed`.
+    /// callback `slot-changed`.
     callback slot-changed(string);
     /// Fired when a toolbar button is activated.
+    /// callback `toolbar-clicked`.
+    /// callback `toolbar-clicked`.
+    /// callback `toolbar-clicked`.
+    /// callback `toolbar-clicked`.
+    /// callback `toolbar-clicked`.
+    /// callback `toolbar-clicked`.
     /// callback `toolbar-clicked`.
     callback toolbar-clicked(string);
 

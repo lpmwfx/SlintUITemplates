@@ -1,19 +1,51 @@
 import { Colors, Spacing, Type, FluentIcons } from "../globals/theme.slint";
+import { Sizes } from "../globals/theme/sizes.slint";
+import { Strings } from "../globals/strings.slint";
 
 /// D ra we rh ea de r component.
+/// component `DrawerHeader`.
+/// component `DrawerHeader`.
+/// component `DrawerHeader`.
+/// component `DrawerHeader`.
+/// component `DrawerHeader`.
+/// component `DrawerHeader`.
 /// component `DrawerHeader`.
 export component DrawerHeader inherits Rectangle {
     /// Input property "title".
     /// property `title`.
+    /// property `title`.
+    /// property `title`.
+    /// property `title`.
+    /// property `title`.
+    /// property `title`.
+    /// property `title`.
     in property <string> title: "";
     /// Callback fired for c lo se r eq ue st ed.
+    /// callback `close-requested`.
+    /// callback `close-requested`.
+    /// callback `close-requested`.
+    /// callback `close-requested`.
+    /// callback `close-requested`.
+    /// callback `close-requested`.
     /// callback `close-requested`.
     callback close-requested();
 
     /// Private property "border-px" used internally.
     /// property `border-px`.
-    private property <length> border-px:  1px;
+    /// property `border-px`.
+    /// property `border-px`.
+    /// property `border-px`.
+    /// property `border-px`.
+    /// property `border-px`.
+    /// property `border-px`.
+    private property <length> border-px:  Sizes.border-w;
     /// Private property "h-stretch" used internally.
+    /// property `h-stretch`.
+    /// property `h-stretch`.
+    /// property `h-stretch`.
+    /// property `h-stretch`.
+    /// property `h-stretch`.
+    /// property `h-stretch`.
     /// property `h-stretch`.
     private property <int>    h-stretch:  1;
 
@@ -47,7 +79,7 @@ export component DrawerHeader inherits Rectangle {
             border-radius: Spacing.xs;
             background: cls-ta.has-hover ? Colors.bg-elevated : transparent;
 
-            Text { text: "\u{E711}";
+            Text { text: Strings.icon-close;
                 font-family: FluentIcons.icon-font;
                 font-size: Type.body-size;
                 color: Colors.text-secondary;

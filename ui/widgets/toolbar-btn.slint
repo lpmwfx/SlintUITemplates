@@ -2,6 +2,12 @@ import { Colors, Spacing, Type, FluentIcons } from "../globals/theme.slint";
 
 /// T oo lb ar it em struct.
 /// struct `ToolbarItem`.
+/// struct `ToolbarItem`.
+/// struct `ToolbarItem`.
+/// struct `ToolbarItem`.
+/// struct `ToolbarItem`.
+/// struct `ToolbarItem`.
+/// struct `ToolbarItem`.
 export struct ToolbarItem {
     id:      string,
     icon:    string,
@@ -11,11 +17,29 @@ export struct ToolbarItem {
 
 /// T oo lb ar bt n component.
 /// component `ToolbarBtn`.
+/// component `ToolbarBtn`.
+/// component `ToolbarBtn`.
+/// component `ToolbarBtn`.
+/// component `ToolbarBtn`.
+/// component `ToolbarBtn`.
+/// component `ToolbarBtn`.
 export component ToolbarBtn inherits Rectangle {
     /// Input property "item".
     /// property `item`.
+    /// property `item`.
+    /// property `item`.
+    /// property `item`.
+    /// property `item`.
+    /// property `item`.
+    /// property `item`.
     in property <ToolbarItem> item;
     /// Callback fired for c li ck ed.
+    /// callback `clicked`.
+    /// callback `clicked`.
+    /// callback `clicked`.
+    /// callback `clicked`.
+    /// callback `clicked`.
+    /// callback `clicked`.
     /// callback `clicked`.
     callback clicked(string);
 
@@ -28,7 +52,7 @@ export component ToolbarBtn inherits Rectangle {
     Text { text: item.icon;
         font-family: FluentIcons.icon-font;
         font-size: Type.subtitle-size;
-        color: item.enabled ? Colors.text-primary : Colors.text-disabled;
+        color: ta.has-hover ? Colors.accent : (item.enabled ? Colors.text-primary : Colors.text-disabled);
         horizontal-alignment: center;
         vertical-alignment: center;
     }

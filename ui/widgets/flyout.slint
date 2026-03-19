@@ -9,36 +9,91 @@
 //   }
 
 import { Spacing } from "../globals/theme.slint";
+import { Sizes } from "../globals/theme/sizes.slint";
 import { FlyoutInner } from "flyout-inner.slint";
 
 /// F ly ou t component.
 /// component `Flyout`.
+/// component `Flyout`.
+/// component `Flyout`.
+/// component `Flyout`.
+/// component `Flyout`.
+/// component `Flyout`.
+/// component `Flyout`.
 export component Flyout inherits Rectangle {
     /// Input property "window-height".
+    /// property `window-height`.
+    /// property `window-height`.
+    /// property `window-height`.
+    /// property `window-height`.
+    /// property `window-height`.
+    /// property `window-height`.
     /// property `window-height`.
     in property <length> window-height;
     /// Input property "popup-width".
     /// property `popup-width`.
-    in property <length> popup-width:  220px;
+    /// property `popup-width`.
+    /// property `popup-width`.
+    /// property `popup-width`.
+    /// property `popup-width`.
+    /// property `popup-width`.
+    /// property `popup-width`.
+    in property <length> popup-width:  Sizes.panel-md;
     /// Input property "popup-height".
     /// property `popup-height`.
-    in property <length> popup-height: 160px;
+    /// property `popup-height`.
+    /// property `popup-height`.
+    /// property `popup-height`.
+    /// property `popup-height`.
+    /// property `popup-height`.
+    /// property `popup-height`.
+    in property <length> popup-height: Sizes.comp-160;
     /// Input property "title".
+    /// property `title`.
+    /// property `title`.
+    /// property `title`.
+    /// property `title`.
+    /// property `title`.
+    /// property `title`.
     /// property `title`.
     in property <string> title: "";
     /// Input property "body".
     /// property `body`.
+    /// property `body`.
+    /// property `body`.
+    /// property `body`.
+    /// property `body`.
+    /// property `body`.
+    /// property `body`.
     in property <string> body: "";
     /// Callback fired for c lo se d.
+    /// callback `closed`.
+    /// callback `closed`.
+    /// callback `closed`.
+    /// callback `closed`.
+    /// callback `closed`.
+    /// callback `closed`.
     /// callback `closed`.
     callback closed();
 
     /// Private property "pop-x" used internally.
     /// property `pop-x`.
-    private property <length> pop-x: 0px;
+    /// property `pop-x`.
+    /// property `pop-x`.
+    /// property `pop-x`.
+    /// property `pop-x`.
+    /// property `pop-x`.
+    /// property `pop-x`.
+    private property <length> pop-x: Sizes.no-size;
     /// Private property "pop-y" used internally.
     /// property `pop-y`.
-    private property <length> pop-y: 0px;
+    /// property `pop-y`.
+    /// property `pop-y`.
+    /// property `pop-y`.
+    /// property `pop-y`.
+    /// property `pop-y`.
+    /// property `pop-y`.
+    private property <length> pop-y: Sizes.no-size;
 
     width: root.pop-x - root.pop-x;
     height: root.pop-y - root.pop-y;

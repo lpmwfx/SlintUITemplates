@@ -1,5 +1,5 @@
 import { Spacing } from "../globals/theme.slint";
-import { Sizes } from "../state/sizes.slint";
+import { Sizes } from "../globals/theme/sizes.slint";
 import { MultiSelectOption }   from "multi-select-types.slint";
 import { MultiSelectChip }     from "MultiSelectChip.slint";
 import { MultiSelectDropdown } from "MultiSelectDropdown.slint";
@@ -8,24 +8,66 @@ export { MultiSelectOption }
 
 /// M ul ti se le ct component.
 /// component `MultiSelect`.
+/// component `MultiSelect`.
+/// component `MultiSelect`.
+/// component `MultiSelect`.
+/// component `MultiSelect`.
+/// component `MultiSelect`.
+/// component `MultiSelect`.
 export component MultiSelect inherits Rectangle {
     /// Input property "options".
+    /// property `options`.
+    /// property `options`.
+    /// property `options`.
+    /// property `options`.
+    /// property `options`.
+    /// property `options`.
     /// property `options`.
     in property <[MultiSelectOption]> options: [];
     /// Input property "selected".
     /// property `selected`.
+    /// property `selected`.
+    /// property `selected`.
+    /// property `selected`.
+    /// property `selected`.
+    /// property `selected`.
+    /// property `selected`.
     in property <[string]>        selected: [];
     /// Input property "placeholder".
+    /// property `placeholder`.
+    /// property `placeholder`.
+    /// property `placeholder`.
+    /// property `placeholder`.
+    /// property `placeholder`.
+    /// property `placeholder`.
     /// property `placeholder`.
     in property <string>              placeholder: "Select...";
     /// Input property "enabled".
     /// property `enabled`.
+    /// property `enabled`.
+    /// property `enabled`.
+    /// property `enabled`.
+    /// property `enabled`.
+    /// property `enabled`.
+    /// property `enabled`.
     in property <bool>                enabled: true;
     /// Callback fired for c ha ng ed.
+    /// callback `changed`.
+    /// callback `changed`.
+    /// callback `changed`.
+    /// callback `changed`.
+    /// callback `changed`.
+    /// callback `changed`.
     /// callback `changed`.
     callback changed([string]);
 
     /// Private property "open" used internally.
+    /// property `open`.
+    /// property `open`.
+    /// property `open`.
+    /// property `open`.
+    /// property `open`.
+    /// property `open`.
     /// property `open`.
     private property <bool> open: false;
 

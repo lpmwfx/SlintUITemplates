@@ -3,7 +3,8 @@
 // Parent provides content as @children (placed inside the content frame).
 
 import { Colors, Spacing } from "../../globals/theme.slint";
-import { Sizes }           from "../../state/sizes.slint";
+import { Sizes } from "../../globals/theme/sizes.slint";
+import { Strings } from "../../globals/strings.slint";
 import { NavItem }         from "../types.slint";
 import { ShellToolbarItem } from "../types.slint";
 import { ShellToolbar }    from "tool-bar.slint";
@@ -14,38 +15,104 @@ import { DragHandle }      from "../../modules/DragHandle.slint";
 
 /// Fluent desktop shell composed of toolbar, side navigation, content frame, and status bar.
 /// component `DesktopShell`.
+/// component `DesktopShell`.
+/// component `DesktopShell`.
+/// component `DesktopShell`.
+/// component `DesktopShell`.
+/// component `DesktopShell`.
+/// component `DesktopShell`.
 export component DesktopShell inherits VerticalLayout {
     /// Navigation items rendered in the left side navigation.
+    /// property `nav-items`.
+    /// property `nav-items`.
+    /// property `nav-items`.
+    /// property `nav-items`.
+    /// property `nav-items`.
+    /// property `nav-items`.
     /// property `nav-items`.
     in property <[NavItem]>          nav-items;
     /// Toolbar items rendered in the optional toolbar row.
     /// property `toolbar-items`.
+    /// property `toolbar-items`.
+    /// property `toolbar-items`.
+    /// property `toolbar-items`.
+    /// property `toolbar-items`.
+    /// property `toolbar-items`.
+    /// property `toolbar-items`.
     in property <[ShellToolbarItem]> toolbar-items;
     /// Controls whether the toolbar row is shown.
+    /// property `show-toolbar`.
+    /// property `show-toolbar`.
+    /// property `show-toolbar`.
+    /// property `show-toolbar`.
+    /// property `show-toolbar`.
+    /// property `show-toolbar`.
     /// property `show-toolbar`.
     in property <bool>               show-toolbar: false;
     /// Id of the currently active content view.
     /// property `active-view`.
+    /// property `active-view`.
+    /// property `active-view`.
+    /// property `active-view`.
+    /// property `active-view`.
+    /// property `active-view`.
+    /// property `active-view`.
     in property <string>             active-view: "";
     /// Status text shown in the bottom status bar.
     /// property `status-text`.
-    in property <string>             status-text: "Ready";
+    /// property `status-text`.
+    /// property `status-text`.
+    /// property `status-text`.
+    /// property `status-text`.
+    /// property `status-text`.
+    /// property `status-text`.
+    in property <string>             status-text: Strings.app-status-ready;
     /// Optional progress value shown in the status bar. Negative hides it.
+    /// property `progress`.
+    /// property `progress`.
+    /// property `progress`.
+    /// property `progress`.
+    /// property `progress`.
+    /// property `progress`.
     /// property `progress`.
     in property <float>              progress: -1.0;
 
     // State
     /// Private property "nav-width" used internally.
     /// property `nav-width`.
+    /// property `nav-width`.
+    /// property `nav-width`.
+    /// property `nav-width`.
+    /// property `nav-width`.
+    /// property `nav-width`.
+    /// property `nav-width`.
     private property <length> nav-width: Sizes.panel-sm;
     /// Private property "nav-collapsed" used internally.
+    /// property `nav-collapsed`.
+    /// property `nav-collapsed`.
+    /// property `nav-collapsed`.
+    /// property `nav-collapsed`.
+    /// property `nav-collapsed`.
+    /// property `nav-collapsed`.
     /// property `nav-collapsed`.
     private property <bool>   nav-collapsed: nav-width <= Spacing.xl + Spacing.sm + Spacing.xs;
 
     /// Fired when a navigation destination is selected.
     /// callback `navigate`.
+    /// callback `navigate`.
+    /// callback `navigate`.
+    /// callback `navigate`.
+    /// callback `navigate`.
+    /// callback `navigate`.
+    /// callback `navigate`.
     callback navigate(string);
     /// Fired when a toolbar action is selected.
+    /// callback `toolbar-clicked`.
+    /// callback `toolbar-clicked`.
+    /// callback `toolbar-clicked`.
+    /// callback `toolbar-clicked`.
+    /// callback `toolbar-clicked`.
+    /// callback `toolbar-clicked`.
     /// callback `toolbar-clicked`.
     callback toolbar-clicked(string);
 

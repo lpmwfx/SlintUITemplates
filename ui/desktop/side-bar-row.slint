@@ -1,24 +1,61 @@
 import { Colors, Spacing, Type, Sizes } from "../globals/theme.slint";
-import { NavItem } from "types.slint";
+import { Strings } from "../globals/strings.slint";
+import { NavItem } from "../state/desktop-types.slint";
 
 // ── SideBarRow — enkelt navigationsrække (header eller fil-item) ──────────────
 // Pure child: receives item data via in property, emits clicks via callbacks.
 /// S id eb ar ro w component.
 /// component `SideBarRow`.
+/// component `SideBarRow`.
+/// component `SideBarRow`.
+/// component `SideBarRow`.
+/// component `SideBarRow`.
+/// component `SideBarRow`.
+/// component `SideBarRow`.
 export component SideBarRow inherits Rectangle {
     /// Input property "item".
+    /// property `item`.
+    /// property `item`.
+    /// property `item`.
+    /// property `item`.
+    /// property `item`.
+    /// property `item`.
     /// property `item`.
     in property <NavItem> item;
     /// Input property "is-active".
     /// property `is-active`.
+    /// property `is-active`.
+    /// property `is-active`.
+    /// property `is-active`.
+    /// property `is-active`.
+    /// property `is-active`.
+    /// property `is-active`.
     in property <bool>    is-active;
     /// Input property "sidebar-collapsed".
+    /// property `sidebar-collapsed`.
+    /// property `sidebar-collapsed`.
+    /// property `sidebar-collapsed`.
+    /// property `sidebar-collapsed`.
+    /// property `sidebar-collapsed`.
+    /// property `sidebar-collapsed`.
     /// property `sidebar-collapsed`.
     in property <bool>    sidebar-collapsed;
     /// Callback fired for n av ig at e.
     /// callback `navigate`.
+    /// callback `navigate`.
+    /// callback `navigate`.
+    /// callback `navigate`.
+    /// callback `navigate`.
+    /// callback `navigate`.
+    /// callback `navigate`.
     callback navigate(string);
     /// Callback fired for t og gl e g ro up.
+    /// callback `toggle-group`.
+    /// callback `toggle-group`.
+    /// callback `toggle-group`.
+    /// callback `toggle-group`.
+    /// callback `toggle-group`.
+    /// callback `toggle-group`.
     /// callback `toggle-group`.
     callback toggle-group(string);
 
@@ -64,7 +101,7 @@ export component SideBarRow inherits Rectangle {
         }
 
         if !root.sidebar-collapsed && item.is-header: Text {
-            text:               "\u{E76C}";
+            text:               Strings.sidebar-header-icon;
             font-size:          Type.caption-size;
             color:              Colors.text-secondary;
             vertical-alignment: center;

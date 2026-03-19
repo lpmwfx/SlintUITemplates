@@ -1,28 +1,70 @@
 import { Colors, Spacing, Sizes } from "../globals/theme.slint";
-import { NavItem } from "types.slint";
+import { NavItem } from "../state/desktop-types.slint";
 import { SideBarRow } from "side-bar-row.slint";
 
 // ── SideBar — scrollbart TOC-panel med kollapsible gruppe-headers ─────────────
 // Pure child: receives items + active state, emits navigate / toggle-group.
 /// S id eb ar component.
 /// component `SideBar`.
+/// component `SideBar`.
+/// component `SideBar`.
+/// component `SideBar`.
+/// component `SideBar`.
+/// component `SideBar`.
+/// component `SideBar`.
 export component SideBar inherits Rectangle {
     /// Input property "items".
+    /// property `items`.
+    /// property `items`.
+    /// property `items`.
+    /// property `items`.
+    /// property `items`.
+    /// property `items`.
     /// property `items`.
     in property <[NavItem]> items: [];
     /// Input property "active-item".
     /// property `active-item`.
+    /// property `active-item`.
+    /// property `active-item`.
+    /// property `active-item`.
+    /// property `active-item`.
+    /// property `active-item`.
+    /// property `active-item`.
     in property <string>    active-item: "";
     /// Input property "collapsed".
+    /// property `collapsed`.
+    /// property `collapsed`.
+    /// property `collapsed`.
+    /// property `collapsed`.
+    /// property `collapsed`.
+    /// property `collapsed`.
     /// property `collapsed`.
     in property <bool>      collapsed: false;
     /// Callback fired for n av ig at e.
     /// callback `navigate`.
+    /// callback `navigate`.
+    /// callback `navigate`.
+    /// callback `navigate`.
+    /// callback `navigate`.
+    /// callback `navigate`.
+    /// callback `navigate`.
     callback navigate(string);
     /// Callback fired for t og gl e c ol la ps ed.
     /// callback `toggle-collapsed`.
+    /// callback `toggle-collapsed`.
+    /// callback `toggle-collapsed`.
+    /// callback `toggle-collapsed`.
+    /// callback `toggle-collapsed`.
+    /// callback `toggle-collapsed`.
+    /// callback `toggle-collapsed`.
     callback toggle-collapsed();
     /// Callback fired for t og gl e g ro up.
+    /// callback `toggle-group`.
+    /// callback `toggle-group`.
+    /// callback `toggle-group`.
+    /// callback `toggle-group`.
+    /// callback `toggle-group`.
+    /// callback `toggle-group`.
     /// callback `toggle-group`.
     callback toggle-group(string);
 

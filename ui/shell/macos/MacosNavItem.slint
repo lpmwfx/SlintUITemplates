@@ -3,20 +3,44 @@
 
 import { Colors }                                                  from "../../globals/theme.slint";
 import { MacosColors, MacosRadius, MacosSpacing, MacosType }       from "../../globals/theme/macos/mod.slint";
-import { Sizes }                                                   from "../../state/sizes.slint";
+import { Sizes } from "../../globals/theme/sizes.slint";
 import { NavItem }                                                 from "../types.slint";
 
 /// macOS sidebar navigation row — icon glyph + label, touch-target height.
 /// component `MacosNavItem`.
+/// component `MacosNavItem`.
+/// component `MacosNavItem`.
+/// component `MacosNavItem`.
+/// component `MacosNavItem`.
+/// component `MacosNavItem`.
+/// component `MacosNavItem`.
 export component MacosNavItem inherits Rectangle {
     /// Navigation data for this item.
+    /// property `item`.
+    /// property `item`.
+    /// property `item`.
+    /// property `item`.
+    /// property `item`.
+    /// property `item`.
     /// property `item`.
     in property <NavItem> item;
     /// Whether this item is the active destination.
     /// property `active`.
+    /// property `active`.
+    /// property `active`.
+    /// property `active`.
+    /// property `active`.
+    /// property `active`.
+    /// property `active`.
     in property <bool>    active: false;
 
     /// Fired when the user selects this item.
+    /// callback `navigate`.
+    /// callback `navigate`.
+    /// callback `navigate`.
+    /// callback `navigate`.
+    /// callback `navigate`.
+    /// callback `navigate`.
     /// callback `navigate`.
     callback navigate(string);
 

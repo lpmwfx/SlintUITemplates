@@ -17,21 +17,45 @@ import { FluentRadius, FluentSpacing, FluentType } from "fluent/mod.slint";
 import { MaterialRadius, MaterialSpacing, MaterialType } from "material/mod.slint";
 import { SteamRadius, SteamSpacing, SteamType } from "steam/mod.slint";
 import { MacosRadius, MacosSpacing, MacosType } from "macos/mod.slint";
-import { Variants } from "../../state/variants.slint";
+import { Variants } from "../variants.slint";
 
 /// T he me global values.
 export global Theme {
     /// Input property "material".
     /// property `material`.
+    /// property `material`.
+    /// property `material`.
+    /// property `material`.
+    /// property `material`.
+    /// property `material`.
+    /// property `material`.
     in property <string> material: "solid";  // "solid" | "mica" | "acrylic"
     /// Input property "dark".
+    /// property `dark`.
+    /// property `dark`.
+    /// property `dark`.
+    /// property `dark`.
+    /// property `dark`.
+    /// property `dark`.
     /// property `dark`.
     in property <bool>   dark: Palette.color-scheme == ColorScheme.dark;
     /// Input property "accent-override".
     /// property `accent-override`.
+    /// property `accent-override`.
+    /// property `accent-override`.
+    /// property `accent-override`.
+    /// property `accent-override`.
+    /// property `accent-override`.
+    /// property `accent-override`.
     in property <color>  accent-override: transparent;  // alpha=0 → derive from palette
 
     /// Output property "bg-primary".
+    /// property `bg-primary`.
+    /// property `bg-primary`.
+    /// property `bg-primary`.
+    /// property `bg-primary`.
+    /// property `bg-primary`.
+    /// property `bg-primary`.
     /// property `bg-primary`.
     out property <color> bg-primary:
         material == ThemeMode.mica    ? (dark ? Mica.dark-bg-primary       : Mica.light-bg-primary)
@@ -40,12 +64,24 @@ export global Theme {
 
     /// Output property "bg-surface".
     /// property `bg-surface`.
+    /// property `bg-surface`.
+    /// property `bg-surface`.
+    /// property `bg-surface`.
+    /// property `bg-surface`.
+    /// property `bg-surface`.
+    /// property `bg-surface`.
     out property <color> bg-surface:
         material == ThemeMode.mica    ? (dark ? Mica.dark-bg-surface       : Mica.light-bg-surface)
       : material == ThemeMode.acrylic ? (dark ? Acrylic.dark-bg-surface    : Acrylic.light-bg-surface)
       :                         (dark ? Solid.dark-bg-surface      : Solid.light-bg-surface);
 
     /// Output property "bg-elevated".
+    /// property `bg-elevated`.
+    /// property `bg-elevated`.
+    /// property `bg-elevated`.
+    /// property `bg-elevated`.
+    /// property `bg-elevated`.
+    /// property `bg-elevated`.
     /// property `bg-elevated`.
     out property <color> bg-elevated:
         material == ThemeMode.mica    ? (dark ? Mica.dark-bg-elevated      : Mica.light-bg-elevated)
@@ -54,12 +90,24 @@ export global Theme {
 
     /// Output property "text-primary".
     /// property `text-primary`.
+    /// property `text-primary`.
+    /// property `text-primary`.
+    /// property `text-primary`.
+    /// property `text-primary`.
+    /// property `text-primary`.
+    /// property `text-primary`.
     out property <color> text-primary:
         material == ThemeMode.mica    ? (dark ? Mica.dark-text-primary     : Mica.light-text-primary)
       : material == ThemeMode.acrylic ? (dark ? Acrylic.dark-text-primary  : Acrylic.light-text-primary)
       :                         (dark ? Solid.dark-text-primary    : Solid.light-text-primary);
 
     /// Output property "text-secondary".
+    /// property `text-secondary`.
+    /// property `text-secondary`.
+    /// property `text-secondary`.
+    /// property `text-secondary`.
+    /// property `text-secondary`.
+    /// property `text-secondary`.
     /// property `text-secondary`.
     out property <color> text-secondary:
         material == ThemeMode.mica    ? (dark ? Mica.dark-text-secondary   : Mica.light-text-secondary)
@@ -68,12 +116,24 @@ export global Theme {
 
     /// Output property "text-disabled".
     /// property `text-disabled`.
+    /// property `text-disabled`.
+    /// property `text-disabled`.
+    /// property `text-disabled`.
+    /// property `text-disabled`.
+    /// property `text-disabled`.
+    /// property `text-disabled`.
     out property <color> text-disabled:
         material == ThemeMode.mica    ? (dark ? Mica.dark-text-disabled    : Mica.light-text-disabled)
       : material == ThemeMode.acrylic ? (dark ? Acrylic.dark-text-disabled : Acrylic.light-text-disabled)
       :                         (dark ? Solid.dark-text-disabled   : Solid.light-text-disabled);
 
     /// Output property "accent".
+    /// property `accent`.
+    /// property `accent`.
+    /// property `accent`.
+    /// property `accent`.
+    /// property `accent`.
+    /// property `accent`.
     /// property `accent`.
     out property <color> accent:
         accent-override.alpha > 0 ? accent-override
@@ -83,12 +143,24 @@ export global Theme {
 
     /// Output property "accent-hover".
     /// property `accent-hover`.
+    /// property `accent-hover`.
+    /// property `accent-hover`.
+    /// property `accent-hover`.
+    /// property `accent-hover`.
+    /// property `accent-hover`.
+    /// property `accent-hover`.
     out property <color> accent-hover:
         material == ThemeMode.mica    ? (dark ? Mica.dark-accent-hover     : Mica.light-accent-hover)
       : material == ThemeMode.acrylic ? (dark ? Acrylic.dark-accent-hover  : Acrylic.light-accent-hover)
       :                         (dark ? Solid.dark-accent-hover    : Solid.light-accent-hover);
 
     /// Output property "accent-text".
+    /// property `accent-text`.
+    /// property `accent-text`.
+    /// property `accent-text`.
+    /// property `accent-text`.
+    /// property `accent-text`.
+    /// property `accent-text`.
     /// property `accent-text`.
     out property <color> accent-text:
         material == ThemeMode.mica    ? (dark ? Mica.dark-accent-text      : Mica.light-accent-text)
@@ -97,15 +169,39 @@ export global Theme {
 
     /// Output property "error".
     /// property `error`.
+    /// property `error`.
+    /// property `error`.
+    /// property `error`.
+    /// property `error`.
+    /// property `error`.
+    /// property `error`.
     out property <color> error:   #C42B1C;
     /// Output property "success".
+    /// property `success`.
+    /// property `success`.
+    /// property `success`.
+    /// property `success`.
+    /// property `success`.
+    /// property `success`.
     /// property `success`.
     out property <color> success: #0F7B0F;
     /// Output property "warning".
     /// property `warning`.
+    /// property `warning`.
+    /// property `warning`.
+    /// property `warning`.
+    /// property `warning`.
+    /// property `warning`.
+    /// property `warning`.
     out property <color> warning: #9D5D00;
 
     /// Output property "border".
+    /// property `border`.
+    /// property `border`.
+    /// property `border`.
+    /// property `border`.
+    /// property `border`.
+    /// property `border`.
     /// property `border`.
     out property <color> border:
         material == ThemeMode.mica    ? (dark ? Mica.dark-border           : Mica.light-border)
@@ -114,6 +210,12 @@ export global Theme {
 
     /// Output property "border-strong".
     /// property `border-strong`.
+    /// property `border-strong`.
+    /// property `border-strong`.
+    /// property `border-strong`.
+    /// property `border-strong`.
+    /// property `border-strong`.
+    /// property `border-strong`.
     out property <color> border-strong:
         material == ThemeMode.mica    ? (dark ? Mica.dark-border-strong    : Mica.light-border-strong)
       : material == ThemeMode.acrylic ? (dark ? Acrylic.dark-border-strong : Acrylic.light-border-strong)
@@ -121,9 +223,21 @@ export global Theme {
 
     /// Output property "border-focus".
     /// property `border-focus`.
+    /// property `border-focus`.
+    /// property `border-focus`.
+    /// property `border-focus`.
+    /// property `border-focus`.
+    /// property `border-focus`.
+    /// property `border-focus`.
     out property <color> border-focus: accent;
 
     /// Output property "shadow".
+    /// property `shadow`.
+    /// property `shadow`.
+    /// property `shadow`.
+    /// property `shadow`.
+    /// property `shadow`.
+    /// property `shadow`.
     /// property `shadow`.
     out property <color> shadow:
         material == ThemeMode.mica    ? (dark ? Mica.dark-shadow           : Mica.light-shadow)
@@ -134,25 +248,67 @@ export global Theme {
     /// Output property "transparent" — fully transparent color token.
     /// Use instead of inline #00000000 literals.
     /// property `transparent`.
+    /// property `transparent`.
+    /// property `transparent`.
+    /// property `transparent`.
+    /// property `transparent`.
+    /// property `transparent`.
+    /// property `transparent`.
     out property <color> transparent: #00000000;
     /// Output property "overlay".
+    /// property `overlay`.
+    /// property `overlay`.
+    /// property `overlay`.
+    /// property `overlay`.
+    /// property `overlay`.
+    /// property `overlay`.
     /// property `overlay`.
     out property <color> overlay: #00000040;
 
     // ── Aliases ───────────────────────────────────────────────────────────────
     /// Output property "bg-panel".
     /// property `bg-panel`.
+    /// property `bg-panel`.
+    /// property `bg-panel`.
+    /// property `bg-panel`.
+    /// property `bg-panel`.
+    /// property `bg-panel`.
+    /// property `bg-panel`.
     out property <color> bg-panel:     bg-surface;
     /// Output property "handle".
+    /// property `handle`.
+    /// property `handle`.
+    /// property `handle`.
+    /// property `handle`.
+    /// property `handle`.
+    /// property `handle`.
     /// property `handle`.
     out property <color> handle:       border;
     /// Output property "handle-hover".
     /// property `handle-hover`.
+    /// property `handle-hover`.
+    /// property `handle-hover`.
+    /// property `handle-hover`.
+    /// property `handle-hover`.
+    /// property `handle-hover`.
+    /// property `handle-hover`.
     out property <color> handle-hover: border-strong;
     /// Output property "danger".
     /// property `danger`.
+    /// property `danger`.
+    /// property `danger`.
+    /// property `danger`.
+    /// property `danger`.
+    /// property `danger`.
+    /// property `danger`.
     out property <color> danger:       error;
     /// Output property "text-muted".
+    /// property `text-muted`.
+    /// property `text-muted`.
+    /// property `text-muted`.
+    /// property `text-muted`.
+    /// property `text-muted`.
+    /// property `text-muted`.
     /// property `text-muted`.
     out property <color> text-muted:   text-secondary;
 
@@ -161,6 +317,12 @@ export global Theme {
     // Values: "windows" | "android" | "ios" | "steam-linux" | "steam-deck" |
     //         "tablet" | "handheld" | "macos" | "linux"
     /// Input property "platform".
+    /// property `platform`.
+    /// property `platform`.
+    /// property `platform`.
+    /// property `platform`.
+    /// property `platform`.
+    /// property `platform`.
     /// property `platform`.
     in property <string> platform: Variants.windows;
 
@@ -175,21 +337,51 @@ export global Theme {
     // ── Platform-routed radius ─────────────────────────────────────────────
     /// Small border radius — checkboxes, chips.
     /// property `radius-sm`.
+    /// property `radius-sm`.
+    /// property `radius-sm`.
+    /// property `radius-sm`.
+    /// property `radius-sm`.
+    /// property `radius-sm`.
+    /// property `radius-sm`.
     out property <length> radius-sm:
         is-steam ? SteamRadius.sm : is-material ? MaterialRadius.extra-small : is-macos ? MacosRadius.sm : FluentRadius.sm;
     /// Standard border radius — buttons, inputs.
+    /// property `radius-md`.
+    /// property `radius-md`.
+    /// property `radius-md`.
+    /// property `radius-md`.
+    /// property `radius-md`.
+    /// property `radius-md`.
     /// property `radius-md`.
     out property <length> radius-md:
         is-steam ? SteamRadius.md : is-material ? MaterialRadius.small : is-macos ? MacosRadius.md : FluentRadius.md;
     /// Large border radius — cards, panels.
     /// property `radius-lg`.
+    /// property `radius-lg`.
+    /// property `radius-lg`.
+    /// property `radius-lg`.
+    /// property `radius-lg`.
+    /// property `radius-lg`.
+    /// property `radius-lg`.
     out property <length> radius-lg:
         is-steam ? SteamRadius.lg : is-material ? MaterialRadius.medium : is-macos ? MacosRadius.lg : FluentRadius.lg;
     /// Extra-large border radius — dialogs, large surfaces.
     /// property `radius-xl`.
+    /// property `radius-xl`.
+    /// property `radius-xl`.
+    /// property `radius-xl`.
+    /// property `radius-xl`.
+    /// property `radius-xl`.
+    /// property `radius-xl`.
     out property <length> radius-xl:
         is-steam ? SteamRadius.xl : is-material ? MaterialRadius.large : is-macos ? MacosRadius.xl : FluentRadius.xl;
     /// Full pill / circle radius.
+    /// property `radius-circle`.
+    /// property `radius-circle`.
+    /// property `radius-circle`.
+    /// property `radius-circle`.
+    /// property `radius-circle`.
+    /// property `radius-circle`.
     /// property `radius-circle`.
     out property <length> radius-circle:
         is-steam ? SteamRadius.circle : is-material ? MaterialRadius.full : is-macos ? MacosRadius.circle : FluentRadius.circle;
@@ -197,13 +389,31 @@ export global Theme {
     // ── Platform-routed touch targets ─────────────────────────────────────
     /// Small control height — compact items.
     /// property `touch-sm`.
+    /// property `touch-sm`.
+    /// property `touch-sm`.
+    /// property `touch-sm`.
+    /// property `touch-sm`.
+    /// property `touch-sm`.
+    /// property `touch-sm`.
     out property <length> touch-sm:
         is-steam ? SteamSpacing.control-sm : is-material ? MaterialSpacing.control-sm : is-macos ? MacosSpacing.control-sm : FluentSpacing.control-sm;
     /// Standard control height — buttons, inputs.
     /// property `touch-md`.
+    /// property `touch-md`.
+    /// property `touch-md`.
+    /// property `touch-md`.
+    /// property `touch-md`.
+    /// property `touch-md`.
+    /// property `touch-md`.
     out property <length> touch-md:
         is-steam ? SteamSpacing.control-md : is-material ? MaterialSpacing.control-md : is-macos ? MacosSpacing.control-md : FluentSpacing.control-md;
     /// Large control height — primary targets.
+    /// property `touch-lg`.
+    /// property `touch-lg`.
+    /// property `touch-lg`.
+    /// property `touch-lg`.
+    /// property `touch-lg`.
+    /// property `touch-lg`.
     /// property `touch-lg`.
     out property <length> touch-lg:
         is-steam ? SteamSpacing.control-lg : is-material ? MaterialSpacing.control-lg : is-macos ? MacosSpacing.control-lg : FluentSpacing.control-lg;
@@ -211,21 +421,51 @@ export global Theme {
     // ── Platform-routed typography ────────────────────────────────────────
     /// Caption / label text size.
     /// property `font-caption`.
+    /// property `font-caption`.
+    /// property `font-caption`.
+    /// property `font-caption`.
+    /// property `font-caption`.
+    /// property `font-caption`.
+    /// property `font-caption`.
     out property <length> font-caption:
         is-steam ? SteamType.caption : is-material ? MaterialType.label-medium : is-macos ? MacosType.caption : FluentType.caption;
     /// Body text size.
+    /// property `font-body`.
+    /// property `font-body`.
+    /// property `font-body`.
+    /// property `font-body`.
+    /// property `font-body`.
+    /// property `font-body`.
     /// property `font-body`.
     out property <length> font-body:
         is-steam ? SteamType.body : is-material ? MaterialType.body-medium : is-macos ? MacosType.body : FluentType.body;
     /// Subtitle / section heading.
     /// property `font-subtitle`.
+    /// property `font-subtitle`.
+    /// property `font-subtitle`.
+    /// property `font-subtitle`.
+    /// property `font-subtitle`.
+    /// property `font-subtitle`.
+    /// property `font-subtitle`.
     out property <length> font-subtitle:
         is-steam ? SteamType.subtitle : is-material ? MaterialType.title-large : is-macos ? MacosType.headline : FluentType.subtitle;
     /// Heading.
     /// property `font-heading`.
+    /// property `font-heading`.
+    /// property `font-heading`.
+    /// property `font-heading`.
+    /// property `font-heading`.
+    /// property `font-heading`.
+    /// property `font-heading`.
     out property <length> font-heading:
         is-steam ? SteamType.heading : is-material ? MaterialType.headline-small : is-macos ? MacosType.title3 : FluentType.subtitle;
     /// Title / display.
+    /// property `font-title`.
+    /// property `font-title`.
+    /// property `font-title`.
+    /// property `font-title`.
+    /// property `font-title`.
+    /// property `font-title`.
     /// property `font-title`.
     out property <length> font-title:
         is-steam ? SteamType.title : is-material ? MaterialType.headline-medium : is-macos ? MacosType.title2 : FluentType.title;
@@ -233,13 +473,31 @@ export global Theme {
     // ── Platform-routed font weights ──────────────────────────────────────
     /// Regular weight (400).
     /// property `font-weight-regular`.
+    /// property `font-weight-regular`.
+    /// property `font-weight-regular`.
+    /// property `font-weight-regular`.
+    /// property `font-weight-regular`.
+    /// property `font-weight-regular`.
+    /// property `font-weight-regular`.
     out property <int> font-weight-regular:
         is-steam ? SteamType.weight-regular : is-material ? MaterialType.weight-regular : is-macos ? MacosType.weight-regular : FluentType.weight-regular;
     /// Medium weight (500).
     /// property `font-weight-medium`.
+    /// property `font-weight-medium`.
+    /// property `font-weight-medium`.
+    /// property `font-weight-medium`.
+    /// property `font-weight-medium`.
+    /// property `font-weight-medium`.
+    /// property `font-weight-medium`.
     out property <int> font-weight-medium:
         is-steam ? SteamType.weight-medium : is-material ? MaterialType.weight-medium : is-macos ? MacosType.weight-medium : FluentType.weight-medium;
     /// Bold weight (700).
+    /// property `font-weight-bold`.
+    /// property `font-weight-bold`.
+    /// property `font-weight-bold`.
+    /// property `font-weight-bold`.
+    /// property `font-weight-bold`.
+    /// property `font-weight-bold`.
     /// property `font-weight-bold`.
     out property <int> font-weight-bold:
         is-steam ? SteamType.weight-bold : is-material ? MaterialType.weight-bold : is-macos ? MacosType.weight-bold : FluentType.weight-bold;
@@ -247,21 +505,51 @@ export global Theme {
     // ── Platform-routed spacing ────────────────────────────────────────────
     /// Extra-small spacing.
     /// property `space-xs`.
+    /// property `space-xs`.
+    /// property `space-xs`.
+    /// property `space-xs`.
+    /// property `space-xs`.
+    /// property `space-xs`.
+    /// property `space-xs`.
     out property <length> space-xs:
         is-steam ? SteamSpacing.xs : is-material ? MaterialSpacing.xs : is-macos ? MacosSpacing.xs : FluentSpacing.xs;
     /// Small spacing.
+    /// property `space-sm`.
+    /// property `space-sm`.
+    /// property `space-sm`.
+    /// property `space-sm`.
+    /// property `space-sm`.
+    /// property `space-sm`.
     /// property `space-sm`.
     out property <length> space-sm:
         is-steam ? SteamSpacing.sm : is-material ? MaterialSpacing.sm : is-macos ? MacosSpacing.sm : FluentSpacing.sm;
     /// Medium spacing.
     /// property `space-md`.
+    /// property `space-md`.
+    /// property `space-md`.
+    /// property `space-md`.
+    /// property `space-md`.
+    /// property `space-md`.
+    /// property `space-md`.
     out property <length> space-md:
         is-steam ? SteamSpacing.md : is-material ? MaterialSpacing.md : is-macos ? MacosSpacing.md : FluentSpacing.md;
     /// Large spacing.
     /// property `space-lg`.
+    /// property `space-lg`.
+    /// property `space-lg`.
+    /// property `space-lg`.
+    /// property `space-lg`.
+    /// property `space-lg`.
+    /// property `space-lg`.
     out property <length> space-lg:
         is-steam ? SteamSpacing.lg : is-material ? MaterialSpacing.lg : is-macos ? MacosSpacing.lg : FluentSpacing.lg;
     /// Extra-large spacing.
+    /// property `space-xl`.
+    /// property `space-xl`.
+    /// property `space-xl`.
+    /// property `space-xl`.
+    /// property `space-xl`.
+    /// property `space-xl`.
     /// property `space-xl`.
     out property <length> space-xl:
         is-steam ? SteamSpacing.xl : is-material ? MaterialSpacing.xl : is-macos ? MacosSpacing.xl : FluentSpacing.xl;
@@ -269,13 +557,31 @@ export global Theme {
     // ── Platform-routed nav chrome ─────────────────────────────────────────
     /// Side navigation rail width.
     /// property `nav-rail-width`.
+    /// property `nav-rail-width`.
+    /// property `nav-rail-width`.
+    /// property `nav-rail-width`.
+    /// property `nav-rail-width`.
+    /// property `nav-rail-width`.
+    /// property `nav-rail-width`.
     out property <length> nav-rail-width:
         is-steam ? SteamSpacing.nav-rail-width : is-material ? MaterialSpacing.nav-rail-width : is-macos ? MacosSpacing.nav-rail-width : FluentSpacing.nav-width-collapsed;
     /// Navigation bar height (bottom nav / toolbar).
     /// property `nav-bar-height`.
+    /// property `nav-bar-height`.
+    /// property `nav-bar-height`.
+    /// property `nav-bar-height`.
+    /// property `nav-bar-height`.
+    /// property `nav-bar-height`.
+    /// property `nav-bar-height`.
     out property <length> nav-bar-height:
         is-steam ? SteamSpacing.bottom-rail-height : is-material ? MaterialSpacing.bottom-nav-bar-height : is-macos ? MacosSpacing.toolbar-height : FluentSpacing.toolbar-height;
     /// Top bar / title bar height.
+    /// property `top-bar-height`.
+    /// property `top-bar-height`.
+    /// property `top-bar-height`.
+    /// property `top-bar-height`.
+    /// property `top-bar-height`.
+    /// property `top-bar-height`.
     /// property `top-bar-height`.
     out property <length> top-bar-height:
         is-steam ? SteamSpacing.top-bar-height : is-material ? MaterialSpacing.top-app-bar-height : is-macos ? MacosSpacing.titlebar-height : FluentSpacing.titlebar-height;
@@ -284,9 +590,21 @@ export global Theme {
     /// Minimum safe interactive target for this platform.
     /// Use for min-width / min-height on buttons and nav items.
     /// property `touch-target`.
+    /// property `touch-target`.
+    /// property `touch-target`.
+    /// property `touch-target`.
+    /// property `touch-target`.
+    /// property `touch-target`.
+    /// property `touch-target`.
     out property <length> touch-target:
         is-steam ? SteamSpacing.control-lg : is-material ? MaterialSpacing.control-md : is-macos ? MacosSpacing.control-md : FluentSpacing.control-md;
     /// Recommended nav chrome pattern for this platform.
+    /// property `nav-style`.
+    /// property `nav-style`.
+    /// property `nav-style`.
+    /// property `nav-style`.
+    /// property `nav-style`.
+    /// property `nav-style`.
     /// property `nav-style`.
     out property <string> nav-style:
         is-steam    ? Variants.nav-compact :

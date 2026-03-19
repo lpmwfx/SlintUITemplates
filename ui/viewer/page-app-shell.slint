@@ -2,8 +2,8 @@
 // Toggle between platforms to see Fluent 2 vs Material 3 shell.
 
 import { Colors, Spacing, Type, FluentIcons } from "../globals/theme.slint";
-import { Sizes } from "../state/sizes.slint";
-import { Variants } from "../state/variants.slint";
+import { Sizes } from "../globals/theme/sizes.slint";
+import { Variants } from "../globals/variants.slint";
 import { AppShell, MobileShell } from "../shell/app-shell.slint";
 import { NavItem }      from "../desktop/types.slint";
 import { Button }       from "../widgets/button.slint";
@@ -14,59 +14,161 @@ import { SettingsView } from "../views/settings.slint";
 
 /// Viewer page demonstrating desktop and mobile shell composition with shared content slots.
 /// component `PageAppShell`.
+/// component `PageAppShell`.
+/// component `PageAppShell`.
+/// component `PageAppShell`.
+/// component `PageAppShell`.
+/// component `PageAppShell`.
+/// component `PageAppShell`.
 export component PageAppShell inherits VerticalLayout {
     /// Private property "layout-mode" used internally.
+    /// property `layout-mode`.
+    /// property `layout-mode`.
+    /// property `layout-mode`.
+    /// property `layout-mode`.
+    /// property `layout-mode`.
+    /// property `layout-mode`.
     /// property `layout-mode`.
     private property <string>    layout-mode: Variants.windows;
     // ── private view ids ───────────────────────────────────────────────
     /// Private property "view-home" used internally.
     /// property `view-home`.
+    /// property `view-home`.
+    /// property `view-home`.
+    /// property `view-home`.
+    /// property `view-home`.
+    /// property `view-home`.
+    /// property `view-home`.
     private property <string> view-home: "home";
     /// Private property "view-list" used internally.
     /// property `view-list`.
+    /// property `view-list`.
+    /// property `view-list`.
+    /// property `view-list`.
+    /// property `view-list`.
+    /// property `view-list`.
+    /// property `view-list`.
     private property <string> view-list: "list";
     /// Private property "view-settings" used internally.
+    /// property `view-settings`.
+    /// property `view-settings`.
+    /// property `view-settings`.
+    /// property `view-settings`.
+    /// property `view-settings`.
+    /// property `view-settings`.
     /// property `view-settings`.
     private property <string> view-settings: "settings";
 
     // Per-mode active views — resets to home on mode switch via derivation
     /// Private property "active-windows" used internally.
     /// property `active-windows`.
+    /// property `active-windows`.
+    /// property `active-windows`.
+    /// property `active-windows`.
+    /// property `active-windows`.
+    /// property `active-windows`.
+    /// property `active-windows`.
     private property <string>    active-windows: root.view-home;
     /// Private property "active-android" used internally.
     /// property `active-android`.
+    /// property `active-android`.
+    /// property `active-android`.
+    /// property `active-android`.
+    /// property `active-android`.
+    /// property `active-android`.
+    /// property `active-android`.
     private property <string>    active-android: root.view-home;
     /// Private property "active-view" used internally.
+    /// property `active-view`.
+    /// property `active-view`.
+    /// property `active-view`.
+    /// property `active-view`.
+    /// property `active-view`.
+    /// property `active-view`.
     /// property `active-view`.
     private property <string>    active-view: root.layout-mode == Variants.windows ? root.active-windows : root.active-android;
 
     // ── demo labels ─────────────────────────────────────────────────────
     /// Private property "shell-label-win" used internally.
     /// property `shell-label-win`.
+    /// property `shell-label-win`.
+    /// property `shell-label-win`.
+    /// property `shell-label-win`.
+    /// property `shell-label-win`.
+    /// property `shell-label-win`.
+    /// property `shell-label-win`.
     private property <string> shell-label-win: "App Shell — Windows (Fluent 2)";
     /// Private property "shell-label-android" used internally.
+    /// property `shell-label-android`.
+    /// property `shell-label-android`.
+    /// property `shell-label-android`.
+    /// property `shell-label-android`.
+    /// property `shell-label-android`.
+    /// property `shell-label-android`.
     /// property `shell-label-android`.
     private property <string> shell-label-android: "App Shell — Android (Material 3)";
     /// Private property "btn-to-android" used internally.
     /// property `btn-to-android`.
+    /// property `btn-to-android`.
+    /// property `btn-to-android`.
+    /// property `btn-to-android`.
+    /// property `btn-to-android`.
+    /// property `btn-to-android`.
+    /// property `btn-to-android`.
     private property <string> btn-to-android: "→ Android";
     /// Private property "btn-to-windows" used internally.
+    /// property `btn-to-windows`.
+    /// property `btn-to-windows`.
+    /// property `btn-to-windows`.
+    /// property `btn-to-windows`.
+    /// property `btn-to-windows`.
+    /// property `btn-to-windows`.
     /// property `btn-to-windows`.
     private property <string> btn-to-windows: "→ Windows";
     /// Private property "status-prefix" used internally.
     /// property `status-prefix`.
+    /// property `status-prefix`.
+    /// property `status-prefix`.
+    /// property `status-prefix`.
+    /// property `status-prefix`.
+    /// property `status-prefix`.
+    /// property `status-prefix`.
     private property <string> status-prefix: "Active: ";
     /// Private property "mobile-title" used internally.
+    /// property `mobile-title`.
+    /// property `mobile-title`.
+    /// property `mobile-title`.
+    /// property `mobile-title`.
+    /// property `mobile-title`.
+    /// property `mobile-title`.
     /// property `mobile-title`.
     private property <string> mobile-title: "App";
     /// Private property "phone-w" used internally.
     /// property `phone-w`.
+    /// property `phone-w`.
+    /// property `phone-w`.
+    /// property `phone-w`.
+    /// property `phone-w`.
+    /// property `phone-w`.
+    /// property `phone-w`.
     private property <length> phone-w: Sizes.comp-380;
     /// Private property "phone-border" used internally.
+    /// property `phone-border`.
+    /// property `phone-border`.
+    /// property `phone-border`.
+    /// property `phone-border`.
+    /// property `phone-border`.
+    /// property `phone-border`.
     /// property `phone-border`.
     private property <length> phone-border: Sizes.border-w-2;
 
     /// Private property "nav-items" used internally.
+    /// property `nav-items`.
+    /// property `nav-items`.
+    /// property `nav-items`.
+    /// property `nav-items`.
+    /// property `nav-items`.
+    /// property `nav-items`.
     /// property `nav-items`.
     private property <[NavItem]> nav-items: [
         { id: "home",     label: "Home",     icon: FluentIcons.home },

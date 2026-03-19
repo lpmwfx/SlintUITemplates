@@ -10,7 +10,7 @@ const DEMO_SCRIPT_PATH: &str = "examples/rhai/demo.rhai";
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     // REASON: Rhai engine holds Rc clones of adapter for callback access
     let adapter = Rc::new(RefCell::new(AppAdapter::new()?));
-    let engine = build_engine(Rc::clone(&adapter));
+    let engine = build_engine(Rc::clone(&adapter)); // why shared? engine closures need adapter access
 
     let script = slint_ui_templates::gateway::scripts::load_script(Path::new(DEMO_SCRIPT_PATH))?;
     engine.eval::<()>(&script)?;

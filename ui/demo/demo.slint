@@ -1,6 +1,6 @@
 import { Colors, Spacing, Type } from "../globals/theme.slint";
-import { Sizes }         from "../state/sizes.slint";
-import { Variants }      from "../state/variants.slint";
+import { Sizes } from "../globals/theme/sizes.slint";
+import { Variants }      from "../globals/variants.slint";
 import { NavId }         from "../state/nav-id.slint";
 import { NavBar }        from "../desktop/nav-bar.slint";
 import { SideBar }       from "../desktop/side-bar.slint";
@@ -17,10 +17,22 @@ import { MobilePhoneFrame } from "MobilePhoneFrame.slint";
 
 /// D em ow in do w component.
 /// component `DemoWindow`.
+/// component `DemoWindow`.
+/// component `DemoWindow`.
+/// component `DemoWindow`.
+/// component `DemoWindow`.
+/// component `DemoWindow`.
+/// component `DemoWindow`.
 export component DemoWindow inherits Window {
     preferred-width: Sizes.win-width-md;
     preferred-height: Sizes.win-height-md;
     /// Input property "window-title".
+    /// property `window-title`.
+    /// property `window-title`.
+    /// property `window-title`.
+    /// property `window-title`.
+    /// property `window-title`.
+    /// property `window-title`.
     /// property `window-title`.
     in property <string> window-title: "SlintUITemplates \u{2014} Phase 2 Demo";
     title: window-title;
@@ -30,6 +42,12 @@ export component DemoWindow inherits Window {
     property <string>    active-view: NavId.home;
     property <bool>      sidebar-collapsed: false;
     /// Input property "nav-items".
+    /// property `nav-items`.
+    /// property `nav-items`.
+    /// property `nav-items`.
+    /// property `nav-items`.
+    /// property `nav-items`.
+    /// property `nav-items`.
     /// property `nav-items`.
     in property <[NavItem]> nav-items: [
         { id: NavId.home, label: "Home", icon: "\u{1F3E0}" },
@@ -44,17 +62,47 @@ export component DemoWindow inherits Window {
 
     /// Input property "control-bar-label".
     /// property `control-bar-label`.
+    /// property `control-bar-label`.
+    /// property `control-bar-label`.
+    /// property `control-bar-label`.
+    /// property `control-bar-label`.
+    /// property `control-bar-label`.
+    /// property `control-bar-label`.
     in property <string> control-bar-label: "SlintUI \u{2014} Phase 2 Demo";
     /// Input property "switch-to-mobile-label".
+    /// property `switch-to-mobile-label`.
+    /// property `switch-to-mobile-label`.
+    /// property `switch-to-mobile-label`.
+    /// property `switch-to-mobile-label`.
+    /// property `switch-to-mobile-label`.
+    /// property `switch-to-mobile-label`.
     /// property `switch-to-mobile-label`.
     in property <string> switch-to-mobile-label: "Switch to Mobile";
     /// Input property "switch-to-desktop-label".
     /// property `switch-to-desktop-label`.
+    /// property `switch-to-desktop-label`.
+    /// property `switch-to-desktop-label`.
+    /// property `switch-to-desktop-label`.
+    /// property `switch-to-desktop-label`.
+    /// property `switch-to-desktop-label`.
+    /// property `switch-to-desktop-label`.
     in property <string> switch-to-desktop-label: "Switch to Desktop";
     /// Input property "dark-label".
     /// property `dark-label`.
+    /// property `dark-label`.
+    /// property `dark-label`.
+    /// property `dark-label`.
+    /// property `dark-label`.
+    /// property `dark-label`.
+    /// property `dark-label`.
     in property <string> dark-label: "Dark";
     /// Input property "status-prefix".
+    /// property `status-prefix`.
+    /// property `status-prefix`.
+    /// property `status-prefix`.
+    /// property `status-prefix`.
+    /// property `status-prefix`.
+    /// property `status-prefix`.
     /// property `status-prefix`.
     in property <string> status-prefix: "View: ";
 

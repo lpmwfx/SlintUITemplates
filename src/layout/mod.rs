@@ -13,7 +13,7 @@ pub mod solver;
 
 pub use parser::parse;
 pub use solver::{Solver, SolvedItem, ItemKind};
-pub use ratio_solver::{Panel, drag, normalize, check_sum};
+pub use ratio_solver::{Panel, drag, normalize, is_valid_sum};
 pub use dsl_v2::{to_panels, NamedPanel, SplitDir};
 pub use named_parser::parse_named;
 

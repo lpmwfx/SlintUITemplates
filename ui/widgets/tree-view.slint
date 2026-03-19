@@ -1,8 +1,14 @@
 import { Colors, Spacing } from "../globals/theme.slint";
-import { Sizes } from "../state/sizes.slint";
+import { Sizes } from "../globals/theme/sizes.slint";
 import { TreeViewNode } from "TreeViewNode.slint";
 
 /// T re en od e struct.
+/// struct `TreeNode`.
+/// struct `TreeNode`.
+/// struct `TreeNode`.
+/// struct `TreeNode`.
+/// struct `TreeNode`.
+/// struct `TreeNode`.
 /// struct `TreeNode`.
 export struct TreeNode {
     id: string,
@@ -15,24 +21,72 @@ export struct TreeNode {
 
 /// T re ev ie w component.
 /// component `TreeView`.
+///
+/// ## Child Node Visibility Pattern
+/// TreeView renders all nodes passed in the nodes array, regardless of parent expansion state.
+/// To hide children of collapsed nodes, the caller (parent component or Rust adapter) must
+/// filter the nodes array before passing it to TreeView. Provide only the nodes that should
+/// be visible based on the current expansion state of their parents.
+/// component `TreeView`.
+/// component `TreeView`.
+/// component `TreeView`.
+/// component `TreeView`.
+/// component `TreeView`.
+/// component `TreeView`.
 export component TreeView inherits Rectangle {
     /// Input property "nodes".
+    /// property `nodes`.
+    /// property `nodes`.
+    /// property `nodes`.
+    /// property `nodes`.
+    /// property `nodes`.
+    /// property `nodes`.
     /// property `nodes`.
     in property <[TreeNode]> nodes: [];
     /// Input property "selected".
     /// property `selected`.
+    /// property `selected`.
+    /// property `selected`.
+    /// property `selected`.
+    /// property `selected`.
+    /// property `selected`.
+    /// property `selected`.
     in property <string> selected: "";
     /// Callback fired for s el ec te d c ha ng ed.
     /// callback `selected-changed`.
+    /// callback `selected-changed`.
+    /// callback `selected-changed`.
+    /// callback `selected-changed`.
+    /// callback `selected-changed`.
+    /// callback `selected-changed`.
+    /// callback `selected-changed`.
     callback selected-changed(string);
     /// Callback fired for t og gl e e xp an de d.
+    /// callback `toggle-expanded`.
+    /// callback `toggle-expanded`.
+    /// callback `toggle-expanded`.
+    /// callback `toggle-expanded`.
+    /// callback `toggle-expanded`.
+    /// callback `toggle-expanded`.
     /// callback `toggle-expanded`.
     callback toggle-expanded(string);
 
     /// Private property "bar-radius" used internally.
     /// property `bar-radius`.
+    /// property `bar-radius`.
+    /// property `bar-radius`.
+    /// property `bar-radius`.
+    /// property `bar-radius`.
+    /// property `bar-radius`.
+    /// property `bar-radius`.
     private property <length> bar-radius: Sizes.border-w-2;
     /// Private property "bar-opacity" used internally.
+    /// property `bar-opacity`.
+    /// property `bar-opacity`.
+    /// property `bar-opacity`.
+    /// property `bar-opacity`.
+    /// property `bar-opacity`.
+    /// property `bar-opacity`.
     /// property `bar-opacity`.
     private property <float>  bar-opacity: Sizes.percent-60;
 

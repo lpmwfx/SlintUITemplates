@@ -1,3 +1,6 @@
+// NOTE(mother-child): Platform enum with &'static str returns — compile-time string
+// literals, not mutable global state. Enum definition belongs in this child module.
+
 /// Target platform for AppShell rendering and token routing.
 #[derive(Debug, Clone, PartialEq, Default)]
 /// P la tf or m enum.

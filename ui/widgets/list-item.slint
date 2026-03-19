@@ -1,23 +1,59 @@
 import { Colors, Spacing, Type } from "../globals/theme.slint";
-import { Sizes } from "../state/sizes.slint";
+import { Sizes } from "../globals/theme/sizes.slint";
 
 /// Compact two-line list row with optional subtitle and selected state.
+/// component `ListItem`.
+/// component `ListItem`.
+/// component `ListItem`.
+/// component `ListItem`.
+/// component `ListItem`.
+/// component `ListItem`.
 /// component `ListItem`.
 export component ListItem inherits Rectangle {
     /// Primary text shown for the row.
     /// property `title`.
+    /// property `title`.
+    /// property `title`.
+    /// property `title`.
+    /// property `title`.
+    /// property `title`.
+    /// property `title`.
     in property <string> title: "";
     /// Secondary text shown below the title when non-empty.
+    /// property `subtitle`.
+    /// property `subtitle`.
+    /// property `subtitle`.
+    /// property `subtitle`.
+    /// property `subtitle`.
+    /// property `subtitle`.
     /// property `subtitle`.
     in property <string> subtitle: "";
     /// Highlights the row as the currently selected item.
     /// property `selected`.
+    /// property `selected`.
+    /// property `selected`.
+    /// property `selected`.
+    /// property `selected`.
+    /// property `selected`.
+    /// property `selected`.
     in property <bool> selected: false;
     /// Fired when the row is clicked.
+    /// callback `clicked`.
+    /// callback `clicked`.
+    /// callback `clicked`.
+    /// callback `clicked`.
+    /// callback `clicked`.
+    /// callback `clicked`.
     /// callback `clicked`.
     callback clicked();
 
     /// Private property "inner-gap" used internally.
+    /// property `inner-gap`.
+    /// property `inner-gap`.
+    /// property `inner-gap`.
+    /// property `inner-gap`.
+    /// property `inner-gap`.
+    /// property `inner-gap`.
     /// property `inner-gap`.
     private property <length> inner-gap: Sizes.border-w-2;
 

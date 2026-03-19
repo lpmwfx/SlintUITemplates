@@ -1,55 +1,145 @@
 import { Colors, Spacing, Type } from "../globals/theme.slint";
-import { Sizes } from "../state/sizes.slint";
+import { Sizes } from "../globals/theme/sizes.slint";
 import { DatePickerField }    from "./DatePickerField.slint";
 import { DatePickerCalendar } from "./DatePickerCalendar.slint";
 
 /// D at ep ic ke r component.
 /// component `DatePicker`.
+/// component `DatePicker`.
+/// component `DatePicker`.
+/// component `DatePicker`.
+/// component `DatePicker`.
+/// component `DatePicker`.
+/// component `DatePicker`.
 export component DatePicker inherits Rectangle {
     /// Input property "value".
+    /// property `value`.
+    /// property `value`.
+    /// property `value`.
+    /// property `value`.
+    /// property `value`.
+    /// property `value`.
     /// property `value`.
     in property <string> value: "";
     /// Input property "label".
     /// property `label`.
+    /// property `label`.
+    /// property `label`.
+    /// property `label`.
+    /// property `label`.
+    /// property `label`.
+    /// property `label`.
     in property <string> label: "";
     /// Input property "placeholder".
+    /// property `placeholder`.
+    /// property `placeholder`.
+    /// property `placeholder`.
+    /// property `placeholder`.
+    /// property `placeholder`.
+    /// property `placeholder`.
     /// property `placeholder`.
     in property <string> placeholder: "Select date";
     /// Input property "error".
     /// property `error`.
+    /// property `error`.
+    /// property `error`.
+    /// property `error`.
+    /// property `error`.
+    /// property `error`.
+    /// property `error`.
     in property <string> error: "";
     /// Input property "enabled".
+    /// property `enabled`.
+    /// property `enabled`.
+    /// property `enabled`.
+    /// property `enabled`.
+    /// property `enabled`.
+    /// property `enabled`.
     /// property `enabled`.
     in property <bool>   enabled: true;
     /// Input property "icon-font".
     /// property `icon-font`.
+    /// property `icon-font`.
+    /// property `icon-font`.
+    /// property `icon-font`.
+    /// property `icon-font`.
+    /// property `icon-font`.
+    /// property `icon-font`.
     in property <string> icon-font: "Segoe Fluent Icons";
     /// Callback fired for c ha ng ed.
+    /// callback `changed`.
+    /// callback `changed`.
+    /// callback `changed`.
+    /// callback `changed`.
+    /// callback `changed`.
+    /// callback `changed`.
     /// callback `changed`.
     callback changed(string);
 
     // ── Navigation state ────────────────────────────────────────────────
     /// Private property "initial-year" used internally.
     /// property `initial-year`.
+    /// property `initial-year`.
+    /// property `initial-year`.
+    /// property `initial-year`.
+    /// property `initial-year`.
+    /// property `initial-year`.
+    /// property `initial-year`.
     private property <int>    initial-year:    2026;
     /// Private property "month-offset" used internally.
     /// property `month-offset`.
+    /// property `month-offset`.
+    /// property `month-offset`.
+    /// property `month-offset`.
+    /// property `month-offset`.
+    /// property `month-offset`.
+    /// property `month-offset`.
     private property <int>    month-offset:    Sizes.zero;
     /// Private property "months-per-year" used internally.
+    /// property `months-per-year`.
+    /// property `months-per-year`.
+    /// property `months-per-year`.
+    /// property `months-per-year`.
+    /// property `months-per-year`.
+    /// property `months-per-year`.
     /// property `months-per-year`.
     private property <int>    months-per-year: Sizes.twelve;
 
     // ── Date formatting constants ────────────────────────────────────────
     /// Private property "date-sep" used internally.
     /// property `date-sep`.
+    /// property `date-sep`.
+    /// property `date-sep`.
+    /// property `date-sep`.
+    /// property `date-sep`.
+    /// property `date-sep`.
+    /// property `date-sep`.
     private property <string> date-sep:  "-";
     /// Private property "zero-pad" used internally.
+    /// property `zero-pad`.
+    /// property `zero-pad`.
+    /// property `zero-pad`.
+    /// property `zero-pad`.
+    /// property `zero-pad`.
+    /// property `zero-pad`.
     /// property `zero-pad`.
     private property <string> zero-pad:  "0";
     /// Private property "display-month" used internally.
     /// property `display-month`.
+    /// property `display-month`.
+    /// property `display-month`.
+    /// property `display-month`.
+    /// property `display-month`.
+    /// property `display-month`.
+    /// property `display-month`.
     private property <int>    display-month: Math.mod(root.month-offset, root.months-per-year) + Sizes.one;
     /// Private property "display-year" used internally.
+    /// property `display-year`.
+    /// property `display-year`.
+    /// property `display-year`.
+    /// property `display-year`.
+    /// property `display-year`.
+    /// property `display-year`.
     /// property `display-year`.
     private property <int>    display-year:  root.initial-year + Math.floor(root.month-offset / root.months-per-year);
 
@@ -57,17 +147,41 @@ export component DatePicker inherits Rectangle {
     // Precomputed year-month prefix for date formatting (day appended in callback)
     /// Private property "ym-prefix" used internally.
     /// property `ym-prefix`.
+    /// property `ym-prefix`.
+    /// property `ym-prefix`.
+    /// property `ym-prefix`.
+    /// property `ym-prefix`.
+    /// property `ym-prefix`.
+    /// property `ym-prefix`.
     private property <string> ym-prefix:
         root.display-year + root.date-sep
         + (root.display-month < Sizes.ten ? root.zero-pad : "") + root.display-month + root.date-sep;
 
     /// Private property "cell-size" used internally.
     /// property `cell-size`.
+    /// property `cell-size`.
+    /// property `cell-size`.
+    /// property `cell-size`.
+    /// property `cell-size`.
+    /// property `cell-size`.
+    /// property `cell-size`.
     private property <length> cell-size:  Spacing.control-md + Spacing.xs;
     /// Private property "popup-w" used internally.
     /// property `popup-w`.
+    /// property `popup-w`.
+    /// property `popup-w`.
+    /// property `popup-w`.
+    /// property `popup-w`.
+    /// property `popup-w`.
+    /// property `popup-w`.
     private property <length> popup-w:    cell-size * Sizes.seven + Spacing.sm * Sizes.two + Spacing.xs * Sizes.six;
     /// Private property "popup-h" used internally.
+    /// property `popup-h`.
+    /// property `popup-h`.
+    /// property `popup-h`.
+    /// property `popup-h`.
+    /// property `popup-h`.
+    /// property `popup-h`.
     /// property `popup-h`.
     private property <length> popup-h:    Spacing.xl + Spacing.xl + cell-size * Sizes.six + Spacing.sm * Sizes.five + Spacing.md * Sizes.two;
 

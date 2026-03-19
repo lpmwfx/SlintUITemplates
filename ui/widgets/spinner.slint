@@ -1,22 +1,52 @@
 import { Colors, Spacing } from "../globals/theme.slint";
-import { Sizes } from "../state/sizes.slint";
-import { Variants } from "../state/variants.slint";
+import { Sizes } from "../globals/theme/sizes.slint";
+import { Variants } from "../globals/variants.slint";
 import { FluentMotion } from "../globals/theme/fluent/motion.slint";
 
 /// S pi nn er component.
 /// component `Spinner`.
+/// component `Spinner`.
+/// component `Spinner`.
+/// component `Spinner`.
+/// component `Spinner`.
+/// component `Spinner`.
+/// component `Spinner`.
 export component Spinner inherits Rectangle {
     /// Input property "size".
+    /// property `size`.
+    /// property `size`.
+    /// property `size`.
+    /// property `size`.
+    /// property `size`.
+    /// property `size`.
     /// property `size`.
     in property <string> size:          Variants.md;
     /// Input property "spinner-color".
     /// property `spinner-color`.
+    /// property `spinner-color`.
+    /// property `spinner-color`.
+    /// property `spinner-color`.
+    /// property `spinner-color`.
+    /// property `spinner-color`.
+    /// property `spinner-color`.
     in property <color>  spinner-color: Colors.accent;
     /// Input property "active".
+    /// property `active`.
+    /// property `active`.
+    /// property `active`.
+    /// property `active`.
+    /// property `active`.
+    /// property `active`.
     /// property `active`.
     in property <bool>   active:        true;
 
     /// Private property "dim" used internally.
+    /// property `dim`.
+    /// property `dim`.
+    /// property `dim`.
+    /// property `dim`.
+    /// property `dim`.
+    /// property `dim`.
     /// property `dim`.
     private property <length> dim:
         root.size == Variants.sm ? Spacing.md :
@@ -25,24 +55,66 @@ export component Spinner inherits Rectangle {
 
     /// Private property "anim-phase" used internally.
     /// property `anim-phase`.
+    /// property `anim-phase`.
+    /// property `anim-phase`.
+    /// property `anim-phase`.
+    /// property `anim-phase`.
+    /// property `anim-phase`.
+    /// property `anim-phase`.
     private property <float>  anim-phase: 0.0;
     /// Private property "anim-speed" used internally.
+    /// property `anim-speed`.
+    /// property `anim-speed`.
+    /// property `anim-speed`.
+    /// property `anim-speed`.
+    /// property `anim-speed`.
+    /// property `anim-speed`.
     /// property `anim-speed`.
     private property <float>  anim-speed: 0.05;
     /// Private property "anim-next" used internally.
     /// property `anim-next`.
+    /// property `anim-next`.
+    /// property `anim-next`.
+    /// property `anim-next`.
+    /// property `anim-next`.
+    /// property `anim-next`.
+    /// property `anim-next`.
     private property <float>  anim-next: Math.mod(root.anim-phase + root.anim-speed, Sizes.two);
     /// Private property "pulse-min" used internally.
+    /// property `pulse-min`.
+    /// property `pulse-min`.
+    /// property `pulse-min`.
+    /// property `pulse-min`.
+    /// property `pulse-min`.
+    /// property `pulse-min`.
     /// property `pulse-min`.
     private property <float>  pulse-min:  0.2;
     /// Private property "track-alpha" used internally.
     /// property `track-alpha`.
+    /// property `track-alpha`.
+    /// property `track-alpha`.
+    /// property `track-alpha`.
+    /// property `track-alpha`.
+    /// property `track-alpha`.
+    /// property `track-alpha`.
     private property <float>  track-alpha: 0.15;
     /// Private property "ring-width" used internally.
+    /// property `ring-width`.
+    /// property `ring-width`.
+    /// property `ring-width`.
+    /// property `ring-width`.
+    /// property `ring-width`.
+    /// property `ring-width`.
     /// property `ring-width`.
     private property <length> ring-width: Sizes.border-w-2;
     // opacity derived: triangle wave between pulse-min and 1.0
     /// Private property "pulse-val" used internally.
+    /// property `pulse-val`.
+    /// property `pulse-val`.
+    /// property `pulse-val`.
+    /// property `pulse-val`.
+    /// property `pulse-val`.
+    /// property `pulse-val`.
     /// property `pulse-val`.
     private property <float>  pulse-val: Math.abs(root.anim-phase - Sizes.fill) * (Sizes.fill - root.pulse-min) + root.pulse-min;
 

@@ -1,9 +1,10 @@
 import { Colors, Spacing, Type, Settings, FluentIcons } from "../globals/theme.slint";
-import { Sizes }       from "../state/sizes.slint";
-import { Variants }    from "../state/variants.slint";
+import { Sizes } from "../globals/theme/sizes.slint";
+import { Strings } from "../globals/strings.slint";
+import { Variants }    from "../globals/variants.slint";
 import { NavId }       from "../state/nav-id.slint";
 import { NavBar }      from "nav-bar.slint";
-import { NavItem }     from "types.slint";
+import { NavItem }     from "../state/desktop-types.slint";
 import { SideBar }     from "side-bar.slint";
 import { ContentArea } from "content-area.slint";
 import { StatusBar }   from "status-bar.slint";
@@ -15,10 +16,10 @@ export { Colors }
 export { Settings }
 export { NavItem }
 
-/// A pp wi nd ow component.
+/// Desktop application window component.
 /// component `AppWindow`.
 export component AppWindow inherits Window {
-    /// Input property "window-title".
+    /// Window title text.
     /// property `window-title`.
     in property <string> window-title: "SlintUI Templates";
     title: window-title;
@@ -32,12 +33,12 @@ export component AppWindow inherits Window {
     background: Colors.bg-primary;
 
     // State (mother owns all)
-    /// Input property "active-view".
+    /// Active view identifier.
     /// property `active-view`.
     in property <string>    active-view: NavId.home;
     property <bool>      sidebar-open: true;
     property <bool>      sidebar-collapsed: false;
-    /// Input property "nav-items".
+    /// Navigation item model.
     /// property `nav-items`.
     in property <[NavItem]> nav-items: [
         { id: NavId.home,     label: "Home",     icon: FluentIcons.home },
@@ -46,78 +47,78 @@ export component AppWindow inherits Window {
     ];
 
     // Toolbar
-    /// Input property "show-toolbar".
+    /// Whether the toolbar is visible.
     /// property `show-toolbar`.
     in property <bool>               show-toolbar:  false;
-    /// Input property "toolbar-items".
+    /// Toolbar item model.
     /// property `toolbar-items`.
     in property <[ShellToolbarItem]> toolbar-items: [];
 
     // Status bar text (Rhai / Rust override; empty = default "View: <active-view>")
-    /// Input property "status-text".
+    /// Custom status bar text override.
     /// property `status-text`.
-    in property <string> status-text: "";
-    /// Input property "status-prefix".
+    in property <string> status-text: Strings.label-default;
+    /// Status bar prefix text.
     /// property `status-prefix`.
-    in property <string> status-prefix: "View: ";
-    /// Input property "right-panel-label".
+    in property <string> status-prefix: Strings.status-view-prefix;
+    /// Right panel label.
     /// property `right-panel-label`.
     in property <string> right-panel-label: "right";
 
     // Menu labels
-    /// Input property "menu-file-label".
+    /// File menu label.
     /// property `menu-file-label`.
     in property <string> menu-file-label: "File";
-    /// Input property "menu-exit-label".
+    /// Exit menu label.
     /// property `menu-exit-label`.
     in property <string> menu-exit-label: "Exit";
-    /// Input property "menu-view-label".
+    /// View menu label.
     /// property `menu-view-label`.
     in property <string> menu-view-label: "View";
-    /// Input property "menu-home-label".
+    /// Home menu label.
     /// property `menu-home-label`.
     in property <string> menu-home-label: "Home";
-    /// Input property "menu-list-label".
+    /// List menu label.
     /// property `menu-list-label`.
     in property <string> menu-list-label: "List";
-    /// Input property "menu-settings-label".
+    /// Settings menu label.
     /// property `menu-settings-label`.
     in property <string> menu-settings-label: "Settings";
-    /// Input property "menu-help-label".
+    /// Help menu label.
     /// property `menu-help-label`.
     in property <string> menu-help-label: "Help";
-    /// Input property "menu-about-label".
+    /// About menu label.
     /// property `menu-about-label`.
     in property <string> menu-about-label: "About";
 
     // Callbacks wired by DSL / Rust host
-    /// Callback fired for m en u a ct io n.
+    /// Callback fired for menu action.
     /// callback `menu-action`.
     callback menu-action(string);
-    /// Callback fired for t oo lb ar c li ck ed.
+    /// Callback fired for toolbar click.
     /// callback `toolbar-clicked`.
     callback toolbar-clicked(string);
 
     // Grid ratios (pushed from Rust grid engine)
-    /// Input property "row-top-ratio".
+    /// Top row stretch ratio.
     /// property `row-top-ratio`.
     in property <float> row-top-ratio: Sizes.fill;
-    /// Input property "row-main-ratio".
+    /// Main row stretch ratio.
     /// property `row-main-ratio`.
     in property <float> row-main-ratio: Sizes.ten;
-    /// Input property "row-bottom-ratio".
+    /// Bottom row stretch ratio.
     /// property `row-bottom-ratio`.
     in property <float> row-bottom-ratio: Sizes.fill;
 
     // Column pixel widths — draggable (no literals — token expressions)
-    property <length> col-left-width:  Spacing.xl * Sizes.four + Spacing.md;   // 208px
-    property <length> col-right-width: Spacing.xl * Sizes.five;                 // 240px
+    property <length> col-left-width:  Spacing.xl * Sizes.four + Spacing.md;
+    property <length> col-right-width: Spacing.xl * Sizes.five;
 
     // Reference widths for sidebar toggle snap
     property <length> sidebar-expanded-width:  Spacing.xl * Sizes.four + Spacing.md;
     property <length> sidebar-collapsed-width: Spacing.xl + Spacing.sm;
 
-    /// Callback fired for n av ig at e.
+    /// Callback fired for navigation.
     /// callback `navigate`.
     callback navigate(string);
 
@@ -217,7 +218,7 @@ export component AppWindow inherits Window {
         // ROW: bottom — StatusBar (fixed, not resizable)
         StatusBar {
             vertical-stretch: root.row-bottom-ratio;
-            status-text: root.status-text != "" ? root.status-text : root.status-prefix + root.active-view;
+            status-text: root.status-text != Strings.label-default ? root.status-text : root.status-prefix + root.active-view;
         }
     }
 }

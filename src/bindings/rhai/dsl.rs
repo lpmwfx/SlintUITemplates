@@ -8,7 +8,8 @@ use crate::dsl::{AppDsl, Nav};
 const RHAI_MAX_FIELDS: usize = 3;
 
 /// Register DSL API functions into the Rhai engine: nav, toolbar, window size, bg style.
-pub fn register(engine: &mut Engine, adapter: Rc<RefCell<AppAdapter>>) {
+pub fn register_dsl(engine: &mut Engine, adapter: Rc<RefCell<AppAdapter>>) {
+    // why shared? each Rhai closure captures its own Rc clone for DSL mutation
     let a = Rc::clone(&adapter);
     engine.register_fn("set_nav", move |items: rhai::Array| {
         let nav: Vec<Nav> = items.iter().filter_map(|v| {
@@ -27,17 +28,17 @@ pub fn register(engine: &mut Engine, adapter: Rc<RefCell<AppAdapter>>) {
         }
     });
 
-    let a = Rc::clone(&adapter);
+    let a = Rc::clone(&adapter); // why shared? Rhai closure captures adapter
     engine.register_fn("set_window_size", move |width: i64, height: i64| {
         a.borrow().set_window_size(width as u32, height as u32);
     });
 
-    let a = Rc::clone(&adapter);
+    let a = Rc::clone(&adapter); // why shared? Rhai closure captures adapter
     engine.register_fn("set_bg_style", move |style: String| {
         a.borrow_mut().set_bg_style_str(&style);
     });
 
-    let a = Rc::clone(&adapter);
+    let a = Rc::clone(&adapter); // why shared? Rhai closure captures adapter
     engine.register_fn("set_toolbar", move |items: rhai::Array| {
         use crate::dsl::Toolbar;
         let toolbar: Vec<Toolbar> = items.iter().filter_map(|v| {

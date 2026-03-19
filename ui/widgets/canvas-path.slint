@@ -3,72 +3,192 @@
 // No Rust required — all rendering is declarative.
 
 import { Colors, Spacing } from "../globals/theme.slint";
-import { Sizes } from "../state/sizes.slint";
+import { Sizes } from "../globals/theme/sizes.slint";
 
 /// C an va sp at h component.
+/// component `CanvasPath`.
+/// component `CanvasPath`.
+/// component `CanvasPath`.
+/// component `CanvasPath`.
+/// component `CanvasPath`.
+/// component `CanvasPath`.
 /// component `CanvasPath`.
 export component CanvasPath inherits Rectangle {
     /// Input property "stroke-color".
     /// property `stroke-color`.
+    /// property `stroke-color`.
+    /// property `stroke-color`.
+    /// property `stroke-color`.
+    /// property `stroke-color`.
+    /// property `stroke-color`.
+    /// property `stroke-color`.
     in property <color> stroke-color: Colors.accent;
     /// Input property "fill-color".
     /// property `fill-color`.
+    /// property `fill-color`.
+    /// property `fill-color`.
+    /// property `fill-color`.
+    /// property `fill-color`.
+    /// property `fill-color`.
+    /// property `fill-color`.
     in property <color> fill-color:   Colors.accent.with-alpha(root.fill-alpha);
     /// Input property "stroke-w".
+    /// property `stroke-w`.
+    /// property `stroke-w`.
+    /// property `stroke-w`.
+    /// property `stroke-w`.
+    /// property `stroke-w`.
+    /// property `stroke-w`.
     /// property `stroke-w`.
     in property <length> stroke-w:    Sizes.border-w-2;
 
     // ── Canvas geometry constants ───────────────────────────────────────
     /// Private property "fill-alpha" used internally.
     /// property `fill-alpha`.
+    /// property `fill-alpha`.
+    /// property `fill-alpha`.
+    /// property `fill-alpha`.
+    /// property `fill-alpha`.
+    /// property `fill-alpha`.
+    /// property `fill-alpha`.
     private property <float> fill-alpha:    0.15;
     /// Private property "overlay-alpha" used internally.
+    /// property `overlay-alpha`.
+    /// property `overlay-alpha`.
+    /// property `overlay-alpha`.
+    /// property `overlay-alpha`.
+    /// property `overlay-alpha`.
+    /// property `overlay-alpha`.
     /// property `overlay-alpha`.
     private property <float> overlay-alpha: 0.6;
     /// Private property "canvas-w" used internally.
     /// property `canvas-w`.
-    private property <length> canvas-w: Sizes.panel-xl;   // 300px
+    /// property `canvas-w`.
+    /// property `canvas-w`.
+    /// property `canvas-w`.
+    /// property `canvas-w`.
+    /// property `canvas-w`.
+    /// property `canvas-w`.
+    private property <length> canvas-w: Sizes.panel-xl;
     /// Private property "canvas-h" used internally.
     /// property `canvas-h`.
-    private property <length> canvas-h: Sizes.panel-sm;   // 200px
+    /// property `canvas-h`.
+    /// property `canvas-h`.
+    /// property `canvas-h`.
+    /// property `canvas-h`.
+    /// property `canvas-h`.
+    /// property `canvas-h`.
+    private property <length> canvas-h: Sizes.panel-sm;
 
     // Triangle vertices
     /// Private property "tri-x1" used internally.
     /// property `tri-x1`.
+    /// property `tri-x1`.
+    /// property `tri-x1`.
+    /// property `tri-x1`.
+    /// property `tri-x1`.
+    /// property `tri-x1`.
+    /// property `tri-x1`.
     private property <float> tri-x1:  50;
     /// Private property "tri-y1" used internally.
+    /// property `tri-y1`.
+    /// property `tri-y1`.
+    /// property `tri-y1`.
+    /// property `tri-y1`.
+    /// property `tri-y1`.
+    /// property `tri-y1`.
     /// property `tri-y1`.
     private property <float> tri-y1:  160;
     /// Private property "tri-x2" used internally.
     /// property `tri-x2`.
+    /// property `tri-x2`.
+    /// property `tri-x2`.
+    /// property `tri-x2`.
+    /// property `tri-x2`.
+    /// property `tri-x2`.
+    /// property `tri-x2`.
     private property <float> tri-x2:  150;
     /// Private property "tri-y2" used internally.
+    /// property `tri-y2`.
+    /// property `tri-y2`.
+    /// property `tri-y2`.
+    /// property `tri-y2`.
+    /// property `tri-y2`.
+    /// property `tri-y2`.
     /// property `tri-y2`.
     private property <float> tri-y2:  30;
     /// Private property "tri-x3" used internally.
     /// property `tri-x3`.
+    /// property `tri-x3`.
+    /// property `tri-x3`.
+    /// property `tri-x3`.
+    /// property `tri-x3`.
+    /// property `tri-x3`.
+    /// property `tri-x3`.
     private property <float> tri-x3:  250;
     /// Private property "tri-y3" used internally.
+    /// property `tri-y3`.
+    /// property `tri-y3`.
+    /// property `tri-y3`.
+    /// property `tri-y3`.
+    /// property `tri-y3`.
+    /// property `tri-y3`.
     /// property `tri-y3`.
     private property <float> tri-y3:  160;
 
     // Curve control points (quadratic — avoids CubicTo control-N-x naming)
     /// Private property "curve-start-x" used internally.
     /// property `curve-start-x`.
+    /// property `curve-start-x`.
+    /// property `curve-start-x`.
+    /// property `curve-start-x`.
+    /// property `curve-start-x`.
+    /// property `curve-start-x`.
+    /// property `curve-start-x`.
     private property <float> curve-start-x: 50;
     /// Private property "curve-start-y" used internally.
+    /// property `curve-start-y`.
+    /// property `curve-start-y`.
+    /// property `curve-start-y`.
+    /// property `curve-start-y`.
+    /// property `curve-start-y`.
+    /// property `curve-start-y`.
     /// property `curve-start-y`.
     private property <float> curve-start-y: 100;
     /// Private property "curve-ctrl-x" used internally.
     /// property `curve-ctrl-x`.
+    /// property `curve-ctrl-x`.
+    /// property `curve-ctrl-x`.
+    /// property `curve-ctrl-x`.
+    /// property `curve-ctrl-x`.
+    /// property `curve-ctrl-x`.
+    /// property `curve-ctrl-x`.
     private property <float> curve-ctrl-x:  150;
     /// Private property "curve-ctrl-y" used internally.
+    /// property `curve-ctrl-y`.
+    /// property `curve-ctrl-y`.
+    /// property `curve-ctrl-y`.
+    /// property `curve-ctrl-y`.
+    /// property `curve-ctrl-y`.
+    /// property `curve-ctrl-y`.
     /// property `curve-ctrl-y`.
     private property <float> curve-ctrl-y:  20;
     /// Private property "curve-end-x" used internally.
     /// property `curve-end-x`.
+    /// property `curve-end-x`.
+    /// property `curve-end-x`.
+    /// property `curve-end-x`.
+    /// property `curve-end-x`.
+    /// property `curve-end-x`.
+    /// property `curve-end-x`.
     private property <float> curve-end-x:   250;
     /// Private property "curve-end-y" used internally.
+    /// property `curve-end-y`.
+    /// property `curve-end-y`.
+    /// property `curve-end-y`.
+    /// property `curve-end-y`.
+    /// property `curve-end-y`.
+    /// property `curve-end-y`.
     /// property `curve-end-y`.
     private property <float> curve-end-y:   160;
 

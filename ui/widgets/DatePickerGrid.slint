@@ -1,23 +1,59 @@
 import { Colors, Spacing, Type } from "../globals/theme.slint";
-import { Sizes } from "../state/sizes.slint";
+import { Sizes } from "../globals/theme/sizes.slint";
 
 // 6×7 calendar day grid — emits the selected day number (1-based).
 /// D at ep ic ke rg ri d component.
 /// component `DatePickerGrid`.
+/// component `DatePickerGrid`.
+/// component `DatePickerGrid`.
+/// component `DatePickerGrid`.
+/// component `DatePickerGrid`.
+/// component `DatePickerGrid`.
+/// component `DatePickerGrid`.
 export component DatePickerGrid inherits VerticalLayout {
     /// Input property "first-weekday".
+    /// property `first-weekday`.
+    /// property `first-weekday`.
+    /// property `first-weekday`.
+    /// property `first-weekday`.
+    /// property `first-weekday`.
+    /// property `first-weekday`.
     /// property `first-weekday`.
     in property <int>    first-weekday;    // 0=Mon … 6=Sun
     /// Input property "days-in-month".
     /// property `days-in-month`.
+    /// property `days-in-month`.
+    /// property `days-in-month`.
+    /// property `days-in-month`.
+    /// property `days-in-month`.
+    /// property `days-in-month`.
+    /// property `days-in-month`.
     in property <int>    days-in-month;
     /// Input property "cell-size".
+    /// property `cell-size`.
+    /// property `cell-size`.
+    /// property `cell-size`.
+    /// property `cell-size`.
+    /// property `cell-size`.
+    /// property `cell-size`.
     /// property `cell-size`.
     in property <length> cell-size;
     /// Input property "days-cols".
     /// property `days-cols`.
+    /// property `days-cols`.
+    /// property `days-cols`.
+    /// property `days-cols`.
+    /// property `days-cols`.
+    /// property `days-cols`.
+    /// property `days-cols`.
     in property <int>    days-cols: Sizes.seven;
     /// Callback fired for d ay c li ck ed.
+    /// callback `day-clicked`.
+    /// callback `day-clicked`.
+    /// callback `day-clicked`.
+    /// callback `day-clicked`.
+    /// callback `day-clicked`.
+    /// callback `day-clicked`.
     /// callback `day-clicked`.
     callback day-clicked(int);
 

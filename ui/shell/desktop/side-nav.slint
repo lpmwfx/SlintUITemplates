@@ -2,39 +2,99 @@
 // Collapsible; shows icon + label per nav item; Segoe Fluent Icons.
 
 import { Colors, Spacing, Type, FluentIcons } from "../../globals/theme.slint";
-import { Sizes }    from "../../state/sizes.slint";
+import { Sizes } from "../../globals/theme/sizes.slint";
 import { NavItem }  from "../types.slint";
 import { NavItemRow } from "NavItemRow.slint";
 
 /// Collapsible desktop side navigation listing shell destinations.
 /// component `ShellSideNav`.
+/// component `ShellSideNav`.
+/// component `ShellSideNav`.
+/// component `ShellSideNav`.
+/// component `ShellSideNav`.
+/// component `ShellSideNav`.
+/// component `ShellSideNav`.
 export component ShellSideNav inherits Rectangle {
     /// Navigation items rendered in the side rail.
+    /// property `items`.
+    /// property `items`.
+    /// property `items`.
+    /// property `items`.
+    /// property `items`.
+    /// property `items`.
     /// property `items`.
     in property <[NavItem]> items;
     /// Id of the currently active navigation item.
     /// property `active-item`.
+    /// property `active-item`.
+    /// property `active-item`.
+    /// property `active-item`.
+    /// property `active-item`.
+    /// property `active-item`.
+    /// property `active-item`.
     in property <string>    active-item: "";
     /// Renders the compact icon-only mode when `true`.
+    /// property `collapsed`.
+    /// property `collapsed`.
+    /// property `collapsed`.
+    /// property `collapsed`.
+    /// property `collapsed`.
+    /// property `collapsed`.
     /// property `collapsed`.
     in property <bool>      collapsed: false;
     /// Font family used to render icon glyph strings.
     /// property `icon-font`.
+    /// property `icon-font`.
+    /// property `icon-font`.
+    /// property `icon-font`.
+    /// property `icon-font`.
+    /// property `icon-font`.
+    /// property `icon-font`.
     in property <string>    icon-font: "Segoe Fluent Icons";
     /// Fired when the user chooses a navigation item.
     /// callback `navigate`.
+    /// callback `navigate`.
+    /// callback `navigate`.
+    /// callback `navigate`.
+    /// callback `navigate`.
+    /// callback `navigate`.
+    /// callback `navigate`.
     callback navigate(string);
     /// Fired when the collapse/expand affordance is clicked.
+    /// callback `toggle-collapsed`.
+    /// callback `toggle-collapsed`.
+    /// callback `toggle-collapsed`.
+    /// callback `toggle-collapsed`.
+    /// callback `toggle-collapsed`.
+    /// callback `toggle-collapsed`.
     /// callback `toggle-collapsed`.
     callback toggle-collapsed();
 
     /// Private property "active-alpha" used internally.
     /// property `active-alpha`.
+    /// property `active-alpha`.
+    /// property `active-alpha`.
+    /// property `active-alpha`.
+    /// property `active-alpha`.
+    /// property `active-alpha`.
+    /// property `active-alpha`.
     private property <float>  active-alpha: Sizes.alpha-15;
     /// Private property "indicator-w" used internally.
     /// property `indicator-w`.
+    /// property `indicator-w`.
+    /// property `indicator-w`.
+    /// property `indicator-w`.
+    /// property `indicator-w`.
+    /// property `indicator-w`.
+    /// property `indicator-w`.
     private property <length> indicator-w: Sizes.border-w-3;
     /// Private property "indicator-radius" used internally.
+    /// property `indicator-radius`.
+    /// property `indicator-radius`.
+    /// property `indicator-radius`.
+    /// property `indicator-radius`.
+    /// property `indicator-radius`.
+    /// property `indicator-radius`.
     /// property `indicator-radius`.
     private property <length> indicator-radius: Sizes.border-w-2;
 

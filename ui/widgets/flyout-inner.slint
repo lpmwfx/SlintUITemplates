@@ -1,22 +1,60 @@
 import { Colors, Spacing, Type, FluentIcons } from "../globals/theme.slint";
+import { Sizes } from "../globals/theme/sizes.slint";
+import { Strings } from "../globals/strings.slint";
 
 /// F ly ou ti nn er component.
+/// component `FlyoutInner`.
+/// component `FlyoutInner`.
+/// component `FlyoutInner`.
+/// component `FlyoutInner`.
+/// component `FlyoutInner`.
+/// component `FlyoutInner`.
 /// component `FlyoutInner`.
 export component FlyoutInner inherits Rectangle {
     /// Input property "title".
     /// property `title`.
+    /// property `title`.
+    /// property `title`.
+    /// property `title`.
+    /// property `title`.
+    /// property `title`.
+    /// property `title`.
     in property <string> title: "";
     /// Input property "body".
     /// property `body`.
+    /// property `body`.
+    /// property `body`.
+    /// property `body`.
+    /// property `body`.
+    /// property `body`.
+    /// property `body`.
     in property <string> body: "";
     /// Callback fired for c lo se d.
+    /// callback `closed`.
+    /// callback `closed`.
+    /// callback `closed`.
+    /// callback `closed`.
+    /// callback `closed`.
+    /// callback `closed`.
     /// callback `closed`.
     callback closed();
 
     /// Private property "border-px" used internally.
     /// property `border-px`.
-    private property <length> border-px: 1px;
+    /// property `border-px`.
+    /// property `border-px`.
+    /// property `border-px`.
+    /// property `border-px`.
+    /// property `border-px`.
+    /// property `border-px`.
+    private property <length> border-px: Sizes.border-w;
     /// Private property "h-stretch" used internally.
+    /// property `h-stretch`.
+    /// property `h-stretch`.
+    /// property `h-stretch`.
+    /// property `h-stretch`.
+    /// property `h-stretch`.
+    /// property `h-stretch`.
     /// property `h-stretch`.
     private property <int>    h-stretch: 1;
 
@@ -47,7 +85,7 @@ export component FlyoutInner inherits Rectangle {
                 border-radius: Spacing.xs;
                 background: close-ta.has-hover ? Colors.bg-surface : transparent;
 
-                Text { text: "\u{E711}";
+                Text { text: Strings.icon-close;
                     font-family: FluentIcons.icon-font;
                     font-size: Type.caption-size;
                     color: Colors.text-secondary;

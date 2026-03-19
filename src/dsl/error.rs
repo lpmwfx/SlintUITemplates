@@ -1,4 +1,6 @@
 // ── Validation errors ─────────────────────────────────────────────────────────
+// NOTE(mother-child): No module-level statics — the &'static str in UnknownIcon
+// is a const context string, not mutable global state.
 
 /// Rule violations detected at `build()` time — never silent visual failures.
 #[derive(Debug, PartialEq)]

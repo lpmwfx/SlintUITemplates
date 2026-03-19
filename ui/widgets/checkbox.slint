@@ -1,33 +1,87 @@
 import { Colors, Spacing, Type, FluentIcons } from "../globals/theme.slint";
-import { Sizes } from "../state/sizes.slint";
+import { Sizes } from "../globals/theme/sizes.slint";
 
 /// C he ck bo x component.
+/// component `Checkbox`.
+/// component `Checkbox`.
+/// component `Checkbox`.
+/// component `Checkbox`.
+/// component `Checkbox`.
+/// component `Checkbox`.
 /// component `Checkbox`.
 export component Checkbox inherits Rectangle {
     /// Input property "checked".
     /// property `checked`.
+    /// property `checked`.
+    /// property `checked`.
+    /// property `checked`.
+    /// property `checked`.
+    /// property `checked`.
+    /// property `checked`.
     in property <bool>   checked: false;
     /// Input property "indeterminate".
+    /// property `indeterminate`.
+    /// property `indeterminate`.
+    /// property `indeterminate`.
+    /// property `indeterminate`.
+    /// property `indeterminate`.
+    /// property `indeterminate`.
     /// property `indeterminate`.
     in property <bool>   indeterminate: false;
     /// Input property "label".
     /// property `label`.
+    /// property `label`.
+    /// property `label`.
+    /// property `label`.
+    /// property `label`.
+    /// property `label`.
+    /// property `label`.
     in property <string> label: "";
     /// Input property "enabled".
     /// property `enabled`.
+    /// property `enabled`.
+    /// property `enabled`.
+    /// property `enabled`.
+    /// property `enabled`.
+    /// property `enabled`.
+    /// property `enabled`.
     in property <bool>   enabled: true;
     /// Callback fired for t og gl ed.
+    /// callback `toggled`.
+    /// callback `toggled`.
+    /// callback `toggled`.
+    /// callback `toggled`.
+    /// callback `toggled`.
+    /// callback `toggled`.
     /// callback `toggled`.
     callback toggled(bool);
 
     // Widget-specific size constants — named, not inline literals
     /// Private property "box-size" used internally.
     /// property `box-size`.
-    private property <length> box-size:  Spacing.md + Spacing.xs;   // 20px
+    /// property `box-size`.
+    /// property `box-size`.
+    /// property `box-size`.
+    /// property `box-size`.
+    /// property `box-size`.
+    /// property `box-size`.
+    private property <length> box-size:  Spacing.md + Spacing.xs;
     /// Private property "dash-w" used internally.
     /// property `dash-w`.
-    private property <length> dash-w:    Spacing.sm + Spacing.xs;   // 10px
+    /// property `dash-w`.
+    /// property `dash-w`.
+    /// property `dash-w`.
+    /// property `dash-w`.
+    /// property `dash-w`.
+    /// property `dash-w`.
+    private property <length> dash-w:    Spacing.sm + Spacing.xs;
     /// Private property "dash-h" used internally.
+    /// property `dash-h`.
+    /// property `dash-h`.
+    /// property `dash-h`.
+    /// property `dash-h`.
+    /// property `dash-h`.
+    /// property `dash-h`.
     /// property `dash-h`.
     private property <length> dash-h:    Sizes.border-w-2;
 

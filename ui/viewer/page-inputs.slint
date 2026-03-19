@@ -1,7 +1,7 @@
 // page-inputs — TextInput, SelectField, SearchInput, PasswordInput, TextArea, SpinBox
 
 import { Spacing } from "../globals/theme.slint";
-import { Sizes } from "../state/sizes.slint";
+import { Sizes } from "../globals/theme/sizes.slint";
 import { TextInput }      from "../widgets/text-input.slint";
 import { SelectField }    from "../widgets/select-field.slint";
 import { SearchInput }    from "../widgets/search-input.slint";
@@ -12,100 +12,286 @@ import { ViewerSection } from "viewer-section.slint";
 
 /// Viewer page showcasing text-entry and form input components.
 /// component `PageInputs`.
+/// component `PageInputs`.
+/// component `PageInputs`.
+/// component `PageInputs`.
+/// component `PageInputs`.
+/// component `PageInputs`.
+/// component `PageInputs`.
 export component PageInputs inherits VerticalLayout {
     spacing: Spacing.md;
 
     // ── private integer tokens ──────────────────────────────────────────
     /// Private property "spinbox-default-val" used internally.
     /// property `spinbox-default-val`.
+    /// property `spinbox-default-val`.
+    /// property `spinbox-default-val`.
+    /// property `spinbox-default-val`.
+    /// property `spinbox-default-val`.
+    /// property `spinbox-default-val`.
+    /// property `spinbox-default-val`.
     private property <int> spinbox-default-val: 42;
 
     // ── demo labels ─────────────────────────────────────────────────────
     /// Private property "section-textinput" used internally.
     /// property `section-textinput`.
+    /// property `section-textinput`.
+    /// property `section-textinput`.
+    /// property `section-textinput`.
+    /// property `section-textinput`.
+    /// property `section-textinput`.
+    /// property `section-textinput`.
     private property <string> section-textinput: "TextInput";
     /// Private property "section-selectfield" used internally.
+    /// property `section-selectfield`.
+    /// property `section-selectfield`.
+    /// property `section-selectfield`.
+    /// property `section-selectfield`.
+    /// property `section-selectfield`.
+    /// property `section-selectfield`.
     /// property `section-selectfield`.
     private property <string> section-selectfield: "SelectField";
     /// Private property "section-searchinput" used internally.
     /// property `section-searchinput`.
+    /// property `section-searchinput`.
+    /// property `section-searchinput`.
+    /// property `section-searchinput`.
+    /// property `section-searchinput`.
+    /// property `section-searchinput`.
+    /// property `section-searchinput`.
     private property <string> section-searchinput: "SearchInput";
     /// Private property "section-passwordinput" used internally.
+    /// property `section-passwordinput`.
+    /// property `section-passwordinput`.
+    /// property `section-passwordinput`.
+    /// property `section-passwordinput`.
+    /// property `section-passwordinput`.
+    /// property `section-passwordinput`.
     /// property `section-passwordinput`.
     private property <string> section-passwordinput: "PasswordInput";
     /// Private property "section-textarea" used internally.
     /// property `section-textarea`.
+    /// property `section-textarea`.
+    /// property `section-textarea`.
+    /// property `section-textarea`.
+    /// property `section-textarea`.
+    /// property `section-textarea`.
+    /// property `section-textarea`.
     private property <string> section-textarea: "TextArea";
     /// Private property "section-spinbox" used internally.
+    /// property `section-spinbox`.
+    /// property `section-spinbox`.
+    /// property `section-spinbox`.
+    /// property `section-spinbox`.
+    /// property `section-spinbox`.
+    /// property `section-spinbox`.
     /// property `section-spinbox`.
     private property <string> section-spinbox: "SpinBox";
     /// Private property "ti-placeholder" used internally.
     /// property `ti-placeholder`.
+    /// property `ti-placeholder`.
+    /// property `ti-placeholder`.
+    /// property `ti-placeholder`.
+    /// property `ti-placeholder`.
+    /// property `ti-placeholder`.
+    /// property `ti-placeholder`.
     private property <string> ti-placeholder: "Plain input...";
     /// Private property "ti-label" used internally.
+    /// property `ti-label`.
+    /// property `ti-label`.
+    /// property `ti-label`.
+    /// property `ti-label`.
+    /// property `ti-label`.
+    /// property `ti-label`.
     /// property `ti-label`.
     private property <string> ti-label: "With label";
     /// Private property "ti-placeholder2" used internally.
     /// property `ti-placeholder2`.
+    /// property `ti-placeholder2`.
+    /// property `ti-placeholder2`.
+    /// property `ti-placeholder2`.
+    /// property `ti-placeholder2`.
+    /// property `ti-placeholder2`.
+    /// property `ti-placeholder2`.
     private property <string> ti-placeholder2: "Enter text...";
     /// Private property "ti-value" used internally.
+    /// property `ti-value`.
+    /// property `ti-value`.
+    /// property `ti-value`.
+    /// property `ti-value`.
+    /// property `ti-value`.
+    /// property `ti-value`.
     /// property `ti-value`.
     private property <string> ti-value: "Hello";
     /// Private property "ti-err-label" used internally.
     /// property `ti-err-label`.
+    /// property `ti-err-label`.
+    /// property `ti-err-label`.
+    /// property `ti-err-label`.
+    /// property `ti-err-label`.
+    /// property `ti-err-label`.
+    /// property `ti-err-label`.
     private property <string> ti-err-label: "With error";
     /// Private property "ti-err-value" used internally.
+    /// property `ti-err-value`.
+    /// property `ti-err-value`.
+    /// property `ti-err-value`.
+    /// property `ti-err-value`.
+    /// property `ti-err-value`.
+    /// property `ti-err-value`.
     /// property `ti-err-value`.
     private property <string> ti-err-value: "bad-value";
     /// Private property "ti-err-msg" used internally.
     /// property `ti-err-msg`.
+    /// property `ti-err-msg`.
+    /// property `ti-err-msg`.
+    /// property `ti-err-msg`.
+    /// property `ti-err-msg`.
+    /// property `ti-err-msg`.
+    /// property `ti-err-msg`.
     private property <string> ti-err-msg: "This field is required";
     /// Private property "sf-placeholder" used internally.
+    /// property `sf-placeholder`.
+    /// property `sf-placeholder`.
+    /// property `sf-placeholder`.
+    /// property `sf-placeholder`.
+    /// property `sf-placeholder`.
+    /// property `sf-placeholder`.
     /// property `sf-placeholder`.
     private property <string> sf-placeholder: "Choose one...";
     /// Private property "si-placeholder" used internally.
     /// property `si-placeholder`.
+    /// property `si-placeholder`.
+    /// property `si-placeholder`.
+    /// property `si-placeholder`.
+    /// property `si-placeholder`.
+    /// property `si-placeholder`.
+    /// property `si-placeholder`.
     private property <string> si-placeholder: "Search...";
     /// Private property "si-value" used internally.
+    /// property `si-value`.
+    /// property `si-value`.
+    /// property `si-value`.
+    /// property `si-value`.
+    /// property `si-value`.
+    /// property `si-value`.
     /// property `si-value`.
     private property <string> si-value: "hello world";
     /// Private property "si-placeholder2" used internally.
     /// property `si-placeholder2`.
+    /// property `si-placeholder2`.
+    /// property `si-placeholder2`.
+    /// property `si-placeholder2`.
+    /// property `si-placeholder2`.
+    /// property `si-placeholder2`.
+    /// property `si-placeholder2`.
     private property <string> si-placeholder2: "With value + clear...";
     /// Private property "pi-placeholder" used internally.
+    /// property `pi-placeholder`.
+    /// property `pi-placeholder`.
+    /// property `pi-placeholder`.
+    /// property `pi-placeholder`.
+    /// property `pi-placeholder`.
+    /// property `pi-placeholder`.
     /// property `pi-placeholder`.
     private property <string> pi-placeholder: "Enter password...";
     /// Private property "pi-label" used internally.
     /// property `pi-label`.
+    /// property `pi-label`.
+    /// property `pi-label`.
+    /// property `pi-label`.
+    /// property `pi-label`.
+    /// property `pi-label`.
+    /// property `pi-label`.
     private property <string> pi-label: "With label";
     /// Private property "pi-placeholder2" used internally.
+    /// property `pi-placeholder2`.
+    /// property `pi-placeholder2`.
+    /// property `pi-placeholder2`.
+    /// property `pi-placeholder2`.
+    /// property `pi-placeholder2`.
+    /// property `pi-placeholder2`.
     /// property `pi-placeholder2`.
     private property <string> pi-placeholder2: "Password";
     /// Private property "pi-err-label" used internally.
     /// property `pi-err-label`.
+    /// property `pi-err-label`.
+    /// property `pi-err-label`.
+    /// property `pi-err-label`.
+    /// property `pi-err-label`.
+    /// property `pi-err-label`.
+    /// property `pi-err-label`.
     private property <string> pi-err-label: "With error";
     /// Private property "pi-err-msg" used internally.
+    /// property `pi-err-msg`.
+    /// property `pi-err-msg`.
+    /// property `pi-err-msg`.
+    /// property `pi-err-msg`.
+    /// property `pi-err-msg`.
+    /// property `pi-err-msg`.
     /// property `pi-err-msg`.
     private property <string> pi-err-msg: "Password too short";
     /// Private property "ta-placeholder" used internally.
     /// property `ta-placeholder`.
+    /// property `ta-placeholder`.
+    /// property `ta-placeholder`.
+    /// property `ta-placeholder`.
+    /// property `ta-placeholder`.
+    /// property `ta-placeholder`.
+    /// property `ta-placeholder`.
     private property <string> ta-placeholder: "Enter multi-line text...";
     /// Private property "ta-label" used internally.
+    /// property `ta-label`.
+    /// property `ta-label`.
+    /// property `ta-label`.
+    /// property `ta-label`.
+    /// property `ta-label`.
+    /// property `ta-label`.
     /// property `ta-label`.
     private property <string> ta-label: "With label";
     /// Private property "ta-placeholder2" used internally.
     /// property `ta-placeholder2`.
+    /// property `ta-placeholder2`.
+    /// property `ta-placeholder2`.
+    /// property `ta-placeholder2`.
+    /// property `ta-placeholder2`.
+    /// property `ta-placeholder2`.
+    /// property `ta-placeholder2`.
     private property <string> ta-placeholder2: "Notes...";
     /// Private property "ta-err-label" used internally.
+    /// property `ta-err-label`.
+    /// property `ta-err-label`.
+    /// property `ta-err-label`.
+    /// property `ta-err-label`.
+    /// property `ta-err-label`.
+    /// property `ta-err-label`.
     /// property `ta-err-label`.
     private property <string> ta-err-label: "With error";
     /// Private property "ta-err-msg" used internally.
     /// property `ta-err-msg`.
+    /// property `ta-err-msg`.
+    /// property `ta-err-msg`.
+    /// property `ta-err-msg`.
+    /// property `ta-err-msg`.
+    /// property `ta-err-msg`.
+    /// property `ta-err-msg`.
     private property <string> ta-err-msg: "This field is required";
     /// Private property "sb-label" used internally.
     /// property `sb-label`.
+    /// property `sb-label`.
+    /// property `sb-label`.
+    /// property `sb-label`.
+    /// property `sb-label`.
+    /// property `sb-label`.
+    /// property `sb-label`.
     private property <string> sb-label: "With label";
     /// Private property "sb-disabled-label" used internally.
+    /// property `sb-disabled-label`.
+    /// property `sb-disabled-label`.
+    /// property `sb-disabled-label`.
+    /// property `sb-disabled-label`.
+    /// property `sb-disabled-label`.
+    /// property `sb-disabled-label`.
     /// property `sb-disabled-label`.
     private property <string> sb-disabled-label: "Disabled";
 

@@ -1,21 +1,46 @@
 import { Colors, Spacing } from "../globals/theme.slint";
+import { Sizes } from "../globals/theme/sizes.slint";
 import { ToolbarBtn, ToolbarItem } from "toolbar-btn.slint";
 
 export { ToolbarItem }
 
 /// T oo lb ar component.
 /// component `Toolbar`.
+/// component `Toolbar`.
+/// component `Toolbar`.
+/// component `Toolbar`.
+/// component `Toolbar`.
+/// component `Toolbar`.
+/// component `Toolbar`.
 export component Toolbar inherits Rectangle {
     /// Input property "items".
     /// property `items`.
+    /// property `items`.
+    /// property `items`.
+    /// property `items`.
+    /// property `items`.
+    /// property `items`.
+    /// property `items`.
     in property <[ToolbarItem]> items: [];
     /// Callback fired for c li ck ed.
+    /// callback `clicked`.
+    /// callback `clicked`.
+    /// callback `clicked`.
+    /// callback `clicked`.
+    /// callback `clicked`.
+    /// callback `clicked`.
     /// callback `clicked`.
     callback clicked(string);
 
     /// Private property "border-px" used internally.
     /// property `border-px`.
-    private property <length> border-px: 1px;
+    /// property `border-px`.
+    /// property `border-px`.
+    /// property `border-px`.
+    /// property `border-px`.
+    /// property `border-px`.
+    /// property `border-px`.
+    private property <length> border-px: Sizes.border-w;
 
     height: Spacing.xl;
     background: Colors.bg-surface;

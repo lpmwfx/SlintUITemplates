@@ -1,38 +1,93 @@
 import { Colors, Spacing, Type } from "../globals/theme.slint";
-import { Sizes }                 from "../state/sizes.slint";
-import { Variants }              from "../state/variants.slint";
+import { Sizes } from "../globals/theme/sizes.slint";
+import { Strings } from "../globals/strings.slint";
+import { Variants }              from "../globals/variants.slint";
 import { ViewSlot }              from "../modules/ViewSlot.slint";
 import { Button }                from "../widgets/button.slint";
 
 // ViewSlotDemo — demonstrates ViewSlot slot-id routing with nav buttons.
 /// V ie ws lo td em o component.
 /// component `ViewSlotDemo`.
+/// component `ViewSlotDemo`.
+/// component `ViewSlotDemo`.
+/// component `ViewSlotDemo`.
+/// component `ViewSlotDemo`.
+/// component `ViewSlotDemo`.
+/// component `ViewSlotDemo`.
 export component ViewSlotDemo inherits VerticalLayout {
     /// Private property "active-slot" used internally.
     /// property `active-slot`.
+    /// property `active-slot`.
+    /// property `active-slot`.
+    /// property `active-slot`.
+    /// property `active-slot`.
+    /// property `active-slot`.
+    /// property `active-slot`.
     private property <string> active-slot: Variants.alpha;
     /// Private property "alpha-subtle" used internally.
+    /// property `alpha-subtle`.
+    /// property `alpha-subtle`.
+    /// property `alpha-subtle`.
+    /// property `alpha-subtle`.
+    /// property `alpha-subtle`.
+    /// property `alpha-subtle`.
     /// property `alpha-subtle`.
     private property <float>  alpha-subtle: Sizes.alpha-10;
 
     /// Private property "lbl-alpha" used internally.
     /// property `lbl-alpha`.
+    /// property `lbl-alpha`.
+    /// property `lbl-alpha`.
+    /// property `lbl-alpha`.
+    /// property `lbl-alpha`.
+    /// property `lbl-alpha`.
+    /// property `lbl-alpha`.
     private property <string> lbl-alpha: "Alpha";
     /// Private property "lbl-beta" used internally.
+    /// property `lbl-beta`.
+    /// property `lbl-beta`.
+    /// property `lbl-beta`.
+    /// property `lbl-beta`.
+    /// property `lbl-beta`.
+    /// property `lbl-beta`.
     /// property `lbl-beta`.
     private property <string> lbl-beta: "Beta";
     /// Private property "lbl-gamma" used internally.
     /// property `lbl-gamma`.
-    private property <string> lbl-gamma: "Gamma";
+    /// property `lbl-gamma`.
+    /// property `lbl-gamma`.
+    /// property `lbl-gamma`.
+    /// property `lbl-gamma`.
+    /// property `lbl-gamma`.
+    /// property `lbl-gamma`.
+    private property <string> lbl-gamma: Strings.demo-viewslot-label-gamma;
     /// Private property "slot-alpha-text" used internally.
     /// property `slot-alpha-text`.
-    private property <string> slot-alpha-text: "slot-id: \"alpha\" \u{2014} visible when active == \"alpha\"";
+    /// property `slot-alpha-text`.
+    /// property `slot-alpha-text`.
+    /// property `slot-alpha-text`.
+    /// property `slot-alpha-text`.
+    /// property `slot-alpha-text`.
+    /// property `slot-alpha-text`.
+    private property <string> slot-alpha-text: Strings.demo-viewslot-alpha-text;
     /// Private property "slot-beta-text" used internally.
     /// property `slot-beta-text`.
-    private property <string> slot-beta-text: "slot-id: \"beta\"";
+    /// property `slot-beta-text`.
+    /// property `slot-beta-text`.
+    /// property `slot-beta-text`.
+    /// property `slot-beta-text`.
+    /// property `slot-beta-text`.
+    /// property `slot-beta-text`.
+    private property <string> slot-beta-text: Strings.demo-viewslot-beta-text;
     /// Private property "slot-gamma-text" used internally.
     /// property `slot-gamma-text`.
-    private property <string> slot-gamma-text: "slot-id: \"gamma\"";
+    /// property `slot-gamma-text`.
+    /// property `slot-gamma-text`.
+    /// property `slot-gamma-text`.
+    /// property `slot-gamma-text`.
+    /// property `slot-gamma-text`.
+    /// property `slot-gamma-text`.
+    private property <string> slot-gamma-text: Strings.demo-viewslot-gamma-text;
 
     spacing: Spacing.sm;
     width: Sizes.panel-xxxl;

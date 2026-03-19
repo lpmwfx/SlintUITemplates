@@ -2,6 +2,31 @@ use std::{fs, path::Path};
 use crate::{Item, PropMode, SLINT_EXT, Err};
 use crate::parser::parse_file;
 
+/// Render a property table to the output string.
+fn render_props(out: &mut String, props: &[crate::Prop]) {
+    *out += "| Property | Type | Default | Description |\n\
+             |----------|------|---------|-------------|\n";
+    for p in props {
+        let tag = if p.mode != PropMode::In { format!(" *({})*", p.mode.label()) }
+                  else { String::new() };
+        *out += &format!("| `{}`{} | `{}` | `{}` | {} |\n",
+            p.name, tag, p.ty, p.default, p.desc);
+    }
+    *out += "\n";
+}
+
+/// Render a callback table to the output string.
+fn render_cbs(out: &mut String, cbs: &[crate::Cb]) {
+    *out += "| Callback | Signature | Description |\n\
+             |----------|-----------|-------------|\n";
+    for cb in cbs {
+        let sig = if cb.args.is_empty() { format!("`{}()`", cb.name) }
+                  else { format!("`{}({})`", cb.name, cb.args) };
+        *out += &format!("| {} | | {} |\n", sig, cb.desc);
+    }
+    *out += "\n";
+}
+
 /// Render parsed items to a Markdown string.
 pub(crate) fn render(all: &[Item]) -> String {
     let mut out = String::from("\n## Shared Components\n\n");
@@ -14,27 +39,8 @@ pub(crate) fn render(all: &[Item]) -> String {
             }
             Item::Comp { name, file, props, cbs } => {
                 out += &format!("### {} (`ui/widgets/{}`)\n\n", name, file);
-                if !props.is_empty() {
-                    out += "| Property | Type | Default | Description |\n\
-                            |----------|------|---------|-------------|\n";
-                    for p in props {
-                        let tag = if p.mode != PropMode::In { format!(" *({})*", p.mode.label()) }
-                                  else { String::new() };
-                        out += &format!("| `{}`{} | `{}` | `{}` | {} |\n",
-                            p.name, tag, p.ty, p.default, p.desc);
-                    }
-                    out += "\n";
-                }
-                if !cbs.is_empty() {
-                    out += "| Callback | Signature | Description |\n\
-                            |----------|-----------|-------------|\n";
-                    for cb in cbs {
-                        let sig = if cb.args.is_empty() { format!("`{}()`", cb.name) }
-                                  else { format!("`{}({})`", cb.name, cb.args) };
-                        out += &format!("| {} | | {} |\n", sig, cb.desc);
-                    }
-                    out += "\n";
-                }
+                if !props.is_empty() { render_props(&mut out, props); }
+                if !cbs.is_empty()   { render_cbs(&mut out, cbs); }
                 out += "---\n\n";
             }
         }

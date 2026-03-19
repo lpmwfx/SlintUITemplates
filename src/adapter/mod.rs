@@ -68,11 +68,13 @@ impl AppAdapter_adp {
         // REASON: Navigate handler closure updates status cache on view_config apply
         let status_text: Rc<RefCell<String>> = Rc::new(RefCell::new(String::new()));
 
+        // why shared? on_menu_action closure dispatches by id from the shared action map
         let actions = Rc::clone(&menu_actions);
         ui.on_menu_action(move |id| {
             if let Some(f) = actions.borrow().get(id.as_str()) { f(); }
         });
 
+        // why shared? on_navigate closure applies view config, updates status, calls user callback
         let vc     = Rc::clone(&view_configs);
         let nav_cb = Rc::clone(&navigate_cb);
         let ui_nav = ui.clone_strong();
@@ -89,6 +91,7 @@ impl AppAdapter_adp {
             if let Some(ref f) = *nav_cb.borrow() { f(id); }
         });
 
+        // why shared? on_toolbar_clicked closure dispatches to user-registered callback
         let tb_cb = Rc::clone(&toolbar_cb);
         ui.on_toolbar_clicked(move |id| {
             if let Some(ref f) = *tb_cb.borrow() { f(id); }

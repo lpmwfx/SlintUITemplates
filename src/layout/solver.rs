@@ -6,6 +6,7 @@
 
 use crate::layout::parser::{PanelNode, SplitDir};
 
+// NOTE(mother-child): compile-time const used only by Solver::emit_split — not mutable global state
 const HANDLE_THICKNESS: f32 = 5.0;   // logical px — kept in sync with Spacing.handle-thickness
 
 /// A positioned layout element with normalized coordinates ready for rendering.

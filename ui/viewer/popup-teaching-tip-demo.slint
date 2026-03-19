@@ -1,29 +1,49 @@
 import { Colors, Spacing, Type } from "../globals/theme.slint";
+import { Sizes } from "../globals/theme/sizes.slint";
+import { Strings } from "../globals/strings.slint";
 import { TeachingTip } from "../widgets/teaching-tip.slint";
 
 /// P op up te ac hi ng ti pd em o component.
 /// component `PopupTeachingTipDemo`.
+/// component `PopupTeachingTipDemo`.
+/// component `PopupTeachingTipDemo`.
+/// component `PopupTeachingTipDemo`.
+/// component `PopupTeachingTipDemo`.
+/// component `PopupTeachingTipDemo`.
+/// component `PopupTeachingTipDemo`.
 export component PopupTeachingTipDemo inherits Rectangle {
     /// Input property "window-height".
+    /// property `window-height`.
+    /// property `window-height`.
+    /// property `window-height`.
+    /// property `window-height`.
+    /// property `window-height`.
+    /// property `window-height`.
     /// property `window-height`.
     in property <length> window-height;
 
     /// Private property "demo-w" used internally.
     /// property `demo-w`.
-    private property <length> demo-w: 160px;
+    /// property `demo-w`.
+    /// property `demo-w`.
+    /// property `demo-w`.
+    /// property `demo-w`.
+    /// property `demo-w`.
+    /// property `demo-w`.
+    private property <length> demo-w: Sizes.comp-160;
 
     height: Spacing.control-lg;
     width: root.demo-w;
 
     tip := TeachingTip { window-height: root.window-height;
         title:
-            "Did you know?";
+            Strings.demo-tip-title;
         body:
-            "You can right-click any item for a context menu with more options.";
+            Strings.demo-tip-body;
         action-label:
-            "Got it";
+            Strings.demo-tip-action;
         dismiss-label:
-            "Skip";
+            Strings.demo-tip-dismiss;
         action    => { debug("tip: action"); }
         dismissed => { debug("tip: dismissed"); }
     }
@@ -34,7 +54,7 @@ export component PopupTeachingTipDemo inherits Rectangle {
         border-radius: Spacing.xl;
         background: ta.has-hover ? Colors.accent-hover : Colors.accent;
 
-        Text { text: "?";
+        Text { text: Strings.demo-tip-btn;
             font-size: Type.body-size;
             font-weight: Type.weight-bold;
             color: Colors.accent-text;

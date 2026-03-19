@@ -128,7 +128,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {\n\
     // REASON: Rhai engine closures capture Rc clones for callback access\n\
     let adapter = Rc::new(RefCell::new(AppAdapter::new()?));\n\
     adapter.borrow().load_view_configs(Path::new(\"views\"))?;\n\
-    let engine = build_engine(Rc::clone(&adapter));\n\
+    let engine = build_engine(Rc::clone(&adapter)); // why shared? engine closures need adapter access\n\
     engine.eval::<()>(&std::fs::read_to_string(\"app.rhai\")?)?;\n\
     drop(engine);\n\
     let adapter = Rc::try_unwrap(adapter)\n\

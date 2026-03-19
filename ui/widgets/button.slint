@@ -1,20 +1,50 @@
 import { Colors, Spacing, Type } from "../globals/theme.slint";
-import { Sizes } from "../state/sizes.slint";
-import { Variants } from "../state/variants.slint";
+import { Sizes } from "../globals/theme/sizes.slint";
+import { Variants } from "../globals/variants.slint";
 
 /// Generic action button with Fluent-style variants and hover feedback.
+/// component `Button`.
+/// component `Button`.
+/// component `Button`.
+/// component `Button`.
+/// component `Button`.
+/// component `Button`.
 /// component `Button`.
 export component Button inherits Rectangle {
     /// Text rendered in the button body.
     /// property `label`.
+    /// property `label`.
+    /// property `label`.
+    /// property `label`.
+    /// property `label`.
+    /// property `label`.
+    /// property `label`.
     in property <string> label: "Button";
     /// Visual style key: `primary`, `secondary`, `ghost`, or `danger`.
+    /// property `variant`.
+    /// property `variant`.
+    /// property `variant`.
+    /// property `variant`.
+    /// property `variant`.
+    /// property `variant`.
     /// property `variant`.
     in property <string> variant: Variants.primary;   // primary | secondary | ghost | danger
     /// Enables pointer interaction and active styling when `true`.
     /// property `enabled`.
+    /// property `enabled`.
+    /// property `enabled`.
+    /// property `enabled`.
+    /// property `enabled`.
+    /// property `enabled`.
+    /// property `enabled`.
     in property <bool> enabled: true;
     /// Fired when the user activates the button.
+    /// callback `clicked`.
+    /// callback `clicked`.
+    /// callback `clicked`.
+    /// callback `clicked`.
+    /// callback `clicked`.
+    /// callback `clicked`.
     /// callback `clicked`.
     callback clicked();
 

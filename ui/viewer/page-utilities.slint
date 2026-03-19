@@ -1,7 +1,8 @@
 // page-utilities — Label, Toolbar, MessageBar, EmptyState, Segmented, FormField
 
 import { Colors, Spacing, Type, FluentIcons } from "../globals/theme.slint";
-import { Sizes }       from "../state/sizes.slint";
+import { Sizes } from "../globals/theme/sizes.slint";
+import { Strings } from "../globals/strings.slint";
 import { Label }       from "../widgets/label.slint";
 import { Toolbar, ToolbarItem } from "../widgets/toolbar.slint";
 import { MessageBar }  from "../widgets/message-bar.slint";
@@ -16,92 +17,92 @@ import { ViewerSection } from "viewer-section.slint";
 export component PageUtilities inherits VerticalLayout {
     spacing: Spacing.md;
 
-    /// Private property "tb-w" used internally.
+    /// Toolbar container width.
     /// property `tb-w`.
-    private property <length> tb-w:     400px;
-    /// Private property "mb-w" used internally.
+    private property <length> tb-w:     Sizes.panel-max;
+    /// MessageBar container width.
     /// property `mb-w`.
-    private property <length> mb-w:     500px;
-    /// Private property "es-w" used internally.
+    private property <length> mb-w:     Sizes.panel-wide;
+    /// EmptyState container width.
     /// property `es-w`.
-    private property <length> es-w:     340px;
-    /// Private property "es-h" used internally.
+    private property <length> es-w:     Sizes.comp-340;
+    /// EmptyState container height.
     /// property `es-h`.
-    private property <length> es-h:     200px;
-    /// Private property "seg1-w" used internally.
+    private property <length> es-h:     Sizes.panel-sm;
+    /// Segmented three-tab width.
     /// property `seg1-w`.
-    private property <length> seg1-w:   240px;
-    /// Private property "seg2-w" used internally.
+    private property <length> seg1-w:   Sizes.comp-240;
+    /// Segmented two-tab width.
     /// property `seg2-w`.
-    private property <length> seg2-w:   120px;
-    /// Private property "ff-w" used internally.
+    private property <length> seg2-w:   Sizes.comp-120;
+    /// FormField container width.
     /// property `ff-w`.
-    private property <length> ff-w:     300px;
-    /// Private property "border-px" used internally.
+    private property <length> ff-w:     Sizes.panel-xl;
+    /// Border pixel width.
     /// property `border-px`.
     private property <length> border-px: Sizes.border-w;
-    /// Private property "seg-val" used internally.
+    /// Selected segment value.
     /// property `seg-val`.
     private property <string> seg-val:   "day";
-    /// Private property "seg2-val" used internally.
+    /// Second segment selected value.
     /// property `seg2-val`.
     private property <string> seg2-val:  "list";
-    /// Private property "mb-info-msg" used internally.
+    /// MessageBar info message text.
     /// property `mb-info-msg`.
-    private property <string> mb-info-msg: "Your session will expire in 10 minutes.";
+    private property <string> mb-info-msg: Strings.demo-messagebar-info;
 
-    ViewerSection { title: "Label";
+    ViewerSection { title: Strings.demo-section-label;
         HorizontalLayout {
             spacing: Spacing.lg;
             alignment: start;
             VerticalLayout {
                 spacing: Spacing.sm;
-                Label { text: "Normal label"; }
-                Label { text: "Required field"; required: true; }
-                Label { text: "Disabled label"; disabled: true; }
+                Label { text: Strings.demo-label-normal; }
+                Label { text: Strings.demo-label-required; required: true; }
+                Label { text: Strings.demo-label-disabled; disabled: true; }
             }
         }
     }
 
-    ViewerSection { title: "Toolbar";
+    ViewerSection { title: Strings.demo-section-toolbar;
         VerticalLayout {
             spacing: Spacing.sm;
 
             Toolbar {
                 width: root.tb-w;
                 items: [
-                    { id: "new",    icon: FluentIcons.file-new,    tooltip: "New file",  enabled: true  },
-                    { id: "open",   icon: FluentIcons.folder-open, tooltip: "Open",      enabled: true  },
-                    { id: "save",   icon: FluentIcons.save,        tooltip: "Save",      enabled: true  },
-                    { id: "sep1",   icon: "",                      tooltip: "",          enabled: false },
-                    { id: "cut",    icon: FluentIcons.cut,         tooltip: "Cut",       enabled: true  },
-                    { id: "copy",   icon: FluentIcons.copy,        tooltip: "Copy",      enabled: true  },
-                    { id: "paste",  icon: FluentIcons.paste,       tooltip: "Paste",     enabled: false },
+                    { id: "new",    icon: FluentIcons.file-new,    tooltip: Strings.demo-toolbar-new,  enabled: true  },
+                    { id: "open",   icon: FluentIcons.folder-open, tooltip: Strings.demo-toolbar-open, enabled: true  },
+                    { id: "save",   icon: FluentIcons.save,        tooltip: Strings.action-save,       enabled: true  },
+                    { id: "sep1",   icon: "",                      tooltip: "",                        enabled: false },
+                    { id: "cut",    icon: FluentIcons.cut,         tooltip: Strings.demo-toolbar-cut,  enabled: true  },
+                    { id: "copy",   icon: FluentIcons.copy,        tooltip: Strings.tooltip-copy,      enabled: true  },
+                    { id: "paste",  icon: FluentIcons.paste,       tooltip: Strings.tooltip-paste,     enabled: false },
                 ];
                 clicked(id) => { debug("toolbar: " + id); }
             }
 
-            Text { text: "Click toolbar buttons — IDs logged to console";
+            Text { text: Strings.demo-toolbar-hint;
                 font-size: Type.caption-size;
                 color: Colors.text-disabled;
             }
         }
     }
 
-    ViewerSection { title: "MessageBar";
+    ViewerSection { title: Strings.demo-section-messagebar;
         VerticalLayout {
             spacing: Spacing.sm;
             width: root.mb-w;
-            MessageBar { variant: "info";    message: root.mb-info-msg; action-label: "Renew"; }
-            MessageBar { variant: "warning"; message: "Unsaved changes — remember to save your work."; }
-            MessageBar { variant: "error";   message: "Failed to connect to server."; action-label: "Retry"; }
-            MessageBar { variant: "success"; message: "File saved successfully."; closable: true;
+            MessageBar { variant: "info";    message: root.mb-info-msg; action-label: Strings.demo-messagebar-renew; }
+            MessageBar { variant: "warning"; message: Strings.demo-messagebar-warning; }
+            MessageBar { variant: "error";   message: Strings.demo-messagebar-error; action-label: Strings.demo-messagebar-retry; }
+            MessageBar { variant: "success"; message: Strings.demo-messagebar-success; closable: true;
                 closed => { debug("mb closed"); }
             }
         }
     }
 
-    ViewerSection { title: "EmptyState";
+    ViewerSection { title: Strings.demo-section-emptystate;
         Rectangle {
             width: root.es-w;
             height: root.es-h;
@@ -111,16 +112,16 @@ export component PageUtilities inherits VerticalLayout {
 
             EmptyState { icon: FluentIcons.folder;
                 title:
-                    "No files found";
+                    Strings.demo-empty-title;
                 description:
-                    "Upload a file or create a new one to get started.";
+                    Strings.demo-empty-desc;
                 action-label:
-                    "Upload file";
+                    Strings.demo-empty-action;
             }
         }
     }
 
-    ViewerSection { title: "Segmented";
+    ViewerSection { title: Strings.demo-section-segmented;
         VerticalLayout {
             spacing: Spacing.sm;
 
@@ -128,9 +129,9 @@ export component PageUtilities inherits VerticalLayout {
                 width: root.seg1-w;
                 selected: root.seg-val;
                 items: [
-                    { id: "day",   label: "Day",   icon: "" },
-                    { id: "week",  label: "Week",  icon: "" },
-                    { id: "month", label: "Month", icon: "" },
+                    { id: "day",   label: Strings.demo-segment-day,   icon: "" },
+                    { id: "week",  label: Strings.demo-segment-week,  icon: "" },
+                    { id: "month", label: Strings.demo-segment-month, icon: "" },
                 ];
                 changed(id) => { root.seg-val = id; }
             }
@@ -145,28 +146,28 @@ export component PageUtilities inherits VerticalLayout {
                 changed(id) => { root.seg2-val = id; }
             }
 
-            Text { text: "Selected: " + root.seg-val + " / " + root.seg2-val;
+            Text { text: Strings.demo-seg-selected-prefix + root.seg-val + Strings.demo-seg-separator + root.seg2-val;
                 font-size: Type.caption-size;
                 color: Colors.text-secondary;
             }
         }
     }
 
-    ViewerSection { title: "FormField";
+    ViewerSection { title: Strings.demo-section-formfield;
         VerticalLayout {
             spacing: Spacing.md;
             width: root.ff-w;
 
-            FormField { label: "Username"; required: true; hint: "Letters and numbers only";
-                TextInput { placeholder: "Enter username"; }
+            FormField { label: Strings.demo-ff-username-label; required: true; hint: Strings.demo-ff-username-hint;
+                TextInput { placeholder: Strings.demo-ff-username-placeholder; }
             }
 
-            FormField { label: "Email"; error: "Invalid email address";
-                TextInput { placeholder: "Enter email"; }
+            FormField { label: Strings.demo-ff-email-label; error: Strings.demo-ff-email-error;
+                TextInput { placeholder: Strings.demo-ff-email-placeholder; }
             }
 
-            FormField { label: "Optional field"; hint: "Leave blank to skip";
-                TextInput { placeholder: "Optional..."; }
+            FormField { label: Strings.demo-ff-optional-label; hint: Strings.demo-ff-optional-hint;
+                TextInput { placeholder: Strings.demo-ff-optional-placeholder; }
             }
         }
     }

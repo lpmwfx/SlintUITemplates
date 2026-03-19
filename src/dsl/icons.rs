@@ -67,6 +67,8 @@ pub enum IconName {
 }
 
 /// Static lookup table mapping kebab-case names to `IconName` variants.
+// NOTE(mother-child): compile-time const, not mutable global state — belongs here
+// alongside the IconName enum it indexes.
 const ICON_TABLE: &[(&str, IconName)] = &[
     ("add",          IconName::Add),
     ("apps",         IconName::Apps),

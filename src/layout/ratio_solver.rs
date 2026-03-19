@@ -77,7 +77,7 @@ pub fn normalize(panels: &mut [Panel]) {
 }
 
 /// Verify that panel ratios sum to approximately 1.0.
-pub fn check_sum(panels: &[Panel]) -> bool {
+pub fn is_valid_sum(panels: &[Panel]) -> bool {
     let total: f32 = panels.iter().map(|p| p.ratio).sum();
     (total - 1.0).abs() < RATIO_EPSILON
 }
@@ -117,9 +117,9 @@ mod tests {
     fn sum_preserved_after_drag() {
         let mut panels = three_panels();
         drag(&mut panels, 0, 0.1);
-        assert!(check_sum(&panels), "sum not 1.0 after drag");
+        assert!(is_valid_sum(&panels), "sum not 1.0 after drag");
         drag(&mut panels, 1, -0.05);
-        assert!(check_sum(&panels), "sum not 1.0 after second drag");
+        assert!(is_valid_sum(&panels), "sum not 1.0 after second drag");
     }
 
     #[test]
@@ -152,7 +152,7 @@ mod tests {
             Panel::new("c", 1.0),
         ];
         normalize(&mut panels);
-        assert!(check_sum(&panels));
+        assert!(is_valid_sum(&panels));
         assert!((panels[1].ratio - 0.5).abs() < 0.001);
     }
 }

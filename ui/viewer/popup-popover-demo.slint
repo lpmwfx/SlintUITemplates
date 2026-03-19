@@ -1,24 +1,62 @@
 import { Colors, Spacing, Type } from "../globals/theme.slint";
+import { Sizes } from "../globals/theme/sizes.slint";
+import { Strings } from "../globals/strings.slint";
 import { Popover } from "../widgets/popover.slint";
 
 /// P op up po po ve rd em o component.
 /// component `PopupPopoverDemo`.
+/// component `PopupPopoverDemo`.
+/// component `PopupPopoverDemo`.
+/// component `PopupPopoverDemo`.
+/// component `PopupPopoverDemo`.
+/// component `PopupPopoverDemo`.
+/// component `PopupPopoverDemo`.
 export component PopupPopoverDemo inherits Rectangle {
     /// Private property "show-pop" used internally.
+    /// property `show-pop`.
+    /// property `show-pop`.
+    /// property `show-pop`.
+    /// property `show-pop`.
+    /// property `show-pop`.
+    /// property `show-pop`.
     /// property `show-pop`.
     private property <bool>   show-pop:   false;
     /// Private property "demo-w" used internally.
     /// property `demo-w`.
-    private property <length> demo-w:     160px;
+    /// property `demo-w`.
+    /// property `demo-w`.
+    /// property `demo-w`.
+    /// property `demo-w`.
+    /// property `demo-w`.
+    /// property `demo-w`.
+    private property <length> demo-w:     Sizes.comp-160;
     /// Private property "pop-w" used internally.
     /// property `pop-w`.
-    private property <length> pop-w:      220px;
+    /// property `pop-w`.
+    /// property `pop-w`.
+    /// property `pop-w`.
+    /// property `pop-w`.
+    /// property `pop-w`.
+    /// property `pop-w`.
+    private property <length> pop-w:      Sizes.panel-md;
     /// Private property "pop-h" used internally.
     /// property `pop-h`.
-    private property <length> pop-h:      130px;
+    /// property `pop-h`.
+    /// property `pop-h`.
+    /// property `pop-h`.
+    /// property `pop-h`.
+    /// property `pop-h`.
+    /// property `pop-h`.
+    private property <length> pop-h:      Sizes.comp-130;
     /// Private property "border-px" used internally.
     /// property `border-px`.
-    private property <length> border-px:  1px;
+    /// property `border-px`.
+    /// property `border-px`.
+    /// property `border-px`.
+    /// property `border-px`.
+    /// property `border-px`.
+    /// property `border-px`.
+    private property <length> border-px:  Sizes.border-w;
 
     height: Spacing.control-lg;
     width: root.demo-w;
@@ -26,9 +64,9 @@ export component PopupPopoverDemo inherits Rectangle {
 
     pop := Popover { open: root.show-pop; popup-width: root.pop-w; popup-height: root.pop-h;
         title:
-            "Popover";
+            Strings.demo-popover-title;
         body:
-            "Inline overlay — appears directly below the trigger without a popup window.";
+            Strings.demo-popover-body;
         close-requested => { root.show-pop = false; }
 
         Rectangle {
@@ -39,7 +77,7 @@ export component PopupPopoverDemo inherits Rectangle {
             border-color: root.show-pop ? Colors.border-focus : Colors.border;
             background: trig-ta.has-hover ? Colors.bg-elevated : Colors.bg-surface;
 
-            Text { text: root.show-pop ? "Close Popover" : "Open Popover";
+            Text { text: root.show-pop ? Strings.demo-popover-close : Strings.demo-popover-open;
                 font-size: Type.body-size;
                 color: Colors.text-primary;
                 horizontal-alignment: center;

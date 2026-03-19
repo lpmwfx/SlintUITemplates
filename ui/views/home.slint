@@ -1,5 +1,6 @@
 import { Colors, Spacing, Type } from "../globals/theme.slint";
-import { Variants } from "../state/variants.slint";
+import { Variants } from "../globals/variants.slint";
+import { Strings } from "../globals/strings.slint";
 import { Card }   from "../widgets/card.slint";
 import { Badge }  from "../widgets/badge.slint";
 import { Button } from "../widgets/button.slint";
@@ -8,18 +9,42 @@ import { Button } from "../widgets/button.slint";
 ///
 /// Intended as a simple designer-editable page for app-specific content.
 /// component `HomeView`.
+/// component `HomeView`.
+/// component `HomeView`.
+/// component `HomeView`.
+/// component `HomeView`.
+/// component `HomeView`.
+/// component `HomeView`.
 export component HomeView inherits Rectangle {
     background: Colors.bg-primary;
 
     /// Private property "card-subtitle" used internally.
     /// property `card-subtitle`.
-    private property <string> card-subtitle: "Edit ui/views/home.slint to design this view";
+    /// property `card-subtitle`.
+    /// property `card-subtitle`.
+    /// property `card-subtitle`.
+    /// property `card-subtitle`.
+    /// property `card-subtitle`.
+    /// property `card-subtitle`.
+    private property <string> card-subtitle: Strings.home-getting-started-subtitle;
     /// Private property "page-title" used internally.
     /// property `page-title`.
-    private property <string> page-title: "Home";
+    /// property `page-title`.
+    /// property `page-title`.
+    /// property `page-title`.
+    /// property `page-title`.
+    /// property `page-title`.
+    /// property `page-title`.
+    private property <string> page-title: Strings.home-page-title;
     /// Private property "card-title" used internally.
     /// property `card-title`.
-    private property <string> card-title: "Getting started";
+    /// property `card-title`.
+    /// property `card-title`.
+    /// property `card-title`.
+    /// property `card-title`.
+    /// property `card-title`.
+    /// property `card-title`.
+    private property <string> card-title: Strings.home-getting-started-title;
 
     VerticalLayout {
         padding: Spacing.lg;
@@ -40,9 +65,9 @@ export component HomeView inherits Rectangle {
 
         HorizontalLayout {
             spacing: Spacing.sm;
-            Button { label: "Primary action"; variant: Variants.primary; clicked => {} }
-            Button { label: "Secondary"; variant: Variants.secondary; clicked => {} }
-            Badge { text: "New"; variant: Variants.info; }
+            Button { label: Strings.demo-button-primary; variant: Variants.primary; clicked => {} }
+            Button { label: Strings.demo-button-secondary; variant: Variants.secondary; clicked => {} }
+            Badge { text: Strings.demo-badge-text; variant: Variants.info; }
         }
     }
 }

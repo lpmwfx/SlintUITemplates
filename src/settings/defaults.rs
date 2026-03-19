@@ -1,3 +1,6 @@
+// NOTE(mother-child): Default trait impls with hardcoded values — these are compile-time
+// constants embedded in trait impls, not mutable global state. Kept in child file to
+// separate construction concerns from the struct definitions in mod.rs.
 use super::{AppSettings, ZoomSettings, ThemeSettings, ThemeMode, IconSettings, IconStyle, FontSettings};
 
 impl IconStyle {
