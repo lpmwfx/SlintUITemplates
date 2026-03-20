@@ -89,3 +89,12 @@
 
 ### Phase 1 — Foundation
 - Token system, AppWindow, grid engine, layout DSL
+
+
+---
+
+<!-- LARS:START -->
+<a href="https://lpmathiasen.com">
+  <img src="https://carousel.lpmathiasen.com/carousel.svg?slot=1" alt="Lars P. Mathiasen"/>
+</a>
+<!-- LARS:END -->
