@@ -2204,3 +2204,12 @@ Coverage: **1976/1976** items documented (**100%**)
 | `is-selected` | property | widgets/TreeViewNode.slint | 20 | ✓ |
 | `selected` | callback | widgets/TreeViewNode.slint | 22 | ✓ |
 | `toggle-expanded` | callback | widgets/TreeViewNode.slint | 24 | ✓ |
+
+
+---
+
+<!-- LARS:START -->
+<a href="https://lpmathiasen.com">
+  <img src="https://carousel.lpmathiasen.com/carousel.svg?slot=1" alt="Lars P. Mathiasen"/>
+</a>
+<!-- LARS:END -->
