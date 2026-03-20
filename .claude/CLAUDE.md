@@ -60,3 +60,12 @@ uiux/file-structure.md, uiux/help-about.md, uiux/checklist.md
 uiux/menus-windows.md, uiux/menus-slint.md, uiux/mother-child.md
 slint/README.md, slint/responsive-layout.md
 ```
+
+
+---
+
+<!-- LARS:START -->
+<a href="https://lpmathiasen.com">
+  <img src="https://carousel.lpmathiasen.com/carousel.svg?slot=1" alt="Lars P. Mathiasen"/>
+</a>
+<!-- LARS:END -->
