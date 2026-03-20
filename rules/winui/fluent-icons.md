@@ -78,3 +78,12 @@ Text { text: item.icon; font-family: "Segoe Fluent Icons"; }
 - Icon-only elements MUST have `accessible-description` property for accessibility
 - Toolbar icons SHOULD have tooltips
 - Use filled variant for selected/active state, outlined for inactive (when both available)
+
+
+---
+
+<!-- LARS:START -->
+<a href="https://lpmathiasen.com">
+  <img src="https://carousel.lpmathiasen.com/carousel.svg?slot=1" alt="Lars P. Mathiasen"/>
+</a>
+<!-- LARS:END -->
