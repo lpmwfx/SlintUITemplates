@@ -14,3 +14,12 @@ Returns the icon style as a lowercase string slice (`"filled"` or `"outlined"`).
 
 ---
 
+
+
+---
+
+<!-- LARS:START -->
+<a href="https://lpmathiasen.com">
+  <img src="https://carousel.lpmathiasen.com/carousel.svg?slot=1" alt="Lars P. Mathiasen"/>
+</a>
+<!-- LARS:END -->
