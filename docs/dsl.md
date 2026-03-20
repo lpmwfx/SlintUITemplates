@@ -145,3 +145,12 @@ person  people  chat  mail  phone  notification  help  info
 warning  error-icon  checkmark  dismiss  device  keyboard  wifi  bluetooth
 star  star-filled  pin  unpin
 ```
+
+
+---
+
+<!-- LARS:START -->
+<a href="https://lpmathiasen.com">
+  <img src="https://carousel.lpmathiasen.com/carousel.svg?slot=1" alt="Lars P. Mathiasen"/>
+</a>
+<!-- LARS:END -->
