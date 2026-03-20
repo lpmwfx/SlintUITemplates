@@ -69,3 +69,12 @@ See: `rules/winui/placement.md`
 | App title | Window title bar | TopAppBar | |
 | Search | Toolbar icon | TopAppBar icon | |
 | Settings | File/Edit menu or nav item | Nav item | |
+
+
+---
+
+<!-- LARS:START -->
+<a href="https://lpmathiasen.com">
+  <img src="https://carousel.lpmathiasen.com/carousel.svg?slot=1" alt="Lars P. Mathiasen"/>
+</a>
+<!-- LARS:END -->
