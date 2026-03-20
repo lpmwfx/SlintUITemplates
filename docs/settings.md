@@ -115,3 +115,12 @@ All Slint property bindings react automatically — no manual refresh needed.
 
 The window backdrop (Mica/Acrylic) is **not** in `AppSettings` — it is part of the
 DSL configuration (`AppDsl::bg_style`) and applied at startup by the platform layer.
+
+
+---
+
+<!-- LARS:START -->
+<a href="https://lpmathiasen.com">
+  <img src="https://carousel.lpmathiasen.com/carousel.svg?slot=1" alt="Lars P. Mathiasen"/>
+</a>
+<!-- LARS:END -->
