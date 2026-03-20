@@ -246,3 +246,12 @@ Coverage: **176/176** items documented (**100%**)
 | `eval` | mod | view_config/mod.rs | 10 | ✓ |
 | `ViewConfig` | struct | view_config/mod.rs | 27 | ✓ |
 | `apply` | fn | view_config/mod.rs | 37 | ✓ |
+
+
+---
+
+<!-- LARS:START -->
+<a href="https://lpmathiasen.com">
+  <img src="https://carousel.lpmathiasen.com/carousel.svg?slot=1" alt="Lars P. Mathiasen"/>
+</a>
+<!-- LARS:END -->
