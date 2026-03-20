@@ -74,3 +74,12 @@ Returns the sum of all column ratio weights in this row, or 0 if not column-base
 
 ---
 
+
+
+---
+
+<!-- LARS:START -->
+<a href="https://lpmathiasen.com">
+  <img src="https://carousel.lpmathiasen.com/carousel.svg?slot=1" alt="Lars P. Mathiasen"/>
+</a>
+<!-- LARS:END -->
