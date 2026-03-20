@@ -104,3 +104,12 @@ AppSettings (Rust/TOML)
   → Slint property bindings propagate automatically
   → All components re-render with new values
 ```
+
+
+---
+
+<!-- LARS:START -->
+<a href="https://lpmathiasen.com">
+  <img src="https://carousel.lpmathiasen.com/carousel.svg?slot=1" alt="Lars P. Mathiasen"/>
+</a>
+<!-- LARS:END -->
