@@ -115,3 +115,12 @@ cargo apk build --lib
 adb install -r target/debug/apk/android-demo.apk
 adb shell am start -n com.example.androiddemo/android.app.NativeActivity
 ```
+
+
+---
+
+<!-- LARS:START -->
+<a href="https://lpmathiasen.com">
+  <img src="https://carousel.lpmathiasen.com/carousel.svg?slot=1" alt="Lars P. Mathiasen"/>
+</a>
+<!-- LARS:END -->
