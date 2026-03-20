@@ -72,3 +72,12 @@ platform: windows
 - TopAppBar on desktop — Mobile only
 - SideNav on the right — always left on Windows
 - MenuBar below content — always top
+
+
+---
+
+<!-- LARS:START -->
+<a href="https://lpmathiasen.com">
+  <img src="https://carousel.lpmathiasen.com/carousel.svg?slot=1" alt="Lars P. Mathiasen"/>
+</a>
+<!-- LARS:END -->
