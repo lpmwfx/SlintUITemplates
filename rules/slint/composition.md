@@ -180,3 +180,12 @@ CORRECT:
 | 4 | `@children` in Rectangle without layout | Stack at 0,0 |
 | 5 | `in-out` in non-Window component | State ownership leak |
 | 6 | Fill-page in shared Flickable | Collapses to min height |
+
+
+---
+
+<!-- LARS:START -->
+<a href="https://lpmathiasen.com">
+  <img src="https://carousel.lpmathiasen.com/carousel.svg?slot=1" alt="Lars P. Mathiasen"/>
+</a>
+<!-- LARS:END -->
