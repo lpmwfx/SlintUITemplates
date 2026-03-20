@@ -152,3 +152,12 @@ No component files need changes — they all read `Colors.*` via the token surfa
 - [Layering and elevation](https://learn.microsoft.com/en-us/windows/apps/design/signature-experiences/layering)
 - [XAML theme resources](https://learn.microsoft.com/en-us/windows/apps/develop/platform/xaml/xaml-theme-resources)
   — TextFillColorPrimary light = `#E4000000`, dark = `#FFFFFFFF`
+
+
+---
+
+<!-- LARS:START -->
+<a href="https://lpmathiasen.com">
+  <img src="https://carousel.lpmathiasen.com/carousel.svg?slot=1" alt="Lars P. Mathiasen"/>
+</a>
+<!-- LARS:END -->
