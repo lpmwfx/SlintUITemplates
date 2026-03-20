@@ -35,3 +35,12 @@ Callback fired for i te m a ct iv at ed.
 
 ---
 
+
+
+---
+
+<!-- LARS:START -->
+<a href="https://lpmathiasen.com">
+  <img src="https://carousel.lpmathiasen.com/carousel.svg?slot=1" alt="Lars P. Mathiasen"/>
+</a>
+<!-- LARS:END -->
