@@ -111,3 +111,12 @@ ui/tokens/fluent/
 - NEVER use literal px sizes for spacing — always via Spacing or FluentSpacing
 - NEVER use literal border-radius values — always via FluentRadius (or Radius when added)
 - The `Colors` global (ui/tokens/colors.slint) is the component-facing API — Fluent globals are the source values
+
+
+---
+
+<!-- LARS:START -->
+<a href="https://lpmathiasen.com">
+  <img src="https://carousel.lpmathiasen.com/carousel.svg?slot=1" alt="Lars P. Mathiasen"/>
+</a>
+<!-- LARS:END -->
