@@ -86,3 +86,12 @@ config/
 - [DSL Reference](dsl.md) — AppDsl builder, nav, toolbar, backdrop
 - [Settings](settings.md) — zoom, theme, icons, font (TOML + Rust)
 - [Components](components.md) — full component catalog
+
+
+---
+
+<!-- LARS:START -->
+<a href="https://lpmathiasen.com">
+  <img src="https://carousel.lpmathiasen.com/carousel.svg?slot=1" alt="Lars P. Mathiasen"/>
+</a>
+<!-- LARS:END -->
